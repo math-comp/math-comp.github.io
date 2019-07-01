@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-07-01 Mon 20:52 -->
+<!-- 2019-07-01 Mon 20:51 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Mathematical Components: Libraries of formalized mathematics</title>
+<title>Mathematical Components: Installation</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="Reynald Affeldt" />
 <style type="text/css">
@@ -235,101 +235,62 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">Mathematical Components: Libraries of formalized mathematics</h1>
-<p>
- <div style="text-align:right"><img src="https://github.githubassets.com/images/modules/logos_page/Octocat.png" height="25" style="border:0px">
-<a href="https://github.com/math-comp/math-comp">View the Project on GitHub</a>
- <img src="https://github.githubassets.com/images/modules/logos_page/Octocat.png" height="25" style="border:0px"></div>
-</p>
+<h1 class="title">Mathematical Components: Installation</h1>
 
-<div id="outline-container-org8570172" class="outline-2">
-<h2 id="org8570172">About</h2>
-<div class="outline-text-2" id="text-org8570172">
-<p>
-The Mathematical Components library for <a href="http://coq.inria.fr/">Coq</a> has its origins in the
-formal proof of the Four Colour Theorem.  Since then it has grown to
-cover many areas of mathematics and has been used for large scale
-projects like the formal proof of the Odd Order Theorem.
-The library is written using the Ssreflect proof language that is an
-integral part of the distribution.
-</p>
-</div>
-</div>
+<div id="outline-container-org991a3ac" class="outline-2">
+<h2 id="org991a3ac">Install the Base Mathematical Components Libraries</h2>
+<div class="outline-text-2" id="text-org991a3ac">
+<ul class="org-ul">
+<li>Using <code>opam</code>, the installation of Mathematical Components is as simple as this:</li>
+</ul>
 
-<div id="outline-container-orgf1bcad9" class="outline-2">
-<h2 id="orgf1bcad9">Getting the library</h2>
-<div class="outline-text-2" id="text-orgf1bcad9">
+<pre class="example">
+opam repo add coq-released https://coq.inria.fr/opam/released
+opam install coq-mathcomp-ssreflect
+</pre>
+
 <ul class="org-ul">
-<li>The current stable release of the Mathematical Components library
-can be <a href="https://github.com/math-comp/math-comp/releases">downloaded from github</a>
+<li><a href="https://github.com/math-comp/math-comp/blob/master/INSTALL.md">INSTALL.md</a> (from the official distribution) contains detailed instructions
 <ul class="org-ul">
-<li>Older versions of the library are available in the <a href="http://ssr.msr-inria.inria.fr/FTP/%22">historic archive</a></li>
+<li>using <code>opam</code> (various configurations)</li>
+<li>using <code>make</code></li>
 </ul></li>
-<li><a href="installation.html">Detailed installation instructions</a></li>
 </ul>
 </div>
-</div>
 
-<div id="outline-container-org9663e37" class="outline-2">
-<h2 id="org9663e37">Documentation</h2>
-<div class="outline-text-2" id="text-org9663e37">
+<div id="outline-container-org6c9a304" class="outline-3">
+<h3 id="org6c9a304">In Other Languages</h3>
+<div class="outline-text-3" id="text-org6c9a304">
 <ul class="org-ul">
-<li>Each source files features a documentation header which describes
-the concepts and notations introduced in that file
+<li>Installation instructions in <a href="https://staff.aist.go.jp/reynald.affeldt/ssrcoq/install.html">Japanese, 日本語</a>
 <ul class="org-ul">
-<li>The <a href="htmldoc/index.html">coqdoc presentation</a> of the source files can be browsed online</li>
-<li>The <a href="htmldoc/libgraph.html">library graph</a> can be browsed interactively</li>
+<li>see「パッケージからの設定」for installation using OPAM</li>
 </ul></li>
-<li>The Ssreflect language comes with a dedicated <a href="http://hal.inria.fr/inria-00258384/en">reference manual</a></li>
-<li>We also wrote a <a href="https://math-comp.github.io/mcb/">book</a> introducing the techniques for writing
-algorithms and proofs and describing the design ideas of the
-library</li>
-</ul>
-</div>
-
-<div id="outline-container-orgff92c09" class="outline-3">
-<h3 id="orgff92c09">More material</h3>
-<div class="outline-text-3" id="text-orgff92c09">
-<ul class="org-ul">
-<li><a href="documentation.html">Books, lectures, videos, etc.</a></li>
-<li><a href="https://github.com/math-comp/math-comp/wiki/Publications">Research papers</a> using Mathematical Components</li>
 </ul>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org1e2a252" class="outline-2">
-<h2 id="org1e2a252">Contact information</h2>
-<div class="outline-text-2" id="text-org1e2a252">
+<div id="outline-container-org8d3e4e4" class="outline-2">
+<h2 id="org8d3e4e4">Other Mathematical Components Libraries</h2>
+<div class="outline-text-2" id="text-org8d3e4e4">
+</div>
+<div id="outline-container-org86b1915" class="outline-3">
+<h3 id="org86b1915">MathComp Analysis</h3>
+<div class="outline-text-3" id="text-org86b1915">
 <ul class="org-ul">
-<li><a href="mailto:sympa@inria.fr?subject=SUBSCRIBE%20ssreflect">Subscribe to the ssreflect mailing list</a> and let us know what you are
-using our libraries for, ask questions, etc.
-<ul class="org-ul">
-<li>You can also browse the <a href="https://sympa.inria.fr/sympa/arc/ssreflect">archives of the list</a> or consult the
-<a href="https://sympa.inria.fr/sympa/info/ssreflect">general information page</a></li>
-</ul></li>
-<li><a href="https://gitter.im/math-comp">Participate to gitter conversations</a></li>
-<li>Zulip channel to come</li>
+<li>See <a href="https://github.com/math-comp/analysis/blob/master/INSTALL.md">INSTALL.md</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgc0b582a" class="outline-2">
-<h2 id="orgc0b582a">Authors and Contributors</h2>
-<div class="outline-text-2" id="text-orgc0b582a">
-<p>
-The Mathematical Components library and the Ssreflect proof language
-are developed by the <a href="http://www.msr-inria.fr/projects/mathematical-components-2/">Mathematical Components team</a> at the <a href="http://www.msr-inria.fr/">Inria-Microsoft Research Joint Centre</a>
-</p>
-
-
-<p style="text-align:center;>
-<a href="http://www.msr-inria.fr/"><img src="./logo-MS-Research-Inria-Joint-Centre.png" alt="Microsoft Research - Inria Joint Centre" style="width:20%;margin-left:auto;margin-right:auto;"/></a>
-</p>
-
-<footer>
-<p><small>Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-</footer>
+<div id="outline-container-orgaef423d" class="outline-3">
+<h3 id="orgaef423d">Others</h3>
+<div class="outline-text-3" id="text-orgaef423d">
+<ul class="org-ul">
+<li>See <a href="https://github.com/math-comp">github</a></li>
+</ul>
+</div>
 </div>
 </div>
 </div>
