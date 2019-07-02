@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2019-07-02 Tue 16:04 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mathematical Components: Research Papers</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Reynald Affeldt" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css"> body {font-family: Arial, Helvetica; margin-left: 5em; font-size: large;} </style>
+<style type="text/css"> h1 {margin-left: 0em; padding: 0px; text-align: center} </style>
+<style type="text/css"> h2 {margin-left: 0em; padding: 0px; color: #580909} </style>
+<style type="text/css"> h3 {margin-left: 1em; padding: 0px; color: #C05001;} </style>
+<style type="text/css"> body { width: 1100px; margin-left: 30px; }</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2017 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Mathematical Components: Research Papers</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org0ef4185">Mathematics</a></li>
+<li><a href="#org00a9851">Programming and Algorithms</a></li>
+<li><a href="#org0062747">Other Applications</a></li>
+<li><a href="#org3f11015">Tooling about SSReflect and the Mathematical Components</a></li>
+</ul>
+</div>
+</div>
+<p>
+This is a list of research results using the Mathematical Components published
+among other in the following venues:
+</p>
+<ul class="org-ul">
+<li>ITP = Interactive Theorem Proving</li>
+<li>CPP = Certified Programs and Proofs</li>
+<li>CICM = Conference on Intelligent Computer Mathematics</li>
+<li>LMCS = Logical Methods in Computer Science</li>
+<li>ICFP = International Conference on Functional Programming</li>
+<li>POPL = Principles of Programming Languages</li>
+<li>PPDP = Principles and Practice of Declarative Programming</li>
+</ul>
+
+<p>
+This list is non-exhaustive and not up-to-date (it stop at 2018,
+should be updated soon).  Initial contents come from the <a href="https://github.com/math-comp/math-comp/wiki/Publications">official
+wiki</a>.
+</p>
+
+<div id="outline-container-org0ef4185" class="outline-2">
+<h2 id="org0ef4185">Mathematics</h2>
+<div class="outline-text-2" id="text-org0ef4185">
+<ul class="org-ul">
+<li>Xavier Allamigeon, Ricardo D. Katz.
+<span class="underline">A formalization of convex polyhedra based on the simplex method</span>. ITP 2017</li>
+<li>Evmorfia-Iro Bartzia.
+<span class="underline">A Formalization of Elliptic Curves for Cryptography</span>. PhD thesis, Université Paris-Saclay, 2017, <a href="https://pastel.archives-ouvertes.fr/tel-01563979/">pdf</a></li>
+<li>Guillaume Cano, Cyril Cohen, Maxime Dénès, Anders Mörtberg, Vincent Siles.
+<span class="underline">Formalized linear algebra over Elementary Divisor Rings in Coq</span>.
+LMCS 12(2), 2016</li>
+<li>Cyril Cohen, Boris Djalal.
+<span class="underline">Formalization of a newton series representation of polynomials</span>. CPP 2016</li>
+<li>Ken'ichi Kuga, Manabu Hagiwara, Mitsuharu Yamamoto.
+<span class="underline">Formalization of Bing's Shrinking Method in Geometric Topology</span>. CICM 2016</li>
+<li>Gallego Arias, Emilio Jesús, Pierre Jouvelot.
+<span class="underline">Adventures in the (not so)Complex Space</span>. The 7th Coq Workshop,  <a href="https://github.com/ejgallego/mini-dft-coq">Paper/Code/Slides</a></li>
+<li>Frédéric Chyzak, Assia Mahboubi, Thomas Sibut-Pinote, Enrico Tassi.
+<span class="underline">A Computer-Algebra-Based Formal Proof of the Irrationality of ζ(3)</span>. ITP 2014</li>
+<li>Cyril Cohen, Anders Mörtberg.
+<span class="underline">A Coq Formalization of Finitely Presented Modules</span>. ITP 2014</li>
+<li>Anders Mörtberg.
+<span class="underline">Formalizing Refinements and Constructive Algebra in Type Theory</span>. PhD, 2014</li>
+<li>Evmorfia-Iro Bartzia, Pierre-Yves Strub.
+<span class="underline">A Formal Library for Elliptic Curves in the Coq Proof Assistant</span>. ITP 2014</li>
+<li>Jónathan Heras, Thierry Coquand, Anders Mörtberg, Vincent Siles.
+<span class="underline">Computing persistent homology within Coq/SSReflect</span>. ACM Trans. Comput. Log. 14(4), 2013</li>
+<li>Georges Gonthier, Andrea Asperti, Jeremy Avigad, Yves Bertot, Cyril
+Cohen, François Garillot, Stéphane Le Roux, Assia Mahboubi, Russell
+O'Connor, Sidi Ould Biha, Ioana Pasca, Laurence Rideau, Alexey
+Solovyev, Enrico Tassi, Laurent Théry.
+<span class="underline">A Machine-Checked Proof of the Odd Order Theorem</span>. ITP 2013</li>
+<li>Maxime Dénès, Anders Mörtberg, Vincent Siles.
+<span class="underline">A Refinement-Based Approach to Computational Algebra in Coq</span>. ITP 2012</li>
+<li>Jónathan Heras, Maxime Dénès, Gadea Mata, Anders Mörtberg, María Poza, Vincent Siles.
+<span class="underline">Towards a Certified Computation of Homology Groups for Digital Images</span>.
+Computational Topology in Image Context, 2012</li>
+<li>Assia Mahboubi, Cyril Cohen.
+<span class="underline">Formal proofs in real algebraic geometry: from ordered fields to quantifier elimination</span>.
+LMCS, 2012</li>
+<li>Cyril Cohen.
+<span class="underline">Formalized algebraic numbers: construction and first-order theory</span>.
+PhD thesis, 2011</li>
+<li>Jónathan Heras, María Poza, Maxime Dénès, Laurence Rideau.
+<span class="underline">Incidence Simplicial Matrices Formalized in Coq/SSReflect</span>. Calculemus/MKM 2011: 30-44</li>
+<li>Georges Gonthier.
+<span class="underline">Point-Free, Set-Free Concrete Linear Algebra</span>. ITP 2011</li>
+<li>Thierry Coquand, Anders Mörtberg, Vincent Siles.
+<span class="underline">Coherent and Strongly Discrete Rings in Type Theory</span>. CPP 2012</li>
+</ul>
+</div>
+
+<div id="outline-container-orgecf050e" class="outline-3">
+<h3 id="orgecf050e">Robotics</h3>
+<div class="outline-text-3" id="text-orgecf050e">
+<ul class="org-ul">
+<li>Cyril Cohen, Damien Rouhling.
+<span class="underline">A Formal Proof in Coq of LaSalle's Invariance Principle</span>. ITP 2017</li>
+<li>Reynald Affeldt, Cyril Cohen.
+<span class="underline">Formal Foundations of 3D Geometry to Model Robot Manipulators</span>. CPP 2017</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org00a9851" class="outline-2">
+<h2 id="org00a9851">Programming and Algorithms</h2>
+<div class="outline-text-2" id="text-org00a9851">
+<ul class="org-ul">
+<li>Cyril Cohen, Damien Rouhling.
+<span class="underline">A refinement-based approach to large scale reflection for algebra</span>. JFLA 2017</li>
+<li>Timmy Weerwag.
+<span class="underline">Verifying an elliptic curve cryptographic algorithm_using Coq and the Ssreflect extension</span>.
+Master’s thesis, 2016</li>
+<li>Beta Ziliani, Derek Dreyer, Neelakantan R. Krishnaswami, Aleksandar Nanevski, Viktor Vafeiadis.
+<span class="underline">Mtac: A Monad for Typed Tactic Programming in Coq</span>. Journal of Functional Programming, 2015</li>
+<li>Cyril Cohen, Maxime Dénès, Anders Mörtberg.
+<span class="underline">Refinements for free!</span>. CPP 2013</li>
+<li>Germán Andrés Delbianco, Aleksandar Nanevski.
+<span class="underline">Hoare-Style Reasoning with (Algebraic) Continuations</span>. ICFP 2013</li>
+<li>Andrew Kennedy, Nick Benton, Jonas B. Jensen, Pierre-Evariste Dagand.
+<span class="underline">Coq: the world's best macro assembler?</span>. PPDP 2013, ACM</li>
+<li>Beta Ziliani, Derek Dreyer, Neelakantan R. Krishnaswami, Aleksandar Nanevski, Viktor Vafeiadis.
+<span class="underline">Mtac: A Monad for Typed Tactic Programming in Coq</span>. ICFP 2013</li>
+<li>Aleksandar Nanevski, Viktor Vafeiadis, Josh Berdine.
+<span class="underline">Structuring the Verification of Heap-Manipulating Programs</span>. POPL 2010</li>
+</ul>
+</div>
+
+<div id="outline-container-orgda40785" class="outline-3">
+<h3 id="orgda40785">Concurrency</h3>
+<div class="outline-text-3" id="text-orgda40785">
+<ul class="org-ul">
+<li>Ilya Sergey, James R. Wilcox, Zachary Tatlock.
+<span class="underline">Programming and Proving with Distributed Protocols</span>. POPL 2018</li>
+<li>Germán Andrés Delbianco, Ilya Sergey, Aleksandar Nanevski, Anindya Banerjee.
+<span class="underline">Concurrent Data Structures Linked in Time</span>. ECOOP 2017</li>
+<li>Mitsuharu Yamamoto, Shogo Sekine, Saki Matsumoto.
+<span class="underline">Formalization of Karp-Miller Tree Construction on Petri Nets</span>. CPP 2017</li>
+<li>Germán Andrés Delbianco.
+<span class="underline">Hoare-style Reasoning with Higher-order Control: Continuations and Concurrency</span>.
+PhD in Computer Science thesis, Universidad Politécnica de Madrid, Spain, July 2017</li>
+<li>Ilya Sergey, Aleksandar Nanevski, Anindya Banerjee, Germán Andrés Delbianco.
+ <span class="underline">Hoare-style Specifications as Correctness Conditions for Non-linearizable Concurrent Objects</span>.
+OOPSLA 2016</li>
+<li>Ilya Sergey, Aleksandar Nanevski, Anindya Banerje.
+<span class="underline">Mechanized Verification of Fine-grained Concurrent Programs</span>. PLDI 2015</li>
+<li>Ilya Sergey, Aleksandar Nanevski, Anindya Banerjee.
+<span class="underline">Specifying and Verifying Concurrent Algorithms with Histories and Subjectivity</span>. ESOP 2015</li>
+<li>Aleksandar Nanevski, Ruy Ley-Wild, Ilya Sergey, Germán Andrés Delbianco.
+ <span class="underline">Communicating State Transition Systems for Fine-Grained Concurrent Resources</span>.
+ESOP 2014</li>
+<li>Ruy Ley-Wild, Aleksandar Nanevski.
+<span class="underline">Subjective Auxiliary State for Coarse-Grained Concurrency</span>. POPL 2013</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org91cc365" class="outline-3">
+<h3 id="org91cc365">Information Flow</h3>
+<div class="outline-text-3" id="text-org91cc365">
+<ul class="org-ul">
+<li>Aleksandar Nanevski, Anindya Banerjee, Deepak Garg.
+<span class="underline">Dependent Type Theory for Verification of Information Flow and Access Control Policies</span>.
+ACM Transactions on Programming Languages and Systems (TOPLAS), 35(2):6:1-6:41, 2013</li>
+<li>Gordon Stewart, Anindya Banerjee, Aleksandar Nanevski.
+<span class="underline">Dependent Types for Enforcement of Information Flow and Erasure Policies in Heterogeneous Data Structures</span>.
+PPDP 2013.</li>
+<li>Aleksandar Nanevski, Anindya Banerjee, Deepak Garg.
+ <span class="underline">Verification of Information Flow and Access Control Policies with Dependent Types</span>.
+IEEE Symposium on Security and Privacy (S&amp;P), 2011</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0062747" class="outline-2">
+<h2 id="org0062747">Other Applications</h2>
+<div class="outline-text-2" id="text-org0062747">
+<ul class="org-ul">
+<li>George Pîrlea, Ilya Sergey. <span class="underline">Mechanising Blockchain Consensus</span>. CPP 2018</li>
+<li>Gallego Arias, Emilio Jesús, Olivier Hermant, Pierre Jouvelot.
+<span class="underline">A Taste of Sound Reasoning in Faust</span>.
+Thirteenth Linux Audio Conference,  <a href="https://github.com/ejgallego/mini-faust-coq">Paper/Code/Slides</a>, 2015</li>
+<li>Maxime Dénès, Benjamin Lesage, Yves Bertot, Adrien Richard.
+<span class="underline">Formal proof of theorems on genetic regulatory networks</span>. SYNACS 2009, IEEE</li>
+</ul>
+</div>
+
+<div id="outline-container-org8bb1a29" class="outline-3">
+<h3 id="org8bb1a29">Logic, Types, and Verification</h3>
+<div class="outline-text-3" id="text-org8bb1a29">
+<ul class="org-ul">
+<li>Véronique Benzaken, Evelyne Contejean, Stefania Dumbrava.
+<span class="underline">Certifying Standard and Stratified Datalog Inference Engines in SSReflect</span>. ITP 2017</li>
+<li>F. Cerqueira, F. Stutz, B. Brandenburg.
+ <span class="underline">Prosa: A Case for Readable Mechanized Schedulability Analysis</span>.
+Proceedings of the 28th Euromicro Conference on Real-Time Systems (ECRTS 2016)</li>
+<li>Christian Doczkal, Gert Smolka.
+<span class="underline">Completeness and Decidability Results for CTL in Coq</span>. ITP 2014</li>
+<li>Christian Doczkal, Gert Smolka.
+<span class="underline">Constructive Completeness for Modal Logic with Transitive Closure</span>. CPP</li>
+<li>Christian Doczkal, Gert Smolka.
+<span class="underline">Constructive Formalization of Hybrid Logic with Eventualities</span>. CPP 2011</li>
+<li>Kasper Svendsen, Lars Birkedal, Aleksandar Nanevski.
+ <span class="underline">Partiality, State and Dependent Types</span>.
+International Conference on Typed Lambda Calculi and Applications (TLCA)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org253f049" class="outline-3">
+<h3 id="org253f049">Information theory</h3>
+<div class="outline-text-3" id="text-org253f049">
+<ul class="org-ul">
+<li>Kyosuke Nakano, Manabu Hagiwara.
+<span class="underline">Formalization of binary symmetric erasure channel based on infotheo</span>.
+Proceeding of International Symposium on Information Theory and its Application 2016 (ISITA 2016)</li>
+<li>Reynald Affeldt, Jacques Garrigue, Takafumi Saikawa.
+<span class="underline">Formalization of Reed-Solomon codes and progress report on formalization of LDPC codes</span>.
+Proceeding of International Symposium on Information Theory and its Application 2016 (ISITA 2016)</li>
+<li>Reynald Affeldt, Jacques Garrigue.
+<span class="underline">Formalization of error-correcting codes: from Hamming to modern coding theory</span>. ITP 2015.</li>
+<li>Ryosuke Obi, Manabu Hagiwara, Reynald Affeldt.
+ <span class="underline">Formalization of the variable-length source coding theorem: Direct part</span>.
+Proceeding of International Symposium on Information Theory and its Application 2014 (ISITA 2014)</li>
+<li>Reynald Affeldt, Manabu Hagiwara, Jonas Sénizergues.
+<span class="underline">Formalization of Shannon's theorems</span>. Journal of Automated Reasoning, 2014</li>
+<li>Reynald Affeldt, Manabu Hagiwara.
+<span class="underline">Formalization of Shannon's Theorems in SSReflect-Coq</span>. ITP 2012</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3f11015" class="outline-2">
+<h2 id="org3f11015">Tooling about SSReflect and the Mathematical Components</h2>
+<div class="outline-text-2" id="text-org3f11015">
+<ul class="org-ul">
+<li>Jónathan Heras, Ekaterina Komendantskaya.
+<span class="underline">Proof Pattern Search in Coq/SSReflect</span>. CoRR abs/1402.0081</li>
+<li>Georges Gonthier, Beta Ziliani, Aleksandar Nanevski, Derek Dreyer.
+<span class="underline">How to make ad hoc proof automation less ad hoc</span>. Journal of Functional Programming</li>
+<li>Jónathan Heras, Ekaterina Komendantskaya.
+<span class="underline">Statistical Proof-Patterns in Coq/SSReflect</span>. CoRR abs/1301.6039</li>
+<li>Vladimir Komendantsky, Alexander Konovalov, Steve Linton.
+<span class="underline">Interfacing Coq + SSReflect with GAP</span>. Electr. Notes Theor. Comput. Sci. 285</li>
+<li>Iain Whiteside, David Aspinall, Gudmund Grov.
+<span class="underline">An Essence of SSReflect</span>. AISC/MKM/Calculemus</li>
+<li>Georges Gonthier, Enrico Tassi.
+<span class="underline">A Language of Patterns for Subterm Selection</span>. ITP 2012</li>
+<li>Georges Gonthier, Beta Ziliani, Aleksandar Nanevski, Derek Dreyer.
+<span class="underline">How to Make Ad Hoc Proof Automation Less Ad Hoc</span>. ICFP 2011</li>
+<li>Georges Gonthier, Assia Mahboubi.
+<span class="underline">An introduction to small scale reflection in Coq</span>, Journal of Formalized Reasoning</li>
+<li>François Garillot, Georges Gonthier, Assia Mahboubi, Laurence Rideau.
+<span class="underline">Packaging Mathematical Structures</span>. TPHOLs 2019</li>
+</ul>
+</div>
+</div>
+</div>
+</body>
+</html>
