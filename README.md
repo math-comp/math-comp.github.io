@@ -1,5 +1,5 @@
 This directory contains the website:
-  http://math-comp.github.io/math-comp/
+  http://math-comp.github.io/
 What is committed in here goes straight online.
 
 By running make in htmldoc one updates the html files 
