@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-07-01 Mon 21:02 -->
+<!-- 2019-07-03 Wed 10:07 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Mathematical Components: Installation</title>
@@ -237,11 +237,15 @@ for the JavaScript code in this tag.
 <div id="content">
 <h1 class="title">Mathematical Components: Installation</h1>
 
-<div id="outline-container-orgdf57acf" class="outline-2">
-<h2 id="orgdf57acf">Install the Base Mathematical Components Libraries</h2>
-<div class="outline-text-2" id="text-orgdf57acf">
+<div id="outline-container-org9cf85e1" class="outline-2">
+<h2 id="org9cf85e1">Install the Base Mathematical Components Libraries</h2>
+<div class="outline-text-2" id="text-org9cf85e1">
 <ul class="org-ul">
-<li>Using <code>opam</code>, the installation of Mathematical Components is as simple as this:</li>
+<li>The installation of Mathematical Components is best done using <a href="https://opam.ocaml.org/">opam</a>,
+a package manager for <a href="https://ocaml.org/">OCaml</a>, the programming language with which <a href="https://coq.inria.fr/">Coq</a>
+is implemented.</li>
+<li>Using opam, the installation of the base Mathematical Components
+library is as simple as this:</li>
 </ul>
 
 <pre class="example">
@@ -250,17 +254,28 @@ opam install coq-mathcomp-ssreflect
 </pre>
 
 <ul class="org-ul">
-<li><a href="https://github.com/math-comp/math-comp/blob/master/INSTALL.md">INSTALL.md</a> (from the official distribution) contains detailed instructions
+<li>Other base mathematical components libraries can be installed
+similarly using <code>opam install</code>. The available packages can be found
+in the <a href="https://coq.inria.fr/opam/www/">Coq package index</a>, e.g.:
 <ul class="org-ul">
-<li>using <code>opam</code> (various configurations)</li>
-<li>using <code>make</code></li>
+<li><code>coq-mathcomp-algebra</code>,</li>
+<li><code>coq-mathcomp-field</code>,</li>
+<li>etc.</li>
+</ul></li>
+
+<li>You can find more detailed installation instructions in <a href="https://github.com/math-comp/math-comp/blob/master/INSTALL.md">INSTALL.md</a>
+(from the official distribution), this includes:
+<ul class="org-ul">
+<li>various ways of installing using <code>opam</code></li>
+<li>installation from the source files (using <code>make</code>)</li>
+<li>more to come (using nix)</li>
 </ul></li>
 </ul>
 </div>
 
-<div id="outline-container-orgffc6a1e" class="outline-3">
-<h3 id="orgffc6a1e">In Other Languages</h3>
-<div class="outline-text-3" id="text-orgffc6a1e">
+<div id="outline-container-org37c3904" class="outline-3">
+<h3 id="org37c3904">Installation Instructions In other Languages</h3>
+<div class="outline-text-3" id="text-org37c3904">
 <ul class="org-ul">
 <li>Installation instructions in <a href="https://staff.aist.go.jp/reynald.affeldt/ssrcoq/install.html">Japanese, 日本語</a>
 <ul class="org-ul">
@@ -271,22 +286,28 @@ opam install coq-mathcomp-ssreflect
 </div>
 </div>
 
-<div id="outline-container-org5e7e387" class="outline-2">
-<h2 id="org5e7e387">Other Mathematical Components Libraries</h2>
-<div class="outline-text-2" id="text-org5e7e387">
+<div id="outline-container-orgc3b04cb" class="outline-2">
+<h2 id="orgc3b04cb">Other Mathematical Components Libraries</h2>
+<div class="outline-text-2" id="text-orgc3b04cb">
 <p>
-They build on top of the base Mathematical Components libraries:
+There are already several libraries that build on top of the base
+Mathematical Components libraries:
 </p>
 
 <ol class="org-ol">
+<li>The Four Color theorem
+<ul class="org-ul">
+<li>Available as the opam package <code>coq-fourcolor</code></li>
+</ul></li>
+<li>The Odd Order theorem
+<ul class="org-ul">
+<li>Available as the opam package <code>coq-mathcomp-odd-order</code></li>
+</ul></li>
 <li>MathComp Analysis
 <ul class="org-ul">
-<li>See <a href="https://github.com/math-comp/analysis/blob/master/INSTALL.md">INSTALL.md</a></li>
+<li>WIP, see <a href="https://github.com/math-comp/analysis/blob/master/INSTALL.md">INSTALL.md</a></li>
 </ul></li>
-<li>Others
-<ul class="org-ul">
-<li>See <a href="https://github.com/math-comp">github</a></li>
-</ul></li>
+<li>See the Mathematical Components' <a href="https://github.com/math-comp">github</a> for more libraries</li>
 </ol>
 </div>
 </div>

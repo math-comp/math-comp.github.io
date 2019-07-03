@@ -12,28 +12,45 @@
 
 * Install the Base Mathematical Components Libraries
 
-- Using ~opam~, the installation of Mathematical Components is as simple as this:
+- The installation of Mathematical Components is best done using [[https://opam.ocaml.org/][opam]],
+  a package manager for [[https://ocaml.org/][OCaml]], the programming language with which [[https://coq.inria.fr/][Coq]]
+  is implemented.
+- Using opam, the installation of the base Mathematical Components
+  library is as simple as this:
 
 #+BEGIN_SRC
 opam repo add coq-released https://coq.inria.fr/opam/released
 opam install coq-mathcomp-ssreflect
 #+END_SRC
 
-- [[https://github.com/math-comp/math-comp/blob/master/INSTALL.md][INSTALL.md]] (from the official distribution) contains detailed instructions
-  + using ~opam~ (various configurations)
-  + using ~make~
+- Other base mathematical components libraries can be installed
+  similarly using ~opam install~. The available packages can be found
+  in the [[https://coq.inria.fr/opam/www/][Coq package index]], e.g.:
+  + ~coq-mathcomp-algebra~,
+  + ~coq-mathcomp-field~,
+  + etc.
 
-** In Other Languages
+- You can find more detailed installation instructions in [[https://github.com/math-comp/math-comp/blob/master/INSTALL.md][INSTALL.md]]
+  (from the official distribution), this includes:
+  + various ways of installing using ~opam~
+  + installation from the source files (using ~make~)
+  + more to come (using nix)
+
+** Installation Instructions In other Languages
 
 - Installation instructions in [[https://staff.aist.go.jp/reynald.affeldt/ssrcoq/install.html][Japanese, 日本語]]
   + see「パッケージからの設定」for installation using OPAM
 
 * Other Mathematical Components Libraries
 
-They build on top of the base Mathematical Components libraries:
+There are already several libraries that build on top of the base
+Mathematical Components libraries:
 
-1. MathComp Analysis
-  - See [[https://github.com/math-comp/analysis/blob/master/INSTALL.md][INSTALL.md]]
-2. Others
-  - See [[https://github.com/math-comp][github]]
+1. The Four Color theorem
+   - Available as the opam package ~coq-fourcolor~
+2. The Odd Order theorem
+   - Available as the opam package ~coq-mathcomp-odd-order~
+3. MathComp Analysis
+  - WIP, see [[https://github.com/math-comp/analysis/blob/master/INSTALL.md][INSTALL.md]]
+4. See the Mathematical Components' [[https://github.com/math-comp][github]] for more libraries
 
