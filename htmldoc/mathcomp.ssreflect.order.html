@@ -157,9 +157,11 @@
  3. declaring notations for the main operations of this library, by         
     setting the first argument of the definition to the display, e.g.       
     `Notation my_syndef_le x y := @Order.le my_display _ x y.` or           
-    `Notation "x <tt>y" := @Order.lt my_display _ x y (at level ...).`       
+    `Notation "x &lt;=&lt; y" := @Order.lt my_display _ x y (at level ...).`      
     Non overloaded notations will default to the default display.           
-                                                                            
+
+<div class="paragraph"> </div>
+
  One may use displays either for convenience or to disambiguate between     
  different structures defined on "copies" of a type (as explained below.)   
  We provide the following "copies" of types,                                
@@ -167,7 +169,7 @@
             natdvd := nat                                                   
                    == a "copy" of nat which is canonically ordered using    
                       divisibility predicate dvdn.                          
-                      Notation %%|, %%&lt;|, gcd, lcm are used instead of        
+                      Notation %|, %&lt;|, gcd, lcm are used instead of        
                       &lt;=, &lt;, meet and join.                                 
               T^d  := dual T,                                               
                       where dual is a new definition for (fun T =&gt; T)       
@@ -177,56 +179,60 @@
                       i.e. &lt;=^d, &lt;^d, &gt;=&lt;^d, &gt;&lt;^d, `&amp;`^d, `|`^d are         
                       used and displayed instead of                         
                       &lt;=, &lt;, &gt;=&lt;, &gt;&lt;, `&amp;`, `|`                              
-     T *prod#[#d#]# T' := T * T'                                                
+     T *prod[d] T' := T * T'                                                
                    == a "copy" of the cartesian product such that,          
                       if T and T' are canonically ordered,                  
-                      then T *prod#[#d#]# T' is canonically ordered in product  
+                      then T *prod[d] T' is canonically ordered in product  
                       order.                                                
                       i.e. (x1, x2) &lt;= (y1, y2) =                           
                              (x1 &lt;= y1) &amp;&amp; (x2 &lt;= y2),                      
                       and displayed in display d                            
-           T *p T' := T *prod#[#prod_display#]# T'                              
+           T *p T' := T *prod[prod_display] T'                              
                       where prod_display adds an extra ^p to all notations  
-     T *lexi#[#d#]# T' := T * T'                                                
+     T *lexi[d] T' := T * T'                                                
                    == a "copy" of the cartesian product such that,          
                       if T and T' are canonically ordered,                  
-                      then T *lexi#[#d#]# T' is canonically ordered in          
+                      then T *lexi[d] T' is canonically ordered in          
                       lexicographic order                                   
                       i.e. (x1, x2) &lt;= (y1, y2) =                           
                              (x1 &lt;= y1) &amp;&amp; ((x1 &gt;= y1) ==&gt; (x2 &lt;= y2))      
                       and  (x1, x2) &lt; (y1, y2) =                            
                              (x1 &lt;= y1) &amp;&amp; ((x1 &gt;= y1) ==&gt; (x2 &lt; y2))       
                       and displayed in display d                            
-           T *l T' := T *lexi#[#lexi_display#]# T'                              
+           T *l T' := T *lexi[lexi_display] T'                              
                       where lexi_display adds an extra ^l to all notations  
   seqprod_with d T := seq T                                                 
                    == a "copy" of seq, such that if T is canonically        
                       ordered, then seqprod_with d T is canonically ordered 
                       in product order i.e.                                 
-                      #[#:: x1, .., xn#]# &lt;= #[#y1, .., yn#]# =                     
+                      [:: x1, .., xn] &lt;= [y1, .., yn] =                     
                         (x1 &lt;= y1) &amp;&amp; ... &amp;&amp; (xn &lt;= yn)                     
                       and displayed in display d                            
- n.-tupleprod#[#d#]# T == same with n.tuple T                                   
+ n.-tupleprod[d] T == same with n.tuple T                                   
          seqprod T := seqprod_with prod_display T                           
-    n.-tupleprod T := n.-tuple#[#prod_display#]# T                              
+    n.-tupleprod T := n.-tuple[prod_display] T                              
   seqlexi_with d T := seq T                                                 
                    == a "copy" of seq, such that if T is canonically        
                       ordered, then seqprod_with d T is canonically ordered 
                       in lexicographic order i.e.                           
-                      #[#:: x1, .., xn#]# &lt;= #[#y1, .., yn#]# =                     
+                      [:: x1, .., xn] &lt;= [y1, .., yn] =                     
                         (x1 &lt;= x2) &amp;&amp; ((x1 &gt;= y1) ==&gt; ((x2 &lt;= y2) &amp;&amp; ...))  
                       and displayed in display d                            
- n.-tuplelexi#[#d#]# T == same with n.tuple T                                   
+ n.-tuplelexi[d] T == same with n.tuple T                                   
          seqlexi T := lexiprod_with lexi_display T                          
-    n.-tuplelexi T := n.-tuple#[#lexi_display#]# T                              
-                                                                            
+    n.-tuplelexi T := n.-tuple[lexi_display] T                              
+
+<div class="paragraph"> </div>
+
  Beware that canonical structure inference will not try to find the copy of 
  the structures that fits the display one mentioned, but will rather        
  determine which canonical structure and display to use depending on the    
  copy of the type one provided. In this sense they are merely displays      
  to inform the user of what the inference did, rather than additional       
  input for the inference.                                                   
-                                                                            
+
+<div class="paragraph"> </div>
+
  Existing displays are either dual_display d (where d is a display),        
  dvd_display (both explained above), ring_display (from algebra/ssrnum      
  to change the scope of the usual notations to ring_scope). We also provide 
@@ -234,25 +240,31 @@
  respectively.                                                              
  The default display is tt and users can define their own as explained      
  above.                                                                     
-                                                                            
+
+<div class="paragraph"> </div>
+
  For porderType we provide the following operations                         
-   #[#arg min_(i &lt; i0 | P) M#]# == a value i : T minimizing M : R, subject to   
+   [arg min(i &lt; i0 | P) M] == a value i : T minimizing M : R, subject to   
                       the condition P (i may appear in P and M), and        
                       provided P holds for i0.                              
-   #[#arg max_(i &gt; i0 | P) M#]# == a value i maximizing M subject to P and      
+   [arg max(i &gt; i0 | P) M] == a value i maximizing M subject to P and      
                       provided P holds for i0.                              
-   #[#arg min_(i &lt; i0 in A) M#]# == an i \in A minimizing M if i0 \in A.        
-   #[#arg max_(i &gt; i0 in A) M#]# == an i \in A maximizing M if i0 \in A.        
-   #[#arg min_(i &lt; i0) M#]# == an i : T minimizing M, given i0 : T.             
-   #[#arg max_(i &gt; i0) M#]# == an i : T maximizing M, given i0 : T.             
+   [arg min(i &lt; i0 in A) M] == an i \in A minimizing M if i0 \in A.        
+   [arg max(i &gt; i0 in A) M] == an i \in A maximizing M if i0 \in A.        
+   [arg min(i &lt; i0) M] == an i : T minimizing M, given i0 : T.             
+   [arg max(i &gt; i0) M] == an i : T maximizing M, given i0 : T.             
  with head symbols Order.arg_min and Order.arg_max                          
  The user may use extremumP or extremum_inP to eliminate them.              
-                                                                            
+
+<div class="paragraph"> </div>
+
  In order to build the above structures, one must provide the appropriate   
  mixin to the following structure constructors. The list of possible mixins 
  is indicated after each constructor. Each mixin is documented in the next  
  paragraph.                                                                 
-                                                                            
+
+<div class="paragraph"> </div>
+
  POrderType disp T pord_mixin                                               
                   == builds a porderType from a canonical choiceType        
                      instance of T where pord_mixin can be of types         
@@ -260,14 +272,18 @@
                        leOrderMixin, or ltOrderMixin                        
                      or computed using PcanPOrderMixin or CanPOrderMixin.   
                      disp is a display as explained above                   
-                                                                            
+
+<div class="paragraph"> </div>
+
  LatticeType T lat_mixin                                                    
                   == builds a latticeType from a porderType where lat_mixin 
                      can be of types                                        
                        latticeMixin, meetJoinMixin, leOrderMixin,           
                        ltOrderMixin, totalPOrderMixin                       
                      or computed using IsoLatticeMixin.                     
-                                                                            
+
+<div class="paragraph"> </div>
+
  DistrLatticeType T lat_mixin                                               
                   == builds a distrLatticeType from a porderType where      
                      lat_mixin can be of types                              
@@ -275,154 +291,274 @@
                        leOrderMixin, ltOrderMixin, totalPOrderMixin, or     
                        totalLatticeMixin                                    
                      or computed using IsoLatticeMixin.                     
-                                                                            
+
+<div class="paragraph"> </div>
+
  BLatticeType T bot_mixin                                                   
                   == builds a bDistrLatticeType from a distrLatticeType and 
                      a bottom element                                       
-                                                                            
+
+<div class="paragraph"> </div>
+
  TBLatticeType T top_mixin                                                  
                   == builds a tbDistrLatticeType from a bDistrLatticeType   
                      and a top element                                      
-                                                                            
+
+<div class="paragraph"> </div>
+
  CBLatticeType T sub_mixin                                                  
                   == builds a cbDistrLatticeType from a bDistrLatticeType   
                      and a difference operation                             
-                                                                            
+
+<div class="paragraph"> </div>
+
  CTBLatticeType T compl_mixin                                               
                   == builds a ctbDistrLatticeType from a tbDistrLatticeType 
                      and a complement operation                             
-                                                                            
+
+<div class="paragraph"> </div>
+
  OrderType T ord_mixin                                                      
                   == builds an orderType from a distrLatticeType  where     
                      ord_mixin can be of types                              
                        leOrderMixin, ltOrderMixin, totalPOrderMixin,        
                        totalLatticeMixin, or totalOrderMixin                
                      or computed using MonoTotalMixin.                      
-                                                                            
+
+<div class="paragraph"> </div>
+
  Additionally:                                                              
- - #[#porderType of _ #]# ... notations are available to recover structures on   
+<ul class="doclist">
+<li> [porderType of _ ] ... notations are available to recover structures on   
     "copies" of the types, as in eqtype, choicetype, ssralg...              
- - #[#finPOrderType of _ #]# ... notations to compute joins between finite types 
+
+</li>
+<li> [finPOrderType of _ ] ... notations to compute joins between finite types 
                             and ordered types                               
-                                                                            
+
+</li>
+</ul>
+
+<div class="paragraph"> </div>
+
  List of possible mixins (a.k.a. factories):                                
-                                                                            
- - lePOrderMixin == on a choiceType, takes le, lt,                          
+
+<div class="paragraph"> </div>
+
+<ul class="doclist">
+<li> lePOrderMixin == on a choiceType, takes le, lt,                          
                     reflexivity, antisymmetry and transitivity of le.       
                     (can build:  porderType)                                
-                                                                            
- - ltPOrderMixin == on a choiceType, takes le, lt,                          
+
+<div class="paragraph"> </div>
+
+
+</li>
+<li> ltPOrderMixin == on a choiceType, takes le, lt,                          
                     irreflexivity and transitivity of lt.                   
                     (can build:  porderType)                                
-                                                                            
- - meetJoinMixin == on a choiceType, takes le, lt, meet, join,              
+
+<div class="paragraph"> </div>
+
+
+</li>
+<li> meetJoinMixin == on a choiceType, takes le, lt, meet, join,              
                     commutativity and associativity of meet and join        
                     idempotence of meet and some De Morgan laws             
                     (can build:  porderType, latticeType, distrLatticeType) 
-                                                                            
- - leOrderMixin == on a choiceType, takes le, lt, meet, join                
+
+<div class="paragraph"> </div>
+
+
+</li>
+<li> leOrderMixin == on a choiceType, takes le, lt, meet, join                
                    antisymmetry, transitivity and totality of le.           
                    (can build:  porderType, latticeType, distrLatticeType,  
                                 orderType)                                  
-                                                                            
- - ltOrderMixin == on a choiceType, takes le, lt,                           
+
+<div class="paragraph"> </div>
+
+
+</li>
+<li> ltOrderMixin == on a choiceType, takes le, lt,                           
                    irreflexivity, transitivity and totality of lt.          
                    (can build:  porderType, latticeType, distrLatticeType,  
                                 orderType)                                  
-                                                                            
- - totalPOrderMixin == on a porderType T, totality of the order of T        
-                    := total (&lt;=%%O : rel T)                                 
+
+<div class="paragraph"> </div>
+
+
+</li>
+<li> totalPOrderMixin == on a porderType T, totality of the order of T        
+                    := total (&lt;=%O : rel T)                                 
                    (can build: latticeType, distrLatticeType, orderType)    
-                                                                            
- - totalLatticeMixin == on a latticeType T, totality of the order of T      
-                    := total (&lt;=%%O : rel T)                                 
+
+<div class="paragraph"> </div>
+
+
+</li>
+<li> totalLatticeMixin == on a latticeType T, totality of the order of T      
+                    := total (&lt;=%O : rel T)                                 
                    (can build distrLatticeType, orderType)                  
-                                                                            
- - totalOrderMixin == on a distrLatticeType T, totality of the order of T   
-                    := total (&lt;=%%O : rel T)                                 
+
+<div class="paragraph"> </div>
+
+
+</li>
+<li> totalOrderMixin == on a distrLatticeType T, totality of the order of T   
+                    := total (&lt;=%O : rel T)                                 
                    (can build: orderType)                                   
     NB: the above three mixins are kept separate from each other (even      
         though they are convertible), in order to avoid ambiguous coercion  
         paths.                                                              
-                                                                            
- - distrLatticeMixin == on a latticeType T, takes meet, join                
+
+<div class="paragraph"> </div>
+
+
+</li>
+<li> distrLatticeMixin == on a latticeType T, takes meet, join                
                    commutativity and associativity of meet and join         
                    idempotence of meet and some De Morgan laws              
                    (can build: distrLatticeType)                            
-                                                                            
- - bDistrLatticeMixin, tbDistrLatticeMixin, cbDistrLatticeMixin,            
+
+<div class="paragraph"> </div>
+
+
+</li>
+<li> bDistrLatticeMixin, tbDistrLatticeMixin, cbDistrLatticeMixin,            
    ctbDistrLatticeMixin                                                     
                 == mixins with one extra operation                          
                    (respectively bottom, top, relative complement, and      
                     total complement)                                       
-                                                                            
+
+</li>
+</ul>
+
+<div class="paragraph"> </div>
+
  Additionally:                                                              
- - #[#porderMixin of T by &lt;: #]# creates a porderMixin by subtyping.             
- - #[#totalOrderMixin of T by &lt;: #]# creates the associated totalOrderMixin.     
- - PCanPOrderMixin, CanPOrderMixin create porderMixin from cancellations    
- - MonoTotalMixin creates a totalPOrderMixin from monotonicity              
- - IsoLatticeMixin creates a distrLatticeMixin from an ordered structure    
+<ul class="doclist">
+<li> [porderMixin of T by &lt;: ] creates a porderMixin by subtyping.             
+
+</li>
+<li> [totalOrderMixin of T by &lt;: ] creates the associated totalOrderMixin.     
+
+</li>
+<li> PCanPOrderMixin, CanPOrderMixin create porderMixin from cancellations    
+
+</li>
+<li> MonoTotalMixin creates a totalPOrderMixin from monotonicity              
+
+</li>
+<li> IsoLatticeMixin creates a distrLatticeMixin from an ordered structure    
    isomorphism (i.e., cancel f f', cancel f' f, {mono f : x y / x &lt;= y})    
-                                                                            
+
+</li>
+</ul>
+
+<div class="paragraph"> </div>
+
  List of "big pack" notations:                                              
- - DistrLatticeOfChoiceType builds a distrLatticeType from a choiceType and 
+<ul class="doclist">
+<li> DistrLatticeOfChoiceType builds a distrLatticeType from a choiceType and 
    a meetJoinMixin.                                                         
- - OrderOfChoiceType builds an orderType from a choiceType, and a           
+
+</li>
+<li> OrderOfChoiceType builds an orderType from a choiceType, and a           
    leOrderMixin or a ltOrderMixin.                                          
- - OrderOfPOrder builds an orderType from a porderType and a                
+
+</li>
+<li> OrderOfPOrder builds an orderType from a porderType and a                
    totalPOrderMixin.                                                        
- - OrderOfLattice builds an orderType from a latticeType and a              
+
+</li>
+<li> OrderOfLattice builds an orderType from a latticeType and a              
    totalLatticeMixin.                                                       
+
+</li>
+</ul>
  NB: These big pack notations should be used only to construct instances on 
      the fly, e.g., in the middle of a proof, and should not be used to     
      declare canonical instances. See field/algebraics_fundamentals.v for   
      an example usage.                                                      
-                                                                            
+
+<div class="paragraph"> </div>
+
  We provide the following canonical instances of ordered types              
- - all possible structures on bool                                          
- - porderType, latticeType, distrLatticeType, orderType and                 
+<ul class="doclist">
+<li> all possible structures on bool                                          
+
+</li>
+<li> porderType, latticeType, distrLatticeType, orderType and                 
    bDistrLatticeType on nat for the leq order                               
- - porderType, latticeType, distrLatticeType, bDistrLatticeType,            
+
+</li>
+<li> porderType, latticeType, distrLatticeType, bDistrLatticeType,            
    cbDistrLatticeType, ctbDistrLatticeType on nat for the dvdn order, where 
    meet and join are respectively gcdn and lcmn                             
- - porderType, latticeType, distrLatticeType, orderType, bDistrLatticeType, 
+
+</li>
+<li> porderType, latticeType, distrLatticeType, orderType, bDistrLatticeType, 
    tbDistrLatticeType, cbDistrLatticeType, ctbDistrLatticeType              
-   on T *prod#[#disp#]# T' a "copy" of T * T'                                   
+   on T *prod[disp] T' a "copy" of T * T'                                   
      using product order (and T *p T' its specialization to prod_display)   
- - porderType, latticeType, distrLatticeType, and orderType, on             
-     T *lexi#[#disp#]# T' another "copy" of T * T', with lexicographic ordering 
+
+</li>
+<li> porderType, latticeType, distrLatticeType, and orderType, on             
+     T *lexi[disp] T' another "copy" of T * T', with lexicographic ordering 
      (and T *l T' its specialization to lexi_display)                       
- - porderType, latticeType, distrLatticeType, and orderType, on             
+
+</li>
+<li> porderType, latticeType, distrLatticeType, and orderType, on             
      {t : T &amp; T' x} with lexicographic ordering                             
- - porderType, latticeType, distrLatticeType, orderType, bDistrLatticeType, 
+
+</li>
+<li> porderType, latticeType, distrLatticeType, orderType, bDistrLatticeType, 
    cbDistrLatticeType, tbDistrLatticeType, ctbDistrLatticeType              
    on seqprod_with disp T a "copy" of seq T                                 
      using product order (and seqprod T' its specialization to prod_display)
- - porderType, latticeType, distrLatticeType, and orderType, on             
+
+</li>
+<li> porderType, latticeType, distrLatticeType, and orderType, on             
      seqlexi_with disp T another "copy" of seq T, with lexicographic        
      ordering (and seqlexi T its specialization to lexi_display)            
- - porderType, latticeType, distrLatticeType, orderType, bDistrLatticeType, 
+
+</li>
+<li> porderType, latticeType, distrLatticeType, orderType, bDistrLatticeType, 
    cbDistrLatticeType, tbDistrLatticeType, ctbDistrLatticeType              
-   on n.-tupleprod#[#disp#]# a "copy" of n.-tuple T                             
+   on n.-tupleprod[disp] a "copy" of n.-tuple T                             
      using product order (and n.-tupleprod T its specialization             
      to prod_display)                                                       
- - porderType, latticeType, distrLatticeType, and orderType, on             
-     n.-tuplelexi#[#d#]# T another "copy" of n.-tuple T, with lexicographic     
+
+</li>
+<li> porderType, latticeType, distrLatticeType, and orderType, on             
+     n.-tuplelexi[d] T another "copy" of n.-tuple T, with lexicographic     
      ordering (and n.-tuplelexi T its specialization to lexi_display)       
+
+</li>
+</ul>
  and all possible finite type instances                                     
-                                                                            
+
+<div class="paragraph"> </div>
+
  In order to get a canonical order on prod or seq, one may import modules   
    DefaultProdOrder or DefaultProdLexiOrder, DefaultSeqProdOrder or         
    DefaultSeqLexiOrder, and DefaultTupleProdOrder or DefaultTupleLexiOrder. 
-                                                                            
+
+<div class="paragraph"> </div>
+
  On orderType, leP ltP ltgtP are the three main lemmas for case analysis.   
  On porderType, one may use comparableP, comparable_leP, comparable_ltP,    
    and comparable_ltgtP, which are the four main lemmas for case analysis.  
-                                                                            
+
+<div class="paragraph"> </div>
+
  We also provide specialized versions of some theorems from path.v.         
-                                                                            
+
+<div class="paragraph"> </div>
+
  This file is based on prior work by                                        
- D. Dreyer, G. Gonthier, A. Nanevski, P-Y Strub, B. Ziliani                  *</tt>
+ D. Dreyer, G. Gonthier, A. Nanevski, P-Y Strub, B. Ziliani                  
 </div>
 <div class="code">
 
