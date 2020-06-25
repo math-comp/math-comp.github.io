@@ -1,0 +1,683 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <style type="text/css">
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+pre { line-height: 125%; }
+body .hll { background-color: #ffffcc }
+body  { background: #ffffff; }
+body .c { color: #228B22; font-style: italic } /* Comment */
+body .k { color: #0000AA } /* Keyword */
+body .o { color: #696969 } /* Operator */
+body .ch { color: #228B22; font-style: italic } /* Comment.Hashbang */
+body .cm { color: #228B22; font-style: italic } /* Comment.Multiline */
+body .cp { color: #228B22; font-style: italic } /* Comment.Preproc */
+body .cpf { color: #228B22; font-style: italic } /* Comment.PreprocFile */
+body .c1 { color: #228B22; font-style: italic } /* Comment.Single */
+body .cs { color: #228B22; font-style: italic } /* Comment.Special */
+body .kc { color: #0000CD } /* Keyword.Constant */
+body .kd { color: #0000AA } /* Keyword.Declaration */
+body .kn { color: #8B008B } /* Keyword.Namespace */
+body .kp { color: #EE0000 } /* Keyword.Pseudo */
+body .kr { color: #9400D3 } /* Keyword.Reserved */
+body .kt { color: #228B22 } /* Keyword.Type */
+body .m { color: #191970 } /* Literal.Number */
+body .n-Literal { color: #000000 } /* Name.Literal */
+body .ow { color: #696969 } /* Operator.Word */
+body .mb { color: #191970 } /* Literal.Number.Bin */
+body .mf { color: #191970 } /* Literal.Number.Float */
+body .mh { color: #191970 } /* Literal.Number.Hex */
+body .mi { color: #191970 } /* Literal.Number.Integer */
+body .mo { color: #191970 } /* Literal.Number.Oct */
+body .il { color: #191970 } /* Literal.Number.Integer.Long */
+
+  </style>
+</head>
+<body>
+<h2></h2>
+
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">From</span> <span class="n">Coq</span> <span class="kn">Require</span> <span class="kn">Import</span> <span class="n">ssreflect</span> <span class="n">ZArith</span><span class="o">.</span>
+<span class="kn">Reserved</span> <span class="kn">Notation</span> <span class="s2">&quot;| x |&quot;</span>   <span class="o">(</span><span class="n">at</span> <span class="n">level</span> <span class="mi">30</span><span class="o">).</span>
+<span class="kn">Reserved</span> <span class="kn">Notation</span>  <span class="s2">&quot;x ~~ y&quot;</span> <span class="o">(</span><span class="n">at</span> <span class="n">level</span> <span class="mi">30</span><span class="o">).</span>
+
+<span class="c">(***************)</span>
+<span class="c">(* Section 2.1 *)</span>
+<span class="c">(***************)</span>
+<span class="kn">Record</span> <span class="n">flatNormSpace</span> <span class="o">:=</span> <span class="n">FlatNormSpace</span> <span class="o">{</span>
+  <span class="n">carrier</span> <span class="o">:</span> <span class="kt">Type</span> <span class="o">;</span>
+  <span class="n">fminus</span> <span class="o">:</span> <span class="n">carrier</span> <span class="o">-&gt;</span> <span class="n">carrier</span> <span class="o">-&gt;</span> <span class="n">carrier</span><span class="o">;</span>
+  <span class="n">fnorm</span> <span class="o">:</span> <span class="n">carrier</span> <span class="o">-&gt;</span> <span class="kt">nat</span><span class="o">;</span>
+  <span class="n">fnormP</span> <span class="o">:</span> <span class="k">forall</span> <span class="n">x</span> <span class="o">:</span> <span class="n">carrier</span><span class="o">,</span> <span class="n">fnorm</span> <span class="o">(</span><span class="n">fminus</span> <span class="n">x</span> <span class="n">x</span><span class="o">)</span> <span class="o">=</span> <span class="mi">0</span><span class="o">}.</span>
+
+<span class="kn">Check</span> <span class="n">fminus</span><span class="o">.</span>
+<span class="c">(* fminus : forall f : flatNormSpace,                         *)</span>
+<span class="c">(*   carrier f -&gt; carrier f -&gt; carrier f        *)</span>
+<span class="kn">Check</span> <span class="n">fnormP</span><span class="o">.</span>
+<span class="c">(* fnormP : forall (f : flatNormSpace) (x : carrier f), *)</span>
+<span class="c">(*   fnorm f (fminus f x x) = 0                           *)</span>
+
+<span class="kn">Lemma</span> <span class="n">Z_normP</span> <span class="o">(</span><span class="n">n</span> <span class="o">:</span> <span class="n">Z</span><span class="o">)</span> <span class="o">:</span> <span class="n">Z</span><span class="o">.</span><span class="n">abs_nat</span> <span class="o">(</span><span class="n">Z</span><span class="o">.</span><span class="n">sub</span> <span class="n">n</span> <span class="n">n</span><span class="o">)</span> <span class="o">=</span> <span class="mi">0</span><span class="o">.</span>
+<span class="kn">Proof</span><span class="o">.</span> <span class="kp">by</span> <span class="k">rewrite</span> <span class="n">Z</span><span class="o">.</span><span class="n">sub_diag</span><span class="o">.</span> <span class="kn">Qed</span><span class="o">.</span>
+<span class="kn">Definition</span> <span class="n">Z_flatNormSpace</span> <span class="o">:=</span> <span class="n">FlatNormSpace</span> <span class="n">Z</span> <span class="n">Z</span><span class="o">.</span><span class="n">sub</span> <span class="n">Z</span><span class="o">.</span><span class="n">abs_nat</span> <span class="n">Z_normP</span><span class="o">.</span>
+
+<span class="c">(***************)</span>
+<span class="c">(* Section 2.2 *)</span>
+<span class="c">(***************)</span>
+<span class="kn">Record</span> <span class="n">isModule</span> <span class="n">T</span> <span class="o">:=</span> <span class="n">IsModule</span> <span class="o">{</span><span class="n">minus_op</span> <span class="o">:</span> <span class="n">T</span> <span class="o">-&gt;</span> <span class="n">T</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="o">}.</span>
+<span class="kn">Structure</span> <span class="n">module</span> <span class="o">:=</span> <span class="kn">Module</span> <span class="o">{</span>
+  <span class="n">module_carrier</span> <span class="o">:</span> <span class="kt">Type</span> <span class="o">;</span>
+  <span class="n">module_isModule</span> <span class="o">:</span> <span class="n">isModule</span> <span class="n">module_carrier</span><span class="o">}.</span>
+
+<span class="kn">Definition</span> <span class="n">minus</span> <span class="o">{</span><span class="n">M</span> <span class="o">:</span> <span class="n">module</span><span class="o">}</span> <span class="o">:=</span> <span class="n">minus_op</span> <span class="o">_</span> <span class="o">(</span><span class="n">module_isModule</span> <span class="n">M</span><span class="o">).</span>
+<span class="kn">Notation</span> <span class="s2">&quot;x - y&quot;</span> <span class="o">:=</span> <span class="o">(</span><span class="n">minus</span> <span class="n">x</span> <span class="n">y</span><span class="o">).</span>
+
+<span class="kn">Definition</span> <span class="n">Z_isModule</span> <span class="o">:</span> <span class="n">isModule</span> <span class="n">Z</span> <span class="o">:=</span> <span class="n">IsModule</span> <span class="n">Z</span> <span class="n">Z</span><span class="o">.</span><span class="n">sub</span><span class="o">.</span>
+<span class="kn">Definition</span> <span class="n">Z_module</span> <span class="o">:=</span> <span class="kn">Module</span> <span class="n">Z</span> <span class="n">Z_isModule</span><span class="o">.</span>
+
+<span class="n">Fail</span> <span class="kn">Check</span> <span class="k">forall</span> <span class="n">x</span> <span class="n">y</span> <span class="o">:</span> <span class="n">Z</span><span class="o">,</span> <span class="n">x</span> <span class="o">-</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="o">.</span>
+
+<span class="kn">Canonical</span> <span class="n">Z_module</span><span class="o">.</span>
+<span class="kn">Check</span> <span class="k">forall</span> <span class="n">x</span> <span class="n">y</span> <span class="o">:</span> <span class="n">Z</span><span class="o">,</span> <span class="n">x</span> <span class="o">-</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="o">.</span>
+<span class="kn">Print</span> <span class="kn">Canonical</span> <span class="kn">Projections</span><span class="o">.</span>
+<span class="c">(* the line Z &lt;- module_carrier (Z_module) tries to solve *)</span>
+<span class="c">(* the equation `module_carrier ?M =?= Z`                 *)</span>
+
+<span class="c">(* begin omitted from the paper *)</span>
+<span class="kn">Coercion</span> <span class="n">module_carrier</span> <span class="o">:</span> <span class="n">module</span> <span class="o">&gt;-&gt;</span> <span class="n">Sortclass</span><span class="o">.</span>
+<span class="c">(* end omitted from the paper   *)</span>
+
+<span class="c">(***************)</span>
+<span class="c">(* Section 2.3 *)</span>
+<span class="c">(***************)</span>
+<span class="kn">Record</span> <span class="n">naiveNormMixin</span> <span class="o">(</span><span class="n">T</span> <span class="o">:</span> <span class="n">module</span><span class="o">)</span> <span class="o">:=</span> <span class="n">NaiveNormMixin</span> <span class="o">{</span>
+  <span class="n">naive_norm_op</span>  <span class="o">:</span> <span class="n">T</span> <span class="o">-&gt;</span> <span class="kt">nat</span> <span class="o">;</span>
+  <span class="n">naive_norm_opP</span> <span class="o">:</span> <span class="k">forall</span> <span class="n">x</span> <span class="o">:</span> <span class="n">T</span><span class="o">,</span> <span class="n">naive_norm_op</span> <span class="o">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">x</span><span class="o">)</span> <span class="o">=</span> <span class="mi">0</span><span class="o">}.</span>
+<span class="kn">Record</span> <span class="n">isNaiveNormSpace</span> <span class="o">(</span><span class="n">T</span> <span class="o">:</span> <span class="kt">Type</span><span class="o">)</span> <span class="o">:=</span> <span class="n">IsNaiveNormSpace</span> <span class="o">{</span>
+  <span class="n">nbase</span> <span class="o">:</span> <span class="n">isModule</span> <span class="n">T</span> <span class="o">;</span>
+  <span class="n">nmix</span>  <span class="o">:</span> <span class="n">naiveNormMixin</span> <span class="o">(</span><span class="kn">Module</span> <span class="o">_</span> <span class="n">nbase</span><span class="o">)}.</span>
+<span class="kn">Structure</span> <span class="n">naiveNormSpace</span> <span class="o">:=</span> <span class="n">NaiveNormSpace</span> <span class="o">{</span>
+  <span class="n">naive_norm_carrier</span>          <span class="o">:&gt;</span> <span class="kt">Type</span><span class="o">;</span>
+  <span class="n">naive_normSpace_isNormSpace</span> <span class="o">:</span> <span class="n">isNaiveNormSpace</span> <span class="n">naive_norm_carrier</span><span class="o">}.</span>
+<span class="kn">Definition</span> <span class="n">naive_norm</span> <span class="o">{</span><span class="n">N</span> <span class="o">:</span> <span class="n">naiveNormSpace</span><span class="o">}</span> <span class="o">:=</span>
+  <span class="n">naive_norm_op</span> <span class="o">_</span> <span class="o">(</span><span class="n">nmix</span> <span class="o">_</span> <span class="o">(</span><span class="n">naive_normSpace_isNormSpace</span> <span class="n">N</span><span class="o">)).</span>
+<span class="kn">Notation</span> <span class="s2">&quot;| x |&quot;</span> <span class="o">:=</span> <span class="o">(</span><span class="n">naive_norm</span> <span class="n">x</span><span class="o">).</span>
+
+<span class="n">Fail</span> <span class="kn">Check</span> <span class="k">forall</span> <span class="o">(</span><span class="n">N</span> <span class="o">:</span> <span class="n">naiveNormSpace</span><span class="o">)</span> <span class="o">(</span><span class="n">x</span> <span class="n">y</span> <span class="o">:</span> <span class="n">N</span><span class="o">),</span> <span class="n">x</span> <span class="o">-</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="o">.</span>
+
+<span class="c">(* With similar techniques as before,</span>
+<span class="c">  one can make automatic the search for a substructure *)</span>
+<span class="kn">Canonical</span> <span class="n">naiveNorm_isModule</span> <span class="o">(</span><span class="n">N</span> <span class="o">:</span> <span class="n">naiveNormSpace</span><span class="o">)</span> <span class="o">:=</span>
+  <span class="kn">Module</span> <span class="n">N</span> <span class="o">(</span><span class="n">nbase</span> <span class="o">_</span> <span class="o">(</span><span class="n">naive_normSpace_isNormSpace</span> <span class="n">N</span><span class="o">)).</span>
+<span class="kn">Check</span> <span class="k">forall</span> <span class="o">(</span><span class="n">N</span> <span class="o">:</span> <span class="n">naiveNormSpace</span><span class="o">)</span> <span class="o">(</span><span class="n">x</span> <span class="n">y</span> <span class="o">:</span> <span class="n">N</span><span class="o">),</span> <span class="n">x</span> <span class="o">-</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="o">.</span>
+
+<span class="c">(* begin omitted from the paper *)</span>
+<span class="kn">Arguments</span> <span class="n">IsNaiveNormSpace</span> <span class="o">{_</span> <span class="o">_}.</span>
+
+<span class="kn">Definition</span> <span class="n">naive_normP</span> <span class="o">(</span><span class="n">N</span> <span class="o">:</span> <span class="n">naiveNormSpace</span><span class="o">)</span> <span class="o">(</span><span class="n">x</span> <span class="o">:</span> <span class="n">N</span><span class="o">)</span> <span class="o">:</span> <span class="o">|</span><span class="n">x</span> <span class="o">-</span> <span class="n">x</span><span class="o">|</span> <span class="o">=</span> <span class="mi">0</span><span class="o">.</span>
+<span class="kn">Proof</span><span class="o">.</span> <span class="kp">exact</span><span class="o">:</span> <span class="n">naive_norm_opP</span><span class="o">.</span> <span class="kn">Qed</span><span class="o">.</span>
+<span class="c">(* end omitted from the paper   *)</span>
+
+<span class="c">(***************)</span>
+<span class="c">(* Section 3.1 *)</span>
+<span class="c">(***************)</span>
+<span class="kn">Record</span> <span class="n">isBallSpace</span> <span class="n">T</span>     <span class="o">:=</span> <span class="n">IsBallSpace</span> <span class="o">{</span>
+  <span class="n">ball_op</span>  <span class="o">:</span> <span class="n">T</span> <span class="o">-&gt;</span> <span class="n">T</span> <span class="o">-&gt;</span> <span class="kt">Prop</span><span class="o">;</span>
+  <span class="n">ball_opP</span> <span class="o">:</span> <span class="k">forall</span> <span class="n">x</span> <span class="o">:</span> <span class="n">T</span><span class="o">,</span> <span class="n">ball_op</span> <span class="n">x</span> <span class="n">x</span><span class="o">}.</span>
+<span class="kn">Structure</span> <span class="n">ballSpace</span>    <span class="o">:=</span> <span class="n">BallSpace</span> <span class="o">{</span>
+  <span class="n">ball_carrier</span>          <span class="o">:&gt;</span> <span class="kt">Type</span><span class="o">;</span>
+  <span class="n">ballSpace_isBallSpace</span> <span class="o">:</span> <span class="n">isBallSpace</span> <span class="n">ball_carrier</span><span class="o">}.</span>
+<span class="kn">Definition</span> <span class="n">ball</span> <span class="o">{</span><span class="n">N</span> <span class="o">:</span> <span class="n">ballSpace</span><span class="o">}</span> <span class="o">:=</span> <span class="n">ball_op</span> <span class="o">_</span> <span class="o">(</span><span class="n">ballSpace_isBallSpace</span> <span class="n">N</span><span class="o">).</span>
+<span class="kn">Notation</span> <span class="s2">&quot;x ~~ y&quot;</span> <span class="o">:=</span> <span class="o">(</span><span class="n">ball</span> <span class="n">x</span> <span class="n">y</span><span class="o">).</span>
+
+<span class="c">(* begin omitted from the paper *)</span>
+<span class="kn">Definition</span> <span class="n">ballP</span> <span class="o">(</span><span class="n">B</span> <span class="o">:</span> <span class="n">ballSpace</span><span class="o">)</span> <span class="o">(</span><span class="n">x</span> <span class="o">:</span> <span class="n">B</span><span class="o">)</span> <span class="o">:</span> <span class="n">x</span> <span class="o">~~</span> <span class="n">x</span><span class="o">.</span>
+<span class="kn">Proof</span><span class="o">.</span> <span class="kp">exact</span><span class="o">:</span> <span class="n">ball_opP</span><span class="o">.</span> <span class="kn">Qed</span><span class="o">.</span>
+<span class="c">(* end omitted from the paper *)</span>
+
+<span class="kn">Section</span> <span class="n">NaiveNormSpace_BallSpace</span><span class="o">.</span>
+<span class="kn">Variable</span> <span class="o">(</span><span class="n">N</span> <span class="o">:</span> <span class="n">naiveNormSpace</span><span class="o">).</span>
+
+<span class="c">(* The norm_ball definition should come with proofs of the axioms of</span>
+<span class="c">   the ball space structure in real life *)</span>
+<span class="kn">Definition</span> <span class="n">norm_ball</span> <span class="o">(</span><span class="n">x</span> <span class="o">:</span> <span class="n">N</span><span class="o">)</span> <span class="o">:=</span> <span class="k">fun</span> <span class="n">y</span> <span class="o">:</span> <span class="n">N</span> <span class="o">=&gt;</span> <span class="o">|</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="o">|</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="o">.</span>
+
+<span class="c">(* begin omitted from the paper *)</span>
+<span class="kn">Lemma</span> <span class="n">nnorm_ballP</span> <span class="o">(</span><span class="n">x</span> <span class="o">:</span> <span class="n">N</span><span class="o">)</span> <span class="o">:</span> <span class="n">norm_ball</span> <span class="n">x</span> <span class="n">x</span><span class="o">.</span>
+<span class="kn">Proof</span><span class="o">.</span> <span class="kp">by</span> <span class="k">rewrite</span> <span class="o">/</span><span class="n">norm_ball</span> <span class="n">naive_normP</span><span class="o">;</span> <span class="k">constructor</span><span class="o">.</span> <span class="kn">Qed</span><span class="o">.</span>
+<span class="kn">Definition</span> <span class="n">naiveNormSpace_isBallSpace</span> <span class="o">:=</span>
+  <span class="n">IsBallSpace</span> <span class="n">N</span> <span class="n">norm_ball</span> <span class="n">nnorm_ballP</span><span class="o">.</span>
+<span class="c">(* end omitted from the paper   *)</span>
+<span class="c">(* details about naiveNormSpace_isBallSpaceball omitted from the paper *)</span>
+<span class="kn">Canonical</span> <span class="n">nnorm_ballSpace</span> <span class="o">:=</span> <span class="n">BallSpace</span> <span class="n">N</span> <span class="n">naiveNormSpace_isBallSpace</span><span class="o">.</span>
+
+<span class="kn">End</span> <span class="n">NaiveNormSpace_BallSpace</span><span class="o">.</span>
+
+<span class="c">(* begin omitted from the paper *)</span>
+<span class="kn">Coercion</span> <span class="n">nnorm_ballSpace</span> <span class="o">:</span>  <span class="n">naiveNormSpace</span> <span class="o">&gt;-&gt;</span> <span class="n">ballSpace</span><span class="o">.</span>
+<span class="c">(* end omitted from the paper *)</span>
+
+<span class="c">(**************************************************)</span>
+<span class="c">(* Paragraph &quot;Problem with generic constructions&quot; *)</span>
+<span class="c">(**************************************************)</span>
+<span class="c">(* Stability of module, ball space and norm space structures by product *)</span>
+<span class="kn">Section</span> <span class="n">ProdModule</span><span class="o">.</span>
+<span class="kn">Variables</span> <span class="o">(</span><span class="n">M</span> <span class="n">M&#39;</span> <span class="o">:</span> <span class="n">module</span><span class="o">).</span>
+<span class="kn">Definition</span> <span class="n">prod_minus</span> <span class="o">(</span><span class="n">x</span> <span class="n">y</span> <span class="o">:</span> <span class="n">M</span> <span class="o">*</span> <span class="n">M&#39;</span><span class="o">)</span> <span class="o">:=</span> <span class="o">(</span><span class="n">fst</span> <span class="n">x</span> <span class="o">-</span> <span class="n">fst</span> <span class="n">y</span><span class="o">,</span> <span class="n">snd</span> <span class="n">x</span> <span class="o">-</span> <span class="n">snd</span> <span class="n">y</span><span class="o">).</span>
+<span class="kn">Definition</span> <span class="n">prod_isModule</span>             <span class="o">:=</span> <span class="n">IsModule</span> <span class="o">(</span><span class="n">M</span> <span class="o">*</span> <span class="n">M&#39;</span><span class="o">)</span> <span class="n">prod_minus</span><span class="o">.</span>
+<span class="kn">Canonical</span>  <span class="n">prod_Module</span>               <span class="o">:=</span> <span class="kn">Module</span>   <span class="o">(</span><span class="n">M</span> <span class="o">*</span> <span class="n">M&#39;</span><span class="o">)</span> <span class="n">prod_isModule</span><span class="o">.</span>
+<span class="kn">End</span> <span class="n">ProdModule</span><span class="o">.</span>
+
+<span class="kn">Section</span> <span class="n">ProdBallAndNorm</span><span class="o">.</span>
+<span class="kn">Variables</span> <span class="o">(</span><span class="n">B</span> <span class="n">B&#39;</span> <span class="o">:</span> <span class="n">ballSpace</span><span class="o">)</span> <span class="o">(</span><span class="n">N</span> <span class="n">N&#39;</span> <span class="o">:</span> <span class="n">naiveNormSpace</span><span class="o">).</span>
+
+<span class="kn">Definition</span> <span class="n">prod_ball</span> <span class="o">(</span><span class="n">x</span> <span class="n">y</span> <span class="o">:</span> <span class="n">B</span> <span class="o">*</span> <span class="n">B&#39;</span><span class="o">)</span> <span class="o">:=</span> <span class="n">fst</span> <span class="n">x</span> <span class="o">~~</span> <span class="n">fst</span> <span class="n">y</span> <span class="o">/\</span> <span class="n">snd</span> <span class="n">x</span> <span class="o">~~</span> <span class="n">snd</span> <span class="n">y</span><span class="o">.</span>
+<span class="c">(* begin omitted from the paper *)</span>
+<span class="kn">Lemma</span> <span class="n">prod_ballP</span> <span class="o">(</span><span class="n">x</span> <span class="o">:</span> <span class="n">B</span> <span class="o">*</span> <span class="n">B&#39;</span><span class="o">)</span> <span class="o">:</span> <span class="n">prod_ball</span> <span class="n">x</span> <span class="n">x</span><span class="o">.</span>
+<span class="kn">Proof</span><span class="o">.</span> <span class="kp">by</span> <span class="k">split</span><span class="o">;</span> <span class="k">apply</span><span class="o">:</span> <span class="n">ballP</span><span class="o">.</span> <span class="kn">Qed</span><span class="o">.</span>
+<span class="kn">Definition</span> <span class="n">prod_isBallSpace</span> <span class="o">:=</span> <span class="n">IsBallSpace</span> <span class="o">(</span><span class="n">B</span> <span class="o">*</span> <span class="n">B&#39;</span><span class="o">)</span> <span class="n">prod_ball</span> <span class="n">prod_ballP</span><span class="o">.</span>
+<span class="c">(* end omitted from the paper *)</span>
+<span class="c">(* definition of prod_isBallSpace omitted from the paper *)</span>
+<span class="kn">Canonical</span> <span class="n">prod_ballSpace</span> <span class="o">:=</span> <span class="n">BallSpace</span> <span class="o">(</span><span class="n">B</span> <span class="o">*</span> <span class="n">B&#39;</span><span class="o">)</span> <span class="n">prod_isBallSpace</span><span class="o">.</span>
+
+<span class="kn">Definition</span> <span class="n">prod_nnorm</span> <span class="o">(</span><span class="n">x</span> <span class="o">:</span> <span class="n">N</span> <span class="o">*</span> <span class="n">N&#39;</span><span class="o">)</span> <span class="o">:=</span> <span class="n">max</span> <span class="o">(|</span><span class="n">fst</span> <span class="n">x</span><span class="o">|)</span> <span class="o">(|</span><span class="n">snd</span> <span class="n">x</span><span class="o">|).</span>
+<span class="c">(* begin omitted from the paper *)</span>
+<span class="kn">Lemma</span> <span class="n">prod_nnormP</span> <span class="n">x</span> <span class="o">:</span> <span class="n">prod_nnorm</span> <span class="o">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">x</span><span class="o">)</span> <span class="o">=</span> <span class="mi">0</span><span class="o">.</span>
+<span class="kn">Proof</span><span class="o">.</span> <span class="kp">by</span> <span class="k">case</span><span class="o">:</span> <span class="n">x</span> <span class="o">=&gt;</span> <span class="n">x</span> <span class="n">x&#39;</span><span class="o">;</span> <span class="k">rewrite</span> <span class="o">/</span><span class="n">prod_nnorm</span><span class="o">/=</span> <span class="o">!</span><span class="n">naive_normP</span><span class="o">.</span> <span class="kn">Qed</span><span class="o">.</span>
+<span class="kn">Definition</span> <span class="n">prod_naiveNormMixin</span> <span class="o">:=</span> <span class="n">NaiveNormMixin</span> <span class="o">_</span> <span class="n">prod_nnorm</span> <span class="n">prod_nnormP</span><span class="o">.</span>
+<span class="kn">Definition</span> <span class="n">prod_isNNSpace</span> <span class="o">:=</span> <span class="n">IsNaiveNormSpace</span> <span class="n">prod_naiveNormMixin</span><span class="o">.</span>
+<span class="c">(* end omitted from the paper *)</span>
+<span class="c">(* definition of prod_isNaiveNormSpace omitted from the paper *)</span>
+<span class="kn">Canonical</span> <span class="n">prod_naiveNormSpace</span> <span class="o">:=</span> <span class="n">NaiveNormSpace</span> <span class="o">(</span><span class="n">N</span> <span class="o">*</span> <span class="n">N&#39;</span><span class="o">)</span> <span class="n">prod_isNNSpace</span><span class="o">.</span>
+<span class="kn">End</span> <span class="n">ProdBallAndNorm</span><span class="o">.</span>
+
+<span class="kn">Variable</span> <span class="n">P</span> <span class="o">:</span> <span class="k">forall</span> <span class="o">{</span><span class="n">T</span><span class="o">},</span> <span class="o">(</span><span class="n">T</span> <span class="o">-&gt;</span> <span class="kt">Prop</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="kt">Prop</span><span class="o">.</span>
+<span class="kn">Example</span> <span class="n">failure</span> <span class="o">(</span><span class="n">Pball</span> <span class="o">:</span> <span class="k">forall</span> <span class="n">V</span> <span class="o">:</span> <span class="n">naiveNormSpace</span><span class="o">,</span> <span class="k">forall</span> <span class="n">v</span> <span class="o">:</span> <span class="n">V</span><span class="o">,</span> <span class="n">P</span> <span class="o">(</span><span class="n">ball</span> <span class="n">v</span><span class="o">))</span>
+  <span class="o">(</span><span class="n">W</span> <span class="o">:</span> <span class="n">naiveNormSpace</span><span class="o">)</span> <span class="o">(</span><span class="n">w</span> <span class="o">:</span> <span class="n">W</span> <span class="o">*</span> <span class="n">W</span><span class="o">):</span> <span class="n">P</span> <span class="o">(</span><span class="n">ball</span> <span class="n">w</span><span class="o">).</span>
+<span class="c">(* begin omitted from the paper *)</span>
+<span class="n">Fail</span> <span class="k">have</span> <span class="o">_</span> <span class="o">:</span> <span class="k">exists</span> <span class="o">(</span><span class="n">V</span> <span class="o">:</span> <span class="n">naiveNormSpace</span><span class="o">),</span>
+    <span class="n">nnorm_ballSpace</span> <span class="n">V</span> <span class="o">=</span> <span class="n">prod_ballSpace</span> <span class="o">(</span><span class="n">nnorm_ballSpace</span> <span class="n">W</span><span class="o">)</span> <span class="o">(</span><span class="n">nnorm_ballSpace</span> <span class="n">W</span><span class="o">)</span>
+  <span class="kp">by</span> <span class="k">exists</span> <span class="o">(</span><span class="n">prod_naiveNormSpace</span> <span class="n">W</span> <span class="n">W</span><span class="o">);</span> <span class="kp">reflexivity</span><span class="o">.</span>
+<span class="c">(* end omitted from the paper *)</span>
+<span class="kn">Proof</span><span class="o">.</span> <span class="n">Fail</span> <span class="k">apply</span> <span class="n">Pball</span><span class="o">.</span> <span class="n">Abort</span><span class="o">.</span>
+
+<span class="c">(**********************************************************)</span>
+<span class="c">(* Paragraph &quot;Problem with inference of ground instances&quot; *)</span>
+<span class="c">(**********************************************************)</span>
+<span class="kn">Lemma</span> <span class="n">ball_is_nball</span> <span class="o">(</span><span class="n">N</span> <span class="o">:</span> <span class="n">naiveNormSpace</span><span class="o">)</span> <span class="o">(</span><span class="n">x</span> <span class="n">y</span> <span class="o">:</span> <span class="n">N</span><span class="o">)</span> <span class="o">:</span> <span class="n">ball</span> <span class="n">x</span> <span class="n">y</span> <span class="o">&lt;-&gt;</span> <span class="o">|</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="o">|</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="o">.</span>
+<span class="kn">Proof</span><span class="o">.</span> <span class="kp">reflexivity</span><span class="o">.</span> <span class="kn">Qed</span><span class="o">.</span>
+
+<span class="kn">Definition</span> <span class="n">Z_ball</span> <span class="o">(</span><span class="n">m</span> <span class="n">n</span> <span class="o">:</span> <span class="n">Z</span><span class="o">)</span> <span class="o">:=</span> <span class="o">(</span><span class="n">m</span> <span class="o">=</span> <span class="n">n</span> <span class="o">\/</span> <span class="n">m</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">\/</span> <span class="n">m</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="o">)%</span><span class="n">Z</span><span class="o">.</span>
+<span class="c">(* begin omitted from the paper *)</span>
+<span class="kn">Lemma</span> <span class="n">Z_ballP</span> <span class="n">n</span> <span class="o">:</span> <span class="n">Z_ball</span> <span class="n">n</span> <span class="n">n</span><span class="o">.</span> <span class="kn">Proof</span><span class="o">.</span> <span class="kp">by</span> <span class="k">left</span><span class="o">.</span> <span class="kn">Qed</span><span class="o">.</span>
+<span class="kn">Definition</span> <span class="n">Z_isBallSpace</span> <span class="o">:=</span> <span class="n">IsBallSpace</span> <span class="o">_</span> <span class="n">Z_ball</span> <span class="n">Z_ballP</span><span class="o">.</span>
+<span class="c">(* end omitted from the paper *)</span>
+<span class="c">(* definition of Z_isBallSpace omitted from the paper *)</span>
+<span class="kn">Canonical</span> <span class="n">Z_ballSpace</span> <span class="o">:=</span> <span class="n">BallSpace</span> <span class="n">Z</span> <span class="n">Z_isBallSpace</span><span class="o">.</span>
+
+<span class="kn">Definition</span> <span class="n">Z_naiveNormMixin</span> <span class="o">:=</span> <span class="n">NaiveNormMixin</span> <span class="n">Z_module</span> <span class="n">Z</span><span class="o">.</span><span class="n">abs_nat</span> <span class="n">Z_normP</span><span class="o">.</span>
+<span class="kn">Canonical</span> <span class="n">Z_naiveNormSpace</span> <span class="o">:=</span>
+   <span class="n">NaiveNormSpace</span> <span class="n">Z</span> <span class="o">(</span><span class="n">IsNaiveNormSpace</span> <span class="n">Z_naiveNormMixin</span><span class="o">).</span>
+
+<span class="c">(* Now two instances of ballSpace exist on Z:                   *)</span>
+<span class="c">(* the canonical ballSpace of a naiveNormSpace and Z_ballSpace. *)</span>
+<span class="c">(* As a consequence, even if Z is an an instance of normSpace,  *)</span>
+<span class="c">(* we cannot use ball_is_nball. *)</span>
+<span class="kn">Example</span> <span class="n">failure</span> <span class="o">(</span><span class="n">x</span> <span class="n">y</span> <span class="o">:</span> <span class="n">Z</span><span class="o">)</span> <span class="o">:</span> <span class="n">x</span> <span class="o">~~</span> <span class="n">y</span> <span class="o">&lt;-&gt;</span> <span class="o">|</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="o">|</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="o">.</span>
+<span class="kn">Proof</span><span class="o">.</span>
+<span class="k">rewrite</span> <span class="o">-</span><span class="n">ball_is_nball</span><span class="o">.</span>
+<span class="c">(* the goal is: x ~~ y &lt;-&gt; x ~~ y *)</span>
+<span class="n">Fail</span> <span class="kp">reflexivity</span><span class="o">.</span> <span class="c">(* !!! *)</span>
+<span class="n">Abort</span><span class="o">.</span>
+
+<span class="c">(***************)</span>
+<span class="c">(* Section 3.2 *)</span>
+<span class="c">(***************)</span>
+<span class="c">(*INHERITANCE BY INCLUSION*)</span>
+<span class="c">(*The mixin for normedspaces contains the compatibility with ballspaces *)</span>
+<span class="kn">Record</span> <span class="n">normMixin</span> <span class="o">(</span><span class="n">T</span> <span class="o">:</span> <span class="n">module</span><span class="o">)</span> <span class="o">(</span><span class="n">m</span> <span class="o">:</span> <span class="n">isBallSpace</span> <span class="n">T</span><span class="o">)</span> <span class="o">:=</span> <span class="n">NormMixin</span> <span class="o">{</span>
+  <span class="n">norm_op</span>       <span class="o">:</span> <span class="n">T</span> <span class="o">-&gt;</span> <span class="kt">nat</span><span class="o">;</span>
+  <span class="n">norm_opP</span>      <span class="o">:</span> <span class="k">forall</span> <span class="n">x</span><span class="o">,</span>   <span class="n">norm_op</span> <span class="o">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">x</span><span class="o">)</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+  <span class="n">norm_ball_opP</span> <span class="o">:</span> <span class="k">forall</span> <span class="n">x</span> <span class="n">y</span><span class="o">,</span> <span class="n">ball_op</span> <span class="o">_</span> <span class="n">m</span> <span class="n">x</span> <span class="n">y</span> <span class="o">&lt;-&gt;</span> <span class="o">(</span><span class="n">norm_op</span> <span class="o">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="o">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="o">)}.</span>
+<span class="kn">Record</span> <span class="n">isNormSpace</span> <span class="o">(</span><span class="n">T</span> <span class="o">:</span> <span class="kt">Type</span><span class="o">)</span> <span class="o">:=</span> <span class="n">IsNormSpace</span> <span class="o">{</span>
+  <span class="n">base</span> <span class="o">:</span> <span class="n">isModule</span> <span class="n">T</span><span class="o">;</span>
+  <span class="n">bmix</span> <span class="o">:</span> <span class="n">isBallSpace</span> <span class="n">T</span><span class="o">;</span>
+  <span class="n">mix</span>  <span class="o">:</span> <span class="n">normMixin</span> <span class="o">(</span><span class="kn">Module</span> <span class="o">_</span> <span class="n">base</span><span class="o">)</span> <span class="n">bmix</span> <span class="o">}.</span>
+<span class="kn">Structure</span> <span class="n">normSpace</span> <span class="o">:=</span> <span class="n">NormSpace</span> <span class="o">{</span>
+  <span class="n">norm_carrier</span>          <span class="o">:&gt;</span> <span class="kt">Type</span><span class="o">;</span>
+  <span class="n">normSpace_isNormSpace</span> <span class="o">:</span> <span class="n">isNormSpace</span> <span class="n">norm_carrier</span><span class="o">}.</span>
+<span class="kn">Definition</span> <span class="n">norm</span> <span class="o">{</span><span class="n">N</span> <span class="o">:</span> <span class="n">normSpace</span><span class="o">}</span> <span class="o">:=</span>
+  <span class="n">norm_op</span> <span class="o">_</span> <span class="o">_</span> <span class="o">(</span><span class="n">mix</span> <span class="o">_</span> <span class="o">(</span><span class="n">normSpace_isNormSpace</span> <span class="n">N</span><span class="o">)).</span>
+<span class="kn">Notation</span> <span class="s2">&quot;| x |&quot;</span> <span class="o">:=</span> <span class="o">(</span><span class="n">norm</span> <span class="n">x</span><span class="o">).</span>
+
+<span class="c">(* begin omitted from the paper *)</span>
+<span class="c">(* Inheritance of module structure, same as naiveNormSpace *)</span>
+<span class="kn">Arguments</span> <span class="n">IsNormSpace</span> <span class="o">{_</span> <span class="o">_</span> <span class="o">_}.</span>
+
+<span class="kn">Canonical</span> <span class="n">module_of_normSpace</span> <span class="o">(</span><span class="n">N</span> <span class="o">:</span> <span class="n">normSpace</span><span class="o">)</span> <span class="o">:=</span>
+  <span class="kn">Module</span> <span class="o">_</span> <span class="o">(</span><span class="n">base</span> <span class="o">_</span> <span class="o">(</span><span class="n">normSpace_isNormSpace</span> <span class="n">N</span><span class="o">)).</span>
+<span class="kn">Coercion</span> <span class="n">module_of_normSpace</span> <span class="o">:</span> <span class="n">normSpace</span> <span class="o">&gt;-&gt;</span> <span class="n">module</span><span class="o">.</span>
+
+<span class="kn">Definition</span> <span class="n">normP</span> <span class="o">(</span><span class="n">N</span> <span class="o">:</span> <span class="n">normSpace</span><span class="o">)</span> <span class="o">(</span><span class="n">x</span> <span class="o">:</span> <span class="n">N</span><span class="o">)</span> <span class="o">:</span> <span class="o">|</span><span class="n">x</span> <span class="o">-</span> <span class="n">x</span><span class="o">|</span> <span class="o">=</span> <span class="mi">0</span><span class="o">.</span>
+<span class="kn">Proof</span><span class="o">.</span> <span class="kp">exact</span><span class="o">:</span> <span class="n">norm_opP</span><span class="o">.</span> <span class="kn">Qed</span><span class="o">.</span>
+<span class="c">(* end omitted from the paper *)</span>
+
+<span class="kn">Canonical</span> <span class="n">norm_ballSpace</span> <span class="o">(</span><span class="n">N</span> <span class="o">:</span> <span class="n">normSpace</span><span class="o">)</span> <span class="o">:=</span>
+  <span class="n">BallSpace</span> <span class="n">N</span> <span class="o">(</span><span class="n">bmix</span> <span class="o">_</span> <span class="o">(</span><span class="n">normSpace_isNormSpace</span> <span class="n">N</span><span class="o">)).</span>
+
+<span class="c">(************************************************************)</span>
+<span class="c">(* Begin omitted from the paper,                            *)</span>
+<span class="c">(* we redo all the examples of section 2.3 on product and Z *)</span>
+<span class="c">(* but now the diagrams commute.                            *)</span>
+<span class="c">(************************************************************)</span>
+<span class="kn">Coercion</span> <span class="n">norm_ballSpace</span> <span class="o">:</span> <span class="n">normSpace</span> <span class="o">&gt;-&gt;</span> <span class="n">ballSpace</span><span class="o">.</span>
+
+<span class="kn">Lemma</span> <span class="n">norm_ballP</span>  <span class="o">(</span><span class="n">N</span> <span class="o">:</span> <span class="n">normSpace</span><span class="o">)</span> <span class="o">(</span><span class="n">x</span> <span class="n">y</span> <span class="o">:</span> <span class="n">N</span><span class="o">)</span> <span class="o">:</span> <span class="o">(</span><span class="n">x</span> <span class="o">~~</span> <span class="n">y</span><span class="o">)</span> <span class="o">&lt;-&gt;</span> <span class="o">|</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="o">|</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="o">.</span>
+<span class="kn">Proof</span><span class="o">.</span> <span class="kp">exact</span><span class="o">:</span> <span class="n">norm_ball_opP</span><span class="o">.</span> <span class="kn">Qed</span><span class="o">.</span>
+
+<span class="c">(* Stability of norm space structure by product *)</span>
+<span class="kn">Section</span> <span class="n">ProdNorm</span><span class="o">.</span>
+<span class="kn">Variables</span> <span class="o">(</span><span class="n">N</span> <span class="n">N&#39;</span> <span class="o">:</span> <span class="n">normSpace</span><span class="o">).</span>
+<span class="kn">Definition</span> <span class="n">prod_norm</span> <span class="o">(</span><span class="n">x</span> <span class="o">:</span> <span class="n">N</span> <span class="o">*</span> <span class="n">N&#39;</span><span class="o">)</span> <span class="o">:=</span> <span class="n">max</span> <span class="o">(|</span><span class="n">fst</span> <span class="n">x</span><span class="o">|)</span> <span class="o">(|</span><span class="n">snd</span> <span class="n">x</span><span class="o">|).</span>
+<span class="kn">Lemma</span> <span class="n">prod_normP</span> <span class="n">x</span> <span class="o">:</span> <span class="n">prod_norm</span> <span class="o">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">x</span><span class="o">)</span> <span class="o">=</span> <span class="mi">0</span><span class="o">.</span>
+<span class="kn">Proof</span><span class="o">.</span> <span class="kp">by</span> <span class="k">case</span><span class="o">:</span> <span class="n">x</span> <span class="o">=&gt;</span> <span class="n">x</span> <span class="n">x&#39;</span><span class="o">;</span> <span class="k">rewrite</span> <span class="o">/</span><span class="n">prod_norm</span><span class="o">/=</span> <span class="o">!</span><span class="n">normP</span><span class="o">.</span> <span class="kn">Qed</span><span class="o">.</span>
+<span class="kn">Lemma</span> <span class="n">prod_norm_ballP</span> <span class="o">(</span><span class="n">x</span> <span class="n">y</span> <span class="o">:</span> <span class="n">N</span> <span class="o">*</span> <span class="n">N&#39;</span><span class="o">)</span> <span class="o">:</span> <span class="n">x</span> <span class="o">~~</span> <span class="n">y</span> <span class="o">&lt;-&gt;</span> <span class="n">prod_norm</span> <span class="o">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="o">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="o">.</span>
+<span class="kn">Proof</span><span class="o">.</span>
+<span class="kp">by</span> <span class="k">split</span> <span class="o">=&gt;</span> <span class="o">[[/=</span> <span class="n">xy1</span> <span class="n">xy2</span><span class="o">]|/</span><span class="n">Nat</span><span class="o">.</span><span class="n">max_lub_iff</span><span class="o">[</span><span class="n">xy1</span> <span class="n">xy2</span><span class="o">]];</span>
+   <span class="o">[</span><span class="k">apply</span><span class="o">:</span> <span class="n">Nat</span><span class="o">.</span><span class="n">max_lub</span><span class="o">|</span><span class="k">split</span><span class="o">];</span> <span class="k">apply</span><span class="o">/</span><span class="n">norm_ballP</span><span class="o">.</span>
+<span class="kn">Qed</span><span class="o">.</span>
+<span class="kn">Definition</span> <span class="n">prod_normMixin</span> <span class="o">:=</span>
+  <span class="n">NormMixin</span> <span class="o">_</span> <span class="o">(</span><span class="n">prod_isBallSpace</span> <span class="n">N</span> <span class="n">N&#39;</span><span class="o">)</span> <span class="n">prod_norm</span> <span class="n">prod_normP</span> <span class="n">prod_norm_ballP</span><span class="o">.</span>
+<span class="kn">Definition</span> <span class="n">prod_isNormSpace</span> <span class="o">:=</span> <span class="n">IsNormSpace</span> <span class="n">prod_normMixin</span><span class="o">.</span>
+<span class="kn">Canonical</span> <span class="n">prod_normSpace</span> <span class="o">:=</span> <span class="n">NormSpace</span> <span class="o">(</span><span class="n">N</span> <span class="o">*</span> <span class="n">N&#39;</span><span class="o">)</span> <span class="n">prod_isNormSpace</span><span class="o">.</span>
+<span class="kn">End</span> <span class="n">ProdNorm</span><span class="o">.</span>
+
+<span class="kn">Lemma</span> <span class="n">Z_norm_ballP</span> <span class="o">(</span><span class="n">m</span> <span class="n">n</span> <span class="o">:</span> <span class="n">Z</span><span class="o">)</span> <span class="o">:</span> <span class="n">Z_ball</span> <span class="n">m</span> <span class="n">n</span> <span class="o">&lt;-&gt;</span> <span class="n">Z</span><span class="o">.</span><span class="n">abs_nat</span> <span class="o">(</span><span class="n">m</span> <span class="o">-</span> <span class="n">n</span><span class="o">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="o">.</span>
+<span class="kn">Proof</span><span class="o">.</span>
+<span class="k">rewrite</span> <span class="o">/</span><span class="n">Z_ball</span> <span class="o">-</span><span class="n">Nat</span><span class="o">.</span><span class="n">leb_le</span> <span class="o">-[</span><span class="n">m</span> <span class="o">=</span> <span class="n">n</span><span class="o">]</span><span class="n">Z</span><span class="o">.</span><span class="n">sub_move_0_r</span> <span class="n">Z</span><span class="o">.</span><span class="n">add_comm</span> <span class="o">-</span><span class="n">Z</span><span class="o">.</span><span class="n">sub_move_r</span><span class="o">.</span>
+<span class="k">rewrite</span> <span class="o">-[(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="o">)%</span><span class="n">Z</span><span class="o">]</span><span class="n">Z</span><span class="o">.</span><span class="n">add_opp_l</span> <span class="o">-</span><span class="n">Z</span><span class="o">.</span><span class="n">sub_move_r</span><span class="o">;</span> <span class="k">split</span> <span class="o">=&gt;</span> <span class="o">[[-&gt;|[-&gt;|-&gt;]]|]//.</span>
+<span class="k">case</span><span class="o">:</span> <span class="o">(</span><span class="n">m</span> <span class="o">-</span> <span class="n">n</span><span class="o">)%</span><span class="n">Z</span> <span class="o">=&gt;</span> <span class="o">[|</span><span class="n">p</span><span class="o">|</span><span class="n">p</span><span class="o">]//=;</span> <span class="kr">do</span> <span class="o">?</span><span class="k">tauto</span><span class="o">;</span>
+  <span class="kp">by</span> <span class="k">rewrite</span> <span class="o">-[</span><span class="n">p</span> <span class="k">in</span> <span class="n">X</span> <span class="k">in</span> <span class="o">_</span> <span class="o">-&gt;</span> <span class="n">X</span><span class="o">]</span><span class="n">Pos2Nat</span><span class="o">.</span><span class="n">id</span><span class="o">;</span> <span class="k">case</span><span class="o">:</span> <span class="n">Pos</span><span class="o">.</span><span class="n">to_nat</span> <span class="o">=&gt;</span> <span class="o">[|</span><span class="bp">[]</span><span class="o">]//;</span> <span class="k">tauto</span><span class="o">.</span>
+<span class="kn">Qed</span><span class="o">.</span>
+
+<span class="kn">Definition</span> <span class="n">Z_normMixin</span> <span class="o">:=</span> <span class="n">NormMixin</span> <span class="o">_</span> <span class="n">Z_isBallSpace</span>
+  <span class="n">Z</span><span class="o">.</span><span class="n">abs_nat</span> <span class="n">Z_normP</span> <span class="n">Z_norm_ballP</span><span class="o">.</span>
+<span class="kn">Definition</span> <span class="n">Z_isNormSpace</span> <span class="o">:=</span> <span class="n">IsNormSpace</span> <span class="n">Z_normMixin</span><span class="o">.</span>
+<span class="kn">Canonical</span> <span class="n">Z_normSpace</span> <span class="o">:</span> <span class="n">normSpace</span> <span class="o">:=</span> <span class="n">NormSpace</span> <span class="n">Z</span> <span class="n">Z_isNormSpace</span><span class="o">.</span>
+
+<span class="c">(*The previous failures does not happen again *)</span>
+<span class="c">(* `x ~ y` and `|x - y| &lt; 1` are not definitionally equal in general *)</span>
+<span class="kn">Example</span> <span class="n">success</span> <span class="o">(</span><span class="n">x</span> <span class="n">y</span> <span class="o">:</span> <span class="n">Z</span><span class="o">)</span> <span class="o">:</span> <span class="n">x</span> <span class="o">~~</span> <span class="n">y</span> <span class="o">&lt;-&gt;</span> <span class="o">|</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="o">|</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="o">.</span>
+<span class="kn">Proof</span><span class="o">.</span>
+<span class="n">now</span> <span class="k">apply</span> <span class="n">norm_ballP</span><span class="o">.</span>
+<span class="n">Restart</span><span class="o">.</span>
+<span class="k">rewrite</span> <span class="o">-</span><span class="n">norm_ballP</span><span class="o">.</span>
+<span class="kp">reflexivity</span><span class="o">.</span>
+<span class="kn">Qed</span><span class="o">.</span>
+
+<span class="kn">Example</span> <span class="n">success&#39;</span> <span class="o">(</span><span class="n">Pball</span> <span class="o">:</span> <span class="k">forall</span> <span class="n">V</span> <span class="o">:</span> <span class="n">normSpace</span><span class="o">,</span> <span class="k">forall</span> <span class="n">v</span> <span class="o">:</span> <span class="n">V</span><span class="o">,</span> <span class="n">P</span> <span class="o">(</span><span class="n">ball</span> <span class="n">v</span><span class="o">))</span>
+   <span class="o">(</span><span class="n">W</span> <span class="o">:</span> <span class="n">normSpace</span><span class="o">)</span> <span class="o">(</span><span class="n">w</span> <span class="o">:</span> <span class="n">W</span> <span class="o">*</span> <span class="n">W</span><span class="o">)</span> <span class="o">:</span> <span class="n">P</span> <span class="o">(</span><span class="n">ball</span> <span class="n">w</span><span class="o">).</span>
+<span class="kn">Proof</span><span class="o">.</span>
+<span class="k">have</span> <span class="o">_</span> <span class="o">:</span> <span class="k">exists</span> <span class="o">(</span><span class="n">V</span> <span class="o">:</span> <span class="n">normSpace</span><span class="o">),</span>
+    <span class="n">norm_ballSpace</span> <span class="n">V</span> <span class="o">=</span>  <span class="n">prod_ballSpace</span> <span class="o">(</span><span class="n">norm_ballSpace</span> <span class="n">W</span><span class="o">)</span> <span class="o">(</span><span class="n">norm_ballSpace</span> <span class="n">W</span><span class="o">)</span>
+  <span class="kp">by</span> <span class="k">exists</span> <span class="o">(</span><span class="n">prod_normSpace</span> <span class="n">W</span> <span class="n">W</span><span class="o">);</span> <span class="kp">reflexivity</span><span class="o">.</span>
+<span class="kp">by</span> <span class="k">apply</span> <span class="n">Pball</span><span class="o">.</span>
+<span class="kn">Qed</span><span class="o">.</span>
+<span class="c">(* End omitted from the paper *)</span>
+
+<span class="c">(*************************)</span>
+<span class="c">(* Paragraph &quot;Factories&quot; *)</span>
+<span class="c">(*************************)</span>
+<span class="kn">Section</span> <span class="n">NaiveNormFactory</span><span class="o">.</span>
+<span class="kn">Variable</span> <span class="o">(</span><span class="n">T</span> <span class="o">:</span> <span class="n">module</span><span class="o">)</span> <span class="o">(</span><span class="n">m</span> <span class="o">:</span> <span class="n">naiveNormMixin</span> <span class="n">T</span><span class="o">).</span>
+
+<span class="kn">Definition</span> <span class="n">fact_ball</span> <span class="o">(</span><span class="n">x</span> <span class="n">y</span> <span class="o">:</span> <span class="n">T</span><span class="o">)</span> <span class="o">:=</span> <span class="n">naive_norm_op</span> <span class="n">T</span> <span class="n">m</span> <span class="o">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="o">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="o">.</span>
+
+<span class="kn">Lemma</span> <span class="n">fact_ballP</span> <span class="o">(</span><span class="n">x</span> <span class="o">:</span> <span class="n">T</span><span class="o">)</span> <span class="o">:</span> <span class="n">fact_ball</span> <span class="n">x</span> <span class="n">x</span><span class="o">.</span>
+<span class="kn">Proof</span><span class="o">.</span> <span class="kp">by</span> <span class="k">rewrite</span> <span class="o">/</span><span class="n">fact_ball</span> <span class="o">(</span><span class="n">naive_norm_opP</span> <span class="o">_</span> <span class="n">m</span><span class="o">);</span> <span class="k">constructor</span><span class="o">.</span> <span class="kn">Qed</span><span class="o">.</span>
+
+<span class="kn">Definition</span> <span class="n">nNormMixin_isBallSpace</span> <span class="o">:=</span> <span class="n">IsBallSpace</span> <span class="n">T</span> <span class="n">fact_ball</span> <span class="n">fact_ballP</span><span class="o">.</span>
+
+<span class="c">(* begin omitted from the paper *)</span>
+<span class="kn">Lemma</span> <span class="n">fact_normP</span> <span class="o">(</span><span class="n">x</span> <span class="o">:</span> <span class="n">T</span><span class="o">)</span> <span class="o">:</span> <span class="n">naive_norm_op</span> <span class="n">T</span> <span class="n">m</span> <span class="o">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">x</span><span class="o">)</span> <span class="o">=</span> <span class="mi">0</span><span class="o">.</span>
+<span class="kn">Proof</span><span class="o">.</span> <span class="kp">by</span> <span class="k">rewrite</span> <span class="o">(</span><span class="n">naive_norm_opP</span> <span class="o">_</span> <span class="n">m</span><span class="o">);</span> <span class="k">constructor</span><span class="o">.</span> <span class="kn">Qed</span><span class="o">.</span>
+
+<span class="kn">Lemma</span> <span class="n">fact_norm_ballP</span> <span class="n">x</span> <span class="n">y</span> <span class="o">:</span> <span class="n">fact_ball</span> <span class="n">x</span> <span class="n">y</span> <span class="o">&lt;-&gt;</span> <span class="n">naive_norm_op</span> <span class="n">T</span> <span class="n">m</span> <span class="o">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="o">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="o">.</span>
+<span class="kn">Proof</span><span class="o">.</span> <span class="kp">by</span> <span class="bp">[]</span><span class="o">.</span> <span class="kn">Qed</span><span class="o">.</span>
+<span class="c">(* end omitted from the paper *)</span>
+<span class="c">(* details for fact_normP and fact_norm_ballP omitted from the paper *)</span>
+<span class="kn">Definition</span> <span class="n">nNormMixin_normMixin</span> <span class="o">:=</span>
+  <span class="n">NormMixin</span> <span class="n">T</span> <span class="n">nNormMixin_isBallSpace</span> <span class="o">(</span><span class="n">naive_norm_op</span> <span class="n">T</span> <span class="n">m</span><span class="o">)</span>
+            <span class="n">fact_normP</span> <span class="n">fact_norm_ballP</span><span class="o">.</span>
+
+<span class="kn">End</span> <span class="n">NaiveNormFactory</span><span class="o">.</span>
+<span class="kn">Coercion</span> <span class="n">nNormMixin_isBallSpace</span> <span class="o">:</span> <span class="n">naiveNormMixin</span> <span class="o">&gt;-&gt;</span> <span class="n">isBallSpace</span><span class="o">.</span>
+<span class="kn">Coercion</span> <span class="n">nNormMixin_normMixin</span> <span class="o">:</span> <span class="n">naiveNormMixin</span> <span class="o">&gt;-&gt;</span> <span class="n">normMixin</span><span class="o">.</span>
+
+<span class="kn">Canonical</span> <span class="n">alt_Z_ballSpace</span> <span class="o">:=</span> <span class="n">BallSpace</span> <span class="n">Z</span> <span class="n">Z_naiveNormMixin</span><span class="o">.</span>
+<span class="kn">Canonical</span> <span class="n">alt_Z_normSpace</span> <span class="o">:=</span> <span class="n">NormSpace</span> <span class="n">Z</span> <span class="o">(</span><span class="n">IsNormSpace</span> <span class="n">Z_naiveNormMixin</span><span class="o">).</span>
+</pre></div>
+</td></tr></table></body>
+</html>
