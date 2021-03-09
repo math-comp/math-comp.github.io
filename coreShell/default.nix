@@ -2,5 +2,5 @@
   update-nixpkgs ? false, ci ? false, ci-step ? null, inNixShell ? null
 }@args:
 let src = fetchGit "https://github.com/coq-community/nix-toolbox.git"; in
-(import "${src}/auto-config.nix" ./. ({config.coq-attribute = "mathcomp-core-shell"} args)).nix-auto
+(import "${src}/auto-config.nix" ./. ({config.coq-attribute = "mathcomp-core-shell";} args)).nix-auto
 
