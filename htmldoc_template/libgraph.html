@@ -79,15 +79,24 @@ document.addEventListener("DOMContentLoaded", async function(event) {
   let params = (new URL(document.location)).searchParams;
   let pr = params.get('pr');
   let repo = params.get('repo') || 'math-comp/math-comp';
-  var flagged = [];
+  var flagged_done = [];
+  var flagged_half_done = [];
+  var flagged_taken = [];
   if ( pr === null) {
-    flagged = [];
+    flagged_done = [];
+    flagged_half_done = [];
+    flagged_taken = [];
   } else {
     const response = await fetch('https://api.github.com/repos/'+repo+ '/pulls/' + pr);
     const myJson = await response.json(); //extract JSON from the http response
     const text = new String(myJson.body);
-    flagged = [...text.matchAll(/- \[[xX]\] ([a-zA-Z]+)\.v/g)].map(x => x[1]);
+    flagged_done = [...text.matchAll(/- \[[xX]\] ([a-zA-Z0-9_]+)\.v/g)].map(x => x[1]);
+    flagged_taken = [...text.matchAll(/- \[[xX]\] :construction: ([a-zA-Z0-9_]+)\.v/g)].map(x => x[1]);
+    flagged_half_done = [...text.matchAll(/- \[[xX]\] :white_check_mark: ([a-zA-Z0-9_]+)\.v/g)].map(x => x[1]);
   }
+  console.log(flagged_done);
+  console.log(flagged_half_done);
+  console.log(flagged_taken);
 
   var cy = window.cy = cytoscape({
     container: document.getElementById('cy'), // container to render in
@@ -106,17 +115,33 @@ document.addEventListener("DOMContentLoaded", async function(event) {
 	'font-weight':'bold',
   	'text-valign':'center',
   	'text-halign':'center',
-  	'text-outline-color': 'white',
-  	'border-color': '#ccc',
+    'text-outline-color': function(e) {
+	  	if      (e.isChild () && flagged_done.includes(e.data('name'))) {return 'green'}
+	  	else if (e.isChild () && flagged_half_done.includes(e.data('name'))) {return 'green'}
+	  	else if (e.isChild () && flagged_taken.includes(e.data('name'))) {return 'blue'}
+	  	else {return 'white'}
+    },
+  	'border-color':	function(e) {
+	  	if      (e.isChild () && flagged_done.includes(e.data('name'))) {return 'green'}
+	  	else {return '#ccc'}
+    },
+
 	'border-width': '2px',
-	'border-style': 'dashed',
+	'border-style': function(e) {
+	  	if      (e.isChild () && flagged_done.includes(e.data('name'))) {return 'solid'}
+	  	else {return 'dashed'}
+    },
 	  'background-color': function(e) {
-	  	if (flagged.includes(e.data('name'))) {return 'green'}
+	  	if      (e.isChild () && flagged_done.includes(e.data('name'))) {return 'green'}
+	  	else if (e.isChild () && flagged_half_done.includes(e.data('name'))) {return 'yellow'}
+	  	else if (e.isChild () && flagged_taken.includes(e.data('name'))) {return 'lightblue'}
 	  	else {return 'white'}
     },
   	'text-outline-width':'1px',
   	'color':function(e) {
-	  	if (flagged.includes(e.data('name'))) {return 'green'}
+	  	if      (e.isChild () && flagged_done.includes(e.data('name'))) {return 'lightgreen'}
+	  	else if (e.isChild () && flagged_half_done.includes(e.data('name'))) {return 'lightgreen'}
+	  	else if (e.isChild () && flagged_taken.includes(e.data('name'))) {return 'lightblue'}
 	  	else {return '#555'}
     },
   	'overlay-padding':'6px',
