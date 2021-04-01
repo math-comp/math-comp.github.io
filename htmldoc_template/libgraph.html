@@ -116,9 +116,9 @@ document.addEventListener("DOMContentLoaded", async function(event) {
   	'text-valign':'center',
   	'text-halign':'center',
     'text-outline-color': function(e) {
-	  	if      (e.isChild () && flagged_done.includes(e.data('name'))) {return 'green'}
+	  	if (e.isChild () && flagged_taken.includes(e.data('name'))) {return 'blue'}
+	  	else if (e.isChild () && flagged_done.includes(e.data('name'))) {return 'green'}
 	  	else if (e.isChild () && flagged_half_done.includes(e.data('name'))) {return 'green'}
-	  	else if (e.isChild () && flagged_taken.includes(e.data('name'))) {return 'blue'}
 	  	else {return 'white'}
     },
   	'border-color':	function(e) {
@@ -139,9 +139,9 @@ document.addEventListener("DOMContentLoaded", async function(event) {
     },
   	'text-outline-width':'1px',
   	'color':function(e) {
-	  	if      (e.isChild () && flagged_done.includes(e.data('name'))) {return 'lightgreen'}
+	  	if (e.isChild () && flagged_taken.includes(e.data('name'))) {return 'lightblue'}
+	  	else if (e.isChild () && flagged_done.includes(e.data('name'))) {return 'lightgreen'}
 	  	else if (e.isChild () && flagged_half_done.includes(e.data('name'))) {return 'lightgreen'}
-	  	else if (e.isChild () && flagged_taken.includes(e.data('name'))) {return 'lightblue'}
 	  	else {return '#555'}
     },
   	'overlay-padding':'6px',
