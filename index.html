@@ -3,12 +3,12 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-10-28 Thu 14:53 -->
+<!-- 2021-12-02 Thu 00:54 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Mathematical Components</title>
 <meta name="generator" content="Org mode" />
-<meta name="author" content="Christian Doczkal" />
+<meta name="author" content="Reynald Affeldt" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -40,7 +40,7 @@
   }
   pre.src {
     position: relative;
-    overflow: auto;
+    overflow: visible;
     padding-top: 1.2em;
   }
   pre.src:before {
@@ -52,7 +52,7 @@
     padding: 3px;
     border: 1px solid black;
   }
-  pre.src:hover:before { display: inline; margin-top: 14px;}
+  pre.src:hover:before { display: inline;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
@@ -161,19 +161,6 @@
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
-  .equation-container {
-    display: table;
-    text-align: center;
-    width: 100%;
-  }
-  .equation {
-    vertical-align: middle;
-  }
-  .equation-label {
-    display: table-cell;
-    text-align: right;
-    vertical-align: middle;
-  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -200,26 +187,50 @@
 <style type="text/css"> h3 {margin-left: 1em; padding: 0px; color: #C05001;} </style>
 <style type="text/css"> body { max-width: 1100px; width: 100% - 30px; margin-left: 30px; }</style>
 <script type="text/javascript">
-// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
 <!--/*--><![CDATA[/*><!--*/
-     function CodeHighlightOn(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.add("code-highlighted");
-         target.classList.add("code-highlighted");
-       }
-     }
-     function CodeHighlightOff(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.remove("code-highlighted");
-         target.classList.remove("code-highlighted");
-       }
-     }
-    /*]]>*///-->
-// @license-end
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
 </script>
 </head>
 <body>
@@ -231,9 +242,9 @@
  <img src="https://github.githubassets.com/images/modules/logos_page/Octocat.png" height="25" style="border:0px"></div>
 </p>
 
-<div id="outline-container-org47c5c50" class="outline-2">
-<h2 id="org47c5c50">About</h2>
-<div class="outline-text-2" id="text-org47c5c50">
+<div id="outline-container-orgc7cac8f" class="outline-2">
+<h2 id="orgc7cac8f">About</h2>
+<div class="outline-text-2" id="text-orgc7cac8f">
 <p>
 Welcome to Mathematical Components' web-page! 
 </p>
@@ -259,9 +270,9 @@ software license agreement.
 </div>
 </div>
 
-<div id="outline-container-org3717663" class="outline-2">
-<h2 id="org3717663">Get the library</h2>
-<div class="outline-text-2" id="text-org3717663">
+<div id="outline-container-org4b40034" class="outline-2">
+<h2 id="org4b40034">Get the library</h2>
+<div class="outline-text-2" id="text-org4b40034">
 <ul class="org-ul">
 <li>The last stable releases of the Mathematical Components library
 can be <a href="https://github.com/math-comp/math-comp/releases">downloaded from github</a>.</li>
@@ -273,9 +284,9 @@ can be <a href="https://github.com/math-comp/math-comp/releases">downloaded from
 </div>
 
 
-<div id="outline-container-org0c65d8e" class="outline-2">
-<h2 id="org0c65d8e">Documentation</h2>
-<div class="outline-text-2" id="text-org0c65d8e">
+<div id="outline-container-orgb532b41" class="outline-2">
+<h2 id="orgb532b41">Documentation</h2>
+<div class="outline-text-2" id="text-orgb532b41">
 
 <div style="float: right; width: 240px; margin: 5px 10px">
 <a href="https://math-comp.github.io/mcb/"><img alt="Mathematical Components book" src="https://math-comp.github.io/mcb/cover-front-web.png" style="width: 240px" border="1px solid black"></a>
@@ -303,9 +314,9 @@ library.</li>
 </ul>
 </div>
 
-<div id="outline-container-orgfd47c34" class="outline-3">
-<h3 id="orgfd47c34">More material</h3>
-<div class="outline-text-3" id="text-orgfd47c34">
+<div id="outline-container-orgd1c2931" class="outline-3">
+<h3 id="orgd1c2931">More material</h3>
+<div class="outline-text-3" id="text-orgd1c2931">
 <ul class="org-ul">
 <li><a href="documentation.html">Books, lectures, videos, etc.</a></li>
 <li><a href="papers.html">Research papers</a> related to Mathematical Components. Your paper or
@@ -316,9 +327,9 @@ thesis is not in the list? Send <a href="mailto:mathcomp-dev@inria.fr?subject=Ma
 </div>
 
 
-<div id="outline-container-org99ee1f4" class="outline-2">
-<h2 id="org99ee1f4">Help and contact</h2>
-<div class="outline-text-2" id="text-org99ee1f4">
+<div id="outline-container-org49fbe40" class="outline-2">
+<h2 id="org49fbe40">Help and contact</h2>
+<div class="outline-text-2" id="text-org49fbe40">
 <ul class="org-ul">
 <li>Chat with us on <a href="https://coq.zulipchat.com/">Coq's Zulip</a>!</li>
 <li>Discuss with us on Coq's <a href="https://coq.discourse.group/">Discourse</a> forum!</li>
@@ -330,13 +341,13 @@ thesis is not in the list? Send <a href="mailto:mathcomp-dev@inria.fr?subject=Ma
 </div>
 </div>
 
-<div id="outline-container-org25bcf2a" class="outline-2">
-<h2 id="org25bcf2a">Authors and contributors</h2>
-<div class="outline-text-2" id="text-org25bcf2a">
+<div id="outline-container-org58e8da7" class="outline-2">
+<h2 id="org58e8da7">Authors and contributors</h2>
+<div class="outline-text-2" id="text-org58e8da7">
 <p>
 The Mathematical Components library and the Ssreflect proof language
-were initially developed by the <a href="http://www.msr-inria.fr/projects/mathematical-components-2/">Mathematical Components team</a> at the
-<a href="http://www.msr-inria.fr/">Inria-Microsoft Research Joint Centre</a>. Today, the list of members of
+were initially developed by the Mathematical Components team at the
+<a href="https://www.microsoft.com/en-us/research/collaboration/inria-joint-centre/">Inria-Microsoft Research Joint Center</a>. Today, the list of members of
 the Mathematical Components organization is visible <a href="https://github.com/orgs/math-comp/people">here</a>.
 </p>
 </div>
