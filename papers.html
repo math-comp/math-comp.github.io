@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-09-24 Fri 18:59 -->
+<!-- 2021-12-16 Thu 12:38 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Mathematical Components: Research Papers</title>
@@ -161,6 +161,19 @@
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
   .inlinetask {
     padding: 10px;
     border: 2px solid gray;
@@ -191,7 +204,7 @@
 @licstart  The following is the entire license notice for the
 JavaScript code in this tag.
 
-Copyright (C) 2012-2019 Free Software Foundation, Inc.
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
 
 The JavaScript code in this tag is free software: you can
 redistribute it and/or modify it under the terms of the GNU
@@ -240,10 +253,10 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org494ecb4">Mathematics</a></li>
-<li><a href="#org226dc60">Programming and Algorithms</a></li>
-<li><a href="#org5d30639">Other Applications</a></li>
-<li><a href="#org0e5437c">Tooling about SSReflect and Mathematical Components</a></li>
+<li><a href="#org1a27b3d">Mathematics</a></li>
+<li><a href="#org580098d">Programming and Algorithms</a></li>
+<li><a href="#orgb7db70f">Other Applications</a></li>
+<li><a href="#org402c702">Tooling about SSReflect and Mathematical Components</a></li>
 </ul>
 </div>
 </div>
@@ -258,6 +271,7 @@ venues:
 <li>CICM = Conference on Intelligent Computer Mathematics</li>
 <li>IJCAR = International Joint Conference on Automated Reasoning</li>
 <li>JAR = Journal of Automated Reasoning</li>
+<li>JFP = Journal of Functional Programming</li>
 <li>LMCS = Logical Methods in Computer Science</li>
 <li>ICFP = International Conference on Functional Programming</li>
 <li>POPL = Principles of Programming Languages</li>
@@ -269,16 +283,16 @@ Your paper/thesis is not in the list? You have a suggestion about the organizati
 Please, send <a href="mailto:mathcomp-dev@inria.fr?subject=MathComp%20related%20paper">us</a> a message or <a href="https://github.com/math-comp/math-comp.github.io">issue/PR on github</a>.
 </p>
 
-<div id="outline-container-org494ecb4" class="outline-2">
-<h2 id="org494ecb4">Mathematics</h2>
-<div class="outline-text-2" id="text-org494ecb4">
+<div id="outline-container-org1a27b3d" class="outline-2">
+<h2 id="org1a27b3d">Mathematics</h2>
+<div class="outline-text-2" id="text-org1a27b3d">
 <ul class="org-ul">
 <li>Sophie Bernard, Cyril Cohen, Assia Mahboubi, Pierre-Yves Strub.
 <span class="underline">Unsolvability of the Quintic Formalized in Dependent Type Theory</span>
 ITP 2021. <a href="https://hal.inria.fr/hal-03136002v3/document">pdf</a></li>
 <li>Xavier Allamigeon, Ricardo D. Katz, Pierre-Yves Strub.
 <span class="underline">Formalizing the Face Lattice of Polyhedra</span>.
-IJCAR 2020. <a href="https://dx.doi.org/10.1007/978-3-030-51054-1_11">doi</a></li>
+IJCAR 2020. <a href="https://dx.doi.org/10.1007%2F978-3-030-51054-1_11">doi</a></li>
 <li>Reynald Affeldt, Cyril Cohen, Marie Kerjean, Assia Mahboubi, Damien Rouhling, Kazuhiko Sakaguchi.
 <span class="underline">Competing inheritance paths in dependent type theory: a case study in functional analysis</span>.
 IJCAR 2020. <a href="https://hal.inria.fr/hal-02463336v2/document">pdf</a>, <a href="https://math-comp.github.io/competing-inheritance-paths-in-dependent-type-theory/">code</a></li>
@@ -348,9 +362,9 @@ ITP 2008. <a href="https://hal.inria.fr/inria-00331193/document">pdf</a></li>
 </ul>
 </div>
 
-<div id="outline-container-orgacae650" class="outline-3">
-<h3 id="orgacae650">Graph Theory</h3>
-<div class="outline-text-3" id="text-orgacae650">
+<div id="outline-container-org05ee72d" class="outline-3">
+<h3 id="org05ee72d">Graph Theory</h3>
+<div class="outline-text-3" id="text-org05ee72d">
 <ul class="org-ul">
 <li>Christian Doczkal.
 <span class="underline">A Variant of Wagner’s Theorem Based on Combinatorial Hypermaps</span>.
@@ -372,9 +386,9 @@ CPP 2020. <a href="https://hal.archives-ouvertes.fr/hal-02333553/document">pdf</
 </div>
 </div>
 
-<div id="outline-container-orga8c33d4" class="outline-3">
-<h3 id="orga8c33d4">Robotics</h3>
-<div class="outline-text-3" id="text-orga8c33d4">
+<div id="outline-container-org5b62a40" class="outline-3">
+<h3 id="org5b62a40">Robotics</h3>
+<div class="outline-text-3" id="text-org5b62a40">
 <ul class="org-ul">
 <li>Cyril Cohen, Damien Rouhling.
 <span class="underline">A Formal Proof in Coq of LaSalle's Invariance Principle</span>. ITP 2017. <a href="https://hal.inria.fr/hal-01612293/document">pdf</a></li>
@@ -385,10 +399,16 @@ CPP 2020. <a href="https://hal.archives-ouvertes.fr/hal-02333553/document">pdf</
 </div>
 </div>
 
-<div id="outline-container-org226dc60" class="outline-2">
-<h2 id="org226dc60">Programming and Algorithms</h2>
-<div class="outline-text-2" id="text-org226dc60">
+<div id="outline-container-org580098d" class="outline-2">
+<h2 id="org580098d">Programming and Algorithms</h2>
+<div class="outline-text-2" id="text-org580098d">
 <ul class="org-ul">
+<li>Reynald Affeldt, Jacques Garrigue, David Nowak, Takafumi Saikawa.
+<span class="underline">A trustful monad for axiomatic reasoning with probability and nondeterminism</span>.
+JFP 31(E17), 2021. <a href="https://arxiv.org/pdf/2003.09993.pdf">pdf</a></li>
+<li>Reynald Affeldt, David Nowak.
+<span class="underline">Extending equational monadic reasoning with monad transformers</span>.
+TYPES 2020. <a href="https://arxiv.org/pdf/2011.03463.pdf">pdf</a></li>
 <li>Reynald Affeldt, David Nowak, Takafumi Saikawa.
 <span class="underline">A Hierarchy of Monadic Effects for Program Verification Using Equational Reasoning</span>.
 Mathematics of Program Construction (MPC 2019)</li>
@@ -409,7 +429,7 @@ Coq Workshop 2019. <a href="https://staff.aist.go.jp/reynald.affeldt/coq2019/coq
 <span class="underline">Verifying an elliptic curve cryptographic algorithm using Coq and the Ssreflect extension</span>.
 Master’s thesis, Mathematics, Radboud University, 2016. <a href="https://www.ru.nl/publish/pages/813286/weerwag_timmy_-1a.pdf">pdf</a></li>
 <li>Beta Ziliani, Derek Dreyer, Neelakantan R. Krishnaswami, Aleksandar Nanevski, Viktor Vafeiadis.
-<span class="underline">Mtac: A Monad for Typed Tactic Programming in Coq</span>. Journal of Functional Programming 25, 2015. <a href="https://people.mpi-sws.org/~dreyer/papers/mtac/journal.pdf">pdf</a></li>
+<span class="underline">Mtac: A Monad for Typed Tactic Programming in Coq</span>. JFP 25, 2015. <a href="https://people.mpi-sws.org/~dreyer/papers/mtac/journal.pdf">pdf</a></li>
 <li>Cyril Cohen, Maxime Dénès, Anders Mörtberg.
 <span class="underline">Refinements for free!</span>. CPP 2013. <a href="https://hal.inria.fr/hal-01113453/document">pdf</a></li>
 <li>Andrew Kennedy, Nick Benton, Jonas B. Jensen, Pierre-Evariste Dagand.
@@ -423,9 +443,9 @@ Master’s thesis, Mathematics, Radboud University, 2016. <a href="https://www.r
 </ul>
 </div>
 
-<div id="outline-container-org255866a" class="outline-3">
-<h3 id="org255866a">Concurrency</h3>
-<div class="outline-text-3" id="text-org255866a">
+<div id="outline-container-org952cdb4" class="outline-3">
+<h3 id="org952cdb4">Concurrency</h3>
+<div class="outline-text-3" id="text-org952cdb4">
 <ul class="org-ul">
 <li>Joseph Tassarotti, Robert Harper.
 <span class="underline">A Separation Logic for Concurrent Randomized Programs</span>.
@@ -455,9 +475,9 @@ ESOP 2014. <a href="https://doi.org/10.1007/978-3-642-54833-8_16">doi</a></li>
 </div>
 </div>
 
-<div id="outline-container-org1472ed9" class="outline-3">
-<h3 id="org1472ed9">Information Flow</h3>
-<div class="outline-text-3" id="text-org1472ed9">
+<div id="outline-container-org3239af2" class="outline-3">
+<h3 id="org3239af2">Information Flow</h3>
+<div class="outline-text-3" id="text-org3239af2">
 <ul class="org-ul">
 <li>Aleksandar Nanevski, Anindya Banerjee, Deepak Garg.
 <span class="underline">Dependent Type Theory for Verification of Information Flow and Access Control Policies</span>.
@@ -472,9 +492,9 @@ PPDP 2013. <a href="https://doi.org/10.1145/2505879.2505895">doi</a></li>
 </div>
 </div>
 
-<div id="outline-container-orgf03b2aa" class="outline-3">
-<h3 id="orgf03b2aa">Probabilistic Reasoning</h3>
-<div class="outline-text-3" id="text-orgf03b2aa">
+<div id="outline-container-orgc4f036d" class="outline-3">
+<h3 id="orgc4f036d">Probabilistic Reasoning</h3>
+<div class="outline-text-3" id="text-orgc4f036d">
 <ul class="org-ul">
 <li>Kiran Gopinathan, Ilya Sergey.
 <span class="underline">Certifying Certainty and Uncertainty in Approximate Membership Query Structures</span>.
@@ -490,9 +510,9 @@ Computer Software 37(3):79-95, 2020. <a href="https://staff.aist.go.jp/reynald.a
 </div>
 </div>
 
-<div id="outline-container-org5d30639" class="outline-2">
-<h2 id="org5d30639">Other Applications</h2>
-<div class="outline-text-2" id="text-org5d30639">
+<div id="outline-container-orgb7db70f" class="outline-2">
+<h2 id="orgb7db70f">Other Applications</h2>
+<div class="outline-text-2" id="text-orgb7db70f">
 <ul class="org-ul">
 <li>Pierre-Léo Bégay, Pierre Crégut, Jean-François Monin.
 <span class="underline">Developing and certifying Datalog optimizations in Coq/MathComp</span>. CPP 2021. <a href="https://hal.archives-ouvertes.fr/hal-03065304v1/document">pdf</a></li>
@@ -507,9 +527,9 @@ Linux Audio Conference 2015. <a href="https://github.com/ejgallego/mini-faust-co
 </ul>
 </div>
 
-<div id="outline-container-org87e4ef3" class="outline-3">
-<h3 id="org87e4ef3">Logic, Types, and Verification</h3>
-<div class="outline-text-3" id="text-org87e4ef3">
+<div id="outline-container-org2a5db4b" class="outline-3">
+<h3 id="org2a5db4b">Logic, Types, and Verification</h3>
+<div class="outline-text-3" id="text-org2a5db4b">
 <ul class="org-ul">
 <li>Christian Doczkal, Gert Smolka.
 <span class="underline">Regular Language Representations in the Constructive Type Theory of Coq</span>.
@@ -538,9 +558,9 @@ International Conference on Typed Lambda Calculi and Applications (TLCA 2011). <
 </div>
 </div>
 
-<div id="outline-container-orgb862eb7" class="outline-3">
-<h3 id="orgb862eb7">Information Theory</h3>
-<div class="outline-text-3" id="text-orgb862eb7">
+<div id="outline-container-org850ff1a" class="outline-3">
+<h3 id="org850ff1a">Information Theory</h3>
+<div class="outline-text-3" id="text-org850ff1a">
 <ul class="org-ul">
 <li>Reynald Affeldt, Jacques Garrigue, Takafumi Saikawa.
 <span class="underline">A library for formalization of linear error-correcting codes</span>.
@@ -566,9 +586,9 @@ International Symposium on Information Theory and its Application 2014 (ISITA 20
 </div>
 </div>
 
-<div id="outline-container-org0e5437c" class="outline-2">
-<h2 id="org0e5437c">Tooling about SSReflect and Mathematical Components</h2>
-<div class="outline-text-2" id="text-org0e5437c">
+<div id="outline-container-org402c702" class="outline-2">
+<h2 id="org402c702">Tooling about SSReflect and Mathematical Components</h2>
+<div class="outline-text-2" id="text-org402c702">
 <ul class="org-ul">
 <li>Reynald Affeldt, Xavier Allamigeon, Yves Bertot, Quentin Canu, Cyril Cohen, Pierre Roux, Kazuhiko Sakaguchi, Enrico Tassi, Laurent Théry, Anton Trunov.
 <span class="underline">Porting the Mathematical Components library to Hierarchy Builder</span>. Coq Workshop 2021. <a href="https://coq-workshop.gitlab.io/2021/abstracts/Coq2021-01-02-mathcomp-hierarchy-builder.pdf">pdf</a></li>
@@ -587,7 +607,7 @@ International Symposium on Information Theory and its Application 2014 (ISITA 20
 <span class="underline">Efficient Finite-Domain Function Library for the Coq Proof Assistant</span>.
 IPSJ Transactions on Programming 10(1), 2017. <a href="http://logic.cs.tsukuba.ac.jp/~sakaguchi/papers/ipsj-pro-2016-1-7.pdf">pdf (long, in Japanese)</a>, <a href="http://logic.cs.tsukuba.ac.jp/~sakaguchi/papers/ipsj-pro-2016-1-7.en.pdf">pdf (short, in English)</a></li>
 <li>Georges Gonthier, Beta Ziliani, Aleksandar Nanevski, Derek Dreyer.
-<span class="underline">How to make ad hoc proof automation less ad hoc</span>. Journal of Functional Programming 23(4), 2013. <a href="https://doi.org/10.1017/S0956796813000051">doi</a></li>
+<span class="underline">How to make ad hoc proof automation less ad hoc</span>. JFP 23(4), 2013. <a href="https://doi.org/10.1017/S0956796813000051">doi</a></li>
 <li>Vladimir Komendantsky, Alexander Konovalov, Steve Linton.
 <span class="underline">Interfacing Coq + SSReflect with GAP</span>. Electronic Notes in Theoretical Computer Science 285, 2012. <a href="https://www.sciencedirect.com/science/article/pii/S1571066112000230">pdf</a></li>
 <li>Iain Whiteside, David Aspinall, Gudmund Grov.
@@ -601,9 +621,9 @@ IPSJ Transactions on Programming 10(1), 2017. <a href="http://logic.cs.tsukuba.a
 </ul>
 </div>
 
-<div id="outline-container-orga843ea3" class="outline-3">
-<h3 id="orga843ea3">Machine Learning</h3>
-<div class="outline-text-3" id="text-orga843ea3">
+<div id="outline-container-org187eeb6" class="outline-3">
+<h3 id="org187eeb6">Machine Learning</h3>
+<div class="outline-text-3" id="text-org187eeb6">
 <ul class="org-ul">
 <li>Pengyu Nie, Karl Palmskog, Junyi Jessy Li, Milos Gligoric.
 <span class="underline">Deep Generation of Coq Lemma Names Using Elaborated Terms</span>. IJCAR 2020. <a href="https://arxiv.org/pdf/2004.07761.pdf">pdf</a></li>
