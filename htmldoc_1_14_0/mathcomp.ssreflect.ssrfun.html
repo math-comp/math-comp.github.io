@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<title>mathcomp.ssreflect.ssrfun</title>
+</head>
+
+<body>
+
+<div id="page">
+
+<div id="header">
+</div>
+
+<div id="main">
+
+<h1 class="libtitle">Library mathcomp.ssreflect.ssrfun</h1>
+
+<div class="code">
+<span class="id" title="keyword">From</span> <span class="id" title="var">mathcomp</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="mathcomp.ssreflect.ssreflect.html#"><span class="id" title="library">ssreflect</span></a>.<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">Coq</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Export</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.14.0/stdlib//Coq.ssr.ssrfun.html#"><span class="id" title="library">ssrfun</span></a>.<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">mathcomp</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Export</span> <a class="idref" href="mathcomp.ssreflect.ssrnotations.html#"><span class="id" title="library">ssrnotations</span></a>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+ Local additions:                                                           
+        void == a notation for the Empty_set type of the standard library.  
+   of_void T == the canonical injection void -&gt; T.                           
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <a id="Some_inj" class="idref" href="#Some_inj"><span class="id" title="lemma">Some_inj</span></a> {<a id="T:1" class="idref" href="#T:1"><span class="id" title="binder">T</span></a> : <a class="idref" href="mathcomp.ssreflect.ssreflect.html#NonPropType.Exports.nonPropType"><span class="id" title="abbreviation">nonPropType</span></a>} : <a class="idref" href="http://coq.inria.fr/distrib/V8.14.0/stdlib//Coq.ssr.ssrfun.html#injective"><span class="id" title="definition">injective</span></a> (@<a class="idref" href="http://coq.inria.fr/distrib/V8.14.0/stdlib//Coq.Init.Datatypes.html#Some"><span class="id" title="constructor">Some</span></a> <a class="idref" href="mathcomp.ssreflect.ssrfun.html#T:1"><span class="id" title="variable">T</span></a>).<br/>
+ 
+<br/>
+<span class="id" title="keyword">Notation</span> <a id="void" class="idref" href="#void"><span class="id" title="abbreviation">void</span></a> := <a class="idref" href="http://coq.inria.fr/distrib/V8.14.0/stdlib//Coq.Init.Datatypes.html#Empty_set"><span class="id" title="inductive">Empty_set</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <a id="of_void" class="idref" href="#of_void"><span class="id" title="definition">of_void</span></a> <a id="T:2" class="idref" href="#T:2"><span class="id" title="binder">T</span></a> (<a id="x:3" class="idref" href="#x:3"><span class="id" title="binder">x</span></a> : <a class="idref" href="mathcomp.ssreflect.ssrfun.html#void"><span class="id" title="abbreviation">void</span></a>) : <a class="idref" href="mathcomp.ssreflect.ssrfun.html#T:2"><span class="id" title="variable">T</span></a> := <span class="id" title="keyword">match</span> <a class="idref" href="mathcomp.ssreflect.ssrfun.html#x:3"><span class="id" title="variable">x</span></a> <span class="id" title="keyword">with</span> <span class="id" title="keyword">end</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <a id="of_voidK" class="idref" href="#of_voidK"><span class="id" title="lemma">of_voidK</span></a> <a id="T:5" class="idref" href="#T:5"><span class="id" title="binder">T</span></a> : <a class="idref" href="http://coq.inria.fr/distrib/V8.14.0/stdlib//Coq.ssr.ssrfun.html#pcancel"><span class="id" title="definition">pcancel</span></a> (<a class="idref" href="mathcomp.ssreflect.ssrfun.html#of_void"><span class="id" title="definition">of_void</span></a> <a class="idref" href="mathcomp.ssreflect.ssrfun.html#T:5"><span class="id" title="variable">T</span></a>) <a class="idref" href="http://coq.inria.fr/distrib/V8.14.0/stdlib//Coq.ssr.ssrfun.html#8486b0ff5bfed6f6875afb7a9befbceb"><span class="id" title="notation">[</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.14.0/stdlib//Coq.ssr.ssrfun.html#8486b0ff5bfed6f6875afb7a9befbceb"><span class="id" title="notation">fun</span></a> <span class="id" title="var">_</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.14.0/stdlib//Coq.ssr.ssrfun.html#8486b0ff5bfed6f6875afb7a9befbceb"><span class="id" title="notation">⇒</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.14.0/stdlib//Coq.Init.Datatypes.html#None"><span class="id" title="constructor">None</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.14.0/stdlib//Coq.ssr.ssrfun.html#8486b0ff5bfed6f6875afb7a9befbceb"><span class="id" title="notation">]</span></a>.<br/>
+ 
+<br/>
+<span class="id" title="keyword">Lemma</span> <a id="inj_compr" class="idref" href="#inj_compr"><span class="id" title="lemma">inj_compr</span></a> <a id="A:6" class="idref" href="#A:6"><span class="id" title="binder">A</span></a> <a id="B:7" class="idref" href="#B:7"><span class="id" title="binder">B</span></a> <a id="C:8" class="idref" href="#C:8"><span class="id" title="binder">C</span></a> (<a id="f:9" class="idref" href="#f:9"><span class="id" title="binder">f</span></a> : <a class="idref" href="mathcomp.ssreflect.ssrfun.html#B:7"><span class="id" title="variable">B</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.14.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <a class="idref" href="mathcomp.ssreflect.ssrfun.html#A:6"><span class="id" title="variable">A</span></a>) (<a id="h:10" class="idref" href="#h:10"><span class="id" title="binder">h</span></a> : <a class="idref" href="mathcomp.ssreflect.ssrfun.html#C:8"><span class="id" title="variable">C</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.14.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <a class="idref" href="mathcomp.ssreflect.ssrfun.html#B:7"><span class="id" title="variable">B</span></a>) :<br/>
+&nbsp;&nbsp;&nbsp;<a class="idref" href="http://coq.inria.fr/distrib/V8.14.0/stdlib//Coq.ssr.ssrfun.html#injective"><span class="id" title="definition">injective</span></a> (<a class="idref" href="mathcomp.ssreflect.ssrfun.html#f:9"><span class="id" title="variable">f</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.14.0/stdlib//Coq.ssr.ssrfun.html#8b4742e3f67816503ce4ab2f3b81c27e"><span class="id" title="notation">\</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.14.0/stdlib//Coq.ssr.ssrfun.html#8b4742e3f67816503ce4ab2f3b81c27e"><span class="id" title="notation">o</span></a> <a class="idref" href="mathcomp.ssreflect.ssrfun.html#h:10"><span class="id" title="variable">h</span></a>) <a class="idref" href="http://coq.inria.fr/distrib/V8.14.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.14.0/stdlib//Coq.ssr.ssrfun.html#injective"><span class="id" title="definition">injective</span></a> <a class="idref" href="mathcomp.ssreflect.ssrfun.html#h:10"><span class="id" title="variable">h</span></a>.<br/>
+ 
+<br/>
+<span class="id" title="keyword">Definition</span> <a id="injective2" class="idref" href="#injective2"><span class="id" title="definition">injective2</span></a> (<a id="rT:11" class="idref" href="#rT:11"><span class="id" title="binder">rT</span></a> <a id="aT1:12" class="idref" href="#aT1:12"><span class="id" title="binder">aT1</span></a> <a id="aT2:13" class="idref" href="#aT2:13"><span class="id" title="binder">aT2</span></a> : <span class="id" title="keyword">Type</span>) (<a id="f:14" class="idref" href="#f:14"><span class="id" title="binder">f</span></a> : <a class="idref" href="mathcomp.ssreflect.ssrfun.html#aT1:12"><span class="id" title="variable">aT1</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.14.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <a class="idref" href="mathcomp.ssreflect.ssrfun.html#aT2:13"><span class="id" title="variable">aT2</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.14.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <a class="idref" href="mathcomp.ssreflect.ssrfun.html#rT:11"><span class="id" title="variable">rT</span></a>) :=<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">∀</span> (<a id="x1:15" class="idref" href="#x1:15"><span class="id" title="binder">x1</span></a> <a id="x2:16" class="idref" href="#x2:16"><span class="id" title="binder">x2</span></a> : <a class="idref" href="mathcomp.ssreflect.ssrfun.html#aT1:12"><span class="id" title="variable">aT1</span></a>) (<a id="y1:17" class="idref" href="#y1:17"><span class="id" title="binder">y1</span></a> <a id="y2:18" class="idref" href="#y2:18"><span class="id" title="binder">y2</span></a> : <a class="idref" href="mathcomp.ssreflect.ssrfun.html#aT2:13"><span class="id" title="variable">aT2</span></a>), <a class="idref" href="mathcomp.ssreflect.ssrfun.html#f:14"><span class="id" title="variable">f</span></a> <a class="idref" href="mathcomp.ssreflect.ssrfun.html#x1:15"><span class="id" title="variable">x1</span></a> <a class="idref" href="mathcomp.ssreflect.ssrfun.html#y1:17"><span class="id" title="variable">y1</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.14.0/stdlib//Coq.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">=</span></a> <a class="idref" href="mathcomp.ssreflect.ssrfun.html#f:14"><span class="id" title="variable">f</span></a> <a class="idref" href="mathcomp.ssreflect.ssrfun.html#x2:16"><span class="id" title="variable">x2</span></a> <a class="idref" href="mathcomp.ssreflect.ssrfun.html#y2:18"><span class="id" title="variable">y2</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.14.0/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.14.0/stdlib//Coq.Init.Datatypes.html#11c698c8685bb8ab1cf725545c085ac4"><span class="id" title="notation">(</span></a><a class="idref" href="mathcomp.ssreflect.ssrfun.html#x1:15"><span class="id" title="variable">x1</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.14.0/stdlib//Coq.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">=</span></a> <a class="idref" href="mathcomp.ssreflect.ssrfun.html#x2:16"><span class="id" title="variable">x2</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.14.0/stdlib//Coq.Init.Datatypes.html#11c698c8685bb8ab1cf725545c085ac4"><span class="id" title="notation">)</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.14.0/stdlib//Coq.Init.Datatypes.html#11c698c8685bb8ab1cf725545c085ac4"><span class="id" title="notation">×</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.14.0/stdlib//Coq.Init.Datatypes.html#11c698c8685bb8ab1cf725545c085ac4"><span class="id" title="notation">(</span></a><a class="idref" href="mathcomp.ssreflect.ssrfun.html#y1:17"><span class="id" title="variable">y1</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.14.0/stdlib//Coq.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">=</span></a> <a class="idref" href="mathcomp.ssreflect.ssrfun.html#y2:18"><span class="id" title="variable">y2</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.14.0/stdlib//Coq.Init.Datatypes.html#11c698c8685bb8ab1cf725545c085ac4"><span class="id" title="notation">)</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Arguments</span> <a class="idref" href="mathcomp.ssreflect.ssrfun.html#injective2"><span class="id" title="definition">injective2</span></a> [<span class="id" title="var">rT</span> <span class="id" title="var">aT1</span> <span class="id" title="var">aT2</span>] <span class="id" title="var">f</span>.<br/>
+</div>
+</div>
+
+<div id="footer">
+<hr/><a href="index.html">Index</a><hr/>This page has been generated by <a href="http://coq.inria.fr/">coqdoc</a>
+</div>
+
+</div>
+
+</body>
+</html>
