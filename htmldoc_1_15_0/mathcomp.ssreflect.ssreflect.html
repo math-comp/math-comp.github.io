@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<title>mathcomp.ssreflect.ssreflect</title>
+</head>
+
+<body>
+
+<div id="page">
+
+<div id="header">
+</div>
+
+<div id="main">
+
+<h1 class="libtitle">Library mathcomp.ssreflect.ssreflect</h1>
+
+<div class="code">
+<span class="comment">(*&nbsp;(c)&nbsp;Copyright&nbsp;2006-2016&nbsp;Microsoft&nbsp;Corporation&nbsp;and&nbsp;Inria.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;Distributed&nbsp;under&nbsp;the&nbsp;terms&nbsp;of&nbsp;CeCILL-B.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*)</span><br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">Coq</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Export</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.14.1/stdlib//Coq.ssr.ssreflect.html#"><span class="id" title="library">ssreflect</span></a>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+ Local additions:                                                           
+
+<div class="paragraph"> </div>
+
+ [elaborate x] == triggers coq elaboration to fill the holes of the term x  
+                  The main use case is to trigger typeclass inference in    
+                  the body of a ssreflect have := [elaborate body].         
+
+<div class="paragraph"> </div>
+
+   Intro pattern ltac views:                                                
+<ul class="doclist">
+<li> calling rewrite from an intro pattern, use with parsimony              
+     =&gt; / [1! rules]  := rewrite rules                                       
+     =&gt; / [! rules]   := rewrite !rules                                       
+
+</li>
+</ul>
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Reserved Notation</span> &quot;[ 'elaborate' x ]" (<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 0).<br/>
+
+<br/>
+<span class="id" title="keyword">Module</span> <a id="Deprecation" class="idref" href="#Deprecation"><span class="id" title="module">Deprecation</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <a id="Deprecation.hidden" class="idref" href="#Deprecation.hidden"><span class="id" title="definition">hidden</span></a> (<a id="T:1" class="idref" href="#T:1"><span class="id" title="binder">T</span></a> : <span class="id" title="keyword">Type</span>) := <a class="idref" href="mathcomp.ssreflect.ssreflect.html#T:1"><span class="id" title="variable">T</span></a>.<br/>
+<span class="id" title="keyword">Definition</span> <a id="Deprecation.exposed" class="idref" href="#Deprecation.exposed"><span class="id" title="definition">exposed</span></a> (<a id="T:2" class="idref" href="#T:2"><span class="id" title="binder">T</span></a> : <span class="id" title="keyword">Type</span>) &amp; <a class="idref" href="http://coq.inria.fr/distrib/V8.14.1/stdlib//Coq.Init.Datatypes.html#unit"><span class="id" title="inductive">unit</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.14.1/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.14.1/stdlib//Coq.Init.Datatypes.html#unit"><span class="id" title="inductive">unit</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.14.1/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">→</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.14.1/stdlib//Coq.Init.Datatypes.html#unit"><span class="id" title="inductive">unit</span></a> := <a class="idref" href="mathcomp.ssreflect.ssreflect.html#T:2"><span class="id" title="variable">T</span></a>.<br/>
+<span class="id" title="keyword">Definition</span> <a id="Deprecation.hide" class="idref" href="#Deprecation.hide"><span class="id" title="definition">hide</span></a> <a id="T:3" class="idref" href="#T:3"><span class="id" title="binder">T</span></a> <a id="u:4" class="idref" href="#u:4"><span class="id" title="binder">u</span></a> (<a id="v:5" class="idref" href="#v:5"><span class="id" title="binder">v</span></a> : <a class="idref" href="mathcomp.ssreflect.ssreflect.html#Deprecation.exposed"><span class="id" title="definition">exposed</span></a> <a class="idref" href="mathcomp.ssreflect.ssreflect.html#T:3"><span class="id" title="variable">T</span></a> <a class="idref" href="mathcomp.ssreflect.ssreflect.html#u:4"><span class="id" title="variable">u</span></a>) : <a class="idref" href="mathcomp.ssreflect.ssreflect.html#Deprecation.hidden"><span class="id" title="definition">hidden</span></a> <a class="idref" href="mathcomp.ssreflect.ssreflect.html#T:3"><span class="id" title="variable">T</span></a> := <a class="idref" href="mathcomp.ssreflect.ssreflect.html#v:5"><span class="id" title="variable">v</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Ltac</span> <span class="id" title="var">warn</span> <span class="id" title="var">old_id</span> <span class="id" title="var">new_id</span> :=<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">idtac</span> "Warning:" <span class="id" title="var">old_id</span> "is deprecated; use" <span class="id" title="var">new_id</span> "instead".<br/>
+
+<br/>
+<span class="id" title="keyword">Ltac</span> <span class="id" title="var">stop</span> <span class="id" title="var">old_id</span> <span class="id" title="var">new_id</span> :=<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">fail</span> 1 "Error:" <span class="id" title="var">old_id</span> "is deprecated; use" <span class="id" title="var">new_id</span> "instead".<br/>
+
+<br/>
+<span class="id" title="keyword">Structure</span> <a id="Deprecation.hinted" class="idref" href="#Deprecation.hinted"><span class="id" title="record">hinted</span></a> := <a id="Deprecation.Hint" class="idref" href="#Deprecation.Hint"><span class="id" title="constructor">Hint</span></a> {<a id="Deprecation.statement" class="idref" href="#Deprecation.statement"><span class="id" title="projection">statement</span></a>; <a id="Deprecation.hint" class="idref" href="#Deprecation.hint"><span class="id" title="projection">hint</span></a> : <a class="idref" href="mathcomp.ssreflect.ssreflect.html#statement:7"><span class="id" title="method">statement</span></a>}.<br/>
+<span class="id" title="keyword">Ltac</span> <span class="id" title="var">check</span> <span class="id" title="var">cond</span> := <span class="id" title="keyword">let</span> <span class="id" title="var">test</span> := <span class="id" title="keyword">constr</span>:(<a class="idref" href="mathcomp.ssreflect.ssreflect.html#Deprecation.hint"><span class="id" title="projection">hint</span></a> <span class="id" title="var">_</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.14.1/stdlib//Coq.ssr.ssreflect.html#::core_scope:x_':'_x"><span class="id" title="notation">:</span></a> <span class="id" title="var">cond</span>) <span class="id" title="tactic">in</span> <span class="id" title="tactic">idtac</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Variant</span> <a id="Deprecation.reject" class="idref" href="#Deprecation.reject"><span class="id" title="inductive">reject</span></a> := <a id="Deprecation.Reject" class="idref" href="#Deprecation.Reject"><span class="id" title="constructor">Reject</span></a>.<br/>
+<span class="id" title="keyword">Definition</span> <a id="Deprecation.reject_hint" class="idref" href="#Deprecation.reject_hint"><span class="id" title="definition">reject_hint</span></a> := <a class="idref" href="mathcomp.ssreflect.ssreflect.html#Deprecation.Hint"><span class="id" title="constructor">Hint</span></a> <a class="idref" href="mathcomp.ssreflect.ssreflect.html#Deprecation.reject"><span class="id" title="inductive">reject</span></a> <a class="idref" href="mathcomp.ssreflect.ssreflect.html#Deprecation.Reject"><span class="id" title="constructor">Reject</span></a>.<br/>
+<span class="id" title="keyword">Module</span> <a id="Deprecation.Reject" class="idref" href="#Deprecation.Reject"><span class="id" title="module">Reject</span></a>. <span class="id" title="var">Canonical</span> <a class="idref" href="mathcomp.ssreflect.ssreflect.html#Deprecation.reject_hint"><span class="id" title="definition">reject_hint</span></a>. <span class="id" title="keyword">End</span> <a class="idref" href="mathcomp.ssreflect.ssreflect.html#Deprecation.Reject"><span class="id" title="module">Reject</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Variant</span> <a id="Deprecation.silent" class="idref" href="#Deprecation.silent"><span class="id" title="inductive">silent</span></a> := <a id="Deprecation.Silent" class="idref" href="#Deprecation.Silent"><span class="id" title="constructor">Silent</span></a>.<br/>
+<span class="id" title="keyword">Definition</span> <a id="Deprecation.silent_hint" class="idref" href="#Deprecation.silent_hint"><span class="id" title="definition">silent_hint</span></a> := <a class="idref" href="mathcomp.ssreflect.ssreflect.html#Deprecation.Hint"><span class="id" title="constructor">Hint</span></a> <a class="idref" href="mathcomp.ssreflect.ssreflect.html#Deprecation.silent"><span class="id" title="inductive">silent</span></a> <a class="idref" href="mathcomp.ssreflect.ssreflect.html#Deprecation.Silent"><span class="id" title="constructor">Silent</span></a>.<br/>
+<span class="id" title="keyword">Module</span> <a id="Deprecation.Silent" class="idref" href="#Deprecation.Silent"><span class="id" title="module">Silent</span></a>. <span class="id" title="var">Canonical</span> <a class="idref" href="mathcomp.ssreflect.ssreflect.html#Deprecation.silent_hint"><span class="id" title="definition">silent_hint</span></a>. <span class="id" title="keyword">End</span> <a class="idref" href="mathcomp.ssreflect.ssreflect.html#Deprecation.Silent"><span class="id" title="module">Silent</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Ltac</span> <span class="id" title="var">flag</span> <span class="id" title="var">old_id</span> <span class="id" title="var">new_id</span> :=<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">first</span> [<span class="id" title="var">check</span> <span class="id" title="var">reject</span>; <span class="id" title="var">stop</span> <span class="id" title="var">old_id</span> <span class="id" title="var">new_id</span> | <span class="id" title="var">check</span> <span class="id" title="var">silent</span> | <span class="id" title="var">warn</span> <span class="id" title="var">old_id</span> <span class="id" title="var">new_id</span>].<br/>
+
+<br/>
+<span class="id" title="keyword">Module</span> <a id="Deprecation.Exports" class="idref" href="#Deprecation.Exports"><span class="id" title="module">Exports</span></a>.<br/>
+<span class="id" title="keyword">Arguments</span> <a class="idref" href="mathcomp.ssreflect.ssreflect.html#Deprecation.hide"><span class="id" title="definition">hide</span></a> {<span class="id" title="var">T</span>} <span class="id" title="var">u</span> <span class="id" title="var">v</span> /.<br/>
+<span class="id" title="keyword">Coercion</span> <a class="idref" href="mathcomp.ssreflect.ssreflect.html#Deprecation.hide"><span class="id" title="definition">hide</span></a> <a class="idref" href="mathcomp.ssreflect.ssreflect.html#Deprecation.hide"><span class="id" title="definition">:</span></a> <a class="idref" href="mathcomp.ssreflect.ssreflect.html#Deprecation.hide"><span class="id" title="definition">exposed</span></a> <a class="idref" href="mathcomp.ssreflect.ssreflect.html#Deprecation.hide"><span class="id" title="definition">&gt;-&gt;</span></a> <a class="idref" href="mathcomp.ssreflect.ssreflect.html#Deprecation.hide"><span class="id" title="definition">hidden</span></a>.<br/>
+#[<span class="id" title="var">deprecated</span>(<span class="id" title="var">since</span>="mathcomp 1.13.0",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">note</span>="Use the deprecated attribute instead.")]<br/>
+<span class="id" title="keyword">Notation</span> <a id="Deprecation.Exports.deprecate" class="idref" href="#Deprecation.Exports.deprecate"><span class="id" title="abbreviation">deprecate</span></a> <span class="id" title="var">old_id</span> <span class="id" title="var">new_id</span> :=<br/>
+&nbsp;&nbsp;(<a class="idref" href="mathcomp.ssreflect.ssreflect.html#Deprecation.hide"><span class="id" title="definition">hide</span></a> (<span class="id" title="keyword">fun</span> <a id="old_id:13" class="idref" href="#old_id:13"><span class="id" title="binder">old_id</span></a> <a id="new_id:14" class="idref" href="#new_id:14"><span class="id" title="binder">new_id</span></a> ⇒ <span class="id" title="keyword">ltac</span>:(<span class="id" title="var">flag</span> <span class="id" title="var">old_id</span> <span class="id" title="var">new_id</span>; <span class="id" title="tactic">exact</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.14.1/stdlib//Coq.Init.Datatypes.html#tt"><span class="id" title="constructor">tt</span></a>)) <span class="id" title="var">new_id</span>)<br/>
+&nbsp;&nbsp;(<span class="id" title="var">only</span> <span class="id" title="var">parsing</span>).<br/>
+<span class="id" title="keyword">End</span> <a class="idref" href="mathcomp.ssreflect.ssreflect.html#Deprecation.Exports"><span class="id" title="module">Exports</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">End</span> <a class="idref" href="mathcomp.ssreflect.ssreflect.html#Deprecation"><span class="id" title="module">Deprecation</span></a>.<br/>
+<span class="id" title="keyword">Export</span> <span class="id" title="var">Deprecation.Exports</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Notation</span> <a id="acbe05f362ecaad3d4a05486db0b352d" class="idref" href="#acbe05f362ecaad3d4a05486db0b352d"><span class="id" title="notation">&quot;</span></a>[ 'elaborate' x ]" := (<span class="id" title="keyword">ltac</span>:(<span class="id" title="tactic">refine</span> <span class="id" title="var">x</span>)) (<span class="id" title="var">only</span> <span class="id" title="var">parsing</span>).<br/>
+
+<br/>
+<span class="id" title="keyword">Module</span> <span class="id" title="keyword">Export</span> <a id="ipat" class="idref" href="#ipat"><span class="id" title="module">ipat</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Notation</span> <a id="1bedcde8d778593b4f52c096a5ecb94a" class="idref" href="#1bedcde8d778593b4f52c096a5ecb94a"><span class="id" title="notation">&quot;</span></a>'[' '1' '!' rules ']'"     := (<span class="id" title="keyword">ltac</span>:(<span class="id" title="tactic">rewrite</span> <span class="id" title="var">rules</span>))<br/>
+&nbsp;&nbsp;(<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 0, <span class="id" title="var">rules</span> <span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 200, <span class="id" title="var">only</span> <span class="id" title="var">parsing</span>) : <span class="id" title="var">ssripat_scope</span>.<br/>
+<span class="id" title="keyword">Notation</span> <a id="a4185b2be48be717d1ed9bd3d9ed6b28" class="idref" href="#a4185b2be48be717d1ed9bd3d9ed6b28"><span class="id" title="notation">&quot;</span></a>'[' '!' rules ']'"         := (<span class="id" title="keyword">ltac</span>:(<span class="id" title="tactic">rewrite</span> !<span class="id" title="var">rules</span>))<br/>
+&nbsp;&nbsp;(<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 0, <span class="id" title="var">rules</span> <span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 200, <span class="id" title="var">only</span> <span class="id" title="var">parsing</span>) : <span class="id" title="var">ssripat_scope</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">End</span> <a class="idref" href="mathcomp.ssreflect.ssreflect.html#ipat"><span class="id" title="module">ipat</span></a>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+ A class to trigger reduction by rewriting.                           
+ Usage: rewrite [pattern]vm_compute.                                  
+ Alternatively one may redefine a lemma as in algebra/rat.v :         
+ Lemma rat_vm_compute n (x : rat) : vm_compute_eq n%:Q x -&gt; n%:Q = x. 
+ Proof. exact. Qed.                                                    
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Class</span> <a id="vm_compute_eq" class="idref" href="#vm_compute_eq"><span class="id" title="record">vm_compute_eq</span></a> {<a id="T:15" class="idref" href="#T:15"><span class="id" title="binder">T</span></a> : <span class="id" title="keyword">Type</span>} (<a id="x:16" class="idref" href="#x:16"><span class="id" title="binder">x</span></a> <a id="y:17" class="idref" href="#y:17"><span class="id" title="binder">y</span></a> : <a class="idref" href="mathcomp.ssreflect.ssreflect.html#T:15"><span class="id" title="variable">T</span></a>) := <a id="vm_compute" class="idref" href="#vm_compute"><span class="id" title="projection">vm_compute</span></a> : <a class="idref" href="mathcomp.ssreflect.ssreflect.html#x:16"><span class="id" title="variable">x</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.14.1/stdlib//Coq.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">=</span></a> <a class="idref" href="mathcomp.ssreflect.ssreflect.html#y:17"><span class="id" title="variable">y</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Hint Extern</span> 0 (@<a class="idref" href="mathcomp.ssreflect.ssreflect.html#vm_compute_eq"><span class="id" title="class">vm_compute_eq</span></a> <span class="id" title="var">_</span> <span class="id" title="var">_</span> <span class="id" title="var">_</span>) ⇒<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">vm_compute</span>; <span class="id" title="tactic">reflexivity</span> : <span class="id" title="var">typeclass_instances</span>.<br/>
+</div>
+</div>
+
+<div id="footer">
+<hr/><a href="index.html">Index</a><hr/>This page has been generated by <a href="http://coq.inria.fr/">coqdoc</a>
+</div>
+
+</div>
+
+</body>
+</html>
