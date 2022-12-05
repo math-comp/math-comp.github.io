@@ -1,0 +1,1737 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<title>mathcomp.ssreflect.tuple</title>
+</head>
+
+<body>
+
+<div id="page">
+
+<div id="header">
+</div>
+
+<div id="main">
+
+<table>
+<tr>
+<td>Global Index</td>
+<td><a href="index_global_A.html">A</a></td>
+<td><a href="index_global_B.html">B</a></td>
+<td><a href="index_global_C.html">C</a></td>
+<td><a href="index_global_D.html">D</a></td>
+<td><a href="index_global_E.html">E</a></td>
+<td><a href="index_global_F.html">F</a></td>
+<td><a href="index_global_G.html">G</a></td>
+<td><a href="index_global_H.html">H</a></td>
+<td><a href="index_global_I.html">I</a></td>
+<td><a href="index_global_J.html">J</a></td>
+<td><a href="index_global_K.html">K</a></td>
+<td><a href="index_global_L.html">L</a></td>
+<td><a href="index_global_M.html">M</a></td>
+<td><a href="index_global_N.html">N</a></td>
+<td><a href="index_global_O.html">O</a></td>
+<td><a href="index_global_P.html">P</a></td>
+<td><a href="index_global_Q.html">Q</a></td>
+<td><a href="index_global_R.html">R</a></td>
+<td><a href="index_global_S.html">S</a></td>
+<td><a href="index_global_T.html">T</a></td>
+<td><a href="index_global_U.html">U</a></td>
+<td><a href="index_global_V.html">V</a></td>
+<td><a href="index_global_W.html">W</a></td>
+<td><a href="index_global_X.html">X</a></td>
+<td><a href="index_global_Y.html">Y</a></td>
+<td><a href="index_global_Z.html">Z</a></td>
+<td>_</td>
+<td><a href="index_global_*.html">other</a></td>
+<td>(71649 entries)</td>
+</tr>
+<tr>
+<td>Notation Index</td>
+<td><a href="index_notation_A.html">A</a></td>
+<td><a href="index_notation_B.html">B</a></td>
+<td><a href="index_notation_C.html">C</a></td>
+<td><a href="index_notation_D.html">D</a></td>
+<td><a href="index_notation_E.html">E</a></td>
+<td><a href="index_notation_F.html">F</a></td>
+<td><a href="index_notation_G.html">G</a></td>
+<td>H</td>
+<td><a href="index_notation_I.html">I</a></td>
+<td>J</td>
+<td><a href="index_notation_K.html">K</a></td>
+<td><a href="index_notation_L.html">L</a></td>
+<td><a href="index_notation_M.html">M</a></td>
+<td><a href="index_notation_N.html">N</a></td>
+<td><a href="index_notation_O.html">O</a></td>
+<td><a href="index_notation_P.html">P</a></td>
+<td><a href="index_notation_Q.html">Q</a></td>
+<td><a href="index_notation_R.html">R</a></td>
+<td><a href="index_notation_S.html">S</a></td>
+<td>T</td>
+<td><a href="index_notation_U.html">U</a></td>
+<td><a href="index_notation_V.html">V</a></td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td><a href="index_notation_Z.html">Z</a></td>
+<td>_</td>
+<td><a href="index_notation_*.html">other</a></td>
+<td>(1792 entries)</td>
+</tr>
+<tr>
+<td>Binder Index</td>
+<td><a href="index_binder_A.html">A</a></td>
+<td><a href="index_binder_B.html">B</a></td>
+<td><a href="index_binder_C.html">C</a></td>
+<td><a href="index_binder_D.html">D</a></td>
+<td><a href="index_binder_E.html">E</a></td>
+<td><a href="index_binder_F.html">F</a></td>
+<td><a href="index_binder_G.html">G</a></td>
+<td><a href="index_binder_H.html">H</a></td>
+<td><a href="index_binder_I.html">I</a></td>
+<td><a href="index_binder_J.html">J</a></td>
+<td><a href="index_binder_K.html">K</a></td>
+<td><a href="index_binder_L.html">L</a></td>
+<td><a href="index_binder_M.html">M</a></td>
+<td><a href="index_binder_N.html">N</a></td>
+<td><a href="index_binder_O.html">O</a></td>
+<td><a href="index_binder_P.html">P</a></td>
+<td><a href="index_binder_Q.html">Q</a></td>
+<td><a href="index_binder_R.html">R</a></td>
+<td><a href="index_binder_S.html">S</a></td>
+<td><a href="index_binder_T.html">T</a></td>
+<td><a href="index_binder_U.html">U</a></td>
+<td><a href="index_binder_V.html">V</a></td>
+<td><a href="index_binder_W.html">W</a></td>
+<td><a href="index_binder_X.html">X</a></td>
+<td><a href="index_binder_Y.html">Y</a></td>
+<td><a href="index_binder_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(46193 entries)</td>
+</tr>
+<tr>
+<td>Module Index</td>
+<td><a href="index_module_A.html">A</a></td>
+<td><a href="index_module_B.html">B</a></td>
+<td><a href="index_module_C.html">C</a></td>
+<td><a href="index_module_D.html">D</a></td>
+<td><a href="index_module_E.html">E</a></td>
+<td><a href="index_module_F.html">F</a></td>
+<td><a href="index_module_G.html">G</a></td>
+<td>H</td>
+<td><a href="index_module_I.html">I</a></td>
+<td>J</td>
+<td>K</td>
+<td>L</td>
+<td><a href="index_module_M.html">M</a></td>
+<td><a href="index_module_N.html">N</a></td>
+<td><a href="index_module_O.html">O</a></td>
+<td><a href="index_module_P.html">P</a></td>
+<td><a href="index_module_Q.html">Q</a></td>
+<td><a href="index_module_R.html">R</a></td>
+<td><a href="index_module_S.html">S</a></td>
+<td><a href="index_module_T.html">T</a></td>
+<td><a href="index_module_U.html">U</a></td>
+<td><a href="index_module_V.html">V</a></td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td><a href="index_module_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(266 entries)</td>
+</tr>
+<tr>
+<td>Variable Index</td>
+<td><a href="index_variable_A.html">A</a></td>
+<td><a href="index_variable_B.html">B</a></td>
+<td><a href="index_variable_C.html">C</a></td>
+<td><a href="index_variable_D.html">D</a></td>
+<td><a href="index_variable_E.html">E</a></td>
+<td><a href="index_variable_F.html">F</a></td>
+<td><a href="index_variable_G.html">G</a></td>
+<td><a href="index_variable_H.html">H</a></td>
+<td><a href="index_variable_I.html">I</a></td>
+<td>J</td>
+<td><a href="index_variable_K.html">K</a></td>
+<td><a href="index_variable_L.html">L</a></td>
+<td><a href="index_variable_M.html">M</a></td>
+<td><a href="index_variable_N.html">N</a></td>
+<td><a href="index_variable_O.html">O</a></td>
+<td><a href="index_variable_P.html">P</a></td>
+<td><a href="index_variable_Q.html">Q</a></td>
+<td><a href="index_variable_R.html">R</a></td>
+<td><a href="index_variable_S.html">S</a></td>
+<td><a href="index_variable_T.html">T</a></td>
+<td><a href="index_variable_U.html">U</a></td>
+<td><a href="index_variable_V.html">V</a></td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td><a href="index_variable_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(3623 entries)</td>
+</tr>
+<tr>
+<td>Library Index</td>
+<td><a href="index_library_A.html">A</a></td>
+<td><a href="index_library_B.html">B</a></td>
+<td><a href="index_library_C.html">C</a></td>
+<td><a href="index_library_D.html">D</a></td>
+<td><a href="index_library_E.html">E</a></td>
+<td><a href="index_library_F.html">F</a></td>
+<td><a href="index_library_G.html">G</a></td>
+<td><a href="index_library_H.html">H</a></td>
+<td><a href="index_library_I.html">I</a></td>
+<td><a href="index_library_J.html">J</a></td>
+<td>K</td>
+<td>L</td>
+<td><a href="index_library_M.html">M</a></td>
+<td><a href="index_library_N.html">N</a></td>
+<td><a href="index_library_O.html">O</a></td>
+<td><a href="index_library_P.html">P</a></td>
+<td><a href="index_library_Q.html">Q</a></td>
+<td><a href="index_library_R.html">R</a></td>
+<td><a href="index_library_S.html">S</a></td>
+<td><a href="index_library_T.html">T</a></td>
+<td>U</td>
+<td><a href="index_library_V.html">V</a></td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td><a href="index_library_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(91 entries)</td>
+</tr>
+<tr>
+<td>Lemma Index</td>
+<td><a href="index_lemma_A.html">A</a></td>
+<td><a href="index_lemma_B.html">B</a></td>
+<td><a href="index_lemma_C.html">C</a></td>
+<td><a href="index_lemma_D.html">D</a></td>
+<td><a href="index_lemma_E.html">E</a></td>
+<td><a href="index_lemma_F.html">F</a></td>
+<td><a href="index_lemma_G.html">G</a></td>
+<td><a href="index_lemma_H.html">H</a></td>
+<td><a href="index_lemma_I.html">I</a></td>
+<td><a href="index_lemma_J.html">J</a></td>
+<td><a href="index_lemma_K.html">K</a></td>
+<td><a href="index_lemma_L.html">L</a></td>
+<td><a href="index_lemma_M.html">M</a></td>
+<td><a href="index_lemma_N.html">N</a></td>
+<td><a href="index_lemma_O.html">O</a></td>
+<td><a href="index_lemma_P.html">P</a></td>
+<td><a href="index_lemma_Q.html">Q</a></td>
+<td><a href="index_lemma_R.html">R</a></td>
+<td><a href="index_lemma_S.html">S</a></td>
+<td><a href="index_lemma_T.html">T</a></td>
+<td><a href="index_lemma_U.html">U</a></td>
+<td><a href="index_lemma_V.html">V</a></td>
+<td><a href="index_lemma_W.html">W</a></td>
+<td><a href="index_lemma_X.html">X</a></td>
+<td>Y</td>
+<td><a href="index_lemma_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(14204 entries)</td>
+</tr>
+<tr>
+<td>Constructor Index</td>
+<td><a href="index_constructor_A.html">A</a></td>
+<td><a href="index_constructor_B.html">B</a></td>
+<td><a href="index_constructor_C.html">C</a></td>
+<td><a href="index_constructor_D.html">D</a></td>
+<td><a href="index_constructor_E.html">E</a></td>
+<td><a href="index_constructor_F.html">F</a></td>
+<td><a href="index_constructor_G.html">G</a></td>
+<td><a href="index_constructor_H.html">H</a></td>
+<td><a href="index_constructor_I.html">I</a></td>
+<td>J</td>
+<td>K</td>
+<td><a href="index_constructor_L.html">L</a></td>
+<td><a href="index_constructor_M.html">M</a></td>
+<td><a href="index_constructor_N.html">N</a></td>
+<td><a href="index_constructor_O.html">O</a></td>
+<td><a href="index_constructor_P.html">P</a></td>
+<td><a href="index_constructor_Q.html">Q</a></td>
+<td><a href="index_constructor_R.html">R</a></td>
+<td><a href="index_constructor_S.html">S</a></td>
+<td><a href="index_constructor_T.html">T</a></td>
+<td><a href="index_constructor_U.html">U</a></td>
+<td><a href="index_constructor_V.html">V</a></td>
+<td>W</td>
+<td><a href="index_constructor_X.html">X</a></td>
+<td>Y</td>
+<td><a href="index_constructor_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(259 entries)</td>
+</tr>
+<tr>
+<td>Axiom Index</td>
+<td><a href="index_axiom_A.html">A</a></td>
+<td>B</td>
+<td>C</td>
+<td>D</td>
+<td><a href="index_axiom_E.html">E</a></td>
+<td><a href="index_axiom_F.html">F</a></td>
+<td>G</td>
+<td>H</td>
+<td>I</td>
+<td>J</td>
+<td>K</td>
+<td>L</td>
+<td>M</td>
+<td>N</td>
+<td>O</td>
+<td>P</td>
+<td>Q</td>
+<td>R</td>
+<td>S</td>
+<td>T</td>
+<td>U</td>
+<td>V</td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td>Z</td>
+<td>_</td>
+<td>other</td>
+<td>(8 entries)</td>
+</tr>
+<tr>
+<td>Inductive Index</td>
+<td><a href="index_inductive_A.html">A</a></td>
+<td><a href="index_inductive_B.html">B</a></td>
+<td><a href="index_inductive_C.html">C</a></td>
+<td><a href="index_inductive_D.html">D</a></td>
+<td><a href="index_inductive_E.html">E</a></td>
+<td><a href="index_inductive_F.html">F</a></td>
+<td><a href="index_inductive_G.html">G</a></td>
+<td><a href="index_inductive_H.html">H</a></td>
+<td><a href="index_inductive_I.html">I</a></td>
+<td>J</td>
+<td>K</td>
+<td><a href="index_inductive_L.html">L</a></td>
+<td><a href="index_inductive_M.html">M</a></td>
+<td><a href="index_inductive_N.html">N</a></td>
+<td><a href="index_inductive_O.html">O</a></td>
+<td><a href="index_inductive_P.html">P</a></td>
+<td>Q</td>
+<td><a href="index_inductive_R.html">R</a></td>
+<td><a href="index_inductive_S.html">S</a></td>
+<td><a href="index_inductive_T.html">T</a></td>
+<td><a href="index_inductive_U.html">U</a></td>
+<td><a href="index_inductive_V.html">V</a></td>
+<td>W</td>
+<td><a href="index_inductive_X.html">X</a></td>
+<td>Y</td>
+<td>Z</td>
+<td>_</td>
+<td>other</td>
+<td>(134 entries)</td>
+</tr>
+<tr>
+<td>Projection Index</td>
+<td><a href="index_projection_A.html">A</a></td>
+<td><a href="index_projection_B.html">B</a></td>
+<td><a href="index_projection_C.html">C</a></td>
+<td><a href="index_projection_D.html">D</a></td>
+<td><a href="index_projection_E.html">E</a></td>
+<td><a href="index_projection_F.html">F</a></td>
+<td><a href="index_projection_G.html">G</a></td>
+<td>H</td>
+<td>I</td>
+<td>J</td>
+<td>K</td>
+<td>L</td>
+<td><a href="index_projection_M.html">M</a></td>
+<td>N</td>
+<td>O</td>
+<td><a href="index_projection_P.html">P</a></td>
+<td>Q</td>
+<td><a href="index_projection_R.html">R</a></td>
+<td><a href="index_projection_S.html">S</a></td>
+<td><a href="index_projection_T.html">T</a></td>
+<td>U</td>
+<td><a href="index_projection_V.html">V</a></td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td>Z</td>
+<td>_</td>
+<td>other</td>
+<td>(44 entries)</td>
+</tr>
+<tr>
+<td>Section Index</td>
+<td><a href="index_section_A.html">A</a></td>
+<td><a href="index_section_B.html">B</a></td>
+<td><a href="index_section_C.html">C</a></td>
+<td><a href="index_section_D.html">D</a></td>
+<td><a href="index_section_E.html">E</a></td>
+<td><a href="index_section_F.html">F</a></td>
+<td><a href="index_section_G.html">G</a></td>
+<td><a href="index_section_H.html">H</a></td>
+<td><a href="index_section_I.html">I</a></td>
+<td>J</td>
+<td><a href="index_section_K.html">K</a></td>
+<td><a href="index_section_L.html">L</a></td>
+<td><a href="index_section_M.html">M</a></td>
+<td><a href="index_section_N.html">N</a></td>
+<td><a href="index_section_O.html">O</a></td>
+<td><a href="index_section_P.html">P</a></td>
+<td><a href="index_section_Q.html">Q</a></td>
+<td><a href="index_section_R.html">R</a></td>
+<td><a href="index_section_S.html">S</a></td>
+<td><a href="index_section_T.html">T</a></td>
+<td><a href="index_section_U.html">U</a></td>
+<td><a href="index_section_V.html">V</a></td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td><a href="index_section_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(1276 entries)</td>
+</tr>
+<tr>
+<td>Abbreviation Index</td>
+<td><a href="index_abbreviation_A.html">A</a></td>
+<td><a href="index_abbreviation_B.html">B</a></td>
+<td><a href="index_abbreviation_C.html">C</a></td>
+<td><a href="index_abbreviation_D.html">D</a></td>
+<td><a href="index_abbreviation_E.html">E</a></td>
+<td><a href="index_abbreviation_F.html">F</a></td>
+<td><a href="index_abbreviation_G.html">G</a></td>
+<td><a href="index_abbreviation_H.html">H</a></td>
+<td><a href="index_abbreviation_I.html">I</a></td>
+<td><a href="index_abbreviation_J.html">J</a></td>
+<td><a href="index_abbreviation_K.html">K</a></td>
+<td><a href="index_abbreviation_L.html">L</a></td>
+<td><a href="index_abbreviation_M.html">M</a></td>
+<td><a href="index_abbreviation_N.html">N</a></td>
+<td><a href="index_abbreviation_O.html">O</a></td>
+<td><a href="index_abbreviation_P.html">P</a></td>
+<td><a href="index_abbreviation_Q.html">Q</a></td>
+<td><a href="index_abbreviation_R.html">R</a></td>
+<td><a href="index_abbreviation_S.html">S</a></td>
+<td><a href="index_abbreviation_T.html">T</a></td>
+<td><a href="index_abbreviation_U.html">U</a></td>
+<td><a href="index_abbreviation_V.html">V</a></td>
+<td><a href="index_abbreviation_W.html">W</a></td>
+<td><a href="index_abbreviation_X.html">X</a></td>
+<td>Y</td>
+<td><a href="index_abbreviation_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(682 entries)</td>
+</tr>
+<tr>
+<td>Definition Index</td>
+<td><a href="index_definition_A.html">A</a></td>
+<td><a href="index_definition_B.html">B</a></td>
+<td><a href="index_definition_C.html">C</a></td>
+<td><a href="index_definition_D.html">D</a></td>
+<td><a href="index_definition_E.html">E</a></td>
+<td><a href="index_definition_F.html">F</a></td>
+<td><a href="index_definition_G.html">G</a></td>
+<td><a href="index_definition_H.html">H</a></td>
+<td><a href="index_definition_I.html">I</a></td>
+<td><a href="index_definition_J.html">J</a></td>
+<td><a href="index_definition_K.html">K</a></td>
+<td><a href="index_definition_L.html">L</a></td>
+<td><a href="index_definition_M.html">M</a></td>
+<td><a href="index_definition_N.html">N</a></td>
+<td><a href="index_definition_O.html">O</a></td>
+<td><a href="index_definition_P.html">P</a></td>
+<td><a href="index_definition_Q.html">Q</a></td>
+<td><a href="index_definition_R.html">R</a></td>
+<td><a href="index_definition_S.html">S</a></td>
+<td><a href="index_definition_T.html">T</a></td>
+<td><a href="index_definition_U.html">U</a></td>
+<td><a href="index_definition_V.html">V</a></td>
+<td><a href="index_definition_W.html">W</a></td>
+<td><a href="index_definition_X.html">X</a></td>
+<td>Y</td>
+<td><a href="index_definition_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(3041 entries)</td>
+</tr>
+<tr>
+<td>Record Index</td>
+<td><a href="index_record_A.html">A</a></td>
+<td><a href="index_record_B.html">B</a></td>
+<td><a href="index_record_C.html">C</a></td>
+<td><a href="index_record_D.html">D</a></td>
+<td><a href="index_record_E.html">E</a></td>
+<td>F</td>
+<td><a href="index_record_G.html">G</a></td>
+<td>H</td>
+<td>I</td>
+<td>J</td>
+<td>K</td>
+<td>L</td>
+<td><a href="index_record_M.html">M</a></td>
+<td><a href="index_record_N.html">N</a></td>
+<td>O</td>
+<td><a href="index_record_P.html">P</a></td>
+<td>Q</td>
+<td><a href="index_record_R.html">R</a></td>
+<td><a href="index_record_S.html">S</a></td>
+<td><a href="index_record_T.html">T</a></td>
+<td>U</td>
+<td><a href="index_record_V.html">V</a></td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td>Z</td>
+<td>_</td>
+<td>other</td>
+<td>(36 entries)</td>
+</tr>
+</table>
+<hr/><a id="global_Z"></a><h2>Z </h2>
+<a href="mathcomp.ssreflect.bigop.html#zA:1283">zA:1283</a> [binder, in <a href="mathcomp.ssreflect.bigop.html">mathcomp.ssreflect.bigop</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#Zchar">Zchar</a> [section, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#Zchar">Zchar</a> [definition, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#zcharD1">zcharD1</a> [lemma, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#zcharD1E">zcharD1E</a> [lemma, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#zcharW">zcharW</a> [lemma, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#zchar_small_norm">zchar_small_norm</a> [lemma, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#zchar_filter">zchar_filter</a> [lemma, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#zchar_subseq">zchar_subseq</a> [lemma, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#zchar_subset">zchar_subset</a> [lemma, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#zchar_sub_irr">zchar_sub_irr</a> [lemma, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#zchar_trans_on">zchar_trans_on</a> [lemma, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#zchar_trans">zchar_trans</a> [lemma, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#zchar_span">zchar_span</a> [lemma, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#zchar_expansion">zchar_expansion</a> [lemma, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#zchar_tuple_expansion">zchar_tuple_expansion</a> [lemma, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#zchar_nth_expansion">zchar_nth_expansion</a> [lemma, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#zchar_onG">zchar_onG</a> [lemma, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#zchar_onS">zchar_onS</a> [lemma, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#zchar_on">zchar_on</a> [lemma, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#zchar_split">zchar_split</a> [lemma, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#Zchar_zmod">Zchar_zmod</a> [lemma, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#Zchar.G">Zchar.G</a> [variable, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#Zchar.gT">Zchar.gT</a> [variable, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.algebra.intdiv.html#zchinese">zchinese</a> [definition, in <a href="mathcomp.algebra.intdiv.html">mathcomp.algebra.intdiv</a>]<br/>
+<a href="mathcomp.algebra.intdiv.html#zchinese_mod">zchinese_mod</a> [lemma, in <a href="mathcomp.algebra.intdiv.html">mathcomp.algebra.intdiv</a>]<br/>
+<a href="mathcomp.algebra.intdiv.html#zchinese_modr">zchinese_modr</a> [lemma, in <a href="mathcomp.algebra.intdiv.html">mathcomp.algebra.intdiv</a>]<br/>
+<a href="mathcomp.algebra.intdiv.html#zchinese_modl">zchinese_modl</a> [lemma, in <a href="mathcomp.algebra.intdiv.html">mathcomp.algebra.intdiv</a>]<br/>
+<a href="mathcomp.algebra.intdiv.html#zchinese_remainder">zchinese_remainder</a> [lemma, in <a href="mathcomp.algebra.intdiv.html">mathcomp.algebra.intdiv</a>]<br/>
+<a href="mathcomp.algebra.intdiv.html#zcontents">zcontents</a> [definition, in <a href="mathcomp.algebra.intdiv.html">mathcomp.algebra.intdiv</a>]<br/>
+<a href="mathcomp.algebra.intdiv.html#zcontentsM">zcontentsM</a> [lemma, in <a href="mathcomp.algebra.intdiv.html">mathcomp.algebra.intdiv</a>]<br/>
+<a href="mathcomp.algebra.intdiv.html#zcontentsZ">zcontentsZ</a> [lemma, in <a href="mathcomp.algebra.intdiv.html">mathcomp.algebra.intdiv</a>]<br/>
+<a href="mathcomp.algebra.intdiv.html#zcontents_primitive">zcontents_primitive</a> [lemma, in <a href="mathcomp.algebra.intdiv.html">mathcomp.algebra.intdiv</a>]<br/>
+<a href="mathcomp.algebra.intdiv.html#zcontents_monic">zcontents_monic</a> [lemma, in <a href="mathcomp.algebra.intdiv.html">mathcomp.algebra.intdiv</a>]<br/>
+<a href="mathcomp.algebra.intdiv.html#zcontents_eq0">zcontents_eq0</a> [lemma, in <a href="mathcomp.algebra.intdiv.html">mathcomp.algebra.intdiv</a>]<br/>
+<a href="mathcomp.algebra.intdiv.html#zcontents0">zcontents0</a> [lemma, in <a href="mathcomp.algebra.intdiv.html">mathcomp.algebra.intdiv</a>]<br/>
+<a href="mathcomp.algebra.rat.html#zeroq">zeroq</a> [definition, in <a href="mathcomp.algebra.rat.html">mathcomp.algebra.rat</a>]<br/>
+<a href="mathcomp.algebra.ring_quotient.html#zeroT:115">zeroT:115</a> [binder, in <a href="mathcomp.algebra.ring_quotient.html">mathcomp.algebra.ring_quotient</a>]<br/>
+<a href="mathcomp.algebra.ring_quotient.html#zeroT:24">zeroT:24</a> [binder, in <a href="mathcomp.algebra.ring_quotient.html">mathcomp.algebra.ring_quotient</a>]<br/>
+<a href="mathcomp.algebra.ring_quotient.html#zeroT:3">zeroT:3</a> [binder, in <a href="mathcomp.algebra.ring_quotient.html">mathcomp.algebra.ring_quotient</a>]<br/>
+<a href="mathcomp.algebra.ring_quotient.html#zeroT:44">zeroT:44</a> [binder, in <a href="mathcomp.algebra.ring_quotient.html">mathcomp.algebra.ring_quotient</a>]<br/>
+<a href="mathcomp.algebra.ring_quotient.html#zeroT:66">zeroT:66</a> [binder, in <a href="mathcomp.algebra.ring_quotient.html">mathcomp.algebra.ring_quotient</a>]<br/>
+<a href="mathcomp.algebra.ring_quotient.html#zeroT:89">zeroT:89</a> [binder, in <a href="mathcomp.algebra.ring_quotient.html">mathcomp.algebra.ring_quotient</a>]<br/>
+<a href="mathcomp.algebra.vector.html#zero_lfunE">zero_lfunE</a> [lemma, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#zero_lfun">zero_lfun</a> [definition, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.ssreflect.bigop.html#zero:102">zero:102</a> [binder, in <a href="mathcomp.ssreflect.bigop.html">mathcomp.ssreflect.bigop</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#zero:197">zero:197</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#zero:2">zero:2</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.ssreflect.bigop.html#zero:81">zero:81</a> [binder, in <a href="mathcomp.ssreflect.bigop.html">mathcomp.ssreflect.bigop</a>]<br/>
+<a href="mathcomp.ssreflect.bigop.html#zero:89">zero:89</a> [binder, in <a href="mathcomp.ssreflect.bigop.html">mathcomp.ssreflect.bigop</a>]<br/>
+<a href="mathcomp.solvable.sylow.html#Zgroup">Zgroup</a> [definition, in <a href="mathcomp.solvable.sylow.html">mathcomp.solvable.sylow</a>]<br/>
+<a href="mathcomp.solvable.sylow.html#ZgroupS">ZgroupS</a> [lemma, in <a href="mathcomp.solvable.sylow.html">mathcomp.solvable.sylow</a>]<br/>
+<a href="mathcomp.solvable.sylow.html#Zgroups">Zgroups</a> [section, in <a href="mathcomp.solvable.sylow.html">mathcomp.solvable.sylow</a>]<br/>
+<a href="mathcomp.solvable.sylow.html#Zgroups.D">Zgroups.D</a> [variable, in <a href="mathcomp.solvable.sylow.html">mathcomp.solvable.sylow</a>]<br/>
+<a href="mathcomp.solvable.sylow.html#Zgroups.f">Zgroups.f</a> [variable, in <a href="mathcomp.solvable.sylow.html">mathcomp.solvable.sylow</a>]<br/>
+<a href="mathcomp.solvable.sylow.html#Zgroups.gT">Zgroups.gT</a> [variable, in <a href="mathcomp.solvable.sylow.html">mathcomp.solvable.sylow</a>]<br/>
+<a href="mathcomp.solvable.sylow.html#Zgroups.rT">Zgroups.rT</a> [variable, in <a href="mathcomp.solvable.sylow.html">mathcomp.solvable.sylow</a>]<br/>
+<a href="mathcomp.algebra.ssrint.html#ZintLmod">ZintLmod</a> [section, in <a href="mathcomp.algebra.ssrint.html">mathcomp.algebra.ssrint</a>]<br/>
+<a href="mathcomp.algebra.ssrint.html#ZintLmod.M">ZintLmod.M</a> [variable, in <a href="mathcomp.algebra.ssrint.html">mathcomp.algebra.ssrint</a>]<br/>
+<a href="mathcomp.algebra.ssrint.html#7402e9fd8b4b61fe0fce8304a99cc6eb">_ ^z (type_scope)</a> [notation, in <a href="mathcomp.algebra.ssrint.html">mathcomp.algebra.ssrint</a>]<br/>
+<a href="mathcomp.algebra.ssrint.html#ZintNeg">ZintNeg</a> [constructor, in <a href="mathcomp.algebra.ssrint.html">mathcomp.algebra.ssrint</a>]<br/>
+<a href="mathcomp.algebra.ssrint.html#ZintNull">ZintNull</a> [constructor, in <a href="mathcomp.algebra.ssrint.html">mathcomp.algebra.ssrint</a>]<br/>
+<a href="mathcomp.algebra.ssrint.html#ZintPos">ZintPos</a> [constructor, in <a href="mathcomp.algebra.ssrint.html">mathcomp.algebra.ssrint</a>]<br/>
+<a href="mathcomp.ssreflect.seq.html#zip">zip</a> [definition, in <a href="mathcomp.ssreflect.seq.html">mathcomp.ssreflect.seq</a>]<br/>
+<a href="mathcomp.ssreflect.seq.html#Zip">Zip</a> [section, in <a href="mathcomp.ssreflect.seq.html">mathcomp.ssreflect.seq</a>]<br/>
+<a href="mathcomp.ssreflect.tuple.html#zip_tuple">zip_tuple</a> [definition, in <a href="mathcomp.ssreflect.tuple.html">mathcomp.ssreflect.tuple</a>]<br/>
+<a href="mathcomp.ssreflect.tuple.html#zip_tupleP">zip_tupleP</a> [lemma, in <a href="mathcomp.ssreflect.tuple.html">mathcomp.ssreflect.tuple</a>]<br/>
+<a href="mathcomp.ssreflect.seq.html#zip_map">zip_map</a> [lemma, in <a href="mathcomp.ssreflect.seq.html">mathcomp.ssreflect.seq</a>]<br/>
+<a href="mathcomp.ssreflect.seq.html#zip_rcons">zip_rcons</a> [lemma, in <a href="mathcomp.ssreflect.seq.html">mathcomp.ssreflect.seq</a>]<br/>
+<a href="mathcomp.ssreflect.seq.html#zip_cat">zip_cat</a> [lemma, in <a href="mathcomp.ssreflect.seq.html">mathcomp.ssreflect.seq</a>]<br/>
+<a href="mathcomp.ssreflect.seq.html#zip_unzip">zip_unzip</a> [lemma, in <a href="mathcomp.ssreflect.seq.html">mathcomp.ssreflect.seq</a>]<br/>
+<a href="mathcomp.ssreflect.seq.html#Zip.r">Zip.r</a> [variable, in <a href="mathcomp.ssreflect.seq.html">mathcomp.ssreflect.seq</a>]<br/>
+<a href="mathcomp.ssreflect.seq.html#Zip.S">Zip.S</a> [variable, in <a href="mathcomp.ssreflect.seq.html">mathcomp.ssreflect.seq</a>]<br/>
+<a href="mathcomp.ssreflect.seq.html#Zip.T">Zip.T</a> [variable, in <a href="mathcomp.ssreflect.seq.html">mathcomp.ssreflect.seq</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#Zisometry_inj">Zisometry_inj</a> [lemma, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#Zisometry_of_iso">Zisometry_of_iso</a> [lemma, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#Zisometry_of_cfnorm">Zisometry_of_cfnorm</a> [lemma, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.field.cyclotomic.html#zk:59">zk:59</a> [binder, in <a href="mathcomp.field.cyclotomic.html">mathcomp.field.cyclotomic</a>]<br/>
+<a href="mathcomp.algebra.zmodp.html">zmodp</a> [library]<br/>
+<a href="mathcomp.algebra.ring_quotient.html#ZModQuotient">ZModQuotient</a> [section, in <a href="mathcomp.algebra.ring_quotient.html">mathcomp.algebra.ring_quotient</a>]<br/>
+<a href="mathcomp.algebra.ring_quotient.html#ZModQuotientExports">ZModQuotientExports</a> [module, in <a href="mathcomp.algebra.ring_quotient.html">mathcomp.algebra.ring_quotient</a>]<br/>
+<a href="mathcomp.algebra.ring_quotient.html#77b242034392fc7144b6f15f36e78994">[ zmodQuotType _ , _ &amp; _ of _ ] (form_scope)</a> [notation, in <a href="mathcomp.algebra.ring_quotient.html">mathcomp.algebra.ring_quotient</a>]<br/>
+<a href="mathcomp.algebra.ring_quotient.html#ZModQuotient.addT">ZModQuotient.addT</a> [variable, in <a href="mathcomp.algebra.ring_quotient.html">mathcomp.algebra.ring_quotient</a>]<br/>
+<a href="mathcomp.algebra.ring_quotient.html#ZModQuotient.eqT">ZModQuotient.eqT</a> [variable, in <a href="mathcomp.algebra.ring_quotient.html">mathcomp.algebra.ring_quotient</a>]<br/>
+<a href="mathcomp.algebra.ring_quotient.html#ZModQuotient.oppT">ZModQuotient.oppT</a> [variable, in <a href="mathcomp.algebra.ring_quotient.html">mathcomp.algebra.ring_quotient</a>]<br/>
+<a href="mathcomp.algebra.ring_quotient.html#ZModQuotient.T">ZModQuotient.T</a> [variable, in <a href="mathcomp.algebra.ring_quotient.html">mathcomp.algebra.ring_quotient</a>]<br/>
+<a href="mathcomp.algebra.ring_quotient.html#ZModQuotient.zeroT">ZModQuotient.zeroT</a> [variable, in <a href="mathcomp.algebra.ring_quotient.html">mathcomp.algebra.ring_quotient</a>]<br/>
+<a href="mathcomp.algebra.matrix.html#zmodS:2436">zmodS:2436</a> [binder, in <a href="mathcomp.algebra.matrix.html">mathcomp.algebra.matrix</a>]<br/>
+<a href="mathcomp.algebra.poly.html#zmodS:563">zmodS:563</a> [binder, in <a href="mathcomp.algebra.poly.html">mathcomp.algebra.poly</a>]<br/>
+<a href="mathcomp.algebra.poly.html#zmodS:564">zmodS:564</a> [binder, in <a href="mathcomp.algebra.poly.html">mathcomp.algebra.poly</a>]<br/>
+<a href="mathcomp.algebra.ssrint.html#zmodule">zmodule</a> [definition, in <a href="mathcomp.algebra.ssrint.html">mathcomp.algebra.ssrint</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#zmod_closed_subproof:2262">zmod_closed_subproof:2262</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#zmod_closed_subproof:2029">zmod_closed_subproof:2029</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssrint.html#Znat">Znat</a> [definition, in <a href="mathcomp.algebra.ssrint.html">mathcomp.algebra.ssrint</a>]<br/>
+<a href="mathcomp.algebra.ssrint.html#ZnatP">ZnatP</a> [lemma, in <a href="mathcomp.algebra.ssrint.html">mathcomp.algebra.ssrint</a>]<br/>
+<a href="mathcomp.algebra.ssrint.html#ZnatPred">ZnatPred</a> [section, in <a href="mathcomp.algebra.ssrint.html">mathcomp.algebra.ssrint</a>]<br/>
+<a href="mathcomp.algebra.ssrint.html#Znat_semiring_closed">Znat_semiring_closed</a> [lemma, in <a href="mathcomp.algebra.ssrint.html">mathcomp.algebra.ssrint</a>]<br/>
+<a href="mathcomp.algebra.ssrint.html#Znat_def">Znat_def</a> [lemma, in <a href="mathcomp.algebra.ssrint.html">mathcomp.algebra.ssrint</a>]<br/>
+<a href="mathcomp.algebra.ssrint.html#Znat_pred">Znat_pred</a> [definition, in <a href="mathcomp.algebra.ssrint.html">mathcomp.algebra.ssrint</a>]<br/>
+<a href="mathcomp.field.algnum.html#zn:14">zn:14</a> [binder, in <a href="mathcomp.field.algnum.html">mathcomp.field.algnum</a>]<br/>
+<a href="mathcomp.algebra.zmodp.html#Zp">Zp</a> [definition, in <a href="mathcomp.algebra.zmodp.html">mathcomp.algebra.zmodp</a>]<br/>
+<a href="mathcomp.algebra.zmodp.html#ZpDef">ZpDef</a> [section, in <a href="mathcomp.algebra.zmodp.html">mathcomp.algebra.zmodp</a>]<br/>
+<a href="mathcomp.algebra.zmodp.html#ZpDef.p'">ZpDef.p'</a> [variable, in <a href="mathcomp.algebra.zmodp.html">mathcomp.algebra.zmodp</a>]<br/>
+<a href="mathcomp.solvable.cyclic.html#Zpm">Zpm</a> [definition, in <a href="mathcomp.solvable.cyclic.html">mathcomp.solvable.cyclic</a>]<br/>
+<a href="mathcomp.solvable.cyclic.html#ZpmM">ZpmM</a> [lemma, in <a href="mathcomp.solvable.cyclic.html">mathcomp.solvable.cyclic</a>]<br/>
+<a href="mathcomp.solvable.cyclic.html#Zpm_morphism">Zpm_morphism</a> [definition, in <a href="mathcomp.solvable.cyclic.html">mathcomp.solvable.cyclic</a>]<br/>
+<a href="mathcomp.algebra.intdiv.html#zpolyEprim">zpolyEprim</a> [lemma, in <a href="mathcomp.algebra.intdiv.html">mathcomp.algebra.intdiv</a>]<br/>
+<a href="mathcomp.algebra.intdiv.html#ZpolyScale">ZpolyScale</a> [section, in <a href="mathcomp.algebra.intdiv.html">mathcomp.algebra.intdiv</a>]<br/>
+<a href="mathcomp.algebra.intdiv.html#zprimitive">zprimitive</a> [definition, in <a href="mathcomp.algebra.intdiv.html">mathcomp.algebra.intdiv</a>]<br/>
+<a href="mathcomp.algebra.intdiv.html#zprimitiveM">zprimitiveM</a> [lemma, in <a href="mathcomp.algebra.intdiv.html">mathcomp.algebra.intdiv</a>]<br/>
+<a href="mathcomp.algebra.intdiv.html#zprimitiveZ">zprimitiveZ</a> [lemma, in <a href="mathcomp.algebra.intdiv.html">mathcomp.algebra.intdiv</a>]<br/>
+<a href="mathcomp.algebra.intdiv.html#zprimitive_irr">zprimitive_irr</a> [lemma, in <a href="mathcomp.algebra.intdiv.html">mathcomp.algebra.intdiv</a>]<br/>
+<a href="mathcomp.algebra.intdiv.html#zprimitive_min">zprimitive_min</a> [lemma, in <a href="mathcomp.algebra.intdiv.html">mathcomp.algebra.intdiv</a>]<br/>
+<a href="mathcomp.algebra.intdiv.html#zprimitive_monic">zprimitive_monic</a> [lemma, in <a href="mathcomp.algebra.intdiv.html">mathcomp.algebra.intdiv</a>]<br/>
+<a href="mathcomp.algebra.intdiv.html#zprimitive_id">zprimitive_id</a> [lemma, in <a href="mathcomp.algebra.intdiv.html">mathcomp.algebra.intdiv</a>]<br/>
+<a href="mathcomp.algebra.intdiv.html#zprimitive_eq0">zprimitive_eq0</a> [lemma, in <a href="mathcomp.algebra.intdiv.html">mathcomp.algebra.intdiv</a>]<br/>
+<a href="mathcomp.algebra.intdiv.html#zprimitive0">zprimitive0</a> [lemma, in <a href="mathcomp.algebra.intdiv.html">mathcomp.algebra.intdiv</a>]<br/>
+<a href="mathcomp.algebra.zmodp.html#ZpRing">ZpRing</a> [section, in <a href="mathcomp.algebra.zmodp.html">mathcomp.algebra.zmodp</a>]<br/>
+<a href="mathcomp.algebra.zmodp.html#ZpRing.p'">ZpRing.p'</a> [variable, in <a href="mathcomp.algebra.zmodp.html">mathcomp.algebra.zmodp</a>]<br/>
+<a href="mathcomp.algebra.zmodp.html#Zp_group">Zp_group</a> [definition, in <a href="mathcomp.algebra.zmodp.html">mathcomp.algebra.zmodp</a>]<br/>
+<a href="mathcomp.algebra.zmodp.html#Zp_group_set">Zp_group_set</a> [lemma, in <a href="mathcomp.algebra.zmodp.html">mathcomp.algebra.zmodp</a>]<br/>
+<a href="mathcomp.algebra.zmodp.html#Zp_nat_mod">Zp_nat_mod</a> [lemma, in <a href="mathcomp.algebra.zmodp.html">mathcomp.algebra.zmodp</a>]<br/>
+<a href="mathcomp.algebra.zmodp.html#Zp_cast">Zp_cast</a> [lemma, in <a href="mathcomp.algebra.zmodp.html">mathcomp.algebra.zmodp</a>]<br/>
+<a href="mathcomp.algebra.zmodp.html#Zp_trunc">Zp_trunc</a> [definition, in <a href="mathcomp.algebra.zmodp.html">mathcomp.algebra.zmodp</a>]<br/>
+<a href="mathcomp.algebra.zmodp.html#Zp_nat">Zp_nat</a> [lemma, in <a href="mathcomp.algebra.zmodp.html">mathcomp.algebra.zmodp</a>]<br/>
+<a href="mathcomp.algebra.zmodp.html#Zp_nontrivial">Zp_nontrivial</a> [lemma, in <a href="mathcomp.algebra.zmodp.html">mathcomp.algebra.zmodp</a>]<br/>
+<a href="mathcomp.algebra.zmodp.html#Zp_cycle">Zp_cycle</a> [lemma, in <a href="mathcomp.algebra.zmodp.html">mathcomp.algebra.zmodp</a>]<br/>
+<a href="mathcomp.algebra.zmodp.html#Zp_expg">Zp_expg</a> [lemma, in <a href="mathcomp.algebra.zmodp.html">mathcomp.algebra.zmodp</a>]<br/>
+<a href="mathcomp.algebra.zmodp.html#Zp_abelian">Zp_abelian</a> [lemma, in <a href="mathcomp.algebra.zmodp.html">mathcomp.algebra.zmodp</a>]<br/>
+<a href="mathcomp.algebra.zmodp.html#Zp_mulgC">Zp_mulgC</a> [lemma, in <a href="mathcomp.algebra.zmodp.html">mathcomp.algebra.zmodp</a>]<br/>
+<a href="mathcomp.algebra.zmodp.html#Zp_mulrn">Zp_mulrn</a> [lemma, in <a href="mathcomp.algebra.zmodp.html">mathcomp.algebra.zmodp</a>]<br/>
+<a href="mathcomp.algebra.zmodp.html#Zp_inv_out">Zp_inv_out</a> [lemma, in <a href="mathcomp.algebra.zmodp.html">mathcomp.algebra.zmodp</a>]<br/>
+<a href="mathcomp.algebra.zmodp.html#Zp_intro_unit">Zp_intro_unit</a> [lemma, in <a href="mathcomp.algebra.zmodp.html">mathcomp.algebra.zmodp</a>]<br/>
+<a href="mathcomp.algebra.zmodp.html#Zp_mulzV">Zp_mulzV</a> [lemma, in <a href="mathcomp.algebra.zmodp.html">mathcomp.algebra.zmodp</a>]<br/>
+<a href="mathcomp.algebra.zmodp.html#Zp_mulVz">Zp_mulVz</a> [lemma, in <a href="mathcomp.algebra.zmodp.html">mathcomp.algebra.zmodp</a>]<br/>
+<a href="mathcomp.algebra.zmodp.html#Zp_mul_addl">Zp_mul_addl</a> [lemma, in <a href="mathcomp.algebra.zmodp.html">mathcomp.algebra.zmodp</a>]<br/>
+<a href="mathcomp.algebra.zmodp.html#Zp_mul_addr">Zp_mul_addr</a> [lemma, in <a href="mathcomp.algebra.zmodp.html">mathcomp.algebra.zmodp</a>]<br/>
+<a href="mathcomp.algebra.zmodp.html#Zp_mulA">Zp_mulA</a> [lemma, in <a href="mathcomp.algebra.zmodp.html">mathcomp.algebra.zmodp</a>]<br/>
+<a href="mathcomp.algebra.zmodp.html#Zp_mulz1">Zp_mulz1</a> [lemma, in <a href="mathcomp.algebra.zmodp.html">mathcomp.algebra.zmodp</a>]<br/>
+<a href="mathcomp.algebra.zmodp.html#Zp_mulC">Zp_mulC</a> [lemma, in <a href="mathcomp.algebra.zmodp.html">mathcomp.algebra.zmodp</a>]<br/>
+<a href="mathcomp.algebra.zmodp.html#Zp_mul1z">Zp_mul1z</a> [lemma, in <a href="mathcomp.algebra.zmodp.html">mathcomp.algebra.zmodp</a>]<br/>
+<a href="mathcomp.algebra.zmodp.html#Zp_addC">Zp_addC</a> [lemma, in <a href="mathcomp.algebra.zmodp.html">mathcomp.algebra.zmodp</a>]<br/>
+<a href="mathcomp.algebra.zmodp.html#Zp_addA">Zp_addA</a> [lemma, in <a href="mathcomp.algebra.zmodp.html">mathcomp.algebra.zmodp</a>]<br/>
+<a href="mathcomp.algebra.zmodp.html#Zp_addNz">Zp_addNz</a> [lemma, in <a href="mathcomp.algebra.zmodp.html">mathcomp.algebra.zmodp</a>]<br/>
+<a href="mathcomp.algebra.zmodp.html#Zp_add0z">Zp_add0z</a> [lemma, in <a href="mathcomp.algebra.zmodp.html">mathcomp.algebra.zmodp</a>]<br/>
+<a href="mathcomp.algebra.zmodp.html#Zp_inv">Zp_inv</a> [definition, in <a href="mathcomp.algebra.zmodp.html">mathcomp.algebra.zmodp</a>]<br/>
+<a href="mathcomp.algebra.zmodp.html#Zp_mul">Zp_mul</a> [definition, in <a href="mathcomp.algebra.zmodp.html">mathcomp.algebra.zmodp</a>]<br/>
+<a href="mathcomp.algebra.zmodp.html#Zp_add">Zp_add</a> [definition, in <a href="mathcomp.algebra.zmodp.html">mathcomp.algebra.zmodp</a>]<br/>
+<a href="mathcomp.algebra.zmodp.html#Zp_opp">Zp_opp</a> [definition, in <a href="mathcomp.algebra.zmodp.html">mathcomp.algebra.zmodp</a>]<br/>
+<a href="mathcomp.solvable.cyclic.html#Zp_unit_isog">Zp_unit_isog</a> [lemma, in <a href="mathcomp.solvable.cyclic.html">mathcomp.solvable.cyclic</a>]<br/>
+<a href="mathcomp.solvable.cyclic.html#Zp_unit_isom">Zp_unit_isom</a> [lemma, in <a href="mathcomp.solvable.cyclic.html">mathcomp.solvable.cyclic</a>]<br/>
+<a href="mathcomp.solvable.cyclic.html#Zp_unit_morphism">Zp_unit_morphism</a> [definition, in <a href="mathcomp.solvable.cyclic.html">mathcomp.solvable.cyclic</a>]<br/>
+<a href="mathcomp.solvable.cyclic.html#Zp_unitmM">Zp_unitmM</a> [lemma, in <a href="mathcomp.solvable.cyclic.html">mathcomp.solvable.cyclic</a>]<br/>
+<a href="mathcomp.solvable.cyclic.html#Zp_unitm">Zp_unitm</a> [definition, in <a href="mathcomp.solvable.cyclic.html">mathcomp.solvable.cyclic</a>]<br/>
+<a href="mathcomp.solvable.cyclic.html#Zp_isog">Zp_isog</a> [lemma, in <a href="mathcomp.solvable.cyclic.html">mathcomp.solvable.cyclic</a>]<br/>
+<a href="mathcomp.solvable.cyclic.html#Zp_isom">Zp_isom</a> [lemma, in <a href="mathcomp.solvable.cyclic.html">mathcomp.solvable.cyclic</a>]<br/>
+<a href="mathcomp.algebra.zmodp.html#Zp0">Zp0</a> [definition, in <a href="mathcomp.algebra.zmodp.html">mathcomp.algebra.zmodp</a>]<br/>
+<a href="mathcomp.algebra.zmodp.html#Zp1">Zp1</a> [definition, in <a href="mathcomp.algebra.zmodp.html">mathcomp.algebra.zmodp</a>]<br/>
+<a href="mathcomp.algebra.zmodp.html#Zp1_expgz">Zp1_expgz</a> [lemma, in <a href="mathcomp.algebra.zmodp.html">mathcomp.algebra.zmodp</a>]<br/>
+<a href="mathcomp.algebra.ring_quotient.html#zqT:35">zqT:35</a> [binder, in <a href="mathcomp.algebra.ring_quotient.html">mathcomp.algebra.ring_quotient</a>]<br/>
+<a href="mathcomp.algebra.ring_quotient.html#zqT:36">zqT:36</a> [binder, in <a href="mathcomp.algebra.ring_quotient.html">mathcomp.algebra.ring_quotient</a>]<br/>
+<a href="mathcomp.algebra.ring_quotient.html#zqT:37">zqT:37</a> [binder, in <a href="mathcomp.algebra.ring_quotient.html">mathcomp.algebra.ring_quotient</a>]<br/>
+<a href="mathcomp.field.finfield.html#zs:118">zs:118</a> [binder, in <a href="mathcomp.field.finfield.html">mathcomp.field.finfield</a>]<br/>
+<a href="mathcomp.field.finfield.html#zs:124">zs:124</a> [binder, in <a href="mathcomp.field.finfield.html">mathcomp.field.finfield</a>]<br/>
+<a href="mathcomp.field.cyclotomic.html#ZtoC">ZtoC</a> [abbreviation, in <a href="mathcomp.field.cyclotomic.html">mathcomp.field.cyclotomic</a>]<br/>
+<a href="mathcomp.field.algC.html#ZtoC">ZtoC</a> [abbreviation, in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.field.algnum.html#ZtoC">ZtoC</a> [abbreviation, in <a href="mathcomp.field.algnum.html">mathcomp.field.algnum</a>]<br/>
+<a href="mathcomp.field.algC.html#ZtoCm:128">ZtoCm:128</a> [binder, in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.field.cyclotomic.html#ZtoQ">ZtoQ</a> [abbreviation, in <a href="mathcomp.field.cyclotomic.html">mathcomp.field.cyclotomic</a>]<br/>
+<a href="mathcomp.field.algC.html#ZtoQ">ZtoQ</a> [abbreviation, in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.field.algnum.html#ZtoQ">ZtoQ</a> [abbreviation, in <a href="mathcomp.field.algnum.html">mathcomp.field.algnum</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#zy:1085">zy:1085</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.field.algnum.html#zz:208">zz:208</a> [binder, in <a href="mathcomp.field.algnum.html">mathcomp.field.algnum</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#z':234">z':234</a> [binder, in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#z':235">z':235</a> [binder, in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#z1:145">z1:145</a> [binder, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#z1:194">z1:194</a> [binder, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.field.algnum.html#z1:27">z1:27</a> [binder, in <a href="mathcomp.field.algnum.html">mathcomp.field.algnum</a>]<br/>
+<a href="mathcomp.field.algnum.html#z1:28">z1:28</a> [binder, in <a href="mathcomp.field.algnum.html">mathcomp.field.algnum</a>]<br/>
+<a href="mathcomp.ssreflect.eqtype.html#z1:86">z1:86</a> [binder, in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.ssreflect.eqtype.html#z1:90">z1:90</a> [binder, in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.ssreflect.eqtype.html#z1:94">z1:94</a> [binder, in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.ssreflect.eqtype.html#z1:98">z1:98</a> [binder, in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#z2:146">z2:146</a> [binder, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#z2:195">z2:195</a> [binder, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.ssreflect.eqtype.html#z2:87">z2:87</a> [binder, in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.ssreflect.eqtype.html#z2:91">z2:91</a> [binder, in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.ssreflect.eqtype.html#z2:95">z2:95</a> [binder, in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.ssreflect.eqtype.html#z2:99">z2:99</a> [binder, in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.field.galois.html#z:100">z:100</a> [binder, in <a href="mathcomp.field.galois.html">mathcomp.field.galois</a>]<br/>
+<a href="mathcomp.character.classfun.html#z:1004">z:1004</a> [binder, in <a href="mathcomp.character.classfun.html">mathcomp.character.classfun</a>]<br/>
+<a href="mathcomp.character.classfun.html#z:1006">z:1006</a> [binder, in <a href="mathcomp.character.classfun.html">mathcomp.character.classfun</a>]<br/>
+<a href="mathcomp.field.galois.html#z:104">z:104</a> [binder, in <a href="mathcomp.field.galois.html">mathcomp.field.galois</a>]<br/>
+<a href="mathcomp.fingroup.perm.html#z:108">z:108</a> [binder, in <a href="mathcomp.fingroup.perm.html">mathcomp.fingroup.perm</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1083">z:1083</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.bigop.html#z:1090">z:1090</a> [binder, in <a href="mathcomp.ssreflect.bigop.html">mathcomp.ssreflect.bigop</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1108">z:1108</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1111">z:1111</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1114">z:1114</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1117">z:1117</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1120">z:1120</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1123">z:1123</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1126">z:1126</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1129">z:1129</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1138">z:1138</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1142">z:1142</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.algebra.poly.html#z:1144">z:1144</a> [binder, in <a href="mathcomp.algebra.poly.html">mathcomp.algebra.poly</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1145">z:1145</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.algebra.poly.html#z:1146">z:1146</a> [binder, in <a href="mathcomp.algebra.poly.html">mathcomp.algebra.poly</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1148">z:1148</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.algebra.poly.html#z:1156">z:1156</a> [binder, in <a href="mathcomp.algebra.poly.html">mathcomp.algebra.poly</a>]<br/>
+<a href="mathcomp.algebra.poly.html#z:1157">z:1157</a> [binder, in <a href="mathcomp.algebra.poly.html">mathcomp.algebra.poly</a>]<br/>
+<a href="mathcomp.algebra.poly.html#z:1158">z:1158</a> [binder, in <a href="mathcomp.algebra.poly.html">mathcomp.algebra.poly</a>]<br/>
+<a href="mathcomp.field.algebraics_fundamentals.html#z:116">z:116</a> [binder, in <a href="mathcomp.field.algebraics_fundamentals.html">mathcomp.field.algebraics_fundamentals</a>]<br/>
+<a href="mathcomp.algebra.poly.html#z:1163">z:1163</a> [binder, in <a href="mathcomp.algebra.poly.html">mathcomp.algebra.poly</a>]<br/>
+<a href="mathcomp.algebra.poly.html#z:1164">z:1164</a> [binder, in <a href="mathcomp.algebra.poly.html">mathcomp.algebra.poly</a>]<br/>
+<a href="mathcomp.algebra.poly.html#z:1165">z:1165</a> [binder, in <a href="mathcomp.algebra.poly.html">mathcomp.algebra.poly</a>]<br/>
+<a href="mathcomp.field.algebraics_fundamentals.html#z:117">z:117</a> [binder, in <a href="mathcomp.field.algebraics_fundamentals.html">mathcomp.field.algebraics_fundamentals</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1171">z:1171</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.field.algebraics_fundamentals.html#z:118">z:118</a> [binder, in <a href="mathcomp.field.algebraics_fundamentals.html">mathcomp.field.algebraics_fundamentals</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1186">z:1186</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1189">z:1189</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.field.algebraics_fundamentals.html#z:119">z:119</a> [binder, in <a href="mathcomp.field.algebraics_fundamentals.html">mathcomp.field.algebraics_fundamentals</a>]<br/>
+<a href="mathcomp.field.finfield.html#z:119">z:119</a> [binder, in <a href="mathcomp.field.finfield.html">mathcomp.field.finfield</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1192">z:1192</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1195">z:1195</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.algebra.poly.html#z:1199">z:1199</a> [binder, in <a href="mathcomp.algebra.poly.html">mathcomp.algebra.poly</a>]<br/>
+<a href="mathcomp.field.algebraics_fundamentals.html#z:120">z:120</a> [binder, in <a href="mathcomp.field.algebraics_fundamentals.html">mathcomp.field.algebraics_fundamentals</a>]<br/>
+<a href="mathcomp.field.finfield.html#z:120">z:120</a> [binder, in <a href="mathcomp.field.finfield.html">mathcomp.field.finfield</a>]<br/>
+<a href="mathcomp.algebra.poly.html#z:1204">z:1204</a> [binder, in <a href="mathcomp.algebra.poly.html">mathcomp.algebra.poly</a>]<br/>
+<a href="mathcomp.algebra.poly.html#z:1209">z:1209</a> [binder, in <a href="mathcomp.algebra.poly.html">mathcomp.algebra.poly</a>]<br/>
+<a href="mathcomp.solvable.finmodule.html#z:121">z:121</a> [binder, in <a href="mathcomp.solvable.finmodule.html">mathcomp.solvable.finmodule</a>]<br/>
+<a href="mathcomp.field.algebraics_fundamentals.html#z:121">z:121</a> [binder, in <a href="mathcomp.field.algebraics_fundamentals.html">mathcomp.field.algebraics_fundamentals</a>]<br/>
+<a href="mathcomp.fingroup.fingroup.html#z:121">z:121</a> [binder, in <a href="mathcomp.fingroup.fingroup.html">mathcomp.fingroup.fingroup</a>]<br/>
+<a href="mathcomp.field.finfield.html#z:121">z:121</a> [binder, in <a href="mathcomp.field.finfield.html">mathcomp.field.finfield</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1218">z:1218</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#z:122">z:122</a> [binder, in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.solvable.finmodule.html#z:123">z:123</a> [binder, in <a href="mathcomp.solvable.finmodule.html">mathcomp.solvable.finmodule</a>]<br/>
+<a href="mathcomp.field.algebraics_fundamentals.html#z:123">z:123</a> [binder, in <a href="mathcomp.field.algebraics_fundamentals.html">mathcomp.field.algebraics_fundamentals</a>]<br/>
+<a href="mathcomp.fingroup.morphism.html#z:123">z:123</a> [binder, in <a href="mathcomp.fingroup.morphism.html">mathcomp.fingroup.morphism</a>]<br/>
+<a href="mathcomp.ssreflect.eqtype.html#z:123">z:123</a> [binder, in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.algebra.poly.html#z:1238">z:1238</a> [binder, in <a href="mathcomp.algebra.poly.html">mathcomp.algebra.poly</a>]<br/>
+<a href="mathcomp.algebra.poly.html#z:1239">z:1239</a> [binder, in <a href="mathcomp.algebra.poly.html">mathcomp.algebra.poly</a>]<br/>
+<a href="mathcomp.fingroup.morphism.html#z:124">z:124</a> [binder, in <a href="mathcomp.fingroup.morphism.html">mathcomp.fingroup.morphism</a>]<br/>
+<a href="mathcomp.algebra.poly.html#z:1240">z:1240</a> [binder, in <a href="mathcomp.algebra.poly.html">mathcomp.algebra.poly</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#z:126">z:126</a> [binder, in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.solvable.commutator.html#z:128">z:128</a> [binder, in <a href="mathcomp.solvable.commutator.html">mathcomp.solvable.commutator</a>]<br/>
+<a href="mathcomp.ssreflect.bigop.html#z:1282">z:1282</a> [binder, in <a href="mathcomp.ssreflect.bigop.html">mathcomp.ssreflect.bigop</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1286">z:1286</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1290">z:1290</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1291">z:1291</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1294">z:1294</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1295">z:1295</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1298">z:1298</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.field.algebraics_fundamentals.html#z:131">z:131</a> [binder, in <a href="mathcomp.field.algebraics_fundamentals.html">mathcomp.field.algebraics_fundamentals</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#z:1319">z:1319</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1320">z:1320</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1323">z:1323</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1326">z:1326</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1329">z:1329</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1332">z:1332</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1335">z:1335</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1338">z:1338</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1341">z:1341</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#z:1342">z:1342</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1354">z:1354</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1357">z:1357</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1360">z:1360</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1363">z:1363</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1366">z:1366</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1369">z:1369</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1373">z:1373</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1377">z:1377</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.field.algebraics_fundamentals.html#z:138">z:138</a> [binder, in <a href="mathcomp.field.algebraics_fundamentals.html">mathcomp.field.algebraics_fundamentals</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1381">z:1381</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1383">z:1383</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1385">z:1385</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1385">z:1385</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1389">z:1389</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.field.algebraics_fundamentals.html#z:139">z:139</a> [binder, in <a href="mathcomp.field.algebraics_fundamentals.html">mathcomp.field.algebraics_fundamentals</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1391">z:1391</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1395">z:1395</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1399">z:1399</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#z:140">z:140</a> [binder, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1403">z:1403</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1403">z:1403</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1406">z:1406</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1407">z:1407</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1409">z:1409</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.solvable.burnside_app.html#z:141">z:141</a> [binder, in <a href="mathcomp.solvable.burnside_app.html">mathcomp.solvable.burnside_app</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1411">z:1411</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1412">z:1412</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1413">z:1413</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1415">z:1415</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1417">z:1417</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1418">z:1418</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1419">z:1419</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.field.algebraics_fundamentals.html#z:142">z:142</a> [binder, in <a href="mathcomp.field.algebraics_fundamentals.html">mathcomp.field.algebraics_fundamentals</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1421">z:1421</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1422">z:1422</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1424">z:1424</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1425">z:1425</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1427">z:1427</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1428">z:1428</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.field.algebraics_fundamentals.html#z:143">z:143</a> [binder, in <a href="mathcomp.field.algebraics_fundamentals.html">mathcomp.field.algebraics_fundamentals</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1430">z:1430</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1431">z:1431</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1434">z:1434</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1438">z:1438</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.field.algebraics_fundamentals.html#z:144">z:144</a> [binder, in <a href="mathcomp.field.algebraics_fundamentals.html">mathcomp.field.algebraics_fundamentals</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1442">z:1442</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1446">z:1446</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.seq.html#z:1450">z:1450</a> [binder, in <a href="mathcomp.ssreflect.seq.html">mathcomp.ssreflect.seq</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1450">z:1450</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1454">z:1454</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1458">z:1458</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1462">z:1462</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.field.algebraics_fundamentals.html#z:147">z:147</a> [binder, in <a href="mathcomp.field.algebraics_fundamentals.html">mathcomp.field.algebraics_fundamentals</a>]<br/>
+<a href="mathcomp.ssreflect.seq.html#z:1470">z:1470</a> [binder, in <a href="mathcomp.ssreflect.seq.html">mathcomp.ssreflect.seq</a>]<br/>
+<a href="mathcomp.ssreflect.seq.html#z:1474">z:1474</a> [binder, in <a href="mathcomp.ssreflect.seq.html">mathcomp.ssreflect.seq</a>]<br/>
+<a href="mathcomp.ssreflect.seq.html#z:1477">z:1477</a> [binder, in <a href="mathcomp.ssreflect.seq.html">mathcomp.ssreflect.seq</a>]<br/>
+<a href="mathcomp.ssreflect.seq.html#z:1478">z:1478</a> [binder, in <a href="mathcomp.ssreflect.seq.html">mathcomp.ssreflect.seq</a>]<br/>
+<a href="mathcomp.ssreflect.seq.html#z:1481">z:1481</a> [binder, in <a href="mathcomp.ssreflect.seq.html">mathcomp.ssreflect.seq</a>]<br/>
+<a href="mathcomp.field.algebraics_fundamentals.html#z:149">z:149</a> [binder, in <a href="mathcomp.field.algebraics_fundamentals.html">mathcomp.field.algebraics_fundamentals</a>]<br/>
+<a href="mathcomp.field.algebraics_fundamentals.html#z:150">z:150</a> [binder, in <a href="mathcomp.field.algebraics_fundamentals.html">mathcomp.field.algebraics_fundamentals</a>]<br/>
+<a href="mathcomp.ssreflect.choice.html#z:152">z:152</a> [binder, in <a href="mathcomp.ssreflect.choice.html">mathcomp.ssreflect.choice</a>]<br/>
+<a href="mathcomp.fingroup.fingroup.html#z:153">z:153</a> [binder, in <a href="mathcomp.fingroup.fingroup.html">mathcomp.fingroup.fingroup</a>]<br/>
+<a href="mathcomp.field.separable.html#z:154">z:154</a> [binder, in <a href="mathcomp.field.separable.html">mathcomp.field.separable</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#z:156">z:156</a> [binder, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.fingroup.fingroup.html#z:156">z:156</a> [binder, in <a href="mathcomp.fingroup.fingroup.html">mathcomp.fingroup.fingroup</a>]<br/>
+<a href="mathcomp.fingroup.fingroup.html#z:161">z:161</a> [binder, in <a href="mathcomp.fingroup.fingroup.html">mathcomp.fingroup.fingroup</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1645">z:1645</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1648">z:1648</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1651">z:1651</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1654">z:1654</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1657">z:1657</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1660">z:1660</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1663">z:1663</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1666">z:1666</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1669">z:1669</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1672">z:1672</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1675">z:1675</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1678">z:1678</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1681">z:1681</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1684">z:1684</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1687">z:1687</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.field.separable.html#z:169">z:169</a> [binder, in <a href="mathcomp.field.separable.html">mathcomp.field.separable</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1690">z:1690</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1705">z:1705</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1709">z:1709</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.fingroup.fingroup.html#z:171">z:171</a> [binder, in <a href="mathcomp.fingroup.fingroup.html">mathcomp.fingroup.fingroup</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1713">z:1713</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1717">z:1717</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1721">z:1721</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1725">z:1725</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1729">z:1729</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1733">z:1733</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1733">z:1733</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1737">z:1737</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1738">z:1738</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1741">z:1741</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1746">z:1746</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1768">z:1768</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#z:177">z:177</a> [binder, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1772">z:1772</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1773">z:1773</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1776">z:1776</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#z:1776">z:1776</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#z:178">z:178</a> [binder, in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1781">z:1781</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#z:179">z:179</a> [binder, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.field.galois.html#z:179">z:179</a> [binder, in <a href="mathcomp.field.galois.html">mathcomp.field.galois</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1797">z:1797</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.solvable.burnside_app.html#z:180">z:180</a> [binder, in <a href="mathcomp.solvable.burnside_app.html">mathcomp.solvable.burnside_app</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1800">z:1800</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1814">z:1814</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1827">z:1827</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#z:183">z:183</a> [binder, in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1830">z:1830</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1835">z:1835</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1838">z:1838</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1839">z:1839</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1844">z:1844</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1846">z:1846</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1851">z:1851</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1854">z:1854</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1857">z:1857</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#z:186">z:186</a> [binder, in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.solvable.burnside_app.html#z:186">z:186</a> [binder, in <a href="mathcomp.solvable.burnside_app.html">mathcomp.solvable.burnside_app</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1862">z:1862</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1865">z:1865</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1868">z:1868</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.field.separable.html#z:187">z:187</a> [binder, in <a href="mathcomp.field.separable.html">mathcomp.field.separable</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1871">z:1871</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1874">z:1874</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1877">z:1877</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.fingroup.fingroup.html#z:188">z:188</a> [binder, in <a href="mathcomp.fingroup.fingroup.html">mathcomp.fingroup.fingroup</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#z:188">z:188</a> [binder, in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#z:189">z:189</a> [binder, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.algebra.polydiv.html#z:189">z:189</a> [binder, in <a href="mathcomp.algebra.polydiv.html">mathcomp.algebra.polydiv</a>]<br/>
+<a href="mathcomp.algebra.polydiv.html#z:190">z:190</a> [binder, in <a href="mathcomp.algebra.polydiv.html">mathcomp.algebra.polydiv</a>]<br/>
+<a href="mathcomp.algebra.polydiv.html#z:191">z:191</a> [binder, in <a href="mathcomp.algebra.polydiv.html">mathcomp.algebra.polydiv</a>]<br/>
+<a href="mathcomp.field.separable.html#z:192">z:192</a> [binder, in <a href="mathcomp.field.separable.html">mathcomp.field.separable</a>]<br/>
+<a href="mathcomp.field.separable.html#z:193">z:193</a> [binder, in <a href="mathcomp.field.separable.html">mathcomp.field.separable</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#z:193">z:193</a> [binder, in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1950">z:1950</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1953">z:1953</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1956">z:1956</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1959">z:1959</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.solvable.frobenius.html#z:196">z:196</a> [binder, in <a href="mathcomp.solvable.frobenius.html">mathcomp.solvable.frobenius</a>]<br/>
+<a href="mathcomp.solvable.burnside_app.html#z:196">z:196</a> [binder, in <a href="mathcomp.solvable.burnside_app.html">mathcomp.solvable.burnside_app</a>]<br/>
+<a href="mathcomp.solvable.frobenius.html#Z:197">Z:197</a> [binder, in <a href="mathcomp.solvable.frobenius.html">mathcomp.solvable.frobenius</a>]<br/>
+<a href="mathcomp.fingroup.gproduct.html#z:199">z:199</a> [binder, in <a href="mathcomp.fingroup.gproduct.html">mathcomp.fingroup.gproduct</a>]<br/>
+<a href="mathcomp.field.cyclotomic.html#z:2">z:2</a> [binder, in <a href="mathcomp.field.cyclotomic.html">mathcomp.field.cyclotomic</a>]<br/>
+<a href="mathcomp.field.algnum.html#z:2">z:2</a> [binder, in <a href="mathcomp.field.algnum.html">mathcomp.field.algnum</a>]<br/>
+<a href="mathcomp.solvable.alt.html#z:20">z:20</a> [binder, in <a href="mathcomp.solvable.alt.html">mathcomp.solvable.alt</a>]<br/>
+<a href="mathcomp.field.galois.html#z:201">z:201</a> [binder, in <a href="mathcomp.field.galois.html">mathcomp.field.galois</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#z:201">z:201</a> [binder, in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2013">z:2013</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2014">z:2014</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2016">z:2016</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.field.galois.html#z:202">z:202</a> [binder, in <a href="mathcomp.field.galois.html">mathcomp.field.galois</a>]<br/>
+<a href="mathcomp.fingroup.action.html#z:202">z:202</a> [binder, in <a href="mathcomp.fingroup.action.html">mathcomp.fingroup.action</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2022">z:2022</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2026">z:2026</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2027">z:2027</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2028">z:2028</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.field.galois.html#z:203">z:203</a> [binder, in <a href="mathcomp.field.galois.html">mathcomp.field.galois</a>]<br/>
+<a href="mathcomp.solvable.cyclic.html#z:203">z:203</a> [binder, in <a href="mathcomp.solvable.cyclic.html">mathcomp.solvable.cyclic</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2032">z:2032</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2033">z:2033</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2034">z:2034</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2035">z:2035</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.ssreflect.seq.html#z:2039">z:2039</a> [binder, in <a href="mathcomp.ssreflect.seq.html">mathcomp.ssreflect.seq</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2048">z:2048</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#z:205">z:205</a> [binder, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.solvable.burnside_app.html#z:206">z:206</a> [binder, in <a href="mathcomp.solvable.burnside_app.html">mathcomp.solvable.burnside_app</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#z:207">z:207</a> [binder, in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2074">z:2074</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2075">z:2075</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2077">z:2077</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2078">z:2078</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2080">z:2080</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2081">z:2081</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2083">z:2083</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2084">z:2084</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2086">z:2086</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2087">z:2087</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2088">z:2088</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2089">z:2089</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.solvable.commutator.html#z:21">z:21</a> [binder, in <a href="mathcomp.solvable.commutator.html">mathcomp.solvable.commutator</a>]<br/>
+<a href="mathcomp.character.inertia.html#z:21">z:21</a> [binder, in <a href="mathcomp.character.inertia.html">mathcomp.character.inertia</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#z:211">z:211</a> [binder, in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2120">z:2120</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2129">z:2129</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#z:213">z:213</a> [binder, in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2132">z:2132</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#z:214">z:214</a> [binder, in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2146">z:2146</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2147">z:2147</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2150">z:2150</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2152">z:2152</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.character.mxabelem.html#z:216">z:216</a> [binder, in <a href="mathcomp.character.mxabelem.html">mathcomp.character.mxabelem</a>]<br/>
+<a href="mathcomp.ssreflect.seq.html#z:2165">z:2165</a> [binder, in <a href="mathcomp.ssreflect.seq.html">mathcomp.ssreflect.seq</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2166">z:2166</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2167">z:2167</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.character.mxabelem.html#z:217">z:217</a> [binder, in <a href="mathcomp.character.mxabelem.html">mathcomp.character.mxabelem</a>]<br/>
+<a href="mathcomp.solvable.burnside_app.html#z:217">z:217</a> [binder, in <a href="mathcomp.solvable.burnside_app.html">mathcomp.solvable.burnside_app</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2170">z:2170</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2171">z:2171</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#z:219">z:219</a> [binder, in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#z:222">z:222</a> [binder, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2223">z:2223</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2226">z:2226</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#z:224">z:224</a> [binder, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.field.algC.html#z:224">z:224</a> [binder, in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.field.algC.html#z:225">z:225</a> [binder, in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#z:225">z:225</a> [binder, in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.algebra.ssrint.html#z:226">z:226</a> [binder, in <a href="mathcomp.algebra.ssrint.html">mathcomp.algebra.ssrint</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#z:226">z:226</a> [binder, in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.solvable.maximal.html#z:228">z:228</a> [binder, in <a href="mathcomp.solvable.maximal.html">mathcomp.solvable.maximal</a>]<br/>
+<a href="mathcomp.ssreflect.eqtype.html#z:228">z:228</a> [binder, in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2280">z:2280</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2285">z:2285</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.fingroup.morphism.html#z:23">z:23</a> [binder, in <a href="mathcomp.fingroup.morphism.html">mathcomp.fingroup.morphism</a>]<br/>
+<a href="mathcomp.solvable.maximal.html#z:230">z:230</a> [binder, in <a href="mathcomp.solvable.maximal.html">mathcomp.solvable.maximal</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#z:231">z:231</a> [binder, in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.ssreflect.eqtype.html#z:231">z:231</a> [binder, in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.field.algC.html#z:233">z:233</a> [binder, in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#z:233">z:233</a> [binder, in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.ssreflect.eqtype.html#z:233">z:233</a> [binder, in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.ssreflect.eqtype.html#z:234">z:234</a> [binder, in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.field.algC.html#z:236">z:236</a> [binder, in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#z:236">z:236</a> [binder, in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.character.mxabelem.html#z:238">z:238</a> [binder, in <a href="mathcomp.character.mxabelem.html">mathcomp.character.mxabelem</a>]<br/>
+<a href="mathcomp.field.algC.html#z:239">z:239</a> [binder, in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.solvable.commutator.html#z:24">z:24</a> [binder, in <a href="mathcomp.solvable.commutator.html">mathcomp.solvable.commutator</a>]<br/>
+<a href="mathcomp.field.galois.html#z:240">z:240</a> [binder, in <a href="mathcomp.field.galois.html">mathcomp.field.galois</a>]<br/>
+<a href="mathcomp.field.algC.html#z:242">z:242</a> [binder, in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.character.mxabelem.html#z:243">z:243</a> [binder, in <a href="mathcomp.character.mxabelem.html">mathcomp.character.mxabelem</a>]<br/>
+<a href="mathcomp.field.algnum.html#z:243">z:243</a> [binder, in <a href="mathcomp.field.algnum.html">mathcomp.field.algnum</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#z:243">z:243</a> [binder, in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.character.mxabelem.html#z:244">z:244</a> [binder, in <a href="mathcomp.character.mxabelem.html">mathcomp.character.mxabelem</a>]<br/>
+<a href="mathcomp.field.algC.html#z:245">z:245</a> [binder, in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.algebra.rat.html#z:245">z:245</a> [binder, in <a href="mathcomp.algebra.rat.html">mathcomp.algebra.rat</a>]<br/>
+<a href="mathcomp.character.mxabelem.html#z:247">z:247</a> [binder, in <a href="mathcomp.character.mxabelem.html">mathcomp.character.mxabelem</a>]<br/>
+<a href="mathcomp.field.algnum.html#z:254">z:254</a> [binder, in <a href="mathcomp.field.algnum.html">mathcomp.field.algnum</a>]<br/>
+<a href="mathcomp.algebra.rat.html#z:255">z:255</a> [binder, in <a href="mathcomp.algebra.rat.html">mathcomp.algebra.rat</a>]<br/>
+<a href="mathcomp.field.algnum.html#z:259">z:259</a> [binder, in <a href="mathcomp.field.algnum.html">mathcomp.field.algnum</a>]<br/>
+<a href="mathcomp.field.algC.html#z:265">z:265</a> [binder, in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.field.algC.html#z:269">z:269</a> [binder, in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.solvable.commutator.html#z:27">z:27</a> [binder, in <a href="mathcomp.solvable.commutator.html">mathcomp.solvable.commutator</a>]<br/>
+<a href="mathcomp.character.inertia.html#z:27">z:27</a> [binder, in <a href="mathcomp.character.inertia.html">mathcomp.character.inertia</a>]<br/>
+<a href="mathcomp.solvable.maximal.html#z:270">z:270</a> [binder, in <a href="mathcomp.solvable.maximal.html">mathcomp.solvable.maximal</a>]<br/>
+<a href="mathcomp.field.algC.html#z:273">z:273</a> [binder, in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.field.algebraics_fundamentals.html#z:274">z:274</a> [binder, in <a href="mathcomp.field.algebraics_fundamentals.html">mathcomp.field.algebraics_fundamentals</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#z:278">z:278</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.field.algC.html#z:280">z:280</a> [binder, in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#z:281">z:281</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.field.algC.html#z:284">z:284</a> [binder, in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#z:286">z:286</a> [binder, in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#z:287">z:287</a> [binder, in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.solvable.maximal.html#Z:287">Z:287</a> [binder, in <a href="mathcomp.solvable.maximal.html">mathcomp.solvable.maximal</a>]<br/>
+<a href="mathcomp.solvable.maximal.html#Z:288">Z:288</a> [binder, in <a href="mathcomp.solvable.maximal.html">mathcomp.solvable.maximal</a>]<br/>
+<a href="mathcomp.ssreflect.fintype.html#z:288">z:288</a> [binder, in <a href="mathcomp.ssreflect.fintype.html">mathcomp.ssreflect.fintype</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#z:289">z:289</a> [binder, in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.solvable.maximal.html#Z:289">Z:289</a> [binder, in <a href="mathcomp.solvable.maximal.html">mathcomp.solvable.maximal</a>]<br/>
+<a href="mathcomp.algebra.interval.html#z:290">z:290</a> [binder, in <a href="mathcomp.algebra.interval.html">mathcomp.algebra.interval</a>]<br/>
+<a href="mathcomp.solvable.maximal.html#Z:290">Z:290</a> [binder, in <a href="mathcomp.solvable.maximal.html">mathcomp.solvable.maximal</a>]<br/>
+<a href="mathcomp.algebra.interval.html#z:294">z:294</a> [binder, in <a href="mathcomp.algebra.interval.html">mathcomp.algebra.interval</a>]<br/>
+<a href="mathcomp.field.algnum.html#z:295">z:295</a> [binder, in <a href="mathcomp.field.algnum.html">mathcomp.field.algnum</a>]<br/>
+<a href="mathcomp.field.algC.html#z:296">z:296</a> [binder, in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.solvable.commutator.html#z:30">z:30</a> [binder, in <a href="mathcomp.solvable.commutator.html">mathcomp.solvable.commutator</a>]<br/>
+<a href="mathcomp.field.algC.html#z:300">z:300</a> [binder, in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.field.algnum.html#z:309">z:309</a> [binder, in <a href="mathcomp.field.algnum.html">mathcomp.field.algnum</a>]<br/>
+<a href="mathcomp.field.algnum.html#z:313">z:313</a> [binder, in <a href="mathcomp.field.algnum.html">mathcomp.field.algnum</a>]<br/>
+<a href="mathcomp.field.algebraics_fundamentals.html#z:316">z:316</a> [binder, in <a href="mathcomp.field.algebraics_fundamentals.html">mathcomp.field.algebraics_fundamentals</a>]<br/>
+<a href="mathcomp.field.algebraics_fundamentals.html#z:317">z:317</a> [binder, in <a href="mathcomp.field.algebraics_fundamentals.html">mathcomp.field.algebraics_fundamentals</a>]<br/>
+<a href="mathcomp.field.algnum.html#z:317">z:317</a> [binder, in <a href="mathcomp.field.algnum.html">mathcomp.field.algnum</a>]<br/>
+<a href="mathcomp.field.algC.html#z:319">z:319</a> [binder, in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.field.algnum.html#z:326">z:326</a> [binder, in <a href="mathcomp.field.algnum.html">mathcomp.field.algnum</a>]<br/>
+<a href="mathcomp.solvable.commutator.html#z:33">z:33</a> [binder, in <a href="mathcomp.solvable.commutator.html">mathcomp.solvable.commutator</a>]<br/>
+<a href="mathcomp.field.algnum.html#z:330">z:330</a> [binder, in <a href="mathcomp.field.algnum.html">mathcomp.field.algnum</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#z:333">z:333</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#z:336">z:336</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.field.algnum.html#z:338">z:338</a> [binder, in <a href="mathcomp.field.algnum.html">mathcomp.field.algnum</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#z:341">z:341</a> [binder, in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.field.algnum.html#z:342">z:342</a> [binder, in <a href="mathcomp.field.algnum.html">mathcomp.field.algnum</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#z:342">z:342</a> [binder, in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#z:343">z:343</a> [binder, in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.solvable.burnside_app.html#z:35">z:35</a> [binder, in <a href="mathcomp.solvable.burnside_app.html">mathcomp.solvable.burnside_app</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#z:351">z:351</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.fingroup.action.html#z:353">z:353</a> [binder, in <a href="mathcomp.fingroup.action.html">mathcomp.fingroup.action</a>]<br/>
+<a href="mathcomp.solvable.alt.html#z:36">z:36</a> [binder, in <a href="mathcomp.solvable.alt.html">mathcomp.solvable.alt</a>]<br/>
+<a href="mathcomp.solvable.commutator.html#z:36">z:36</a> [binder, in <a href="mathcomp.solvable.commutator.html">mathcomp.solvable.commutator</a>]<br/>
+<a href="mathcomp.field.algC.html#z:360">z:360</a> [binder, in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.field.fieldext.html#z:360">z:360</a> [binder, in <a href="mathcomp.field.fieldext.html">mathcomp.field.fieldext</a>]<br/>
+<a href="mathcomp.fingroup.action.html#z:360">z:360</a> [binder, in <a href="mathcomp.fingroup.action.html">mathcomp.fingroup.action</a>]<br/>
+<a href="mathcomp.field.fieldext.html#z:361">z:361</a> [binder, in <a href="mathcomp.field.fieldext.html">mathcomp.field.fieldext</a>]<br/>
+<a href="mathcomp.field.algC.html#z:363">z:363</a> [binder, in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#z:371">z:371</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.solvable.alt.html#z:38">z:38</a> [binder, in <a href="mathcomp.solvable.alt.html">mathcomp.solvable.alt</a>]<br/>
+<a href="mathcomp.field.cyclotomic.html#z:38">z:38</a> [binder, in <a href="mathcomp.field.cyclotomic.html">mathcomp.field.cyclotomic</a>]<br/>
+<a href="mathcomp.algebra.mxpoly.html#z:380">z:380</a> [binder, in <a href="mathcomp.algebra.mxpoly.html">mathcomp.algebra.mxpoly</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:381">z:381</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:383">z:383</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.mxpoly.html#z:386">z:386</a> [binder, in <a href="mathcomp.algebra.mxpoly.html">mathcomp.algebra.mxpoly</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:386">z:386</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.ssreflect.path.html#z:388">z:388</a> [binder, in <a href="mathcomp.ssreflect.path.html">mathcomp.ssreflect.path</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:388">z:388</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.polydiv.html#z:389">z:389</a> [binder, in <a href="mathcomp.algebra.polydiv.html">mathcomp.algebra.polydiv</a>]<br/>
+<a href="mathcomp.solvable.commutator.html#z:39">z:39</a> [binder, in <a href="mathcomp.solvable.commutator.html">mathcomp.solvable.commutator</a>]<br/>
+<a href="mathcomp.algebra.polydiv.html#z:390">z:390</a> [binder, in <a href="mathcomp.algebra.polydiv.html">mathcomp.algebra.polydiv</a>]<br/>
+<a href="mathcomp.algebra.polydiv.html#z:391">z:391</a> [binder, in <a href="mathcomp.algebra.polydiv.html">mathcomp.algebra.polydiv</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:391">z:391</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.ssreflect.path.html#z:392">z:392</a> [binder, in <a href="mathcomp.ssreflect.path.html">mathcomp.ssreflect.path</a>]<br/>
+<a href="mathcomp.field.closed_field.html#z:393">z:393</a> [binder, in <a href="mathcomp.field.closed_field.html">mathcomp.field.closed_field</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:393">z:393</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.ssreflect.path.html#z:395">z:395</a> [binder, in <a href="mathcomp.ssreflect.path.html">mathcomp.ssreflect.path</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:396">z:396</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:398">z:398</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:401">z:401</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:405">z:405</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:409">z:409</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.ssreflect.eqtype.html#z:410">z:410</a> [binder, in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:413">z:413</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:417">z:417</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#z:42">z:42</a> [binder, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.field.cyclotomic.html#z:42">z:42</a> [binder, in <a href="mathcomp.field.cyclotomic.html">mathcomp.field.cyclotomic</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:421">z:421</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:425">z:425</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:429">z:429</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.ssreflect.ssrAC.html#z:43">z:43</a> [binder, in <a href="mathcomp.ssreflect.ssrAC.html">mathcomp.ssreflect.ssrAC</a>]<br/>
+<a href="mathcomp.ssreflect.path.html#z:43">z:43</a> [binder, in <a href="mathcomp.ssreflect.path.html">mathcomp.ssreflect.path</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:432">z:432</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:433">z:433</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:436">z:436</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:439">z:439</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#z:44">z:44</a> [binder, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.ssreflect.ssrbool.html#z:44">z:44</a> [binder, in <a href="mathcomp.ssreflect.ssrbool.html">mathcomp.ssreflect.ssrbool</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:442">z:442</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:445">z:445</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:448">z:448</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.ssreflect.path.html#z:45">z:45</a> [binder, in <a href="mathcomp.ssreflect.path.html">mathcomp.ssreflect.path</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:451">z:451</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:451">z:451</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:454">z:454</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:454">z:454</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#z:46">z:46</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.ssreflect.path.html#z:47">z:47</a> [binder, in <a href="mathcomp.ssreflect.path.html">mathcomp.ssreflect.path</a>]<br/>
+<a href="mathcomp.fingroup.gproduct.html#z:470">z:470</a> [binder, in <a href="mathcomp.fingroup.gproduct.html">mathcomp.fingroup.gproduct</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:473">z:473</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:476">z:476</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:479">z:479</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.field.separable.html#z:48">z:48</a> [binder, in <a href="mathcomp.field.separable.html">mathcomp.field.separable</a>]<br/>
+<a href="mathcomp.ssreflect.ssrAC.html#z:48">z:48</a> [binder, in <a href="mathcomp.ssreflect.ssrAC.html">mathcomp.ssreflect.ssrAC</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:482">z:482</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:485">z:485</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:488">z:488</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#z:49">z:49</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:491">z:491</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.ssreflect.seq.html#z:494">z:494</a> [binder, in <a href="mathcomp.ssreflect.seq.html">mathcomp.ssreflect.seq</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:494">z:494</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.ssreflect.seq.html#z:497">z:497</a> [binder, in <a href="mathcomp.ssreflect.seq.html">mathcomp.ssreflect.seq</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:497">z:497</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:500">z:500</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.ssreflect.seq.html#z:501">z:501</a> [binder, in <a href="mathcomp.ssreflect.seq.html">mathcomp.ssreflect.seq</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:503">z:503</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:506">z:506</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:509">z:509</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:512">z:512</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.field.closed_field.html#z:515">z:515</a> [binder, in <a href="mathcomp.field.closed_field.html">mathcomp.field.closed_field</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:515">z:515</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:518">z:518</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#z:52">z:52</a> [binder, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.algebra.poly.html#z:522">z:522</a> [binder, in <a href="mathcomp.algebra.poly.html">mathcomp.algebra.poly</a>]<br/>
+<a href="mathcomp.ssreflect.seq.html#z:523">z:523</a> [binder, in <a href="mathcomp.ssreflect.seq.html">mathcomp.ssreflect.seq</a>]<br/>
+<a href="mathcomp.algebra.poly.html#z:524">z:524</a> [binder, in <a href="mathcomp.algebra.poly.html">mathcomp.algebra.poly</a>]<br/>
+<a href="mathcomp.algebra.poly.html#z:526">z:526</a> [binder, in <a href="mathcomp.algebra.poly.html">mathcomp.algebra.poly</a>]<br/>
+<a href="mathcomp.algebra.poly.html#z:531">z:531</a> [binder, in <a href="mathcomp.algebra.poly.html">mathcomp.algebra.poly</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#z:54">z:54</a> [binder, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.solvable.burnside_app.html#z:54">z:54</a> [binder, in <a href="mathcomp.solvable.burnside_app.html">mathcomp.solvable.burnside_app</a>]<br/>
+<a href="mathcomp.algebra.poly.html#z:545">z:545</a> [binder, in <a href="mathcomp.algebra.poly.html">mathcomp.algebra.poly</a>]<br/>
+<a href="mathcomp.field.separable.html#z:55">z:55</a> [binder, in <a href="mathcomp.field.separable.html">mathcomp.field.separable</a>]<br/>
+<a href="mathcomp.ssreflect.ssrAC.html#z:55">z:55</a> [binder, in <a href="mathcomp.ssreflect.ssrAC.html">mathcomp.ssreflect.ssrAC</a>]<br/>
+<a href="mathcomp.field.galois.html#z:550">z:550</a> [binder, in <a href="mathcomp.field.galois.html">mathcomp.field.galois</a>]<br/>
+<a href="mathcomp.field.galois.html#z:551">z:551</a> [binder, in <a href="mathcomp.field.galois.html">mathcomp.field.galois</a>]<br/>
+<a href="mathcomp.field.galois.html#z:552">z:552</a> [binder, in <a href="mathcomp.field.galois.html">mathcomp.field.galois</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#z:578">z:578</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.field.cyclotomic.html#z:58">z:58</a> [binder, in <a href="mathcomp.field.cyclotomic.html">mathcomp.field.cyclotomic</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#z:58">z:58</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#z:582">z:582</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#z:586">z:586</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.ssreflect.ssrbool.html#z:59">z:59</a> [binder, in <a href="mathcomp.ssreflect.ssrbool.html">mathcomp.ssreflect.ssrbool</a>]<br/>
+<a href="mathcomp.ssreflect.seq.html#z:60">z:60</a> [binder, in <a href="mathcomp.ssreflect.seq.html">mathcomp.ssreflect.seq</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#z:61">z:61</a> [binder, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.field.separable.html#z:61">z:61</a> [binder, in <a href="mathcomp.field.separable.html">mathcomp.field.separable</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#z:63">z:63</a> [binder, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.field.algebraics_fundamentals.html#z:63">z:63</a> [binder, in <a href="mathcomp.field.algebraics_fundamentals.html">mathcomp.field.algebraics_fundamentals</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:632">z:632</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:634">z:634</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:637">z:637</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:639">z:639</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:641">z:641</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:644">z:644</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:644">z:644</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:646">z:646</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.fingroup.fingroup.html#z:649">z:649</a> [binder, in <a href="mathcomp.fingroup.fingroup.html">mathcomp.fingroup.fingroup</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:649">z:649</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.ssreflect.seq.html#z:65">z:65</a> [binder, in <a href="mathcomp.ssreflect.seq.html">mathcomp.ssreflect.seq</a>]<br/>
+<a href="mathcomp.fingroup.fingroup.html#z:652">z:652</a> [binder, in <a href="mathcomp.fingroup.fingroup.html">mathcomp.fingroup.fingroup</a>]<br/>
+<a href="mathcomp.fingroup.perm.html#z:66">z:66</a> [binder, in <a href="mathcomp.fingroup.perm.html">mathcomp.fingroup.perm</a>]<br/>
+<a href="mathcomp.fingroup.fingroup.html#z:661">z:661</a> [binder, in <a href="mathcomp.fingroup.fingroup.html">mathcomp.fingroup.fingroup</a>]<br/>
+<a href="mathcomp.fingroup.fingroup.html#z:664">z:664</a> [binder, in <a href="mathcomp.fingroup.fingroup.html">mathcomp.fingroup.fingroup</a>]<br/>
+<a href="mathcomp.ssreflect.seq.html#z:67">z:67</a> [binder, in <a href="mathcomp.ssreflect.seq.html">mathcomp.ssreflect.seq</a>]<br/>
+<a href="mathcomp.field.algC.html#z:69">z:69</a> [binder, in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.fingroup.fingroup.html#z:693">z:693</a> [binder, in <a href="mathcomp.fingroup.fingroup.html">mathcomp.fingroup.fingroup</a>]<br/>
+<a href="mathcomp.fingroup.fingroup.html#z:696">z:696</a> [binder, in <a href="mathcomp.fingroup.fingroup.html">mathcomp.fingroup.fingroup</a>]<br/>
+<a href="mathcomp.field.cyclotomic.html#z:7">z:7</a> [binder, in <a href="mathcomp.field.cyclotomic.html">mathcomp.field.cyclotomic</a>]<br/>
+<a href="mathcomp.field.galois.html#z:7">z:7</a> [binder, in <a href="mathcomp.field.galois.html">mathcomp.field.galois</a>]<br/>
+<a href="mathcomp.field.algnum.html#z:7">z:7</a> [binder, in <a href="mathcomp.field.algnum.html">mathcomp.field.algnum</a>]<br/>
+<a href="mathcomp.fingroup.perm.html#z:71">z:71</a> [binder, in <a href="mathcomp.fingroup.perm.html">mathcomp.fingroup.perm</a>]<br/>
+<a href="mathcomp.field.algC.html#z:71">z:71</a> [binder, in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:728">z:728</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.field.algC.html#z:73">z:73</a> [binder, in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.fingroup.automorphism.html#z:73">z:73</a> [binder, in <a href="mathcomp.fingroup.automorphism.html">mathcomp.fingroup.automorphism</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:731">z:731</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:734">z:734</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:737">z:737</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:757">z:757</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.fingroup.perm.html#z:76">z:76</a> [binder, in <a href="mathcomp.fingroup.perm.html">mathcomp.fingroup.perm</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:760">z:760</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:763">z:763</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:766">z:766</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.algebra.poly.html#z:768">z:768</a> [binder, in <a href="mathcomp.algebra.poly.html">mathcomp.algebra.poly</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:769">z:769</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:773">z:773</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:777">z:777</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.field.algebraics_fundamentals.html#z:78">z:78</a> [binder, in <a href="mathcomp.field.algebraics_fundamentals.html">mathcomp.field.algebraics_fundamentals</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:780">z:780</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.character.inertia.html#z:79">z:79</a> [binder, in <a href="mathcomp.character.inertia.html">mathcomp.character.inertia</a>]<br/>
+<a href="mathcomp.field.galois.html#z:8">z:8</a> [binder, in <a href="mathcomp.field.galois.html">mathcomp.field.galois</a>]<br/>
+<a href="mathcomp.fingroup.quotient.html#z:80">z:80</a> [binder, in <a href="mathcomp.fingroup.quotient.html">mathcomp.fingroup.quotient</a>]<br/>
+<a href="mathcomp.fingroup.quotient.html#z:81">z:81</a> [binder, in <a href="mathcomp.fingroup.quotient.html">mathcomp.fingroup.quotient</a>]<br/>
+<a href="mathcomp.algebra.poly.html#z:824">z:824</a> [binder, in <a href="mathcomp.algebra.poly.html">mathcomp.algebra.poly</a>]<br/>
+<a href="mathcomp.fingroup.perm.html#z:83">z:83</a> [binder, in <a href="mathcomp.fingroup.perm.html">mathcomp.fingroup.perm</a>]<br/>
+<a href="mathcomp.field.algebraics_fundamentals.html#z:83">z:83</a> [binder, in <a href="mathcomp.field.algebraics_fundamentals.html">mathcomp.field.algebraics_fundamentals</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:831">z:831</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.field.algebraics_fundamentals.html#z:84">z:84</a> [binder, in <a href="mathcomp.field.algebraics_fundamentals.html">mathcomp.field.algebraics_fundamentals</a>]<br/>
+<a href="mathcomp.field.algC.html#z:84">z:84</a> [binder, in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:844">z:844</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.ssrnat.html#z:891">z:891</a> [binder, in <a href="mathcomp.ssreflect.ssrnat.html">mathcomp.ssreflect.ssrnat</a>]<br/>
+<a href="mathcomp.field.cyclotomic.html#z:9">z:9</a> [binder, in <a href="mathcomp.field.cyclotomic.html">mathcomp.field.cyclotomic</a>]<br/>
+<a href="mathcomp.field.galois.html#z:9">z:9</a> [binder, in <a href="mathcomp.field.galois.html">mathcomp.field.galois</a>]<br/>
+<a href="mathcomp.field.algC.html#z:9">z:9</a> [binder, in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.ssreflect.seq.html#z:90">z:90</a> [binder, in <a href="mathcomp.ssreflect.seq.html">mathcomp.ssreflect.seq</a>]<br/>
+<a href="mathcomp.ssreflect.ssrnat.html#z:904">z:904</a> [binder, in <a href="mathcomp.ssreflect.ssrnat.html">mathcomp.ssreflect.ssrnat</a>]<br/>
+<a href="mathcomp.ssreflect.ssrnat.html#z:916">z:916</a> [binder, in <a href="mathcomp.ssreflect.ssrnat.html">mathcomp.ssreflect.ssrnat</a>]<br/>
+<a href="mathcomp.character.classfun.html#z:926">z:926</a> [binder, in <a href="mathcomp.character.classfun.html">mathcomp.character.classfun</a>]<br/>
+<a href="mathcomp.character.classfun.html#z:927">z:927</a> [binder, in <a href="mathcomp.character.classfun.html">mathcomp.character.classfun</a>]<br/>
+<a href="mathcomp.character.classfun.html#z:928">z:928</a> [binder, in <a href="mathcomp.character.classfun.html">mathcomp.character.classfun</a>]<br/>
+<a href="mathcomp.character.classfun.html#z:929">z:929</a> [binder, in <a href="mathcomp.character.classfun.html">mathcomp.character.classfun</a>]<br/>
+<a href="mathcomp.ssreflect.ssrnat.html#z:930">z:930</a> [binder, in <a href="mathcomp.ssreflect.ssrnat.html">mathcomp.ssreflect.ssrnat</a>]<br/>
+<a href="mathcomp.character.classfun.html#z:930">z:930</a> [binder, in <a href="mathcomp.character.classfun.html">mathcomp.character.classfun</a>]<br/>
+<a href="mathcomp.character.classfun.html#z:936">z:936</a> [binder, in <a href="mathcomp.character.classfun.html">mathcomp.character.classfun</a>]<br/>
+<a href="mathcomp.character.classfun.html#z:937">z:937</a> [binder, in <a href="mathcomp.character.classfun.html">mathcomp.character.classfun</a>]<br/>
+<a href="mathcomp.character.classfun.html#z:938">z:938</a> [binder, in <a href="mathcomp.character.classfun.html">mathcomp.character.classfun</a>]<br/>
+<a href="mathcomp.character.classfun.html#z:939">z:939</a> [binder, in <a href="mathcomp.character.classfun.html">mathcomp.character.classfun</a>]<br/>
+<a href="mathcomp.field.algC.html#z:94">z:94</a> [binder, in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.character.classfun.html#z:940">z:940</a> [binder, in <a href="mathcomp.character.classfun.html">mathcomp.character.classfun</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:941">z:941</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:945">z:945</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:949">z:949</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.field.algC.html#z:95">z:95</a> [binder, in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:953">z:953</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.fingroup.fingroup.html#z:955">z:955</a> [binder, in <a href="mathcomp.fingroup.fingroup.html">mathcomp.fingroup.fingroup</a>]<br/>
+<a href="mathcomp.fingroup.fingroup.html#z:958">z:958</a> [binder, in <a href="mathcomp.fingroup.fingroup.html">mathcomp.fingroup.fingroup</a>]<br/>
+<a href="mathcomp.ssreflect.seq.html#z:96">z:96</a> [binder, in <a href="mathcomp.ssreflect.seq.html">mathcomp.ssreflect.seq</a>]<br/>
+<a href="mathcomp.field.finfield.html#z:96">z:96</a> [binder, in <a href="mathcomp.field.finfield.html">mathcomp.field.finfield</a>]<br/>
+<a href="mathcomp.field.galois.html#z:97">z:97</a> [binder, in <a href="mathcomp.field.galois.html">mathcomp.field.galois</a>]<br/>
+<a href="mathcomp.field.finfield.html#z:97">z:97</a> [binder, in <a href="mathcomp.field.finfield.html">mathcomp.field.finfield</a>]<br/>
+<a href="mathcomp.field.algebraics_fundamentals.html#z:98">z:98</a> [binder, in <a href="mathcomp.field.algebraics_fundamentals.html">mathcomp.field.algebraics_fundamentals</a>]<br/>
+<a href="mathcomp.field.galois.html#z:98">z:98</a> [binder, in <a href="mathcomp.field.galois.html">mathcomp.field.galois</a>]<br/>
+<a href="mathcomp.field.finfield.html#z:98">z:98</a> [binder, in <a href="mathcomp.field.finfield.html">mathcomp.field.finfield</a>]<br/>
+<br/><br/><hr/><table>
+<tr>
+<td>Global Index</td>
+<td><a href="index_global_A.html">A</a></td>
+<td><a href="index_global_B.html">B</a></td>
+<td><a href="index_global_C.html">C</a></td>
+<td><a href="index_global_D.html">D</a></td>
+<td><a href="index_global_E.html">E</a></td>
+<td><a href="index_global_F.html">F</a></td>
+<td><a href="index_global_G.html">G</a></td>
+<td><a href="index_global_H.html">H</a></td>
+<td><a href="index_global_I.html">I</a></td>
+<td><a href="index_global_J.html">J</a></td>
+<td><a href="index_global_K.html">K</a></td>
+<td><a href="index_global_L.html">L</a></td>
+<td><a href="index_global_M.html">M</a></td>
+<td><a href="index_global_N.html">N</a></td>
+<td><a href="index_global_O.html">O</a></td>
+<td><a href="index_global_P.html">P</a></td>
+<td><a href="index_global_Q.html">Q</a></td>
+<td><a href="index_global_R.html">R</a></td>
+<td><a href="index_global_S.html">S</a></td>
+<td><a href="index_global_T.html">T</a></td>
+<td><a href="index_global_U.html">U</a></td>
+<td><a href="index_global_V.html">V</a></td>
+<td><a href="index_global_W.html">W</a></td>
+<td><a href="index_global_X.html">X</a></td>
+<td><a href="index_global_Y.html">Y</a></td>
+<td><a href="index_global_Z.html">Z</a></td>
+<td>_</td>
+<td><a href="index_global_*.html">other</a></td>
+<td>(71649 entries)</td>
+</tr>
+<tr>
+<td>Notation Index</td>
+<td><a href="index_notation_A.html">A</a></td>
+<td><a href="index_notation_B.html">B</a></td>
+<td><a href="index_notation_C.html">C</a></td>
+<td><a href="index_notation_D.html">D</a></td>
+<td><a href="index_notation_E.html">E</a></td>
+<td><a href="index_notation_F.html">F</a></td>
+<td><a href="index_notation_G.html">G</a></td>
+<td>H</td>
+<td><a href="index_notation_I.html">I</a></td>
+<td>J</td>
+<td><a href="index_notation_K.html">K</a></td>
+<td><a href="index_notation_L.html">L</a></td>
+<td><a href="index_notation_M.html">M</a></td>
+<td><a href="index_notation_N.html">N</a></td>
+<td><a href="index_notation_O.html">O</a></td>
+<td><a href="index_notation_P.html">P</a></td>
+<td><a href="index_notation_Q.html">Q</a></td>
+<td><a href="index_notation_R.html">R</a></td>
+<td><a href="index_notation_S.html">S</a></td>
+<td>T</td>
+<td><a href="index_notation_U.html">U</a></td>
+<td><a href="index_notation_V.html">V</a></td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td><a href="index_notation_Z.html">Z</a></td>
+<td>_</td>
+<td><a href="index_notation_*.html">other</a></td>
+<td>(1792 entries)</td>
+</tr>
+<tr>
+<td>Binder Index</td>
+<td><a href="index_binder_A.html">A</a></td>
+<td><a href="index_binder_B.html">B</a></td>
+<td><a href="index_binder_C.html">C</a></td>
+<td><a href="index_binder_D.html">D</a></td>
+<td><a href="index_binder_E.html">E</a></td>
+<td><a href="index_binder_F.html">F</a></td>
+<td><a href="index_binder_G.html">G</a></td>
+<td><a href="index_binder_H.html">H</a></td>
+<td><a href="index_binder_I.html">I</a></td>
+<td><a href="index_binder_J.html">J</a></td>
+<td><a href="index_binder_K.html">K</a></td>
+<td><a href="index_binder_L.html">L</a></td>
+<td><a href="index_binder_M.html">M</a></td>
+<td><a href="index_binder_N.html">N</a></td>
+<td><a href="index_binder_O.html">O</a></td>
+<td><a href="index_binder_P.html">P</a></td>
+<td><a href="index_binder_Q.html">Q</a></td>
+<td><a href="index_binder_R.html">R</a></td>
+<td><a href="index_binder_S.html">S</a></td>
+<td><a href="index_binder_T.html">T</a></td>
+<td><a href="index_binder_U.html">U</a></td>
+<td><a href="index_binder_V.html">V</a></td>
+<td><a href="index_binder_W.html">W</a></td>
+<td><a href="index_binder_X.html">X</a></td>
+<td><a href="index_binder_Y.html">Y</a></td>
+<td><a href="index_binder_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(46193 entries)</td>
+</tr>
+<tr>
+<td>Module Index</td>
+<td><a href="index_module_A.html">A</a></td>
+<td><a href="index_module_B.html">B</a></td>
+<td><a href="index_module_C.html">C</a></td>
+<td><a href="index_module_D.html">D</a></td>
+<td><a href="index_module_E.html">E</a></td>
+<td><a href="index_module_F.html">F</a></td>
+<td><a href="index_module_G.html">G</a></td>
+<td>H</td>
+<td><a href="index_module_I.html">I</a></td>
+<td>J</td>
+<td>K</td>
+<td>L</td>
+<td><a href="index_module_M.html">M</a></td>
+<td><a href="index_module_N.html">N</a></td>
+<td><a href="index_module_O.html">O</a></td>
+<td><a href="index_module_P.html">P</a></td>
+<td><a href="index_module_Q.html">Q</a></td>
+<td><a href="index_module_R.html">R</a></td>
+<td><a href="index_module_S.html">S</a></td>
+<td><a href="index_module_T.html">T</a></td>
+<td><a href="index_module_U.html">U</a></td>
+<td><a href="index_module_V.html">V</a></td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td><a href="index_module_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(266 entries)</td>
+</tr>
+<tr>
+<td>Variable Index</td>
+<td><a href="index_variable_A.html">A</a></td>
+<td><a href="index_variable_B.html">B</a></td>
+<td><a href="index_variable_C.html">C</a></td>
+<td><a href="index_variable_D.html">D</a></td>
+<td><a href="index_variable_E.html">E</a></td>
+<td><a href="index_variable_F.html">F</a></td>
+<td><a href="index_variable_G.html">G</a></td>
+<td><a href="index_variable_H.html">H</a></td>
+<td><a href="index_variable_I.html">I</a></td>
+<td>J</td>
+<td><a href="index_variable_K.html">K</a></td>
+<td><a href="index_variable_L.html">L</a></td>
+<td><a href="index_variable_M.html">M</a></td>
+<td><a href="index_variable_N.html">N</a></td>
+<td><a href="index_variable_O.html">O</a></td>
+<td><a href="index_variable_P.html">P</a></td>
+<td><a href="index_variable_Q.html">Q</a></td>
+<td><a href="index_variable_R.html">R</a></td>
+<td><a href="index_variable_S.html">S</a></td>
+<td><a href="index_variable_T.html">T</a></td>
+<td><a href="index_variable_U.html">U</a></td>
+<td><a href="index_variable_V.html">V</a></td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td><a href="index_variable_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(3623 entries)</td>
+</tr>
+<tr>
+<td>Library Index</td>
+<td><a href="index_library_A.html">A</a></td>
+<td><a href="index_library_B.html">B</a></td>
+<td><a href="index_library_C.html">C</a></td>
+<td><a href="index_library_D.html">D</a></td>
+<td><a href="index_library_E.html">E</a></td>
+<td><a href="index_library_F.html">F</a></td>
+<td><a href="index_library_G.html">G</a></td>
+<td><a href="index_library_H.html">H</a></td>
+<td><a href="index_library_I.html">I</a></td>
+<td><a href="index_library_J.html">J</a></td>
+<td>K</td>
+<td>L</td>
+<td><a href="index_library_M.html">M</a></td>
+<td><a href="index_library_N.html">N</a></td>
+<td><a href="index_library_O.html">O</a></td>
+<td><a href="index_library_P.html">P</a></td>
+<td><a href="index_library_Q.html">Q</a></td>
+<td><a href="index_library_R.html">R</a></td>
+<td><a href="index_library_S.html">S</a></td>
+<td><a href="index_library_T.html">T</a></td>
+<td>U</td>
+<td><a href="index_library_V.html">V</a></td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td><a href="index_library_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(91 entries)</td>
+</tr>
+<tr>
+<td>Lemma Index</td>
+<td><a href="index_lemma_A.html">A</a></td>
+<td><a href="index_lemma_B.html">B</a></td>
+<td><a href="index_lemma_C.html">C</a></td>
+<td><a href="index_lemma_D.html">D</a></td>
+<td><a href="index_lemma_E.html">E</a></td>
+<td><a href="index_lemma_F.html">F</a></td>
+<td><a href="index_lemma_G.html">G</a></td>
+<td><a href="index_lemma_H.html">H</a></td>
+<td><a href="index_lemma_I.html">I</a></td>
+<td><a href="index_lemma_J.html">J</a></td>
+<td><a href="index_lemma_K.html">K</a></td>
+<td><a href="index_lemma_L.html">L</a></td>
+<td><a href="index_lemma_M.html">M</a></td>
+<td><a href="index_lemma_N.html">N</a></td>
+<td><a href="index_lemma_O.html">O</a></td>
+<td><a href="index_lemma_P.html">P</a></td>
+<td><a href="index_lemma_Q.html">Q</a></td>
+<td><a href="index_lemma_R.html">R</a></td>
+<td><a href="index_lemma_S.html">S</a></td>
+<td><a href="index_lemma_T.html">T</a></td>
+<td><a href="index_lemma_U.html">U</a></td>
+<td><a href="index_lemma_V.html">V</a></td>
+<td><a href="index_lemma_W.html">W</a></td>
+<td><a href="index_lemma_X.html">X</a></td>
+<td>Y</td>
+<td><a href="index_lemma_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(14204 entries)</td>
+</tr>
+<tr>
+<td>Constructor Index</td>
+<td><a href="index_constructor_A.html">A</a></td>
+<td><a href="index_constructor_B.html">B</a></td>
+<td><a href="index_constructor_C.html">C</a></td>
+<td><a href="index_constructor_D.html">D</a></td>
+<td><a href="index_constructor_E.html">E</a></td>
+<td><a href="index_constructor_F.html">F</a></td>
+<td><a href="index_constructor_G.html">G</a></td>
+<td><a href="index_constructor_H.html">H</a></td>
+<td><a href="index_constructor_I.html">I</a></td>
+<td>J</td>
+<td>K</td>
+<td><a href="index_constructor_L.html">L</a></td>
+<td><a href="index_constructor_M.html">M</a></td>
+<td><a href="index_constructor_N.html">N</a></td>
+<td><a href="index_constructor_O.html">O</a></td>
+<td><a href="index_constructor_P.html">P</a></td>
+<td><a href="index_constructor_Q.html">Q</a></td>
+<td><a href="index_constructor_R.html">R</a></td>
+<td><a href="index_constructor_S.html">S</a></td>
+<td><a href="index_constructor_T.html">T</a></td>
+<td><a href="index_constructor_U.html">U</a></td>
+<td><a href="index_constructor_V.html">V</a></td>
+<td>W</td>
+<td><a href="index_constructor_X.html">X</a></td>
+<td>Y</td>
+<td><a href="index_constructor_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(259 entries)</td>
+</tr>
+<tr>
+<td>Axiom Index</td>
+<td><a href="index_axiom_A.html">A</a></td>
+<td>B</td>
+<td>C</td>
+<td>D</td>
+<td><a href="index_axiom_E.html">E</a></td>
+<td><a href="index_axiom_F.html">F</a></td>
+<td>G</td>
+<td>H</td>
+<td>I</td>
+<td>J</td>
+<td>K</td>
+<td>L</td>
+<td>M</td>
+<td>N</td>
+<td>O</td>
+<td>P</td>
+<td>Q</td>
+<td>R</td>
+<td>S</td>
+<td>T</td>
+<td>U</td>
+<td>V</td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td>Z</td>
+<td>_</td>
+<td>other</td>
+<td>(8 entries)</td>
+</tr>
+<tr>
+<td>Inductive Index</td>
+<td><a href="index_inductive_A.html">A</a></td>
+<td><a href="index_inductive_B.html">B</a></td>
+<td><a href="index_inductive_C.html">C</a></td>
+<td><a href="index_inductive_D.html">D</a></td>
+<td><a href="index_inductive_E.html">E</a></td>
+<td><a href="index_inductive_F.html">F</a></td>
+<td><a href="index_inductive_G.html">G</a></td>
+<td><a href="index_inductive_H.html">H</a></td>
+<td><a href="index_inductive_I.html">I</a></td>
+<td>J</td>
+<td>K</td>
+<td><a href="index_inductive_L.html">L</a></td>
+<td><a href="index_inductive_M.html">M</a></td>
+<td><a href="index_inductive_N.html">N</a></td>
+<td><a href="index_inductive_O.html">O</a></td>
+<td><a href="index_inductive_P.html">P</a></td>
+<td>Q</td>
+<td><a href="index_inductive_R.html">R</a></td>
+<td><a href="index_inductive_S.html">S</a></td>
+<td><a href="index_inductive_T.html">T</a></td>
+<td><a href="index_inductive_U.html">U</a></td>
+<td><a href="index_inductive_V.html">V</a></td>
+<td>W</td>
+<td><a href="index_inductive_X.html">X</a></td>
+<td>Y</td>
+<td>Z</td>
+<td>_</td>
+<td>other</td>
+<td>(134 entries)</td>
+</tr>
+<tr>
+<td>Projection Index</td>
+<td><a href="index_projection_A.html">A</a></td>
+<td><a href="index_projection_B.html">B</a></td>
+<td><a href="index_projection_C.html">C</a></td>
+<td><a href="index_projection_D.html">D</a></td>
+<td><a href="index_projection_E.html">E</a></td>
+<td><a href="index_projection_F.html">F</a></td>
+<td><a href="index_projection_G.html">G</a></td>
+<td>H</td>
+<td>I</td>
+<td>J</td>
+<td>K</td>
+<td>L</td>
+<td><a href="index_projection_M.html">M</a></td>
+<td>N</td>
+<td>O</td>
+<td><a href="index_projection_P.html">P</a></td>
+<td>Q</td>
+<td><a href="index_projection_R.html">R</a></td>
+<td><a href="index_projection_S.html">S</a></td>
+<td><a href="index_projection_T.html">T</a></td>
+<td>U</td>
+<td><a href="index_projection_V.html">V</a></td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td>Z</td>
+<td>_</td>
+<td>other</td>
+<td>(44 entries)</td>
+</tr>
+<tr>
+<td>Section Index</td>
+<td><a href="index_section_A.html">A</a></td>
+<td><a href="index_section_B.html">B</a></td>
+<td><a href="index_section_C.html">C</a></td>
+<td><a href="index_section_D.html">D</a></td>
+<td><a href="index_section_E.html">E</a></td>
+<td><a href="index_section_F.html">F</a></td>
+<td><a href="index_section_G.html">G</a></td>
+<td><a href="index_section_H.html">H</a></td>
+<td><a href="index_section_I.html">I</a></td>
+<td>J</td>
+<td><a href="index_section_K.html">K</a></td>
+<td><a href="index_section_L.html">L</a></td>
+<td><a href="index_section_M.html">M</a></td>
+<td><a href="index_section_N.html">N</a></td>
+<td><a href="index_section_O.html">O</a></td>
+<td><a href="index_section_P.html">P</a></td>
+<td><a href="index_section_Q.html">Q</a></td>
+<td><a href="index_section_R.html">R</a></td>
+<td><a href="index_section_S.html">S</a></td>
+<td><a href="index_section_T.html">T</a></td>
+<td><a href="index_section_U.html">U</a></td>
+<td><a href="index_section_V.html">V</a></td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td><a href="index_section_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(1276 entries)</td>
+</tr>
+<tr>
+<td>Abbreviation Index</td>
+<td><a href="index_abbreviation_A.html">A</a></td>
+<td><a href="index_abbreviation_B.html">B</a></td>
+<td><a href="index_abbreviation_C.html">C</a></td>
+<td><a href="index_abbreviation_D.html">D</a></td>
+<td><a href="index_abbreviation_E.html">E</a></td>
+<td><a href="index_abbreviation_F.html">F</a></td>
+<td><a href="index_abbreviation_G.html">G</a></td>
+<td><a href="index_abbreviation_H.html">H</a></td>
+<td><a href="index_abbreviation_I.html">I</a></td>
+<td><a href="index_abbreviation_J.html">J</a></td>
+<td><a href="index_abbreviation_K.html">K</a></td>
+<td><a href="index_abbreviation_L.html">L</a></td>
+<td><a href="index_abbreviation_M.html">M</a></td>
+<td><a href="index_abbreviation_N.html">N</a></td>
+<td><a href="index_abbreviation_O.html">O</a></td>
+<td><a href="index_abbreviation_P.html">P</a></td>
+<td><a href="index_abbreviation_Q.html">Q</a></td>
+<td><a href="index_abbreviation_R.html">R</a></td>
+<td><a href="index_abbreviation_S.html">S</a></td>
+<td><a href="index_abbreviation_T.html">T</a></td>
+<td><a href="index_abbreviation_U.html">U</a></td>
+<td><a href="index_abbreviation_V.html">V</a></td>
+<td><a href="index_abbreviation_W.html">W</a></td>
+<td><a href="index_abbreviation_X.html">X</a></td>
+<td>Y</td>
+<td><a href="index_abbreviation_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(682 entries)</td>
+</tr>
+<tr>
+<td>Definition Index</td>
+<td><a href="index_definition_A.html">A</a></td>
+<td><a href="index_definition_B.html">B</a></td>
+<td><a href="index_definition_C.html">C</a></td>
+<td><a href="index_definition_D.html">D</a></td>
+<td><a href="index_definition_E.html">E</a></td>
+<td><a href="index_definition_F.html">F</a></td>
+<td><a href="index_definition_G.html">G</a></td>
+<td><a href="index_definition_H.html">H</a></td>
+<td><a href="index_definition_I.html">I</a></td>
+<td><a href="index_definition_J.html">J</a></td>
+<td><a href="index_definition_K.html">K</a></td>
+<td><a href="index_definition_L.html">L</a></td>
+<td><a href="index_definition_M.html">M</a></td>
+<td><a href="index_definition_N.html">N</a></td>
+<td><a href="index_definition_O.html">O</a></td>
+<td><a href="index_definition_P.html">P</a></td>
+<td><a href="index_definition_Q.html">Q</a></td>
+<td><a href="index_definition_R.html">R</a></td>
+<td><a href="index_definition_S.html">S</a></td>
+<td><a href="index_definition_T.html">T</a></td>
+<td><a href="index_definition_U.html">U</a></td>
+<td><a href="index_definition_V.html">V</a></td>
+<td><a href="index_definition_W.html">W</a></td>
+<td><a href="index_definition_X.html">X</a></td>
+<td>Y</td>
+<td><a href="index_definition_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(3041 entries)</td>
+</tr>
+<tr>
+<td>Record Index</td>
+<td><a href="index_record_A.html">A</a></td>
+<td><a href="index_record_B.html">B</a></td>
+<td><a href="index_record_C.html">C</a></td>
+<td><a href="index_record_D.html">D</a></td>
+<td><a href="index_record_E.html">E</a></td>
+<td>F</td>
+<td><a href="index_record_G.html">G</a></td>
+<td>H</td>
+<td>I</td>
+<td>J</td>
+<td>K</td>
+<td>L</td>
+<td><a href="index_record_M.html">M</a></td>
+<td><a href="index_record_N.html">N</a></td>
+<td>O</td>
+<td><a href="index_record_P.html">P</a></td>
+<td>Q</td>
+<td><a href="index_record_R.html">R</a></td>
+<td><a href="index_record_S.html">S</a></td>
+<td><a href="index_record_T.html">T</a></td>
+<td>U</td>
+<td><a href="index_record_V.html">V</a></td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td>Z</td>
+<td>_</td>
+<td>other</td>
+<td>(36 entries)</td>
+</tr>
+</table>
+</div>
+
+<div id="footer">
+<hr/><a href="index.html">Index</a><hr/>This page has been generated by <a href="http://coq.inria.fr/">coqdoc</a>
+</div>
+
+</div>
+
+</body>
+</html>
