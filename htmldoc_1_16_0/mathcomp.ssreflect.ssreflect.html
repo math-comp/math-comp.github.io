@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<title>mathcomp.ssreflect.ssreflect</title>
+</head>
+
+<body>
+
+<div id="page">
+
+<div id="header">
+</div>
+
+<div id="main">
+
+<h1 class="libtitle">Library mathcomp.ssreflect.ssreflect</h1>
+
+<div class="code">
+<span class="comment">(*&nbsp;(c)&nbsp;Copyright&nbsp;2006-2016&nbsp;Microsoft&nbsp;Corporation&nbsp;and&nbsp;Inria.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;Distributed&nbsp;under&nbsp;the&nbsp;terms&nbsp;of&nbsp;CeCILL-B.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*)</span><br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">Coq</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Export</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.15.2/stdlib//Coq.ssr.ssreflect.html#"><span class="id" title="library">ssreflect</span></a>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+ Local additions:                                                           
+
+<div class="paragraph"> </div>
+
+ [elaborate x] == triggers coq elaboration to fill the holes of the term x  
+                  The main use case is to trigger typeclass inference in    
+                  the body of a ssreflect have := [elaborate body].         
+
+<div class="paragraph"> </div>
+
+   Intro pattern ltac views:                                                
+<ul class="doclist">
+<li> calling rewrite from an intro pattern, use with parsimony              
+     =&gt; / [1! rules]  := rewrite rules                                       
+     =&gt; / [! rules]   := rewrite !rules                                       
+
+</li>
+</ul>
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Reserved Notation</span> &quot;[ 'elaborate' x ]" (<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 0).<br/>
+
+<br/>
+<span class="id" title="keyword">Notation</span> <a id="acbe05f362ecaad3d4a05486db0b352d" class="idref" href="#acbe05f362ecaad3d4a05486db0b352d"><span class="id" title="notation">&quot;</span></a>[ 'elaborate' x ]" := (<span class="id" title="keyword">ltac</span>:(<span class="id" title="tactic">refine</span> <span class="id" title="var">x</span>)) (<span class="id" title="var">only</span> <span class="id" title="var">parsing</span>).<br/>
+
+<br/>
+<span class="id" title="keyword">Module</span> <span class="id" title="keyword">Export</span> <a id="ipat" class="idref" href="#ipat"><span class="id" title="module">ipat</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Notation</span> <a id="1bedcde8d778593b4f52c096a5ecb94a" class="idref" href="#1bedcde8d778593b4f52c096a5ecb94a"><span class="id" title="notation">&quot;</span></a>'[' '1' '!' rules ']'"     := (<span class="id" title="keyword">ltac</span>:(<span class="id" title="tactic">rewrite</span> <span class="id" title="var">rules</span>))<br/>
+&nbsp;&nbsp;(<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 0, <span class="id" title="var">rules</span> <span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 200, <span class="id" title="var">only</span> <span class="id" title="var">parsing</span>) : <span class="id" title="var">ssripat_scope</span>.<br/>
+<span class="id" title="keyword">Notation</span> <a id="a4185b2be48be717d1ed9bd3d9ed6b28" class="idref" href="#a4185b2be48be717d1ed9bd3d9ed6b28"><span class="id" title="notation">&quot;</span></a>'[' '!' rules ']'"         := (<span class="id" title="keyword">ltac</span>:(<span class="id" title="tactic">rewrite</span> !<span class="id" title="var">rules</span>))<br/>
+&nbsp;&nbsp;(<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 0, <span class="id" title="var">rules</span> <span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 200, <span class="id" title="var">only</span> <span class="id" title="var">parsing</span>) : <span class="id" title="var">ssripat_scope</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">End</span> <a class="idref" href="mathcomp.ssreflect.ssreflect.html#ipat"><span class="id" title="module">ipat</span></a>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+ A class to trigger reduction by rewriting.                           
+ Usage: rewrite [pattern]vm_compute.                                  
+ Alternatively one may redefine a lemma as in algebra/rat.v :         
+ Lemma rat_vm_compute n (x : rat) : vm_compute_eq n%:Q x -&gt; n%:Q = x. 
+ Proof. exact. Qed.                                                    
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Class</span> <a id="vm_compute_eq" class="idref" href="#vm_compute_eq"><span class="id" title="record">vm_compute_eq</span></a> {<a id="T:1" class="idref" href="#T:1"><span class="id" title="binder">T</span></a> : <span class="id" title="keyword">Type</span>} (<a id="x:2" class="idref" href="#x:2"><span class="id" title="binder">x</span></a> <a id="y:3" class="idref" href="#y:3"><span class="id" title="binder">y</span></a> : <a class="idref" href="mathcomp.ssreflect.ssreflect.html#T:1"><span class="id" title="variable">T</span></a>) := <a id="vm_compute" class="idref" href="#vm_compute"><span class="id" title="projection">vm_compute</span></a> : <a class="idref" href="mathcomp.ssreflect.ssreflect.html#x:2"><span class="id" title="variable">x</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.15.2/stdlib//Coq.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">=</span></a> <a class="idref" href="mathcomp.ssreflect.ssreflect.html#y:3"><span class="id" title="variable">y</span></a>.<br/>
+
+<br/>
+#[<span class="id" title="var">global</span>]<br/>
+<span class="id" title="keyword">Hint</span> <span class="id" title="keyword">Extern</span> 0 (@<a class="idref" href="mathcomp.ssreflect.ssreflect.html#vm_compute_eq"><span class="id" title="class">vm_compute_eq</span></a> <span class="id" title="var">_</span> <span class="id" title="var">_</span> <span class="id" title="var">_</span>) ⇒<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="keyword">vm_compute</span>; <span class="id" title="tactic">reflexivity</span> : <span class="id" title="var">typeclass_instances</span>.<br/>
+</div>
+</div>
+
+<div id="footer">
+<hr/><a href="index.html">Index</a><hr/>This page has been generated by <a href="http://coq.inria.fr/">coqdoc</a>
+</div>
+
+</div>
+
+</body>
+</html>
