@@ -1,0 +1,1594 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<title>mathcomp.ssreflect.tuple</title>
+</head>
+
+<body>
+
+<div id="page">
+
+<div id="header">
+</div>
+
+<div id="main">
+
+<table>
+<tr>
+<td>Global Index</td>
+<td><a href="index_global_A.html">A</a></td>
+<td><a href="index_global_B.html">B</a></td>
+<td><a href="index_global_C.html">C</a></td>
+<td><a href="index_global_D.html">D</a></td>
+<td><a href="index_global_E.html">E</a></td>
+<td><a href="index_global_F.html">F</a></td>
+<td><a href="index_global_G.html">G</a></td>
+<td><a href="index_global_H.html">H</a></td>
+<td><a href="index_global_I.html">I</a></td>
+<td><a href="index_global_J.html">J</a></td>
+<td><a href="index_global_K.html">K</a></td>
+<td><a href="index_global_L.html">L</a></td>
+<td><a href="index_global_M.html">M</a></td>
+<td><a href="index_global_N.html">N</a></td>
+<td><a href="index_global_O.html">O</a></td>
+<td><a href="index_global_P.html">P</a></td>
+<td><a href="index_global_Q.html">Q</a></td>
+<td><a href="index_global_R.html">R</a></td>
+<td><a href="index_global_S.html">S</a></td>
+<td><a href="index_global_T.html">T</a></td>
+<td><a href="index_global_U.html">U</a></td>
+<td><a href="index_global_V.html">V</a></td>
+<td><a href="index_global_W.html">W</a></td>
+<td><a href="index_global_X.html">X</a></td>
+<td><a href="index_global_Y.html">Y</a></td>
+<td><a href="index_global_Z.html">Z</a></td>
+<td>_</td>
+<td><a href="index_global_*.html">other</a></td>
+<td>(78134 entries)</td>
+</tr>
+<tr>
+<td>Notation Index</td>
+<td><a href="index_notation_A.html">A</a></td>
+<td><a href="index_notation_B.html">B</a></td>
+<td><a href="index_notation_C.html">C</a></td>
+<td><a href="index_notation_D.html">D</a></td>
+<td><a href="index_notation_E.html">E</a></td>
+<td><a href="index_notation_F.html">F</a></td>
+<td><a href="index_notation_G.html">G</a></td>
+<td>H</td>
+<td><a href="index_notation_I.html">I</a></td>
+<td>J</td>
+<td><a href="index_notation_K.html">K</a></td>
+<td><a href="index_notation_L.html">L</a></td>
+<td><a href="index_notation_M.html">M</a></td>
+<td><a href="index_notation_N.html">N</a></td>
+<td><a href="index_notation_O.html">O</a></td>
+<td><a href="index_notation_P.html">P</a></td>
+<td><a href="index_notation_Q.html">Q</a></td>
+<td><a href="index_notation_R.html">R</a></td>
+<td><a href="index_notation_S.html">S</a></td>
+<td>T</td>
+<td><a href="index_notation_U.html">U</a></td>
+<td><a href="index_notation_V.html">V</a></td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td><a href="index_notation_Z.html">Z</a></td>
+<td>_</td>
+<td><a href="index_notation_*.html">other</a></td>
+<td>(1810 entries)</td>
+</tr>
+<tr>
+<td>Binder Index</td>
+<td><a href="index_binder_A.html">A</a></td>
+<td><a href="index_binder_B.html">B</a></td>
+<td><a href="index_binder_C.html">C</a></td>
+<td><a href="index_binder_D.html">D</a></td>
+<td><a href="index_binder_E.html">E</a></td>
+<td><a href="index_binder_F.html">F</a></td>
+<td><a href="index_binder_G.html">G</a></td>
+<td><a href="index_binder_H.html">H</a></td>
+<td><a href="index_binder_I.html">I</a></td>
+<td><a href="index_binder_J.html">J</a></td>
+<td><a href="index_binder_K.html">K</a></td>
+<td><a href="index_binder_L.html">L</a></td>
+<td><a href="index_binder_M.html">M</a></td>
+<td><a href="index_binder_N.html">N</a></td>
+<td><a href="index_binder_O.html">O</a></td>
+<td><a href="index_binder_P.html">P</a></td>
+<td><a href="index_binder_Q.html">Q</a></td>
+<td><a href="index_binder_R.html">R</a></td>
+<td><a href="index_binder_S.html">S</a></td>
+<td><a href="index_binder_T.html">T</a></td>
+<td><a href="index_binder_U.html">U</a></td>
+<td><a href="index_binder_V.html">V</a></td>
+<td><a href="index_binder_W.html">W</a></td>
+<td><a href="index_binder_X.html">X</a></td>
+<td><a href="index_binder_Y.html">Y</a></td>
+<td><a href="index_binder_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(47626 entries)</td>
+</tr>
+<tr>
+<td>Module Index</td>
+<td><a href="index_module_A.html">A</a></td>
+<td><a href="index_module_B.html">B</a></td>
+<td><a href="index_module_C.html">C</a></td>
+<td><a href="index_module_D.html">D</a></td>
+<td><a href="index_module_E.html">E</a></td>
+<td><a href="index_module_F.html">F</a></td>
+<td><a href="index_module_G.html">G</a></td>
+<td>H</td>
+<td><a href="index_module_I.html">I</a></td>
+<td>J</td>
+<td>K</td>
+<td>L</td>
+<td><a href="index_module_M.html">M</a></td>
+<td><a href="index_module_N.html">N</a></td>
+<td><a href="index_module_O.html">O</a></td>
+<td><a href="index_module_P.html">P</a></td>
+<td><a href="index_module_Q.html">Q</a></td>
+<td><a href="index_module_R.html">R</a></td>
+<td><a href="index_module_S.html">S</a></td>
+<td><a href="index_module_T.html">T</a></td>
+<td><a href="index_module_U.html">U</a></td>
+<td><a href="index_module_V.html">V</a></td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td>Z</td>
+<td>_</td>
+<td>other</td>
+<td>(375 entries)</td>
+</tr>
+<tr>
+<td>Variable Index</td>
+<td><a href="index_variable_A.html">A</a></td>
+<td><a href="index_variable_B.html">B</a></td>
+<td><a href="index_variable_C.html">C</a></td>
+<td><a href="index_variable_D.html">D</a></td>
+<td><a href="index_variable_E.html">E</a></td>
+<td><a href="index_variable_F.html">F</a></td>
+<td><a href="index_variable_G.html">G</a></td>
+<td><a href="index_variable_H.html">H</a></td>
+<td><a href="index_variable_I.html">I</a></td>
+<td>J</td>
+<td><a href="index_variable_K.html">K</a></td>
+<td><a href="index_variable_L.html">L</a></td>
+<td><a href="index_variable_M.html">M</a></td>
+<td><a href="index_variable_N.html">N</a></td>
+<td><a href="index_variable_O.html">O</a></td>
+<td><a href="index_variable_P.html">P</a></td>
+<td><a href="index_variable_Q.html">Q</a></td>
+<td><a href="index_variable_R.html">R</a></td>
+<td><a href="index_variable_S.html">S</a></td>
+<td><a href="index_variable_T.html">T</a></td>
+<td><a href="index_variable_U.html">U</a></td>
+<td><a href="index_variable_V.html">V</a></td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td><a href="index_variable_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(4027 entries)</td>
+</tr>
+<tr>
+<td>Library Index</td>
+<td><a href="index_library_A.html">A</a></td>
+<td><a href="index_library_B.html">B</a></td>
+<td><a href="index_library_C.html">C</a></td>
+<td><a href="index_library_D.html">D</a></td>
+<td><a href="index_library_E.html">E</a></td>
+<td><a href="index_library_F.html">F</a></td>
+<td><a href="index_library_G.html">G</a></td>
+<td><a href="index_library_H.html">H</a></td>
+<td><a href="index_library_I.html">I</a></td>
+<td><a href="index_library_J.html">J</a></td>
+<td>K</td>
+<td>L</td>
+<td><a href="index_library_M.html">M</a></td>
+<td><a href="index_library_N.html">N</a></td>
+<td><a href="index_library_O.html">O</a></td>
+<td><a href="index_library_P.html">P</a></td>
+<td><a href="index_library_Q.html">Q</a></td>
+<td><a href="index_library_R.html">R</a></td>
+<td><a href="index_library_S.html">S</a></td>
+<td><a href="index_library_T.html">T</a></td>
+<td>U</td>
+<td><a href="index_library_V.html">V</a></td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td><a href="index_library_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(91 entries)</td>
+</tr>
+<tr>
+<td>Lemma Index</td>
+<td><a href="index_lemma_A.html">A</a></td>
+<td><a href="index_lemma_B.html">B</a></td>
+<td><a href="index_lemma_C.html">C</a></td>
+<td><a href="index_lemma_D.html">D</a></td>
+<td><a href="index_lemma_E.html">E</a></td>
+<td><a href="index_lemma_F.html">F</a></td>
+<td><a href="index_lemma_G.html">G</a></td>
+<td><a href="index_lemma_H.html">H</a></td>
+<td><a href="index_lemma_I.html">I</a></td>
+<td><a href="index_lemma_J.html">J</a></td>
+<td><a href="index_lemma_K.html">K</a></td>
+<td><a href="index_lemma_L.html">L</a></td>
+<td><a href="index_lemma_M.html">M</a></td>
+<td><a href="index_lemma_N.html">N</a></td>
+<td><a href="index_lemma_O.html">O</a></td>
+<td><a href="index_lemma_P.html">P</a></td>
+<td><a href="index_lemma_Q.html">Q</a></td>
+<td><a href="index_lemma_R.html">R</a></td>
+<td><a href="index_lemma_S.html">S</a></td>
+<td><a href="index_lemma_T.html">T</a></td>
+<td><a href="index_lemma_U.html">U</a></td>
+<td><a href="index_lemma_V.html">V</a></td>
+<td><a href="index_lemma_W.html">W</a></td>
+<td><a href="index_lemma_X.html">X</a></td>
+<td>Y</td>
+<td><a href="index_lemma_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(14457 entries)</td>
+</tr>
+<tr>
+<td>Constructor Index</td>
+<td><a href="index_constructor_A.html">A</a></td>
+<td><a href="index_constructor_B.html">B</a></td>
+<td><a href="index_constructor_C.html">C</a></td>
+<td><a href="index_constructor_D.html">D</a></td>
+<td><a href="index_constructor_E.html">E</a></td>
+<td><a href="index_constructor_F.html">F</a></td>
+<td><a href="index_constructor_G.html">G</a></td>
+<td><a href="index_constructor_H.html">H</a></td>
+<td><a href="index_constructor_I.html">I</a></td>
+<td>J</td>
+<td>K</td>
+<td><a href="index_constructor_L.html">L</a></td>
+<td><a href="index_constructor_M.html">M</a></td>
+<td><a href="index_constructor_N.html">N</a></td>
+<td><a href="index_constructor_O.html">O</a></td>
+<td><a href="index_constructor_P.html">P</a></td>
+<td><a href="index_constructor_Q.html">Q</a></td>
+<td><a href="index_constructor_R.html">R</a></td>
+<td><a href="index_constructor_S.html">S</a></td>
+<td><a href="index_constructor_T.html">T</a></td>
+<td><a href="index_constructor_U.html">U</a></td>
+<td><a href="index_constructor_V.html">V</a></td>
+<td>W</td>
+<td><a href="index_constructor_X.html">X</a></td>
+<td>Y</td>
+<td><a href="index_constructor_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(469 entries)</td>
+</tr>
+<tr>
+<td>Axiom Index</td>
+<td><a href="index_axiom_A.html">A</a></td>
+<td><a href="index_axiom_B.html">B</a></td>
+<td><a href="index_axiom_C.html">C</a></td>
+<td>D</td>
+<td><a href="index_axiom_E.html">E</a></td>
+<td><a href="index_axiom_F.html">F</a></td>
+<td>G</td>
+<td>H</td>
+<td><a href="index_axiom_I.html">I</a></td>
+<td>J</td>
+<td>K</td>
+<td>L</td>
+<td>M</td>
+<td>N</td>
+<td>O</td>
+<td><a href="index_axiom_P.html">P</a></td>
+<td>Q</td>
+<td><a href="index_axiom_R.html">R</a></td>
+<td><a href="index_axiom_S.html">S</a></td>
+<td>T</td>
+<td>U</td>
+<td>V</td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td>Z</td>
+<td>_</td>
+<td>other</td>
+<td>(45 entries)</td>
+</tr>
+<tr>
+<td>Inductive Index</td>
+<td><a href="index_inductive_A.html">A</a></td>
+<td><a href="index_inductive_B.html">B</a></td>
+<td><a href="index_inductive_C.html">C</a></td>
+<td><a href="index_inductive_D.html">D</a></td>
+<td><a href="index_inductive_E.html">E</a></td>
+<td><a href="index_inductive_F.html">F</a></td>
+<td><a href="index_inductive_G.html">G</a></td>
+<td><a href="index_inductive_H.html">H</a></td>
+<td><a href="index_inductive_I.html">I</a></td>
+<td>J</td>
+<td>K</td>
+<td><a href="index_inductive_L.html">L</a></td>
+<td><a href="index_inductive_M.html">M</a></td>
+<td><a href="index_inductive_N.html">N</a></td>
+<td><a href="index_inductive_O.html">O</a></td>
+<td><a href="index_inductive_P.html">P</a></td>
+<td>Q</td>
+<td><a href="index_inductive_R.html">R</a></td>
+<td><a href="index_inductive_S.html">S</a></td>
+<td><a href="index_inductive_T.html">T</a></td>
+<td><a href="index_inductive_U.html">U</a></td>
+<td><a href="index_inductive_V.html">V</a></td>
+<td>W</td>
+<td><a href="index_inductive_X.html">X</a></td>
+<td>Y</td>
+<td>Z</td>
+<td>_</td>
+<td>other</td>
+<td>(133 entries)</td>
+</tr>
+<tr>
+<td>Projection Index</td>
+<td><a href="index_projection_A.html">A</a></td>
+<td><a href="index_projection_B.html">B</a></td>
+<td><a href="index_projection_C.html">C</a></td>
+<td>D</td>
+<td><a href="index_projection_E.html">E</a></td>
+<td><a href="index_projection_F.html">F</a></td>
+<td><a href="index_projection_G.html">G</a></td>
+<td>H</td>
+<td><a href="index_projection_I.html">I</a></td>
+<td>J</td>
+<td>K</td>
+<td>L</td>
+<td><a href="index_projection_M.html">M</a></td>
+<td><a href="index_projection_N.html">N</a></td>
+<td><a href="index_projection_O.html">O</a></td>
+<td><a href="index_projection_P.html">P</a></td>
+<td><a href="index_projection_Q.html">Q</a></td>
+<td><a href="index_projection_R.html">R</a></td>
+<td><a href="index_projection_S.html">S</a></td>
+<td><a href="index_projection_T.html">T</a></td>
+<td><a href="index_projection_U.html">U</a></td>
+<td><a href="index_projection_V.html">V</a></td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td><a href="index_projection_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(451 entries)</td>
+</tr>
+<tr>
+<td>Section Index</td>
+<td><a href="index_section_A.html">A</a></td>
+<td><a href="index_section_B.html">B</a></td>
+<td><a href="index_section_C.html">C</a></td>
+<td><a href="index_section_D.html">D</a></td>
+<td><a href="index_section_E.html">E</a></td>
+<td><a href="index_section_F.html">F</a></td>
+<td><a href="index_section_G.html">G</a></td>
+<td><a href="index_section_H.html">H</a></td>
+<td><a href="index_section_I.html">I</a></td>
+<td>J</td>
+<td><a href="index_section_K.html">K</a></td>
+<td><a href="index_section_L.html">L</a></td>
+<td><a href="index_section_M.html">M</a></td>
+<td><a href="index_section_N.html">N</a></td>
+<td><a href="index_section_O.html">O</a></td>
+<td><a href="index_section_P.html">P</a></td>
+<td><a href="index_section_Q.html">Q</a></td>
+<td><a href="index_section_R.html">R</a></td>
+<td><a href="index_section_S.html">S</a></td>
+<td><a href="index_section_T.html">T</a></td>
+<td><a href="index_section_U.html">U</a></td>
+<td><a href="index_section_V.html">V</a></td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td><a href="index_section_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(1391 entries)</td>
+</tr>
+<tr>
+<td>Abbreviation Index</td>
+<td><a href="index_abbreviation_A.html">A</a></td>
+<td><a href="index_abbreviation_B.html">B</a></td>
+<td><a href="index_abbreviation_C.html">C</a></td>
+<td><a href="index_abbreviation_D.html">D</a></td>
+<td><a href="index_abbreviation_E.html">E</a></td>
+<td><a href="index_abbreviation_F.html">F</a></td>
+<td><a href="index_abbreviation_G.html">G</a></td>
+<td><a href="index_abbreviation_H.html">H</a></td>
+<td><a href="index_abbreviation_I.html">I</a></td>
+<td><a href="index_abbreviation_J.html">J</a></td>
+<td><a href="index_abbreviation_K.html">K</a></td>
+<td><a href="index_abbreviation_L.html">L</a></td>
+<td><a href="index_abbreviation_M.html">M</a></td>
+<td><a href="index_abbreviation_N.html">N</a></td>
+<td><a href="index_abbreviation_O.html">O</a></td>
+<td><a href="index_abbreviation_P.html">P</a></td>
+<td><a href="index_abbreviation_Q.html">Q</a></td>
+<td><a href="index_abbreviation_R.html">R</a></td>
+<td><a href="index_abbreviation_S.html">S</a></td>
+<td><a href="index_abbreviation_T.html">T</a></td>
+<td><a href="index_abbreviation_U.html">U</a></td>
+<td><a href="index_abbreviation_V.html">V</a></td>
+<td><a href="index_abbreviation_W.html">W</a></td>
+<td><a href="index_abbreviation_X.html">X</a></td>
+<td>Y</td>
+<td><a href="index_abbreviation_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(851 entries)</td>
+</tr>
+<tr>
+<td>Definition Index</td>
+<td><a href="index_definition_A.html">A</a></td>
+<td><a href="index_definition_B.html">B</a></td>
+<td><a href="index_definition_C.html">C</a></td>
+<td><a href="index_definition_D.html">D</a></td>
+<td><a href="index_definition_E.html">E</a></td>
+<td><a href="index_definition_F.html">F</a></td>
+<td><a href="index_definition_G.html">G</a></td>
+<td><a href="index_definition_H.html">H</a></td>
+<td><a href="index_definition_I.html">I</a></td>
+<td><a href="index_definition_J.html">J</a></td>
+<td><a href="index_definition_K.html">K</a></td>
+<td><a href="index_definition_L.html">L</a></td>
+<td><a href="index_definition_M.html">M</a></td>
+<td><a href="index_definition_N.html">N</a></td>
+<td><a href="index_definition_O.html">O</a></td>
+<td><a href="index_definition_P.html">P</a></td>
+<td><a href="index_definition_Q.html">Q</a></td>
+<td><a href="index_definition_R.html">R</a></td>
+<td><a href="index_definition_S.html">S</a></td>
+<td><a href="index_definition_T.html">T</a></td>
+<td><a href="index_definition_U.html">U</a></td>
+<td><a href="index_definition_V.html">V</a></td>
+<td><a href="index_definition_W.html">W</a></td>
+<td><a href="index_definition_X.html">X</a></td>
+<td>Y</td>
+<td><a href="index_definition_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(6161 entries)</td>
+</tr>
+<tr>
+<td>Record Index</td>
+<td><a href="index_record_A.html">A</a></td>
+<td><a href="index_record_B.html">B</a></td>
+<td><a href="index_record_C.html">C</a></td>
+<td>D</td>
+<td><a href="index_record_E.html">E</a></td>
+<td><a href="index_record_F.html">F</a></td>
+<td><a href="index_record_G.html">G</a></td>
+<td>H</td>
+<td><a href="index_record_I.html">I</a></td>
+<td>J</td>
+<td>K</td>
+<td>L</td>
+<td><a href="index_record_M.html">M</a></td>
+<td><a href="index_record_N.html">N</a></td>
+<td><a href="index_record_O.html">O</a></td>
+<td><a href="index_record_P.html">P</a></td>
+<td><a href="index_record_Q.html">Q</a></td>
+<td><a href="index_record_R.html">R</a></td>
+<td><a href="index_record_S.html">S</a></td>
+<td><a href="index_record_T.html">T</a></td>
+<td><a href="index_record_U.html">U</a></td>
+<td><a href="index_record_V.html">V</a></td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td><a href="index_record_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(247 entries)</td>
+</tr>
+</table>
+<hr/><a id="binder_Z"></a><h2>Z (binder)</h2>
+<a href="mathcomp.ssreflect.bigop.html#zA:1274">zA:1274</a> [in <a href="mathcomp.ssreflect.bigop.html">mathcomp.ssreflect.bigop</a>]<br/>
+<a href="mathcomp.algebra.ring_quotient.html#zc:37">zc:37</a> [in <a href="mathcomp.algebra.ring_quotient.html">mathcomp.algebra.ring_quotient</a>]<br/>
+<a href="mathcomp.algebra.ring_quotient.html#zc:43">zc:43</a> [in <a href="mathcomp.algebra.ring_quotient.html">mathcomp.algebra.ring_quotient</a>]<br/>
+<a href="mathcomp.algebra.ring_quotient.html#zc:8">zc:8</a> [in <a href="mathcomp.algebra.ring_quotient.html">mathcomp.algebra.ring_quotient</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#ZkS:1735">ZkS:1735</a> [in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#ZkS:1751">ZkS:1751</a> [in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#ZkS:1762">ZkS:1762</a> [in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.field.cyclotomic.html#zk:59">zk:59</a> [in <a href="mathcomp.field.cyclotomic.html">mathcomp.field.cyclotomic</a>]<br/>
+<a href="mathcomp.algebra.ring_quotient.html#zmodI:229">zmodI:229</a> [in <a href="mathcomp.algebra.ring_quotient.html">mathcomp.algebra.ring_quotient</a>]<br/>
+<a href="mathcomp.algebra.matrix.html#zmodS:2564">zmodS:2564</a> [in <a href="mathcomp.algebra.matrix.html">mathcomp.algebra.matrix</a>]<br/>
+<a href="mathcomp.field.algnum.html#zn:14">zn:14</a> [in <a href="mathcomp.field.algnum.html">mathcomp.field.algnum</a>]<br/>
+<a href="mathcomp.algebra.ring_quotient.html#zqc:27">zqc:27</a> [in <a href="mathcomp.algebra.ring_quotient.html">mathcomp.algebra.ring_quotient</a>]<br/>
+<a href="mathcomp.algebra.ring_quotient.html#zqT:24">zqT:24</a> [in <a href="mathcomp.algebra.ring_quotient.html">mathcomp.algebra.ring_quotient</a>]<br/>
+<a href="mathcomp.algebra.ring_quotient.html#zqT:26">zqT:26</a> [in <a href="mathcomp.algebra.ring_quotient.html">mathcomp.algebra.ring_quotient</a>]<br/>
+<a href="mathcomp.algebra.ring_quotient.html#zqT:28">zqT:28</a> [in <a href="mathcomp.algebra.ring_quotient.html">mathcomp.algebra.ring_quotient</a>]<br/>
+<a href="mathcomp.algebra.ring_quotient.html#zqT:29">zqT:29</a> [in <a href="mathcomp.algebra.ring_quotient.html">mathcomp.algebra.ring_quotient</a>]<br/>
+<a href="mathcomp.algebra.ring_quotient.html#zqT:30">zqT:30</a> [in <a href="mathcomp.algebra.ring_quotient.html">mathcomp.algebra.ring_quotient</a>]<br/>
+<a href="mathcomp.algebra.ring_quotient.html#zqT:31">zqT:31</a> [in <a href="mathcomp.algebra.ring_quotient.html">mathcomp.algebra.ring_quotient</a>]<br/>
+<a href="mathcomp.algebra.ring_quotient.html#zqT:32">zqT:32</a> [in <a href="mathcomp.algebra.ring_quotient.html">mathcomp.algebra.ring_quotient</a>]<br/>
+<a href="mathcomp.algebra.ring_quotient.html#zqT:51">zqT:51</a> [in <a href="mathcomp.algebra.ring_quotient.html">mathcomp.algebra.ring_quotient</a>]<br/>
+<a href="mathcomp.algebra.ring_quotient.html#zqT:52">zqT:52</a> [in <a href="mathcomp.algebra.ring_quotient.html">mathcomp.algebra.ring_quotient</a>]<br/>
+<a href="mathcomp.algebra.ring_quotient.html#zqT:53">zqT:53</a> [in <a href="mathcomp.algebra.ring_quotient.html">mathcomp.algebra.ring_quotient</a>]<br/>
+<a href="mathcomp.algebra.ring_quotient.html#zqT:56">zqT:56</a> [in <a href="mathcomp.algebra.ring_quotient.html">mathcomp.algebra.ring_quotient</a>]<br/>
+<a href="mathcomp.algebra.ring_quotient.html#zqT:61">zqT:61</a> [in <a href="mathcomp.algebra.ring_quotient.html">mathcomp.algebra.ring_quotient</a>]<br/>
+<a href="mathcomp.algebra.ring_quotient.html#zqT:62">zqT:62</a> [in <a href="mathcomp.algebra.ring_quotient.html">mathcomp.algebra.ring_quotient</a>]<br/>
+<a href="mathcomp.algebra.ring_quotient.html#zqT:63">zqT:63</a> [in <a href="mathcomp.algebra.ring_quotient.html">mathcomp.algebra.ring_quotient</a>]<br/>
+<a href="mathcomp.field.finfield.html#zs:111">zs:111</a> [in <a href="mathcomp.field.finfield.html">mathcomp.field.finfield</a>]<br/>
+<a href="mathcomp.field.finfield.html#zs:117">zs:117</a> [in <a href="mathcomp.field.finfield.html">mathcomp.field.finfield</a>]<br/>
+<a href="mathcomp.field.algC.html#ZtoCm:132">ZtoCm:132</a> [in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.algebra.ring_quotient.html#zT:106">zT:106</a> [in <a href="mathcomp.algebra.ring_quotient.html">mathcomp.algebra.ring_quotient</a>]<br/>
+<a href="mathcomp.algebra.ring_quotient.html#zT:35">zT:35</a> [in <a href="mathcomp.algebra.ring_quotient.html">mathcomp.algebra.ring_quotient</a>]<br/>
+<a href="mathcomp.algebra.ring_quotient.html#zT:42">zT:42</a> [in <a href="mathcomp.algebra.ring_quotient.html">mathcomp.algebra.ring_quotient</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#zy:1257">zy:1257</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.field.algnum.html#zz:224">zz:224</a> [in <a href="mathcomp.field.algnum.html">mathcomp.field.algnum</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#z':227">z':227</a> [in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#z':228">z':228</a> [in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.ssreflect.eqtype.html#z1:101">z1:101</a> [in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#z1:145">z1:145</a> [in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#z1:194">z1:194</a> [in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.field.algnum.html#z1:32">z1:32</a> [in <a href="mathcomp.field.algnum.html">mathcomp.field.algnum</a>]<br/>
+<a href="mathcomp.field.algnum.html#z1:33">z1:33</a> [in <a href="mathcomp.field.algnum.html">mathcomp.field.algnum</a>]<br/>
+<a href="mathcomp.ssreflect.eqtype.html#z1:89">z1:89</a> [in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.ssreflect.eqtype.html#z1:93">z1:93</a> [in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.ssreflect.eqtype.html#z1:97">z1:97</a> [in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.ssreflect.eqtype.html#z2:102">z2:102</a> [in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#z2:146">z2:146</a> [in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#z2:195">z2:195</a> [in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.ssreflect.eqtype.html#z2:90">z2:90</a> [in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.ssreflect.eqtype.html#z2:94">z2:94</a> [in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.ssreflect.eqtype.html#z2:98">z2:98</a> [in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.field.galois.html#z:100">z:100</a> [in <a href="mathcomp.field.galois.html">mathcomp.field.galois</a>]<br/>
+<a href="mathcomp.character.classfun.html#z:1008">z:1008</a> [in <a href="mathcomp.character.classfun.html">mathcomp.character.classfun</a>]<br/>
+<a href="mathcomp.character.classfun.html#z:1010">z:1010</a> [in <a href="mathcomp.character.classfun.html">mathcomp.character.classfun</a>]<br/>
+<a href="mathcomp.ssreflect.bigop.html#z:1056">z:1056</a> [in <a href="mathcomp.ssreflect.bigop.html">mathcomp.ssreflect.bigop</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1113">z:1113</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1117">z:1117</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.field.finfield.html#z:112">z:112</a> [in <a href="mathcomp.field.finfield.html">mathcomp.field.finfield</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1121">z:1121</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1125">z:1125</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.field.finfield.html#z:113">z:113</a> [in <a href="mathcomp.field.finfield.html">mathcomp.field.finfield</a>]<br/>
+<a href="mathcomp.field.finfield.html#z:114">z:114</a> [in <a href="mathcomp.field.finfield.html">mathcomp.field.finfield</a>]<br/>
+<a href="mathcomp.ssreflect.ssrbool.html#z:114">z:114</a> [in <a href="mathcomp.ssreflect.ssrbool.html">mathcomp.ssreflect.ssrbool</a>]<br/>
+<a href="mathcomp.fingroup.perm.html#z:115">z:115</a> [in <a href="mathcomp.fingroup.perm.html">mathcomp.fingroup.perm</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#z:115">z:115</a> [in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.algebra.poly.html#z:1178">z:1178</a> [in <a href="mathcomp.algebra.poly.html">mathcomp.algebra.poly</a>]<br/>
+<a href="mathcomp.algebra.poly.html#z:1180">z:1180</a> [in <a href="mathcomp.algebra.poly.html">mathcomp.algebra.poly</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#z:119">z:119</a> [in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.algebra.poly.html#z:1190">z:1190</a> [in <a href="mathcomp.algebra.poly.html">mathcomp.algebra.poly</a>]<br/>
+<a href="mathcomp.algebra.poly.html#z:1191">z:1191</a> [in <a href="mathcomp.algebra.poly.html">mathcomp.algebra.poly</a>]<br/>
+<a href="mathcomp.algebra.poly.html#z:1192">z:1192</a> [in <a href="mathcomp.algebra.poly.html">mathcomp.algebra.poly</a>]<br/>
+<a href="mathcomp.algebra.poly.html#z:1197">z:1197</a> [in <a href="mathcomp.algebra.poly.html">mathcomp.algebra.poly</a>]<br/>
+<a href="mathcomp.algebra.poly.html#z:1198">z:1198</a> [in <a href="mathcomp.algebra.poly.html">mathcomp.algebra.poly</a>]<br/>
+<a href="mathcomp.algebra.poly.html#z:1199">z:1199</a> [in <a href="mathcomp.algebra.poly.html">mathcomp.algebra.poly</a>]<br/>
+<a href="mathcomp.solvable.finmodule.html#z:121">z:121</a> [in <a href="mathcomp.solvable.finmodule.html">mathcomp.solvable.finmodule</a>]<br/>
+<a href="mathcomp.solvable.finmodule.html#z:123">z:123</a> [in <a href="mathcomp.solvable.finmodule.html">mathcomp.solvable.finmodule</a>]<br/>
+<a href="mathcomp.fingroup.morphism.html#z:123">z:123</a> [in <a href="mathcomp.fingroup.morphism.html">mathcomp.fingroup.morphism</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1230">z:1230</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1233">z:1233</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.poly.html#z:1233">z:1233</a> [in <a href="mathcomp.algebra.poly.html">mathcomp.algebra.poly</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1236">z:1236</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.poly.html#z:1238">z:1238</a> [in <a href="mathcomp.algebra.poly.html">mathcomp.algebra.poly</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1239">z:1239</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.fingroup.morphism.html#z:124">z:124</a> [in <a href="mathcomp.fingroup.morphism.html">mathcomp.fingroup.morphism</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1242">z:1242</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.poly.html#z:1243">z:1243</a> [in <a href="mathcomp.algebra.poly.html">mathcomp.algebra.poly</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1245">z:1245</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1248">z:1248</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.field.algebraics_fundamentals.html#z:125">z:125</a> [in <a href="mathcomp.field.algebraics_fundamentals.html">mathcomp.field.algebraics_fundamentals</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1251">z:1251</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1255">z:1255</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.eqtype.html#z:126">z:126</a> [in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.fingroup.fingroup.html#z:127">z:127</a> [in <a href="mathcomp.fingroup.fingroup.html">mathcomp.fingroup.fingroup</a>]<br/>
+<a href="mathcomp.algebra.poly.html#z:1272">z:1272</a> [in <a href="mathcomp.algebra.poly.html">mathcomp.algebra.poly</a>]<br/>
+<a href="mathcomp.algebra.poly.html#z:1273">z:1273</a> [in <a href="mathcomp.algebra.poly.html">mathcomp.algebra.poly</a>]<br/>
+<a href="mathcomp.ssreflect.bigop.html#z:1273">z:1273</a> [in <a href="mathcomp.ssreflect.bigop.html">mathcomp.ssreflect.bigop</a>]<br/>
+<a href="mathcomp.algebra.poly.html#z:1274">z:1274</a> [in <a href="mathcomp.algebra.poly.html">mathcomp.algebra.poly</a>]<br/>
+<a href="mathcomp.solvable.commutator.html#z:128">z:128</a> [in <a href="mathcomp.solvable.commutator.html">mathcomp.solvable.commutator</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1310">z:1310</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1314">z:1314</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#z:1315">z:1315</a> [in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1317">z:1317</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1320">z:1320</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.field.algebraics_fundamentals.html#z:133">z:133</a> [in <a href="mathcomp.field.algebraics_fundamentals.html">mathcomp.field.algebraics_fundamentals</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#z:1338">z:1338</a> [in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1343">z:1343</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1358">z:1358</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1361">z:1361</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1364">z:1364</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1367">z:1367</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1390">z:1390</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#z:140">z:140</a> [in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.field.algebraics_fundamentals.html#z:140">z:140</a> [in <a href="mathcomp.field.algebraics_fundamentals.html">mathcomp.field.algebraics_fundamentals</a>]<br/>
+<a href="mathcomp.field.algebraics_fundamentals.html#z:141">z:141</a> [in <a href="mathcomp.field.algebraics_fundamentals.html">mathcomp.field.algebraics_fundamentals</a>]<br/>
+<a href="mathcomp.solvable.burnside_app.html#z:141">z:141</a> [in <a href="mathcomp.solvable.burnside_app.html">mathcomp.solvable.burnside_app</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1413">z:1413</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1417">z:1417</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.field.algebraics_fundamentals.html#z:144">z:144</a> [in <a href="mathcomp.field.algebraics_fundamentals.html">mathcomp.field.algebraics_fundamentals</a>]<br/>
+<a href="mathcomp.field.algebraics_fundamentals.html#z:145">z:145</a> [in <a href="mathcomp.field.algebraics_fundamentals.html">mathcomp.field.algebraics_fundamentals</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1458">z:1458</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.field.algebraics_fundamentals.html#z:146">z:146</a> [in <a href="mathcomp.field.algebraics_fundamentals.html">mathcomp.field.algebraics_fundamentals</a>]<br/>
+<a href="mathcomp.ssreflect.seq.html#z:1462">z:1462</a> [in <a href="mathcomp.ssreflect.seq.html">mathcomp.ssreflect.seq</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1462">z:1462</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1466">z:1466</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1470">z:1470</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.field.separable.html#z:148">z:148</a> [in <a href="mathcomp.field.separable.html">mathcomp.field.separable</a>]<br/>
+<a href="mathcomp.ssreflect.seq.html#z:1482">z:1482</a> [in <a href="mathcomp.ssreflect.seq.html">mathcomp.ssreflect.seq</a>]<br/>
+<a href="mathcomp.ssreflect.seq.html#z:1486">z:1486</a> [in <a href="mathcomp.ssreflect.seq.html">mathcomp.ssreflect.seq</a>]<br/>
+<a href="mathcomp.ssreflect.seq.html#z:1489">z:1489</a> [in <a href="mathcomp.ssreflect.seq.html">mathcomp.ssreflect.seq</a>]<br/>
+<a href="mathcomp.field.algebraics_fundamentals.html#z:149">z:149</a> [in <a href="mathcomp.field.algebraics_fundamentals.html">mathcomp.field.algebraics_fundamentals</a>]<br/>
+<a href="mathcomp.ssreflect.seq.html#z:1490">z:1490</a> [in <a href="mathcomp.ssreflect.seq.html">mathcomp.ssreflect.seq</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1492">z:1492</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.seq.html#z:1493">z:1493</a> [in <a href="mathcomp.ssreflect.seq.html">mathcomp.ssreflect.seq</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1495">z:1495</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1498">z:1498</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1501">z:1501</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1504">z:1504</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1505">z:1505</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1507">z:1507</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1507">z:1507</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.field.algebraics_fundamentals.html#z:151">z:151</a> [in <a href="mathcomp.field.algebraics_fundamentals.html">mathcomp.field.algebraics_fundamentals</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1510">z:1510</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1511">z:1511</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1513">z:1513</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1513">z:1513</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1517">z:1517</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.field.algebraics_fundamentals.html#z:152">z:152</a> [in <a href="mathcomp.field.algebraics_fundamentals.html">mathcomp.field.algebraics_fundamentals</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1521">z:1521</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1525">z:1525</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1526">z:1526</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1529">z:1529</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1529">z:1529</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1532">z:1532</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1533">z:1533</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1535">z:1535</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1535">z:1535</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1538">z:1538</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1539">z:1539</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1541">z:1541</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1541">z:1541</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1544">z:1544</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1545">z:1545</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1547">z:1547</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1549">z:1549</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1550">z:1550</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1553">z:1553</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1553">z:1553</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:1557">z:1557</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#z:156">z:156</a> [in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.fingroup.fingroup.html#z:159">z:159</a> [in <a href="mathcomp.fingroup.fingroup.html">mathcomp.fingroup.fingroup</a>]<br/>
+<a href="mathcomp.fingroup.fingroup.html#z:162">z:162</a> [in <a href="mathcomp.fingroup.fingroup.html">mathcomp.fingroup.fingroup</a>]<br/>
+<a href="mathcomp.field.separable.html#z:163">z:163</a> [in <a href="mathcomp.field.separable.html">mathcomp.field.separable</a>]<br/>
+<a href="mathcomp.ssreflect.choice.html#z:165">z:165</a> [in <a href="mathcomp.ssreflect.choice.html">mathcomp.ssreflect.choice</a>]<br/>
+<a href="mathcomp.fingroup.fingroup.html#z:167">z:167</a> [in <a href="mathcomp.fingroup.fingroup.html">mathcomp.fingroup.fingroup</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#z:171">z:171</a> [in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#z:176">z:176</a> [in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1767">z:1767</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#z:177">z:177</a> [in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.fingroup.fingroup.html#z:177">z:177</a> [in <a href="mathcomp.fingroup.fingroup.html">mathcomp.fingroup.fingroup</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1770">z:1770</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1773">z:1773</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1776">z:1776</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1779">z:1779</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1782">z:1782</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1785">z:1785</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1788">z:1788</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#z:179">z:179</a> [in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#z:179">z:179</a> [in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1791">z:1791</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1794">z:1794</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1797">z:1797</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.field.galois.html#z:180">z:180</a> [in <a href="mathcomp.field.galois.html">mathcomp.field.galois</a>]<br/>
+<a href="mathcomp.solvable.burnside_app.html#z:180">z:180</a> [in <a href="mathcomp.solvable.burnside_app.html">mathcomp.solvable.burnside_app</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1800">z:1800</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1803">z:1803</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1806">z:1806</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1809">z:1809</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.field.separable.html#z:181">z:181</a> [in <a href="mathcomp.field.separable.html">mathcomp.field.separable</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#z:181">z:181</a> [in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1812">z:1812</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1827">z:1827</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1831">z:1831</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1835">z:1835</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1839">z:1839</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1843">z:1843</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1847">z:1847</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1851">z:1851</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:1855">z:1855</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.field.separable.html#z:186">z:186</a> [in <a href="mathcomp.field.separable.html">mathcomp.field.separable</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#z:186">z:186</a> [in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.solvable.burnside_app.html#z:186">z:186</a> [in <a href="mathcomp.solvable.burnside_app.html">mathcomp.solvable.burnside_app</a>]<br/>
+<a href="mathcomp.field.separable.html#z:187">z:187</a> [in <a href="mathcomp.field.separable.html">mathcomp.field.separable</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#z:189">z:189</a> [in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.algebra.polydiv.html#z:189">z:189</a> [in <a href="mathcomp.algebra.polydiv.html">mathcomp.algebra.polydiv</a>]<br/>
+<a href="mathcomp.algebra.polydiv.html#z:190">z:190</a> [in <a href="mathcomp.algebra.polydiv.html">mathcomp.algebra.polydiv</a>]<br/>
+<a href="mathcomp.algebra.polydiv.html#z:191">z:191</a> [in <a href="mathcomp.algebra.polydiv.html">mathcomp.algebra.polydiv</a>]<br/>
+<a href="mathcomp.fingroup.fingroup.html#z:194">z:194</a> [in <a href="mathcomp.fingroup.fingroup.html">mathcomp.fingroup.fingroup</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#z:194">z:194</a> [in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.solvable.frobenius.html#z:196">z:196</a> [in <a href="mathcomp.solvable.frobenius.html">mathcomp.solvable.frobenius</a>]<br/>
+<a href="mathcomp.solvable.burnside_app.html#z:196">z:196</a> [in <a href="mathcomp.solvable.burnside_app.html">mathcomp.solvable.burnside_app</a>]<br/>
+<a href="mathcomp.solvable.frobenius.html#Z:197">Z:197</a> [in <a href="mathcomp.solvable.frobenius.html">mathcomp.solvable.frobenius</a>]<br/>
+<a href="mathcomp.fingroup.gproduct.html#z:199">z:199</a> [in <a href="mathcomp.fingroup.gproduct.html">mathcomp.fingroup.gproduct</a>]<br/>
+<a href="mathcomp.field.cyclotomic.html#z:2">z:2</a> [in <a href="mathcomp.field.cyclotomic.html">mathcomp.field.cyclotomic</a>]<br/>
+<a href="mathcomp.field.algnum.html#z:2">z:2</a> [in <a href="mathcomp.field.algnum.html">mathcomp.field.algnum</a>]<br/>
+<a href="mathcomp.solvable.alt.html#z:20">z:20</a> [in <a href="mathcomp.solvable.alt.html">mathcomp.solvable.alt</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#z:200">z:200</a> [in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.field.galois.html#z:201">z:201</a> [in <a href="mathcomp.field.galois.html">mathcomp.field.galois</a>]<br/>
+<a href="mathcomp.field.galois.html#z:202">z:202</a> [in <a href="mathcomp.field.galois.html">mathcomp.field.galois</a>]<br/>
+<a href="mathcomp.fingroup.action.html#z:202">z:202</a> [in <a href="mathcomp.fingroup.action.html">mathcomp.fingroup.action</a>]<br/>
+<a href="mathcomp.field.galois.html#z:203">z:203</a> [in <a href="mathcomp.field.galois.html">mathcomp.field.galois</a>]<br/>
+<a href="mathcomp.solvable.cyclic.html#z:203">z:203</a> [in <a href="mathcomp.solvable.cyclic.html">mathcomp.solvable.cyclic</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#z:204">z:204</a> [in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#z:205">z:205</a> [in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.ssreflect.seq.html#z:2051">z:2051</a> [in <a href="mathcomp.ssreflect.seq.html">mathcomp.ssreflect.seq</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#z:206">z:206</a> [in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.solvable.burnside_app.html#z:206">z:206</a> [in <a href="mathcomp.solvable.burnside_app.html">mathcomp.solvable.burnside_app</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#z:207">z:207</a> [in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2072">z:2072</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2075">z:2075</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2078">z:2078</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2081">z:2081</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.solvable.commutator.html#z:21">z:21</a> [in <a href="mathcomp.solvable.commutator.html">mathcomp.solvable.commutator</a>]<br/>
+<a href="mathcomp.character.inertia.html#z:21">z:21</a> [in <a href="mathcomp.character.inertia.html">mathcomp.character.inertia</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:2106">z:2106</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:2109">z:2109</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:2112">z:2112</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:2115">z:2115</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:2118">z:2118</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#z:212">z:212</a> [in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:2121">z:2121</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:2124">z:2124</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:2127">z:2127</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:2130">z:2130</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:2133">z:2133</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:2137">z:2137</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2137">z:2137</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2138">z:2138</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2140">z:2140</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:2141">z:2141</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:2145">z:2145</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2146">z:2146</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:2149">z:2149</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2150">z:2150</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2151">z:2151</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2152">z:2152</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:2153">z:2153</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2156">z:2156</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:2157">z:2157</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2157">z:2157</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2158">z:2158</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2159">z:2159</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.character.mxabelem.html#z:216">z:216</a> [in <a href="mathcomp.character.mxabelem.html">mathcomp.character.mxabelem</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:2161">z:2161</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:2165">z:2165</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.character.mxabelem.html#z:217">z:217</a> [in <a href="mathcomp.character.mxabelem.html">mathcomp.character.mxabelem</a>]<br/>
+<a href="mathcomp.solvable.burnside_app.html#z:217">z:217</a> [in <a href="mathcomp.solvable.burnside_app.html">mathcomp.solvable.burnside_app</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2171">z:2171</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#z:218">z:218</a> [in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.ssreflect.seq.html#z:2187">z:2187</a> [in <a href="mathcomp.ssreflect.seq.html">mathcomp.ssreflect.seq</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#z:219">z:219</a> [in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2197">z:2197</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2198">z:2198</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2200">z:2200</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2201">z:2201</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2203">z:2203</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2204">z:2204</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2206">z:2206</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2207">z:2207</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2209">z:2209</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2210">z:2210</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2211">z:2211</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2212">z:2212</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#z:222">z:222</a> [in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#z:2232">z:2232</a> [in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#z:224">z:224</a> [in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#z:224">z:224</a> [in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2243">z:2243</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2252">z:2252</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2255">z:2255</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrint.html#z:226">z:226</a> [in <a href="mathcomp.algebra.ssrint.html">mathcomp.algebra.ssrint</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#z:226">z:226</a> [in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2269">z:2269</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2270">z:2270</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2273">z:2273</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2275">z:2275</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.solvable.maximal.html#z:228">z:228</a> [in <a href="mathcomp.solvable.maximal.html">mathcomp.solvable.maximal</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2289">z:2289</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#z:229">z:229</a> [in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2290">z:2290</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2293">z:2293</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2294">z:2294</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.field.algnum.html#z:23">z:23</a> [in <a href="mathcomp.field.algnum.html">mathcomp.field.algnum</a>]<br/>
+<a href="mathcomp.fingroup.morphism.html#z:23">z:23</a> [in <a href="mathcomp.fingroup.morphism.html">mathcomp.fingroup.morphism</a>]<br/>
+<a href="mathcomp.solvable.maximal.html#z:230">z:230</a> [in <a href="mathcomp.solvable.maximal.html">mathcomp.solvable.maximal</a>]<br/>
+<a href="mathcomp.ssreflect.eqtype.html#z:231">z:231</a> [in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.field.algC.html#z:232">z:232</a> [in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.field.algC.html#z:233">z:233</a> [in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.ssreflect.eqtype.html#z:234">z:234</a> [in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2346">z:2346</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2349">z:2349</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#z:236">z:236</a> [in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.ssreflect.eqtype.html#z:236">z:236</a> [in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.ssreflect.eqtype.html#z:237">z:237</a> [in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.character.mxabelem.html#z:238">z:238</a> [in <a href="mathcomp.character.mxabelem.html">mathcomp.character.mxabelem</a>]<br/>
+<a href="mathcomp.solvable.commutator.html#z:24">z:24</a> [in <a href="mathcomp.solvable.commutator.html">mathcomp.solvable.commutator</a>]<br/>
+<a href="mathcomp.field.galois.html#z:240">z:240</a> [in <a href="mathcomp.field.galois.html">mathcomp.field.galois</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2403">z:2403</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:2408">z:2408</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.field.algC.html#z:241">z:241</a> [in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.character.mxabelem.html#z:243">z:243</a> [in <a href="mathcomp.character.mxabelem.html">mathcomp.character.mxabelem</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:2436">z:2436</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.field.algC.html#z:244">z:244</a> [in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.character.mxabelem.html#z:244">z:244</a> [in <a href="mathcomp.character.mxabelem.html">mathcomp.character.mxabelem</a>]<br/>
+<a href="mathcomp.algebra.rat.html#z:244">z:244</a> [in <a href="mathcomp.algebra.rat.html">mathcomp.algebra.rat</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:2440">z:2440</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:2441">z:2441</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:2444">z:2444</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:2449">z:2449</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.field.algC.html#z:247">z:247</a> [in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.character.mxabelem.html#z:247">z:247</a> [in <a href="mathcomp.character.mxabelem.html">mathcomp.character.mxabelem</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:2471">z:2471</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:2475">z:2475</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:2476">z:2476</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:2479">z:2479</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:2484">z:2484</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.field.algC.html#z:250">z:250</a> [in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:2500">z:2500</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:2503">z:2503</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:2517">z:2517</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.field.algC.html#z:253">z:253</a> [in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.algebra.rat.html#z:253">z:253</a> [in <a href="mathcomp.algebra.rat.html">mathcomp.algebra.rat</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:2530">z:2530</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:2533">z:2533</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:2538">z:2538</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:2541">z:2541</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:2542">z:2542</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:2547">z:2547</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:2549">z:2549</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:2554">z:2554</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:2557">z:2557</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:2560">z:2560</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:2565">z:2565</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:2568">z:2568</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:2571">z:2571</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:2574">z:2574</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:2577">z:2577</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:2580">z:2580</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.field.algnum.html#z:259">z:259</a> [in <a href="mathcomp.field.algnum.html">mathcomp.field.algnum</a>]<br/>
+<a href="mathcomp.solvable.commutator.html#z:27">z:27</a> [in <a href="mathcomp.solvable.commutator.html">mathcomp.solvable.commutator</a>]<br/>
+<a href="mathcomp.character.inertia.html#z:27">z:27</a> [in <a href="mathcomp.character.inertia.html">mathcomp.character.inertia</a>]<br/>
+<a href="mathcomp.field.algnum.html#z:270">z:270</a> [in <a href="mathcomp.field.algnum.html">mathcomp.field.algnum</a>]<br/>
+<a href="mathcomp.solvable.maximal.html#z:270">z:270</a> [in <a href="mathcomp.solvable.maximal.html">mathcomp.solvable.maximal</a>]<br/>
+<a href="mathcomp.field.algnum.html#z:275">z:275</a> [in <a href="mathcomp.field.algnum.html">mathcomp.field.algnum</a>]<br/>
+<a href="mathcomp.field.algebraics_fundamentals.html#z:276">z:276</a> [in <a href="mathcomp.field.algebraics_fundamentals.html">mathcomp.field.algebraics_fundamentals</a>]<br/>
+<a href="mathcomp.field.algC.html#z:277">z:277</a> [in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#z:279">z:279</a> [in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#z:280">z:280</a> [in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.field.algC.html#z:281">z:281</a> [in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:2812">z:2812</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:2816">z:2816</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#z:282">z:282</a> [in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.field.algC.html#z:285">z:285</a> [in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.solvable.maximal.html#Z:287">Z:287</a> [in <a href="mathcomp.solvable.maximal.html">mathcomp.solvable.maximal</a>]<br/>
+<a href="mathcomp.solvable.maximal.html#Z:288">Z:288</a> [in <a href="mathcomp.solvable.maximal.html">mathcomp.solvable.maximal</a>]<br/>
+<a href="mathcomp.solvable.maximal.html#Z:289">Z:289</a> [in <a href="mathcomp.solvable.maximal.html">mathcomp.solvable.maximal</a>]<br/>
+<a href="mathcomp.algebra.interval.html#z:290">z:290</a> [in <a href="mathcomp.algebra.interval.html">mathcomp.algebra.interval</a>]<br/>
+<a href="mathcomp.solvable.maximal.html#Z:290">Z:290</a> [in <a href="mathcomp.solvable.maximal.html">mathcomp.solvable.maximal</a>]<br/>
+<a href="mathcomp.field.algC.html#z:292">z:292</a> [in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#z:293">z:293</a> [in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.interval.html#z:294">z:294</a> [in <a href="mathcomp.algebra.interval.html">mathcomp.algebra.interval</a>]<br/>
+<a href="mathcomp.field.algC.html#z:296">z:296</a> [in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#z:296">z:296</a> [in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.solvable.commutator.html#z:30">z:30</a> [in <a href="mathcomp.solvable.commutator.html">mathcomp.solvable.commutator</a>]<br/>
+<a href="mathcomp.field.algC.html#z:308">z:308</a> [in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.ssreflect.fintype.html#z:309">z:309</a> [in <a href="mathcomp.ssreflect.fintype.html">mathcomp.ssreflect.fintype</a>]<br/>
+<a href="mathcomp.field.algnum.html#z:311">z:311</a> [in <a href="mathcomp.field.algnum.html">mathcomp.field.algnum</a>]<br/>
+<a href="mathcomp.field.algC.html#z:312">z:312</a> [in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.field.algebraics_fundamentals.html#z:318">z:318</a> [in <a href="mathcomp.field.algebraics_fundamentals.html">mathcomp.field.algebraics_fundamentals</a>]<br/>
+<a href="mathcomp.field.algebraics_fundamentals.html#z:319">z:319</a> [in <a href="mathcomp.field.algebraics_fundamentals.html">mathcomp.field.algebraics_fundamentals</a>]<br/>
+<a href="mathcomp.field.algnum.html#z:329">z:329</a> [in <a href="mathcomp.field.algnum.html">mathcomp.field.algnum</a>]<br/>
+<a href="mathcomp.solvable.commutator.html#z:33">z:33</a> [in <a href="mathcomp.solvable.commutator.html">mathcomp.solvable.commutator</a>]<br/>
+<a href="mathcomp.field.algC.html#z:333">z:333</a> [in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.field.algnum.html#z:333">z:333</a> [in <a href="mathcomp.field.algnum.html">mathcomp.field.algnum</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#z:334">z:334</a> [in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#z:335">z:335</a> [in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#z:336">z:336</a> [in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.field.algnum.html#z:337">z:337</a> [in <a href="mathcomp.field.algnum.html">mathcomp.field.algnum</a>]<br/>
+<a href="mathcomp.field.algnum.html#z:346">z:346</a> [in <a href="mathcomp.field.algnum.html">mathcomp.field.algnum</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#z:348">z:348</a> [in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.solvable.burnside_app.html#z:35">z:35</a> [in <a href="mathcomp.solvable.burnside_app.html">mathcomp.solvable.burnside_app</a>]<br/>
+<a href="mathcomp.field.algnum.html#z:350">z:350</a> [in <a href="mathcomp.field.algnum.html">mathcomp.field.algnum</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#z:351">z:351</a> [in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.fingroup.action.html#z:353">z:353</a> [in <a href="mathcomp.fingroup.action.html">mathcomp.fingroup.action</a>]<br/>
+<a href="mathcomp.field.algnum.html#z:358">z:358</a> [in <a href="mathcomp.field.algnum.html">mathcomp.field.algnum</a>]<br/>
+<a href="mathcomp.solvable.alt.html#z:36">z:36</a> [in <a href="mathcomp.solvable.alt.html">mathcomp.solvable.alt</a>]<br/>
+<a href="mathcomp.solvable.commutator.html#z:36">z:36</a> [in <a href="mathcomp.solvable.commutator.html">mathcomp.solvable.commutator</a>]<br/>
+<a href="mathcomp.fingroup.action.html#z:360">z:360</a> [in <a href="mathcomp.fingroup.action.html">mathcomp.fingroup.action</a>]<br/>
+<a href="mathcomp.field.algnum.html#z:362">z:362</a> [in <a href="mathcomp.field.algnum.html">mathcomp.field.algnum</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#z:366">z:366</a> [in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#z:367">z:367</a> [in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.field.algC.html#z:375">z:375</a> [in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.solvable.alt.html#z:38">z:38</a> [in <a href="mathcomp.solvable.alt.html">mathcomp.solvable.alt</a>]<br/>
+<a href="mathcomp.field.cyclotomic.html#z:38">z:38</a> [in <a href="mathcomp.field.cyclotomic.html">mathcomp.field.cyclotomic</a>]<br/>
+<a href="mathcomp.field.algC.html#z:380">z:380</a> [in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.algebra.mxpoly.html#z:380">z:380</a> [in <a href="mathcomp.algebra.mxpoly.html">mathcomp.algebra.mxpoly</a>]<br/>
+<a href="mathcomp.field.fieldext.html#z:383">z:383</a> [in <a href="mathcomp.field.fieldext.html">mathcomp.field.fieldext</a>]<br/>
+<a href="mathcomp.field.fieldext.html#z:384">z:384</a> [in <a href="mathcomp.field.fieldext.html">mathcomp.field.fieldext</a>]<br/>
+<a href="mathcomp.algebra.mxpoly.html#z:386">z:386</a> [in <a href="mathcomp.algebra.mxpoly.html">mathcomp.algebra.mxpoly</a>]<br/>
+<a href="mathcomp.ssreflect.eqtype.html#z:386">z:386</a> [in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.field.closed_field.html#z:388">z:388</a> [in <a href="mathcomp.field.closed_field.html">mathcomp.field.closed_field</a>]<br/>
+<a href="mathcomp.ssreflect.path.html#z:388">z:388</a> [in <a href="mathcomp.ssreflect.path.html">mathcomp.ssreflect.path</a>]<br/>
+<a href="mathcomp.algebra.polydiv.html#z:389">z:389</a> [in <a href="mathcomp.algebra.polydiv.html">mathcomp.algebra.polydiv</a>]<br/>
+<a href="mathcomp.solvable.commutator.html#z:39">z:39</a> [in <a href="mathcomp.solvable.commutator.html">mathcomp.solvable.commutator</a>]<br/>
+<a href="mathcomp.algebra.polydiv.html#z:390">z:390</a> [in <a href="mathcomp.algebra.polydiv.html">mathcomp.algebra.polydiv</a>]<br/>
+<a href="mathcomp.algebra.polydiv.html#z:391">z:391</a> [in <a href="mathcomp.algebra.polydiv.html">mathcomp.algebra.polydiv</a>]<br/>
+<a href="mathcomp.ssreflect.path.html#z:392">z:392</a> [in <a href="mathcomp.ssreflect.path.html">mathcomp.ssreflect.path</a>]<br/>
+<a href="mathcomp.ssreflect.path.html#z:395">z:395</a> [in <a href="mathcomp.ssreflect.path.html">mathcomp.ssreflect.path</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#z:42">z:42</a> [in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.field.cyclotomic.html#z:42">z:42</a> [in <a href="mathcomp.field.cyclotomic.html">mathcomp.field.cyclotomic</a>]<br/>
+<a href="mathcomp.ssreflect.ssrAC.html#z:43">z:43</a> [in <a href="mathcomp.ssreflect.ssrAC.html">mathcomp.ssreflect.ssrAC</a>]<br/>
+<a href="mathcomp.ssreflect.path.html#z:43">z:43</a> [in <a href="mathcomp.ssreflect.path.html">mathcomp.ssreflect.path</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#z:44">z:44</a> [in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.ssreflect.path.html#z:45">z:45</a> [in <a href="mathcomp.ssreflect.path.html">mathcomp.ssreflect.path</a>]<br/>
+<a href="mathcomp.field.separable.html#z:47">z:47</a> [in <a href="mathcomp.field.separable.html">mathcomp.field.separable</a>]<br/>
+<a href="mathcomp.ssreflect.path.html#z:47">z:47</a> [in <a href="mathcomp.ssreflect.path.html">mathcomp.ssreflect.path</a>]<br/>
+<a href="mathcomp.fingroup.gproduct.html#z:470">z:470</a> [in <a href="mathcomp.fingroup.gproduct.html">mathcomp.fingroup.gproduct</a>]<br/>
+<a href="mathcomp.ssreflect.ssrAC.html#z:48">z:48</a> [in <a href="mathcomp.ssreflect.ssrAC.html">mathcomp.ssreflect.ssrAC</a>]<br/>
+<a href="mathcomp.ssreflect.seq.html#z:497">z:497</a> [in <a href="mathcomp.ssreflect.seq.html">mathcomp.ssreflect.seq</a>]<br/>
+<a href="mathcomp.ssreflect.seq.html#z:500">z:500</a> [in <a href="mathcomp.ssreflect.seq.html">mathcomp.ssreflect.seq</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:503">z:503</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.ssreflect.seq.html#z:504">z:504</a> [in <a href="mathcomp.ssreflect.seq.html">mathcomp.ssreflect.seq</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:505">z:505</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.field.closed_field.html#z:507">z:507</a> [in <a href="mathcomp.field.closed_field.html">mathcomp.field.closed_field</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:508">z:508</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:510">z:510</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:513">z:513</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:515">z:515</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:518">z:518</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#z:52">z:52</a> [in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:520">z:520</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:523">z:523</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.ssreflect.seq.html#z:526">z:526</a> [in <a href="mathcomp.ssreflect.seq.html">mathcomp.ssreflect.seq</a>]<br/>
+<a href="mathcomp.algebra.poly.html#z:526">z:526</a> [in <a href="mathcomp.algebra.poly.html">mathcomp.algebra.poly</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:527">z:527</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.poly.html#z:528">z:528</a> [in <a href="mathcomp.algebra.poly.html">mathcomp.algebra.poly</a>]<br/>
+<a href="mathcomp.algebra.poly.html#z:530">z:530</a> [in <a href="mathcomp.algebra.poly.html">mathcomp.algebra.poly</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:531">z:531</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:535">z:535</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.poly.html#z:535">z:535</a> [in <a href="mathcomp.algebra.poly.html">mathcomp.algebra.poly</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:539">z:539</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#z:54">z:54</a> [in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.field.separable.html#z:54">z:54</a> [in <a href="mathcomp.field.separable.html">mathcomp.field.separable</a>]<br/>
+<a href="mathcomp.solvable.burnside_app.html#z:54">z:54</a> [in <a href="mathcomp.solvable.burnside_app.html">mathcomp.solvable.burnside_app</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:543">z:543</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:547">z:547</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.poly.html#z:549">z:549</a> [in <a href="mathcomp.algebra.poly.html">mathcomp.algebra.poly</a>]<br/>
+<a href="mathcomp.ssreflect.ssrAC.html#z:55">z:55</a> [in <a href="mathcomp.ssreflect.ssrAC.html">mathcomp.ssreflect.ssrAC</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#z:55">z:55</a> [in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.field.galois.html#z:550">z:550</a> [in <a href="mathcomp.field.galois.html">mathcomp.field.galois</a>]<br/>
+<a href="mathcomp.field.galois.html#z:551">z:551</a> [in <a href="mathcomp.field.galois.html">mathcomp.field.galois</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:551">z:551</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.field.galois.html#z:552">z:552</a> [in <a href="mathcomp.field.galois.html">mathcomp.field.galois</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:555">z:555</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:558">z:558</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:561">z:561</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:564">z:564</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:567">z:567</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:570">z:570</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:573">z:573</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:576">z:576</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.field.cyclotomic.html#z:58">z:58</a> [in <a href="mathcomp.field.cyclotomic.html">mathcomp.field.cyclotomic</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#z:58">z:58</a> [in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:582">z:582</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#z:589">z:589</a> [in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#z:593">z:593</a> [in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:595">z:595</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#z:597">z:597</a> [in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:598">z:598</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.field.algC.html#z:6">z:6</a> [in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.ssreflect.seq.html#z:60">z:60</a> [in <a href="mathcomp.ssreflect.seq.html">mathcomp.ssreflect.seq</a>]<br/>
+<a href="mathcomp.field.separable.html#z:60">z:60</a> [in <a href="mathcomp.field.separable.html">mathcomp.field.separable</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:601">z:601</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:601">z:601</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:604">z:604</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:604">z:604</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:607">z:607</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#z:61">z:61</a> [in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:610">z:610</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:613">z:613</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:616">z:616</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:619">z:619</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:622">z:622</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:625">z:625</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:628">z:628</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#z:63">z:63</a> [in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.field.algebraics_fundamentals.html#z:63">z:63</a> [in <a href="mathcomp.field.algebraics_fundamentals.html">mathcomp.field.algebraics_fundamentals</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:631">z:631</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:634">z:634</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:637">z:637</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:640">z:640</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.ssreflect.seq.html#z:65">z:65</a> [in <a href="mathcomp.ssreflect.seq.html">mathcomp.ssreflect.seq</a>]<br/>
+<a href="mathcomp.fingroup.fingroup.html#z:651">z:651</a> [in <a href="mathcomp.fingroup.fingroup.html">mathcomp.fingroup.fingroup</a>]<br/>
+<a href="mathcomp.fingroup.fingroup.html#z:654">z:654</a> [in <a href="mathcomp.fingroup.fingroup.html">mathcomp.fingroup.fingroup</a>]<br/>
+<a href="mathcomp.fingroup.fingroup.html#z:663">z:663</a> [in <a href="mathcomp.fingroup.fingroup.html">mathcomp.fingroup.fingroup</a>]<br/>
+<a href="mathcomp.fingroup.fingroup.html#z:666">z:666</a> [in <a href="mathcomp.fingroup.fingroup.html">mathcomp.fingroup.fingroup</a>]<br/>
+<a href="mathcomp.ssreflect.seq.html#z:67">z:67</a> [in <a href="mathcomp.ssreflect.seq.html">mathcomp.ssreflect.seq</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#z:67">z:67</a> [in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.fingroup.fingroup.html#z:695">z:695</a> [in <a href="mathcomp.fingroup.fingroup.html">mathcomp.fingroup.fingroup</a>]<br/>
+<a href="mathcomp.fingroup.fingroup.html#z:698">z:698</a> [in <a href="mathcomp.fingroup.fingroup.html">mathcomp.fingroup.fingroup</a>]<br/>
+<a href="mathcomp.field.cyclotomic.html#z:7">z:7</a> [in <a href="mathcomp.field.cyclotomic.html">mathcomp.field.cyclotomic</a>]<br/>
+<a href="mathcomp.field.galois.html#z:7">z:7</a> [in <a href="mathcomp.field.galois.html">mathcomp.field.galois</a>]<br/>
+<a href="mathcomp.field.algnum.html#z:7">z:7</a> [in <a href="mathcomp.field.algnum.html">mathcomp.field.algnum</a>]<br/>
+<a href="mathcomp.fingroup.perm.html#z:73">z:73</a> [in <a href="mathcomp.fingroup.perm.html">mathcomp.fingroup.perm</a>]<br/>
+<a href="mathcomp.fingroup.automorphism.html#z:73">z:73</a> [in <a href="mathcomp.fingroup.automorphism.html">mathcomp.fingroup.automorphism</a>]<br/>
+<a href="mathcomp.field.algC.html#z:74">z:74</a> [in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:754">z:754</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:756">z:756</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:759">z:759</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.field.algC.html#z:76">z:76</a> [in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:761">z:761</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:763">z:763</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:766">z:766</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:768">z:768</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#z:771">z:771</a> [in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.fingroup.perm.html#z:78">z:78</a> [in <a href="mathcomp.fingroup.perm.html">mathcomp.fingroup.perm</a>]<br/>
+<a href="mathcomp.field.algebraics_fundamentals.html#z:78">z:78</a> [in <a href="mathcomp.field.algebraics_fundamentals.html">mathcomp.field.algebraics_fundamentals</a>]<br/>
+<a href="mathcomp.field.algC.html#z:78">z:78</a> [in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:794">z:794</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.algebra.poly.html#z:797">z:797</a> [in <a href="mathcomp.algebra.poly.html">mathcomp.algebra.poly</a>]<br/>
+<a href="mathcomp.field.galois.html#z:8">z:8</a> [in <a href="mathcomp.field.galois.html">mathcomp.field.galois</a>]<br/>
+<a href="mathcomp.fingroup.quotient.html#z:80">z:80</a> [in <a href="mathcomp.fingroup.quotient.html">mathcomp.fingroup.quotient</a>]<br/>
+<a href="mathcomp.fingroup.quotient.html#z:81">z:81</a> [in <a href="mathcomp.fingroup.quotient.html">mathcomp.fingroup.quotient</a>]<br/>
+<a href="mathcomp.character.inertia.html#z:81">z:81</a> [in <a href="mathcomp.character.inertia.html">mathcomp.character.inertia</a>]<br/>
+<a href="mathcomp.fingroup.perm.html#z:83">z:83</a> [in <a href="mathcomp.fingroup.perm.html">mathcomp.fingroup.perm</a>]<br/>
+<a href="mathcomp.field.algebraics_fundamentals.html#z:83">z:83</a> [in <a href="mathcomp.field.algebraics_fundamentals.html">mathcomp.field.algebraics_fundamentals</a>]<br/>
+<a href="mathcomp.field.algebraics_fundamentals.html#z:84">z:84</a> [in <a href="mathcomp.field.algebraics_fundamentals.html">mathcomp.field.algebraics_fundamentals</a>]<br/>
+<a href="mathcomp.algebra.poly.html#z:856">z:856</a> [in <a href="mathcomp.algebra.poly.html">mathcomp.algebra.poly</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:878">z:878</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.field.algC.html#z:88">z:88</a> [in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:881">z:881</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:884">z:884</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:887">z:887</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.field.finfield.html#z:89">z:89</a> [in <a href="mathcomp.field.finfield.html">mathcomp.field.finfield</a>]<br/>
+<a href="mathcomp.ssreflect.ssrnat.html#z:891">z:891</a> [in <a href="mathcomp.ssreflect.ssrnat.html">mathcomp.ssreflect.ssrnat</a>]<br/>
+<a href="mathcomp.field.cyclotomic.html#z:9">z:9</a> [in <a href="mathcomp.field.cyclotomic.html">mathcomp.field.cyclotomic</a>]<br/>
+<a href="mathcomp.field.galois.html#z:9">z:9</a> [in <a href="mathcomp.field.galois.html">mathcomp.field.galois</a>]<br/>
+<a href="mathcomp.fingroup.perm.html#z:90">z:90</a> [in <a href="mathcomp.fingroup.perm.html">mathcomp.fingroup.perm</a>]<br/>
+<a href="mathcomp.ssreflect.seq.html#z:90">z:90</a> [in <a href="mathcomp.ssreflect.seq.html">mathcomp.ssreflect.seq</a>]<br/>
+<a href="mathcomp.field.finfield.html#z:90">z:90</a> [in <a href="mathcomp.field.finfield.html">mathcomp.field.finfield</a>]<br/>
+<a href="mathcomp.ssreflect.ssrnat.html#z:904">z:904</a> [in <a href="mathcomp.ssreflect.ssrnat.html">mathcomp.ssreflect.ssrnat</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:907">z:907</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.field.finfield.html#z:91">z:91</a> [in <a href="mathcomp.field.finfield.html">mathcomp.field.finfield</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:910">z:910</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:913">z:913</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.ssrnat.html#z:916">z:916</a> [in <a href="mathcomp.ssreflect.ssrnat.html">mathcomp.ssreflect.ssrnat</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:916">z:916</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:919">z:919</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:923">z:923</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:927">z:927</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.ssrnat.html#z:930">z:930</a> [in <a href="mathcomp.ssreflect.ssrnat.html">mathcomp.ssreflect.ssrnat</a>]<br/>
+<a href="mathcomp.character.classfun.html#z:930">z:930</a> [in <a href="mathcomp.character.classfun.html">mathcomp.character.classfun</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:930">z:930</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.character.classfun.html#z:931">z:931</a> [in <a href="mathcomp.character.classfun.html">mathcomp.character.classfun</a>]<br/>
+<a href="mathcomp.character.classfun.html#z:932">z:932</a> [in <a href="mathcomp.character.classfun.html">mathcomp.character.classfun</a>]<br/>
+<a href="mathcomp.character.classfun.html#z:933">z:933</a> [in <a href="mathcomp.character.classfun.html">mathcomp.character.classfun</a>]<br/>
+<a href="mathcomp.character.classfun.html#z:934">z:934</a> [in <a href="mathcomp.character.classfun.html">mathcomp.character.classfun</a>]<br/>
+<a href="mathcomp.field.galois.html#z:94">z:94</a> [in <a href="mathcomp.field.galois.html">mathcomp.field.galois</a>]<br/>
+<a href="mathcomp.character.classfun.html#z:940">z:940</a> [in <a href="mathcomp.character.classfun.html">mathcomp.character.classfun</a>]<br/>
+<a href="mathcomp.character.classfun.html#z:941">z:941</a> [in <a href="mathcomp.character.classfun.html">mathcomp.character.classfun</a>]<br/>
+<a href="mathcomp.character.classfun.html#z:942">z:942</a> [in <a href="mathcomp.character.classfun.html">mathcomp.character.classfun</a>]<br/>
+<a href="mathcomp.character.classfun.html#z:943">z:943</a> [in <a href="mathcomp.character.classfun.html">mathcomp.character.classfun</a>]<br/>
+<a href="mathcomp.character.classfun.html#z:944">z:944</a> [in <a href="mathcomp.character.classfun.html">mathcomp.character.classfun</a>]<br/>
+<a href="mathcomp.fingroup.fingroup.html#z:956">z:956</a> [in <a href="mathcomp.fingroup.fingroup.html">mathcomp.fingroup.fingroup</a>]<br/>
+<a href="mathcomp.fingroup.fingroup.html#z:959">z:959</a> [in <a href="mathcomp.fingroup.fingroup.html">mathcomp.fingroup.fingroup</a>]<br/>
+<a href="mathcomp.ssreflect.seq.html#z:96">z:96</a> [in <a href="mathcomp.ssreflect.seq.html">mathcomp.ssreflect.seq</a>]<br/>
+<a href="mathcomp.field.galois.html#z:96">z:96</a> [in <a href="mathcomp.field.galois.html">mathcomp.field.galois</a>]<br/>
+<a href="mathcomp.field.algebraics_fundamentals.html#z:98">z:98</a> [in <a href="mathcomp.field.algebraics_fundamentals.html">mathcomp.field.algebraics_fundamentals</a>]<br/>
+<a href="mathcomp.field.algC.html#z:98">z:98</a> [in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:981">z:981</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.field.algC.html#z:99">z:99</a> [in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.ssreflect.ssrbool.html#z:99">z:99</a> [in <a href="mathcomp.ssreflect.ssrbool.html">mathcomp.ssreflect.ssrbool</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#z:994">z:994</a> [in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<br/><br/><hr/><table>
+<tr>
+<td>Global Index</td>
+<td><a href="index_global_A.html">A</a></td>
+<td><a href="index_global_B.html">B</a></td>
+<td><a href="index_global_C.html">C</a></td>
+<td><a href="index_global_D.html">D</a></td>
+<td><a href="index_global_E.html">E</a></td>
+<td><a href="index_global_F.html">F</a></td>
+<td><a href="index_global_G.html">G</a></td>
+<td><a href="index_global_H.html">H</a></td>
+<td><a href="index_global_I.html">I</a></td>
+<td><a href="index_global_J.html">J</a></td>
+<td><a href="index_global_K.html">K</a></td>
+<td><a href="index_global_L.html">L</a></td>
+<td><a href="index_global_M.html">M</a></td>
+<td><a href="index_global_N.html">N</a></td>
+<td><a href="index_global_O.html">O</a></td>
+<td><a href="index_global_P.html">P</a></td>
+<td><a href="index_global_Q.html">Q</a></td>
+<td><a href="index_global_R.html">R</a></td>
+<td><a href="index_global_S.html">S</a></td>
+<td><a href="index_global_T.html">T</a></td>
+<td><a href="index_global_U.html">U</a></td>
+<td><a href="index_global_V.html">V</a></td>
+<td><a href="index_global_W.html">W</a></td>
+<td><a href="index_global_X.html">X</a></td>
+<td><a href="index_global_Y.html">Y</a></td>
+<td><a href="index_global_Z.html">Z</a></td>
+<td>_</td>
+<td><a href="index_global_*.html">other</a></td>
+<td>(78134 entries)</td>
+</tr>
+<tr>
+<td>Notation Index</td>
+<td><a href="index_notation_A.html">A</a></td>
+<td><a href="index_notation_B.html">B</a></td>
+<td><a href="index_notation_C.html">C</a></td>
+<td><a href="index_notation_D.html">D</a></td>
+<td><a href="index_notation_E.html">E</a></td>
+<td><a href="index_notation_F.html">F</a></td>
+<td><a href="index_notation_G.html">G</a></td>
+<td>H</td>
+<td><a href="index_notation_I.html">I</a></td>
+<td>J</td>
+<td><a href="index_notation_K.html">K</a></td>
+<td><a href="index_notation_L.html">L</a></td>
+<td><a href="index_notation_M.html">M</a></td>
+<td><a href="index_notation_N.html">N</a></td>
+<td><a href="index_notation_O.html">O</a></td>
+<td><a href="index_notation_P.html">P</a></td>
+<td><a href="index_notation_Q.html">Q</a></td>
+<td><a href="index_notation_R.html">R</a></td>
+<td><a href="index_notation_S.html">S</a></td>
+<td>T</td>
+<td><a href="index_notation_U.html">U</a></td>
+<td><a href="index_notation_V.html">V</a></td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td><a href="index_notation_Z.html">Z</a></td>
+<td>_</td>
+<td><a href="index_notation_*.html">other</a></td>
+<td>(1810 entries)</td>
+</tr>
+<tr>
+<td>Binder Index</td>
+<td><a href="index_binder_A.html">A</a></td>
+<td><a href="index_binder_B.html">B</a></td>
+<td><a href="index_binder_C.html">C</a></td>
+<td><a href="index_binder_D.html">D</a></td>
+<td><a href="index_binder_E.html">E</a></td>
+<td><a href="index_binder_F.html">F</a></td>
+<td><a href="index_binder_G.html">G</a></td>
+<td><a href="index_binder_H.html">H</a></td>
+<td><a href="index_binder_I.html">I</a></td>
+<td><a href="index_binder_J.html">J</a></td>
+<td><a href="index_binder_K.html">K</a></td>
+<td><a href="index_binder_L.html">L</a></td>
+<td><a href="index_binder_M.html">M</a></td>
+<td><a href="index_binder_N.html">N</a></td>
+<td><a href="index_binder_O.html">O</a></td>
+<td><a href="index_binder_P.html">P</a></td>
+<td><a href="index_binder_Q.html">Q</a></td>
+<td><a href="index_binder_R.html">R</a></td>
+<td><a href="index_binder_S.html">S</a></td>
+<td><a href="index_binder_T.html">T</a></td>
+<td><a href="index_binder_U.html">U</a></td>
+<td><a href="index_binder_V.html">V</a></td>
+<td><a href="index_binder_W.html">W</a></td>
+<td><a href="index_binder_X.html">X</a></td>
+<td><a href="index_binder_Y.html">Y</a></td>
+<td><a href="index_binder_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(47626 entries)</td>
+</tr>
+<tr>
+<td>Module Index</td>
+<td><a href="index_module_A.html">A</a></td>
+<td><a href="index_module_B.html">B</a></td>
+<td><a href="index_module_C.html">C</a></td>
+<td><a href="index_module_D.html">D</a></td>
+<td><a href="index_module_E.html">E</a></td>
+<td><a href="index_module_F.html">F</a></td>
+<td><a href="index_module_G.html">G</a></td>
+<td>H</td>
+<td><a href="index_module_I.html">I</a></td>
+<td>J</td>
+<td>K</td>
+<td>L</td>
+<td><a href="index_module_M.html">M</a></td>
+<td><a href="index_module_N.html">N</a></td>
+<td><a href="index_module_O.html">O</a></td>
+<td><a href="index_module_P.html">P</a></td>
+<td><a href="index_module_Q.html">Q</a></td>
+<td><a href="index_module_R.html">R</a></td>
+<td><a href="index_module_S.html">S</a></td>
+<td><a href="index_module_T.html">T</a></td>
+<td><a href="index_module_U.html">U</a></td>
+<td><a href="index_module_V.html">V</a></td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td>Z</td>
+<td>_</td>
+<td>other</td>
+<td>(375 entries)</td>
+</tr>
+<tr>
+<td>Variable Index</td>
+<td><a href="index_variable_A.html">A</a></td>
+<td><a href="index_variable_B.html">B</a></td>
+<td><a href="index_variable_C.html">C</a></td>
+<td><a href="index_variable_D.html">D</a></td>
+<td><a href="index_variable_E.html">E</a></td>
+<td><a href="index_variable_F.html">F</a></td>
+<td><a href="index_variable_G.html">G</a></td>
+<td><a href="index_variable_H.html">H</a></td>
+<td><a href="index_variable_I.html">I</a></td>
+<td>J</td>
+<td><a href="index_variable_K.html">K</a></td>
+<td><a href="index_variable_L.html">L</a></td>
+<td><a href="index_variable_M.html">M</a></td>
+<td><a href="index_variable_N.html">N</a></td>
+<td><a href="index_variable_O.html">O</a></td>
+<td><a href="index_variable_P.html">P</a></td>
+<td><a href="index_variable_Q.html">Q</a></td>
+<td><a href="index_variable_R.html">R</a></td>
+<td><a href="index_variable_S.html">S</a></td>
+<td><a href="index_variable_T.html">T</a></td>
+<td><a href="index_variable_U.html">U</a></td>
+<td><a href="index_variable_V.html">V</a></td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td><a href="index_variable_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(4027 entries)</td>
+</tr>
+<tr>
+<td>Library Index</td>
+<td><a href="index_library_A.html">A</a></td>
+<td><a href="index_library_B.html">B</a></td>
+<td><a href="index_library_C.html">C</a></td>
+<td><a href="index_library_D.html">D</a></td>
+<td><a href="index_library_E.html">E</a></td>
+<td><a href="index_library_F.html">F</a></td>
+<td><a href="index_library_G.html">G</a></td>
+<td><a href="index_library_H.html">H</a></td>
+<td><a href="index_library_I.html">I</a></td>
+<td><a href="index_library_J.html">J</a></td>
+<td>K</td>
+<td>L</td>
+<td><a href="index_library_M.html">M</a></td>
+<td><a href="index_library_N.html">N</a></td>
+<td><a href="index_library_O.html">O</a></td>
+<td><a href="index_library_P.html">P</a></td>
+<td><a href="index_library_Q.html">Q</a></td>
+<td><a href="index_library_R.html">R</a></td>
+<td><a href="index_library_S.html">S</a></td>
+<td><a href="index_library_T.html">T</a></td>
+<td>U</td>
+<td><a href="index_library_V.html">V</a></td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td><a href="index_library_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(91 entries)</td>
+</tr>
+<tr>
+<td>Lemma Index</td>
+<td><a href="index_lemma_A.html">A</a></td>
+<td><a href="index_lemma_B.html">B</a></td>
+<td><a href="index_lemma_C.html">C</a></td>
+<td><a href="index_lemma_D.html">D</a></td>
+<td><a href="index_lemma_E.html">E</a></td>
+<td><a href="index_lemma_F.html">F</a></td>
+<td><a href="index_lemma_G.html">G</a></td>
+<td><a href="index_lemma_H.html">H</a></td>
+<td><a href="index_lemma_I.html">I</a></td>
+<td><a href="index_lemma_J.html">J</a></td>
+<td><a href="index_lemma_K.html">K</a></td>
+<td><a href="index_lemma_L.html">L</a></td>
+<td><a href="index_lemma_M.html">M</a></td>
+<td><a href="index_lemma_N.html">N</a></td>
+<td><a href="index_lemma_O.html">O</a></td>
+<td><a href="index_lemma_P.html">P</a></td>
+<td><a href="index_lemma_Q.html">Q</a></td>
+<td><a href="index_lemma_R.html">R</a></td>
+<td><a href="index_lemma_S.html">S</a></td>
+<td><a href="index_lemma_T.html">T</a></td>
+<td><a href="index_lemma_U.html">U</a></td>
+<td><a href="index_lemma_V.html">V</a></td>
+<td><a href="index_lemma_W.html">W</a></td>
+<td><a href="index_lemma_X.html">X</a></td>
+<td>Y</td>
+<td><a href="index_lemma_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(14457 entries)</td>
+</tr>
+<tr>
+<td>Constructor Index</td>
+<td><a href="index_constructor_A.html">A</a></td>
+<td><a href="index_constructor_B.html">B</a></td>
+<td><a href="index_constructor_C.html">C</a></td>
+<td><a href="index_constructor_D.html">D</a></td>
+<td><a href="index_constructor_E.html">E</a></td>
+<td><a href="index_constructor_F.html">F</a></td>
+<td><a href="index_constructor_G.html">G</a></td>
+<td><a href="index_constructor_H.html">H</a></td>
+<td><a href="index_constructor_I.html">I</a></td>
+<td>J</td>
+<td>K</td>
+<td><a href="index_constructor_L.html">L</a></td>
+<td><a href="index_constructor_M.html">M</a></td>
+<td><a href="index_constructor_N.html">N</a></td>
+<td><a href="index_constructor_O.html">O</a></td>
+<td><a href="index_constructor_P.html">P</a></td>
+<td><a href="index_constructor_Q.html">Q</a></td>
+<td><a href="index_constructor_R.html">R</a></td>
+<td><a href="index_constructor_S.html">S</a></td>
+<td><a href="index_constructor_T.html">T</a></td>
+<td><a href="index_constructor_U.html">U</a></td>
+<td><a href="index_constructor_V.html">V</a></td>
+<td>W</td>
+<td><a href="index_constructor_X.html">X</a></td>
+<td>Y</td>
+<td><a href="index_constructor_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(469 entries)</td>
+</tr>
+<tr>
+<td>Axiom Index</td>
+<td><a href="index_axiom_A.html">A</a></td>
+<td><a href="index_axiom_B.html">B</a></td>
+<td><a href="index_axiom_C.html">C</a></td>
+<td>D</td>
+<td><a href="index_axiom_E.html">E</a></td>
+<td><a href="index_axiom_F.html">F</a></td>
+<td>G</td>
+<td>H</td>
+<td><a href="index_axiom_I.html">I</a></td>
+<td>J</td>
+<td>K</td>
+<td>L</td>
+<td>M</td>
+<td>N</td>
+<td>O</td>
+<td><a href="index_axiom_P.html">P</a></td>
+<td>Q</td>
+<td><a href="index_axiom_R.html">R</a></td>
+<td><a href="index_axiom_S.html">S</a></td>
+<td>T</td>
+<td>U</td>
+<td>V</td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td>Z</td>
+<td>_</td>
+<td>other</td>
+<td>(45 entries)</td>
+</tr>
+<tr>
+<td>Inductive Index</td>
+<td><a href="index_inductive_A.html">A</a></td>
+<td><a href="index_inductive_B.html">B</a></td>
+<td><a href="index_inductive_C.html">C</a></td>
+<td><a href="index_inductive_D.html">D</a></td>
+<td><a href="index_inductive_E.html">E</a></td>
+<td><a href="index_inductive_F.html">F</a></td>
+<td><a href="index_inductive_G.html">G</a></td>
+<td><a href="index_inductive_H.html">H</a></td>
+<td><a href="index_inductive_I.html">I</a></td>
+<td>J</td>
+<td>K</td>
+<td><a href="index_inductive_L.html">L</a></td>
+<td><a href="index_inductive_M.html">M</a></td>
+<td><a href="index_inductive_N.html">N</a></td>
+<td><a href="index_inductive_O.html">O</a></td>
+<td><a href="index_inductive_P.html">P</a></td>
+<td>Q</td>
+<td><a href="index_inductive_R.html">R</a></td>
+<td><a href="index_inductive_S.html">S</a></td>
+<td><a href="index_inductive_T.html">T</a></td>
+<td><a href="index_inductive_U.html">U</a></td>
+<td><a href="index_inductive_V.html">V</a></td>
+<td>W</td>
+<td><a href="index_inductive_X.html">X</a></td>
+<td>Y</td>
+<td>Z</td>
+<td>_</td>
+<td>other</td>
+<td>(133 entries)</td>
+</tr>
+<tr>
+<td>Projection Index</td>
+<td><a href="index_projection_A.html">A</a></td>
+<td><a href="index_projection_B.html">B</a></td>
+<td><a href="index_projection_C.html">C</a></td>
+<td>D</td>
+<td><a href="index_projection_E.html">E</a></td>
+<td><a href="index_projection_F.html">F</a></td>
+<td><a href="index_projection_G.html">G</a></td>
+<td>H</td>
+<td><a href="index_projection_I.html">I</a></td>
+<td>J</td>
+<td>K</td>
+<td>L</td>
+<td><a href="index_projection_M.html">M</a></td>
+<td><a href="index_projection_N.html">N</a></td>
+<td><a href="index_projection_O.html">O</a></td>
+<td><a href="index_projection_P.html">P</a></td>
+<td><a href="index_projection_Q.html">Q</a></td>
+<td><a href="index_projection_R.html">R</a></td>
+<td><a href="index_projection_S.html">S</a></td>
+<td><a href="index_projection_T.html">T</a></td>
+<td><a href="index_projection_U.html">U</a></td>
+<td><a href="index_projection_V.html">V</a></td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td><a href="index_projection_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(451 entries)</td>
+</tr>
+<tr>
+<td>Section Index</td>
+<td><a href="index_section_A.html">A</a></td>
+<td><a href="index_section_B.html">B</a></td>
+<td><a href="index_section_C.html">C</a></td>
+<td><a href="index_section_D.html">D</a></td>
+<td><a href="index_section_E.html">E</a></td>
+<td><a href="index_section_F.html">F</a></td>
+<td><a href="index_section_G.html">G</a></td>
+<td><a href="index_section_H.html">H</a></td>
+<td><a href="index_section_I.html">I</a></td>
+<td>J</td>
+<td><a href="index_section_K.html">K</a></td>
+<td><a href="index_section_L.html">L</a></td>
+<td><a href="index_section_M.html">M</a></td>
+<td><a href="index_section_N.html">N</a></td>
+<td><a href="index_section_O.html">O</a></td>
+<td><a href="index_section_P.html">P</a></td>
+<td><a href="index_section_Q.html">Q</a></td>
+<td><a href="index_section_R.html">R</a></td>
+<td><a href="index_section_S.html">S</a></td>
+<td><a href="index_section_T.html">T</a></td>
+<td><a href="index_section_U.html">U</a></td>
+<td><a href="index_section_V.html">V</a></td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td><a href="index_section_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(1391 entries)</td>
+</tr>
+<tr>
+<td>Abbreviation Index</td>
+<td><a href="index_abbreviation_A.html">A</a></td>
+<td><a href="index_abbreviation_B.html">B</a></td>
+<td><a href="index_abbreviation_C.html">C</a></td>
+<td><a href="index_abbreviation_D.html">D</a></td>
+<td><a href="index_abbreviation_E.html">E</a></td>
+<td><a href="index_abbreviation_F.html">F</a></td>
+<td><a href="index_abbreviation_G.html">G</a></td>
+<td><a href="index_abbreviation_H.html">H</a></td>
+<td><a href="index_abbreviation_I.html">I</a></td>
+<td><a href="index_abbreviation_J.html">J</a></td>
+<td><a href="index_abbreviation_K.html">K</a></td>
+<td><a href="index_abbreviation_L.html">L</a></td>
+<td><a href="index_abbreviation_M.html">M</a></td>
+<td><a href="index_abbreviation_N.html">N</a></td>
+<td><a href="index_abbreviation_O.html">O</a></td>
+<td><a href="index_abbreviation_P.html">P</a></td>
+<td><a href="index_abbreviation_Q.html">Q</a></td>
+<td><a href="index_abbreviation_R.html">R</a></td>
+<td><a href="index_abbreviation_S.html">S</a></td>
+<td><a href="index_abbreviation_T.html">T</a></td>
+<td><a href="index_abbreviation_U.html">U</a></td>
+<td><a href="index_abbreviation_V.html">V</a></td>
+<td><a href="index_abbreviation_W.html">W</a></td>
+<td><a href="index_abbreviation_X.html">X</a></td>
+<td>Y</td>
+<td><a href="index_abbreviation_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(851 entries)</td>
+</tr>
+<tr>
+<td>Definition Index</td>
+<td><a href="index_definition_A.html">A</a></td>
+<td><a href="index_definition_B.html">B</a></td>
+<td><a href="index_definition_C.html">C</a></td>
+<td><a href="index_definition_D.html">D</a></td>
+<td><a href="index_definition_E.html">E</a></td>
+<td><a href="index_definition_F.html">F</a></td>
+<td><a href="index_definition_G.html">G</a></td>
+<td><a href="index_definition_H.html">H</a></td>
+<td><a href="index_definition_I.html">I</a></td>
+<td><a href="index_definition_J.html">J</a></td>
+<td><a href="index_definition_K.html">K</a></td>
+<td><a href="index_definition_L.html">L</a></td>
+<td><a href="index_definition_M.html">M</a></td>
+<td><a href="index_definition_N.html">N</a></td>
+<td><a href="index_definition_O.html">O</a></td>
+<td><a href="index_definition_P.html">P</a></td>
+<td><a href="index_definition_Q.html">Q</a></td>
+<td><a href="index_definition_R.html">R</a></td>
+<td><a href="index_definition_S.html">S</a></td>
+<td><a href="index_definition_T.html">T</a></td>
+<td><a href="index_definition_U.html">U</a></td>
+<td><a href="index_definition_V.html">V</a></td>
+<td><a href="index_definition_W.html">W</a></td>
+<td><a href="index_definition_X.html">X</a></td>
+<td>Y</td>
+<td><a href="index_definition_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(6161 entries)</td>
+</tr>
+<tr>
+<td>Record Index</td>
+<td><a href="index_record_A.html">A</a></td>
+<td><a href="index_record_B.html">B</a></td>
+<td><a href="index_record_C.html">C</a></td>
+<td>D</td>
+<td><a href="index_record_E.html">E</a></td>
+<td><a href="index_record_F.html">F</a></td>
+<td><a href="index_record_G.html">G</a></td>
+<td>H</td>
+<td><a href="index_record_I.html">I</a></td>
+<td>J</td>
+<td>K</td>
+<td>L</td>
+<td><a href="index_record_M.html">M</a></td>
+<td><a href="index_record_N.html">N</a></td>
+<td><a href="index_record_O.html">O</a></td>
+<td><a href="index_record_P.html">P</a></td>
+<td><a href="index_record_Q.html">Q</a></td>
+<td><a href="index_record_R.html">R</a></td>
+<td><a href="index_record_S.html">S</a></td>
+<td><a href="index_record_T.html">T</a></td>
+<td><a href="index_record_U.html">U</a></td>
+<td><a href="index_record_V.html">V</a></td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td><a href="index_record_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(247 entries)</td>
+</tr>
+</table>
+</div>
+
+<div id="footer">
+<hr/><a href="index.html">Index</a><hr/>This page has been generated by <a href="http://coq.inria.fr/">coqdoc</a>
+</div>
+
+</div>
+
+</body>
+</html>
