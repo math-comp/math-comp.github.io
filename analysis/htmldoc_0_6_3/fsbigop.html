@@ -27,16 +27,13 @@
 <br/>
 </div>
 
-<div class="doc">
-                     Finitely-supported big operators                       
+<div class="doc">                     Finitely-supported big operators
 
-<div class="paragraph"> </div>
+     finite_support idx D F := D `&amp;` F @^-1` [set~ idx]
+ \big[op/idx]_(i \in A) F i == iterated application of the operator op
+                               with neutral idx over finite_support idx A F
+         \sum_(i \in A) F i == iterated addition, in ring_scope
 
-     finite_support idx D F := D `&amp;` F @^-1` [set~ idx]                     
- \big[op/idx](i \in A) F i == iterated application of the operator op      
-                               with neutral idx over finite_support idx A F 
-         \sum(i \in A) F i == iterated addition, in ring_scope             
-                                                                             
 </div>
 <div class="code">
 
@@ -76,7 +73,7 @@
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">in_finite_support</span> (<span class="id" title="var">T</span> : <span class="id" title="keyword">Type</span>) (<span class="id" title="var">J</span> : <span class="id" title="var">choiceType</span>) (<span class="id" title="var">i</span> : <span class="id" title="var">T</span>) (<span class="id" title="var">P</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">J</span>)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;(<span class="id" title="var">F</span> : <span class="id" title="var">J</span> → <span class="id" title="var">T</span>) : <span class="id" title="var">finite_set</span> (<span class="id" title="var">P</span> `&amp;` <span class="id" title="var">F</span> @^-1` [<span class="id" title="tactic">set</span>¬ <span class="id" title="var">i</span>]) →<br/>
 &nbsp;&nbsp;<span class="id" title="var">finite_support</span> <span class="id" title="var">i</span> <span class="id" title="var">P</span> <span class="id" title="var">F</span> =<span class="id" title="var">i</span> <span class="id" title="var">P</span> `&amp;` <span class="id" title="var">F</span> @^-1` [<span class="id" title="tactic">set</span>¬ <span class="id" title="var">i</span>].<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">finite_support_uniq</span> (<span class="id" title="var">T</span> : <span class="id" title="keyword">Type</span>) (<span class="id" title="var">J</span> : <span class="id" title="var">choiceType</span>) (<span class="id" title="var">i</span> : <span class="id" title="var">T</span>) (<span class="id" title="var">P</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">J</span>)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;(<span class="id" title="var">F</span> : <span class="id" title="var">J</span> → <span class="id" title="var">T</span>) : <span class="id" title="var">uniq</span> (<span class="id" title="var">finite_support</span> <span class="id" title="var">i</span> <span class="id" title="var">P</span> <span class="id" title="var">F</span>).<br/>
@@ -113,7 +110,7 @@
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">eq_fsbigl</span> (<span class="id" title="var">R</span> : <span class="id" title="keyword">Type</span>) (<span class="id" title="var">idx</span> : <span class="id" title="var">R</span>) (<span class="id" title="var">op</span> : <span class="id" title="var">R</span> → <span class="id" title="var">R</span> → <span class="id" title="var">R</span>)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;(<span class="id" title="var">T</span> : <span class="id" title="var">choiceType</span>) (<span class="id" title="var">f</span> : <span class="id" title="var">T</span> → <span class="id" title="var">R</span>) (<span class="id" title="var">P</span> <span class="id" title="var">Q</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) :<br/>
 &nbsp;&nbsp;<span class="id" title="var">P</span> = <span class="id" title="var">Q</span> → \<span class="id" title="var">big</span>[<span class="id" title="var">op</span>/<span class="id" title="var">idx</span>]<span class="id" title="var">_</span>(<span class="id" title="var">x</span> \<span class="id" title="tactic">in</span> <span class="id" title="var">P</span>) <span class="id" title="var">f</span> <span class="id" title="var">x</span> = \<span class="id" title="var">big</span>[<span class="id" title="var">op</span>/<span class="id" title="var">idx</span>]<span class="id" title="var">_</span>(<span class="id" title="var">x</span> \<span class="id" title="tactic">in</span> <span class="id" title="var">Q</span>) <span class="id" title="var">f</span> <span class="id" title="var">x</span>.<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">eq_fsbigr</span> (<span class="id" title="var">R</span> : <span class="id" title="keyword">Type</span>) (<span class="id" title="var">idx</span> : <span class="id" title="var">R</span>) (<span class="id" title="var">op</span> : <span class="id" title="var">Monoid.com_law</span> <span class="id" title="var">idx</span>)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;(<span class="id" title="var">T</span> : <span class="id" title="var">choiceType</span>) (<span class="id" title="var">f</span> <span class="id" title="var">g</span> : <span class="id" title="var">T</span> → <span class="id" title="var">R</span>) (<span class="id" title="var">P</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) :<br/>
@@ -175,7 +172,7 @@
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">fsbig_dflt</span> (<span class="id" title="var">R</span> : <span class="id" title="keyword">Type</span>) (<span class="id" title="var">idx</span> : <span class="id" title="var">R</span>) (<span class="id" title="var">op</span> : <span class="id" title="var">Monoid.law</span> <span class="id" title="var">idx</span>) (<span class="id" title="var">I</span> : <span class="id" title="var">choiceType</span>)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;(<span class="id" title="var">P</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">I</span>) (<span class="id" title="var">F</span> : <span class="id" title="var">I</span> → <span class="id" title="var">R</span>) :<br/>
 &nbsp;&nbsp;<span class="id" title="var">infinite_set</span> (<span class="id" title="var">P</span> `&amp;` <span class="id" title="var">F</span> @^-1` [<span class="id" title="tactic">set</span>¬ <span class="id" title="var">idx</span>])-&gt; \<span class="id" title="var">big</span>[<span class="id" title="var">op</span>/<span class="id" title="var">idx</span>]<span class="id" title="var">_</span>(<span class="id" title="var">i</span> \<span class="id" title="tactic">in</span> <span class="id" title="var">P</span>) <span class="id" title="var">F</span> <span class="id" title="var">i</span> = <span class="id" title="var">idx</span>.<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">fsbig_widen</span> (<span class="id" title="var">T</span> : <span class="id" title="var">choiceType</span>) [<span class="id" title="var">R</span> : <span class="id" title="keyword">Type</span>] [<span class="id" title="var">idx</span> : <span class="id" title="var">R</span>]<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;(<span class="id" title="var">op</span> : <span class="id" title="var">Monoid.com_law</span> <span class="id" title="var">idx</span>) (<span class="id" title="var">P</span> <span class="id" title="var">D</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) (<span class="id" title="var">f</span> : <span class="id" title="var">T</span> → <span class="id" title="var">R</span>) :<br/>
@@ -188,7 +185,7 @@
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">fsbig_supp</span> (<span class="id" title="var">T</span> : <span class="id" title="var">choiceType</span>) [<span class="id" title="var">R</span> : <span class="id" title="keyword">Type</span>] [<span class="id" title="var">idx</span> : <span class="id" title="var">R</span>]<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;(<span class="id" title="var">op</span> : <span class="id" title="var">Monoid.com_law</span> <span class="id" title="var">idx</span>) (<span class="id" title="var">P</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) (<span class="id" title="var">f</span> : <span class="id" title="var">T</span> → <span class="id" title="var">R</span>) :<br/>
 &nbsp;&nbsp;\<span class="id" title="var">big</span>[<span class="id" title="var">op</span>/<span class="id" title="var">idx</span>]<span class="id" title="var">_</span>(<span class="id" title="var">i</span> \<span class="id" title="tactic">in</span> <span class="id" title="var">P</span>) <span class="id" title="var">f</span> <span class="id" title="var">i</span> = \<span class="id" title="var">big</span>[<span class="id" title="var">op</span>/<span class="id" title="var">idx</span>]<span class="id" title="var">_</span>(<span class="id" title="var">i</span> \<span class="id" title="tactic">in</span> <span class="id" title="var">P</span> `&amp;` <span class="id" title="var">f</span> @^-1` [<span class="id" title="tactic">set</span>¬ <span class="id" title="var">idx</span>]) <span class="id" title="var">f</span> <span class="id" title="var">i</span>.<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">fsbig_fwiden</span> (<span class="id" title="var">T</span> : <span class="id" title="var">choiceType</span>) [<span class="id" title="var">R</span> : <span class="id" title="var">eqType</span>] [<span class="id" title="var">idx</span> : <span class="id" title="var">R</span>]<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;(<span class="id" title="var">op</span> : <span class="id" title="var">Monoid.com_law</span> <span class="id" title="var">idx</span>)<br/>
@@ -202,7 +199,7 @@
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">fsbig_set0</span> (<span class="id" title="var">R</span> : <span class="id" title="keyword">Type</span>) (<span class="id" title="var">idx</span> : <span class="id" title="var">R</span>) (<span class="id" title="var">op</span> : <span class="id" title="var">Monoid.com_law</span> <span class="id" title="var">idx</span>) (<span class="id" title="var">T</span> : <span class="id" title="var">choiceType</span>)<br/>
 &nbsp;&nbsp;(<span class="id" title="var">F</span> : <span class="id" title="var">T</span> → <span class="id" title="var">R</span>) : \<span class="id" title="var">big</span>[<span class="id" title="var">op</span>/<span class="id" title="var">idx</span>]<span class="id" title="var">_</span>(<span class="id" title="var">x</span> \<span class="id" title="tactic">in</span> <span class="id" title="var">set0</span>) <span class="id" title="var">F</span> <span class="id" title="var">x</span> = <span class="id" title="var">idx</span>.<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">fsbig_set1</span> (<span class="id" title="var">R</span> : <span class="id" title="keyword">Type</span>) (<span class="id" title="var">idx</span> : <span class="id" title="var">R</span>) (<span class="id" title="var">op</span> : <span class="id" title="var">Monoid.com_law</span> <span class="id" title="var">idx</span>) (<span class="id" title="var">T</span> : <span class="id" title="var">choiceType</span>) <span class="id" title="var">x</span><br/>
 &nbsp;&nbsp;(<span class="id" title="var">F</span> : <span class="id" title="var">T</span> → <span class="id" title="var">R</span>) : \<span class="id" title="var">big</span>[<span class="id" title="var">op</span>/<span class="id" title="var">idx</span>]<span class="id" title="var">_</span>(<span class="id" title="var">y</span> \<span class="id" title="tactic">in</span> [<span class="id" title="tactic">set</span> <span class="id" title="var">x</span>]) <span class="id" title="var">F</span> <span class="id" title="var">y</span> = <span class="id" title="var">F</span> <span class="id" title="var">x</span>.<br/>
@@ -241,7 +238,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">finite_set</span> <span class="id" title="var">A</span> → <span class="id" title="var">finite_set</span> <span class="id" title="var">B</span> → <span class="id" title="var">A</span> `&amp;` <span class="id" title="var">B</span> `&lt;=` <span class="id" title="var">set0</span> →<br/>
 &nbsp;&nbsp;\<span class="id" title="var">big</span>[<span class="id" title="var">op</span>/<span class="id" title="var">idx</span>]<span class="id" title="var">_</span>(<span class="id" title="var">i</span> \<span class="id" title="tactic">in</span> <span class="id" title="var">A</span> `|` <span class="id" title="var">B</span>) <span class="id" title="var">F</span> <span class="id" title="var">i</span> =<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">op</span> (\<span class="id" title="var">big</span>[<span class="id" title="var">op</span>/<span class="id" title="var">idx</span>]<span class="id" title="var">_</span>(<span class="id" title="var">i</span> \<span class="id" title="tactic">in</span> <span class="id" title="var">A</span>) <span class="id" title="var">F</span> <span class="id" title="var">i</span>) (\<span class="id" title="var">big</span>[<span class="id" title="var">op</span>/<span class="id" title="var">idx</span>]<span class="id" title="var">_</span>(<span class="id" title="var">i</span> \<span class="id" title="tactic">in</span> <span class="id" title="var">B</span>) <span class="id" title="var">F</span> <span class="id" title="var">i</span>).<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">fsbigD1</span> (<span class="id" title="var">R</span> : <span class="id" title="keyword">Type</span>) (<span class="id" title="var">idx</span> : <span class="id" title="var">R</span>) (<span class="id" title="var">op</span> : <span class="id" title="var">Monoid.com_law</span> <span class="id" title="var">idx</span>)<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;(<span class="id" title="var">I</span> : <span class="id" title="var">choiceType</span>) (<span class="id" title="var">i</span> : <span class="id" title="var">I</span>) (<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">I</span>) (<span class="id" title="var">F</span> : <span class="id" title="var">I</span> → <span class="id" title="var">R</span>) :<br/>
@@ -264,7 +261,7 @@
 &nbsp;&nbsp;<span class="id" title="var">finite_set</span> <span class="id" title="var">P</span> <span class="comment">(*NB:&nbsp;not&nbsp;needed&nbsp;in&nbsp;the&nbsp;integral&nbsp;case*)</span> →<br/>
 &nbsp;&nbsp;<span class="id" title="var">times</span> <span class="id" title="var">a</span> (\<span class="id" title="var">big</span>[<span class="id" title="var">plus</span>/<span class="id" title="var">zero</span>]<span class="id" title="var">_</span>(<span class="id" title="var">i</span> \<span class="id" title="tactic">in</span> <span class="id" title="var">P</span>) <span class="id" title="var">F</span> <span class="id" title="var">i</span>) =<br/>
 &nbsp;&nbsp;\<span class="id" title="var">big</span>[<span class="id" title="var">plus</span>/<span class="id" title="var">zero</span>]<span class="id" title="var">_</span>(<span class="id" title="var">i</span> \<span class="id" title="tactic">in</span> <span class="id" title="var">P</span>) <span class="id" title="var">times</span> <span class="id" title="var">a</span> (<span class="id" title="var">F</span> <span class="id" title="var">i</span>).<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">mulr_fsumr</span> (<span class="id" title="var">R</span> : <span class="id" title="var">idomainType</span>) (<span class="id" title="var">I</span> : <span class="id" title="var">choiceType</span>) <span class="id" title="var">a</span> (<span class="id" title="var">P</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">I</span>) (<span class="id" title="var">F</span> : <span class="id" title="var">I</span> → <span class="id" title="var">R</span>) :<br/>
 &nbsp;&nbsp;&nbsp;<span class="id" title="var">a</span> × (\<span class="id" title="var">sum_</span>(<span class="id" title="var">i</span> \<span class="id" title="tactic">in</span> <span class="id" title="var">P</span>) <span class="id" title="var">F</span> <span class="id" title="var">i</span>) = \<span class="id" title="var">sum_</span>(<span class="id" title="var">i</span> \<span class="id" title="tactic">in</span> <span class="id" title="var">P</span>) <span class="id" title="var">a</span> × <span class="id" title="var">F</span> <span class="id" title="var">i</span>.<br/>
@@ -272,7 +269,7 @@
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">mulr_fsuml</span> (<span class="id" title="var">R</span> : <span class="id" title="var">idomainType</span>) (<span class="id" title="var">I</span> : <span class="id" title="var">choiceType</span>) <span class="id" title="var">a</span> (<span class="id" title="var">P</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">I</span>) (<span class="id" title="var">F</span> : <span class="id" title="var">I</span> → <span class="id" title="var">R</span>) :<br/>
 &nbsp;&nbsp;&nbsp;(\<span class="id" title="var">sum_</span>(<span class="id" title="var">i</span> \<span class="id" title="tactic">in</span> <span class="id" title="var">P</span>) <span class="id" title="var">F</span> <span class="id" title="var">i</span>) × <span class="id" title="var">a</span> = \<span class="id" title="var">sum_</span>(<span class="id" title="var">i</span> \<span class="id" title="tactic">in</span> <span class="id" title="var">P</span>) (<span class="id" title="var">F</span> <span class="id" title="var">i</span> × <span class="id" title="var">a</span>).<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">fsbig_ord</span> <span class="id" title="var">R</span> (<span class="id" title="var">idx</span> : <span class="id" title="var">R</span>) (<span class="id" title="var">op</span> : <span class="id" title="var">Monoid.com_law</span> <span class="id" title="var">idx</span>) <span class="id" title="var">n</span> (<span class="id" title="var">F</span> : <span class="id" title="var">nat</span> → <span class="id" title="var">R</span>) :<br/>
 &nbsp;&nbsp;\<span class="id" title="var">big</span>[<span class="id" title="var">op</span>/<span class="id" title="var">idx</span>]<span class="id" title="var">_</span>(<span class="id" title="var">a</span> &lt; <span class="id" title="var">n</span>) <span class="id" title="var">F</span> <span class="id" title="var">a</span> = \<span class="id" title="var">big</span>[<span class="id" title="var">op</span>/<span class="id" title="var">idx</span>]<span class="id" title="var">_</span>(<span class="id" title="var">a</span> \<span class="id" title="tactic">in</span> `<span class="id" title="var">I_n</span>) <span class="id" title="var">F</span> <span class="id" title="var">a</span>.<br/>
@@ -289,9 +286,8 @@
 <br/>
 </div>
 
-<div class="doc">
- Lemma reindex_inside I F P ...  : finite_set (P `&amp;` F @` [set~ id]) -&gt; ... 
- Isn't this reversed compared to reindex in bigop?  
+<div class="doc"> Lemma reindex_inside I F P ...  : finite_set (P `&amp;` F @` [set~ id]) -&gt; ...
+ Isn't this reversed compared to reindex in bigop?
 </div>
 <div class="code">
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">reindex_fsbig</span> {<span class="id" title="var">I</span> <span class="id" title="var">J</span> : <span class="id" title="var">choiceType</span>} (<span class="id" title="var">h</span> : <span class="id" title="var">I</span> → <span class="id" title="var">J</span>) <span class="id" title="var">P</span> <span class="id" title="var">Q</span><br/>
@@ -301,12 +297,11 @@
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">fsbig_image</span> {<span class="id" title="var">I</span> <span class="id" title="var">J</span> : <span class="id" title="var">choiceType</span>} <span class="id" title="var">P</span> (<span class="id" title="var">h</span> : <span class="id" title="var">I</span> → <span class="id" title="var">J</span>) (<span class="id" title="var">F</span> : <span class="id" title="var">J</span> → <span class="id" title="var">R</span>) : <span class="id" title="var">set_inj</span> <span class="id" title="var">P</span> <span class="id" title="var">h</span> →<br/>
 &nbsp;&nbsp;\<span class="id" title="var">big</span>[<span class="id" title="var">op</span>/<span class="id" title="var">idx</span>]<span class="id" title="var">_</span>(<span class="id" title="var">j</span> \<span class="id" title="tactic">in</span> <span class="id" title="var">h</span> @` <span class="id" title="var">P</span>) <span class="id" title="var">F</span> <span class="id" title="var">j</span> = \<span class="id" title="var">big</span>[<span class="id" title="var">op</span>/<span class="id" title="var">idx</span>]<span class="id" title="var">_</span>(<span class="id" title="var">i</span> \<span class="id" title="tactic">in</span> <span class="id" title="var">P</span>) <span class="id" title="var">F</span> (<span class="id" title="var">h</span> <span class="id" title="var">i</span>).<br/>
- 
+
 <br/>
 </div>
 
-<div class="doc">
- Lemma reindex_inside I F P ...  : finite_set (P `&amp;` F @` [set~ id]) -&gt; ...  
+<div class="doc"> Lemma reindex_inside I F P ...  : finite_set (P `&amp;` F @` [set~ id]) -&gt; ...
 </div>
 <div class="code">
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">__deprecated__reindex_inside</span> {<span class="id" title="var">I</span> <span class="id" title="var">J</span> : <span class="id" title="var">choiceType</span>} <span class="id" title="var">P</span> <span class="id" title="var">Q</span> (<span class="id" title="var">h</span> : <span class="id" title="var">I</span> → <span class="id" title="var">J</span>) (<span class="id" title="var">F</span> : <span class="id" title="var">J</span> → <span class="id" title="var">R</span>) :<br/>
@@ -317,7 +312,7 @@
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">reindex_fsbigT</span> {<span class="id" title="var">I</span> <span class="id" title="var">J</span> : <span class="id" title="var">choiceType</span>} (<span class="id" title="var">h</span> : <span class="id" title="var">I</span> → <span class="id" title="var">J</span>) (<span class="id" title="var">F</span> : <span class="id" title="var">J</span> → <span class="id" title="var">R</span>) :<br/>
 &nbsp;&nbsp;<span class="id" title="var">bijective</span> <span class="id" title="var">h</span> →<br/>
 &nbsp;&nbsp;\<span class="id" title="var">big</span>[<span class="id" title="var">op</span>/<span class="id" title="var">idx</span>]<span class="id" title="var">_</span>(<span class="id" title="var">j</span> \<span class="id" title="tactic">in</span> [<span class="id" title="tactic">set</span>: <span class="id" title="var">J</span>]) <span class="id" title="var">F</span> <span class="id" title="var">j</span> = \<span class="id" title="var">big</span>[<span class="id" title="var">op</span>/<span class="id" title="var">idx</span>]<span class="id" title="var">_</span>(<span class="id" title="var">i</span> \<span class="id" title="tactic">in</span> [<span class="id" title="tactic">set</span>: <span class="id" title="var">I</span>]) <span class="id" title="var">F</span> (<span class="id" title="var">h</span> <span class="id" title="var">i</span>).<br/>
- 
+
 <br/>
 <span class="id" title="keyword">End</span> <span class="id" title="var">fsbig2</span>.<br/>
 <span class="id" title="keyword">Arguments</span> <span class="id" title="var">reindex_fsbig</span> {<span class="id" title="var">R</span> <span class="id" title="var">idx</span> <span class="id" title="var">op</span> <span class="id" title="var">I</span> <span class="id" title="var">J</span>} <span class="id" title="var">_</span> <span class="id" title="var">_</span> <span class="id" title="var">_</span>.<br/>
@@ -339,7 +334,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;(<span class="id" title="var">op</span> : <span class="id" title="var">Monoid.com_law</span> <span class="id" title="var">idx</span>) (<span class="id" title="var">P</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) (<span class="id" title="var">f</span> <span class="id" title="var">g</span> : <span class="id" title="var">T</span> → <span class="id" title="var">R</span>) : <span class="id" title="var">finite_set</span> <span class="id" title="var">P</span> →<br/>
 &nbsp;&nbsp;\<span class="id" title="var">big</span>[<span class="id" title="var">op</span>/<span class="id" title="var">idx</span>]<span class="id" title="var">_</span>(<span class="id" title="var">x</span> \<span class="id" title="tactic">in</span> <span class="id" title="var">P</span>) <span class="id" title="var">op</span> (<span class="id" title="var">f</span> <span class="id" title="var">x</span>) (<span class="id" title="var">g</span> <span class="id" title="var">x</span>) =<br/>
 &nbsp;&nbsp;<span class="id" title="var">op</span> (\<span class="id" title="var">big</span>[<span class="id" title="var">op</span>/<span class="id" title="var">idx</span>]<span class="id" title="var">_</span>(<span class="id" title="var">x</span> \<span class="id" title="tactic">in</span> <span class="id" title="var">P</span>) <span class="id" title="var">f</span> <span class="id" title="var">x</span>) (\<span class="id" title="var">big</span>[<span class="id" title="var">op</span>/<span class="id" title="var">idx</span>]<span class="id" title="var">_</span>(<span class="id" title="var">x</span> \<span class="id" title="tactic">in</span> <span class="id" title="var">P</span>) <span class="id" title="var">g</span> <span class="id" title="var">x</span>).<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">fsumr_ge0</span> (<span class="id" title="var">R</span> : <span class="id" title="var">numDomainType</span>) (<span class="id" title="var">I</span> : <span class="id" title="var">choiceType</span>) (<span class="id" title="var">P</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">I</span>) (<span class="id" title="var">F</span> : <span class="id" title="var">I</span> → <span class="id" title="var">R</span>) :<br/>
 &nbsp;&nbsp;(<span class="id" title="keyword">∀</span> <span class="id" title="var">i</span>, <span class="id" title="var">P</span> <span class="id" title="var">i</span> → 0 ≤ <span class="id" title="var">F</span> <span class="id" title="var">i</span>) → 0 ≤ \<span class="id" title="var">sum_</span>(<span class="id" title="var">i</span> \<span class="id" title="tactic">in</span> <span class="id" title="var">P</span>) <span class="id" title="var">F</span> <span class="id" title="var">i</span>.<br/>
@@ -369,7 +364,7 @@
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">fsbig_setU</span> {<span class="id" title="var">T</span>} {<span class="id" title="var">I</span> : <span class="id" title="var">choiceType</span>} (<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">I</span>) (<span class="id" title="var">F</span> : <span class="id" title="var">I</span> → <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) :<br/>
 &nbsp;&nbsp;<span class="id" title="var">finite_set</span> <span class="id" title="var">A</span> →<br/>
 &nbsp;&nbsp;\<span class="id" title="var">big</span>[<span class="id" title="var">setU</span>/<span class="id" title="var">set0</span>]<span class="id" title="var">_</span>(<span class="id" title="var">i</span> \<span class="id" title="tactic">in</span> <span class="id" title="var">A</span>) <span class="id" title="var">F</span> <span class="id" title="var">i</span> = \<span class="id" title="var">bigcup_</span>(<span class="id" title="var">i</span> <span class="id" title="tactic">in</span> <span class="id" title="var">A</span>) <span class="id" title="var">F</span> <span class="id" title="var">i</span>.<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">fsbig_setU_set1</span> {<span class="id" title="var">T</span> : <span class="id" title="var">choiceType</span>} (<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) :<br/>
 &nbsp;&nbsp;<span class="id" title="var">finite_set</span> <span class="id" title="var">A</span> → \<span class="id" title="var">big</span>[<span class="id" title="var">setU</span>/<span class="id" title="var">set0</span>]<span class="id" title="var">_</span>(<span class="id" title="var">x</span> \<span class="id" title="tactic">in</span> <span class="id" title="var">A</span>) [<span class="id" title="tactic">set</span> <span class="id" title="var">x</span>] = <span class="id" title="var">A</span>.<br/>
