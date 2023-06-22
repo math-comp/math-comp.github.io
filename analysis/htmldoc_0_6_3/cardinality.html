@@ -28,42 +28,35 @@
 <br/>
 </div>
 
-<div class="doc">
-                              Cardinality                                   
+<div class="doc">                              Cardinality
 
-<div class="paragraph"> </div>
+ This file provides an account of cardinality properties of classical sets.
+ This includes standard results of set theory such as the Pigeon Hole
+ principle, the Cantor-Bernstein Theorem, or lemmas about the cardinal of
+ nat, nat * nat, and rat.
 
- This file provides an account of cardinality properties of classical sets. 
- This includes standard results of set theory such as the Pigeon Hole       
- principle, the Cantor-Bernstein Theorem, or lemmas about the cardinal of   
- nat, nat * nat, and rat.                                                   
+ Since universe polymorphism is not yet available in our framework, we
+ develop a relational theory of cardinals: there is no type for cardinals
+ only relations A #&lt;= B and A #= B to compare the cardinals of two sets
+ (on two possibly different types).
 
-<div class="paragraph"> </div>
+           A #&lt;= B == the cardinal of A is smaller or equal to the one of B
+           A #&gt;= B := B #&lt;= A
+            A #= B == the cardinal of A is equal to the cardinal of B
+           A #!= B := ~~ (A #= B)
+      finite_set A == the set A is finite
+                   := exists n, A #= `I_n
+                   &lt;-&gt; exists X : {fset T}, A = [set` X]
+                   &lt;-&gt; ~ ( [set: nat] #&lt;= A)
+    infinite_set A := ~ finite_set A
+       countable A &lt;-&gt; A is countable
+                   := A #&lt;= [set: nat]
+        fset_set A == the finite set corresponding if A : set T is finite,
+                      set0 otherwise (T : choiceType)
+              A.`1 := [fset x.1 | x in A]
+              A.`2 := [fset x.2 | x in A]
+ {fimfun aT &gt;-&gt; T} == type of functions with a finite image
 
- Since universe polymorphism is not yet available in our framework, we      
- develop a relational theory of cardinals: there is no type for cardinals   
- only relations A #&lt;= B and A #= B to compare the cardinals of two sets     
- (on two possibly different types).                                         
-
-<div class="paragraph"> </div>
-
-           A #&lt;= B == the cardinal of A is smaller or equal to the one of B 
-           A #&gt;= B := B #&lt;= A                                               
-            A #= B == the cardinal of A is equal to the cardinal of B       
-           A #!= B := ~~ (A #= B)                                           
-      finite_set A == the set A is finite                                   
-                   := exists n, A #= `I_n                                   
-                   &lt;-&gt; exists X : {fset T}, A = [set` X]                    
-                   &lt;-&gt; ~ ( [set: nat] #&lt;= A)                                 
-    infinite_set A := ~ finite_set A                                        
-       countable A &lt;-&gt; A is countable                                       
-                   := A #&lt;= [set: nat]                                      
-        fset_set A == the finite set corresponding if A : set T is finite,  
-                      set0 otherwise (T : choiceType)                       
-              A.`1 := [fset x.1 | x in A]                                   
-              A.`2 := [fset x.2 | x in A]                                   
- {fimfun aT &gt;-&gt; T} == type of functions with a finite image                 
-                                                                             
 </div>
 <div class="code">
 
@@ -108,15 +101,15 @@
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">injPex</span> {<span class="id" title="var">T</span> <span class="id" title="var">U</span>} {<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>} :<br/>
 &nbsp;&nbsp;&nbsp;$|{<span class="id" title="var">inj</span> <span class="id" title="var">A</span> &gt;-&gt; <span class="id" title="var">U</span>}| ↔ <span class="id" title="tactic">∃</span> <span class="id" title="var">f</span> : <span class="id" title="var">T</span> → <span class="id" title="var">U</span>, <span class="id" title="var">set_inj</span> <span class="id" title="var">A</span> <span class="id" title="var">f</span>.<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">surjPex</span> {<span class="id" title="var">T</span> <span class="id" title="var">U</span>} {<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>} {<span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">U</span>} :<br/>
 &nbsp;&nbsp;$|{<span class="id" title="var">surj</span> <span class="id" title="var">A</span> &gt;-&gt; <span class="id" title="var">B</span>}| ↔ <span class="id" title="tactic">∃</span> <span class="id" title="var">f</span>, <span class="id" title="var">set_surj</span> <span class="id" title="var">A</span> <span class="id" title="var">B</span> <span class="id" title="var">f</span>.<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">bijPex</span> {<span class="id" title="var">T</span> <span class="id" title="var">U</span>} {<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>} {<span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">U</span>} :<br/>
 &nbsp;&nbsp;$|{<span class="id" title="var">bij</span> <span class="id" title="var">A</span> &gt;-&gt; <span class="id" title="var">B</span>}| ↔ <span class="id" title="tactic">∃</span> <span class="id" title="var">f</span>, <span class="id" title="var">set_bij</span> <span class="id" title="var">A</span> <span class="id" title="var">B</span> <span class="id" title="var">f</span>.<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">surjfunPex</span> {<span class="id" title="var">T</span> <span class="id" title="var">U</span>} {<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>} {<span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">U</span>} :<br/>
 &nbsp;&nbsp;$|{<span class="id" title="var">surjfun</span> <span class="id" title="var">A</span> &gt;-&gt; <span class="id" title="var">B</span>}| ↔ <span class="id" title="tactic">∃</span> <span class="id" title="var">f</span>, <span class="id" title="var">B</span> = <span class="id" title="var">f</span> @` <span class="id" title="var">A</span>.<br/>
@@ -124,14 +117,14 @@
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">injfunPex</span> {<span class="id" title="var">T</span> <span class="id" title="var">U</span>} {<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>} {<span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">U</span>}:<br/>
 &nbsp;&nbsp;&nbsp;$|{<span class="id" title="var">injfun</span> <span class="id" title="var">A</span> &gt;-&gt; <span class="id" title="var">B</span>}| ↔ <span class="id" title="var">exists2</span> <span class="id" title="var">f</span> : <span class="id" title="var">T</span> → <span class="id" title="var">U</span>, <span class="id" title="var">set_fun</span> <span class="id" title="var">A</span> <span class="id" title="var">B</span> <span class="id" title="var">f</span> &amp; <span class="id" title="var">set_inj</span> <span class="id" title="var">A</span> <span class="id" title="var">f</span>.<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">card_leP</span> {<span class="id" title="var">T</span> <span class="id" title="var">U</span>} {<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>} {<span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">U</span>} :<br/>
 &nbsp;&nbsp;<span class="id" title="var">reflect</span> $|{<span class="id" title="var">injfun</span> [<span class="id" title="tactic">set</span>: <span class="id" title="var">A</span>] &gt;-&gt; [<span class="id" title="tactic">set</span>: <span class="id" title="var">B</span>]}| (<span class="id" title="var">A</span> #&lt;= <span class="id" title="var">B</span>).<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">inj_card_le</span> {<span class="id" title="var">T</span> <span class="id" title="var">U</span>} {<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>} {<span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">U</span>} : {<span class="id" title="var">injfun</span> <span class="id" title="var">A</span> &gt;-&gt; <span class="id" title="var">B</span>} → (<span class="id" title="var">A</span> #&lt;= <span class="id" title="var">B</span>).<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">pcard_leP</span> {<span class="id" title="var">T</span>} {<span class="id" title="var">U</span> : <span class="id" title="var">pointedType</span>} {<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>} {<span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">U</span>} :<br/>
 &nbsp;&nbsp;&nbsp;<span class="id" title="var">reflect</span> $|{<span class="id" title="var">injfun</span> <span class="id" title="var">A</span> &gt;-&gt; <span class="id" title="var">B</span>}| (<span class="id" title="var">A</span> #&lt;= <span class="id" title="var">B</span>).<br/>
@@ -143,11 +136,11 @@
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">pcard_injP</span> {<span class="id" title="var">T</span>} {<span class="id" title="var">U</span> : <span class="id" title="var">pointedType</span>} {<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>} :<br/>
 &nbsp;&nbsp;<span class="id" title="var">reflect</span> (<span class="id" title="tactic">∃</span> <span class="id" title="var">f</span> : <span class="id" title="var">T</span> → <span class="id" title="var">U</span>, {<span class="id" title="tactic">in</span> <span class="id" title="var">A</span> &amp;, <span class="id" title="var">injective</span> <span class="id" title="var">f</span>}) (<span class="id" title="var">A</span> #&lt;= [<span class="id" title="tactic">set</span>: <span class="id" title="var">U</span>]).<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">ppcard_leP</span> {<span class="id" title="var">T</span> <span class="id" title="var">U</span> : <span class="id" title="var">pointedType</span>} {<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>} {<span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">U</span>} :<br/>
 &nbsp;&nbsp;&nbsp;<span class="id" title="var">reflect</span> $|{<span class="id" title="var">splitinjfun</span> <span class="id" title="var">A</span> &gt;-&gt; <span class="id" title="var">B</span>}| (<span class="id" title="var">A</span> #&lt;= <span class="id" title="var">B</span>).<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">card_ge0</span> <span class="id" title="var">T</span> <span class="id" title="var">U</span> (<span class="id" title="var">S</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">U</span>) : @<span class="id" title="var">set0</span> <span class="id" title="var">T</span> #&lt;= <span class="id" title="var">S</span>.<br/>
  #[<span class="id" title="var">global</span>] <span class="id" title="keyword">Hint</span> <span class="id" title="keyword">Resolve</span> <span class="id" title="var">card_ge0</span> : <span class="id" title="var">core</span>.<br/>
@@ -157,14 +150,14 @@
 
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">card_le0</span>  <span class="id" title="var">T</span> <span class="id" title="var">U</span> (<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) : (<span class="id" title="var">A</span> #&lt;= @<span class="id" title="var">set0</span> <span class="id" title="var">U</span>) = (<span class="id" title="var">A</span> == <span class="id" title="var">set0</span>).<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">card_eqP</span> {<span class="id" title="var">T</span> <span class="id" title="var">U</span>} {<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>} {<span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">U</span>} :<br/>
 &nbsp;&nbsp;<span class="id" title="var">reflect</span> $|{<span class="id" title="var">bij</span> [<span class="id" title="tactic">set</span>: <span class="id" title="var">A</span>] &gt;-&gt; [<span class="id" title="tactic">set</span>: <span class="id" title="var">B</span>]}| (<span class="id" title="var">A</span> #= <span class="id" title="var">B</span>).<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">pcard_eq</span> {<span class="id" title="var">T</span> <span class="id" title="var">U</span>} {<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>} {<span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">U</span>} : {<span class="id" title="var">bij</span> <span class="id" title="var">A</span> &gt;-&gt; <span class="id" title="var">B</span>} → <span class="id" title="var">A</span> #= <span class="id" title="var">B</span>.<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">pcard_eqP</span> {<span class="id" title="var">T</span>} {<span class="id" title="var">U</span> : <span class="id" title="var">pointedType</span>} {<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>} {<span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">U</span>} :<br/>
 &nbsp;&nbsp;&nbsp;<span class="id" title="var">reflect</span> $| {<span class="id" title="var">bij</span> <span class="id" title="var">A</span> &gt;-&gt; <span class="id" title="var">B</span>} | (<span class="id" title="var">A</span> #= <span class="id" title="var">B</span>).<br/>
@@ -176,7 +169,7 @@
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">card_eqVP</span> {<span class="id" title="var">T</span> <span class="id" title="var">U</span>} {<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>} {<span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">U</span>} :<br/>
 &nbsp;&nbsp;&nbsp;<span class="id" title="var">reflect</span> $|{<span class="id" title="var">splitbij</span> [<span class="id" title="tactic">set</span>: <span class="id" title="var">A</span>] &gt;-&gt; [<span class="id" title="tactic">set</span>: <span class="id" title="var">B</span>]}| (<span class="id" title="var">A</span> #= <span class="id" title="var">B</span>).<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">card_set_bijP</span> {<span class="id" title="var">T</span>} {<span class="id" title="var">U</span> : <span class="id" title="var">pointedType</span>} {<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>} {<span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">U</span>} :<br/>
 &nbsp;&nbsp;&nbsp;<span class="id" title="var">reflect</span> (<span class="id" title="tactic">∃</span> <span class="id" title="var">f</span>, <span class="id" title="var">set_bij</span> <span class="id" title="var">A</span> <span class="id" title="var">B</span> <span class="id" title="var">f</span>) (<span class="id" title="var">A</span> #= <span class="id" title="var">B</span>).<br/>
@@ -184,7 +177,7 @@
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">ppcard_eqP</span> {<span class="id" title="var">T</span> <span class="id" title="var">U</span> : <span class="id" title="var">pointedType</span>} {<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>} {<span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">U</span>} :<br/>
 &nbsp;&nbsp;&nbsp;<span class="id" title="var">reflect</span> $| {<span class="id" title="var">splitbij</span> <span class="id" title="var">A</span> &gt;-&gt; <span class="id" title="var">B</span>} | (<span class="id" title="var">A</span> #= <span class="id" title="var">B</span>).<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">card_eqxx</span> <span class="id" title="var">T</span> (<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) : <span class="id" title="var">A</span> #= <span class="id" title="var">A</span>.<br/>
  #[<span class="id" title="var">global</span>] <span class="id" title="keyword">Hint</span> <span class="id" title="keyword">Resolve</span> <span class="id" title="var">card_eqxx</span> : <span class="id" title="var">core</span>.<br/>
@@ -199,7 +192,7 @@
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">empty_eq0</span> <span class="id" title="var">T</span> : <span class="id" title="var">all_equal_to</span> (<span class="id" title="var">set0</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>).<br/>
  <span class="id" title="keyword">Lemma</span> <span class="id" title="var">card_le_emptyl</span> <span class="id" title="var">T</span> <span class="id" title="var">U</span> (<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) (<span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">U</span>) : <span class="id" title="var">A</span> #&lt;= <span class="id" title="var">B</span>.<br/>
  <span class="id" title="keyword">Lemma</span> <span class="id" title="var">card_le_emptyr</span> <span class="id" title="var">T</span> <span class="id" title="var">U</span> (<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) (<span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">U</span>) : (<span class="id" title="var">B</span> #&lt;= <span class="id" title="var">A</span>) = (<span class="id" title="var">B</span> == <span class="id" title="var">set0</span>).<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Definition</span> <span class="id" title="var">emptyE_subdef</span> := (<span class="id" title="var">empty_eq0</span>, <span class="id" title="var">card_le_emptyl</span>, <span class="id" title="var">card_le_emptyr</span>, <span class="id" title="var">eq_opE</span>).<br/>
 <span class="id" title="keyword">End</span> <span class="id" title="var">empty1</span>.<br/>
@@ -210,7 +203,7 @@
 
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">card_esym</span> <span class="id" title="var">T</span> <span class="id" title="var">U</span> (<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) (<span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">U</span>) : <span class="id" title="var">A</span> #= <span class="id" title="var">B</span> → <span class="id" title="var">B</span> #= <span class="id" title="var">A</span>.<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">card_eq_le</span> <span class="id" title="var">T</span> <span class="id" title="var">U</span> (<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) (<span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">U</span>) :<br/>
 &nbsp;&nbsp;(<span class="id" title="var">A</span> #= <span class="id" title="var">B</span>) = (<span class="id" title="var">A</span> #&lt;= <span class="id" title="var">B</span>) &amp;&amp; (<span class="id" title="var">B</span> #&lt;= <span class="id" title="var">A</span>).<br/>
@@ -218,17 +211,17 @@
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">card_eqPle</span> <span class="id" title="var">T</span> <span class="id" title="var">U</span> (<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) (<span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">U</span>) :<br/>
 &nbsp;&nbsp;(<span class="id" title="var">A</span> #= <span class="id" title="var">B</span>) ↔ (<span class="id" title="var">A</span> #&lt;= <span class="id" title="var">B</span>) ∧ (<span class="id" title="var">B</span> #&lt;= <span class="id" title="var">A</span>).<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">card_lexx</span> <span class="id" title="var">T</span> (<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) : <span class="id" title="var">A</span> #&lt;= <span class="id" title="var">A</span>.<br/>
  #[<span class="id" title="var">global</span>] <span class="id" title="keyword">Hint</span> <span class="id" title="keyword">Resolve</span> <span class="id" title="var">card_lexx</span> : <span class="id" title="var">core</span>.<br/>
 
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">card_leT</span> <span class="id" title="var">T</span> (<span class="id" title="var">S</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) : <span class="id" title="var">S</span> #&lt;= [<span class="id" title="tactic">set</span>: <span class="id" title="var">T</span>].<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">subset_card_le</span> <span class="id" title="var">T</span> (<span class="id" title="var">A</span> <span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) : <span class="id" title="var">A</span> `&lt;=` <span class="id" title="var">B</span> → <span class="id" title="var">A</span> #&lt;= <span class="id" title="var">B</span>.<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">card_image_le</span> {<span class="id" title="var">T</span> <span class="id" title="var">U</span>} (<span class="id" title="var">f</span> : <span class="id" title="var">T</span> → <span class="id" title="var">U</span>) (<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) : <span class="id" title="var">f</span> @` <span class="id" title="var">A</span> #&lt;= <span class="id" title="var">A</span>.<br/>
 
@@ -238,107 +231,107 @@
 
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">card_some</span> {<span class="id" title="var">T</span>} {<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>} : <span class="id" title="var">some</span> @` <span class="id" title="var">A</span> #= <span class="id" title="var">A</span>.<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">card_image</span> {<span class="id" title="var">T</span> <span class="id" title="var">U</span>} {<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>} (<span class="id" title="var">f</span> : {<span class="id" title="var">inj</span> <span class="id" title="var">A</span> &gt;-&gt; <span class="id" title="var">U</span>}) : <span class="id" title="var">f</span> @` <span class="id" title="var">A</span> #= <span class="id" title="var">A</span>.<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">card_imsub</span> {<span class="id" title="var">T</span> <span class="id" title="var">U</span>} (<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) (<span class="id" title="var">f</span> : {<span class="id" title="var">inj</span> <span class="id" title="var">A</span> &gt;-&gt; <span class="id" title="var">U</span>}) <span class="id" title="var">X</span> : <span class="id" title="var">X</span> `&lt;=` <span class="id" title="var">A</span> → <span class="id" title="var">f</span> @` <span class="id" title="var">X</span> #= <span class="id" title="var">X</span>.<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">card_le_trans</span> (<span class="id" title="var">T</span> <span class="id" title="var">U</span> <span class="id" title="var">V</span> : <span class="id" title="keyword">Type</span>) (<span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">U</span>) (<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) (<span class="id" title="var">C</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">V</span>) :<br/>
 &nbsp;&nbsp;<span class="id" title="var">A</span> #&lt;= <span class="id" title="var">B</span> → <span class="id" title="var">B</span> #&lt;= <span class="id" title="var">C</span> → <span class="id" title="var">A</span> #&lt;= <span class="id" title="var">C</span>.<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">card_eq_sym</span> <span class="id" title="var">T</span> <span class="id" title="var">U</span> (<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) (<span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">U</span>) : (<span class="id" title="var">A</span> #= <span class="id" title="var">B</span>) = (<span class="id" title="var">B</span> #= <span class="id" title="var">A</span>).<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">card_eq_trans</span> <span class="id" title="var">T</span> <span class="id" title="var">U</span> <span class="id" title="var">V</span> (<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) (<span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">U</span>) (<span class="id" title="var">C</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">V</span>) :<br/>
 &nbsp;&nbsp;<span class="id" title="var">A</span> #= <span class="id" title="var">B</span> → <span class="id" title="var">B</span> #= <span class="id" title="var">C</span> → <span class="id" title="var">A</span> #= <span class="id" title="var">C</span>.<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">card_le_eql</span> <span class="id" title="var">T</span> <span class="id" title="var">T'</span> <span class="id" title="var">T''</span> (<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) (<span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T'</span>) [<span class="id" title="var">C</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T''</span>] :<br/>
 &nbsp;&nbsp;&nbsp;<span class="id" title="var">A</span> #= <span class="id" title="var">B</span> → (<span class="id" title="var">A</span> #&lt;= <span class="id" title="var">C</span>) = (<span class="id" title="var">B</span> #&lt;= <span class="id" title="var">C</span>).<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">card_le_eqr</span> <span class="id" title="var">T</span> <span class="id" title="var">T'</span> <span class="id" title="var">T''</span> (<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) (<span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T'</span>) [<span class="id" title="var">C</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T''</span>] :<br/>
 &nbsp;&nbsp;&nbsp;<span class="id" title="var">A</span> #= <span class="id" title="var">B</span> → (<span class="id" title="var">C</span> #&lt;= <span class="id" title="var">A</span>) = (<span class="id" title="var">C</span> #&lt;= <span class="id" title="var">B</span>).<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">card_eql</span> <span class="id" title="var">T</span> <span class="id" title="var">T'</span> <span class="id" title="var">T''</span> (<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) (<span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T'</span>) [<span class="id" title="var">C</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T''</span>] :<br/>
 &nbsp;&nbsp;&nbsp;<span class="id" title="var">A</span> #= <span class="id" title="var">B</span> → (<span class="id" title="var">A</span> #= <span class="id" title="var">C</span>) = (<span class="id" title="var">B</span> #= <span class="id" title="var">C</span>).<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">card_eqr</span> <span class="id" title="var">T</span> <span class="id" title="var">T'</span> <span class="id" title="var">T''</span> (<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) (<span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T'</span>) [<span class="id" title="var">C</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T''</span>] :<br/>
 &nbsp;&nbsp;&nbsp;<span class="id" title="var">A</span> #= <span class="id" title="var">B</span> → (<span class="id" title="var">C</span> #= <span class="id" title="var">A</span>) = (<span class="id" title="var">C</span> #= <span class="id" title="var">B</span>).<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">card_ge_image</span> {<span class="id" title="var">T</span> <span class="id" title="var">U</span> <span class="id" title="var">V</span>} {<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>} (<span class="id" title="var">f</span> : {<span class="id" title="var">inj</span> <span class="id" title="var">A</span> &gt;-&gt; <span class="id" title="var">U</span>}) <span class="id" title="var">X</span> (<span class="id" title="var">Y</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">V</span>) :<br/>
 &nbsp;&nbsp;<span class="id" title="var">X</span> `&lt;=` <span class="id" title="var">A</span> → (<span class="id" title="var">f</span> @` <span class="id" title="var">X</span> #&lt;= <span class="id" title="var">Y</span>) = (<span class="id" title="var">X</span> #&lt;= <span class="id" title="var">Y</span>).<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">card_le_image</span> {<span class="id" title="var">T</span> <span class="id" title="var">U</span> <span class="id" title="var">V</span>} {<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>} (<span class="id" title="var">f</span> : {<span class="id" title="var">inj</span> <span class="id" title="var">A</span> &gt;-&gt; <span class="id" title="var">U</span>}) <span class="id" title="var">X</span> (<span class="id" title="var">Y</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">V</span>) :<br/>
 &nbsp;&nbsp;<span class="id" title="var">X</span> `&lt;=` <span class="id" title="var">A</span> → (<span class="id" title="var">Y</span> #&lt;= <span class="id" title="var">f</span> @` <span class="id" title="var">X</span>) = (<span class="id" title="var">Y</span> #&lt;= <span class="id" title="var">X</span>).<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">card_le_image2</span> {<span class="id" title="var">T</span> <span class="id" title="var">U</span>} (<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) (<span class="id" title="var">f</span> : {<span class="id" title="var">inj</span> <span class="id" title="var">A</span> &gt;-&gt; <span class="id" title="var">U</span>}) <span class="id" title="var">X</span> <span class="id" title="var">Y</span> :<br/>
 &nbsp;&nbsp;&nbsp;<span class="id" title="var">X</span> `&lt;=` <span class="id" title="var">A</span> → <span class="id" title="var">Y</span> `&lt;=` <span class="id" title="var">A</span> →<br/>
 &nbsp;&nbsp;&nbsp;(<span class="id" title="var">f</span> @` <span class="id" title="var">X</span> #&lt;= <span class="id" title="var">f</span> @` <span class="id" title="var">Y</span>) = (<span class="id" title="var">X</span> #&lt;= <span class="id" title="var">Y</span>).<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">card_eq_image</span> {<span class="id" title="var">T</span> <span class="id" title="var">U</span> <span class="id" title="var">V</span>} {<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>} (<span class="id" title="var">f</span> : {<span class="id" title="var">inj</span> <span class="id" title="var">A</span> &gt;-&gt; <span class="id" title="var">U</span>}) <span class="id" title="var">X</span> (<span class="id" title="var">Y</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">V</span>) :<br/>
 &nbsp;&nbsp;<span class="id" title="var">X</span> `&lt;=` <span class="id" title="var">A</span> → (<span class="id" title="var">f</span> @` <span class="id" title="var">X</span> #= <span class="id" title="var">Y</span>) = (<span class="id" title="var">X</span> #= <span class="id" title="var">Y</span>).<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">card_eq_imager</span> {<span class="id" title="var">T</span> <span class="id" title="var">U</span> <span class="id" title="var">V</span>} {<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>} (<span class="id" title="var">f</span> : {<span class="id" title="var">inj</span> <span class="id" title="var">A</span> &gt;-&gt; <span class="id" title="var">U</span>}) <span class="id" title="var">X</span> (<span class="id" title="var">Y</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">V</span>) :<br/>
 &nbsp;&nbsp;<span class="id" title="var">X</span> `&lt;=` <span class="id" title="var">A</span> → (<span class="id" title="var">Y</span> #= <span class="id" title="var">f</span> @` <span class="id" title="var">X</span>) = (<span class="id" title="var">Y</span> #= <span class="id" title="var">X</span>).<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">card_eq_image2</span> {<span class="id" title="var">T</span> <span class="id" title="var">U</span>} (<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) (<span class="id" title="var">f</span> : {<span class="id" title="var">inj</span> <span class="id" title="var">A</span> &gt;-&gt; <span class="id" title="var">U</span>}) <span class="id" title="var">X</span> <span class="id" title="var">Y</span> :<br/>
 &nbsp;&nbsp;&nbsp;<span class="id" title="var">X</span> `&lt;=` <span class="id" title="var">A</span> → <span class="id" title="var">Y</span> `&lt;=` <span class="id" title="var">A</span> →<br/>
 &nbsp;&nbsp;&nbsp;(<span class="id" title="var">f</span> @` <span class="id" title="var">X</span> #= <span class="id" title="var">f</span> @` <span class="id" title="var">Y</span>) = (<span class="id" title="var">X</span> #= <span class="id" title="var">Y</span>).<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">card_ge_some</span> {<span class="id" title="var">T</span> <span class="id" title="var">T'</span>} {<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>} {<span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T'</span>} :<br/>
 &nbsp;&nbsp;(<span class="id" title="var">some</span> @` <span class="id" title="var">A</span> #&lt;= <span class="id" title="var">B</span>) = (<span class="id" title="var">A</span> #&lt;= <span class="id" title="var">B</span>).<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">card_le_some</span> {<span class="id" title="var">T</span> <span class="id" title="var">T'</span>} {<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>} {<span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T'</span>} :<br/>
 &nbsp;&nbsp;(<span class="id" title="var">A</span> #&lt;= <span class="id" title="var">some</span> @` <span class="id" title="var">B</span>) = (<span class="id" title="var">A</span> #&lt;= <span class="id" title="var">B</span>).<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">card_le_some2</span> {<span class="id" title="var">T</span> <span class="id" title="var">T'</span>} {<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>} {<span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T'</span>} :<br/>
 &nbsp;&nbsp;(<span class="id" title="var">some</span> @` <span class="id" title="var">A</span> #&lt;= <span class="id" title="var">some</span> @` <span class="id" title="var">B</span>) = (<span class="id" title="var">A</span> #&lt;= <span class="id" title="var">B</span>).<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">card_eq_somel</span> {<span class="id" title="var">T</span> <span class="id" title="var">T'</span>} {<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>} {<span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T'</span>} :<br/>
 &nbsp;&nbsp;(<span class="id" title="var">some</span> @` <span class="id" title="var">A</span> #= <span class="id" title="var">B</span>) = (<span class="id" title="var">A</span> #= <span class="id" title="var">B</span>).<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">card_eq_somer</span> {<span class="id" title="var">T</span> <span class="id" title="var">T'</span>} {<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>} {<span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T'</span>} :<br/>
 &nbsp;&nbsp;(<span class="id" title="var">A</span> #= <span class="id" title="var">some</span> @` <span class="id" title="var">B</span>) = (<span class="id" title="var">A</span> #= <span class="id" title="var">B</span>).<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">card_eq_some2</span> {<span class="id" title="var">T</span> <span class="id" title="var">T'</span>} {<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>} {<span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T'</span>} :<br/>
 &nbsp;&nbsp;(<span class="id" title="var">some</span> @` <span class="id" title="var">A</span> #= <span class="id" title="var">some</span> @` <span class="id" title="var">B</span>) = (<span class="id" title="var">A</span> #= <span class="id" title="var">B</span>).<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">card_eq0</span> {<span class="id" title="var">T</span> <span class="id" title="var">U</span>} {<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>} : (<span class="id" title="var">A</span> #= @<span class="id" title="var">set0</span> <span class="id" title="var">U</span>) = (<span class="id" title="var">A</span> == <span class="id" title="var">set0</span>).<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">card_set1</span> {<span class="id" title="var">T</span>} {<span class="id" title="var">x</span> : <span class="id" title="var">T</span>} : [<span class="id" title="tactic">set</span> <span class="id" title="var">x</span>] #= `<span class="id" title="var">I_1</span>.<br/>
 
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">eq_card1</span> {<span class="id" title="var">T</span> <span class="id" title="var">U</span>} (<span class="id" title="var">x</span> : <span class="id" title="var">T</span>) (<span class="id" title="var">y</span> : <span class="id" title="var">U</span>) : [<span class="id" title="tactic">set</span> <span class="id" title="var">x</span>] #= [<span class="id" title="tactic">set</span> <span class="id" title="var">y</span>].<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">card_eq_emptyr</span> (<span class="id" title="var">T</span> : <span class="id" title="var">emptyType</span>) <span class="id" title="var">U</span> (<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) (<span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">U</span>) :<br/>
 &nbsp;&nbsp;(<span class="id" title="var">B</span> #= <span class="id" title="var">A</span>) = (<span class="id" title="var">B</span> == <span class="id" title="var">set0</span>).<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">card_eq_emptyl</span> (<span class="id" title="var">T</span> : <span class="id" title="var">emptyType</span>) <span class="id" title="var">U</span> (<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) (<span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">U</span>) :<br/>
 &nbsp;&nbsp;(<span class="id" title="var">A</span> #= <span class="id" title="var">B</span>) = (<span class="id" title="var">B</span> == <span class="id" title="var">set0</span>).<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Definition</span> <span class="id" title="var">emptyE</span> := (<span class="id" title="var">emptyE_subdef</span>, <span class="id" title="var">card_eq_emptyr</span>, <span class="id" title="var">card_eq_emptyl</span>).<br/>
 
@@ -361,7 +354,7 @@
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">pcard_geP</span> {<span class="id" title="var">T</span> : <span class="id" title="var">pointedType</span>} {<span class="id" title="var">U</span>} {<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>} {<span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">U</span>} :<br/>
 &nbsp;&nbsp;<span class="id" title="var">reflect</span> $|{<span class="id" title="var">surj</span> <span class="id" title="var">B</span> &gt;-&gt; <span class="id" title="var">A</span>}| (<span class="id" title="var">A</span> #&lt;= <span class="id" title="var">B</span>).<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">ocard_geP</span> {<span class="id" title="var">T</span> <span class="id" title="var">U</span>} {<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>} {<span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">U</span>} :<br/>
 &nbsp;&nbsp;<span class="id" title="var">reflect</span> $|{<span class="id" title="var">surj</span> <span class="id" title="var">B</span> &gt;-&gt; <span class="id" title="var">some</span> @` <span class="id" title="var">A</span>}| (<span class="id" title="var">A</span> #&lt;= <span class="id" title="var">B</span>).<br/>
@@ -383,7 +376,7 @@
 
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">card_eq_II</span> {<span class="id" title="var">n</span> <span class="id" title="var">m</span>} : <span class="id" title="var">reflect</span> (<span class="id" title="var">n</span> = <span class="id" title="var">m</span>) (`<span class="id" title="var">I_n</span> #= `<span class="id" title="var">I_m</span>).<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">sub_setP</span>  {<span class="id" title="var">T</span>} {<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>} (<span class="id" title="var">X</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">A</span>) : <span class="id" title="var">set_val</span> @` <span class="id" title="var">X</span> `&lt;=` <span class="id" title="var">A</span>.<br/>
  <span class="id" title="keyword">Arguments</span> <span class="id" title="var">sub_setP</span> {<span class="id" title="var">T</span> <span class="id" title="var">A</span>}.<br/>
@@ -396,8 +389,7 @@
 <br/>
 </div>
 
-<div class="doc">
- remove  
+<div class="doc"> remove
 </div>
 <div class="code">
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">pigeonhole</span> <span class="id" title="var">m</span> <span class="id" title="var">n</span> (<span class="id" title="var">f</span> : <span class="id" title="var">nat</span> → <span class="id" title="var">nat</span>) : {<span class="id" title="tactic">in</span> `<span class="id" title="var">I_m</span> &amp;, <span class="id" title="var">injective</span> <span class="id" title="var">f</span>} →<br/>
@@ -409,7 +401,7 @@
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">eq_countable</span> <span class="id" title="var">T</span> <span class="id" title="var">U</span> (<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) (<span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">U</span>) :<br/>
 &nbsp;&nbsp;<span class="id" title="var">A</span> #= <span class="id" title="var">B</span> → <span class="id" title="var">countable</span> <span class="id" title="var">A</span> = <span class="id" title="var">countable</span> <span class="id" title="var">B</span>.<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">countable_setT_countMixin</span> (<span class="id" title="var">T</span> : <span class="id" title="keyword">Type</span>) :<br/>
 &nbsp;&nbsp;<span class="id" title="var">countable</span> (@<span class="id" title="var">setT</span> <span class="id" title="var">T</span>) → <span class="id" title="var">Countable.mixin_of</span> <span class="id" title="var">T</span>.<br/>
@@ -425,7 +417,7 @@
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">countable_injP</span> <span class="id" title="var">T</span> (<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) :<br/>
 &nbsp;&nbsp;<span class="id" title="var">reflect</span> (<span class="id" title="tactic">∃</span> <span class="id" title="var">f</span> : <span class="id" title="var">T</span> → <span class="id" title="var">nat</span>, {<span class="id" title="tactic">in</span> <span class="id" title="var">A</span> &amp;, <span class="id" title="var">injective</span> <span class="id" title="var">f</span>}) (<span class="id" title="var">countable</span> <span class="id" title="var">A</span>).<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">countable_bijP</span> <span class="id" title="var">T</span> (<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) :<br/>
 &nbsp;&nbsp;<span class="id" title="var">reflect</span> (<span class="id" title="tactic">∃</span> <span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">nat</span>, (<span class="id" title="var">A</span> #= <span class="id" title="var">B</span>)%<span class="id" title="var">card</span>) (<span class="id" title="var">countable</span> <span class="id" title="var">A</span>).<br/>
@@ -433,17 +425,17 @@
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">sub_countable</span> <span class="id" title="var">T</span> <span class="id" title="var">U</span> (<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) (<span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">U</span>) : <span class="id" title="var">A</span> #&lt;= <span class="id" title="var">B</span> →<br/>
 &nbsp;&nbsp;<span class="id" title="var">countable</span> <span class="id" title="var">B</span> → <span class="id" title="var">countable</span> <span class="id" title="var">A</span>.<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">finite_setP</span> <span class="id" title="var">T</span> (<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) : <span class="id" title="var">finite_set</span> <span class="id" title="var">A</span> ↔ <span class="id" title="tactic">∃</span> <span class="id" title="var">n</span>, <span class="id" title="var">A</span> #= `<span class="id" title="var">I_n</span>.<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">finite_II</span> <span class="id" title="var">n</span> : <span class="id" title="var">finite_set</span> `<span class="id" title="var">I_n</span>.  <br/>
 #[<span class="id" title="var">global</span>] <span class="id" title="keyword">Hint</span> <span class="id" title="keyword">Resolve</span> <span class="id" title="var">finite_II</span> : <span class="id" title="var">core</span>.<br/>
 
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">card_II</span> {<span class="id" title="var">n</span>} : `<span class="id" title="var">I_n</span> #= [<span class="id" title="tactic">set</span>: '<span class="id" title="var">I_n</span>].<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">finite_fsetP</span> {<span class="id" title="var">T</span> : <span class="id" title="var">choiceType</span>} {<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>} :<br/>
 &nbsp;&nbsp;<span class="id" title="var">finite_set</span> <span class="id" title="var">A</span> ↔ <span class="id" title="tactic">∃</span> <span class="id" title="var">X</span> : {<span class="id" title="var">fset</span> <span class="id" title="var">T</span>}, <span class="id" title="var">A</span> = [<span class="id" title="tactic">set</span>` <span class="id" title="var">X</span>].<br/>
@@ -481,13 +473,13 @@
 
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">finite_set_countable</span> <span class="id" title="var">T</span> (<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) : <span class="id" title="var">finite_set</span> <span class="id" title="var">A</span> → <span class="id" title="var">countable</span> <span class="id" title="var">A</span>.<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">infiniteP</span> <span class="id" title="var">T</span> (<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) : <span class="id" title="var">infinite_set</span> <span class="id" title="var">A</span> ↔ [<span class="id" title="tactic">set</span>: <span class="id" title="var">nat</span>] #&lt;= <span class="id" title="var">A</span>.<br/>
 
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">finite_setPn</span> <span class="id" title="var">T</span> (<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) : <span class="id" title="var">finite_set</span> <span class="id" title="var">A</span> ↔ ¬ ([<span class="id" title="tactic">set</span>: <span class="id" title="var">nat</span>] #&lt;= <span class="id" title="var">A</span>).<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">card_le_finite</span> <span class="id" title="var">T</span> <span class="id" title="var">U</span> (<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) (<span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">U</span>) :<br/>
 &nbsp;&nbsp;<span class="id" title="var">A</span> #&lt;= <span class="id" title="var">B</span> → <span class="id" title="var">finite_set</span> <span class="id" title="var">B</span> → <span class="id" title="var">finite_set</span> <span class="id" title="var">A</span>.<br/>
@@ -495,7 +487,7 @@
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">sub_finite_set</span> <span class="id" title="var">T</span> (<span class="id" title="var">A</span> <span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) : <span class="id" title="var">A</span> `&lt;=` <span class="id" title="var">B</span> →<br/>
 &nbsp;&nbsp;<span class="id" title="var">finite_set</span> <span class="id" title="var">B</span> → <span class="id" title="var">finite_set</span> <span class="id" title="var">A</span>.<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">finite_set_leP</span> <span class="id" title="var">T</span> (<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) : <span class="id" title="var">finite_set</span> <span class="id" title="var">A</span> ↔ <span class="id" title="tactic">∃</span> <span class="id" title="var">n</span>, <span class="id" title="var">A</span> #&lt;= `<span class="id" title="var">I_n</span>.<br/>
 
@@ -506,24 +498,24 @@
 <br/>
 <span class="id" title="keyword">Corollary</span> <span class="id" title="var">finite_preimage</span> {<span class="id" title="var">T</span> <span class="id" title="var">U</span>} (<span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">U</span>) (<span class="id" title="var">f</span> : <span class="id" title="var">T</span> → <span class="id" title="var">U</span>) :<br/>
 &nbsp;&nbsp;{<span class="id" title="tactic">in</span> <span class="id" title="var">f</span> @^-1` <span class="id" title="var">B</span> &amp;, <span class="id" title="var">injective</span> <span class="id" title="var">f</span>} → <span class="id" title="var">finite_set</span> <span class="id" title="var">B</span> → <span class="id" title="var">finite_set</span> (<span class="id" title="var">f</span> @^-1` <span class="id" title="var">B</span>).<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">eq_finite_set</span> <span class="id" title="var">T</span> <span class="id" title="var">U</span> (<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) (<span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">U</span>) :<br/>
 &nbsp;&nbsp;<span class="id" title="var">A</span> #= <span class="id" title="var">B</span> → <span class="id" title="var">finite_set</span> <span class="id" title="var">A</span> = <span class="id" title="var">finite_set</span> <span class="id" title="var">B</span>.<br/>
 
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">card_le_setD</span> <span class="id" title="var">T</span> (<span class="id" title="var">A</span> <span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) : <span class="id" title="var">A</span> `\` <span class="id" title="var">B</span> #&lt;= <span class="id" title="var">A</span>.<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">finite_image</span> <span class="id" title="var">T</span> <span class="id" title="var">T'</span> <span class="id" title="var">A</span> (<span class="id" title="var">f</span> : <span class="id" title="var">T</span> → <span class="id" title="var">T'</span>) : <span class="id" title="var">finite_set</span> <span class="id" title="var">A</span> → <span class="id" title="var">finite_set</span> (<span class="id" title="var">f</span> @` <span class="id" title="var">A</span>).<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">finite_set1</span> <span class="id" title="var">T</span> (<span class="id" title="var">x</span> : <span class="id" title="var">T</span>) : <span class="id" title="var">finite_set</span> [<span class="id" title="tactic">set</span> <span class="id" title="var">x</span>].<br/>
 #[<span class="id" title="var">global</span>] <span class="id" title="keyword">Hint</span> <span class="id" title="keyword">Resolve</span> <span class="id" title="var">finite_set1</span> : <span class="id" title="var">core</span>.<br/>
 
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">finite_setD</span> <span class="id" title="var">T</span> (<span class="id" title="var">A</span> <span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) : <span class="id" title="var">finite_set</span> <span class="id" title="var">A</span> → <span class="id" title="var">finite_set</span> (<span class="id" title="var">A</span> `\` <span class="id" title="var">B</span>).<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">finite_setU</span> <span class="id" title="var">T</span> (<span class="id" title="var">A</span> <span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) :<br/>
 &nbsp;&nbsp;<span class="id" title="var">finite_set</span> (<span class="id" title="var">A</span> `|` <span class="id" title="var">B</span>) = (<span class="id" title="var">finite_set</span> <span class="id" title="var">A</span> ∧ <span class="id" title="var">finite_set</span> <span class="id" title="var">B</span>).<br/>
@@ -558,10 +550,10 @@
 
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">finite_setIl</span> <span class="id" title="var">T</span> (<span class="id" title="var">A</span> <span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) : <span class="id" title="var">finite_set</span> <span class="id" title="var">A</span> → <span class="id" title="var">finite_set</span> (<span class="id" title="var">A</span> `&amp;` <span class="id" title="var">B</span>).<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">finite_setIr</span> <span class="id" title="var">T</span> (<span class="id" title="var">A</span> <span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) : <span class="id" title="var">finite_set</span> <span class="id" title="var">B</span> → <span class="id" title="var">finite_set</span> (<span class="id" title="var">A</span> `&amp;` <span class="id" title="var">B</span>).<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">finite_setM</span> <span class="id" title="var">T</span> <span class="id" title="var">T'</span> (<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) (<span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T'</span>) :<br/>
 &nbsp;&nbsp;<span class="id" title="var">finite_set</span> <span class="id" title="var">A</span> → <span class="id" title="var">finite_set</span> <span class="id" title="var">B</span> → <span class="id" title="var">finite_set</span> (<span class="id" title="var">A</span> `*` <span class="id" title="var">B</span>).<br/>
@@ -569,7 +561,7 @@
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">finite_image2</span> [<span class="id" title="var">aT</span> <span class="id" title="var">bT</span> <span class="id" title="var">rT</span> : <span class="id" title="keyword">Type</span>] [<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">aT</span>] [<span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">bT</span>] (<span class="id" title="var">f</span> : <span class="id" title="var">aT</span> → <span class="id" title="var">bT</span> → <span class="id" title="var">rT</span>) :<br/>
 &nbsp;&nbsp;<span class="id" title="var">finite_set</span> <span class="id" title="var">A</span> → <span class="id" title="var">finite_set</span> <span class="id" title="var">B</span> → <span class="id" title="var">finite_set</span> [<span class="id" title="tactic">set</span> <span class="id" title="var">f</span> <span class="id" title="var">x</span> <span class="id" title="var">y</span> | <span class="id" title="var">x</span> <span class="id" title="tactic">in</span> <span class="id" title="var">A</span> &amp; <span class="id" title="var">y</span> <span class="id" title="tactic">in</span> <span class="id" title="var">B</span>]%<span class="id" title="var">classic</span>.<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">finite_image11</span> [<span class="id" title="var">xT</span> <span class="id" title="var">aT</span> <span class="id" title="var">bT</span> <span class="id" title="var">rT</span> : <span class="id" title="keyword">Type</span>] [<span class="id" title="var">X</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">xT</span>]<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;(<span class="id" title="var">g</span> : <span class="id" title="var">aT</span> → <span class="id" title="var">bT</span> → <span class="id" title="var">rT</span>) (<span class="id" title="var">fa</span> : <span class="id" title="var">xT</span> → <span class="id" title="var">aT</span>) (<span class="id" title="var">fb</span> : <span class="id" title="var">xT</span> → <span class="id" title="var">bT</span>) :<br/>
@@ -584,7 +576,7 @@
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">fset_setK</span> (<span class="id" title="var">T</span> : <span class="id" title="var">choiceType</span>) (<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) : <span class="id" title="var">finite_set</span> <span class="id" title="var">A</span> →<br/>
 &nbsp;&nbsp;[<span class="id" title="tactic">set</span>` <span class="id" title="var">fset_set</span> <span class="id" title="var">A</span>] = <span class="id" title="var">A</span>.<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">in_fset_set</span> (<span class="id" title="var">T</span> : <span class="id" title="var">choiceType</span>) (<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) : <span class="id" title="var">finite_set</span> <span class="id" title="var">A</span> →<br/>
 &nbsp;&nbsp;<span class="id" title="var">fset_set</span> <span class="id" title="var">A</span> =<span class="id" title="var">i</span> <span class="id" title="var">A</span>.<br/>
@@ -616,7 +608,7 @@
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">fset_setU1</span> {<span class="id" title="var">T</span> : <span class="id" title="var">choiceType</span>} (<span class="id" title="var">x</span> : <span class="id" title="var">T</span>) (<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) :<br/>
 &nbsp;&nbsp;<span class="id" title="var">finite_set</span> <span class="id" title="var">A</span> → <span class="id" title="var">fset_set</span> (<span class="id" title="var">x</span> |` <span class="id" title="var">A</span>) = (<span class="id" title="var">x</span> |` <span class="id" title="var">fset_set</span> <span class="id" title="var">A</span>)%<span class="id" title="var">fset</span>.<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">fset_setD</span> {<span class="id" title="var">T</span> : <span class="id" title="var">choiceType</span>} (<span class="id" title="var">A</span> <span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) :<br/>
 &nbsp;&nbsp;<span class="id" title="var">finite_set</span> <span class="id" title="var">A</span> → <span class="id" title="var">finite_set</span> <span class="id" title="var">B</span> →<br/>
@@ -625,7 +617,7 @@
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">fset_setD1</span> {<span class="id" title="var">T</span> : <span class="id" title="var">choiceType</span>} (<span class="id" title="var">x</span> : <span class="id" title="var">T</span>) (<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) :<br/>
 &nbsp;&nbsp;<span class="id" title="var">finite_set</span> <span class="id" title="var">A</span> → <span class="id" title="var">fset_set</span> (<span class="id" title="var">A</span> `\ <span class="id" title="var">x</span>) = (<span class="id" title="var">fset_set</span> <span class="id" title="var">A</span> `\ <span class="id" title="var">x</span>)%<span class="id" title="var">fset</span>.<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">fset_setM</span> {<span class="id" title="var">T1</span> <span class="id" title="var">T2</span> : <span class="id" title="var">choiceType</span>} (<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T1</span>) (<span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T2</span>) :<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">finite_set</span> <span class="id" title="var">A</span> → <span class="id" title="var">finite_set</span> <span class="id" title="var">B</span> →<br/>
@@ -679,7 +671,7 @@
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">fset_set_inj</span> {<span class="id" title="var">T</span> : <span class="id" title="var">choiceType</span>} (<span class="id" title="var">A</span> <span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) :<br/>
 &nbsp;&nbsp;<span class="id" title="var">finite_set</span> <span class="id" title="var">A</span> → <span class="id" title="var">finite_set</span> <span class="id" title="var">B</span> → <span class="id" title="var">fset_set</span> <span class="id" title="var">A</span> = <span class="id" title="var">fset_set</span> <span class="id" title="var">B</span> → <span class="id" title="var">A</span> = <span class="id" title="var">B</span>.<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">bigsetU_fset_set</span> <span class="id" title="var">T</span> (<span class="id" title="var">I</span> : <span class="id" title="var">choiceType</span>) (<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">I</span>) (<span class="id" title="var">F</span> : <span class="id" title="var">I</span> → <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) :<br/>
 &nbsp;&nbsp;<span class="id" title="var">finite_set</span> <span class="id" title="var">A</span> → \<span class="id" title="var">big</span>[<span class="id" title="var">setU</span>/<span class="id" title="var">set0</span>]<span class="id" title="var">_</span>(<span class="id" title="var">i</span> &lt;- <span class="id" title="var">fset_set</span> <span class="id" title="var">A</span>) <span class="id" title="var">F</span> <span class="id" title="var">i</span> =\<span class="id" title="var">bigcup_</span>(<span class="id" title="var">i</span> <span class="id" title="tactic">in</span> <span class="id" title="var">A</span>) <span class="id" title="var">F</span> <span class="id" title="var">i</span>.<br/>
@@ -780,16 +772,16 @@
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">eq_card_nat</span> <span class="id" title="var">T</span> (<span class="id" title="var">A</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>):<br/>
 &nbsp;&nbsp;<span class="id" title="var">countable</span> <span class="id" title="var">A</span> → ¬ <span class="id" title="var">finite_set</span> <span class="id" title="var">A</span> → <span class="id" title="var">A</span> #= [<span class="id" title="tactic">set</span>: <span class="id" title="var">nat</span>].<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">infinite_nat</span> : ¬ <span class="id" title="var">finite_set</span> [<span class="id" title="tactic">set</span>: <span class="id" title="var">nat</span>].<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">infinite_prod_nat</span> : <span class="id" title="var">infinite_set</span> [<span class="id" title="tactic">set</span>: <span class="id" title="var">nat</span> × <span class="id" title="var">nat</span>].<br/>
 
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">card_nat2</span> : [<span class="id" title="tactic">set</span>: <span class="id" title="var">nat</span> × <span class="id" title="var">nat</span>] #= [<span class="id" title="tactic">set</span>: <span class="id" title="var">nat</span>].<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Canonical</span> <span class="id" title="var">rat_pointedType</span> := <span class="id" title="var">PointedType</span> <span class="id" title="var">rat</span> 0.<br/>
 
@@ -798,7 +790,7 @@
 
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">card_rat</span> : [<span class="id" title="tactic">set</span>: <span class="id" title="var">rat</span>] #= [<span class="id" title="tactic">set</span>: <span class="id" title="var">nat</span>].<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">choicePcountable</span> {<span class="id" title="var">T</span> : <span class="id" title="var">choiceType</span>} : <span class="id" title="var">countable</span> [<span class="id" title="tactic">set</span>: <span class="id" title="var">T</span>] →<br/>
 &nbsp;&nbsp;{<span class="id" title="var">T'</span> : <span class="id" title="var">countType</span> | <span class="id" title="var">T</span> = <span class="id" title="var">T'</span> :&gt; <span class="id" title="keyword">Type</span>}.<br/>
@@ -806,11 +798,11 @@
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">eqPcountable</span> {<span class="id" title="var">T</span> : <span class="id" title="var">eqType</span>} : <span class="id" title="var">countable</span> [<span class="id" title="tactic">set</span>: <span class="id" title="var">T</span>] →<br/>
 &nbsp;&nbsp;{<span class="id" title="var">T'</span> : <span class="id" title="var">countType</span> | <span class="id" title="var">T</span> = <span class="id" title="var">T'</span> :&gt; <span class="id" title="keyword">Type</span>}.<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">Pcountable</span> {<span class="id" title="var">T</span> : <span class="id" title="keyword">Type</span>} : <span class="id" title="var">countable</span> [<span class="id" title="tactic">set</span>: <span class="id" title="var">T</span>] →<br/>
 &nbsp;&nbsp;{<span class="id" title="var">T'</span> : <span class="id" title="var">countType</span> | <span class="id" title="var">T</span> = <span class="id" title="var">T'</span> :&gt; <span class="id" title="keyword">Type</span>}.<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">bigcup_countable</span> {<span class="id" title="var">I</span> <span class="id" title="var">T</span>} (<span class="id" title="var">D</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">I</span>) (<span class="id" title="var">F</span> : <span class="id" title="var">I</span> → <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) :<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">countable</span> <span class="id" title="var">D</span> → (<span class="id" title="keyword">∀</span> <span class="id" title="var">i</span>, <span class="id" title="var">D</span> <span class="id" title="var">i</span> → <span class="id" title="var">countable</span> (<span class="id" title="var">F</span> <span class="id" title="var">i</span>)) →<br/>
@@ -823,7 +815,7 @@
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">countableM</span> <span class="id" title="var">T1</span> <span class="id" title="var">T2</span> (<span class="id" title="var">D1</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T1</span>) (<span class="id" title="var">D2</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T2</span>) :<br/>
 &nbsp;&nbsp;<span class="id" title="var">countable</span> <span class="id" title="var">D1</span> → <span class="id" title="var">countable</span> <span class="id" title="var">D2</span> → <span class="id" title="var">countable</span> (<span class="id" title="var">D1</span> `*` <span class="id" title="var">D2</span>).<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">countableML</span> <span class="id" title="var">T</span> <span class="id" title="var">T'</span> (<span class="id" title="var">A</span> : <span class="id" title="var">T'</span> → <span class="id" title="tactic">set</span> <span class="id" title="var">T</span>) (<span class="id" title="var">B</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">T'</span>) :<br/>
 &nbsp;&nbsp;<span class="id" title="var">countable</span> <span class="id" title="var">B</span> → (<span class="id" title="keyword">∀</span> <span class="id" title="var">i</span>, <span class="id" title="var">B</span> <span class="id" title="var">i</span> → <span class="id" title="var">countable</span> (<span class="id" title="var">A</span> <span class="id" title="var">i</span>)) → <span class="id" title="var">countable</span> (<span class="id" title="var">A</span> ``*` <span class="id" title="var">B</span>).<br/>
@@ -871,7 +863,7 @@
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">fimfun_inP</span> {<span class="id" title="var">aT</span> <span class="id" title="var">rT</span>} (<span class="id" title="var">f</span> : {<span class="id" title="var">fimfun</span> <span class="id" title="var">aT</span> &gt;-&gt; <span class="id" title="var">rT</span>}) (<span class="id" title="var">D</span> : <span class="id" title="tactic">set</span> <span class="id" title="var">aT</span>) :<br/>
 &nbsp;&nbsp;<span class="id" title="var">finite_set</span> (<span class="id" title="var">f</span> @` <span class="id" title="var">D</span>).<br/>
- 
+
 <br/>
 #[<span class="id" title="var">global</span>] <span class="id" title="keyword">Hint</span> <span class="id" title="keyword">Resolve</span> <span class="id" title="var">fimfun_inP</span> : <span class="id" title="var">core</span>.<br/>
 
@@ -901,7 +893,7 @@
 
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">fimfun_valP</span> <span class="id" title="var">f</span> (<span class="id" title="var">Pf</span> : <span class="id" title="var">f</span> \<span class="id" title="tactic">in</span> <span class="id" title="var">fimfun</span>) : <span class="id" title="var">fimfun_Sub</span> <span class="id" title="var">Pf</span> = <span class="id" title="var">f</span> :&gt; (<span class="id" title="var">_</span> → <span class="id" title="var">_</span>).<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Canonical</span> <span class="id" title="var">fimfun_subType</span> := <span class="id" title="var">SubType</span> <span class="id" title="var">T</span> <span class="id" title="var">_</span> <span class="id" title="var">_</span> <span class="id" title="var">fimfun_rect</span> <span class="id" title="var">fimfun_valP</span>.<br/>
 <span class="id" title="keyword">End</span> <span class="id" title="var">fimfun</span>.<br/>
@@ -909,7 +901,7 @@
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">fimfuneqP</span> <span class="id" title="var">aT</span> <span class="id" title="var">rT</span> (<span class="id" title="var">f</span> <span class="id" title="var">g</span> : {<span class="id" title="var">fimfun</span> <span class="id" title="var">aT</span> &gt;-&gt; <span class="id" title="var">rT</span>}) :<br/>
 &nbsp;&nbsp;<span class="id" title="var">f</span> = <span class="id" title="var">g</span> ↔ <span class="id" title="var">f</span> =1 <span class="id" title="var">g</span>.<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Definition</span> <span class="id" title="var">fimfuneqMixin</span> <span class="id" title="var">aT</span> (<span class="id" title="var">rT</span> : <span class="id" title="var">eqType</span>) :=<br/>
 &nbsp;&nbsp;[<span class="id" title="var">eqMixin</span> <span class="id" title="keyword">of</span> {<span class="id" title="var">fimfun</span> <span class="id" title="var">aT</span> &gt;-&gt; <span class="id" title="var">rT</span>} <span class="id" title="tactic">by</span> &lt;:].<br/>
@@ -934,7 +926,7 @@
 <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">comp_fimfun_subproof</span> <span class="id" title="var">aT</span> <span class="id" title="var">rT</span> <span class="id" title="var">sT</span><br/>
 &nbsp;&nbsp;&nbsp;(<span class="id" title="var">f</span> : {<span class="id" title="var">fimfun</span> <span class="id" title="var">aT</span> &gt;-&gt; <span class="id" title="var">rT</span>}) (<span class="id" title="var">g</span> : <span class="id" title="var">rT</span> → <span class="id" title="var">sT</span>) : @<span class="id" title="var">FiniteImage</span> <span class="id" title="var">aT</span> <span class="id" title="var">sT</span> (<span class="id" title="var">g</span> \<span class="id" title="var">o</span> <span class="id" title="var">f</span>).<br/>
- 
+
 <br/>
 <span class="id" title="keyword">Section</span> <span class="id" title="var">zmod</span>.<br/>
 <span class="id" title="keyword">Context</span> (<span class="id" title="var">aT</span> : <span class="id" title="keyword">Type</span>) (<span class="id" title="var">rT</span> : <span class="id" title="var">zmodType</span>).<br/>
@@ -954,7 +946,7 @@
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">fimfun0</span> : (0 : {<span class="id" title="var">fimfun</span> <span class="id" title="var">aT</span> &gt;-&gt; <span class="id" title="var">rT</span>}) = <span class="id" title="var">cst</span> 0 :&gt; (<span class="id" title="var">_</span> → <span class="id" title="var">_</span>).  <br/>
 <span class="id" title="keyword">Lemma</span> <span class="id" title="var">fimfun_sum</span> <span class="id" title="var">I</span> <span class="id" title="var">r</span> (<span class="id" title="var">P</span> : {<span class="id" title="var">pred</span> <span class="id" title="var">I</span>}) (<span class="id" title="var">f</span> : <span class="id" title="var">I</span> → {<span class="id" title="var">fimfun</span> <span class="id" title="var">aT</span> &gt;-&gt; <span class="id" title="var">rT</span>}) (<span class="id" title="var">x</span> : <span class="id" title="var">aT</span>) :<br/>
 &nbsp;&nbsp;(\<span class="id" title="var">sum_</span>(<span class="id" title="var">i</span> &lt;- <span class="id" title="var">r</span> | <span class="id" title="var">P</span> <span class="id" title="var">i</span>) <span class="id" title="var">f</span> <span class="id" title="var">i</span>) <span class="id" title="var">x</span> = \<span class="id" title="var">sum_</span>(<span class="id" title="var">i</span> &lt;- <span class="id" title="var">r</span> | <span class="id" title="var">P</span> <span class="id" title="var">i</span>) <span class="id" title="var">f</span> <span class="id" title="var">i</span> <span class="id" title="var">x</span>.<br/>
- 
+
 <br/>
 <span class="id" title="keyword">End</span> <span class="id" title="var">zmod</span>.<br/>
 </div>
