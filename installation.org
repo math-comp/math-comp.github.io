@@ -12,7 +12,9 @@
 
 * Install the Base Mathematical Components Libraries
 
-- The installation of Mathematical Components is best done using [[https://opam.ocaml.org/][opam]],
+** Installation using the [[https://opam.ocaml.org/][opam]] package manager
+
+- The installation of Mathematical Components can be done using [[https://opam.ocaml.org/][opam]],
   a package manager for [[https://ocaml.org/][OCaml]], the programming language with which [[https://coq.inria.fr/][Coq]]
   is implemented.
 - Using opam, the installation of the base Mathematical Components
@@ -23,29 +25,32 @@ opam repo add coq-released https://coq.inria.fr/opam/released
 opam install coq-mathcomp-ssreflect
 #+END_SRC
 
-- Other base mathematical components libraries can be installed
+- Other base mathematical components libraries can then be installed
   similarly using ~opam install~. The available packages can be found
   in the [[https://coq.inria.fr/opam/www/][Coq package index]]:
   + ~coq-mathcomp-algebra~,
   + ~coq-mathcomp-field~,
   + ~coq-mathcomp-solvable~,
   + ~coq-mathcomp-fingroup~,
-  + ~coq-mathcomp-character~
+  + ~coq-mathcomp-character~.
 
 - You can find more detailed installation instructions in [[https://github.com/math-comp/math-comp/blob/master/INSTALL.md][INSTALL.md]]
   (from the official distribution), this includes:
   + various ways of installing using ~opam~
   + installation from the source files (using ~make~)
-  + installation is also possible using nix
+  + installation using nix
 
-- Many Mathematical Components libraries also come with the [[https://github.com/coq/platform][Coq platform]].
+** Installation using the [[https://github.com/coq/platform][Coq platform]]
+
+- The [[https://github.com/coq/platform][Coq platform]] is a distribution of [[https://coq.inria.fr/][Coq]] together with a selection of libraries
+  including most Mathematical Components libraries. It supports Linux, macOS, and Windows.
 
 ** Installation Instructions in Other Languages
 
 - Installation instructions in [[https://staff.aist.go.jp/reynald.affeldt/ssrcoq/install.html][Japanese, 日本語]]
   + see「パッケージからの設定」for installation using ~opam~
 
-** Manual installation Instructions for Windows 10 & 11
+** Advanced: Installation Instructions for Windows 10 & 11 using cygwin-opam or WSL
 
 - It is possible to install the Mathematical Components libraries on
   Windows 10 & 11 using [[https://www.cygwin.com/][cygwin]] together with the binary distribution of Coq
@@ -71,6 +76,8 @@ Mathematical Components libraries:
    - Available as the opam package ~coq-mathcomp-finmap~
 7. [[https://github.com/math-comp/multinomials][Multinomials for the Mathematical Components library]]
    - Available as the opam package ~coq-mathcomp-multinomials~
-8. See the Mathematical Components' [[https://github.com/math-comp][github]] for more libraries.
+8. [[https://github.com/coq-community/apery][A formal proof of the irrationality of zeta(3), the Apéry constant]]
+   - Available as the opam package ~coq-mathcomp-apery~
+9. See the Mathematical Components' [[https://github.com/math-comp][github]] for more libraries.
    [[https://github.com/coq-community][coq-community]] also features a number of libraries using Mathematical Components.
 
