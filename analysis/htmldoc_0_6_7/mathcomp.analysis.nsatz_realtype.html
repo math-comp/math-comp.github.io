@@ -23,7 +23,7 @@
 <span class="vernacular">From</span> <span class="id">mathcomp</span> <span class="vernacular">Require</span> <span class="vernacular">Import</span> <span class="id"><a href="mathcomp.classical.boolp.html">boolp</a></span>.<br/>
 <span class="vernacular">Require</span> <span class="vernacular">Import</span> <span class="id"><a href="mathcomp.analysis.reals.html">reals</a></span> <span class="id"><a href="mathcomp.analysis.ereal.html">ereal</a></span>.<br/>
 <br/>
-<div class="ssrdoc markdown">
+<div class="ssrdoc md">
 # nsatz for realType                                                       
                                                                            
 This file registers the ring corresponding to the MathComp-Analysis type   
@@ -95,14 +95,16 @@ Reference:
 &nbsp;&nbsp;<span class="id"><a href="mathcomp.analysis.nsatz_realtype.html#Nsatz_realType_mul">Nsatz_realType_mul</a></span><br/>
 &nbsp;&nbsp;<span class="id"><a href="mathcomp.analysis.nsatz_realtype.html#Nsatz_realType_sub">Nsatz_realType_sub</a></span><br/>
 &nbsp;&nbsp;<span class="id"><a href="mathcomp.analysis.nsatz_realtype.html#Nsatz_realType_opp">Nsatz_realType_opp</a></span> (<span class="id">@eq</span> <span class="id"><a href="mathcomp.analysis.nsatz_realtype.html#Nsatz_realType.T">T</a></span>)).<br/>
+<div><span class="toggleproof" onclick="toggleDisplay('proof2')">Proof.</span></div>
+<div class="proofscript" id="proof2">
 Defined.</div>
 <br/>
 <span class="id">#[global]</span><br/>
 <span class="vernacular">Instance</span> <span id="Nsatz_realType_Ring" class="id">
   <a name="Nsatz_realType_Ring" class="">Nsatz_realType_Ring</a>
 </span> <span class="id">:</span> (<span class="id"><a href="https://coq.inria.fr/doc/V8.18.0/stdlib/Coq.setoid_ring.Ncring.html#Ring">Ncring.Ring</a></span> (<span class="id">Ro:=Nsatz_realType_Ring_ops</span>)).<br/>
-<div><span class="toggleproof" onclick="toggleDisplay('proof2')">Proof.</span></div>
-<div class="proofscript" id="proof2">
+<div><span class="toggleproof" onclick="toggleDisplay('proof3')">Proof.</span></div>
+<div class="proofscript" id="proof3">
 <span class="id">constructor</span> <span class="id">=&gt;</span> <span class="id">//</span>.<br/>
 <span class="id">-</span> <span class="id">exact:</span> <span class="id"><a href="mathcomp.analysis.nsatz_realtype.html#Nsatz_realType_Setoid_Theory">Nsatz_realType_Setoid_Theory</a></span>.<br/>
 <span class="id">-</span> <span class="gallina-kwd">by</span> <span class="id">move=&gt;</span> <span class="id">x</span> <span class="id">y</span> <span class="id">-&gt;</span> <span class="id">x1</span> <span class="id">y1</span> <span class="id">-&gt;</span>.<br/>
@@ -124,8 +126,8 @@ Defined.</div>
 <span class="vernacular">Instance</span> <span id="Nsatz_realType_Cring" class="id">
   <a name="Nsatz_realType_Cring" class="">Nsatz_realType_Cring:</a>
 </span> (<span class="id"><a href="https://coq.inria.fr/doc/V8.18.0/stdlib/Coq.setoid_ring.Cring.html#Cring">Cring.Cring</a></span> (<span class="id">Rr:=Nsatz_realType_Ring</span>)).<br/>
-<div><span class="toggleproof" onclick="toggleDisplay('proof3')">Proof.</span></div>
-<div class="proofscript" id="proof3">
+<div><span class="toggleproof" onclick="toggleDisplay('proof4')">Proof.</span></div>
+<div class="proofscript" id="proof4">
  <span class="id">exact:</span> <span class="id"><a href="https://math-comp.github.io/htmldoc/mathcomp.algebra.ssralg.html#GRing.Theory.mulrC">mulrC</a></span>. Defined.</div>
 <br/>
 <span class="id">#[global]</span><br/>
@@ -133,8 +135,8 @@ Defined.</div>
   <a name="Nsatz_realType_Integral_domain" class="">Nsatz_realType_Integral_domain</a>
 </span> <span class="id">:</span><br/>
 &nbsp;&nbsp;&nbsp;(<span class="id"><a href="https://coq.inria.fr/doc/V8.18.0/stdlib/Coq.setoid_ring.Integral_domain.html#Integral_domain">Integral_domain.Integral_domain</a></span> (<span class="id">Rcr:=Nsatz_realType_Cring</span>)).<br/>
-<div><span class="toggleproof" onclick="toggleDisplay('proof4')">Proof.</span></div>
-<div class="proofscript" id="proof4">
+<div><span class="toggleproof" onclick="toggleDisplay('proof5')">Proof.</span></div>
+<div class="proofscript" id="proof5">
 <span class="id">constructor</span>.<br/>
 &nbsp;&nbsp;<span class="id">move=&gt;</span> <span class="id">x</span> <span class="id">y</span>.<br/>
 &nbsp;&nbsp;<span class="id">rewrite</span> <span class="id">-[_</span> <span class="id">_</span> <span class="id"><a href="https://coq.inria.fr/doc/V8.18.0/stdlib/Coq.setoid_ring.Algebra_syntax.html#zero">Algebra_syntax.zero</a></span><span class="id">]/</span>(<span class="id">x</span> <span class="id"><a href="https://math-comp.github.io/htmldoc/mathcomp.algebra.ssralg.html#::ring_scope:x_'*'_x">*</a></span> <span class="id">y</span> <span class="id"><a href="https://coq.inria.fr/doc/V8.18.0/stdlib/Coq.Init.Logic.html#::type_scope:x_'='_x">=</a></span> <span class="id">0</span>)<span class="id">%R</span> <span class="id">=&gt;</span> <span class="id">/eqP</span>.<br/>
