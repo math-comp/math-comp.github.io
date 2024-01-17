@@ -1,0 +1,1969 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<title>mathcomp.ssreflect.tuple</title>
+</head>
+
+<body>
+
+<div id="page">
+
+<div id="header">
+</div>
+
+<div id="main">
+
+<table>
+<tr>
+<td>Global Index</td>
+<td><a href="index_global_A.html">A</a></td>
+<td><a href="index_global_B.html">B</a></td>
+<td><a href="index_global_C.html">C</a></td>
+<td><a href="index_global_D.html">D</a></td>
+<td><a href="index_global_E.html">E</a></td>
+<td><a href="index_global_F.html">F</a></td>
+<td><a href="index_global_G.html">G</a></td>
+<td><a href="index_global_H.html">H</a></td>
+<td><a href="index_global_I.html">I</a></td>
+<td><a href="index_global_J.html">J</a></td>
+<td><a href="index_global_K.html">K</a></td>
+<td><a href="index_global_L.html">L</a></td>
+<td><a href="index_global_M.html">M</a></td>
+<td><a href="index_global_N.html">N</a></td>
+<td><a href="index_global_O.html">O</a></td>
+<td><a href="index_global_P.html">P</a></td>
+<td><a href="index_global_Q.html">Q</a></td>
+<td><a href="index_global_R.html">R</a></td>
+<td><a href="index_global_S.html">S</a></td>
+<td><a href="index_global_T.html">T</a></td>
+<td><a href="index_global_U.html">U</a></td>
+<td><a href="index_global_V.html">V</a></td>
+<td><a href="index_global_W.html">W</a></td>
+<td><a href="index_global_X.html">X</a></td>
+<td><a href="index_global_Y.html">Y</a></td>
+<td><a href="index_global_Z.html">Z</a></td>
+<td>_</td>
+<td><a href="index_global_*.html">other</a></td>
+<td>(76754 entries)</td>
+</tr>
+<tr>
+<td>Notation Index</td>
+<td><a href="index_notation_A.html">A</a></td>
+<td><a href="index_notation_B.html">B</a></td>
+<td><a href="index_notation_C.html">C</a></td>
+<td><a href="index_notation_D.html">D</a></td>
+<td><a href="index_notation_E.html">E</a></td>
+<td><a href="index_notation_F.html">F</a></td>
+<td><a href="index_notation_G.html">G</a></td>
+<td>H</td>
+<td><a href="index_notation_I.html">I</a></td>
+<td>J</td>
+<td><a href="index_notation_K.html">K</a></td>
+<td><a href="index_notation_L.html">L</a></td>
+<td><a href="index_notation_M.html">M</a></td>
+<td><a href="index_notation_N.html">N</a></td>
+<td><a href="index_notation_O.html">O</a></td>
+<td><a href="index_notation_P.html">P</a></td>
+<td><a href="index_notation_Q.html">Q</a></td>
+<td><a href="index_notation_R.html">R</a></td>
+<td><a href="index_notation_S.html">S</a></td>
+<td>T</td>
+<td><a href="index_notation_U.html">U</a></td>
+<td><a href="index_notation_V.html">V</a></td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td><a href="index_notation_Z.html">Z</a></td>
+<td>_</td>
+<td><a href="index_notation_*.html">other</a></td>
+<td>(1892 entries)</td>
+</tr>
+<tr>
+<td>Binder Index</td>
+<td><a href="index_binder_A.html">A</a></td>
+<td><a href="index_binder_B.html">B</a></td>
+<td><a href="index_binder_C.html">C</a></td>
+<td><a href="index_binder_D.html">D</a></td>
+<td><a href="index_binder_E.html">E</a></td>
+<td><a href="index_binder_F.html">F</a></td>
+<td><a href="index_binder_G.html">G</a></td>
+<td><a href="index_binder_H.html">H</a></td>
+<td><a href="index_binder_I.html">I</a></td>
+<td><a href="index_binder_J.html">J</a></td>
+<td><a href="index_binder_K.html">K</a></td>
+<td><a href="index_binder_L.html">L</a></td>
+<td><a href="index_binder_M.html">M</a></td>
+<td><a href="index_binder_N.html">N</a></td>
+<td><a href="index_binder_O.html">O</a></td>
+<td><a href="index_binder_P.html">P</a></td>
+<td><a href="index_binder_Q.html">Q</a></td>
+<td><a href="index_binder_R.html">R</a></td>
+<td><a href="index_binder_S.html">S</a></td>
+<td><a href="index_binder_T.html">T</a></td>
+<td><a href="index_binder_U.html">U</a></td>
+<td><a href="index_binder_V.html">V</a></td>
+<td><a href="index_binder_W.html">W</a></td>
+<td><a href="index_binder_X.html">X</a></td>
+<td><a href="index_binder_Y.html">Y</a></td>
+<td><a href="index_binder_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(49588 entries)</td>
+</tr>
+<tr>
+<td>Module Index</td>
+<td><a href="index_module_A.html">A</a></td>
+<td><a href="index_module_B.html">B</a></td>
+<td><a href="index_module_C.html">C</a></td>
+<td><a href="index_module_D.html">D</a></td>
+<td><a href="index_module_E.html">E</a></td>
+<td><a href="index_module_F.html">F</a></td>
+<td><a href="index_module_G.html">G</a></td>
+<td>H</td>
+<td><a href="index_module_I.html">I</a></td>
+<td>J</td>
+<td>K</td>
+<td>L</td>
+<td><a href="index_module_M.html">M</a></td>
+<td><a href="index_module_N.html">N</a></td>
+<td><a href="index_module_O.html">O</a></td>
+<td><a href="index_module_P.html">P</a></td>
+<td><a href="index_module_Q.html">Q</a></td>
+<td><a href="index_module_R.html">R</a></td>
+<td><a href="index_module_S.html">S</a></td>
+<td><a href="index_module_T.html">T</a></td>
+<td><a href="index_module_U.html">U</a></td>
+<td><a href="index_module_V.html">V</a></td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td><a href="index_module_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(305 entries)</td>
+</tr>
+<tr>
+<td>Variable Index</td>
+<td><a href="index_variable_A.html">A</a></td>
+<td><a href="index_variable_B.html">B</a></td>
+<td><a href="index_variable_C.html">C</a></td>
+<td><a href="index_variable_D.html">D</a></td>
+<td><a href="index_variable_E.html">E</a></td>
+<td><a href="index_variable_F.html">F</a></td>
+<td><a href="index_variable_G.html">G</a></td>
+<td><a href="index_variable_H.html">H</a></td>
+<td><a href="index_variable_I.html">I</a></td>
+<td>J</td>
+<td><a href="index_variable_K.html">K</a></td>
+<td><a href="index_variable_L.html">L</a></td>
+<td><a href="index_variable_M.html">M</a></td>
+<td><a href="index_variable_N.html">N</a></td>
+<td><a href="index_variable_O.html">O</a></td>
+<td><a href="index_variable_P.html">P</a></td>
+<td><a href="index_variable_Q.html">Q</a></td>
+<td><a href="index_variable_R.html">R</a></td>
+<td><a href="index_variable_S.html">S</a></td>
+<td><a href="index_variable_T.html">T</a></td>
+<td><a href="index_variable_U.html">U</a></td>
+<td><a href="index_variable_V.html">V</a></td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td><a href="index_variable_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(4034 entries)</td>
+</tr>
+<tr>
+<td>Library Index</td>
+<td><a href="index_library_A.html">A</a></td>
+<td><a href="index_library_B.html">B</a></td>
+<td><a href="index_library_C.html">C</a></td>
+<td><a href="index_library_D.html">D</a></td>
+<td><a href="index_library_E.html">E</a></td>
+<td><a href="index_library_F.html">F</a></td>
+<td><a href="index_library_G.html">G</a></td>
+<td><a href="index_library_H.html">H</a></td>
+<td><a href="index_library_I.html">I</a></td>
+<td><a href="index_library_J.html">J</a></td>
+<td>K</td>
+<td>L</td>
+<td><a href="index_library_M.html">M</a></td>
+<td><a href="index_library_N.html">N</a></td>
+<td><a href="index_library_O.html">O</a></td>
+<td><a href="index_library_P.html">P</a></td>
+<td><a href="index_library_Q.html">Q</a></td>
+<td><a href="index_library_R.html">R</a></td>
+<td><a href="index_library_S.html">S</a></td>
+<td><a href="index_library_T.html">T</a></td>
+<td>U</td>
+<td><a href="index_library_V.html">V</a></td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td><a href="index_library_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(94 entries)</td>
+</tr>
+<tr>
+<td>Lemma Index</td>
+<td><a href="index_lemma_A.html">A</a></td>
+<td><a href="index_lemma_B.html">B</a></td>
+<td><a href="index_lemma_C.html">C</a></td>
+<td><a href="index_lemma_D.html">D</a></td>
+<td><a href="index_lemma_E.html">E</a></td>
+<td><a href="index_lemma_F.html">F</a></td>
+<td><a href="index_lemma_G.html">G</a></td>
+<td><a href="index_lemma_H.html">H</a></td>
+<td><a href="index_lemma_I.html">I</a></td>
+<td><a href="index_lemma_J.html">J</a></td>
+<td><a href="index_lemma_K.html">K</a></td>
+<td><a href="index_lemma_L.html">L</a></td>
+<td><a href="index_lemma_M.html">M</a></td>
+<td><a href="index_lemma_N.html">N</a></td>
+<td><a href="index_lemma_O.html">O</a></td>
+<td><a href="index_lemma_P.html">P</a></td>
+<td><a href="index_lemma_Q.html">Q</a></td>
+<td><a href="index_lemma_R.html">R</a></td>
+<td><a href="index_lemma_S.html">S</a></td>
+<td><a href="index_lemma_T.html">T</a></td>
+<td><a href="index_lemma_U.html">U</a></td>
+<td><a href="index_lemma_V.html">V</a></td>
+<td><a href="index_lemma_W.html">W</a></td>
+<td><a href="index_lemma_X.html">X</a></td>
+<td>Y</td>
+<td><a href="index_lemma_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(14802 entries)</td>
+</tr>
+<tr>
+<td>Constructor Index</td>
+<td><a href="index_constructor_A.html">A</a></td>
+<td><a href="index_constructor_B.html">B</a></td>
+<td><a href="index_constructor_C.html">C</a></td>
+<td><a href="index_constructor_D.html">D</a></td>
+<td><a href="index_constructor_E.html">E</a></td>
+<td><a href="index_constructor_F.html">F</a></td>
+<td><a href="index_constructor_G.html">G</a></td>
+<td><a href="index_constructor_H.html">H</a></td>
+<td><a href="index_constructor_I.html">I</a></td>
+<td>J</td>
+<td>K</td>
+<td><a href="index_constructor_L.html">L</a></td>
+<td><a href="index_constructor_M.html">M</a></td>
+<td><a href="index_constructor_N.html">N</a></td>
+<td><a href="index_constructor_O.html">O</a></td>
+<td><a href="index_constructor_P.html">P</a></td>
+<td><a href="index_constructor_Q.html">Q</a></td>
+<td><a href="index_constructor_R.html">R</a></td>
+<td><a href="index_constructor_S.html">S</a></td>
+<td><a href="index_constructor_T.html">T</a></td>
+<td><a href="index_constructor_U.html">U</a></td>
+<td><a href="index_constructor_V.html">V</a></td>
+<td>W</td>
+<td><a href="index_constructor_X.html">X</a></td>
+<td>Y</td>
+<td><a href="index_constructor_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(222 entries)</td>
+</tr>
+<tr>
+<td>Axiom Index</td>
+<td><a href="index_axiom_A.html">A</a></td>
+<td>B</td>
+<td>C</td>
+<td>D</td>
+<td><a href="index_axiom_E.html">E</a></td>
+<td><a href="index_axiom_F.html">F</a></td>
+<td>G</td>
+<td>H</td>
+<td>I</td>
+<td>J</td>
+<td>K</td>
+<td>L</td>
+<td>M</td>
+<td>N</td>
+<td>O</td>
+<td>P</td>
+<td>Q</td>
+<td>R</td>
+<td>S</td>
+<td>T</td>
+<td>U</td>
+<td>V</td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td>Z</td>
+<td>_</td>
+<td>other</td>
+<td>(9 entries)</td>
+</tr>
+<tr>
+<td>Inductive Index</td>
+<td><a href="index_inductive_A.html">A</a></td>
+<td><a href="index_inductive_B.html">B</a></td>
+<td><a href="index_inductive_C.html">C</a></td>
+<td><a href="index_inductive_D.html">D</a></td>
+<td><a href="index_inductive_E.html">E</a></td>
+<td><a href="index_inductive_F.html">F</a></td>
+<td><a href="index_inductive_G.html">G</a></td>
+<td><a href="index_inductive_H.html">H</a></td>
+<td><a href="index_inductive_I.html">I</a></td>
+<td>J</td>
+<td>K</td>
+<td><a href="index_inductive_L.html">L</a></td>
+<td><a href="index_inductive_M.html">M</a></td>
+<td><a href="index_inductive_N.html">N</a></td>
+<td><a href="index_inductive_O.html">O</a></td>
+<td><a href="index_inductive_P.html">P</a></td>
+<td>Q</td>
+<td><a href="index_inductive_R.html">R</a></td>
+<td><a href="index_inductive_S.html">S</a></td>
+<td><a href="index_inductive_T.html">T</a></td>
+<td><a href="index_inductive_U.html">U</a></td>
+<td><a href="index_inductive_V.html">V</a></td>
+<td>W</td>
+<td><a href="index_inductive_X.html">X</a></td>
+<td>Y</td>
+<td>Z</td>
+<td>_</td>
+<td>other</td>
+<td>(131 entries)</td>
+</tr>
+<tr>
+<td>Projection Index</td>
+<td><a href="index_projection_A.html">A</a></td>
+<td><a href="index_projection_B.html">B</a></td>
+<td><a href="index_projection_C.html">C</a></td>
+<td>D</td>
+<td><a href="index_projection_E.html">E</a></td>
+<td><a href="index_projection_F.html">F</a></td>
+<td><a href="index_projection_G.html">G</a></td>
+<td>H</td>
+<td>I</td>
+<td>J</td>
+<td>K</td>
+<td>L</td>
+<td><a href="index_projection_M.html">M</a></td>
+<td>N</td>
+<td>O</td>
+<td><a href="index_projection_P.html">P</a></td>
+<td>Q</td>
+<td><a href="index_projection_R.html">R</a></td>
+<td><a href="index_projection_S.html">S</a></td>
+<td><a href="index_projection_T.html">T</a></td>
+<td>U</td>
+<td><a href="index_projection_V.html">V</a></td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td>Z</td>
+<td>_</td>
+<td>other</td>
+<td>(43 entries)</td>
+</tr>
+<tr>
+<td>Section Index</td>
+<td><a href="index_section_A.html">A</a></td>
+<td><a href="index_section_B.html">B</a></td>
+<td><a href="index_section_C.html">C</a></td>
+<td><a href="index_section_D.html">D</a></td>
+<td><a href="index_section_E.html">E</a></td>
+<td><a href="index_section_F.html">F</a></td>
+<td><a href="index_section_G.html">G</a></td>
+<td><a href="index_section_H.html">H</a></td>
+<td><a href="index_section_I.html">I</a></td>
+<td>J</td>
+<td><a href="index_section_K.html">K</a></td>
+<td><a href="index_section_L.html">L</a></td>
+<td><a href="index_section_M.html">M</a></td>
+<td><a href="index_section_N.html">N</a></td>
+<td><a href="index_section_O.html">O</a></td>
+<td><a href="index_section_P.html">P</a></td>
+<td><a href="index_section_Q.html">Q</a></td>
+<td><a href="index_section_R.html">R</a></td>
+<td><a href="index_section_S.html">S</a></td>
+<td><a href="index_section_T.html">T</a></td>
+<td><a href="index_section_U.html">U</a></td>
+<td><a href="index_section_V.html">V</a></td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td><a href="index_section_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(1392 entries)</td>
+</tr>
+<tr>
+<td>Abbreviation Index</td>
+<td><a href="index_abbreviation_A.html">A</a></td>
+<td><a href="index_abbreviation_B.html">B</a></td>
+<td><a href="index_abbreviation_C.html">C</a></td>
+<td><a href="index_abbreviation_D.html">D</a></td>
+<td><a href="index_abbreviation_E.html">E</a></td>
+<td><a href="index_abbreviation_F.html">F</a></td>
+<td><a href="index_abbreviation_G.html">G</a></td>
+<td><a href="index_abbreviation_H.html">H</a></td>
+<td><a href="index_abbreviation_I.html">I</a></td>
+<td><a href="index_abbreviation_J.html">J</a></td>
+<td><a href="index_abbreviation_K.html">K</a></td>
+<td><a href="index_abbreviation_L.html">L</a></td>
+<td><a href="index_abbreviation_M.html">M</a></td>
+<td><a href="index_abbreviation_N.html">N</a></td>
+<td><a href="index_abbreviation_O.html">O</a></td>
+<td><a href="index_abbreviation_P.html">P</a></td>
+<td><a href="index_abbreviation_Q.html">Q</a></td>
+<td><a href="index_abbreviation_R.html">R</a></td>
+<td><a href="index_abbreviation_S.html">S</a></td>
+<td><a href="index_abbreviation_T.html">T</a></td>
+<td><a href="index_abbreviation_U.html">U</a></td>
+<td><a href="index_abbreviation_V.html">V</a></td>
+<td><a href="index_abbreviation_W.html">W</a></td>
+<td><a href="index_abbreviation_X.html">X</a></td>
+<td>Y</td>
+<td><a href="index_abbreviation_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(1140 entries)</td>
+</tr>
+<tr>
+<td>Definition Index</td>
+<td><a href="index_definition_A.html">A</a></td>
+<td><a href="index_definition_B.html">B</a></td>
+<td><a href="index_definition_C.html">C</a></td>
+<td><a href="index_definition_D.html">D</a></td>
+<td><a href="index_definition_E.html">E</a></td>
+<td><a href="index_definition_F.html">F</a></td>
+<td><a href="index_definition_G.html">G</a></td>
+<td><a href="index_definition_H.html">H</a></td>
+<td><a href="index_definition_I.html">I</a></td>
+<td><a href="index_definition_J.html">J</a></td>
+<td><a href="index_definition_K.html">K</a></td>
+<td><a href="index_definition_L.html">L</a></td>
+<td><a href="index_definition_M.html">M</a></td>
+<td><a href="index_definition_N.html">N</a></td>
+<td><a href="index_definition_O.html">O</a></td>
+<td><a href="index_definition_P.html">P</a></td>
+<td><a href="index_definition_Q.html">Q</a></td>
+<td><a href="index_definition_R.html">R</a></td>
+<td><a href="index_definition_S.html">S</a></td>
+<td><a href="index_definition_T.html">T</a></td>
+<td><a href="index_definition_U.html">U</a></td>
+<td><a href="index_definition_V.html">V</a></td>
+<td><a href="index_definition_W.html">W</a></td>
+<td><a href="index_definition_X.html">X</a></td>
+<td>Y</td>
+<td><a href="index_definition_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(3066 entries)</td>
+</tr>
+<tr>
+<td>Record Index</td>
+<td><a href="index_record_A.html">A</a></td>
+<td><a href="index_record_B.html">B</a></td>
+<td><a href="index_record_C.html">C</a></td>
+<td>D</td>
+<td><a href="index_record_E.html">E</a></td>
+<td>F</td>
+<td><a href="index_record_G.html">G</a></td>
+<td>H</td>
+<td>I</td>
+<td>J</td>
+<td>K</td>
+<td>L</td>
+<td><a href="index_record_M.html">M</a></td>
+<td><a href="index_record_N.html">N</a></td>
+<td>O</td>
+<td><a href="index_record_P.html">P</a></td>
+<td>Q</td>
+<td><a href="index_record_R.html">R</a></td>
+<td><a href="index_record_S.html">S</a></td>
+<td><a href="index_record_T.html">T</a></td>
+<td>U</td>
+<td><a href="index_record_V.html">V</a></td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td>Z</td>
+<td>_</td>
+<td>other</td>
+<td>(36 entries)</td>
+</tr>
+</table>
+<hr/><a id="global_V"></a><h2>V </h2>
+<a href="mathcomp.ssreflect.eqtype.html#val">val</a> [abbreviation, in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.ssreflect.eqtype.html#val">val</a> [abbreviation, in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#valB_subproof:2381">valB_subproof:2381</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#valD_subproof:2346">valD_subproof:2346</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.fingroup.fingroup.html#valG">valG</a> [lemma, in <a href="mathcomp.fingroup.fingroup.html">mathcomp.fingroup.fingroup</a>]<br/>
+<a href="mathcomp.fingroup.fingroup.html#valgM">valgM</a> [lemma, in <a href="mathcomp.fingroup.fingroup.html">mathcomp.fingroup.fingroup</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#valI_subproof:3467">valI_subproof:3467</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.eqtype.html#valK">valK</a> [lemma, in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.ssreflect.eqtype.html#valKd">valKd</a> [lemma, in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#valM_subproof:2419">valM_subproof:2419</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.ssreflect.eqtype.html#valP">valP</a> [lemma, in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.algebra.rat.html#valq">valq</a> [projection, in <a href="mathcomp.algebra.rat.html">mathcomp.algebra.rat</a>]<br/>
+<a href="mathcomp.algebra.rat.html#valqK">valqK</a> [lemma, in <a href="mathcomp.algebra.rat.html">mathcomp.algebra.rat</a>]<br/>
+<a href="mathcomp.algebra.rat.html#valq_frac">valq_frac</a> [lemma, in <a href="mathcomp.algebra.rat.html">mathcomp.algebra.rat</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#valU_subproof:3482">valU_subproof:3482</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.algebra.zmodp.html#valZpK">valZpK</a> [lemma, in <a href="mathcomp.algebra.zmodp.html">mathcomp.algebra.zmodp</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#valZ:2508">valZ:2508</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.fingroup.quotient.html#val_qisom">val_qisom</a> [lemma, in <a href="mathcomp.fingroup.quotient.html">mathcomp.fingroup.quotient</a>]<br/>
+<a href="mathcomp.fingroup.quotient.html#val_quotient">val_quotient</a> [lemma, in <a href="mathcomp.fingroup.quotient.html">mathcomp.fingroup.quotient</a>]<br/>
+<a href="mathcomp.fingroup.quotient.html#val_coset">val_coset</a> [lemma, in <a href="mathcomp.fingroup.quotient.html">mathcomp.fingroup.quotient</a>]<br/>
+<a href="mathcomp.fingroup.quotient.html#val_coset_prim">val_coset_prim</a> [lemma, in <a href="mathcomp.fingroup.quotient.html">mathcomp.fingroup.quotient</a>]<br/>
+<a href="mathcomp.ssreflect.tuple.html#val_ord_tuple">val_ord_tuple</a> [lemma, in <a href="mathcomp.ssreflect.tuple.html">mathcomp.ssreflect.tuple</a>]<br/>
+<a href="mathcomp.ssreflect.tuple.html#val_tcast">val_tcast</a> [lemma, in <a href="mathcomp.ssreflect.tuple.html">mathcomp.ssreflect.tuple</a>]<br/>
+<a href="mathcomp.algebra.zmodp.html#val_Fp_nat">val_Fp_nat</a> [lemma, in <a href="mathcomp.algebra.zmodp.html">mathcomp.algebra.zmodp</a>]<br/>
+<a href="mathcomp.algebra.zmodp.html#val_Zp_nat">val_Zp_nat</a> [lemma, in <a href="mathcomp.algebra.zmodp.html">mathcomp.algebra.zmodp</a>]<br/>
+<a href="mathcomp.fingroup.action.html#val_subact">val_subact</a> [lemma, in <a href="mathcomp.fingroup.action.html">mathcomp.fingroup.action</a>]<br/>
+<a href="mathcomp.character.mxabelem.html#val_reprGLm">val_reprGLm</a> [lemma, in <a href="mathcomp.character.mxabelem.html">mathcomp.character.mxabelem</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#val_le_subproof:3412">val_le_subproof:3412</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#val_Clifford_act">val_Clifford_act</a> [lemma, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#val_factmod_module">val_factmod_module</a> [lemma, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#val_submod_module">val_submod_module</a> [lemma, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#val_factmodJ">val_factmodJ</a> [lemma, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#val_submodJ">val_submodJ</a> [lemma, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#val_factmod_eq0">val_factmod_eq0</a> [lemma, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#val_factmodS">val_factmodS</a> [lemma, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#val_factmod_inj">val_factmod_inj</a> [lemma, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#val_factmodK">val_factmodK</a> [lemma, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#val_factmodP">val_factmodP</a> [lemma, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#val_factmodE">val_factmodE</a> [lemma, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#val_factmod">val_factmod</a> [definition, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#val_submod_eq0">val_submod_eq0</a> [lemma, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#val_submodS">val_submodS</a> [lemma, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#val_submod_inj">val_submod_inj</a> [lemma, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#val_submodK">val_submodK</a> [lemma, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#val_submodP">val_submodP</a> [lemma, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#val_submod1">val_submod1</a> [lemma, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#val_submodE">val_submodE</a> [lemma, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#val_submod">val_submod</a> [definition, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.algebra.rat.html#val_fracq">val_fracq</a> [lemma, in <a href="mathcomp.algebra.rat.html">mathcomp.algebra.rat</a>]<br/>
+<a href="mathcomp.ssreflect.fintype.html#val_enum_ord">val_enum_ord</a> [lemma, in <a href="mathcomp.ssreflect.fintype.html">mathcomp.ssreflect.fintype</a>]<br/>
+<a href="mathcomp.ssreflect.fintype.html#val_ord_enum">val_ord_enum</a> [lemma, in <a href="mathcomp.ssreflect.fintype.html">mathcomp.ssreflect.fintype</a>]<br/>
+<a href="mathcomp.ssreflect.fintype.html#val_seq_sub_enum">val_seq_sub_enum</a> [lemma, in <a href="mathcomp.ssreflect.fintype.html">mathcomp.ssreflect.fintype</a>]<br/>
+<a href="mathcomp.ssreflect.eqtype.html#val_eqE">val_eqE</a> [lemma, in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.ssreflect.eqtype.html#val_eqP">val_eqP</a> [lemma, in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.ssreflect.eqtype.html#val_insubd">val_insubd</a> [lemma, in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.ssreflect.eqtype.html#val_inj">val_inj</a> [lemma, in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.ssreflect.eqtype.html#val_subdef:246">val_subdef:246</a> [binder, in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#val0_subproof:3655">val0_subproof:3655</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#val1_subproof:3742">val1_subproof:3742</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.binomial.html#Vandermonde">Vandermonde</a> [lemma, in <a href="mathcomp.ssreflect.binomial.html">mathcomp.ssreflect.binomial</a>]<br/>
+<a href="mathcomp.algebra.matrix.html#Vandermonde">Vandermonde</a> [definition, in <a href="mathcomp.algebra.matrix.html">mathcomp.algebra.matrix</a>]<br/>
+<a href="mathcomp.algebra.vector.html#vbasis">vbasis</a> [definition, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#vbasisP">vbasisP</a> [lemma, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#vbasis_mem">vbasis_mem</a> [lemma, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#vbasis_unlockable">vbasis_unlockable</a> [definition, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#vbasis_def">vbasis_def</a> [definition, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.field.falgebra.html#vbasis1">vbasis1</a> [lemma, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#VChar">VChar</a> [section, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html">vcharacter</a> [library]<br/>
+<a href="mathcomp.character.vcharacter.html#vcharP">vcharP</a> [lemma, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#vchar_aut">vchar_aut</a> [lemma, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#vchar_norm2">vchar_norm2</a> [lemma, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#vchar_norm1P">vchar_norm1P</a> [lemma, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#vchar_orthonormalP">vchar_orthonormalP</a> [lemma, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#vchar_mulr_closed">vchar_mulr_closed</a> [lemma, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#VChar.CfDotOrthonormal">VChar.CfDotOrthonormal</a> [section, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#VChar.CfDotOrthonormal.freeS">VChar.CfDotOrthonormal.freeS</a> [variable, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#VChar.CfDotOrthonormal.Inu">VChar.CfDotOrthonormal.Inu</a> [variable, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#VChar.CfDotOrthonormal.M">VChar.CfDotOrthonormal.M</a> [variable, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#VChar.CfDotOrthonormal.nS1">VChar.CfDotOrthonormal.nS1</a> [variable, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#VChar.CfDotOrthonormal.nu">VChar.CfDotOrthonormal.nu</a> [variable, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#VChar.CfDotOrthonormal.onS">VChar.CfDotOrthonormal.onS</a> [variable, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#VChar.CfDotOrthonormal.oSS">VChar.CfDotOrthonormal.oSS</a> [variable, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#VChar.CfDotOrthonormal.S">VChar.CfDotOrthonormal.S</a> [variable, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#VChar.CfdotPairwiseOrthogonal">VChar.CfdotPairwiseOrthogonal</a> [section, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#VChar.CfdotPairwiseOrthogonal.dotSS">VChar.CfdotPairwiseOrthogonal.dotSS</a> [variable, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#VChar.CfdotPairwiseOrthogonal.freeS">VChar.CfdotPairwiseOrthogonal.freeS</a> [variable, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#VChar.CfdotPairwiseOrthogonal.Inu">VChar.CfdotPairwiseOrthogonal.Inu</a> [variable, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#VChar.CfdotPairwiseOrthogonal.M">VChar.CfdotPairwiseOrthogonal.M</a> [variable, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#VChar.CfdotPairwiseOrthogonal.notS0">VChar.CfdotPairwiseOrthogonal.notS0</a> [variable, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#VChar.CfdotPairwiseOrthogonal.nu">VChar.CfdotPairwiseOrthogonal.nu</a> [variable, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#VChar.CfdotPairwiseOrthogonal.oSS">VChar.CfdotPairwiseOrthogonal.oSS</a> [variable, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#VChar.CfdotPairwiseOrthogonal.S">VChar.CfdotPairwiseOrthogonal.S</a> [variable, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#VChar.CfdotPairwiseOrthogonal.uniqS">VChar.CfdotPairwiseOrthogonal.uniqS</a> [variable, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#VChar.CfdotPairwiseOrthogonal.Z_S">VChar.CfdotPairwiseOrthogonal.Z_S</a> [variable, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#VChar.G">VChar.G</a> [variable, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#VChar.gT">VChar.gT</a> [variable, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.algebra.vector.html">vector</a> [library]<br/>
+<a href="mathcomp.algebra.vector.html#VectorExports">VectorExports</a> [module, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#d96dd7ee712a1a78a8666924b4b91449">[ vectType _ of _ ] (form_scope)</a> [notation, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#a16e3eb6c69bb7f4c6ce5f182057aba4">[ vectType _ of _ for _ ] (form_scope)</a> [notation, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#493c7f0e218a2835a869c4d3424c245b">'End ( _ ) (type_scope)</a> [notation, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#8af3653d32c72f46b3dfd1a07159007f">'Hom ( _ , _ ) (type_scope)</a> [notation, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#32c3caa911e7c8818d54844f1bbcc375">{ vspace _ } (type_scope)</a> [notation, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorInternalTheory">VectorInternalTheory</a> [module, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorInternalTheory.b2mx">VectorInternalTheory.b2mx</a> [definition, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorInternalTheory.b2mxK">VectorInternalTheory.b2mxK</a> [lemma, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorInternalTheory.f2mx">VectorInternalTheory.f2mx</a> [definition, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorInternalTheory.gen_vs2mx">VectorInternalTheory.gen_vs2mx</a> [lemma, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorInternalTheory.Hom">VectorInternalTheory.Hom</a> [section, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorInternalTheory.Hom.aT">VectorInternalTheory.Hom.aT</a> [variable, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorInternalTheory.Hom.R">VectorInternalTheory.Hom.R</a> [variable, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorInternalTheory.Hom.rT">VectorInternalTheory.Hom.rT</a> [variable, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorInternalTheory.Iso">VectorInternalTheory.Iso</a> [section, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorInternalTheory.Iso.R">VectorInternalTheory.Iso.R</a> [variable, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorInternalTheory.Iso.rT">VectorInternalTheory.Iso.rT</a> [variable, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorInternalTheory.Iso.vT">VectorInternalTheory.Iso.vT</a> [variable, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorInternalTheory.Iso.v2r_bij">VectorInternalTheory.Iso.v2r_bij</a> [variable, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorInternalTheory.mx2vs">VectorInternalTheory.mx2vs</a> [definition, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorInternalTheory.mx2vsK">VectorInternalTheory.mx2vsK</a> [lemma, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorInternalTheory.mx2vs_subproof">VectorInternalTheory.mx2vs_subproof</a> [lemma, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorInternalTheory.r2v">VectorInternalTheory.r2v</a> [definition, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorInternalTheory.r2vK">VectorInternalTheory.r2vK</a> [lemma, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorInternalTheory.r2v_inj">VectorInternalTheory.r2v_inj</a> [lemma, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorInternalTheory.r2v_subproof">VectorInternalTheory.r2v_subproof</a> [lemma, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorInternalTheory.Vspace">VectorInternalTheory.Vspace</a> [section, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorInternalTheory.Vspace.K">VectorInternalTheory.Vspace.K</a> [variable, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorInternalTheory.Vspace.vT">VectorInternalTheory.Vspace.vT</a> [variable, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorInternalTheory.vs2mx">VectorInternalTheory.vs2mx</a> [definition, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorInternalTheory.vs2mxK">VectorInternalTheory.vs2mxK</a> [lemma, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorInternalTheory.v2r">VectorInternalTheory.v2r</a> [definition, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorInternalTheory.v2rK">VectorInternalTheory.v2rK</a> [lemma, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorInternalTheory.v2r_inj">VectorInternalTheory.v2r_inj</a> [lemma, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorInternalTheory.v2r_subproof">VectorInternalTheory.v2r_subproof</a> [lemma, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorTheory">VectorTheory</a> [section, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorTheory.BigCap">VectorTheory.BigCap</a> [section, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorTheory.BigCap.I">VectorTheory.BigCap.I</a> [variable, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorTheory.BigSum">VectorTheory.BigSum</a> [section, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorTheory.BigSumBasis">VectorTheory.BigSumBasis</a> [section, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorTheory.BigSumBasis.I">VectorTheory.BigSumBasis.I</a> [variable, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorTheory.BigSumBasis.P">VectorTheory.BigSumBasis.P</a> [variable, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorTheory.BigSumBasis.Xs">VectorTheory.BigSumBasis.Xs</a> [variable, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorTheory.BigSum.I">VectorTheory.BigSum.I</a> [variable, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorTheory.BinaryDirect">VectorTheory.BinaryDirect</a> [section, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorTheory.free_b2mx">VectorTheory.free_b2mx</a> [variable, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorTheory.K">VectorTheory.K</a> [variable, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorTheory.lin_b2mx">VectorTheory.lin_b2mx</a> [variable, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorTheory.memvK">VectorTheory.memvK</a> [variable, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorTheory.mem_r2v">VectorTheory.mem_r2v</a> [variable, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorTheory.mul_b2mx">VectorTheory.mul_b2mx</a> [variable, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorTheory.NaryDirect">VectorTheory.NaryDirect</a> [section, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorTheory.row_b2mx">VectorTheory.row_b2mx</a> [variable, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorTheory.span_b2mx">VectorTheory.span_b2mx</a> [variable, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorTheory.SumExpr">VectorTheory.SumExpr</a> [section, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorTheory.SumExpr.Binary">VectorTheory.SumExpr.Binary</a> [section, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorTheory.SumExpr.Binary.S1">VectorTheory.SumExpr.Binary.S1</a> [variable, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorTheory.SumExpr.Binary.S2">VectorTheory.SumExpr.Binary.S2</a> [variable, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorTheory.SumExpr.Nary">VectorTheory.SumExpr.Nary</a> [section, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorTheory.SumExpr.Nary.I">VectorTheory.SumExpr.Nary.I</a> [variable, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorTheory.SumExpr.Nary.P">VectorTheory.SumExpr.Nary.P</a> [variable, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorTheory.SumExpr.Nary.r">VectorTheory.SumExpr.Nary.r</a> [variable, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorTheory.SumExpr.Nary.S_">VectorTheory.SumExpr.Nary.S_</a> [variable, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorTheory.vs2mxD">VectorTheory.vs2mxD</a> [variable, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorTheory.vs2mxF">VectorTheory.vs2mxF</a> [variable, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorTheory.vs2mxI">VectorTheory.vs2mxI</a> [variable, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorTheory.vs2mxP">VectorTheory.vs2mxP</a> [variable, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorTheory.vs2mx_sum">VectorTheory.vs2mx_sum</a> [variable, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorTheory.vs2mx0">VectorTheory.vs2mx0</a> [variable, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VectorTheory.vT">VectorTheory.vT</a> [variable, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#vector_axiom">vector_axiom</a> [abbreviation, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#vector_subdef:9">vector_subdef:9</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#vector_axiom_def">vector_axiom_def</a> [definition, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.matrix.html#vec_mx_delta">vec_mx_delta</a> [lemma, in <a href="mathcomp.algebra.matrix.html">mathcomp.algebra.matrix</a>]<br/>
+<a href="mathcomp.algebra.matrix.html#vec_mx_eq0">vec_mx_eq0</a> [lemma, in <a href="mathcomp.algebra.matrix.html">mathcomp.algebra.matrix</a>]<br/>
+<a href="mathcomp.algebra.matrix.html#vec_mxK">vec_mxK</a> [lemma, in <a href="mathcomp.algebra.matrix.html">mathcomp.algebra.matrix</a>]<br/>
+<a href="mathcomp.algebra.matrix.html#vec_mx">vec_mx</a> [definition, in <a href="mathcomp.algebra.matrix.html">mathcomp.algebra.matrix</a>]<br/>
+<a href="mathcomp.algebra.matrix.html#vec_mx_key">vec_mx_key</a> [lemma, in <a href="mathcomp.algebra.matrix.html">mathcomp.algebra.matrix</a>]<br/>
+<a href="mathcomp.ssreflect.eqtype.html#vF:111">vF:111</a> [binder, in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.ssreflect.eqtype.html#vF:116">vF:116</a> [binder, in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.algebra.vector.html#vline">vline</a> [definition, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#vlineP">vlineP</a> [lemma, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.ssreflect.ssrAC.html#vmrefl">vmrefl</a> [abbreviation, in <a href="mathcomp.ssreflect.ssrAC.html">mathcomp.ssreflect.ssrAC</a>]<br/>
+<a href="mathcomp.ssreflect.ssreflect.html#vm_compute">vm_compute</a> [projection, in <a href="mathcomp.ssreflect.ssreflect.html">mathcomp.ssreflect.ssreflect</a>]<br/>
+<a href="mathcomp.ssreflect.ssreflect.html#vm_compute_eq">vm_compute_eq</a> [record, in <a href="mathcomp.ssreflect.ssreflect.html">mathcomp.ssreflect.ssreflect</a>]<br/>
+<a href="mathcomp.ssreflect.ssreflect.html#vm_compute">vm_compute</a> [constructor, in <a href="mathcomp.ssreflect.ssreflect.html">mathcomp.ssreflect.ssreflect</a>]<br/>
+<a href="mathcomp.ssreflect.ssreflect.html#vm_compute_eq">vm_compute_eq</a> [inductive, in <a href="mathcomp.ssreflect.ssreflect.html">mathcomp.ssreflect.ssreflect</a>]<br/>
+<a href="mathcomp.ssreflect.fintype.html#void_enumP">void_enumP</a> [lemma, in <a href="mathcomp.ssreflect.fintype.html">mathcomp.ssreflect.fintype</a>]<br/>
+<a href="mathcomp.algebra.vector.html#vpick">vpick</a> [definition, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#vpick0">vpick0</a> [lemma, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.ssreflect.eqtype.html#vrefl">vrefl</a> [lemma, in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.ssreflect.eqtype.html#vrefl_rect">vrefl_rect</a> [definition, in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.algebra.vector.html#vsolve_eqP">vsolve_eqP</a> [lemma, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#vsolve_eq">vsolve_eq</a> [definition, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.qpoly.html#Vspace">Vspace</a> [section, in <a href="mathcomp.algebra.qpoly.html">mathcomp.algebra.qpoly</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VspaceDefs">VspaceDefs</a> [section, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VspaceDefs.K">VspaceDefs.K</a> [variable, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#VspaceDefs.vT">VspaceDefs.vT</a> [variable, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.field.fieldext.html#vspaceOver">vspaceOver</a> [definition, in <a href="mathcomp.field.fieldext.html">mathcomp.field.fieldext</a>]<br/>
+<a href="mathcomp.field.fieldext.html#vspaceOverP">vspaceOverP</a> [lemma, in <a href="mathcomp.field.fieldext.html">mathcomp.field.fieldext</a>]<br/>
+<a href="mathcomp.field.fieldext.html#vspaceOver_refBase">vspaceOver_refBase</a> [lemma, in <a href="mathcomp.field.fieldext.html">mathcomp.field.fieldext</a>]<br/>
+<a href="mathcomp.algebra.vector.html#vspaceP">vspaceP</a> [lemma, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#vspace_modr">vspace_modr</a> [lemma, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#vspace_modl">vspace_modl</a> [lemma, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#vspace_predType">vspace_predType</a> [definition, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.qpoly.html#Vspace.K">Vspace.K</a> [variable, in <a href="mathcomp.algebra.qpoly.html">mathcomp.algebra.qpoly</a>]<br/>
+<a href="mathcomp.algebra.qpoly.html#Vspace.lagrange">Vspace.lagrange</a> [section, in <a href="mathcomp.algebra.qpoly.html">mathcomp.algebra.qpoly</a>]<br/>
+<a href="mathcomp.algebra.qpoly.html#Vspace.lagrange.lagrange_def_sample">Vspace.lagrange.lagrange_def_sample</a> [variable, in <a href="mathcomp.algebra.qpoly.html">mathcomp.algebra.qpoly</a>]<br/>
+<a href="mathcomp.algebra.qpoly.html#Vspace.lagrange.n_gt0">Vspace.lagrange.n_gt0</a> [variable, in <a href="mathcomp.algebra.qpoly.html">mathcomp.algebra.qpoly</a>]<br/>
+<a href="mathcomp.algebra.qpoly.html#Vspace.lagrange.size_lagrange_def">Vspace.lagrange.size_lagrange_def</a> [variable, in <a href="mathcomp.algebra.qpoly.html">mathcomp.algebra.qpoly</a>]<br/>
+<a href="mathcomp.algebra.qpoly.html#Vspace.lagrange.x">Vspace.lagrange.x</a> [variable, in <a href="mathcomp.algebra.qpoly.html">mathcomp.algebra.qpoly</a>]<br/>
+<a href="mathcomp.algebra.qpoly.html#Vspace.lagrange.x_inj">Vspace.lagrange.x_inj</a> [variable, in <a href="mathcomp.algebra.qpoly.html">mathcomp.algebra.qpoly</a>]<br/>
+<a href="mathcomp.algebra.qpoly.html#Vspace.n">Vspace.n</a> [variable, in <a href="mathcomp.algebra.qpoly.html">mathcomp.algebra.qpoly</a>]<br/>
+<a href="mathcomp.algebra.qpoly.html#4414bcf54986c1e9d443b3bb38562f98">'nX^ _</a> [notation, in <a href="mathcomp.algebra.qpoly.html">mathcomp.algebra.qpoly</a>]<br/>
+<a href="mathcomp.field.falgebra.html#vspace1_neq0">vspace1_neq0</a> [lemma, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.algebra.vector.html#vsproj">vsproj</a> [definition, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#vsprojK">vsprojK</a> [lemma, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#vsproj_is_linear">vsproj_is_linear</a> [lemma, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#vsproj_unlockable">vsproj_unlockable</a> [definition, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#vsproj_def">vsproj_def</a> [definition, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#vsproj_key">vsproj_key</a> [lemma, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.matrix.html#vsubmxK">vsubmxK</a> [lemma, in <a href="mathcomp.algebra.matrix.html">mathcomp.algebra.matrix</a>]<br/>
+<a href="mathcomp.algebra.vector.html#vsval">vsval</a> [definition, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#vsvalK">vsvalK</a> [lemma, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.field.fieldext.html#vsval_invf">vsval_invf</a> [lemma, in <a href="mathcomp.field.fieldext.html">mathcomp.field.fieldext</a>]<br/>
+<a href="mathcomp.field.fieldext.html#vsval_multiplicative">vsval_multiplicative</a> [lemma, in <a href="mathcomp.field.fieldext.html">mathcomp.field.fieldext</a>]<br/>
+<a href="mathcomp.algebra.vector.html#vsval_is_linear">vsval_is_linear</a> [lemma, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.field.falgebra.html#vsval_invr">vsval_invr</a> [lemma, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.field.falgebra.html#vsval_unitr">vsval_unitr</a> [lemma, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.algebra.vector.html#vs2mx_sum_expr">vs2mx_sum_expr</a> [definition, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#vs2mx_sum_expr_subproof">vs2mx_sum_expr_subproof</a> [definition, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#vs:213">vs:213</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#Vs:268">Vs:268</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#vs:280">vs:280</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#vs:292">vs:292</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#vs:294">vs:294</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#Vs:339">Vs:339</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#vs:459">vs:459</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#Vs:978">Vs:978</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#Vs:991">Vs:991</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.ssreflect.choice.html#vT:103">vT:103</a> [binder, in <a href="mathcomp.ssreflect.choice.html">mathcomp.ssreflect.choice</a>]<br/>
+<a href="mathcomp.algebra.vector.html#vT:1048">vT:1048</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.ssreflect.eqtype.html#vT:110">vT:110</a> [binder, in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.ssreflect.eqtype.html#vT:115">vT:115</a> [binder, in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.fingroup.presentation.html#vT:16">vT:16</a> [binder, in <a href="mathcomp.fingroup.presentation.html">mathcomp.fingroup.presentation</a>]<br/>
+<a href="mathcomp.algebra.vector.html#vT:18">vT:18</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.fingroup.presentation.html#vT:19">vT:19</a> [binder, in <a href="mathcomp.fingroup.presentation.html">mathcomp.fingroup.presentation</a>]<br/>
+<a href="mathcomp.algebra.vector.html#vT:23">vT:23</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.field.finfield.html#vT:24">vT:24</a> [binder, in <a href="mathcomp.field.finfield.html">mathcomp.field.finfield</a>]<br/>
+<a href="mathcomp.fingroup.presentation.html#vT:39">vT:39</a> [binder, in <a href="mathcomp.fingroup.presentation.html">mathcomp.fingroup.presentation</a>]<br/>
+<a href="mathcomp.algebra.intdiv.html#vT:479">vT:479</a> [binder, in <a href="mathcomp.algebra.intdiv.html">mathcomp.algebra.intdiv</a>]<br/>
+<a href="mathcomp.algebra.vector.html#vT:655">vT:655</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#vT:657">vT:657</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.ssreflect.choice.html#vT:97">vT:97</a> [binder, in <a href="mathcomp.ssreflect.choice.html">mathcomp.ssreflect.choice</a>]<br/>
+<a href="mathcomp.field.fieldext.html#V_F:202">V_F:202</a> [binder, in <a href="mathcomp.field.fieldext.html">mathcomp.field.fieldext</a>]<br/>
+<a href="mathcomp.field.separable.html#v_:222">v_:222</a> [binder, in <a href="mathcomp.field.separable.html">mathcomp.field.separable</a>]<br/>
+<a href="mathcomp.field.separable.html#v_:210">v_:210</a> [binder, in <a href="mathcomp.field.separable.html">mathcomp.field.separable</a>]<br/>
+<a href="mathcomp.algebra.mxpoly.html#V_:818">V_:818</a> [binder, in <a href="mathcomp.algebra.mxpoly.html">mathcomp.algebra.mxpoly</a>]<br/>
+<a href="mathcomp.algebra.mxpoly.html#V_:792">V_:792</a> [binder, in <a href="mathcomp.algebra.mxpoly.html">mathcomp.algebra.mxpoly</a>]<br/>
+<a href="mathcomp.algebra.mxalgebra.html#V_:1925">V_:1925</a> [binder, in <a href="mathcomp.algebra.mxalgebra.html">mathcomp.algebra.mxalgebra</a>]<br/>
+<a href="mathcomp.algebra.mxalgebra.html#V_:1919">V_:1919</a> [binder, in <a href="mathcomp.algebra.mxalgebra.html">mathcomp.algebra.mxalgebra</a>]<br/>
+<a href="mathcomp.algebra.mxalgebra.html#V_:1519">V_:1519</a> [binder, in <a href="mathcomp.algebra.mxalgebra.html">mathcomp.algebra.mxalgebra</a>]<br/>
+<a href="mathcomp.algebra.mxalgebra.html#V':1504">V':1504</a> [binder, in <a href="mathcomp.algebra.mxalgebra.html">mathcomp.algebra.mxalgebra</a>]<br/>
+<a href="mathcomp.fingroup.presentation.html#v':84">v':84</a> [binder, in <a href="mathcomp.fingroup.presentation.html">mathcomp.fingroup.presentation</a>]<br/>
+<a href="mathcomp.field.finfield.html#v0:134">v0:134</a> [binder, in <a href="mathcomp.field.finfield.html">mathcomp.field.finfield</a>]<br/>
+<a href="mathcomp.field.finfield.html#v0:135">v0:135</a> [binder, in <a href="mathcomp.field.finfield.html">mathcomp.field.finfield</a>]<br/>
+<a href="mathcomp.field.fieldext.html#V0:279">V0:279</a> [binder, in <a href="mathcomp.field.fieldext.html">mathcomp.field.fieldext</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V1:1090">V1:1090</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V1:1121">V1:1121</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V1:1129">V1:1129</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.algebra.vector.html#v1:193">v1:193</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.fingroup.presentation.html#v1:20">v1:20</a> [binder, in <a href="mathcomp.fingroup.presentation.html">mathcomp.fingroup.presentation</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V1:243">V1:243</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V1:307">V1:307</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#v1:423">v1:423</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.field.galois.html#V1:47">V1:47</a> [binder, in <a href="mathcomp.field.galois.html">mathcomp.field.galois</a>]<br/>
+<a href="mathcomp.field.galois.html#V1:52">V1:52</a> [binder, in <a href="mathcomp.field.galois.html">mathcomp.field.galois</a>]<br/>
+<a href="mathcomp.field.falgebra.html#V1:71">V1:71</a> [binder, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.field.falgebra.html#V1:77">V1:77</a> [binder, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V1:960">V1:960</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#v2r:4">v2r:4</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#v2r:5">v2r:5</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.field.finfield.html#v2r:68">v2r:68</a> [binder, in <a href="mathcomp.field.finfield.html">mathcomp.field.finfield</a>]<br/>
+<a href="mathcomp.field.finfield.html#v2r:69">v2r:69</a> [binder, in <a href="mathcomp.field.finfield.html">mathcomp.field.finfield</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V2:1091">V2:1091</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V2:1122">V2:1122</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V2:1130">V2:1130</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.algebra.vector.html#v2:194">v2:194</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.fingroup.presentation.html#v2:21">v2:21</a> [binder, in <a href="mathcomp.fingroup.presentation.html">mathcomp.fingroup.presentation</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V2:244">V2:244</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V2:308">V2:308</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#v2:424">v2:424</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.field.galois.html#V2:48">V2:48</a> [binder, in <a href="mathcomp.field.galois.html">mathcomp.field.galois</a>]<br/>
+<a href="mathcomp.field.galois.html#V2:53">V2:53</a> [binder, in <a href="mathcomp.field.galois.html">mathcomp.field.galois</a>]<br/>
+<a href="mathcomp.field.falgebra.html#V2:72">V2:72</a> [binder, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.field.falgebra.html#V2:78">V2:78</a> [binder, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:1">V:1</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:10">V:10</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.field.galois.html#V:100">V:100</a> [binder, in <a href="mathcomp.field.galois.html">mathcomp.field.galois</a>]<br/>
+<a href="mathcomp.field.fieldext.html#v:101">v:101</a> [binder, in <a href="mathcomp.field.fieldext.html">mathcomp.field.fieldext</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:101">V:101</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.vector.html#v:1011">v:1011</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:1012">V:1012</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:1021">V:1021</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.field.fieldext.html#v:103">v:103</a> [binder, in <a href="mathcomp.field.fieldext.html">mathcomp.field.fieldext</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:103">V:103</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.field.falgebra.html#V:103">V:103</a> [binder, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:1034">V:1034</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.field.fieldext.html#v:104">v:104</a> [binder, in <a href="mathcomp.field.fieldext.html">mathcomp.field.fieldext</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:1040">V:1040</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:1045">V:1045</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:1053">V:1053</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:1064">V:1064</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.field.galois.html#V:107">V:107</a> [binder, in <a href="mathcomp.field.galois.html">mathcomp.field.galois</a>]<br/>
+<a href="mathcomp.solvable.center.html#v:107">v:107</a> [binder, in <a href="mathcomp.solvable.center.html">mathcomp.solvable.center</a>]<br/>
+<a href="mathcomp.field.falgebra.html#V:107">V:107</a> [binder, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:1070">V:1070</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:1072">V:1072</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#v:1075">v:1075</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:1076">V:1076</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#v:1077">v:1077</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:1080">V:1080</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:1082">V:1082</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:1085">V:1085</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:1085">V:1085</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.matrix.html#v:1088">v:1088</a> [binder, in <a href="mathcomp.algebra.matrix.html">mathcomp.algebra.matrix</a>]<br/>
+<a href="mathcomp.solvable.center.html#v:109">v:109</a> [binder, in <a href="mathcomp.solvable.center.html">mathcomp.solvable.center</a>]<br/>
+<a href="mathcomp.field.falgebra.html#v:109">v:109</a> [binder, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:1090">V:1090</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:1092">V:1092</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:1094">V:1094</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:1096">V:1096</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:1098">V:1098</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.field.separable.html#v:11">v:11</a> [binder, in <a href="mathcomp.field.separable.html">mathcomp.field.separable</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:1101">V:1101</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:1101">V:1101</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:1104">V:1104</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:1105">V:1105</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:1106">V:1106</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:1110">V:1110</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:1112">V:1112</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:1114">V:1114</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:112">V:112</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:1138">V:1138</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:1145">V:1145</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:1149">V:1149</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.field.falgebra.html#v:115">v:115</a> [binder, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:1156">V:1156</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#v:1158">v:1158</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#v:1160">v:1160</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:1161">V:1161</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.algebra.matrix.html#v:1163">v:1163</a> [binder, in <a href="mathcomp.algebra.matrix.html">mathcomp.algebra.matrix</a>]<br/>
+<a href="mathcomp.algebra.matrix.html#v:1166">v:1166</a> [binder, in <a href="mathcomp.algebra.matrix.html">mathcomp.algebra.matrix</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:1169">V:1169</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.field.fieldext.html#v:117">v:117</a> [binder, in <a href="mathcomp.field.fieldext.html">mathcomp.field.fieldext</a>]<br/>
+<a href="mathcomp.character.character.html#V:117">V:117</a> [binder, in <a href="mathcomp.character.character.html">mathcomp.character.character</a>]<br/>
+<a href="mathcomp.field.falgebra.html#V:117">V:117</a> [binder, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.field.falgebra.html#v:118">v:118</a> [binder, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#v:1184">v:1184</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.mxalgebra.html#V:1189">V:1189</a> [binder, in <a href="mathcomp.algebra.mxalgebra.html">mathcomp.algebra.mxalgebra</a>]<br/>
+<a href="mathcomp.field.fieldext.html#v:119">v:119</a> [binder, in <a href="mathcomp.field.fieldext.html">mathcomp.field.fieldext</a>]<br/>
+<a href="mathcomp.algebra.mxalgebra.html#V:1194">V:1194</a> [binder, in <a href="mathcomp.algebra.mxalgebra.html">mathcomp.algebra.mxalgebra</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#v:1195">v:1195</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#v:1198">v:1198</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.mxalgebra.html#V:1199">V:1199</a> [binder, in <a href="mathcomp.algebra.mxalgebra.html">mathcomp.algebra.mxalgebra</a>]<br/>
+<a href="mathcomp.solvable.gseries.html#V:12">V:12</a> [binder, in <a href="mathcomp.solvable.gseries.html">mathcomp.solvable.gseries</a>]<br/>
+<a href="mathcomp.algebra.mxalgebra.html#v:12">v:12</a> [binder, in <a href="mathcomp.algebra.mxalgebra.html">mathcomp.algebra.mxalgebra</a>]<br/>
+<a href="mathcomp.field.falgebra.html#V:120">V:120</a> [binder, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#v:1200">v:1200</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#v:1202">v:1202</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#v:1204">v:1204</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.mxalgebra.html#V:1204">V:1204</a> [binder, in <a href="mathcomp.algebra.mxalgebra.html">mathcomp.algebra.mxalgebra</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#v:1206">v:1206</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#v:1208">v:1208</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.mxalgebra.html#V:1209">V:1209</a> [binder, in <a href="mathcomp.algebra.mxalgebra.html">mathcomp.algebra.mxalgebra</a>]<br/>
+<a href="mathcomp.algebra.interval.html#v:121">v:121</a> [binder, in <a href="mathcomp.algebra.interval.html">mathcomp.algebra.interval</a>]<br/>
+<a href="mathcomp.field.algnum.html#V:121">V:121</a> [binder, in <a href="mathcomp.field.algnum.html">mathcomp.field.algnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#v:1210">v:1210</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.mxalgebra.html#V:1213">V:1213</a> [binder, in <a href="mathcomp.algebra.mxalgebra.html">mathcomp.algebra.mxalgebra</a>]<br/>
+<a href="mathcomp.character.classfun.html#v:122">v:122</a> [binder, in <a href="mathcomp.character.classfun.html">mathcomp.character.classfun</a>]<br/>
+<a href="mathcomp.field.falgebra.html#v:122">v:122</a> [binder, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.algebra.mxalgebra.html#V:1225">V:1225</a> [binder, in <a href="mathcomp.algebra.mxalgebra.html">mathcomp.algebra.mxalgebra</a>]<br/>
+<a href="mathcomp.field.fieldext.html#v:123">v:123</a> [binder, in <a href="mathcomp.field.fieldext.html">mathcomp.field.fieldext</a>]<br/>
+<a href="mathcomp.character.classfun.html#v:123">v:123</a> [binder, in <a href="mathcomp.character.classfun.html">mathcomp.character.classfun</a>]<br/>
+<a href="mathcomp.field.falgebra.html#V:123">V:123</a> [binder, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.algebra.mxalgebra.html#V:123">V:123</a> [binder, in <a href="mathcomp.algebra.mxalgebra.html">mathcomp.algebra.mxalgebra</a>]<br/>
+<a href="mathcomp.algebra.mxalgebra.html#V:1235">V:1235</a> [binder, in <a href="mathcomp.algebra.mxalgebra.html">mathcomp.algebra.mxalgebra</a>]<br/>
+<a href="mathcomp.field.algnum.html#v:124">v:124</a> [binder, in <a href="mathcomp.field.algnum.html">mathcomp.field.algnum</a>]<br/>
+<a href="mathcomp.field.falgebra.html#V:124">V:124</a> [binder, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.field.fieldext.html#v:126">v:126</a> [binder, in <a href="mathcomp.field.fieldext.html">mathcomp.field.fieldext</a>]<br/>
+<a href="mathcomp.algebra.matrix.html#v:127">v:127</a> [binder, in <a href="mathcomp.algebra.matrix.html">mathcomp.algebra.matrix</a>]<br/>
+<a href="mathcomp.field.falgebra.html#V:128">V:128</a> [binder, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.field.falgebra.html#V:129">V:129</a> [binder, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.algebra.poly.html#v:1295">v:1295</a> [binder, in <a href="mathcomp.algebra.poly.html">mathcomp.algebra.poly</a>]<br/>
+<a href="mathcomp.ssreflect.fingraph.html#v:13">v:13</a> [binder, in <a href="mathcomp.ssreflect.fingraph.html">mathcomp.ssreflect.fingraph</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:13">V:13</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.field.falgebra.html#V:130">V:130</a> [binder, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:1315">V:1315</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.field.finfield.html#v:132">v:132</a> [binder, in <a href="mathcomp.field.finfield.html">mathcomp.field.finfield</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:1326">V:1326</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:1330">V:1330</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:1337">V:1337</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.field.fieldext.html#v:135">v:135</a> [binder, in <a href="mathcomp.field.fieldext.html">mathcomp.field.fieldext</a>]<br/>
+<a href="mathcomp.algebra.matrix.html#v:135">v:135</a> [binder, in <a href="mathcomp.algebra.matrix.html">mathcomp.algebra.matrix</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:1359">V:1359</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:1369">V:1369</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#V:137">V:137</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:1372">V:1372</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:1373">V:1373</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.algebra.mxalgebra.html#v:1398">v:1398</a> [binder, in <a href="mathcomp.algebra.mxalgebra.html">mathcomp.algebra.mxalgebra</a>]<br/>
+<a href="mathcomp.algebra.mxalgebra.html#v:1399">v:1399</a> [binder, in <a href="mathcomp.algebra.mxalgebra.html">mathcomp.algebra.mxalgebra</a>]<br/>
+<a href="mathcomp.algebra.ring_quotient.html#v:140">v:140</a> [binder, in <a href="mathcomp.algebra.ring_quotient.html">mathcomp.algebra.ring_quotient</a>]<br/>
+<a href="mathcomp.algebra.mxalgebra.html#v:1400">v:1400</a> [binder, in <a href="mathcomp.algebra.mxalgebra.html">mathcomp.algebra.mxalgebra</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#V:142">V:142</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:1425">V:1425</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.algebra.ring_quotient.html#v:145">v:145</a> [binder, in <a href="mathcomp.algebra.ring_quotient.html">mathcomp.algebra.ring_quotient</a>]<br/>
+<a href="mathcomp.field.separable.html#v:15">v:15</a> [binder, in <a href="mathcomp.field.separable.html">mathcomp.field.separable</a>]<br/>
+<a href="mathcomp.solvable.gseries.html#V:15">V:15</a> [binder, in <a href="mathcomp.solvable.gseries.html">mathcomp.solvable.gseries</a>]<br/>
+<a href="mathcomp.ssreflect.fingraph.html#v:15">v:15</a> [binder, in <a href="mathcomp.ssreflect.fingraph.html">mathcomp.ssreflect.fingraph</a>]<br/>
+<a href="mathcomp.character.mxabelem.html#v:150">v:150</a> [binder, in <a href="mathcomp.character.mxabelem.html">mathcomp.character.mxabelem</a>]<br/>
+<a href="mathcomp.algebra.mxalgebra.html#V:1503">V:1503</a> [binder, in <a href="mathcomp.algebra.mxalgebra.html">mathcomp.algebra.mxalgebra</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:1504">V:1504</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:1507">V:1507</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:1518">V:1518</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxabelem.html#v:152">v:152</a> [binder, in <a href="mathcomp.character.mxabelem.html">mathcomp.character.mxabelem</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#V:152">V:152</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:1520">V:1520</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:1522">V:1522</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:1524">V:1524</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.algebra.mxalgebra.html#V:1529">V:1529</a> [binder, in <a href="mathcomp.algebra.mxalgebra.html">mathcomp.algebra.mxalgebra</a>]<br/>
+<a href="mathcomp.solvable.sylow.html#V:154">V:154</a> [binder, in <a href="mathcomp.solvable.sylow.html">mathcomp.solvable.sylow</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:1549">V:1549</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.solvable.sylow.html#V:155">V:155</a> [binder, in <a href="mathcomp.solvable.sylow.html">mathcomp.solvable.sylow</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#V:155">V:155</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:1553">V:1553</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.algebra.mxalgebra.html#v:1557">v:1557</a> [binder, in <a href="mathcomp.algebra.mxalgebra.html">mathcomp.algebra.mxalgebra</a>]<br/>
+<a href="mathcomp.algebra.mxalgebra.html#v:1558">v:1558</a> [binder, in <a href="mathcomp.algebra.mxalgebra.html">mathcomp.algebra.mxalgebra</a>]<br/>
+<a href="mathcomp.solvable.sylow.html#V:156">V:156</a> [binder, in <a href="mathcomp.solvable.sylow.html">mathcomp.solvable.sylow</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#v:1566">v:1566</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#v:1567">v:1567</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#v:1576">v:1576</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:1577">V:1577</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.field.fieldext.html#v:159">v:159</a> [binder, in <a href="mathcomp.field.fieldext.html">mathcomp.field.fieldext</a>]<br/>
+<a href="mathcomp.solvable.gseries.html#V:159">V:159</a> [binder, in <a href="mathcomp.solvable.gseries.html">mathcomp.solvable.gseries</a>]<br/>
+<a href="mathcomp.field.finfield.html#V:16">V:16</a> [binder, in <a href="mathcomp.field.finfield.html">mathcomp.field.finfield</a>]<br/>
+<a href="mathcomp.field.falgebra.html#v:16">v:16</a> [binder, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.field.fieldext.html#v:160">v:160</a> [binder, in <a href="mathcomp.field.fieldext.html">mathcomp.field.fieldext</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#v:1602">v:1602</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#v:1605">v:1605</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#v:1616">v:1616</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:162">V:162</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.solvable.gseries.html#V:163">V:163</a> [binder, in <a href="mathcomp.solvable.gseries.html">mathcomp.solvable.gseries</a>]<br/>
+<a href="mathcomp.algebra.vector.html#v:163">v:163</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.field.fieldext.html#v:167">v:167</a> [binder, in <a href="mathcomp.field.fieldext.html">mathcomp.field.fieldext</a>]<br/>
+<a href="mathcomp.solvable.gseries.html#V:168">V:168</a> [binder, in <a href="mathcomp.solvable.gseries.html">mathcomp.solvable.gseries</a>]<br/>
+<a href="mathcomp.solvable.cyclic.html#v:168">v:168</a> [binder, in <a href="mathcomp.solvable.cyclic.html">mathcomp.solvable.cyclic</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:168">V:168</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.field.finfield.html#v:17">v:17</a> [binder, in <a href="mathcomp.field.finfield.html">mathcomp.field.finfield</a>]<br/>
+<a href="mathcomp.field.fieldext.html#v:170">v:170</a> [binder, in <a href="mathcomp.field.fieldext.html">mathcomp.field.fieldext</a>]<br/>
+<a href="mathcomp.solvable.cyclic.html#v:170">v:170</a> [binder, in <a href="mathcomp.solvable.cyclic.html">mathcomp.solvable.cyclic</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:170">V:170</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.character.mxabelem.html#v:173">v:173</a> [binder, in <a href="mathcomp.character.mxabelem.html">mathcomp.character.mxabelem</a>]<br/>
+<a href="mathcomp.algebra.qpoly.html#v:173">v:173</a> [binder, in <a href="mathcomp.algebra.qpoly.html">mathcomp.algebra.qpoly</a>]<br/>
+<a href="mathcomp.field.falgebra.html#v:174">v:174</a> [binder, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.field.falgebra.html#V:177">V:177</a> [binder, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.character.mxabelem.html#v:178">v:178</a> [binder, in <a href="mathcomp.character.mxabelem.html">mathcomp.character.mxabelem</a>]<br/>
+<a href="mathcomp.field.algebraics_fundamentals.html#v:179">v:179</a> [binder, in <a href="mathcomp.field.algebraics_fundamentals.html">mathcomp.field.algebraics_fundamentals</a>]<br/>
+<a href="mathcomp.field.algC.html#v:18">v:18</a> [binder, in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.character.mxabelem.html#v:180">v:180</a> [binder, in <a href="mathcomp.character.mxabelem.html">mathcomp.character.mxabelem</a>]<br/>
+<a href="mathcomp.field.falgebra.html#v:182">v:182</a> [binder, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.field.fieldext.html#v:183">v:183</a> [binder, in <a href="mathcomp.field.fieldext.html">mathcomp.field.fieldext</a>]<br/>
+<a href="mathcomp.solvable.burnside_app.html#v:183">v:183</a> [binder, in <a href="mathcomp.solvable.burnside_app.html">mathcomp.solvable.burnside_app</a>]<br/>
+<a href="mathcomp.field.fieldext.html#v:184">v:184</a> [binder, in <a href="mathcomp.field.fieldext.html">mathcomp.field.fieldext</a>]<br/>
+<a href="mathcomp.field.falgebra.html#v:184">v:184</a> [binder, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.field.separable.html#v:185">v:185</a> [binder, in <a href="mathcomp.field.separable.html">mathcomp.field.separable</a>]<br/>
+<a href="mathcomp.algebra.ring_quotient.html#v:185">v:185</a> [binder, in <a href="mathcomp.algebra.ring_quotient.html">mathcomp.algebra.ring_quotient</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:185">V:185</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.field.separable.html#v:187">v:187</a> [binder, in <a href="mathcomp.field.separable.html">mathcomp.field.separable</a>]<br/>
+<a href="mathcomp.field.falgebra.html#V:188">V:188</a> [binder, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:189">V:189</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.field.galois.html#V:19">V:19</a> [binder, in <a href="mathcomp.field.galois.html">mathcomp.field.galois</a>]<br/>
+<a href="mathcomp.field.algC.html#v:19">v:19</a> [binder, in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.algebra.vector.html#v:191">v:191</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#v:1923">v:1923</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:193">V:193</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.field.fieldext.html#V:195">V:195</a> [binder, in <a href="mathcomp.field.fieldext.html">mathcomp.field.fieldext</a>]<br/>
+<a href="mathcomp.field.fieldext.html#V:196">V:196</a> [binder, in <a href="mathcomp.field.fieldext.html">mathcomp.field.fieldext</a>]<br/>
+<a href="mathcomp.solvable.cyclic.html#v:196">v:196</a> [binder, in <a href="mathcomp.solvable.cyclic.html">mathcomp.solvable.cyclic</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:197">V:197</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.solvable.cyclic.html#v:198">v:198</a> [binder, in <a href="mathcomp.solvable.cyclic.html">mathcomp.solvable.cyclic</a>]<br/>
+<a href="mathcomp.field.falgebra.html#V:199">V:199</a> [binder, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.algebra.vector.html#v:200">v:200</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.field.falgebra.html#V:200">V:200</a> [binder, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#v:2023">v:2023</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.field.fieldext.html#V:203">V:203</a> [binder, in <a href="mathcomp.field.fieldext.html">mathcomp.field.fieldext</a>]<br/>
+<a href="mathcomp.algebra.vector.html#v:203">v:203</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:2042">V:2042</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:2047">V:2047</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.vector.html#v:206">v:206</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:2068">V:2068</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:2074">V:2074</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:2077">V:2077</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.solvable.cyclic.html#v:208">v:208</a> [binder, in <a href="mathcomp.solvable.cyclic.html">mathcomp.solvable.cyclic</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:2080">V:2080</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.solvable.burnside_app.html#v:209">v:209</a> [binder, in <a href="mathcomp.solvable.burnside_app.html">mathcomp.solvable.burnside_app</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#v:209">v:209</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.vector.html#v:209">v:209</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.solvable.cyclic.html#v:210">v:210</a> [binder, in <a href="mathcomp.solvable.cyclic.html">mathcomp.solvable.cyclic</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:2108">V:2108</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:2122">V:2122</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:2127">V:2127</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:214">V:214</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.field.algebraics_fundamentals.html#v:216">v:216</a> [binder, in <a href="mathcomp.field.algebraics_fundamentals.html">mathcomp.field.algebraics_fundamentals</a>]<br/>
+<a href="mathcomp.field.fieldext.html#v:217">v:217</a> [binder, in <a href="mathcomp.field.fieldext.html">mathcomp.field.fieldext</a>]<br/>
+<a href="mathcomp.field.algebraics_fundamentals.html#v:218">v:218</a> [binder, in <a href="mathcomp.field.algebraics_fundamentals.html">mathcomp.field.algebraics_fundamentals</a>]<br/>
+<a href="mathcomp.field.fieldext.html#v:218">v:218</a> [binder, in <a href="mathcomp.field.fieldext.html">mathcomp.field.fieldext</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:2186">V:2186</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:2193">V:2193</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.solvable.finmodule.html#v:22">v:22</a> [binder, in <a href="mathcomp.solvable.finmodule.html">mathcomp.solvable.finmodule</a>]<br/>
+<a href="mathcomp.field.galois.html#V:22">V:22</a> [binder, in <a href="mathcomp.field.galois.html">mathcomp.field.galois</a>]<br/>
+<a href="mathcomp.solvable.burnside_app.html#v:220">v:220</a> [binder, in <a href="mathcomp.solvable.burnside_app.html">mathcomp.solvable.burnside_app</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:221">V:221</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#v:223">v:223</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#v:2236">v:2236</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.field.algebraics_fundamentals.html#v:224">v:224</a> [binder, in <a href="mathcomp.field.algebraics_fundamentals.html">mathcomp.field.algebraics_fundamentals</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#v:224">v:224</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:224">V:224</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.field.fieldext.html#v:225">v:225</a> [binder, in <a href="mathcomp.field.fieldext.html">mathcomp.field.fieldext</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#v:225">v:225</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.field.falgebra.html#V:225">V:225</a> [binder, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#v:2253">v:2253</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#v:2255">v:2255</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:226">V:226</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:226">V:226</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#v:227">v:227</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.matrix.html#v:2276">v:2276</a> [binder, in <a href="mathcomp.algebra.matrix.html">mathcomp.algebra.matrix</a>]<br/>
+<a href="mathcomp.field.fieldext.html#v:228">v:228</a> [binder, in <a href="mathcomp.field.fieldext.html">mathcomp.field.fieldext</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#v:228">v:228</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:228">V:228</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#v:229">v:229</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#v:230">v:230</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.algebra.ssrnum.html#v:231">v:231</a> [binder, in <a href="mathcomp.algebra.ssrnum.html">mathcomp.algebra.ssrnum</a>]<br/>
+<a href="mathcomp.field.falgebra.html#V:231">V:231</a> [binder, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.algebra.matrix.html#v:2311">v:2311</a> [binder, in <a href="mathcomp.algebra.matrix.html">mathcomp.algebra.matrix</a>]<br/>
+<a href="mathcomp.algebra.vector.html#v:233">v:233</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.field.falgebra.html#V:233">V:233</a> [binder, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#v:2333">v:2333</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:2343">V:2343</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.field.algebraics_fundamentals.html#v:235">v:235</a> [binder, in <a href="mathcomp.field.algebraics_fundamentals.html">mathcomp.field.algebraics_fundamentals</a>]<br/>
+<a href="mathcomp.algebra.vector.html#v:235">v:235</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:2350">V:2350</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:2354">V:2354</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:2361">V:2361</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:2368">V:2368</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#v:2374">v:2374</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:2378">V:2378</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:2385">V:2385</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:2389">V:2389</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:239">V:239</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:2398">V:2398</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.character.mxabelem.html#v:24">v:24</a> [binder, in <a href="mathcomp.character.mxabelem.html">mathcomp.character.mxabelem</a>]<br/>
+<a href="mathcomp.ssreflect.fingraph.html#v:24">v:24</a> [binder, in <a href="mathcomp.ssreflect.fingraph.html">mathcomp.ssreflect.fingraph</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:2405">V:2405</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#v:2411">v:2411</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.field.algebraics_fundamentals.html#v:243">v:243</a> [binder, in <a href="mathcomp.field.algebraics_fundamentals.html">mathcomp.field.algebraics_fundamentals</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#v:2447">v:2447</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:246">V:246</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.field.falgebra.html#V:246">V:246</a> [binder, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.field.fieldext.html#v:248">v:248</a> [binder, in <a href="mathcomp.field.fieldext.html">mathcomp.field.fieldext</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:248">V:248</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#v:2484">v:2484</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.field.fieldext.html#V:249">V:249</a> [binder, in <a href="mathcomp.field.fieldext.html">mathcomp.field.fieldext</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#v:249">v:249</a> [binder, in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.field.falgebra.html#V:249">V:249</a> [binder, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.solvable.finmodule.html#v:25">v:25</a> [binder, in <a href="mathcomp.solvable.finmodule.html">mathcomp.solvable.finmodule</a>]<br/>
+<a href="mathcomp.algebra.ssrint.html#v:250">v:250</a> [binder, in <a href="mathcomp.algebra.ssrint.html">mathcomp.algebra.ssrint</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:250">V:250</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:250">V:250</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:2505">V:2505</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:2514">V:2514</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:2519">V:2519</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssrint.html#v:252">v:252</a> [binder, in <a href="mathcomp.algebra.ssrint.html">mathcomp.algebra.ssrint</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#v:252">v:252</a> [binder, in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:252">V:252</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:2523">V:2523</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#v:253">v:253</a> [binder, in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.field.falgebra.html#V:253">V:253</a> [binder, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:2532">V:2532</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#v:2539">v:2539</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.field.fieldext.html#V:254">V:254</a> [binder, in <a href="mathcomp.field.fieldext.html">mathcomp.field.fieldext</a>]<br/>
+<a href="mathcomp.algebra.vector.html#v:254">v:254</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.matrix.html#v:2542">v:2542</a> [binder, in <a href="mathcomp.algebra.matrix.html">mathcomp.algebra.matrix</a>]<br/>
+<a href="mathcomp.algebra.matrix.html#v:2544">v:2544</a> [binder, in <a href="mathcomp.algebra.matrix.html">mathcomp.algebra.matrix</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#v:2545">v:2545</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#v:2546">v:2546</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.field.algebraics_fundamentals.html#v:255">v:255</a> [binder, in <a href="mathcomp.field.algebraics_fundamentals.html">mathcomp.field.algebraics_fundamentals</a>]<br/>
+<a href="mathcomp.field.fieldext.html#V:255">V:255</a> [binder, in <a href="mathcomp.field.fieldext.html">mathcomp.field.fieldext</a>]<br/>
+<a href="mathcomp.algebra.ssrint.html#v:255">v:255</a> [binder, in <a href="mathcomp.algebra.ssrint.html">mathcomp.algebra.ssrint</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:2552">V:2552</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:2557">V:2557</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.matrix.html#v:2558">v:2558</a> [binder, in <a href="mathcomp.algebra.matrix.html">mathcomp.algebra.matrix</a>]<br/>
+<a href="mathcomp.algebra.matrix.html#v:2559">v:2559</a> [binder, in <a href="mathcomp.algebra.matrix.html">mathcomp.algebra.matrix</a>]<br/>
+<a href="mathcomp.field.fieldext.html#V:256">V:256</a> [binder, in <a href="mathcomp.field.fieldext.html">mathcomp.field.fieldext</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#v:256">v:256</a> [binder, in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:256">V:256</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.field.falgebra.html#V:256">V:256</a> [binder, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:2565">V:2565</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.field.algebraics_fundamentals.html#v:257">v:257</a> [binder, in <a href="mathcomp.field.algebraics_fundamentals.html">mathcomp.field.algebraics_fundamentals</a>]<br/>
+<a href="mathcomp.solvable.extremal.html#v:257">v:257</a> [binder, in <a href="mathcomp.solvable.extremal.html">mathcomp.solvable.extremal</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#v:2574">v:2574</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:2576">V:2576</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:2581">V:2581</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:2589">V:2589</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:259">V:259</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#v:2616">v:2616</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.rat.html#V:262">V:262</a> [binder, in <a href="mathcomp.algebra.rat.html">mathcomp.algebra.rat</a>]<br/>
+<a href="mathcomp.algebra.vector.html#v:262">v:262</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#v:263">v:263</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.solvable.maximal.html#v:264">v:264</a> [binder, in <a href="mathcomp.solvable.maximal.html">mathcomp.solvable.maximal</a>]<br/>
+<a href="mathcomp.algebra.matrix.html#v:2658">v:2658</a> [binder, in <a href="mathcomp.algebra.matrix.html">mathcomp.algebra.matrix</a>]<br/>
+<a href="mathcomp.solvable.maximal.html#v:266">v:266</a> [binder, in <a href="mathcomp.solvable.maximal.html">mathcomp.solvable.maximal</a>]<br/>
+<a href="mathcomp.algebra.matrix.html#v:2670">v:2670</a> [binder, in <a href="mathcomp.algebra.matrix.html">mathcomp.algebra.matrix</a>]<br/>
+<a href="mathcomp.field.falgebra.html#V:269">V:269</a> [binder, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.field.galois.html#V:270">V:270</a> [binder, in <a href="mathcomp.field.galois.html">mathcomp.field.galois</a>]<br/>
+<a href="mathcomp.field.falgebra.html#V:270">V:270</a> [binder, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.character.mxabelem.html#V:271">V:271</a> [binder, in <a href="mathcomp.character.mxabelem.html">mathcomp.character.mxabelem</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:2716">V:2716</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:2725">V:2725</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.field.falgebra.html#V:273">V:273</a> [binder, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:274">V:274</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:274">V:274</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.ssreflect.seq.html#v:2753">v:2753</a> [binder, in <a href="mathcomp.ssreflect.seq.html">mathcomp.ssreflect.seq</a>]<br/>
+<a href="mathcomp.field.falgebra.html#V:276">V:276</a> [binder, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.field.fieldext.html#V:278">V:278</a> [binder, in <a href="mathcomp.field.fieldext.html">mathcomp.field.fieldext</a>]<br/>
+<a href="mathcomp.field.falgebra.html#V:278">V:278</a> [binder, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.field.galois.html#V:28">V:28</a> [binder, in <a href="mathcomp.field.galois.html">mathcomp.field.galois</a>]<br/>
+<a href="mathcomp.field.fieldext.html#V:281">V:281</a> [binder, in <a href="mathcomp.field.fieldext.html">mathcomp.field.fieldext</a>]<br/>
+<a href="mathcomp.field.falgebra.html#V:282">V:282</a> [binder, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.field.fieldext.html#V:283">V:283</a> [binder, in <a href="mathcomp.field.fieldext.html">mathcomp.field.fieldext</a>]<br/>
+<a href="mathcomp.field.fieldext.html#V:284">V:284</a> [binder, in <a href="mathcomp.field.fieldext.html">mathcomp.field.fieldext</a>]<br/>
+<a href="mathcomp.field.falgebra.html#V:285">V:285</a> [binder, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.field.fieldext.html#V:291">V:291</a> [binder, in <a href="mathcomp.field.fieldext.html">mathcomp.field.fieldext</a>]<br/>
+<a href="mathcomp.algebra.vector.html#v:291">v:291</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.field.fieldext.html#V:292">V:292</a> [binder, in <a href="mathcomp.field.fieldext.html">mathcomp.field.fieldext</a>]<br/>
+<a href="mathcomp.field.falgebra.html#v:294">v:294</a> [binder, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.algebra.matrix.html#V:2987">V:2987</a> [binder, in <a href="mathcomp.algebra.matrix.html">mathcomp.algebra.matrix</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#v:2992">v:2992</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.ssreflect.choice.html#v:3">v:3</a> [binder, in <a href="mathcomp.ssreflect.choice.html">mathcomp.ssreflect.choice</a>]<br/>
+<a href="mathcomp.algebra.mxpoly.html#v:3">v:3</a> [binder, in <a href="mathcomp.algebra.mxpoly.html">mathcomp.algebra.mxpoly</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:3">V:3</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#v:3007">v:3007</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.ssreflect.prime.html#v:301">v:301</a> [binder, in <a href="mathcomp.ssreflect.prime.html">mathcomp.ssreflect.prime</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#v:3013">v:3013</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:303">V:303</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:3033">V:3033</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.field.algebraics_fundamentals.html#v:305">v:305</a> [binder, in <a href="mathcomp.field.algebraics_fundamentals.html">mathcomp.field.algebraics_fundamentals</a>]<br/>
+<a href="mathcomp.algebra.matrix.html#V:306">V:306</a> [binder, in <a href="mathcomp.algebra.matrix.html">mathcomp.algebra.matrix</a>]<br/>
+<a href="mathcomp.field.algebraics_fundamentals.html#v:307">v:307</a> [binder, in <a href="mathcomp.field.algebraics_fundamentals.html">mathcomp.field.algebraics_fundamentals</a>]<br/>
+<a href="mathcomp.algebra.matrix.html#V:3074">V:3074</a> [binder, in <a href="mathcomp.algebra.matrix.html">mathcomp.algebra.matrix</a>]<br/>
+<a href="mathcomp.algebra.intdiv.html#v:309">v:309</a> [binder, in <a href="mathcomp.algebra.intdiv.html">mathcomp.algebra.intdiv</a>]<br/>
+<a href="mathcomp.algebra.matrix.html#V:309">V:309</a> [binder, in <a href="mathcomp.algebra.matrix.html">mathcomp.algebra.matrix</a>]<br/>
+<a href="mathcomp.solvable.gseries.html#V:31">V:31</a> [binder, in <a href="mathcomp.solvable.gseries.html">mathcomp.solvable.gseries</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:310">V:310</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:312">V:312</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#v:313">v:313</a> [binder, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:314">V:314</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.character.vcharacter.html#v:315">v:315</a> [binder, in <a href="mathcomp.character.vcharacter.html">mathcomp.character.vcharacter</a>]<br/>
+<a href="mathcomp.algebra.intdiv.html#v:315">v:315</a> [binder, in <a href="mathcomp.algebra.intdiv.html">mathcomp.algebra.intdiv</a>]<br/>
+<a href="mathcomp.ssreflect.eqtype.html#v:315">v:315</a> [binder, in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:316">V:316</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.matrix.html#V:3161">V:3161</a> [binder, in <a href="mathcomp.algebra.matrix.html">mathcomp.algebra.matrix</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:319">V:319</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.field.galois.html#V:32">V:32</a> [binder, in <a href="mathcomp.field.galois.html">mathcomp.field.galois</a>]<br/>
+<a href="mathcomp.algebra.vector.html#v:32">v:32</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.solvable.extraspecial.html#v:32">v:32</a> [binder, in <a href="mathcomp.solvable.extraspecial.html">mathcomp.solvable.extraspecial</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:322">V:322</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:324">V:324</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.field.galois.html#V:326">V:326</a> [binder, in <a href="mathcomp.field.galois.html">mathcomp.field.galois</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:327">V:327</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#v:3278">v:3278</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#v:3280">v:3280</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.field.falgebra.html#V:329">V:329</a> [binder, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.field.galois.html#V:33">V:33</a> [binder, in <a href="mathcomp.field.galois.html">mathcomp.field.galois</a>]<br/>
+<a href="mathcomp.field.falgebra.html#V:330">V:330</a> [binder, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.field.galois.html#V:331">V:331</a> [binder, in <a href="mathcomp.field.galois.html">mathcomp.field.galois</a>]<br/>
+<a href="mathcomp.algebra.matrix.html#V:3324">V:3324</a> [binder, in <a href="mathcomp.algebra.matrix.html">mathcomp.algebra.matrix</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:333">V:333</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.mxalgebra.html#v:335">v:335</a> [binder, in <a href="mathcomp.algebra.mxalgebra.html">mathcomp.algebra.mxalgebra</a>]<br/>
+<a href="mathcomp.field.falgebra.html#V:337">V:337</a> [binder, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#v:3375">v:3375</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#v:3378">v:3378</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.solvable.extraspecial.html#v:34">v:34</a> [binder, in <a href="mathcomp.solvable.extraspecial.html">mathcomp.solvable.extraspecial</a>]<br/>
+<a href="mathcomp.field.fieldext.html#v:341">v:341</a> [binder, in <a href="mathcomp.field.fieldext.html">mathcomp.field.fieldext</a>]<br/>
+<a href="mathcomp.field.fieldext.html#v:344">v:344</a> [binder, in <a href="mathcomp.field.fieldext.html">mathcomp.field.fieldext</a>]<br/>
+<a href="mathcomp.algebra.matrix.html#V:3451">V:3451</a> [binder, in <a href="mathcomp.algebra.matrix.html">mathcomp.algebra.matrix</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:347">V:347</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:349">V:349</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:351">V:351</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:352">V:352</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.algebra.mxalgebra.html#v:352">v:352</a> [binder, in <a href="mathcomp.algebra.mxalgebra.html">mathcomp.algebra.mxalgebra</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:353">V:353</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#v:355">v:355</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:357">V:357</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.mxpoly.html#v:359">v:359</a> [binder, in <a href="mathcomp.algebra.mxpoly.html">mathcomp.algebra.mxpoly</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:359">V:359</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.field.galois.html#V:36">V:36</a> [binder, in <a href="mathcomp.field.galois.html">mathcomp.field.galois</a>]<br/>
+<a href="mathcomp.algebra.mxpoly.html#v:360">v:360</a> [binder, in <a href="mathcomp.algebra.mxpoly.html">mathcomp.algebra.mxpoly</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:361">V:361</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.mxalgebra.html#v:361">v:361</a> [binder, in <a href="mathcomp.algebra.mxalgebra.html">mathcomp.algebra.mxalgebra</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#v:3616">v:3616</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:363">V:363</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.mxalgebra.html#v:364">v:364</a> [binder, in <a href="mathcomp.algebra.mxalgebra.html">mathcomp.algebra.mxalgebra</a>]<br/>
+<a href="mathcomp.field.galois.html#V:365">V:365</a> [binder, in <a href="mathcomp.field.galois.html">mathcomp.field.galois</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:366">V:366</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:368">V:368</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.mxalgebra.html#v:368">v:368</a> [binder, in <a href="mathcomp.algebra.mxalgebra.html">mathcomp.algebra.mxalgebra</a>]<br/>
+<a href="mathcomp.algebra.mxalgebra.html#v:369">v:369</a> [binder, in <a href="mathcomp.algebra.mxalgebra.html">mathcomp.algebra.mxalgebra</a>]<br/>
+<a href="mathcomp.field.qfpoly.html#v:37">v:37</a> [binder, in <a href="mathcomp.field.qfpoly.html">mathcomp.field.qfpoly</a>]<br/>
+<a href="mathcomp.solvable.extraspecial.html#v:37">v:37</a> [binder, in <a href="mathcomp.solvable.extraspecial.html">mathcomp.solvable.extraspecial</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:370">V:370</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.ssreflect.eqtype.html#v:371">v:371</a> [binder, in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#v:3711">v:3711</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:372">V:372</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.mxalgebra.html#v:373">v:373</a> [binder, in <a href="mathcomp.algebra.mxalgebra.html">mathcomp.algebra.mxalgebra</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:374">V:374</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.ssreflect.eqtype.html#v:378">v:378</a> [binder, in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#v:379">v:379</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.ssreflect.order.html#v:3798">v:3798</a> [binder, in <a href="mathcomp.ssreflect.order.html">mathcomp.ssreflect.order</a>]<br/>
+<a href="mathcomp.ssreflect.eqtype.html#v:386">v:386</a> [binder, in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.solvable.extraspecial.html#v:39">v:39</a> [binder, in <a href="mathcomp.solvable.extraspecial.html">mathcomp.solvable.extraspecial</a>]<br/>
+<a href="mathcomp.ssreflect.eqtype.html#v:392">v:392</a> [binder, in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.ssreflect.eqtype.html#v:394">v:394</a> [binder, in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.field.galois.html#V:397">V:397</a> [binder, in <a href="mathcomp.field.galois.html">mathcomp.field.galois</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#v:398">v:398</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.ssreflect.eqtype.html#v:402">v:402</a> [binder, in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:404">V:404</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.field.galois.html#V:405">V:405</a> [binder, in <a href="mathcomp.field.galois.html">mathcomp.field.galois</a>]<br/>
+<a href="mathcomp.ssreflect.eqtype.html#v:408">v:408</a> [binder, in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:409">V:409</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:412">V:412</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:414">V:414</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.ssreflect.eqtype.html#v:415">v:415</a> [binder, in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:417">V:417</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:418">V:418</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.ssreflect.eqtype.html#v:418">v:418</a> [binder, in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:419">V:419</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.field.qfpoly.html#v:42">v:42</a> [binder, in <a href="mathcomp.field.qfpoly.html">mathcomp.field.qfpoly</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:420">V:420</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:420">V:420</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:423">V:423</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.ssreflect.eqtype.html#v:424">v:424</a> [binder, in <a href="mathcomp.ssreflect.eqtype.html">mathcomp.ssreflect.eqtype</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:428">V:428</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:429">V:429</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:431">V:431</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:436">V:436</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.field.closed_field.html#v:438">v:438</a> [binder, in <a href="mathcomp.field.closed_field.html">mathcomp.field.closed_field</a>]<br/>
+<a href="mathcomp.field.galois.html#V:44">V:44</a> [binder, in <a href="mathcomp.field.galois.html">mathcomp.field.galois</a>]<br/>
+<a href="mathcomp.field.galois.html#V:443">V:443</a> [binder, in <a href="mathcomp.field.galois.html">mathcomp.field.galois</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:443">V:443</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:447">V:447</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:449">V:449</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:451">V:451</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:452">V:452</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.fingroup.presentation.html#v:46">v:46</a> [binder, in <a href="mathcomp.fingroup.presentation.html">mathcomp.fingroup.presentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:469">V:469</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.fingroup.presentation.html#v:47">v:47</a> [binder, in <a href="mathcomp.fingroup.presentation.html">mathcomp.fingroup.presentation</a>]<br/>
+<a href="mathcomp.algebra.intdiv.html#V:471">V:471</a> [binder, in <a href="mathcomp.algebra.intdiv.html">mathcomp.algebra.intdiv</a>]<br/>
+<a href="mathcomp.algebra.intdiv.html#v:474">v:474</a> [binder, in <a href="mathcomp.algebra.intdiv.html">mathcomp.algebra.intdiv</a>]<br/>
+<a href="mathcomp.algebra.vector.html#v:475">v:475</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#v:476">v:476</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.fingroup.presentation.html#v:48">v:48</a> [binder, in <a href="mathcomp.fingroup.presentation.html">mathcomp.fingroup.presentation</a>]<br/>
+<a href="mathcomp.field.falgebra.html#v:48">v:48</a> [binder, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.algebra.intdiv.html#v:482">v:482</a> [binder, in <a href="mathcomp.algebra.intdiv.html">mathcomp.algebra.intdiv</a>]<br/>
+<a href="mathcomp.algebra.mxpoly.html#v:482">v:482</a> [binder, in <a href="mathcomp.algebra.mxpoly.html">mathcomp.algebra.mxpoly</a>]<br/>
+<a href="mathcomp.algebra.mxpoly.html#v:484">v:484</a> [binder, in <a href="mathcomp.algebra.mxpoly.html">mathcomp.algebra.mxpoly</a>]<br/>
+<a href="mathcomp.algebra.mxpoly.html#v:486">v:486</a> [binder, in <a href="mathcomp.algebra.mxpoly.html">mathcomp.algebra.mxpoly</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:488">V:488</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.algebra.vector.html#v:488">v:488</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#v:489">v:489</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.character.integral_char.html#v:49">v:49</a> [binder, in <a href="mathcomp.character.integral_char.html">mathcomp.character.integral_char</a>]<br/>
+<a href="mathcomp.fingroup.presentation.html#v:49">v:49</a> [binder, in <a href="mathcomp.fingroup.presentation.html">mathcomp.fingroup.presentation</a>]<br/>
+<a href="mathcomp.algebra.vector.html#v:496">v:496</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.field.galois.html#V:5">V:5</a> [binder, in <a href="mathcomp.field.galois.html">mathcomp.field.galois</a>]<br/>
+<a href="mathcomp.algebra.polyXY.html#v:50">v:50</a> [binder, in <a href="mathcomp.algebra.polyXY.html">mathcomp.algebra.polyXY</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:504">V:504</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.algebra.vector.html#v:505">v:505</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#v:507">v:507</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.field.finfield.html#v:51">v:51</a> [binder, in <a href="mathcomp.field.finfield.html">mathcomp.field.finfield</a>]<br/>
+<a href="mathcomp.algebra.vector.html#v:510">v:510</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#v:511">v:511</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#v:515">v:515</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#v:516">v:516</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#v:517">v:517</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.field.galois.html#V:518">V:518</a> [binder, in <a href="mathcomp.field.galois.html">mathcomp.field.galois</a>]<br/>
+<a href="mathcomp.algebra.vector.html#v:519">v:519</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.polyXY.html#v:52">v:52</a> [binder, in <a href="mathcomp.algebra.polyXY.html">mathcomp.algebra.polyXY</a>]<br/>
+<a href="mathcomp.algebra.vector.html#v:520">v:520</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:524">V:524</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.field.falgebra.html#V:53">V:53</a> [binder, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:530">V:530</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.inertia.html#v:536">v:536</a> [binder, in <a href="mathcomp.character.inertia.html">mathcomp.character.inertia</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:536">V:536</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:537">V:537</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.solvable.finmodule.html#v:54">v:54</a> [binder, in <a href="mathcomp.solvable.finmodule.html">mathcomp.solvable.finmodule</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:543">V:543</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:548">V:548</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.algebra.vector.html#v:549">v:549</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.field.falgebra.html#V:55">V:55</a> [binder, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:551">V:551</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:558">V:558</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.solvable.finmodule.html#v:56">v:56</a> [binder, in <a href="mathcomp.solvable.finmodule.html">mathcomp.solvable.finmodule</a>]<br/>
+<a href="mathcomp.algebra.vector.html#v:563">v:563</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:569">V:569</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.field.falgebra.html#v:57">v:57</a> [binder, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:571">V:571</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:580">V:580</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.algebra.mxpoly.html#v:581">v:581</a> [binder, in <a href="mathcomp.algebra.mxpoly.html">mathcomp.algebra.mxpoly</a>]<br/>
+<a href="mathcomp.character.classfun.html#v:581">v:581</a> [binder, in <a href="mathcomp.character.classfun.html">mathcomp.character.classfun</a>]<br/>
+<a href="mathcomp.algebra.mxpoly.html#v:583">v:583</a> [binder, in <a href="mathcomp.algebra.mxpoly.html">mathcomp.algebra.mxpoly</a>]<br/>
+<a href="mathcomp.algebra.mxpoly.html#v:585">v:585</a> [binder, in <a href="mathcomp.algebra.mxpoly.html">mathcomp.algebra.mxpoly</a>]<br/>
+<a href="mathcomp.algebra.vector.html#v:589">v:589</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.field.falgebra.html#V:59">V:59</a> [binder, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.algebra.vector.html#v:593">v:593</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.fingroup.gproduct.html#v:599">v:599</a> [binder, in <a href="mathcomp.fingroup.gproduct.html">mathcomp.fingroup.gproduct</a>]<br/>
+<a href="mathcomp.algebra.mxpoly.html#v:601">v:601</a> [binder, in <a href="mathcomp.algebra.mxpoly.html">mathcomp.algebra.mxpoly</a>]<br/>
+<a href="mathcomp.fingroup.gproduct.html#v:601">v:601</a> [binder, in <a href="mathcomp.fingroup.gproduct.html">mathcomp.fingroup.gproduct</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:601">V:601</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:605">V:605</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:607">V:607</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:608">V:608</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:61">V:61</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.mxpoly.html#V:610">V:610</a> [binder, in <a href="mathcomp.algebra.mxpoly.html">mathcomp.algebra.mxpoly</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:611">V:611</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:613">V:613</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.algebra.mxpoly.html#V:615">V:615</a> [binder, in <a href="mathcomp.algebra.mxpoly.html">mathcomp.algebra.mxpoly</a>]<br/>
+<a href="mathcomp.algebra.vector.html#v:615">v:615</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#v:617">v:617</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.solvable.extraspecial.html#V:62">V:62</a> [binder, in <a href="mathcomp.solvable.extraspecial.html">mathcomp.solvable.extraspecial</a>]<br/>
+<a href="mathcomp.field.falgebra.html#v:62">v:62</a> [binder, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.algebra.mxpoly.html#V:621">V:621</a> [binder, in <a href="mathcomp.algebra.mxpoly.html">mathcomp.algebra.mxpoly</a>]<br/>
+<a href="mathcomp.algebra.mxpoly.html#V:625">V:625</a> [binder, in <a href="mathcomp.algebra.mxpoly.html">mathcomp.algebra.mxpoly</a>]<br/>
+<a href="mathcomp.solvable.extraspecial.html#V:63">V:63</a> [binder, in <a href="mathcomp.solvable.extraspecial.html">mathcomp.solvable.extraspecial</a>]<br/>
+<a href="mathcomp.algebra.mxpoly.html#V:634">V:634</a> [binder, in <a href="mathcomp.algebra.mxpoly.html">mathcomp.algebra.mxpoly</a>]<br/>
+<a href="mathcomp.algebra.mxpoly.html#V:639">V:639</a> [binder, in <a href="mathcomp.algebra.mxpoly.html">mathcomp.algebra.mxpoly</a>]<br/>
+<a href="mathcomp.algebra.vector.html#v:64">v:64</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.solvable.extraspecial.html#v:64">v:64</a> [binder, in <a href="mathcomp.solvable.extraspecial.html">mathcomp.solvable.extraspecial</a>]<br/>
+<a href="mathcomp.field.falgebra.html#v:64">v:64</a> [binder, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.algebra.mxpoly.html#V:644">V:644</a> [binder, in <a href="mathcomp.algebra.mxpoly.html">mathcomp.algebra.mxpoly</a>]<br/>
+<a href="mathcomp.algebra.mxpoly.html#V:648">V:648</a> [binder, in <a href="mathcomp.algebra.mxpoly.html">mathcomp.algebra.mxpoly</a>]<br/>
+<a href="mathcomp.solvable.extraspecial.html#v:65">v:65</a> [binder, in <a href="mathcomp.solvable.extraspecial.html">mathcomp.solvable.extraspecial</a>]<br/>
+<a href="mathcomp.algebra.mxpoly.html#V:653">V:653</a> [binder, in <a href="mathcomp.algebra.mxpoly.html">mathcomp.algebra.mxpoly</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:66">V:66</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.field.falgebra.html#V:66">V:66</a> [binder, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.algebra.mxpoly.html#V:660">V:660</a> [binder, in <a href="mathcomp.algebra.mxpoly.html">mathcomp.algebra.mxpoly</a>]<br/>
+<a href="mathcomp.algebra.mxpoly.html#V:662">V:662</a> [binder, in <a href="mathcomp.algebra.mxpoly.html">mathcomp.algebra.mxpoly</a>]<br/>
+<a href="mathcomp.algebra.mxpoly.html#V:667">V:667</a> [binder, in <a href="mathcomp.algebra.mxpoly.html">mathcomp.algebra.mxpoly</a>]<br/>
+<a href="mathcomp.algebra.mxpoly.html#V:670">V:670</a> [binder, in <a href="mathcomp.algebra.mxpoly.html">mathcomp.algebra.mxpoly</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:671">V:671</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.mxpoly.html#V:673">V:673</a> [binder, in <a href="mathcomp.algebra.mxpoly.html">mathcomp.algebra.mxpoly</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#v:675">v:675</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.mxpoly.html#V:678">V:678</a> [binder, in <a href="mathcomp.algebra.mxpoly.html">mathcomp.algebra.mxpoly</a>]<br/>
+<a href="mathcomp.solvable.abelian.html#V:678">V:678</a> [binder, in <a href="mathcomp.solvable.abelian.html">mathcomp.solvable.abelian</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#v:679">v:679</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.field.separable.html#v:68">v:68</a> [binder, in <a href="mathcomp.field.separable.html">mathcomp.field.separable</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:68">V:68</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.solvable.abelian.html#V:680">V:680</a> [binder, in <a href="mathcomp.solvable.abelian.html">mathcomp.solvable.abelian</a>]<br/>
+<a href="mathcomp.algebra.mxpoly.html#V:682">V:682</a> [binder, in <a href="mathcomp.algebra.mxpoly.html">mathcomp.algebra.mxpoly</a>]<br/>
+<a href="mathcomp.algebra.mxpoly.html#V:686">V:686</a> [binder, in <a href="mathcomp.algebra.mxpoly.html">mathcomp.algebra.mxpoly</a>]<br/>
+<a href="mathcomp.algebra.mxpoly.html#V:691">V:691</a> [binder, in <a href="mathcomp.algebra.mxpoly.html">mathcomp.algebra.mxpoly</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#v:692">v:692</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.mxpoly.html#V:694">V:694</a> [binder, in <a href="mathcomp.algebra.mxpoly.html">mathcomp.algebra.mxpoly</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#v:695">v:695</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#v:696">v:696</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#v:698">v:698</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.field.separable.html#v:7">v:7</a> [binder, in <a href="mathcomp.field.separable.html">mathcomp.field.separable</a>]<br/>
+<a href="mathcomp.algebra.mxpoly.html#v:7">v:7</a> [binder, in <a href="mathcomp.algebra.mxpoly.html">mathcomp.algebra.mxpoly</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:7">V:7</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.field.fieldext.html#V:70">V:70</a> [binder, in <a href="mathcomp.field.fieldext.html">mathcomp.field.fieldext</a>]<br/>
+<a href="mathcomp.algebra.mxpoly.html#V:700">V:700</a> [binder, in <a href="mathcomp.algebra.mxpoly.html">mathcomp.algebra.mxpoly</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#v:701">v:701</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.mxpoly.html#V:704">V:704</a> [binder, in <a href="mathcomp.algebra.mxpoly.html">mathcomp.algebra.mxpoly</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#v:704">v:704</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#v:706">v:706</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.mxpoly.html#V:708">V:708</a> [binder, in <a href="mathcomp.algebra.mxpoly.html">mathcomp.algebra.mxpoly</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#v:708">v:708</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.field.separable.html#v:71">v:71</a> [binder, in <a href="mathcomp.field.separable.html">mathcomp.field.separable</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:71">V:71</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.mxpoly.html#V:710">V:710</a> [binder, in <a href="mathcomp.algebra.mxpoly.html">mathcomp.algebra.mxpoly</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#v:711">v:711</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.mxpoly.html#V:713">V:713</a> [binder, in <a href="mathcomp.algebra.mxpoly.html">mathcomp.algebra.mxpoly</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#v:714">v:714</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#v:716">v:716</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.fingroup.fingroup.html#v:719">v:719</a> [binder, in <a href="mathcomp.fingroup.fingroup.html">mathcomp.fingroup.fingroup</a>]<br/>
+<a href="mathcomp.fingroup.fingroup.html#v:722">v:722</a> [binder, in <a href="mathcomp.fingroup.fingroup.html">mathcomp.fingroup.fingroup</a>]<br/>
+<a href="mathcomp.algebra.mxpoly.html#V:74">V:74</a> [binder, in <a href="mathcomp.algebra.mxpoly.html">mathcomp.algebra.mxpoly</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#v:740">v:740</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#v:743">v:743</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:745">V:745</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#v:748">v:748</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.field.falgebra.html#V:75">V:75</a> [binder, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:756">V:756</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:757">V:757</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.finalg.html#v:76">v:76</a> [binder, in <a href="mathcomp.algebra.finalg.html">mathcomp.algebra.finalg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#v:761">v:761</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:764">V:764</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:764">V:764</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#v:766">v:766</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#v:769">v:769</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:770">V:770</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:772">V:772</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:777">V:777</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:777">V:777</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.field.algC.html#v:78">v:78</a> [binder, in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.algebra.finalg.html#v:78">v:78</a> [binder, in <a href="mathcomp.algebra.finalg.html">mathcomp.algebra.finalg</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:782">V:782</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:784">V:784</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:784">V:784</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:791">V:791</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:798">V:798</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:798">V:798</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.ssreflect.fingraph.html#v:8">v:8</a> [binder, in <a href="mathcomp.ssreflect.fingraph.html">mathcomp.ssreflect.fingraph</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:8">V:8</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:805">V:805</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.field.algC.html#v:81">v:81</a> [binder, in <a href="mathcomp.field.algC.html">mathcomp.field.algC</a>]<br/>
+<a href="mathcomp.ssreflect.seq.html#v:813">v:813</a> [binder, in <a href="mathcomp.ssreflect.seq.html">mathcomp.ssreflect.seq</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:815">V:815</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.ssreflect.seq.html#v:818">v:818</a> [binder, in <a href="mathcomp.ssreflect.seq.html">mathcomp.ssreflect.seq</a>]<br/>
+<a href="mathcomp.algebra.polyXY.html#v:82">v:82</a> [binder, in <a href="mathcomp.algebra.polyXY.html">mathcomp.algebra.polyXY</a>]<br/>
+<a href="mathcomp.algebra.vector.html#v:820">v:820</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.ssreflect.seq.html#v:821">v:821</a> [binder, in <a href="mathcomp.ssreflect.seq.html">mathcomp.ssreflect.seq</a>]<br/>
+<a href="mathcomp.ssreflect.seq.html#v:823">v:823</a> [binder, in <a href="mathcomp.ssreflect.seq.html">mathcomp.ssreflect.seq</a>]<br/>
+<a href="mathcomp.algebra.vector.html#v:823">v:823</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.ssreflect.seq.html#v:824">v:824</a> [binder, in <a href="mathcomp.ssreflect.seq.html">mathcomp.ssreflect.seq</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:824">V:824</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.polyXY.html#v:83">v:83</a> [binder, in <a href="mathcomp.algebra.polyXY.html">mathcomp.algebra.polyXY</a>]<br/>
+<a href="mathcomp.fingroup.presentation.html#v:83">v:83</a> [binder, in <a href="mathcomp.fingroup.presentation.html">mathcomp.fingroup.presentation</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:839">V:839</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:842">V:842</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.matrix.html#v:849">v:849</a> [binder, in <a href="mathcomp.algebra.matrix.html">mathcomp.algebra.matrix</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:863">V:863</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.algebra.mxpoly.html#V:870">V:870</a> [binder, in <a href="mathcomp.algebra.mxpoly.html">mathcomp.algebra.mxpoly</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:881">V:881</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:886">V:886</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.algebra.mxalgebra.html#v:894">v:894</a> [binder, in <a href="mathcomp.algebra.mxalgebra.html">mathcomp.algebra.mxalgebra</a>]<br/>
+<a href="mathcomp.algebra.mxpoly.html#v:9">v:9</a> [binder, in <a href="mathcomp.algebra.mxpoly.html">mathcomp.algebra.mxpoly</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:900">V:900</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:903">V:903</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:905">V:905</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:907">V:907</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:909">V:909</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:912">V:912</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:915">V:915</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:918">V:918</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.matrix.html#v:920">v:920</a> [binder, in <a href="mathcomp.algebra.matrix.html">mathcomp.algebra.matrix</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:921">V:921</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:921">V:921</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:925">V:925</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:936">V:936</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:940">V:940</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.character.character.html#v:940">v:940</a> [binder, in <a href="mathcomp.character.character.html">mathcomp.character.character</a>]<br/>
+<a href="mathcomp.algebra.vector.html#v:941">v:941</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.character.character.html#v:942">v:942</a> [binder, in <a href="mathcomp.character.character.html">mathcomp.character.character</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:943">V:943</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:947">V:947</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:947">V:947</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.character.character.html#v:958">v:958</a> [binder, in <a href="mathcomp.character.character.html">mathcomp.character.character</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#v:96">v:96</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:964">V:964</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#v:969">v:969</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.ssralg.html#V:97">V:97</a> [binder, in <a href="mathcomp.algebra.ssralg.html">mathcomp.algebra.ssralg</a>]<br/>
+<a href="mathcomp.algebra.vector.html#v:970">v:970</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#v:979">v:979</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.field.falgebra.html#V:98">V:98</a> [binder, in <a href="mathcomp.field.falgebra.html">mathcomp.field.falgebra</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:980">V:980</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.character.mxrepresentation.html#V:982">V:982</a> [binder, in <a href="mathcomp.character.mxrepresentation.html">mathcomp.character.mxrepresentation</a>]<br/>
+<a href="mathcomp.algebra.vector.html#v:992">v:992</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<a href="mathcomp.algebra.vector.html#V:993">V:993</a> [binder, in <a href="mathcomp.algebra.vector.html">mathcomp.algebra.vector</a>]<br/>
+<br/><br/><hr/><table>
+<tr>
+<td>Global Index</td>
+<td><a href="index_global_A.html">A</a></td>
+<td><a href="index_global_B.html">B</a></td>
+<td><a href="index_global_C.html">C</a></td>
+<td><a href="index_global_D.html">D</a></td>
+<td><a href="index_global_E.html">E</a></td>
+<td><a href="index_global_F.html">F</a></td>
+<td><a href="index_global_G.html">G</a></td>
+<td><a href="index_global_H.html">H</a></td>
+<td><a href="index_global_I.html">I</a></td>
+<td><a href="index_global_J.html">J</a></td>
+<td><a href="index_global_K.html">K</a></td>
+<td><a href="index_global_L.html">L</a></td>
+<td><a href="index_global_M.html">M</a></td>
+<td><a href="index_global_N.html">N</a></td>
+<td><a href="index_global_O.html">O</a></td>
+<td><a href="index_global_P.html">P</a></td>
+<td><a href="index_global_Q.html">Q</a></td>
+<td><a href="index_global_R.html">R</a></td>
+<td><a href="index_global_S.html">S</a></td>
+<td><a href="index_global_T.html">T</a></td>
+<td><a href="index_global_U.html">U</a></td>
+<td><a href="index_global_V.html">V</a></td>
+<td><a href="index_global_W.html">W</a></td>
+<td><a href="index_global_X.html">X</a></td>
+<td><a href="index_global_Y.html">Y</a></td>
+<td><a href="index_global_Z.html">Z</a></td>
+<td>_</td>
+<td><a href="index_global_*.html">other</a></td>
+<td>(76754 entries)</td>
+</tr>
+<tr>
+<td>Notation Index</td>
+<td><a href="index_notation_A.html">A</a></td>
+<td><a href="index_notation_B.html">B</a></td>
+<td><a href="index_notation_C.html">C</a></td>
+<td><a href="index_notation_D.html">D</a></td>
+<td><a href="index_notation_E.html">E</a></td>
+<td><a href="index_notation_F.html">F</a></td>
+<td><a href="index_notation_G.html">G</a></td>
+<td>H</td>
+<td><a href="index_notation_I.html">I</a></td>
+<td>J</td>
+<td><a href="index_notation_K.html">K</a></td>
+<td><a href="index_notation_L.html">L</a></td>
+<td><a href="index_notation_M.html">M</a></td>
+<td><a href="index_notation_N.html">N</a></td>
+<td><a href="index_notation_O.html">O</a></td>
+<td><a href="index_notation_P.html">P</a></td>
+<td><a href="index_notation_Q.html">Q</a></td>
+<td><a href="index_notation_R.html">R</a></td>
+<td><a href="index_notation_S.html">S</a></td>
+<td>T</td>
+<td><a href="index_notation_U.html">U</a></td>
+<td><a href="index_notation_V.html">V</a></td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td><a href="index_notation_Z.html">Z</a></td>
+<td>_</td>
+<td><a href="index_notation_*.html">other</a></td>
+<td>(1892 entries)</td>
+</tr>
+<tr>
+<td>Binder Index</td>
+<td><a href="index_binder_A.html">A</a></td>
+<td><a href="index_binder_B.html">B</a></td>
+<td><a href="index_binder_C.html">C</a></td>
+<td><a href="index_binder_D.html">D</a></td>
+<td><a href="index_binder_E.html">E</a></td>
+<td><a href="index_binder_F.html">F</a></td>
+<td><a href="index_binder_G.html">G</a></td>
+<td><a href="index_binder_H.html">H</a></td>
+<td><a href="index_binder_I.html">I</a></td>
+<td><a href="index_binder_J.html">J</a></td>
+<td><a href="index_binder_K.html">K</a></td>
+<td><a href="index_binder_L.html">L</a></td>
+<td><a href="index_binder_M.html">M</a></td>
+<td><a href="index_binder_N.html">N</a></td>
+<td><a href="index_binder_O.html">O</a></td>
+<td><a href="index_binder_P.html">P</a></td>
+<td><a href="index_binder_Q.html">Q</a></td>
+<td><a href="index_binder_R.html">R</a></td>
+<td><a href="index_binder_S.html">S</a></td>
+<td><a href="index_binder_T.html">T</a></td>
+<td><a href="index_binder_U.html">U</a></td>
+<td><a href="index_binder_V.html">V</a></td>
+<td><a href="index_binder_W.html">W</a></td>
+<td><a href="index_binder_X.html">X</a></td>
+<td><a href="index_binder_Y.html">Y</a></td>
+<td><a href="index_binder_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(49588 entries)</td>
+</tr>
+<tr>
+<td>Module Index</td>
+<td><a href="index_module_A.html">A</a></td>
+<td><a href="index_module_B.html">B</a></td>
+<td><a href="index_module_C.html">C</a></td>
+<td><a href="index_module_D.html">D</a></td>
+<td><a href="index_module_E.html">E</a></td>
+<td><a href="index_module_F.html">F</a></td>
+<td><a href="index_module_G.html">G</a></td>
+<td>H</td>
+<td><a href="index_module_I.html">I</a></td>
+<td>J</td>
+<td>K</td>
+<td>L</td>
+<td><a href="index_module_M.html">M</a></td>
+<td><a href="index_module_N.html">N</a></td>
+<td><a href="index_module_O.html">O</a></td>
+<td><a href="index_module_P.html">P</a></td>
+<td><a href="index_module_Q.html">Q</a></td>
+<td><a href="index_module_R.html">R</a></td>
+<td><a href="index_module_S.html">S</a></td>
+<td><a href="index_module_T.html">T</a></td>
+<td><a href="index_module_U.html">U</a></td>
+<td><a href="index_module_V.html">V</a></td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td><a href="index_module_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(305 entries)</td>
+</tr>
+<tr>
+<td>Variable Index</td>
+<td><a href="index_variable_A.html">A</a></td>
+<td><a href="index_variable_B.html">B</a></td>
+<td><a href="index_variable_C.html">C</a></td>
+<td><a href="index_variable_D.html">D</a></td>
+<td><a href="index_variable_E.html">E</a></td>
+<td><a href="index_variable_F.html">F</a></td>
+<td><a href="index_variable_G.html">G</a></td>
+<td><a href="index_variable_H.html">H</a></td>
+<td><a href="index_variable_I.html">I</a></td>
+<td>J</td>
+<td><a href="index_variable_K.html">K</a></td>
+<td><a href="index_variable_L.html">L</a></td>
+<td><a href="index_variable_M.html">M</a></td>
+<td><a href="index_variable_N.html">N</a></td>
+<td><a href="index_variable_O.html">O</a></td>
+<td><a href="index_variable_P.html">P</a></td>
+<td><a href="index_variable_Q.html">Q</a></td>
+<td><a href="index_variable_R.html">R</a></td>
+<td><a href="index_variable_S.html">S</a></td>
+<td><a href="index_variable_T.html">T</a></td>
+<td><a href="index_variable_U.html">U</a></td>
+<td><a href="index_variable_V.html">V</a></td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td><a href="index_variable_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(4034 entries)</td>
+</tr>
+<tr>
+<td>Library Index</td>
+<td><a href="index_library_A.html">A</a></td>
+<td><a href="index_library_B.html">B</a></td>
+<td><a href="index_library_C.html">C</a></td>
+<td><a href="index_library_D.html">D</a></td>
+<td><a href="index_library_E.html">E</a></td>
+<td><a href="index_library_F.html">F</a></td>
+<td><a href="index_library_G.html">G</a></td>
+<td><a href="index_library_H.html">H</a></td>
+<td><a href="index_library_I.html">I</a></td>
+<td><a href="index_library_J.html">J</a></td>
+<td>K</td>
+<td>L</td>
+<td><a href="index_library_M.html">M</a></td>
+<td><a href="index_library_N.html">N</a></td>
+<td><a href="index_library_O.html">O</a></td>
+<td><a href="index_library_P.html">P</a></td>
+<td><a href="index_library_Q.html">Q</a></td>
+<td><a href="index_library_R.html">R</a></td>
+<td><a href="index_library_S.html">S</a></td>
+<td><a href="index_library_T.html">T</a></td>
+<td>U</td>
+<td><a href="index_library_V.html">V</a></td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td><a href="index_library_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(94 entries)</td>
+</tr>
+<tr>
+<td>Lemma Index</td>
+<td><a href="index_lemma_A.html">A</a></td>
+<td><a href="index_lemma_B.html">B</a></td>
+<td><a href="index_lemma_C.html">C</a></td>
+<td><a href="index_lemma_D.html">D</a></td>
+<td><a href="index_lemma_E.html">E</a></td>
+<td><a href="index_lemma_F.html">F</a></td>
+<td><a href="index_lemma_G.html">G</a></td>
+<td><a href="index_lemma_H.html">H</a></td>
+<td><a href="index_lemma_I.html">I</a></td>
+<td><a href="index_lemma_J.html">J</a></td>
+<td><a href="index_lemma_K.html">K</a></td>
+<td><a href="index_lemma_L.html">L</a></td>
+<td><a href="index_lemma_M.html">M</a></td>
+<td><a href="index_lemma_N.html">N</a></td>
+<td><a href="index_lemma_O.html">O</a></td>
+<td><a href="index_lemma_P.html">P</a></td>
+<td><a href="index_lemma_Q.html">Q</a></td>
+<td><a href="index_lemma_R.html">R</a></td>
+<td><a href="index_lemma_S.html">S</a></td>
+<td><a href="index_lemma_T.html">T</a></td>
+<td><a href="index_lemma_U.html">U</a></td>
+<td><a href="index_lemma_V.html">V</a></td>
+<td><a href="index_lemma_W.html">W</a></td>
+<td><a href="index_lemma_X.html">X</a></td>
+<td>Y</td>
+<td><a href="index_lemma_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(14802 entries)</td>
+</tr>
+<tr>
+<td>Constructor Index</td>
+<td><a href="index_constructor_A.html">A</a></td>
+<td><a href="index_constructor_B.html">B</a></td>
+<td><a href="index_constructor_C.html">C</a></td>
+<td><a href="index_constructor_D.html">D</a></td>
+<td><a href="index_constructor_E.html">E</a></td>
+<td><a href="index_constructor_F.html">F</a></td>
+<td><a href="index_constructor_G.html">G</a></td>
+<td><a href="index_constructor_H.html">H</a></td>
+<td><a href="index_constructor_I.html">I</a></td>
+<td>J</td>
+<td>K</td>
+<td><a href="index_constructor_L.html">L</a></td>
+<td><a href="index_constructor_M.html">M</a></td>
+<td><a href="index_constructor_N.html">N</a></td>
+<td><a href="index_constructor_O.html">O</a></td>
+<td><a href="index_constructor_P.html">P</a></td>
+<td><a href="index_constructor_Q.html">Q</a></td>
+<td><a href="index_constructor_R.html">R</a></td>
+<td><a href="index_constructor_S.html">S</a></td>
+<td><a href="index_constructor_T.html">T</a></td>
+<td><a href="index_constructor_U.html">U</a></td>
+<td><a href="index_constructor_V.html">V</a></td>
+<td>W</td>
+<td><a href="index_constructor_X.html">X</a></td>
+<td>Y</td>
+<td><a href="index_constructor_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(222 entries)</td>
+</tr>
+<tr>
+<td>Axiom Index</td>
+<td><a href="index_axiom_A.html">A</a></td>
+<td>B</td>
+<td>C</td>
+<td>D</td>
+<td><a href="index_axiom_E.html">E</a></td>
+<td><a href="index_axiom_F.html">F</a></td>
+<td>G</td>
+<td>H</td>
+<td>I</td>
+<td>J</td>
+<td>K</td>
+<td>L</td>
+<td>M</td>
+<td>N</td>
+<td>O</td>
+<td>P</td>
+<td>Q</td>
+<td>R</td>
+<td>S</td>
+<td>T</td>
+<td>U</td>
+<td>V</td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td>Z</td>
+<td>_</td>
+<td>other</td>
+<td>(9 entries)</td>
+</tr>
+<tr>
+<td>Inductive Index</td>
+<td><a href="index_inductive_A.html">A</a></td>
+<td><a href="index_inductive_B.html">B</a></td>
+<td><a href="index_inductive_C.html">C</a></td>
+<td><a href="index_inductive_D.html">D</a></td>
+<td><a href="index_inductive_E.html">E</a></td>
+<td><a href="index_inductive_F.html">F</a></td>
+<td><a href="index_inductive_G.html">G</a></td>
+<td><a href="index_inductive_H.html">H</a></td>
+<td><a href="index_inductive_I.html">I</a></td>
+<td>J</td>
+<td>K</td>
+<td><a href="index_inductive_L.html">L</a></td>
+<td><a href="index_inductive_M.html">M</a></td>
+<td><a href="index_inductive_N.html">N</a></td>
+<td><a href="index_inductive_O.html">O</a></td>
+<td><a href="index_inductive_P.html">P</a></td>
+<td>Q</td>
+<td><a href="index_inductive_R.html">R</a></td>
+<td><a href="index_inductive_S.html">S</a></td>
+<td><a href="index_inductive_T.html">T</a></td>
+<td><a href="index_inductive_U.html">U</a></td>
+<td><a href="index_inductive_V.html">V</a></td>
+<td>W</td>
+<td><a href="index_inductive_X.html">X</a></td>
+<td>Y</td>
+<td>Z</td>
+<td>_</td>
+<td>other</td>
+<td>(131 entries)</td>
+</tr>
+<tr>
+<td>Projection Index</td>
+<td><a href="index_projection_A.html">A</a></td>
+<td><a href="index_projection_B.html">B</a></td>
+<td><a href="index_projection_C.html">C</a></td>
+<td>D</td>
+<td><a href="index_projection_E.html">E</a></td>
+<td><a href="index_projection_F.html">F</a></td>
+<td><a href="index_projection_G.html">G</a></td>
+<td>H</td>
+<td>I</td>
+<td>J</td>
+<td>K</td>
+<td>L</td>
+<td><a href="index_projection_M.html">M</a></td>
+<td>N</td>
+<td>O</td>
+<td><a href="index_projection_P.html">P</a></td>
+<td>Q</td>
+<td><a href="index_projection_R.html">R</a></td>
+<td><a href="index_projection_S.html">S</a></td>
+<td><a href="index_projection_T.html">T</a></td>
+<td>U</td>
+<td><a href="index_projection_V.html">V</a></td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td>Z</td>
+<td>_</td>
+<td>other</td>
+<td>(43 entries)</td>
+</tr>
+<tr>
+<td>Section Index</td>
+<td><a href="index_section_A.html">A</a></td>
+<td><a href="index_section_B.html">B</a></td>
+<td><a href="index_section_C.html">C</a></td>
+<td><a href="index_section_D.html">D</a></td>
+<td><a href="index_section_E.html">E</a></td>
+<td><a href="index_section_F.html">F</a></td>
+<td><a href="index_section_G.html">G</a></td>
+<td><a href="index_section_H.html">H</a></td>
+<td><a href="index_section_I.html">I</a></td>
+<td>J</td>
+<td><a href="index_section_K.html">K</a></td>
+<td><a href="index_section_L.html">L</a></td>
+<td><a href="index_section_M.html">M</a></td>
+<td><a href="index_section_N.html">N</a></td>
+<td><a href="index_section_O.html">O</a></td>
+<td><a href="index_section_P.html">P</a></td>
+<td><a href="index_section_Q.html">Q</a></td>
+<td><a href="index_section_R.html">R</a></td>
+<td><a href="index_section_S.html">S</a></td>
+<td><a href="index_section_T.html">T</a></td>
+<td><a href="index_section_U.html">U</a></td>
+<td><a href="index_section_V.html">V</a></td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td><a href="index_section_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(1392 entries)</td>
+</tr>
+<tr>
+<td>Abbreviation Index</td>
+<td><a href="index_abbreviation_A.html">A</a></td>
+<td><a href="index_abbreviation_B.html">B</a></td>
+<td><a href="index_abbreviation_C.html">C</a></td>
+<td><a href="index_abbreviation_D.html">D</a></td>
+<td><a href="index_abbreviation_E.html">E</a></td>
+<td><a href="index_abbreviation_F.html">F</a></td>
+<td><a href="index_abbreviation_G.html">G</a></td>
+<td><a href="index_abbreviation_H.html">H</a></td>
+<td><a href="index_abbreviation_I.html">I</a></td>
+<td><a href="index_abbreviation_J.html">J</a></td>
+<td><a href="index_abbreviation_K.html">K</a></td>
+<td><a href="index_abbreviation_L.html">L</a></td>
+<td><a href="index_abbreviation_M.html">M</a></td>
+<td><a href="index_abbreviation_N.html">N</a></td>
+<td><a href="index_abbreviation_O.html">O</a></td>
+<td><a href="index_abbreviation_P.html">P</a></td>
+<td><a href="index_abbreviation_Q.html">Q</a></td>
+<td><a href="index_abbreviation_R.html">R</a></td>
+<td><a href="index_abbreviation_S.html">S</a></td>
+<td><a href="index_abbreviation_T.html">T</a></td>
+<td><a href="index_abbreviation_U.html">U</a></td>
+<td><a href="index_abbreviation_V.html">V</a></td>
+<td><a href="index_abbreviation_W.html">W</a></td>
+<td><a href="index_abbreviation_X.html">X</a></td>
+<td>Y</td>
+<td><a href="index_abbreviation_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(1140 entries)</td>
+</tr>
+<tr>
+<td>Definition Index</td>
+<td><a href="index_definition_A.html">A</a></td>
+<td><a href="index_definition_B.html">B</a></td>
+<td><a href="index_definition_C.html">C</a></td>
+<td><a href="index_definition_D.html">D</a></td>
+<td><a href="index_definition_E.html">E</a></td>
+<td><a href="index_definition_F.html">F</a></td>
+<td><a href="index_definition_G.html">G</a></td>
+<td><a href="index_definition_H.html">H</a></td>
+<td><a href="index_definition_I.html">I</a></td>
+<td><a href="index_definition_J.html">J</a></td>
+<td><a href="index_definition_K.html">K</a></td>
+<td><a href="index_definition_L.html">L</a></td>
+<td><a href="index_definition_M.html">M</a></td>
+<td><a href="index_definition_N.html">N</a></td>
+<td><a href="index_definition_O.html">O</a></td>
+<td><a href="index_definition_P.html">P</a></td>
+<td><a href="index_definition_Q.html">Q</a></td>
+<td><a href="index_definition_R.html">R</a></td>
+<td><a href="index_definition_S.html">S</a></td>
+<td><a href="index_definition_T.html">T</a></td>
+<td><a href="index_definition_U.html">U</a></td>
+<td><a href="index_definition_V.html">V</a></td>
+<td><a href="index_definition_W.html">W</a></td>
+<td><a href="index_definition_X.html">X</a></td>
+<td>Y</td>
+<td><a href="index_definition_Z.html">Z</a></td>
+<td>_</td>
+<td>other</td>
+<td>(3066 entries)</td>
+</tr>
+<tr>
+<td>Record Index</td>
+<td><a href="index_record_A.html">A</a></td>
+<td><a href="index_record_B.html">B</a></td>
+<td><a href="index_record_C.html">C</a></td>
+<td>D</td>
+<td><a href="index_record_E.html">E</a></td>
+<td>F</td>
+<td><a href="index_record_G.html">G</a></td>
+<td>H</td>
+<td>I</td>
+<td>J</td>
+<td>K</td>
+<td>L</td>
+<td><a href="index_record_M.html">M</a></td>
+<td><a href="index_record_N.html">N</a></td>
+<td>O</td>
+<td><a href="index_record_P.html">P</a></td>
+<td>Q</td>
+<td><a href="index_record_R.html">R</a></td>
+<td><a href="index_record_S.html">S</a></td>
+<td><a href="index_record_T.html">T</a></td>
+<td>U</td>
+<td><a href="index_record_V.html">V</a></td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td>Z</td>
+<td>_</td>
+<td>other</td>
+<td>(36 entries)</td>
+</tr>
+</table>
+</div>
+
+<div id="footer">
+<hr/><a href="index.html">Index</a><hr/>This page has been generated by <a href="http://coq.inria.fr/">coqdoc</a>
+</div>
+
+</div>
+
+</body>
+</html>
