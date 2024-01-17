@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<title>mathcomp.algebra.countalg</title>
+</head>
+
+<body>
+
+<div id="page">
+
+<div id="header">
+</div>
+
+<div id="main">
+
+<h1 class="libtitle">Library mathcomp.algebra.countalg</h1>
+
+<div class="code">
+<span class="comment">(*&nbsp;(c)&nbsp;Copyright&nbsp;2006-2016&nbsp;Microsoft&nbsp;Corporation&nbsp;and&nbsp;Inria.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;Distributed&nbsp;under&nbsp;the&nbsp;terms&nbsp;of&nbsp;CeCILL-B.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*)</span><br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">HB</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="library">structures</span>.<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">mathcomp</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="mathcomp.ssreflect.ssreflect.html#"><span class="id" title="library">ssreflect</span></a> <a class="idref" href="mathcomp.ssreflect.ssrfun.html#"><span class="id" title="library">ssrfun</span></a> <a class="idref" href="mathcomp.ssreflect.ssrbool.html#"><span class="id" title="library">ssrbool</span></a> <a class="idref" href="mathcomp.ssreflect.eqtype.html#"><span class="id" title="library">eqtype</span></a> <a class="idref" href="mathcomp.ssreflect.ssrnat.html#"><span class="id" title="library">ssrnat</span></a> <a class="idref" href="mathcomp.ssreflect.seq.html#"><span class="id" title="library">seq</span></a> <a class="idref" href="mathcomp.ssreflect.choice.html#"><span class="id" title="library">choice</span></a>.<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">mathcomp</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="mathcomp.ssreflect.fintype.html#"><span class="id" title="library">fintype</span></a> <a class="idref" href="mathcomp.ssreflect.bigop.html#"><span class="id" title="library">bigop</span></a> <a class="idref" href="mathcomp.algebra.ssralg.html#"><span class="id" title="library">ssralg</span></a>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">     The algebraic part of the algebraic hierarchy for countable types
+
+ This file clones part of ssralg hierarchy for countable types; it does
+ not cover the left module / algebra interfaces, providing only
+          countNmodType == countable nmodType interface
+          countZmodType == countable zmodType interface
+      countSemiRingType == countable semiRingType interface
+          countRingType == countable ringType interface
+   countComSemiRingType == countable comSemiRingType interface
+       countComRingType == countable comRingType interface
+      countUnitRingType == countable unitRingType interface
+   countComUnitRingType == countable comUnitRingType interface
+       countIdomainType == countable idomainType interface
+         countFieldType == countable fieldType interface
+      countDecFieldType == countable decFieldType interface
+   countClosedFieldType == countable closedFieldType interface
+
+ This file provides constructions for both simple extension and algebraic
+ closure of countable fields.
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Set Implicit Arguments</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Local Open</span> <span class="id" title="keyword">Scope</span> <span class="id" title="var">ring_scope</span>.<br/>
+<span class="id" title="keyword">Import</span> <a class="idref" href="mathcomp.algebra.ssralg.html#GRing.Theory"><span class="id" title="module">GRing.Theory</span></a> <a class="idref" href="mathcomp.ssreflect.choice.html#CodeSeq"><span class="id" title="module">CodeSeq</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Module</span> <a id="CountRing" class="idref" href="#CountRing"><span class="id" title="module">CountRing</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Import</span> <a class="idref" href="mathcomp.algebra.ssralg.html#GRing.Theory"><span class="id" title="module">GRing.Theory</span></a>.<br/>
+
+<br/>
+#[<span class="id" title="var">short</span>(<span class="id" title="keyword">type</span>="countNmodType")]<br/>
+<span class="id" title="var">HB.structure</span> <span class="id" title="keyword">Definition</span> <span class="id" title="var">Nmodule</span> := <span class="id" title="notation">{</span><a id="M:1" class="idref" href="#M:1"><span class="id" title="binder">M</span></a> <span class="id" title="notation">of</span> <a class="idref" href="mathcomp.algebra.ssralg.html#GRing.Nmodule"><span class="id" title="abbreviation">GRing.Nmodule</span></a> <a class="idref" href="mathcomp.algebra.countalg.html#M:1"><span class="id" title="variable">M</span></a> <span class="id" title="notation">&amp;</span> <a class="idref" href="mathcomp.ssreflect.choice.html#Countable"><span class="id" title="abbreviation">Countable</span></a> <a class="idref" href="mathcomp.algebra.countalg.html#M:1"><span class="id" title="variable">M</span></a><span class="id" title="notation">}</span>.<br/>
+<span class="id" title="keyword">Module</span> <a id="CountRing.NmoduleExports" class="idref" href="#CountRing.NmoduleExports"><span class="id" title="module">NmoduleExports</span></a>.<br/>
+#[<span class="id" title="var">deprecated</span>(<span class="id" title="var">since</span>="mathcomp 2.0.0",<br/>
+&nbsp;&nbsp;<span class="id" title="var">note</span>="Use CountRing.Nmodule.clone instead.")]<br/>
+<span class="id" title="keyword">Notation</span> "[ 'countNmodType' 'of' T ]" := (<a class="idref" href="mathcomp.algebra.countalg.html#CountRing.Nmodule.clone"><span class="id" title="abbreviation">Nmodule.clone</span></a> <span class="id" title="var">T</span> <span class="id" title="var">_</span>)<br/>
+&nbsp;&nbsp;(<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 0, <span class="id" title="var">format</span> "[ 'countNmodType'  'of'  T ]") : <span class="id" title="var">form_scope</span>.<br/>
+<span class="id" title="keyword">End</span> <a class="idref" href="mathcomp.algebra.countalg.html#CountRing.NmoduleExports"><span class="id" title="module">NmoduleExports</span></a>.<br/>
+
+<br/>
+#[<span class="id" title="var">short</span>(<span class="id" title="keyword">type</span>="countZmodType")]<br/>
+<span class="id" title="var">HB.structure</span> <span class="id" title="keyword">Definition</span> <span class="id" title="var">Zmodule</span> := <span class="id" title="notation">{</span><a id="M:3" class="idref" href="#M:3"><span class="id" title="binder">M</span></a> <span class="id" title="notation">of</span> <a class="idref" href="mathcomp.algebra.ssralg.html#GRing.Zmodule"><span class="id" title="abbreviation">GRing.Zmodule</span></a> <a class="idref" href="mathcomp.algebra.countalg.html#M:3"><span class="id" title="variable">M</span></a> <span class="id" title="notation">&amp;</span> <a class="idref" href="mathcomp.ssreflect.choice.html#Countable"><span class="id" title="abbreviation">Countable</span></a> <a class="idref" href="mathcomp.algebra.countalg.html#M:3"><span class="id" title="variable">M</span></a><span class="id" title="notation">}</span>.<br/>
+<span class="id" title="keyword">Module</span> <a id="CountRing.ZmoduleExports" class="idref" href="#CountRing.ZmoduleExports"><span class="id" title="module">ZmoduleExports</span></a>.<br/>
+#[<span class="id" title="var">deprecated</span>(<span class="id" title="var">since</span>="mathcomp 2.0.0",<br/>
+&nbsp;&nbsp;<span class="id" title="var">note</span>="Use CountRing.Zmodule.clone instead.")]<br/>
+<span class="id" title="keyword">Notation</span> "[ 'countZmodType' 'of' T ]" := (<a class="idref" href="mathcomp.algebra.countalg.html#CountRing.Zmodule.clone"><span class="id" title="abbreviation">Zmodule.clone</span></a> <span class="id" title="var">T</span>%<span class="id" title="keyword">type</span> <span class="id" title="var">_</span>)<br/>
+&nbsp;&nbsp;(<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 0, <span class="id" title="var">format</span> "[ 'countZmodType'  'of'  T ]") : <span class="id" title="var">form_scope</span>.<br/>
+<span class="id" title="keyword">End</span> <a class="idref" href="mathcomp.algebra.countalg.html#CountRing.ZmoduleExports"><span class="id" title="module">ZmoduleExports</span></a>.<br/>
+
+<br/>
+#[<span class="id" title="var">short</span>(<span class="id" title="keyword">type</span>="countSemiRingType")]<br/>
+<span class="id" title="var">HB.structure</span> <span class="id" title="keyword">Definition</span> <span class="id" title="var">SemiRing</span> := <span class="id" title="notation">{</span><a id="R:5" class="idref" href="#R:5"><span class="id" title="binder">R</span></a> <span class="id" title="notation">of</span> <a class="idref" href="mathcomp.algebra.ssralg.html#GRing.SemiRing"><span class="id" title="abbreviation">GRing.SemiRing</span></a> <a class="idref" href="mathcomp.algebra.countalg.html#R:5"><span class="id" title="variable">R</span></a> <span class="id" title="notation">&amp;</span> <a class="idref" href="mathcomp.ssreflect.choice.html#Countable"><span class="id" title="abbreviation">Countable</span></a> <a class="idref" href="mathcomp.algebra.countalg.html#R:5"><span class="id" title="variable">R</span></a><span class="id" title="notation">}</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Module</span> <a id="CountRing.SemiRingExports" class="idref" href="#CountRing.SemiRingExports"><span class="id" title="module">SemiRingExports</span></a>.<br/>
+#[<span class="id" title="var">deprecated</span>(<span class="id" title="var">since</span>="mathcomp 2.0.0",<br/>
+&nbsp;&nbsp;<span class="id" title="var">note</span>="Use CountRing.SemiRing.clone instead.")]<br/>
+<span class="id" title="keyword">Notation</span> "[ 'countSemiRingType' 'of' T ]" :=<br/>
+&nbsp;&nbsp;(<a class="idref" href="mathcomp.algebra.countalg.html#CountRing.SemiRing.clone"><span class="id" title="abbreviation">SemiRing.clone</span></a> <span class="id" title="var">T</span> <span class="id" title="var">_</span>) <span class="comment">(*&nbsp;NB:&nbsp;was&nbsp;(do_pack&nbsp;pack&nbsp;T)&nbsp;*)</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 0, <span class="id" title="var">format</span> "[ 'countSemiRingType'  'of'  T ]") : <span class="id" title="var">form_scope</span>.<br/>
+<span class="id" title="keyword">End</span> <a class="idref" href="mathcomp.algebra.countalg.html#CountRing.SemiRingExports"><span class="id" title="module">SemiRingExports</span></a>.<br/>
+
+<br/>
+#[<span class="id" title="var">short</span>(<span class="id" title="keyword">type</span>="countRingType")]<br/>
+<span class="id" title="var">HB.structure</span> <span class="id" title="keyword">Definition</span> <span class="id" title="var">Ring</span> := <span class="id" title="notation">{</span><a id="R:7" class="idref" href="#R:7"><span class="id" title="binder">R</span></a> <span class="id" title="notation">of</span> <a class="idref" href="mathcomp.algebra.ssralg.html#GRing.Ring"><span class="id" title="abbreviation">GRing.Ring</span></a> <a class="idref" href="mathcomp.algebra.countalg.html#R:7"><span class="id" title="variable">R</span></a> <span class="id" title="notation">&amp;</span> <a class="idref" href="mathcomp.ssreflect.choice.html#Countable"><span class="id" title="abbreviation">Countable</span></a> <a class="idref" href="mathcomp.algebra.countalg.html#R:7"><span class="id" title="variable">R</span></a><span class="id" title="notation">}</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Module</span> <a id="CountRing.RingExports" class="idref" href="#CountRing.RingExports"><span class="id" title="module">RingExports</span></a>.<br/>
+#[<span class="id" title="var">deprecated</span>(<span class="id" title="var">since</span>="mathcomp 2.0.0", <span class="id" title="var">note</span>="Use CountRing.Ring.clone instead.")]<br/>
+<span class="id" title="keyword">Notation</span> "[ 'countRingType' 'of' T ]" :=<br/>
+&nbsp;&nbsp;(<a class="idref" href="mathcomp.algebra.countalg.html#CountRing.Ring.clone"><span class="id" title="abbreviation">Ring.clone</span></a> <span class="id" title="var">T</span>%<span class="id" title="keyword">type</span> <span class="id" title="var">_</span>) <span class="comment">(*&nbsp;NB:&nbsp;was&nbsp;(do_pack&nbsp;pack&nbsp;T)&nbsp;*)</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 0, <span class="id" title="var">format</span> "[ 'countRingType'  'of'  T ]") : <span class="id" title="var">form_scope</span>.<br/>
+<span class="id" title="keyword">End</span> <a class="idref" href="mathcomp.algebra.countalg.html#CountRing.RingExports"><span class="id" title="module">RingExports</span></a>.<br/>
+
+<br/>
+#[<span class="id" title="var">short</span>(<span class="id" title="keyword">type</span>="countComSemiRingType")]<br/>
+<span class="id" title="var">HB.structure</span> <span class="id" title="keyword">Definition</span> <span class="id" title="var">ComSemiRing</span> := <span class="id" title="notation">{</span><a id="R:9" class="idref" href="#R:9"><span class="id" title="binder">R</span></a> <span class="id" title="notation">of</span> <a class="idref" href="mathcomp.algebra.ssralg.html#GRing.ComSemiRing"><span class="id" title="abbreviation">GRing.ComSemiRing</span></a> <a class="idref" href="mathcomp.algebra.countalg.html#R:9"><span class="id" title="variable">R</span></a> <span class="id" title="notation">&amp;</span> <a class="idref" href="mathcomp.ssreflect.choice.html#Countable"><span class="id" title="abbreviation">Countable</span></a> <a class="idref" href="mathcomp.algebra.countalg.html#R:9"><span class="id" title="variable">R</span></a><span class="id" title="notation">}</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Module</span> <a id="CountRing.ComSemiRingExports" class="idref" href="#CountRing.ComSemiRingExports"><span class="id" title="module">ComSemiRingExports</span></a>.<br/>
+#[<span class="id" title="var">deprecated</span>(<span class="id" title="var">since</span>="mathcomp 2.0.0",<br/>
+&nbsp;&nbsp;<span class="id" title="var">note</span>="Use CountRing.ComSemiRing.clone instead.")]<br/>
+<span class="id" title="keyword">Notation</span> "[ 'countComSemiRingType' 'of' T ]" := (<a class="idref" href="mathcomp.algebra.countalg.html#CountRing.ComSemiRing.clone"><span class="id" title="abbreviation">ComSemiRing.clone</span></a> <span class="id" title="var">T</span> <span class="id" title="var">_</span>)<br/>
+&nbsp;&nbsp;(<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 0, <span class="id" title="var">format</span> "[ 'countComSemiRingType'  'of'  T ]") : <span class="id" title="var">form_scope</span>.<br/>
+<span class="id" title="keyword">End</span> <a class="idref" href="mathcomp.algebra.countalg.html#CountRing.ComSemiRingExports"><span class="id" title="module">ComSemiRingExports</span></a>.<br/>
+
+<br/>
+#[<span class="id" title="var">short</span>(<span class="id" title="keyword">type</span>="countComRingType")]<br/>
+<span class="id" title="var">HB.structure</span> <span class="id" title="keyword">Definition</span> <span class="id" title="var">ComRing</span> := <span class="id" title="notation">{</span><a id="R:11" class="idref" href="#R:11"><span class="id" title="binder">R</span></a> <span class="id" title="notation">of</span> <a class="idref" href="mathcomp.algebra.ssralg.html#GRing.ComRing"><span class="id" title="abbreviation">GRing.ComRing</span></a> <a class="idref" href="mathcomp.algebra.countalg.html#R:11"><span class="id" title="variable">R</span></a> <span class="id" title="notation">&amp;</span> <a class="idref" href="mathcomp.ssreflect.choice.html#Countable"><span class="id" title="abbreviation">Countable</span></a> <a class="idref" href="mathcomp.algebra.countalg.html#R:11"><span class="id" title="variable">R</span></a><span class="id" title="notation">}</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Module</span> <a id="CountRing.ComRingExports" class="idref" href="#CountRing.ComRingExports"><span class="id" title="module">ComRingExports</span></a>.<br/>
+#[<span class="id" title="var">deprecated</span>(<span class="id" title="var">since</span>="mathcomp 2.0.0",<br/>
+&nbsp;&nbsp;<span class="id" title="var">note</span>="Use CountRing.ComRing.clone instead.")]<br/>
+<span class="id" title="keyword">Notation</span> "[ 'countComRingType' 'of' T ]" := (<a class="idref" href="mathcomp.algebra.countalg.html#CountRing.ComRing.clone"><span class="id" title="abbreviation">ComRing.clone</span></a> <span class="id" title="var">T</span>%<span class="id" title="keyword">type</span> <span class="id" title="var">_</span>)<br/>
+&nbsp;&nbsp;(<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 0, <span class="id" title="var">format</span> "[ 'countComRingType'  'of'  T ]") : <span class="id" title="var">form_scope</span>.<br/>
+<span class="id" title="keyword">End</span> <a class="idref" href="mathcomp.algebra.countalg.html#CountRing.ComRingExports"><span class="id" title="module">ComRingExports</span></a>.<br/>
+
+<br/>
+#[<span class="id" title="var">short</span>(<span class="id" title="keyword">type</span>="countUnitRingType")]<br/>
+<span class="id" title="var">HB.structure</span> <span class="id" title="keyword">Definition</span> <span class="id" title="var">UnitRing</span> := <span class="id" title="notation">{</span><a id="R:13" class="idref" href="#R:13"><span class="id" title="binder">R</span></a> <span class="id" title="notation">of</span> <a class="idref" href="mathcomp.algebra.ssralg.html#GRing.UnitRing"><span class="id" title="abbreviation">GRing.UnitRing</span></a> <a class="idref" href="mathcomp.algebra.countalg.html#R:13"><span class="id" title="variable">R</span></a> <span class="id" title="notation">&amp;</span> <a class="idref" href="mathcomp.ssreflect.choice.html#Countable"><span class="id" title="abbreviation">Countable</span></a> <a class="idref" href="mathcomp.algebra.countalg.html#R:13"><span class="id" title="variable">R</span></a><span class="id" title="notation">}</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Module</span> <a id="CountRing.UnitRingExports" class="idref" href="#CountRing.UnitRingExports"><span class="id" title="module">UnitRingExports</span></a>.<br/>
+#[<span class="id" title="var">deprecated</span>(<span class="id" title="var">since</span>="mathcomp 2.0.0",<br/>
+&nbsp;&nbsp;<span class="id" title="var">note</span>="Use CountRing.UnitRing.clone instead.")]<br/>
+<span class="id" title="keyword">Notation</span> "[ 'countUnitRingType' 'of' T ]" := (<a class="idref" href="mathcomp.algebra.countalg.html#CountRing.UnitRing.clone"><span class="id" title="abbreviation">UnitRing.clone</span></a> <span class="id" title="var">T</span>%<span class="id" title="keyword">type</span> <span class="id" title="var">_</span>)<br/>
+&nbsp;&nbsp;(<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 0, <span class="id" title="var">format</span> "[ 'countUnitRingType'  'of'  T ]") : <span class="id" title="var">form_scope</span>.<br/>
+<span class="id" title="keyword">End</span> <a class="idref" href="mathcomp.algebra.countalg.html#CountRing.UnitRingExports"><span class="id" title="module">UnitRingExports</span></a>.<br/>
+
+<br/>
+#[<span class="id" title="var">short</span>(<span class="id" title="keyword">type</span>="countComUnitRingType")]<br/>
+<span class="id" title="var">HB.structure</span> <span class="id" title="keyword">Definition</span> <span class="id" title="var">ComUnitRing</span> := <span class="id" title="notation">{</span><a id="R:15" class="idref" href="#R:15"><span class="id" title="binder">R</span></a> <span class="id" title="notation">of</span> <a class="idref" href="mathcomp.algebra.ssralg.html#GRing.ComUnitRing"><span class="id" title="abbreviation">GRing.ComUnitRing</span></a> <a class="idref" href="mathcomp.algebra.countalg.html#R:15"><span class="id" title="variable">R</span></a> <span class="id" title="notation">&amp;</span> <a class="idref" href="mathcomp.ssreflect.choice.html#Countable"><span class="id" title="abbreviation">Countable</span></a> <a class="idref" href="mathcomp.algebra.countalg.html#R:15"><span class="id" title="variable">R</span></a><span class="id" title="notation">}</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Module</span> <a id="CountRing.ComUnitRingExports" class="idref" href="#CountRing.ComUnitRingExports"><span class="id" title="module">ComUnitRingExports</span></a>.<br/>
+#[<span class="id" title="var">deprecated</span>(<span class="id" title="var">since</span>="mathcomp 2.0.0",<br/>
+&nbsp;&nbsp;<span class="id" title="var">note</span>="Use CountRing.ComUnitRing.clone instead.")]<br/>
+<span class="id" title="keyword">Notation</span> "[ 'countComUnitRingType' 'of' T ]" := (<a class="idref" href="mathcomp.algebra.countalg.html#CountRing.ComUnitRing.clone"><span class="id" title="abbreviation">ComUnitRing.clone</span></a> <span class="id" title="var">T</span>%<span class="id" title="keyword">type</span> <span class="id" title="var">_</span>)<br/>
+&nbsp;&nbsp;(<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 0, <span class="id" title="var">format</span> "[ 'countComUnitRingType'  'of'  T ]") : <span class="id" title="var">form_scope</span>.<br/>
+<span class="id" title="keyword">End</span> <a class="idref" href="mathcomp.algebra.countalg.html#CountRing.ComUnitRingExports"><span class="id" title="module">ComUnitRingExports</span></a>.<br/>
+
+<br/>
+#[<span class="id" title="var">short</span>(<span class="id" title="keyword">type</span>="countIdomainType")]<br/>
+<span class="id" title="var">HB.structure</span> <span class="id" title="keyword">Definition</span> <span class="id" title="var">IntegralDomain</span> :=<br/>
+&nbsp;&nbsp;<span class="id" title="notation">{</span><a id="R:17" class="idref" href="#R:17"><span class="id" title="binder">R</span></a> <span class="id" title="notation">of</span> <a class="idref" href="mathcomp.algebra.ssralg.html#GRing.IntegralDomain"><span class="id" title="abbreviation">GRing.IntegralDomain</span></a> <a class="idref" href="mathcomp.algebra.countalg.html#R:17"><span class="id" title="variable">R</span></a> <span class="id" title="notation">&amp;</span> <a class="idref" href="mathcomp.ssreflect.choice.html#Countable"><span class="id" title="abbreviation">Countable</span></a> <a class="idref" href="mathcomp.algebra.countalg.html#R:17"><span class="id" title="variable">R</span></a><span class="id" title="notation">}</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Module</span> <a id="CountRing.IntegralDomainExports" class="idref" href="#CountRing.IntegralDomainExports"><span class="id" title="module">IntegralDomainExports</span></a>.<br/>
+#[<span class="id" title="var">deprecated</span>(<span class="id" title="var">since</span>="mathcomp 2.0.0",<br/>
+&nbsp;&nbsp;<span class="id" title="var">note</span>="Use CountRing.IntegralDomain.clone instead.")]<br/>
+<span class="id" title="keyword">Notation</span> "[ 'countIdomainType' 'of' T ]" := (<a class="idref" href="mathcomp.algebra.countalg.html#CountRing.IntegralDomain.clone"><span class="id" title="abbreviation">IntegralDomain.clone</span></a> <span class="id" title="var">T</span>%<span class="id" title="keyword">type</span> <span class="id" title="var">_</span>)<br/>
+&nbsp;&nbsp;(<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 0, <span class="id" title="var">format</span> "[ 'countIdomainType'  'of'  T ]") : <span class="id" title="var">form_scope</span>.<br/>
+<span class="id" title="keyword">End</span> <a class="idref" href="mathcomp.algebra.countalg.html#CountRing.IntegralDomainExports"><span class="id" title="module">IntegralDomainExports</span></a>.<br/>
+
+<br/>
+#[<span class="id" title="var">short</span>(<span class="id" title="keyword">type</span>="countFieldType")]<br/>
+<span class="id" title="var">HB.structure</span> <span class="id" title="keyword">Definition</span> <span class="id" title="var">Field</span> := <span class="id" title="notation">{</span><a id="R:19" class="idref" href="#R:19"><span class="id" title="binder">R</span></a> <span class="id" title="notation">of</span> <a class="idref" href="mathcomp.algebra.ssralg.html#GRing.Field"><span class="id" title="abbreviation">GRing.Field</span></a> <a class="idref" href="mathcomp.algebra.countalg.html#R:19"><span class="id" title="variable">R</span></a> <span class="id" title="notation">&amp;</span> <a class="idref" href="mathcomp.ssreflect.choice.html#Countable"><span class="id" title="abbreviation">Countable</span></a> <a class="idref" href="mathcomp.algebra.countalg.html#R:19"><span class="id" title="variable">R</span></a><span class="id" title="notation">}</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Module</span> <a id="CountRing.FieldExports" class="idref" href="#CountRing.FieldExports"><span class="id" title="module">FieldExports</span></a>.<br/>
+#[<span class="id" title="var">deprecated</span>(<span class="id" title="var">since</span>="mathcomp 2.0.0", <span class="id" title="var">note</span>="Use CountRing.Field.clone instead.")]<br/>
+<span class="id" title="keyword">Notation</span> "[ 'countFieldType' 'of' T ]" := (<a class="idref" href="mathcomp.algebra.countalg.html#CountRing.Field.clone"><span class="id" title="abbreviation">Field.clone</span></a> <span class="id" title="var">T</span>%<span class="id" title="keyword">type</span> <span class="id" title="var">_</span>)<br/>
+&nbsp;&nbsp;(<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 0, <span class="id" title="var">format</span> "[ 'countFieldType'  'of'  T ]") : <span class="id" title="var">form_scope</span>.<br/>
+<span class="id" title="keyword">End</span> <a class="idref" href="mathcomp.algebra.countalg.html#CountRing.FieldExports"><span class="id" title="module">FieldExports</span></a>.<br/>
+
+<br/>
+#[<span class="id" title="var">short</span>(<span class="id" title="keyword">type</span>="countDecFieldType")]<br/>
+<span class="id" title="var">HB.structure</span> <span class="id" title="keyword">Definition</span> <span class="id" title="var">DecidableField</span> :=<br/>
+&nbsp;&nbsp;<span class="id" title="notation">{</span><a id="R:21" class="idref" href="#R:21"><span class="id" title="binder">R</span></a> <span class="id" title="notation">of</span> <a class="idref" href="mathcomp.algebra.ssralg.html#GRing.DecidableField"><span class="id" title="abbreviation">GRing.DecidableField</span></a> <a class="idref" href="mathcomp.algebra.countalg.html#R:21"><span class="id" title="variable">R</span></a> <span class="id" title="notation">&amp;</span> <a class="idref" href="mathcomp.ssreflect.choice.html#Countable"><span class="id" title="abbreviation">Countable</span></a> <a class="idref" href="mathcomp.algebra.countalg.html#R:21"><span class="id" title="variable">R</span></a><span class="id" title="notation">}</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Module</span> <a id="CountRing.DecidableFieldExports" class="idref" href="#CountRing.DecidableFieldExports"><span class="id" title="module">DecidableFieldExports</span></a>.<br/>
+#[<span class="id" title="var">deprecated</span>(<span class="id" title="var">since</span>="mathcomp 2.0.0",<br/>
+&nbsp;&nbsp;<span class="id" title="var">note</span>="Use CountRing.DecidableField.clone instead.")]<br/>
+<span class="id" title="keyword">Notation</span> "[ 'countDecFieldType' 'of' T ]" := (<a class="idref" href="mathcomp.algebra.countalg.html#CountRing.DecidableField.clone"><span class="id" title="abbreviation">DecidableField.clone</span></a> <span class="id" title="var">T</span>%<span class="id" title="keyword">type</span> <span class="id" title="var">_</span>)<br/>
+&nbsp;&nbsp;(<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 0, <span class="id" title="var">format</span> "[ 'countDecFieldType'  'of'  T ]") : <span class="id" title="var">form_scope</span>.<br/>
+<span class="id" title="keyword">End</span> <a class="idref" href="mathcomp.algebra.countalg.html#CountRing.DecidableFieldExports"><span class="id" title="module">DecidableFieldExports</span></a>.<br/>
+
+<br/>
+#[<span class="id" title="var">short</span>(<span class="id" title="keyword">type</span>="countClosedFieldType")]<br/>
+<span class="id" title="var">HB.structure</span> <span class="id" title="keyword">Definition</span> <span class="id" title="var">ClosedField</span> := <span class="id" title="notation">{</span><a id="R:23" class="idref" href="#R:23"><span class="id" title="binder">R</span></a> <span class="id" title="notation">of</span> <a class="idref" href="mathcomp.algebra.ssralg.html#GRing.ClosedField"><span class="id" title="abbreviation">GRing.ClosedField</span></a> <a class="idref" href="mathcomp.algebra.countalg.html#R:23"><span class="id" title="variable">R</span></a> <span class="id" title="notation">&amp;</span> <a class="idref" href="mathcomp.ssreflect.choice.html#Countable"><span class="id" title="abbreviation">Countable</span></a> <a class="idref" href="mathcomp.algebra.countalg.html#R:23"><span class="id" title="variable">R</span></a><span class="id" title="notation">}</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Module</span> <a id="CountRing.ClosedFieldExports" class="idref" href="#CountRing.ClosedFieldExports"><span class="id" title="module">ClosedFieldExports</span></a>.<br/>
+#[<span class="id" title="var">deprecated</span>(<span class="id" title="var">since</span>="mathcomp 2.0.0",<br/>
+&nbsp;&nbsp;<span class="id" title="var">note</span>="Use CountRing.ClosedField.clone instead.")]<br/>
+<span class="id" title="keyword">Notation</span> "[ 'countClosedFieldType' 'of' T ]" := (<a class="idref" href="mathcomp.algebra.countalg.html#CountRing.ClosedField.clone"><span class="id" title="abbreviation">ClosedField.clone</span></a> <span class="id" title="var">T</span>%<span class="id" title="keyword">type</span> <span class="id" title="var">_</span>)<br/>
+&nbsp;&nbsp;(<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 0, <span class="id" title="var">format</span> "[ 'countClosedFieldType'  'of'  T ]") : <span class="id" title="var">form_scope</span>.<br/>
+<span class="id" title="keyword">End</span> <a class="idref" href="mathcomp.algebra.countalg.html#CountRing.ClosedFieldExports"><span class="id" title="module">ClosedFieldExports</span></a>.<br/>
+
+<br/>
+#[<span class="id" title="var">export</span>]<br/>
+<span class="id" title="var">HB.instance</span> <span class="id" title="keyword">Definition</span> <span class="id" title="var">_</span> (<a id="R:25" class="idref" href="#R:25"><span class="id" title="binder">R</span></a> : <a class="idref" href="mathcomp.algebra.countalg.html#CountRing.countNmodType"><span class="id" title="abbreviation">countNmodType</span></a>) := <a class="idref" href="mathcomp.algebra.countalg.html#CountRing.on"><span class="id" title="abbreviation">Nmodule.on</span></a> <a class="idref" href="mathcomp.algebra.countalg.html#R:25"><span class="id" title="variable">R</span></a><a class="idref" href="mathcomp.algebra.ssralg.html#32d8c90f413029fb5c0e82f0559cd7ef"><span class="id" title="notation">^</span></a><a class="idref" href="mathcomp.algebra.ssralg.html#32d8c90f413029fb5c0e82f0559cd7ef"><span class="id" title="notation">o</span></a>.<br/>
+#[<span class="id" title="var">export</span>]<br/>
+<span class="id" title="var">HB.instance</span> <span class="id" title="keyword">Definition</span> <span class="id" title="var">_</span> (<a id="R:26" class="idref" href="#R:26"><span class="id" title="binder">R</span></a> : <a class="idref" href="mathcomp.algebra.countalg.html#CountRing.countZmodType"><span class="id" title="abbreviation">countZmodType</span></a>) := <a class="idref" href="mathcomp.algebra.countalg.html#CountRing.on"><span class="id" title="abbreviation">Zmodule.on</span></a> <a class="idref" href="mathcomp.algebra.countalg.html#R:26"><span class="id" title="variable">R</span></a><a class="idref" href="mathcomp.algebra.ssralg.html#32d8c90f413029fb5c0e82f0559cd7ef"><span class="id" title="notation">^</span></a><a class="idref" href="mathcomp.algebra.ssralg.html#32d8c90f413029fb5c0e82f0559cd7ef"><span class="id" title="notation">o</span></a>.<br/>
+#[<span class="id" title="var">export</span>]<br/>
+<span class="id" title="var">HB.instance</span> <span class="id" title="keyword">Definition</span> <span class="id" title="var">_</span> (<a id="R:27" class="idref" href="#R:27"><span class="id" title="binder">R</span></a> : <a class="idref" href="mathcomp.algebra.countalg.html#CountRing.countSemiRingType"><span class="id" title="abbreviation">countSemiRingType</span></a>) := <a class="idref" href="mathcomp.algebra.countalg.html#CountRing.on"><span class="id" title="abbreviation">SemiRing.on</span></a> <a class="idref" href="mathcomp.algebra.countalg.html#R:27"><span class="id" title="variable">R</span></a><a class="idref" href="mathcomp.algebra.ssralg.html#32d8c90f413029fb5c0e82f0559cd7ef"><span class="id" title="notation">^</span></a><a class="idref" href="mathcomp.algebra.ssralg.html#32d8c90f413029fb5c0e82f0559cd7ef"><span class="id" title="notation">o</span></a>.<br/>
+#[<span class="id" title="var">export</span>]<br/>
+<span class="id" title="var">HB.instance</span> <span class="id" title="keyword">Definition</span> <span class="id" title="var">_</span> (<a id="R:28" class="idref" href="#R:28"><span class="id" title="binder">R</span></a> : <a class="idref" href="mathcomp.algebra.countalg.html#CountRing.countRingType"><span class="id" title="abbreviation">countRingType</span></a>) := <a class="idref" href="mathcomp.algebra.countalg.html#CountRing.on"><span class="id" title="abbreviation">Ring.on</span></a> <a class="idref" href="mathcomp.algebra.countalg.html#R:28"><span class="id" title="variable">R</span></a><a class="idref" href="mathcomp.algebra.ssralg.html#32d8c90f413029fb5c0e82f0559cd7ef"><span class="id" title="notation">^</span></a><a class="idref" href="mathcomp.algebra.ssralg.html#32d8c90f413029fb5c0e82f0559cd7ef"><span class="id" title="notation">o</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">End</span> <a class="idref" href="mathcomp.algebra.countalg.html#CountRing"><span class="id" title="module">CountRing</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Import</span> <a class="idref" href="mathcomp.algebra.countalg.html#CountRing"><span class="id" title="module">CountRing</span></a>.<br/>
+</div>
+</div>
+
+<div id="footer">
+<hr/><a href="index.html">Index</a><hr/>This page has been generated by <a href="http://coq.inria.fr/">coqdoc</a>
+</div>
+
+</div>
+
+</body>
+</html>
