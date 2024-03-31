@@ -91,19 +91,19 @@
 <span class="vernacular">From</span> <span class="id">mathcomp</span> <span class="vernacular">Require</span> <span class="vernacular">Import</span> <span class="id"><a href="https://math-comp.github.io/htmldoc/mathcomp.ssreflect.finset.html">finset</a></span> <span class="id"><a href="https://math-comp.github.io/htmldoc/mathcomp.algebra.interval.html">interval</a></span>.<br/>
 <br/>
 <div class="ssrdoc md">
-# MathComp extra                                                           
-                                                                           
-This files contains lemmas and definitions missing from MathComp.          
-                                                                           
-```                                                                        
-              proj i f == f i, where f : forall i, T i                     
-            dfwith f x == fun j =&gt; x if j = i, and f j otherwise           
-                          given x : T i                                    
-                swap x := (x.2, x.1)                                       
-        monotonous A f := {in A &amp;, {mono f : x y / x &lt;= y}} \/             
-                          {in A &amp;, {mono f : x y /~ x &lt;= y}}               
-```                                                                        
-                                                                           
+# MathComp extra                                                            
+                                                                            
+This files contains lemmas and definitions missing from MathComp.           
+                                                                            
+```                                                                         
+              proj i f == f i, where f : forall i, T i                      
+            dfwith f x == fun j =&gt; x if j = i, and f j otherwise            
+                          given x : T i                                     
+                swap x := (x.2, x.1)                                        
+        monotonous A f := {in A &amp;, {mono f : x y / x &lt;= y}} \/              
+                          {in A &amp;, {mono f : x y /~ x &lt;= y}}                
+```                                                                         
+                                                                            
 </div>
 <br/>
 <span class="gallina-kwd">Set</span> <span class="vernacular">Implicit</span> <span class="vernacular">Arguments</span>.<br/>
@@ -114,7 +114,7 @@ This files contains lemmas and definitions missing from MathComp.
 <span class="vernacular">Local</span> <span class="vernacular">Open</span> <span class="vernacular">Scope</span> <span class="id">ring_scope</span>.<br/>
 <br/>
 <pre class="ssrdoc">
-MathComp 2.1 additions 
+MathComp 2.1 additions  
 </pre>
 <br/>
 <span class="vernacular">From</span> <span class="id">mathcomp</span> <span class="vernacular">Require</span> <span class="vernacular">Import</span> <span class="id"><a href="https://math-comp.github.io/htmldoc/mathcomp.algebra.poly.html">poly</a></span>.<br/>
@@ -374,7 +374,7 @@ Qed.</div>
  <span class="gallina-kwd">by</span> <span class="id">rewrite</span> <span class="id"><a href="https://math-comp.github.io/htmldoc/mathcomp.algebra.ssralg.html#GRing.mulrS">GRing.mulrS</a></span>. Qed.</div>
 <br/>
 <pre class="ssrdoc">
-MathComp 2.2 additions 
+MathComp 2.2 additions  
 </pre>
 <br/>
 <span class="vernacular">Notation</span> <span id="56f362e97a3bfadac6f44b6fb4d049de" class="id"><a name="56f362e97a3bfadac6f44b6fb4d049de" class="">&quot;f \min g&quot;</a></span> <span class="id">:=</span> (<span class="id"><a href="https://math-comp.github.io/htmldoc/mathcomp.ssreflect.order.html#Order.min_fun">Order.min_fun</a></span> <span class="id">f</span> <span class="id">g</span>) <span class="id">:</span> <span class="id">function_scope</span>.<br/>
@@ -391,7 +391,7 @@ MathComp 2.2 additions
 Qed.</div>
 <br/>
 <pre class="ssrdoc">
-MathComp 2.3 additions 
+MathComp 2.3 additions  
 </pre>
 <br/>
 <span class="vernacular">Lemma</span> <span id="invf_plt" class="id"><a name="invf_plt" class="">invf_plt</a></span> (<span id="F:33" class="id"><a name="F:33" class="">F</a></span> <span class="id">:</span> <span class="id"><a href="https://math-comp.github.io/htmldoc/mathcomp.algebra.ssrnum.html#Num.NumField.Exports.numFieldType">numFieldType</a></span>) <span class="id">:</span><br/>
@@ -402,7 +402,7 @@ MathComp 2.3 additions
 Qed.</div>
 <br/>
 <pre class="ssrdoc">
-not yet backported 
+not yet backported  
 </pre>
 <br/>
 <span class="vernacular">Lemma</span> <span id="deg_le2_ge0" class="id"><a name="deg_le2_ge0" class="">deg_le2_ge0</a></span> (<span id="F:36" class="id"><a name="F:36" class="">F</a></span> <span class="id">:</span> <span class="id"><a href="https://math-comp.github.io/htmldoc/mathcomp.algebra.ssrnum.html#Num.RealClosedField.Exports.rcfType">rcfType</a></span>) (<span id="a:37" class="id"><a name="a:37" class="">a</a></span> <span id="b:38" class="id"><a name="b:38" class="">b</a></span> <span id="c:39" class="id"><a name="c:39" class="">c</a></span> <span class="id">:</span> <span class="id"><a href="mathcomp.classical.mathcomp_extra.html#F:36">F</a></span>) <span class="id">:</span><br/>

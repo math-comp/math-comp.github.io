@@ -94,117 +94,117 @@
 <span class="id">Add</span> <span class="id">Search</span> <span class="id">Blacklist</span> <span class="id">&quot;_mixin_&quot;</span>.<br/>
 <br/>
 <div class="ssrdoc md">
-# Theory of functions                                                      
-                                                                           
-This file provides a theory of functions $f : A\to B$ whose domain $A$     
-and codomain $B$ are represented by sets.                                  
-                                                                           
-```                                                                        
-         set_fun A B f == f : aT -&gt; rT is a function with domain           
-                          A : set aT and codomain B : set rT               
-        set_surj A B f == f is surjective                                  
-         set inj A B f == f is injective                                   
-         set_bij A B f == f is bijective                                   
-                                                                           
-         {fun A &gt;-&gt; B} == type of functions f : aT -&gt; rT from A : set aT   
-                          to B : set rT.                                   
-                          funS f  is a proof of  set_fun A B f             
-      {oinv aT &gt;-&gt; rT} == type of functions with a partial inverse         
-     {oinvfun A &gt;-&gt; B} == combination of {fun A &gt;-&gt; B} and                 
-                          {oinv aT &gt;-&gt; rT}                                 
-       {inv aT &gt;-&gt; rT} == type of functions with an inverse                
-                 f ^-1 == inverse of f : {inv aT &gt;-&gt; rT}                   
-      {invfun A &gt;-&gt; B} == combination of {fun A &gt;-&gt; B} and {inv aT &gt;-&gt; rT} 
-        {surj A &gt;-&gt; B} == type of surjective functions                     
-     {surjfun A &gt;-&gt; B} == combination of {fun A &gt;-&gt; B} and {surj A &gt;-&gt; B}  
-   {splitsurj A &gt;-&gt; B} == type of surjective functions with an inverse     
-{splitsurjfun A &gt;-&gt; B} == combination of {fun A &gt;-&gt; B} and                 
-                          {splitsurj A &gt;-&gt; B}                              
-        {inj A &gt;-&gt; rT} == type of injective functions                      
-      {injfun A &gt;-&gt; B} == combination of {fun A &gt;-&gt; B} and {inj A &gt;-&gt; rT}  
-    {splitinj A &gt;-&gt; B} == type of injective functions with an inverse      
- {splitinjfun A &gt;-&gt; B} == combination of {fun A &gt;-&gt; B} and                 
-                          {splitinj A &gt;-&gt; B}                               
-         {bij A &gt;-&gt; B} == combination of {injfun A &gt;-&gt; B} and              
-                          {surjfun A &gt;-&gt; B}                                
-    {splitbij A &gt;-&gt; B} == combination of {splitinj A &gt;-&gt; B} and            
-                          {splitsurj A &gt;-&gt; B}                              
-               'inj_ f == proof of {in A &amp;, injective f} where f has type  
-                          {splitinj A &gt;-&gt; _}                               
-```                                                                        
-                                                                           
-```                                                                        
-             funin A f == alias for f : aT -&gt; rT, with A : set aT          
-            [fun f in A] == the function f from the set A to the set f @` A
-           'split_ d f == partial injection from aT : Type to rt : Type;   
-                          f : aT -&gt; rT, d : rT -&gt; aT                       
-                 split := 'split_(fun=&gt; point)                             
-            @to_setT T == function that associates to x : T a dependent    
-                          pair of x with a proof that x belongs to setT    
-                          (i.e., the type set_type [set: T])               
-               incl AB == identity function from T to T, where AB is a     
-                          proof of A `&lt;=` B, with A, B : set T             
-               inclT A := incl (@subsetT _ _)                              
-             eqincl AB == identity function from T to T, where AB is a     
-                          proof of A = B, with A, B : set T                
-             mkfun fAB == builds a function {fun A &gt;-&gt; B} given a function 
-                          f : aT -&gt; rT and a proof fAB that                
-                          {homo f : x / A x &gt;-&gt; B x}                       
-          @set_val T A == injection from set_type A to T, where A has      
-                          type set T                                       
-            @ssquash T == function of type                                 
-                          {splitsurj [set: T] &gt;-&gt; [set: $| T |]}           
-       @finset_val T X == function that turns an element x : X             
-                          (with X : {fset T}) into a dependent pair of x   
-                          with a proof that x belongs to X                 
-                          (i.e., the type set_type [set` X])               
-       @val_finset T X == function of type [set` X] -&gt; X with X : {fset T} 
-                          that cancels finset_val                          
-        glue XY AB f g == function that behaves as f over X, as g over Y   
-                          XY is a proof that sets X and Y are disjoint,    
-                          AB is a proof that sets A and B are disjoint,    
-                          A and B are intended to be the ranges of f and g 
-          'pinv_ d A f == inverse of the function [fun f in A] over        
-                          f @` A, function d outside of f @` A             
-                 pinv := notation for 'pinv_(fun=&gt; point)                  
-```                                                                        
-                                                                           
-## Function restriction                                                    
-```                                                                        
-           patch d A f == "partial function" that behaves as the function  
-                          f over the set A and as the function d otherwise 
-          restrict D f := patch (fun=&gt; point) D f                          
-                f \_ D := restrict D f                                     
-              sigL A f == "left restriction"; given a set A : set U and a  
-                          function f : U -&gt; V, returns the corresponding   
-                          function of type set_type A -&gt; V                 
-              sigR A f == "right restriction"; given a set B : set V and a 
-                          function f : {fun [set: U] &gt;-&gt; B}, returns the   
-                          corresponding function of type U -&gt; set_type B   
-           sigLR A B f == the function of type set_type A -&gt; set_type B    
-                          corresponding to f : {fun A &gt;-&gt; B}               
-               valL_ v == function cancelled by sigL A, with A : set U and 
-                          v : V                                            
-                valR f == the function of type U -&gt; V corresponding to     
-                          f : U -&gt; set_type B, with B : set V              
-              valR_fun == the function of type {fun [set: U] &gt;-&gt; B}        
-                          corresponding to f : U -&gt; set_type B, with       
-                          B : set V                                        
-             valLR v f == the function of type U -&gt; V corresponding to     
-                          f : set_type A -&gt; set_type B (where v : V),      
-                          i.e., 'valL_ v \o valR_fun                       
-      valLfun_ v A B f := [fun of valL_ f] with f : {fun [set: A] &gt;-&gt; B}   
-                  valL := 'valL_ point                                     
-            valLRfun v := 'valLfun_ v \o valR_fun                          
-```                                                                        
-                                                                           
-```                                                                        
-Section function_space == canonical ringType and lmodType                  
-                          structures for functions whose range is          
-                          a ringType, comRingType, or lmodType.            
-                  fctE == multi-rule for fct                               
-```                                                                        
-                                                                           
+# Theory of functions                                                       
+                                                                            
+This file provides a theory of functions $f : A\to B$ whose domain $A$      
+and codomain $B$ are represented by sets.                                   
+                                                                            
+```                                                                         
+         set_fun A B f == f : aT -&gt; rT is a function with domain            
+                          A : set aT and codomain B : set rT                
+        set_surj A B f == f is surjective                                   
+         set inj A B f == f is injective                                    
+         set_bij A B f == f is bijective                                    
+                                                                            
+         {fun A &gt;-&gt; B} == type of functions f : aT -&gt; rT from A : set aT    
+                          to B : set rT.                                    
+                          funS f  is a proof of  set_fun A B f              
+      {oinv aT &gt;-&gt; rT} == type of functions with a partial inverse          
+     {oinvfun A &gt;-&gt; B} == combination of {fun A &gt;-&gt; B} and                  
+                          {oinv aT &gt;-&gt; rT}                                  
+       {inv aT &gt;-&gt; rT} == type of functions with an inverse                 
+                 f ^-1 == inverse of f : {inv aT &gt;-&gt; rT}                    
+      {invfun A &gt;-&gt; B} == combination of {fun A &gt;-&gt; B} and {inv aT &gt;-&gt; rT}  
+        {surj A &gt;-&gt; B} == type of surjective functions                      
+     {surjfun A &gt;-&gt; B} == combination of {fun A &gt;-&gt; B} and {surj A &gt;-&gt; B}   
+   {splitsurj A &gt;-&gt; B} == type of surjective functions with an inverse      
+{splitsurjfun A &gt;-&gt; B} == combination of {fun A &gt;-&gt; B} and                  
+                          {splitsurj A &gt;-&gt; B}                               
+        {inj A &gt;-&gt; rT} == type of injective functions                       
+      {injfun A &gt;-&gt; B} == combination of {fun A &gt;-&gt; B} and {inj A &gt;-&gt; rT}   
+    {splitinj A &gt;-&gt; B} == type of injective functions with an inverse       
+ {splitinjfun A &gt;-&gt; B} == combination of {fun A &gt;-&gt; B} and                  
+                          {splitinj A &gt;-&gt; B}                                
+         {bij A &gt;-&gt; B} == combination of {injfun A &gt;-&gt; B} and               
+                          {surjfun A &gt;-&gt; B}                                 
+    {splitbij A &gt;-&gt; B} == combination of {splitinj A &gt;-&gt; B} and             
+                          {splitsurj A &gt;-&gt; B}                               
+               'inj_ f == proof of {in A &amp;, injective f} where f has type   
+                          {splitinj A &gt;-&gt; _}                                
+```                                                                         
+                                                                            
+```                                                                         
+             funin A f == alias for f : aT -&gt; rT, with A : set aT           
+            [fun f in A] == the function f from the set A to the set f @` A 
+           'split_ d f == partial injection from aT : Type to rt : Type;    
+                          f : aT -&gt; rT, d : rT -&gt; aT                        
+                 split := 'split_(fun=&gt; point)                              
+            @to_setT T == function that associates to x : T a dependent     
+                          pair of x with a proof that x belongs to setT     
+                          (i.e., the type set_type [set: T])                
+               incl AB == identity function from T to T, where AB is a      
+                          proof of A `&lt;=` B, with A, B : set T              
+               inclT A := incl (@subsetT _ _)                               
+             eqincl AB == identity function from T to T, where AB is a      
+                          proof of A = B, with A, B : set T                 
+             mkfun fAB == builds a function {fun A &gt;-&gt; B} given a function  
+                          f : aT -&gt; rT and a proof fAB that                 
+                          {homo f : x / A x &gt;-&gt; B x}                        
+          @set_val T A == injection from set_type A to T, where A has       
+                          type set T                                        
+            @ssquash T == function of type                                  
+                          {splitsurj [set: T] &gt;-&gt; [set: $| T |]}            
+       @finset_val T X == function that turns an element x : X              
+                          (with X : {fset T}) into a dependent pair of x    
+                          with a proof that x belongs to X                  
+                          (i.e., the type set_type [set` X])                
+       @val_finset T X == function of type [set` X] -&gt; X with X : {fset T}  
+                          that cancels finset_val                           
+        glue XY AB f g == function that behaves as f over X, as g over Y    
+                          XY is a proof that sets X and Y are disjoint,     
+                          AB is a proof that sets A and B are disjoint,     
+                          A and B are intended to be the ranges of f and g  
+          'pinv_ d A f == inverse of the function [fun f in A] over         
+                          f @` A, function d outside of f @` A              
+                 pinv := notation for 'pinv_(fun=&gt; point)                   
+```                                                                         
+                                                                            
+## Function restriction                                                     
+```                                                                         
+           patch d A f == "partial function" that behaves as the function   
+                          f over the set A and as the function d otherwise  
+          restrict D f := patch (fun=&gt; point) D f                           
+                f \_ D := restrict D f                                      
+              sigL A f == "left restriction"; given a set A : set U and a   
+                          function f : U -&gt; V, returns the corresponding    
+                          function of type set_type A -&gt; V                  
+              sigR A f == "right restriction"; given a set B : set V and a  
+                          function f : {fun [set: U] &gt;-&gt; B}, returns the    
+                          corresponding function of type U -&gt; set_type B    
+           sigLR A B f == the function of type set_type A -&gt; set_type B     
+                          corresponding to f : {fun A &gt;-&gt; B}                
+               valL_ v == function cancelled by sigL A, with A : set U and  
+                          v : V                                             
+                valR f == the function of type U -&gt; V corresponding to      
+                          f : U -&gt; set_type B, with B : set V               
+              valR_fun == the function of type {fun [set: U] &gt;-&gt; B}         
+                          corresponding to f : U -&gt; set_type B, with        
+                          B : set V                                         
+             valLR v f == the function of type U -&gt; V corresponding to      
+                          f : set_type A -&gt; set_type B (where v : V),       
+                          i.e., 'valL_ v \o valR_fun                        
+      valLfun_ v A B f := [fun of valL_ f] with f : {fun [set: A] &gt;-&gt; B}    
+                  valL := 'valL_ point                                      
+            valLRfun v := 'valLfun_ v \o valR_fun                           
+```                                                                         
+                                                                            
+```                                                                         
+Section function_space == canonical ringType and lmodType                   
+                          structures for functions whose range is           
+                          a ringType, comRingType, or lmodType.             
+                  fctE == multi-rule for fct                                
+```                                                                         
+                                                                            
 </div>
 <br/>
 <span class="gallina-kwd">Set</span> <span class="vernacular">Implicit</span> <span class="vernacular">Arguments</span>.<br/>
@@ -462,7 +462,7 @@ Section function_space == canonical ringType and lmodType
 <span class="vernacular">End</span> <span class="id"><a href="mathcomp.classical.functions.html#ShortFunSyntax">ShortFunSyntax</a></span>.<br/>
 <br/>
 <div class="ssrdoc md">
-## Theory                                                                  
+## Theory                                                                   
 </div>
 <br/>
 <span class="vernacular">Definition</span> <span id="phant_funS" class="id"><a name="phant_funS" class="">phant_funS</a></span> <span id="aT:185" class="id"><a name="aT:185" class="">aT</a></span> <span id="rT:186" class="id"><a name="rT:186" class="">rT</a></span> (<span id="A:187" class="id"><a name="A:187" class="">A</a></span> <span class="id">:</span> <span class="id"><a href="mathcomp.classical.classical_sets.html#set">set</a></span> <span class="id"><a href="mathcomp.classical.functions.html#aT:185">aT</a></span>) (<span id="B:188" class="id"><a name="B:188" class="">B</a></span> <span class="id">:</span> <span class="id"><a href="mathcomp.classical.classical_sets.html#set">set</a></span> <span class="id"><a href="mathcomp.classical.functions.html#rT:186">rT</a></span>)<br/>
@@ -1195,7 +1195,7 @@ Qed.</div>
 <span class="vernacular">End</span> <span class="id"><a href="mathcomp.classical.functions.html#Inverses">Inverses</a></span>.<br/>
 <br/>
 <div class="ssrdoc md">
-## Simple Factories                                                        
+## Simple Factories                                                         
 </div>
 <br/>
 <span class="vernacular">Section</span> <span id="Pinj" class="id"><a name="Pinj" class="">Pinj</a></span>.<br/>
@@ -1313,7 +1313,7 @@ Qed.</div>
 Qed.</div>
 <br/>
 <div class="ssrdoc md">
-## Instances                                                               
+## Instances                                                                
 </div>
 <br/>
 <div class="doc">The identity is a split bijection </div>
@@ -1726,7 +1726,7 @@ Qed.</div>
 <span id="classical_sets_IIord__canonical__functions_SplitBij" class="id"><span id="classical_sets_IIord__canonical__functions_SplitSurjFun" class="id"><span id="classical_sets_IIord__canonical__functions_SplitInjFun" class="id"><span id="classical_sets_IIord__canonical__functions_InvFun" class="id"><span id="classical_sets_IIord__canonical__functions_Bij" class="id"><span id="classical_sets_IIord__canonical__functions_SurjFun" class="id"><span id="classical_sets_IIord__canonical__functions_InjFun" class="id"><span id="classical_sets_IIord__canonical__functions_OInvFun" class="id"><span id="classical_sets_IIord__canonical__functions_Fun" class="id"><span id="HB_unnamed_mixin_1062" class="id"><span id="classical_sets_IIord__canonical__functions_SplitSurj" class="id"><span id="classical_sets_IIord__canonical__functions_Surject" class="id"><span id="HB_unnamed_mixin_1061" class="id"><span id="classical_sets_IIord__canonical__functions_SplitInj" class="id"><span id="classical_sets_IIord__canonical__functions_Inversible" class="id"><span id="HB_unnamed_mixin_1060" class="id"><span id="classical_sets_IIord__canonical__functions_Inject" class="id"><span id="HB_unnamed_mixin_1059" class="id"><span id="classical_sets_IIord__canonical__functions_OInversible" class="id"><span id="HB_unnamed_mixin_1058" class="id"><span id="functions_SplitBij__to__functions_isFun__1057" class="id"><span id="functions_SplitBij__to__functions_OInv_CanV__1055" class="id"><span id="functions_SplitBij__to__functions_OInv_Inv__1053" class="id"><span id="functions_SplitBij__to__functions_OInv_Can__1051" class="id"><span id="functions_SplitBij__to__functions_OInv__1049" class="id"><span id="HB_unnamed_factory_1047" class="id"><span id="hb_instance_1046.n" class="id"><span id="hb_instance_1046" class="id"><a name="classical_sets_IIord__canonical__functions_SplitBij" class="hierarchy-builder">HB.instance</a></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span> <span class="vernacular">Definition</span> <span class="id">_</span> <span id="n:1067" class="id"><a name="n:1067" class="">n</a></span> <span class="id">:=</span> <span class="id"><a href="mathcomp.classical.functions.html#copy">SplitBij.copy</a></span> (@<span class="id"><a href="mathcomp.classical.classical_sets.html#IIord">IIord</a></span> <span class="id"><a href="mathcomp.classical.functions.html#n:1067">n</a></span>) (<span class="id"><a href="mathcomp.classical.classical_sets.html#ordII">ordII^-1</a></span>).<br/>
 <br/>
 <div class="ssrdoc md">
-## Glueing                                                                 
+## Glueing                                                                  
 </div>
 <br/>
 <span class="vernacular">Definition</span> <span id="glue" class="id"><a name="glue" class="">glue</a></span> <span class="id">{T</span> <span id="T':1069" class="id"><a name="T':1069" class="">T'}</a></span> <span class="id">{X</span> <span id="Y:1071" class="id"><a name="Y:1071" class="">Y</a></span> <span class="id">:</span> <span class="id"><a href="mathcomp.classical.classical_sets.html#set">set</a></span> <span class="id"><a href="mathcomp.classical.functions.html#T:1068">T}</a></span> <span class="id">{A</span> <span id="B:1073" class="id"><a name="B:1073" class="">B</a></span> <span class="id">:</span> <span class="id"><a href="mathcomp.classical.classical_sets.html#set">set</a></span> <span class="id"><a href="mathcomp.classical.functions.html#T':1069">T'}</a></span><br/>
@@ -1903,7 +1903,7 @@ Qed.</div>
 <span class="vernacular">End</span> <span class="id"><a href="mathcomp.classical.functions.html#empty">empty</a></span>.<br/>
 <br/>
 <div class="ssrdoc md">
-## Theory of surjection                                                    
+## Theory of surjection                                                     
 </div>
 <br/>
 <span class="vernacular">Section</span> <span id="surj_lemmas" class="id"><a name="surj_lemmas" class="">surj_lemmas</a></span>.<br/>
@@ -2176,7 +2176,7 @@ Qed.</div>
 <span class="id">#[global]</span> <span class="vernacular">Hint</span> <span class="id">Extern</span> <span class="id">0</span> (<span class="id"><a href="https://coq.inria.fr/doc/V8.18.0/stdlib/Coq.ssr.ssrfun.html#bijective">bijective</a></span> <span class="id">_</span>) <span class="id">=&gt;</span> <span class="id">solve</span> <span class="id">[apply:</span> <span class="id"><a href="mathcomp.classical.functions.html#bijTT">bijTT]</a></span> <span class="id">:</span> <span class="id">core</span>.<br/>
 <br/>
 <div class="ssrdoc md">
-## Patching and restrictions                                               
+## Patching and restrictions                                                
 </div>
 <br/>
 <span class="vernacular">Section</span> <span id="patch" class="id"><a name="patch" class="">patch</a></span>.<br/>
@@ -2284,7 +2284,7 @@ Qed.</div>
 Qed.</div>
 <br/>
 <div class="ssrdoc md">
-## Restriction of domain and codomain                                      
+## Restriction of domain and codomain                                       
 </div>
 <br/>
 <span class="vernacular">Section</span> <span id="RestrictionLeft" class="id"><a name="RestrictionLeft" class="">RestrictionLeft</a></span>.<br/>

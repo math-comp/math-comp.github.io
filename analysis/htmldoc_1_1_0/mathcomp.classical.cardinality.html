@@ -90,37 +90,37 @@
 <span class="vernacular">From</span> <span class="id">mathcomp</span> <span class="vernacular">Require</span> <span class="vernacular">Import</span> <span class="id"><a href="mathcomp.classical.mathcomp_extra.html">mathcomp_extra</a></span> <span class="id"><a href="mathcomp.classical.boolp.html">boolp</a></span> <span class="id"><a href="mathcomp.classical.classical_sets.html">classical_sets</a></span> <span class="id"><a href="mathcomp.classical.functions.html">functions</a></span>.<br/>
 <br/>
 <div class="ssrdoc md">
-# Cardinality                                                              
-                                                                           
-This file provides an account of cardinality properties of classical sets. 
-This includes standard results of set theory such as the Pigeon Hole       
-principle, the Cantor-Bernstein Theorem, or lemmas about the cardinal of   
-nat, nat * nat, and rat.                                                   
-                                                                           
-Since universe polymorphism is not yet available in our framework, we      
-develop a relational theory of cardinals: there is no type for cardinals   
-only relations A #&lt;= B and A #= B to compare the cardinals of two sets     
-(on two possibly different types).                                         
-                                                                           
-```                                                                        
-          A #&lt;= B == the cardinal of A is smaller or equal to the one of B 
-          A #&gt;= B := B #&lt;= A                                               
-           A #= B == the cardinal of A is equal to the cardinal of B       
-          A #!= B := ~~ (A #= B)                                           
-     finite_set A == the set A is finite                                   
-                  := exists n, A #= `I_n                                   
-                  &lt;-&gt; exists X : {fset T}, A = [set` X]                    
-                  &lt;-&gt; ~ ([set: nat] #&lt;= A)                                 
-   infinite_set A := ~ finite_set A                                        
-      countable A &lt;-&gt; A is countable                                       
-                  := A #&lt;= [set: nat]                                      
-       fset_set A == the finite set corresponding if A : set T is finite,  
-                     set0 otherwise (T : choiceType)                       
-             A.`1 := [fset x.1 | x in A]                                   
-             A.`2 := [fset x.2 | x in A]                                   
-{fimfun aT &gt;-&gt; T} == type of functions with a finite image                 
-```                                                                        
-                                                                           
+# Cardinality                                                               
+                                                                            
+This file provides an account of cardinality properties of classical sets.  
+This includes standard results of set theory such as the Pigeon Hole        
+principle, the Cantor-Bernstein Theorem, or lemmas about the cardinal of    
+nat, nat * nat, and rat.                                                    
+                                                                            
+Since universe polymorphism is not yet available in our framework, we       
+develop a relational theory of cardinals: there is no type for cardinals    
+only relations A #&lt;= B and A #= B to compare the cardinals of two sets      
+(on two possibly different types).                                          
+                                                                            
+```                                                                         
+          A #&lt;= B == the cardinal of A is smaller or equal to the one of B  
+          A #&gt;= B := B #&lt;= A                                                
+           A #= B == the cardinal of A is equal to the cardinal of B        
+          A #!= B := ~~ (A #= B)                                            
+     finite_set A == the set A is finite                                    
+                  := exists n, A #= `I_n                                    
+                  &lt;-&gt; exists X : {fset T}, A = [set` X]                     
+                  &lt;-&gt; ~ ([set: nat] #&lt;= A)                                  
+   infinite_set A := ~ finite_set A                                         
+      countable A &lt;-&gt; A is countable                                        
+                  := A #&lt;= [set: nat]                                       
+       fset_set A == the finite set corresponding if A : set T is finite,   
+                     set0 otherwise (T : choiceType)                        
+             A.`1 := [fset x.1 | x in A]                                    
+             A.`2 := [fset x.2 | x in A]                                    
+{fimfun aT &gt;-&gt; T} == type of functions with a finite image                  
+```                                                                         
+                                                                            
 </div>
 <br/>
 <span class="gallina-kwd">Set</span> <span class="vernacular">Implicit</span> <span class="vernacular">Arguments</span>.<br/>

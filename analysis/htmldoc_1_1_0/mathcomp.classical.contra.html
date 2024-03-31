@@ -93,40 +93,40 @@
 <span class="vernacular">Unset</span> <span class="vernacular">Printing</span> <span class="vernacular">Implicit</span> <span class="vernacular">Defensive</span>.<br/>
 <br/>
 <div class="ssrdoc md">
-# Contraposition                                                           
-                                                                           
-This file provides tactics to reason by contraposition and contradiction.  
-                                                                           
-## Tactics                                                                 
-```                                                                        
-assume_not == add a goal negation assumption. The tactic also works for    
-              goals in Type, simplifies the added assumption, and          
-              exposes its top-level constructive content.                  
-absurd_not == proof by contradiction. Same as assume_not, but the goal is  
-              erased and replaced by False.                                
-              Caveat: absurd_not cannot be used as a move/ view because    
-              its conclusion is indeterminate. The more general notP can   
-              be used instead.                                             
-    contra == proof by contraposition. Change a goal of the form           
-              assumption -&gt; conclusion to ~ conclusion -&gt; ~ assumption.    
-              As with assume_not, contra allows both assumption and        
-              conclusion to be in Type, simplifies the negation of both    
-              assumption and conclusion, and exposes the constructive      
-              contents of the negated conclusion.                          
-              The contra tactic also supports a limited form of the ':'    
-              discharge pseudo tactical, whereby contra: &lt;d-items&gt; means   
-              move: &lt;d-items&gt;; contra.                                     
-              The only &lt;d-items&gt; allowed are one term, possibly preceded   
-              by a clear switch.                                           
-    absurd == proof by contradiction. The defective form of the tactic     
-              simply replaces the entire goal with False (just as the Ltac 
-              exfalso), leaving the user to derive a contradiction from    
-              the assumptions.                                             
-              The ':' form absurd: &lt;d-items&gt; replaces the goal with the    
-              negation of the (single) &lt;d-item&gt; (as with contra:, a clear  
-              switch is also allowed.                                      
-              Finally the Ltac absurd term form is also supported.         
-```                                                                        
+# Contraposition                                                            
+                                                                            
+This file provides tactics to reason by contraposition and contradiction.   
+                                                                            
+## Tactics                                                                  
+```                                                                         
+assume_not == add a goal negation assumption. The tactic also works for     
+              goals in Type, simplifies the added assumption, and           
+              exposes its top-level constructive content.                   
+absurd_not == proof by contradiction. Same as assume_not, but the goal is   
+              erased and replaced by False.                                 
+              Caveat: absurd_not cannot be used as a move/ view because     
+              its conclusion is indeterminate. The more general notP can    
+              be used instead.                                              
+    contra == proof by contraposition. Change a goal of the form            
+              assumption -&gt; conclusion to ~ conclusion -&gt; ~ assumption.     
+              As with assume_not, contra allows both assumption and         
+              conclusion to be in Type, simplifies the negation of both     
+              assumption and conclusion, and exposes the constructive       
+              contents of the negated conclusion.                           
+              The contra tactic also supports a limited form of the ':'     
+              discharge pseudo tactical, whereby contra: &lt;d-items&gt; means    
+              move: &lt;d-items&gt;; contra.                                      
+              The only &lt;d-items&gt; allowed are one term, possibly preceded    
+              by a clear switch.                                            
+    absurd == proof by contradiction. The defective form of the tactic      
+              simply replaces the entire goal with False (just as the Ltac  
+              exfalso), leaving the user to derive a contradiction from     
+              the assumptions.                                              
+              The ':' form absurd: &lt;d-items&gt; replaces the goal with the     
+              negation of the (single) &lt;d-item&gt; (as with contra:, a clear   
+              switch is also allowed.                                       
+              Finally the Ltac absurd term form is also supported.          
+```                                                                         
 </div>
 <br/>
 <div class="doc">Hiding module for the internal definitions and lemmas used by the tactics
@@ -134,15 +134,15 @@ absurd_not == proof by contradiction. Same as assume_not, but the goal is
 <span class="vernacular">Module</span> <span id="Internals" class="id"><a name="Internals" class="">Internals</a></span>.<br/>
 <br/>
 <div class="ssrdoc md">
-A wrapper for view lemmas with an indeterminate conclusion (of the form    
-forall ... T ..., pattern -&gt; T), and for which the intended view pattern   
-may fail to match some assumptions. This wrapper ensures that such views   
-are only used in the forward direction (as in move/), and only with the    
-appropriate move_viewP hint, preventing its application to an arbitrary    
-assumption A by the instatiation to A -&gt; T' of its indeterminate           
-conclusion T. This is similar to the implies wrapper, except move_viewP    
-is *NOT* declared as a coercion---it must be used explicitly to apply the  
-view manually to an assumption (as in, move_viewP my_view some_assumption).
+A wrapper for view lemmas with an indeterminate conclusion (of the form     
+forall ... T ..., pattern -&gt; T), and for which the intended view pattern    
+may fail to match some assumptions. This wrapper ensures that such views    
+are only used in the forward direction (as in move/), and only with the     
+appropriate move_viewP hint, preventing its application to an arbitrary     
+assumption A by the instatiation to A -&gt; T' of its indeterminate            
+conclusion T. This is similar to the implies wrapper, except move_viewP     
+is *NOT* declared as a coercion---it must be used explicitly to apply the   
+view manually to an assumption (as in, move_viewP my_view some_assumption). 
 </div>
 <br/>
 <span class="vernacular">Variant</span> <span id="Internals.move_view" class="id"><a name="Internals.move_view" class="">move_view</a></span> <span id="S:1" class="id"><a name="S:1" class="">S</a></span> <span id="T:2" class="id"><a name="T:2" class="">T</a></span> <span class="id">:=</span> <span id="Internals.MoveView" class="id"><a name="Internals.MoveView" class="">MoveView</a></span> <span class="id">of</span> <span class="id"><a href="mathcomp.classical.contra.html#S:1">S</a></span> <span class="id"><a href="https://coq.inria.fr/doc/V8.18.0/stdlib/Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x">-&gt;</a></span> <span class="id"><a href="mathcomp.classical.contra.html#T:2">T</a></span>.<br/>
@@ -150,7 +150,7 @@ view manually to an assumption (as in, move_viewP my_view some_assumption).
 <span class="vernacular">Hint</span> <span class="id">View</span> <span class="gallina-kwd">for</span> <span class="id">move/</span> <span class="id"><a href="mathcomp.classical.contra.html#Internals.move_viewP">move_viewP|2</a></span>.<br/>
 <br/>
 <div class="ssrdoc md">
-## Type-level equivalence                                                  
+## Type-level equivalence                                                   
 </div>
 <br/>
 <span class="vernacular">Variant</span> <span id="Internals.equivT" class="id"><a name="Internals.equivT" class="">equivT</a></span> <span id="S:9" class="id"><a name="S:9" class="">S</a></span> <span id="T:10" class="id"><a name="T:10" class="">T</a></span> <span class="id">:=</span> <span id="Internals.EquivT" class="id"><a name="Internals.EquivT" class="">EquivT</a></span> <span class="id">of</span> <span class="id"><a href="mathcomp.classical.contra.html#S:9">S</a></span> <span class="id"><a href="https://coq.inria.fr/doc/V8.18.0/stdlib/Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x">-&gt;</a></span> <span class="id"><a href="mathcomp.classical.contra.html#T:10">T</a></span> &amp; <span class="id"><a href="mathcomp.classical.contra.html#T:10">T</a></span> <span class="id"><a href="https://coq.inria.fr/doc/V8.18.0/stdlib/Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x">-&gt;</a></span> <span class="id"><a href="mathcomp.classical.contra.html#S:9">S</a></span>.<br/>
@@ -180,31 +180,31 @@ view manually to an assumption (as in, move_viewP my_view some_assumption).
 <span class="vernacular">Hint</span> <span class="id">View</span> <span class="gallina-kwd">for</span> <span class="id">apply/</span> <span class="id"><a href="mathcomp.classical.contra.html#Internals.equivT_RL">equivT_RL|2</a></span> <span class="id"><a href="mathcomp.classical.contra.html#Internals.equivT_LR">equivT_LR|2</a></span>.<br/>
 <br/>
 <div class="ssrdoc md">
-A generic Forall "constructor" for the Gallina forall quantifier, i.e.,    
-```                                                                        
-  \Forall x, P := Forall (fun x =&gt; P) := forall x, P.                      
-```                                                                        
-The main use of Forall is to apply congruence to a forall equality:        
-```                                                                        
-   congr1 Forall : forall P Q, P = Q -&gt; Forall P = Forall Q.               
-```                                                                        
-in particular in a classical setting with function extensionality, where   
-we can have (forall x, P x = Q x) -&gt; (forall x, P x) = (forall x, Q x).    
-                                                                           
-We use a forallSort structure to factor the ad hoc PTS product formation   
-rules; forallSort is keyed on the type of the entire forall expression, or 
-(up to subsumption) the type of the forall body---this is always a sort.   
-                                                                           
-This implementation has two important limitations:                         
-1. It cannot handle the SProp sort and its typing rules. However, its      
-   main application is extensionality, which is not compatible with        
-   SProp because an (A : SProp) -&gt; B "function" is not a generic           
-   (A : Type) -&gt; B function as SProp is not included in Type.              
-2. The Forall constructor can't be inserted by a straightforward           
-   unfold (as in, rewrite -[forall x, _]/(Forall _)) because of the        
-   way Coq unification handles Type constraints. The ForallI tactic        
-   mitigates this issue, but there are additional issues with its          
-   implementation---see below.                                             
+A generic Forall "constructor" for the Gallina forall quantifier, i.e.,     
+```                                                                         
+  \Forall x, P := Forall (fun x =&gt; P) := forall x, P.                       
+```                                                                         
+The main use of Forall is to apply congruence to a forall equality:         
+```                                                                         
+   congr1 Forall : forall P Q, P = Q -&gt; Forall P = Forall Q.                
+```                                                                         
+in particular in a classical setting with function extensionality, where    
+we can have (forall x, P x = Q x) -&gt; (forall x, P x) = (forall x, Q x).     
+                                                                            
+We use a forallSort structure to factor the ad hoc PTS product formation    
+rules; forallSort is keyed on the type of the entire forall expression, or  
+(up to subsumption) the type of the forall body---this is always a sort.    
+                                                                            
+This implementation has two important limitations:                          
+1. It cannot handle the SProp sort and its typing rules. However, its       
+   main application is extensionality, which is not compatible with         
+   SProp because an (A : SProp) -&gt; B "function" is not a generic            
+   (A : Type) -&gt; B function as SProp is not included in Type.               
+2. The Forall constructor can't be inserted by a straightforward            
+   unfold (as in, rewrite -[forall x, _]/(Forall _)) because of the         
+   way Coq unification handles Type constraints. The ForallI tactic         
+   mitigates this issue, but there are additional issues with its           
+   implementation---see below.                                              
 </div>
 <br/>
 <span class="vernacular">Structure</span> <span id="Internals.forallSort" class="id"><a name="Internals.forallSort" class="">forallSort</a></span> <span id="A:40" class="id"><a name="A:40" class="">A</a></span> <span class="id">:=</span><br/>
@@ -232,10 +232,10 @@ This implementation has two important limitations:
 <span class="vernacular">Tactic</span> <span class="vernacular">Notation</span> <span class="id">&quot;ForallI&quot;</span> <span class="id">:=</span> <span class="id">ForallI</span> (<span class="gallina-kwd">forall</span> <span id="x:54" class="id"><a name="x:54" class="">x,</a></span> <span class="id">_</span>).<br/>
 <br/>
 <div class="ssrdoc md">
-We define specialized copies of the wrapped structure of ssrfun for Prop   
-and Type, as we need more than two alternative rules (indeed, 3 for Prop   
-and 4 for Type). We need separate copies for Prop and Type as universe     
-polymorphism cannot instantiate Type with Prop.                            
+We define specialized copies of the wrapped structure of ssrfun for Prop    
+and Type, as we need more than two alternative rules (indeed, 3 for Prop    
+and 4 for Type). We need separate copies for Prop and Type as universe      
+polymorphism cannot instantiate Type with Prop.                             
 </div>
 <br/>
 <span class="vernacular">Structure</span> <span id="Internals.wrappedProp" class="id"><a name="Internals.wrappedProp" class="">wrappedProp</a></span> <span class="id">:=</span> <span class="id">WrapProp</span> <span class="id">{unwrap_Prop</span> <span class="id">:&gt;</span> <span class="id">Prop}</span>.<br/>
@@ -258,66 +258,66 @@ polymorphism cannot instantiate Type with Prop.
  <span class="gallina-kwd">by</span> <span class="id">move/funext-&gt;</span>. Qed.</div>
 <br/>
 <div class="ssrdoc md">
-A set of tools (tactics, views, and rewrite rules) to facilitate the       
-handling of classical negation. The core functionality of these tools is   
-implemented by three sets of canonical structures that provide for the     
-simplification of negation statements (e.g., using de Morgan laws), the    
-conversion from constructive statements in Type to purely logical ones in  
-Prop (equivalently, expansion rules for the statement inhabited T), and    
-conversely extraction of constructive contents from logical statements.    
-                                                                           
-Except for bool predicates and operators, all definitions are treated      
-transparently when matching statements for either simplification or        
-conversion; this is achieved by using the wrapper telescope pattern, first 
-delegating the matching of specific logical connectives, predicates, or    
-type constructors to an auxiliary structure that *FAILS* to match unknown  
-operators, thus triggers the expansion of defined constants. If this       
-ultimately fails then the wrapper is expanded, and the primary structure   
-instance for the expanded wrapper provides an alternative default rule:    
-not simplifying ~ P, not expanding inhabited T, or not extracting any      
-contents from a proposition P, respectively.                               
-                                                                           
-Additional rules, for intermediate wrapper instances, are used to handle   
-forall statements (for which canonical instances are not yet supported),   
-as well as addiitonal simplifications, such as inhabited P = P :&gt; Prop.    
-                                                                           
-Finally various tertiary structures are used to match deeper patterns,     
-such as bounded forall statements of the form forall x, P x -&gt; Q x, or     
-inequalites x != y (i.e., is_true (~~ (x == y))). As mentioned above,      
-tertiary rules for bool subexpressions do not try to expand definitions,   
-as this would lead to the undesirable expansion of some standard           
-definitions. This is simply achieved by *NOT* using the wrapper telescope  
-pattern, and just having a default instance alongside those for specific   
-predicates and connectives.                                                
+A set of tools (tactics, views, and rewrite rules) to facilitate the        
+handling of classical negation. The core functionality of these tools is    
+implemented by three sets of canonical structures that provide for the      
+simplification of negation statements (e.g., using de Morgan laws), the     
+conversion from constructive statements in Type to purely logical ones in   
+Prop (equivalently, expansion rules for the statement inhabited T), and     
+conversely extraction of constructive contents from logical statements.     
+                                                                            
+Except for bool predicates and operators, all definitions are treated       
+transparently when matching statements for either simplification or         
+conversion; this is achieved by using the wrapper telescope pattern, first  
+delegating the matching of specific logical connectives, predicates, or     
+type constructors to an auxiliary structure that *FAILS* to match unknown   
+operators, thus triggers the expansion of defined constants. If this        
+ultimately fails then the wrapper is expanded, and the primary structure    
+instance for the expanded wrapper provides an alternative default rule:     
+not simplifying ~ P, not expanding inhabited T, or not extracting any       
+contents from a proposition P, respectively.                                
+                                                                            
+Additional rules, for intermediate wrapper instances, are used to handle    
+forall statements (for which canonical instances are not yet supported),    
+as well as addiitonal simplifications, such as inhabited P = P :&gt; Prop.     
+                                                                            
+Finally various tertiary structures are used to match deeper patterns,      
+such as bounded forall statements of the form forall x, P x -&gt; Q x, or      
+inequalites x != y (i.e., is_true (~~ (x == y))). As mentioned above,       
+tertiary rules for bool subexpressions do not try to expand definitions,    
+as this would lead to the undesirable expansion of some standard            
+definitions. This is simply achieved by *NOT* using the wrapper telescope   
+pattern, and just having a default instance alongside those for specific    
+predicates and connectives.                                                 
 </div>
 <br/>
 <div class="ssrdoc md">
-The negatedProp structure provides simplification of the Prop negation     
-(~ _) for standard connectives and predicates. The instances below cover   
-the pervasive and ssrbool Prop connectives, decidable equality, as well as 
-bool propositions (i.e., the is_true predicate), together with a few bool  
-connectives and predicates: negation ~~, equality ==, and nat &lt;= and &lt;.    
-Others can be added (e.g., Order.le/lt) by declaring appropriate instances 
-of bool_negation and bool_affirmation, while other Prop connectives and    
-predicates can be added by declaring instances of proper_negatedProp.      
+The negatedProp structure provides simplification of the Prop negation      
+(~ _) for standard connectives and predicates. The instances below cover    
+the pervasive and ssrbool Prop connectives, decidable equality, as well as  
+bool propositions (i.e., the is_true predicate), together with a few bool   
+connectives and predicates: negation ~~, equality ==, and nat &lt;= and &lt;.     
+Others can be added (e.g., Order.le/lt) by declaring appropriate instances  
+of bool_negation and bool_affirmation, while other Prop connectives and     
+predicates can be added by declaring instances of proper_negatedProp.       
 </div>
 <br/>
 <div class="ssrdoc md">
-The implementation follows the wrapper telescope pattern outlined above:   
-negatedProp instances match on the wrappedProp wrapper to try three        
-generic matching rules, in succession:                                     
-- Rule 1: match a specific connective or predicate with an instance of the 
-          properNegatedProp secondary structure, expanding definitions     
-          if needed, but failing if no proper match is found.              
-- Rule 2: match a forall statement (including (T : Type) -&gt; P statements). 
-- Rule 3: match any Prop but return the trivial simplification.            
-The simplified proposition is returned as a projection parameter nP rather 
-than a Structure member, so that applying the corresponding views or       
-rewrite rules doesn't expose the inferred structures; properNegatedProp    
-does similarly. Also, negatedProp similarly returns a 'trivial' bool flag  
-that is set when Rule 3 is used, but this is actually used in the reverse  
-direction: views notP and rewrite rule notE force trivial := false, thus   
-excluding trivial instances.                                               
+The implementation follows the wrapper telescope pattern outlined above:    
+negatedProp instances match on the wrappedProp wrapper to try three         
+generic matching rules, in succession:                                      
+- Rule 1: match a specific connective or predicate with an instance of the  
+          properNegatedProp secondary structure, expanding definitions      
+          if needed, but failing if no proper match is found.               
+- Rule 2: match a forall statement (including (T : Type) -&gt; P statements).  
+- Rule 3: match any Prop but return the trivial simplification.             
+The simplified proposition is returned as a projection parameter nP rather  
+than a Structure member, so that applying the corresponding views or        
+rewrite rules doesn't expose the inferred structures; properNegatedProp     
+does similarly. Also, negatedProp similarly returns a 'trivial' bool flag   
+that is set when Rule 3 is used, but this is actually used in the reverse   
+direction: views notP and rewrite rule notE force trivial := false, thus    
+excluding trivial instances.                                                
 </div>
 <br/>
 <span class="vernacular">Structure</span> <span id="Internals.negatedProp" class="id"><a name="Internals.negatedProp" class="">negatedProp</a></span> (<span id="trivial:65" class="id"><a name="trivial:65" class="">trivial</a></span> <span class="id">:</span> <span class="id"><a href="https://coq.inria.fr/doc/V8.18.0/stdlib/Coq.Init.Datatypes.html#bool">bool</a></span>) <span id="nP:66" class="id"><a name="nP:66" class="">nP</a></span> <span class="id">:=</span><br/>
@@ -331,10 +331,10 @@ excluding trivial instances.
 <span class="vernacular">Local</span> <span class="vernacular">Notation</span> <span id="Internals.pnProp" class="id"><a name="Internals.pnProp" class="">pnProp</a></span> <span class="id">nP</span> <span class="id">P</span> <span class="id">:=</span> (@<span class="id"><a href="mathcomp.classical.contra.html#Internals.proper_negated_Prop">proper_negated_Prop</a></span> <span class="id">nP</span> <span class="id">P</span>).<br/>
 <br/>
 <div class="ssrdoc md">
-User views and rewrite rules. The plain versions (notP, notE and notI) do  
-not match trivial instances; lax_XXX versions allow them. In addition,     
-the negation introduction rewrite rule notI does not match forall or -&gt;    
-statements---lax_notI must be used for these.                              
+User views and rewrite rules. The plain versions (notP, notE and notI) do   
+not match trivial instances; lax_XXX versions allow them. In addition,      
+the negation introduction rewrite rule notI does not match forall or -&gt;     
+statements---lax_notI must be used for these.                               
 </div>
 <br/>
 <span class="vernacular">Lemma</span> <span id="Internals.lax_notE" class="id"><a name="Internals.lax_notE" class="">lax_notE</a></span> <span class="id">{t</span> <span id="nP:73" class="id"><a name="nP:73" class="">nP}</a></span> <span id="P:74" class="id"><a name="P:74" class="">P</a></span> <span class="id">:</span> (<span class="id"><a href="https://coq.inria.fr/doc/V8.18.0/stdlib/Coq.Init.Logic.html#63a68285c81db8f9bc456233bb9ed181">~</a></span> <span class="id"><a href="mathcomp.classical.contra.html#Internals.nProp">nProp</a></span> <span class="id"><a href="mathcomp.classical.contra.html#t:72">t</a></span> <span class="id"><a href="mathcomp.classical.contra.html#nP:73">nP</a></span> <span class="id"><a href="mathcomp.classical.contra.html#P:74">P</a></span>) <span class="id">=</span> <span class="id"><a href="mathcomp.classical.contra.html#nP:73">nP</a></span><br/>
@@ -427,11 +427,11 @@ statements---lax_notI must be used for these.
 &nbsp;&nbsp;<span class="id"><a href="mathcomp.classical.contra.html#Internals.ProperNegatedProp">ProperNegatedProp</a></span> (@<span class="id"><a href="mathcomp.classical.contra.html#Internals.or4_nPropP">or4_nPropP</a></span> <span class="id"><a href="mathcomp.classical.contra.html#tP:179">tP</a></span> <span class="id"><a href="mathcomp.classical.contra.html#nP:180">nP</a></span> <span class="id"><a href="mathcomp.classical.contra.html#P:181">P</a></span> <span class="id"><a href="mathcomp.classical.contra.html#tQ:182">tQ</a></span> <span class="id"><a href="mathcomp.classical.contra.html#nQ:183">nQ</a></span> <span class="id"><a href="mathcomp.classical.contra.html#Q:184">Q</a></span> <span class="id"><a href="mathcomp.classical.contra.html#tR:185">tR</a></span> <span class="id"><a href="mathcomp.classical.contra.html#nR:186">nR</a></span> <span class="id"><a href="mathcomp.classical.contra.html#R:187">R</a></span> <span class="id"><a href="mathcomp.classical.contra.html#tS:188">tS</a></span> <span class="id"><a href="mathcomp.classical.contra.html#nS:189">nS</a></span> <span class="id"><a href="mathcomp.classical.contra.html#S:190">S</a></span>).<br/>
 <br/>
 <div class="ssrdoc md">
-The andRHS tertiary structure used to simplify (~ (P -&gt; False)) to P,      
-both here for the imply_nProp instance and for bounded_forall_nProp below. 
-Because the andRHS instances match the Prop RETURNED by negatedProp they   
-do not need to expand definitions, hence do not need to use the wrapper    
-telescope pattern.                                                         
+The andRHS tertiary structure used to simplify (~ (P -&gt; False)) to P,       
+both here for the imply_nProp instance and for bounded_forall_nProp below.  
+Because the andRHS instances match the Prop RETURNED by negatedProp they    
+do not need to expand definitions, hence do not need to use the wrapper     
+telescope pattern.                                                          
 </div>
 <br/>
 <span class="vernacular">Notation</span> <span id="Internals.and_def" class="id"><a name="Internals.and_def" class="">and_def</a></span> <span class="id">binary</span> <span class="id">P</span> <span class="id">Q</span> <span class="id">PQ</span> <span class="id">:=</span> (<span class="id">PQ</span> <span class="id"><a href="https://coq.inria.fr/doc/V8.18.0/stdlib/Coq.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a">=</a></span> <span class="gallina-kwd">if</span> <span class="id">binary</span> <span class="gallina-kwd">then</span> <span class="id">P</span> <span class="id"><a href="https://coq.inria.fr/doc/V8.18.0/stdlib/Coq.Init.Logic.html#ba2b0e492d2b4675a0acf3ea92aabadd">/\</a></span> <span class="id">Q</span> <span class="gallina-kwd">else</span> <span class="id">Q</span>)%<span class="id">type</span>.<br/>
@@ -473,16 +473,16 @@ Qed.</div>
 <span class="vernacular">Canonical</span> <span id="Internals.inhabited_nProp" class="id"><a name="Internals.inhabited_nProp" class="">inhabited_nProp</a></span> <span id="T:238" class="id"><a name="T:238" class="">T</a></span> <span class="id">:=</span> <span class="id"><a href="mathcomp.classical.contra.html#Internals.ProperNegatedProp">ProperNegatedProp</a></span> (<span class="id"><a href="mathcomp.classical.contra.html#Internals.inhabited_nPropP">inhabited_nPropP</a></span> <span class="id"><a href="mathcomp.classical.contra.html#T:238">T</a></span>).<br/>
 <br/>
 <div class="ssrdoc md">
-Rule 2: forall negation, including (T : Type) -&gt; P statements.             
-                                                                           
-We use tertiary structures to recognize bounded foralls and simplify,      
-e.g., ~ forall x, P -&gt; Q to exists2 x, P &amp; ~ Q, or even exists x, P when   
-Q :=  False (as above for imply).                                          
-                                                                           
-As forall_body_nProp and forall_body_proper_nProp are telescopes           
-over negatedProp and properNegatedProp, respectively, their instances      
-match instances declared above without the need to expand definitions,     
-hence do not need to use the wrapper telescope idiom.                      
+Rule 2: forall negation, including (T : Type) -&gt; P statements.              
+                                                                            
+We use tertiary structures to recognize bounded foralls and simplify,       
+e.g., ~ forall x, P -&gt; Q to exists2 x, P &amp; ~ Q, or even exists x, P when    
+Q :=  False (as above for imply).                                           
+                                                                            
+As forall_body_nProp and forall_body_proper_nProp are telescopes            
+over negatedProp and properNegatedProp, respectively, their instances       
+match instances declared above without the need to expand definitions,      
+hence do not need to use the wrapper telescope idiom.                       
 </div>
 <br/>
 <span class="vernacular">Structure</span> <span id="Internals.negatedForallBody" class="id"><a name="Internals.negatedForallBody" class="">negatedForallBody</a></span> <span id="bounded:239" class="id"><a name="bounded:239" class="">bounded</a></span> <span id="P:240" class="id"><a name="P:240" class="">P</a></span> <span id="nQ:241" class="id"><a name="nQ:241" class="">nQ</a></span> <span id="tR:242" class="id"><a name="tR:242" class="">tR</a></span> <span id="nR:243" class="id"><a name="nR:243" class="">nR</a></span> <span class="id">:=</span> <span class="id">NegatedForallBody</span> <span class="id">{</span><br/>
@@ -492,11 +492,11 @@ hence do not need to use the wrapper telescope idiom.
 <span class="vernacular">Notation</span> <span id="Internals.nBody" class="id"><a name="Internals.nBody" class="">nBody</a></span> <span class="id">b</span> <span class="id">P</span> <span class="id">nQ</span> <span class="id">t</span> <span class="id">nR</span> <span class="id">x</span> <span class="id">:=</span> (<span class="id"><a href="mathcomp.classical.contra.html#Internals.negatedForallBody">negatedForallBody</a></span> <span class="id">b</span> (<span class="id">P</span> <span class="id">x</span>) (<span class="id">nQ</span> <span class="id">x</span>) <span class="id">t</span> (<span class="id">nR</span> <span class="id">x</span>)).<br/>
 <br/>
 <div class="ssrdoc md">
-The explicit argument to fun_if is a workaround for a bug in the Coq       
-unification code that prevents default instances from ever matching match  
-constructs. Furthermore rewriting with ifE would not work here, because    
-the if_expr definition would be expanded by the eta expansion needed to    
-match the exists_nProp rule.                                               
+The explicit argument to fun_if is a workaround for a bug in the Coq        
+unification code that prevents default instances from ever matching match   
+constructs. Furthermore rewriting with ifE would not work here, because     
+the if_expr definition would be expanded by the eta expansion needed to     
+match the exists_nProp rule.                                                
 </div>
 <br/>
 <span class="vernacular">Fact</span> <span id="Internals.forall_nPropP" class="id"><a name="Internals.forall_nPropP" class="">forall_nPropP</a></span> <span id="A:252" class="id"><a name="A:252" class="">A</a></span> <span id="b:253" class="id"><a name="b:253" class="">b</a></span> <span id="P:254" class="id"><a name="P:254" class="">P</a></span> <span id="nQ:255" class="id"><a name="nQ:255" class="">nQ</a></span> <span id="tR:256" class="id"><a name="tR:256" class="">tR</a></span> <span id="nR:257" class="id"><a name="nR:257" class="">nR</a></span> (<span id="R:259" class="id"><a name="R:259" class="">R</a></span> <span class="id">:</span> <span class="gallina-kwd">forall</span> <span id="x:258" class="id"><a name="x:258" class="">x,</a></span> <span class="id"><a href="mathcomp.classical.contra.html#Internals.nBody">nBody</a></span> <span class="id"><a href="mathcomp.classical.contra.html#b:253">b</a></span> <span class="id"><a href="mathcomp.classical.contra.html#P:254">P</a></span> <span class="id"><a href="mathcomp.classical.contra.html#nQ:255">nQ</a></span> <span class="id"><a href="mathcomp.classical.contra.html#tR:256">tR</a></span> <span class="id"><a href="mathcomp.classical.contra.html#nR:257">nR</a></span> <span class="id"><a href="mathcomp.classical.contra.html#x:258">x</a></span>) <span class="id">:</span><br/>
@@ -531,16 +531,16 @@ Qed.</div>
 &nbsp;&nbsp;@<span class="id"><a href="mathcomp.classical.contra.html#Internals.ProperNegatedForallBody">ProperNegatedForallBody</a></span> <span class="id"><a href="https://coq.inria.fr/doc/V8.18.0/stdlib/Coq.Init.Datatypes.html#false">false</a></span> <span class="id"><a href="https://coq.inria.fr/doc/V8.18.0/stdlib/Coq.Init.Logic.html#True">True</a></span> <span class="id"><a href="mathcomp.classical.contra.html#nQ:303">nQ</a></span> <span class="id"><a href="mathcomp.classical.contra.html#nQ:303">nQ</a></span> <span class="id"><a href="mathcomp.classical.contra.html#Q:304">Q</a></span> <span class="id"><a href="https://coq.inria.fr/doc/V8.18.0/stdlib/Coq.ssr.ssrfun.html#erefl">erefl</a></span>.<br/>
 <br/>
 <div class="ssrdoc md">
-The properNegatedProp instance that handles boolean statements. We use     
-two tertiary structures to handle positive and negative boolean statements 
-so that the contra tactic below will mostly subsume the collection of      
-contraXX lemmas in ssrbool and eqtype.                                     
-                                                                           
-We only match manifest ~~ connectives, the true and false constants, and   
-the ==, &lt;=%N, and &lt;%N predicates. In particular we do not use de Morgan    
-laws to push boolean negation into connectives, as we did above for Prop   
-connectives. It will be up to the user to use rewriting to put the negated 
-statement in its desired shape.                                            
+The properNegatedProp instance that handles boolean statements. We use      
+two tertiary structures to handle positive and negative boolean statements  
+so that the contra tactic below will mostly subsume the collection of       
+contraXX lemmas in ssrbool and eqtype.                                      
+                                                                            
+We only match manifest ~~ connectives, the true and false constants, and    
+the ==, &lt;=%N, and &lt;%N predicates. In particular we do not use de Morgan     
+laws to push boolean negation into connectives, as we did above for Prop    
+connectives. It will be up to the user to use rewriting to put the negated  
+statement in its desired shape.                                             
 </div>
 <br/>
 <span class="vernacular">Structure</span> <span id="Internals.negatedBool" class="id"><a name="Internals.negatedBool" class="">negatedBool</a></span> <span id="nP:305" class="id"><a name="nP:305" class="">nP</a></span> <span class="id">:=</span><br/>
@@ -594,10 +594,10 @@ statement in its desired shape.
 <span class="vernacular">Canonical</span> <span id="Internals.negb_pos" class="id"><a name="Internals.negb_pos" class="">negb_pos</a></span> <span id="nP:324" class="id"><a name="nP:324" class="">nP</a></span> <span id="b:325" class="id"><a name="b:325" class="">b</a></span> <span class="id">:=</span> <span class="id"><a href="mathcomp.classical.contra.html#Internals.PositedBool">PositedBool</a></span> (@<span class="id"><a href="mathcomp.classical.contra.html#Internals.negb_posP">negb_posP</a></span> <span class="id"><a href="mathcomp.classical.contra.html#nP:324">nP</a></span> <span class="id"><a href="mathcomp.classical.contra.html#b:325">b</a></span>).<br/>
 <br/>
 <div class="ssrdoc md">
-We use a tertiary structure to handle the negation of nat comparisons, and 
-simplify ~ m &lt;= n to n &lt; m, and ~ m &lt; n to n &lt;= m. As m &lt; n is merely      
-notation for m.+1 &lt;= n, we need to dispatch on the left hand side of the   
-comparison to perform the latter simplification.                           
+We use a tertiary structure to handle the negation of nat comparisons, and  
+simplify ~ m &lt;= n to n &lt; m, and ~ m &lt; n to n &lt;= m. As m &lt; n is merely       
+notation for m.+1 &lt;= n, we need to dispatch on the left hand side of the    
+comparison to perform the latter simplification.                            
 </div>
 <br/>
 <span class="vernacular">Structure</span> <span id="Internals.negatedLeqLHS" class="id"><a name="Internals.negatedLeqLHS" class="">negatedLeqLHS</a></span> <span id="n:326" class="id"><a name="n:326" class="">n</a></span> <span id="lt_nm:327" class="id"><a name="lt_nm:327" class="">lt_nm</a></span> <span class="id">:=</span><br/>
@@ -612,15 +612,15 @@ comparison to perform the latter simplification.
 <span class="vernacular">Canonical</span> <span id="Internals.leq_neg" class="id"><a name="Internals.leq_neg" class="">leq_neg</a></span> <span id="n:337" class="id"><a name="n:337" class="">n</a></span> <span id="lt_nm:338" class="id"><a name="lt_nm:338" class="">lt_nm</a></span> <span id="m:339" class="id"><a name="m:339" class="">m</a></span> <span class="id">:=</span> <span class="id"><a href="mathcomp.classical.contra.html#Internals.NegatedBool">NegatedBool</a></span> (@<span class="id"><a href="mathcomp.classical.contra.html#Internals.leq_negP">leq_negP</a></span> <span class="id"><a href="mathcomp.classical.contra.html#n:337">n</a></span> <span class="id"><a href="mathcomp.classical.contra.html#lt_nm:338">lt_nm</a></span> <span class="id"><a href="mathcomp.classical.contra.html#m:339">m</a></span>).<br/>
 <br/>
 <div class="ssrdoc md">
-We use two tertiary structures to simplify negation of boolean constant    
-and decidable equalities, simplifying b &lt;&gt; true to ~~ b, b &lt;&gt; false to b,  
-x &lt;&gt; y to x != y, and ~ x != y to x = y. We do need to use the wrapper     
-telescope pattern here, as we want to simplify instances of x &lt;&gt; y when y  
-evaluates to true or false. Since we only need two rules (true/false RHS   
-or generic eqType RHS) we can use the generic wrapped type from ssrfun.    
-The actual matching of the true and false RHS is delegated to a fourth     
-level bool_eq_negation_rhs structure. Finally observe that the ~ x != y to 
-x = y simplification can be handled by a bool_affirmation instance.        
+We use two tertiary structures to simplify negation of boolean constant     
+and decidable equalities, simplifying b &lt;&gt; true to ~~ b, b &lt;&gt; false to b,   
+x &lt;&gt; y to x != y, and ~ x != y to x = y. We do need to use the wrapper      
+telescope pattern here, as we want to simplify instances of x &lt;&gt; y when y   
+evaluates to true or false. Since we only need two rules (true/false RHS    
+or generic eqType RHS) we can use the generic wrapped type from ssrfun.     
+The actual matching of the true and false RHS is delegated to a fourth      
+level bool_eq_negation_rhs structure. Finally observe that the ~ x != y to  
+x = y simplification can be handled by a bool_affirmation instance.         
 </div>
 <br/>
 <span class="vernacular">Structure</span> <span id="Internals.neqRHS" class="id"><a name="Internals.neqRHS" class="">neqRHS</a></span> <span id="nP:340" class="id"><a name="nP:340" class="">nP</a></span> <span id="T:341" class="id"><a name="T:341" class="">T</a></span> <span id="x:342" class="id"><a name="x:342" class="">x</a></span> <span class="id">:=</span><br/>
@@ -659,24 +659,24 @@ x = y simplification can be handled by a bool_affirmation instance.
 <span class="vernacular">Canonical</span> <span id="Internals.eq_op_pos" class="id"><a name="Internals.eq_op_pos" class="">eq_op_pos</a></span> <span id="T:378" class="id"><a name="T:378" class="">T</a></span> <span id="x:379" class="id"><a name="x:379" class="">x</a></span> <span id="y:380" class="id"><a name="y:380" class="">y</a></span> <span class="id">:=</span> <span class="id"><a href="mathcomp.classical.contra.html#Internals.PositedBool">PositedBool</a></span> (@<span class="id"><a href="mathcomp.classical.contra.html#Internals.eq_op_posP">eq_op_posP</a></span> <span class="id"><a href="mathcomp.classical.contra.html#T:378">T</a></span> <span class="id"><a href="mathcomp.classical.contra.html#x:379">x</a></span> <span class="id"><a href="mathcomp.classical.contra.html#y:380">y</a></span>).<br/>
 <br/>
 <div class="ssrdoc md">
-The witnessedType structure provides conversion between Type and Prop in   
-goals; the conversion is mostly used in the Type-to-Prop direction, e.g.,  
-as a preprocessing step preceding proof by contradiction (see absurd_not   
-below), but the Prop-to-Type direction is required for contraposition.     
-                                                                           
-Thus witnessedType associates to a type T a "witness" proposition P        
-equivalent to the existence of an x of type T. As in a `{classical_logic}  
-context inhabited T is such a proposition, witnessedType can be understood 
-as providing simplification for inhabited T, much like negatedProp         
-provides simplification for ~ P for standard connectives and predicates.   
+The witnessedType structure provides conversion between Type and Prop in    
+goals; the conversion is mostly used in the Type-to-Prop direction, e.g.,   
+as a preprocessing step preceding proof by contradiction (see absurd_not    
+below), but the Prop-to-Type direction is required for contraposition.      
+                                                                            
+Thus witnessedType associates to a type T a "witness" proposition P         
+equivalent to the existence of an x of type T. As in a `{classical_logic}   
+context inhabited T is such a proposition, witnessedType can be understood  
+as providing simplification for inhabited T, much like negatedProp          
+provides simplification for ~ P for standard connectives and predicates.    
 </div>
 <br/>
 <div class="ssrdoc md">
-Similarly to negatedProp, witnessedType returns the witness proposition     
-via a projection argument P, but does not need to signal "trivial"         
-instances as the default value for P is nontrivial (namely, inhabited T),  
-while the "trivial" case where P = T is actually desireable and handled    
-by an extra top-priority rule.                                             
+Similarly to negatedProp, witnessedType returns the witness proposition      
+via a projection argument P, but does not need to signal "trivial"          
+instances as the default value for P is nontrivial (namely, inhabited T),   
+while the "trivial" case where P = T is actually desireable and handled     
+by an extra top-priority rule.                                              
 </div>
 <br/>
 <span class="vernacular">Structure</span> <span id="Internals.witnessedType" class="id"><a name="Internals.witnessedType" class="">witnessedType</a></span> <span id="P:381" class="id"><a name="P:381" class="">P</a></span> <span class="id">:=</span> <span class="id">WitnessedType</span> <span class="id">{</span><br/>
@@ -798,51 +798,51 @@ by an extra top-priority rule.
 &nbsp;&nbsp;<span class="id"><a href="mathcomp.classical.contra.html#Internals.ProperWitnessedType">ProperWitnessedType</a></span> (@<span class="id"><a href="mathcomp.classical.contra.html#Internals.sigT2_wTypeP">sigT2_wTypeP</a></span> <span class="id"><a href="mathcomp.classical.contra.html#A:466">A</a></span> <span class="id"><a href="mathcomp.classical.contra.html#P:467">P</a></span> <span class="id"><a href="mathcomp.classical.contra.html#Q:468">Q</a></span> <span class="id"><a href="mathcomp.classical.contra.html#S:469">S</a></span> <span class="id"><a href="mathcomp.classical.contra.html#T:470">T</a></span>).<br/>
 <br/>
 <div class="ssrdoc md">
-The witnessProp structure provides for conversion of some Prop             
-assumptions to Type values with some constructive contents, e.g., convert  
-a P \/ Q assumption to a {P} + {Q} sumbool value. This is not the same as  
-the forward direction of witnessedType, because instances here match the   
-Prop statement: witness_Prop find a T such that P -&gt; T while witnessedType 
-finds a P such that P -&gt; T (and T -&gt; P for the converse direction).        
+The witnessProp structure provides for conversion of some Prop              
+assumptions to Type values with some constructive contents, e.g., convert   
+a P \/ Q assumption to a {P} + {Q} sumbool value. This is not the same as   
+the forward direction of witnessedType, because instances here match the    
+Prop statement: witness_Prop find a T such that P -&gt; T while witnessedType  
+finds a P such that P -&gt; T (and T -&gt; P for the converse direction).         
 </div>
 <br/>
 <div class="ssrdoc md">
-The implementation follows the wrapper telescope pattern similarly to      
-negatedProp, with three rules, one for Prop constructors with proper       
-constructive contents, one for forall propositions (also with proper       
-constructive contents) and one default rule that just returns P : Prop as  
-is (thus, with no other contents except the provability of P).             
-                                                                           
-The witnessProp structure also uses projection parameters to return the    
-inferred Type T together with a bool 'trivial' flag that is set when the   
-trivial rule is used. Here, however, this flag is used in both directions: 
-the 'witness' view forces it to false to prevent trivial instances, but    
-the flag is also used to fine tune the choice of T, selecting between      
-sum, sumor, and sumbool, between sig and sigT, and sig2 and sigT2. This    
-relies on the fact that the tactic engine will eagerly iota reduce the     
-returned type, so that the user will never see the conditionals specified  
-in the proper_witness_Prop instances.                                      
-                                                                           
-However, it would not be possible to construct the specialised types       
-for trivial witnesses (e.g., {P} + {Q}) using the types returned by        
-witnessProp instances, since thes are in Type, and the information that    
-they are actully in Prop has been lost. This is solved by returning an     
-additional Prop P0 that is a copy of the matched Prop P when               
-trivial = true. (We put P0 = True when trivial = false, as we only need to 
-ensure P -&gt; P0.)                                                           
-                                                                           
-Caveat: although P0 should in principle be the last parameter of           
-witness_Prop, and we use this order for the wProp and wPred projector      
-local notation, it is important to put P0 _BEFORE_ T, to circumvent an     
-incompleteness in Coq's implementation of higher-order pattern unification 
-that would cause the trivial rule to fail for the body of an exists.       
-In such a case the rule needs to unify (1) ?P0 x ~ ?P and (2) ?T x ~ ?P    
-for some type A some x : A in the context of ?P, but not ?P0 nor ?T. This  
-succeeds easily if (1) is performed before (2), setting ?P := ?P0 x and    
-?T := ?P0, but if (2) is attempted first Coq tries to perform ?P := ?T x,  
-which fails Type/Prop universe constraints, and then fails outright,       
-instead of using pattern unification to solve (2) as ?P := ?Q x, ?T := ?Q  
-for a fresh ?Q : A -&gt; Prop.                                                
+The implementation follows the wrapper telescope pattern similarly to       
+negatedProp, with three rules, one for Prop constructors with proper        
+constructive contents, one for forall propositions (also with proper        
+constructive contents) and one default rule that just returns P : Prop as   
+is (thus, with no other contents except the provability of P).              
+                                                                            
+The witnessProp structure also uses projection parameters to return the     
+inferred Type T together with a bool 'trivial' flag that is set when the    
+trivial rule is used. Here, however, this flag is used in both directions:  
+the 'witness' view forces it to false to prevent trivial instances, but     
+the flag is also used to fine tune the choice of T, selecting between       
+sum, sumor, and sumbool, between sig and sigT, and sig2 and sigT2. This     
+relies on the fact that the tactic engine will eagerly iota reduce the      
+returned type, so that the user will never see the conditionals specified   
+in the proper_witness_Prop instances.                                       
+                                                                            
+However, it would not be possible to construct the specialised types        
+for trivial witnesses (e.g., {P} + {Q}) using the types returned by         
+witnessProp instances, since thes are in Type, and the information that     
+they are actully in Prop has been lost. This is solved by returning an      
+additional Prop P0 that is a copy of the matched Prop P when                
+trivial = true. (We put P0 = True when trivial = false, as we only need to  
+ensure P -&gt; P0.)                                                            
+                                                                            
+Caveat: although P0 should in principle be the last parameter of            
+witness_Prop, and we use this order for the wProp and wPred projector       
+local notation, it is important to put P0 _BEFORE_ T, to circumvent an      
+incompleteness in Coq's implementation of higher-order pattern unification  
+that would cause the trivial rule to fail for the body of an exists.        
+In such a case the rule needs to unify (1) ?P0 x ~ ?P and (2) ?T x ~ ?P     
+for some type A some x : A in the context of ?P, but not ?P0 nor ?T. This   
+succeeds easily if (1) is performed before (2), setting ?P := ?P0 x and     
+?T := ?P0, but if (2) is attempted first Coq tries to perform ?P := ?T x,   
+which fails Type/Prop universe constraints, and then fails outright,        
+instead of using pattern unification to solve (2) as ?P := ?Q x, ?T := ?Q   
+for a fresh ?Q : A -&gt; Prop.                                                 
 </div>
 <br/>
 <span class="vernacular">Structure</span> <span id="Internals.witnessProp" class="id"><a name="Internals.witnessProp" class="">witnessProp</a></span> (<span id="trivial:471" class="id"><a name="trivial:471" class="">trivial</a></span> <span class="id">:</span> <span class="id"><a href="https://coq.inria.fr/doc/V8.18.0/stdlib/Coq.Init.Datatypes.html#bool">bool</a></span>) (<span id="P0:472" class="id"><a name="P0:472" class="">P0</a></span> <span class="id">:</span> <span class="gallina-kwd">Prop</span>) (<span id="T:473" class="id"><a name="T:473" class="">T</a></span> <span class="id">:</span> <span class="gallina-kwd">Type</span>) <span class="id">:=</span><br/>
@@ -889,12 +889,12 @@ for a fresh ?Q : A -&gt; Prop.
 <span class="vernacular">Canonical</span> <span id="Internals.inhabited_wProp" class="id"><a name="Internals.inhabited_wProp" class="">inhabited_wProp</a></span> <span id="T:506" class="id"><a name="T:506" class="">T</a></span> <span class="id">:=</span> <span class="id"><a href="mathcomp.classical.contra.html#Internals.ProperWitnessProp">ProperWitnessProp</a></span> (@<span class="id"><a href="mathcomp.classical.boolp.html#inhabited_witness">inhabited_witness</a></span> <span class="id"><a href="mathcomp.classical.contra.html#T:506">T</a></span>).<br/>
 <br/>
 <div class="ssrdoc md">
-Conjunctions P /\ Q are a little delicate to handle, as we should not      
-produce a proper instance (and thus fail) if neither P nor Q is proper.    
-We use a tertiary structure for this : nand_bool b, which has instances    
-only for booleans b0 such that ~~ (b0 &amp;&amp; b). We allow the witness_Prop     
-instance for P to return an arbitrary 'trivial' flag s, but then force the 
-'trivial' flag for Q to be an instance of nand_bool s.                     
+Conjunctions P /\ Q are a little delicate to handle, as we should not       
+produce a proper instance (and thus fail) if neither P nor Q is proper.     
+We use a tertiary structure for this : nand_bool b, which has instances     
+only for booleans b0 such that ~~ (b0 &amp;&amp; b). We allow the witness_Prop      
+instance for P to return an arbitrary 'trivial' flag s, but then force the  
+'trivial' flag for Q to be an instance of nand_bool s.                      
 </div>
 <br/>
 <span class="vernacular">Structure</span> <span id="Internals.nandBool" class="id"><a name="Internals.nandBool" class="">nandBool</a></span> <span id="b:507" class="id"><a name="b:507" class="">b</a></span> <span class="id">:=</span> <span class="id">NandBool</span> <span class="id">{nand_bool</span> <span class="id">:&gt;</span> <span class="id"><a href="https://coq.inria.fr/doc/V8.18.0/stdlib/Coq.Init.Datatypes.html#bool">bool;</a></span> <span class="id">_</span> <span class="id">:</span> <span class="id"><a href="https://coq.inria.fr/doc/V8.18.0/stdlib/Coq.ssr.ssrbool.html#b3ebd0deddd84fd60e149cb5ef719351">~~</a></span> (<span class="id"><a href="mathcomp.classical.contra.html#nand_bool:509">nand_bool</a></span> &amp;&amp; <span class="id"><a href="mathcomp.classical.contra.html#b:507">b</a></span>)<span class="id">}</span>.<br/>
@@ -937,24 +937,24 @@ Qed.</div>
 &nbsp;&nbsp;<span class="id"><a href="mathcomp.classical.contra.html#Internals.ProperWitnessProp">ProperWitnessProp</a></span> (@<span class="id"><a href="mathcomp.classical.contra.html#Internals.exists2_wPropP">exists2_wPropP</a></span> <span class="id"><a href="mathcomp.classical.contra.html#A:572">A</a></span> <span class="id"><a href="mathcomp.classical.contra.html#s:573">s</a></span> <span class="id"><a href="mathcomp.classical.contra.html#S:574">S</a></span> <span class="id"><a href="mathcomp.classical.contra.html#P0:575">P0</a></span> <span class="id"><a href="mathcomp.classical.contra.html#P:576">P</a></span> <span class="id"><a href="mathcomp.classical.contra.html#t:577">t</a></span> <span class="id"><a href="mathcomp.classical.contra.html#T:578">T</a></span> <span class="id"><a href="mathcomp.classical.contra.html#Q0:579">Q0</a></span> <span class="id"><a href="mathcomp.classical.contra.html#Q:580">Q</a></span>).<br/>
 <br/>
 <div class="ssrdoc md">
-## User lemmas and tactics for proof by contradiction and contraposition.  
+## User lemmas and tactics for proof by contradiction and contraposition.   
 </div>
 <br/>
 <div class="ssrdoc md">
-Helper lemmas:                                                             
-- push_goal_copy makes a copy of the goal that can then be matched with    
-    witnessedType and negatedProp instances to generate a contradiction    
-    assuption, without disturbing the original form of the goal.           
-- assume_not_with turns the copy generated by push_identity into an        
-    equivalent negative assumption, which can then be simplified using the 
-    lax_notP and lax_witness views.                                        
-- absurd and absurdW replace the goal with False; absurdW does this under  
-    an assumption, and is used to weaken proof-by-assuming-negation to     
-    proof-by-contradiction.                                                
-- contra_Type converts an arbitrary function goal (with assumption and     
-    conclusion in Type) to an equivalent contrapositive Prop implication.  
-- contra_notP simplifies a contrapositive ~ Q -&gt; ~ P goal using            
-    negatedProp instances.                                                 
+Helper lemmas:                                                              
+- push_goal_copy makes a copy of the goal that can then be matched with     
+    witnessedType and negatedProp instances to generate a contradiction     
+    assuption, without disturbing the original form of the goal.            
+- assume_not_with turns the copy generated by push_identity into an         
+    equivalent negative assumption, which can then be simplified using the  
+    lax_notP and lax_witness views.                                         
+- absurd and absurdW replace the goal with False; absurdW does this under   
+    an assumption, and is used to weaken proof-by-assuming-negation to      
+    proof-by-contradiction.                                                 
+- contra_Type converts an arbitrary function goal (with assumption and      
+    conclusion in Type) to an equivalent contrapositive Prop implication.   
+- contra_notP simplifies a contrapositive ~ Q -&gt; ~ P goal using             
+    negatedProp instances.                                                  
 </div>
 <br/>
 <span class="vernacular">Local</span> <span class="vernacular">Fact</span> <span id="Internals.push_goal_copy" class="id"><a name="Internals.push_goal_copy" class="">push_goal_copy</a></span> <span class="id">{T}</span> <span class="id">:</span> ((<span class="id"><a href="mathcomp.classical.contra.html#T:581">T</a></span> <span class="id"><a href="https://coq.inria.fr/doc/V8.18.0/stdlib/Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x">-&gt;</a></span> <span class="id"><a href="mathcomp.classical.contra.html#T:581">T</a></span>) <span class="id">-&gt;</span> <span class="id"><a href="mathcomp.classical.contra.html#T:581">T</a></span>) <span class="id">-&gt;</span> <span class="id"><a href="mathcomp.classical.contra.html#T:581">T</a></span><br/>
@@ -991,9 +991,9 @@ Helper lemmas:
 <span class="vernacular">Export</span> (<span class="id">canonicals</span>) <span class="id"><a href="mathcomp.classical.contra.html#Internals">Internals</a></span>.<br/>
 <br/>
 <div class="ssrdoc md">
-Lemma and tactic assume_not: add a goal negation assumption. The tactic    
-also works for goals in Type, simplifies the added assumption, and         
-exposes its top-level constructive content.                                
+Lemma and tactic assume_not: add a goal negation assumption. The tactic     
+also works for goals in Type, simplifies the added assumption, and          
+exposes its top-level constructive content.                                 
 </div>
 <br/>
 <span class="vernacular">Lemma</span> <span id="assume_not" class="id"><a name="assume_not" class="">assume_not</a></span> <span class="id">{P}</span> <span class="id">:</span> (<span class="id"><a href="https://coq.inria.fr/doc/V8.18.0/stdlib/Coq.Init.Logic.html#63a68285c81db8f9bc456233bb9ed181">~</a></span> <span class="id"><a href="mathcomp.classical.contra.html#P:597">P</a></span> <span class="id"><a href="https://coq.inria.fr/doc/V8.18.0/stdlib/Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x">-&gt;</a></span> <span class="id"><a href="mathcomp.classical.contra.html#P:597">P</a></span>) <span class="id">-&gt;</span> <span class="id"><a href="mathcomp.classical.contra.html#P:597">P</a></span><br/>
@@ -1005,10 +1005,10 @@ exposes its top-level constructive content.
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="id">=&gt;</span> <span class="id">/Internals</span>.<span class="id">lax_notP-/Internals</span>.<span class="id">lax_witness</span>.<br/>
 <br/>
 <div class="ssrdoc md">
-Lemma and tactic absurd_not: proof by contradiction. Same as assume_not,   
-but the goal is erased and replaced by False.                              
-Caveat: absurd_not cannot be used as a move/ view because its conclusion   
-is indeterminate. The more general notP defined above can be used instead. 
+Lemma and tactic absurd_not: proof by contradiction. Same as assume_not,    
+but the goal is erased and replaced by False.                               
+Caveat: absurd_not cannot be used as a move/ view because its conclusion    
+is indeterminate. The more general notP defined above can be used instead.  
 </div>
 <span class="vernacular">Lemma</span> <span id="absurd_not" class="id"><a name="absurd_not" class="">absurd_not</a></span> <span class="id">{P}</span> <span class="id">:</span> (<span class="id"><a href="https://coq.inria.fr/doc/V8.18.0/stdlib/Coq.Init.Logic.html#63a68285c81db8f9bc456233bb9ed181">~</a></span> <span class="id"><a href="mathcomp.classical.contra.html#P:598">P</a></span> <span class="id"><a href="https://coq.inria.fr/doc/V8.18.0/stdlib/Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x">-&gt;</a></span> <span class="id"><a href="https://coq.inria.fr/doc/V8.18.0/stdlib/Coq.Init.Logic.html#False">False</a></span>) <span class="id">-&gt;</span> <span class="id"><a href="mathcomp.classical.contra.html#P:598">P</a></span><br/>
 <div><span class="toggleproof" onclick="toggleDisplay('proof63')">Proof.</span></div>
@@ -1017,19 +1017,19 @@ is indeterminate. The more general notP defined above can be used instead.
 <span class="vernacular">Ltac</span> <span class="id">absurd_not</span> <span class="id">:=</span> <span class="id">assume_not;</span> <span class="id">apply:</span> <span class="id"><a href="mathcomp.classical.contra.html#absurdW">Internals.absurdW</a></span>.<br/>
 <br/>
 <div class="ssrdoc md">
-Tactic contra: proof by contraposition. Assume the negation of the goal    
-conclusion, and prove the negation of a given assumption. The defective    
-form contra (which can also be written contrapose) expects the assumption  
-to be pushed on the goal which thus has the form assumption -&gt; conclusion. 
-                                                                           
-As with assume_not, contra allows both assumption and conclusion to be     
-in Type, simplifies the negation of both assumption and conclusion, and    
-exposes the constructive contents of the negated conclusion.               
-                                                                           
-The contra tactic also supports a limited form of the ':' discharge        
-pseudo tactical, whereby contra: &lt;d-items&gt; means move: &lt;d-items&gt;; contra.  
-The only &lt;d-items&gt; allowed are one term, possibly preceded by a clear      
-switch.                                                                    
+Tactic contra: proof by contraposition. Assume the negation of the goal     
+conclusion, and prove the negation of a given assumption. The defective     
+form contra (which can also be written contrapose) expects the assumption   
+to be pushed on the goal which thus has the form assumption -&gt; conclusion.  
+                                                                            
+As with assume_not, contra allows both assumption and conclusion to be      
+in Type, simplifies the negation of both assumption and conclusion, and     
+exposes the constructive contents of the negated conclusion.                
+                                                                            
+The contra tactic also supports a limited form of the ':' discharge         
+pseudo tactical, whereby contra: &lt;d-items&gt; means move: &lt;d-items&gt;; contra.   
+The only &lt;d-items&gt; allowed are one term, possibly preceded by a clear       
+switch.                                                                     
 </div>
 <br/>
 <span class="vernacular">Ltac</span> <span class="id">contrapose</span> <span class="id">:=</span><br/>
@@ -1045,12 +1045,12 @@ switch.
 <span class="vernacular">Tactic</span> <span class="vernacular">Notation</span> <span class="id">&quot;contra&quot; &quot;:&quot; &quot;{&quot; &quot;-&quot; &quot;}&quot;</span> <span class="id">constr</span>(<span class="id">H</span>) <span class="id">:=</span> <span class="id">contra:</span> (<span class="id">H</span>).<br/>
 <br/>
 <div class="ssrdoc md">
-Lemma and tactic absurd: proof by contradiction. The defective form of the 
-lemma simply replaces the entire goal with False (just as the Ltac         
-exfalso), leaving the user to derive a contradiction from the assumptions. 
-The ':' form absurd: &lt;d-items&gt; replaces the goal with the negation of the  
-(single) &lt;d-item&gt; (as with contra:, a clear switch is also allowed.        
-Finally the Ltac absurd term form is also supported.                       
+Lemma and tactic absurd: proof by contradiction. The defective form of the  
+lemma simply replaces the entire goal with False (just as the Ltac          
+exfalso), leaving the user to derive a contradiction from the assumptions.  
+The ':' form absurd: &lt;d-items&gt; replaces the goal with the negation of the   
+(single) &lt;d-item&gt; (as with contra:, a clear switch is also allowed.         
+Finally the Ltac absurd term form is also supported.                        
 </div>
 <br/>
 <span class="vernacular">Lemma</span> <span id="absurd" class="id"><a name="absurd" class="">absurd</a></span> <span id="T:599" class="id"><a name="T:599" class="">T</a></span> <span class="id">:</span> <span class="id"><a href="https://coq.inria.fr/doc/V8.18.0/stdlib/Coq.Init.Logic.html#False">False</a></span> <span class="id"><a href="https://coq.inria.fr/doc/V8.18.0/stdlib/Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x">-&gt;</a></span> <span class="id"><a href="mathcomp.classical.contra.html#T:599">T</a></span><br/>

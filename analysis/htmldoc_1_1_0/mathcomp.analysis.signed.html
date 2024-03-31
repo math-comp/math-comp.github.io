@@ -91,124 +91,124 @@
 <span class="vernacular">From</span> <span class="id">mathcomp</span> <span class="vernacular">Require</span> <span class="vernacular">Import</span> <span class="id"><a href="mathcomp.classical.mathcomp_extra.html">mathcomp_extra</a></span>.<br/>
 <br/>
 <div class="ssrdoc md">
-# Positive, non-negative numbers, etc.                                     
-                                                                           
-This file develops tools to make the manipulation of numbers with a known  
-sign easier, thanks to canonical structures. This adds types like          
-{posnum R} for positive values in R, a notation e%:pos that infers the     
-positivity of expression e according to existing canonical instances and   
-%:num to cast back from type {posnum R} to R.                              
-For instance, given x, y : {posnum R}, we have                             
-((x%:num + y%:num) / 2)%:pos : {posnum R} automatically inferred.          
-                                                                           
-## Types for values with known sign                                        
-```                                                                        
-   {posnum R} == interface type for elements in R that are positive; R     
-                 must have a zmodType structure.                           
-                 Allows to solve automatically goals of the form x &gt; 0 if  
-                 x is canonically a {posnum R}. {posnum R} is canonically  
-                 stable by common operations. All positive natural numbers 
-                 ((n.+1)%:R) are also canonically in {posnum R}            
-   {nonneg R} == interface types for elements in R that are non-negative;  
-                 R must have a zmodType structure. Automatically solves    
-                 goals of the form x &gt;= 0. {nonneg R} is stable by         
-                 common operations. All natural numbers n%:R are also      
-                 canonically in {nonneg R}.                                
-{compare x0 &amp; nz &amp; cond} == more generic type of values comparing to       
-                 x0 : T according to nz and cond (see below). T must have  
-                 a porderType structure. This type is shown to be a        
-                 porderType. It is also an orderTpe, as soon as T is a     
-                 numDomainType.                                            
-{num R &amp; nz &amp; cond} == {compare 0%R : R &amp; nz &amp; cond}. T must have a        
-                 zmodType structure.                                       
-       {= x0} == {compare x0 &amp; ?=0 &amp; =0}                                   
-   {= x0 : T} == same with an explicit type T                              
-       {&gt; x0} == {compare x0 &amp; !=0 &amp; &gt;=0}                                  
-   {&gt; x0 : T} == same with an explicit type T                              
-       {&lt; x0} == {compare x0 &amp; !=0 &amp; &lt;=0}                                  
-   {&lt; x0 : T} == same with an explicit type T                              
-      {&gt;= x0} == {compare x0 &amp; ?=0 &amp; &gt;=0}                                  
-  {&gt;= x0 : T} == same with an explicit type T                              
-      {&lt;= x0} == {compare x0 &amp; ?=0 &amp; &lt;=0}                                  
-  {&lt;= x0 : T} == same with an explicit type T                              
-     {&gt;=&lt; x0} == {compare x0 &amp; ?=0 &amp; &gt;=&lt;0}                                 
- {&gt;=&lt; x0 : T} == same with an explicit type T                              
-      {&gt;&lt; x0} == {compare x0 &amp; !=0 &amp; &gt;=&lt;0}                                 
-  {&gt;&lt; x0 : T} == same with an explicit type T                              
-      {!= x0} == {compare x0 &amp; !=0 &amp; &gt;?&lt;0}                                 
-  {!= x0 : T} == same with an explicit type T                              
-      {?= x0} == {compare x0 &amp; ?=0 &amp; &gt;?&lt;0}                                 
-  {?= x0 : T} == same with an explicit type T                              
-```                                                                        
-                                                                           
-## Casts from/to values with known sign                                    
-```                                                                        
-       x%:pos == explicitly casts x to {posnum R}, triggers the inference  
-                 of a {posnum R} structure for x.                          
-       x%:nng == explicitly casts x to {nonneg R}, triggers the inference  
-                 of a {nonneg R} structure for x.                          
-       x%:sgn == explicitly casts x to the most precise known              
-                 {compare x0 &amp; nz &amp; cond} according to existing canonical  
-                 instances.                                                
-       x%:num == explicit cast from {compare x0 &amp; nz &amp; cond} to R. In      
-                 particular this works from {posnum R} and {nonneg R} to R.
-    x%:posnum == explicit cast from {posnum R} to R.                       
-    x%:nngnum == explicit cast from {nonneg R} to R.                       
-```                                                                        
-                                                                           
-## Nullity conditions nz                                                   
-All nz above can be the following (in scope snum_nullity_scope delimited   
-by %snum_nullity)                                                          
-```                                                                        
-          !=0 == to encode x != 0                                          
-          ?=0 == unknown nullity                                           
-```                                                                        
-                                                                           
-## Reality conditions cond                                                 
-All cond above can be the following (in scope snum_sign_scope delimited by 
-by %snum_sign)                                                             
-```                                                                        
-           =0 == to encode x == 0                                          
-          &gt;=0 == to encode x &gt;= 0                                          
-          &lt;=0 == to encode x &lt;= 0                                          
-         &gt;=&lt;0 == to encode x &gt;=&lt; 0                                         
-         &gt;?&lt;0 == unknown reality                                           
-```                                                                        
-                                                                           
-## Sign proofs                                                             
-```                                                                        
-   [sgn of x] == proof that x is of sign inferred by x%:sgn                
-   [gt0 of x] == proof that x &gt; 0                                          
-   [lt0 of x] == proof that x &lt; 0                                          
-   [ge0 of x] == proof that x &gt;= 0                                         
-   [le0 of x] == proof that x &lt;= 0                                         
-  [cmp0 of x] == proof that 0 &gt;=&lt; x                                        
-  [neq0 of x] == proof that x != 0                                         
-```                                                                        
-                                                                           
-## Constructors                                                            
-```                                                                        
-  PosNum xgt0 == builds a {posnum R} from a proof xgt0 : x &gt; 0 where x : R 
-  NngNum xge0 == builds a {posnum R} from a proof xgt0 : x &gt;= 0 where x : R
-  Signed.mk p == builds a {compare x0 &amp; nz &amp; cond} from a proof p that     
-                 some x satisfies sign conditions encoded by nz and cond   
-```                                                                        
-                                                                           
-## Misc.                                                                   
-```                                                                        
-         !! x == triggers pretyping to fill the holes of the term x. The   
-                 main use case is to trigger typeclass inference in the    
-                 body of a ssreflect have := !! body.                      
-                 Credits: Enrico Tassi.                                    
-```                                                                        
-                                                                           
-A number of canonical instances are provided for common operations, if     
-your favorite operator is missing, look below for examples on how to add   
-the appropriate Canonical.                                                 
-                                                                           
-Canonical instances are also provided according to types, as a             
-fallback when no known operator appears in the expression. Look to         
-nat_snum below for an example on how to add your favorite type.            
+# Positive, non-negative numbers, etc.                                      
+                                                                            
+This file develops tools to make the manipulation of numbers with a known   
+sign easier, thanks to canonical structures. This adds types like           
+{posnum R} for positive values in R, a notation e%:pos that infers the      
+positivity of expression e according to existing canonical instances and    
+%:num to cast back from type {posnum R} to R.                               
+For instance, given x, y : {posnum R}, we have                              
+((x%:num + y%:num) / 2)%:pos : {posnum R} automatically inferred.           
+                                                                            
+## Types for values with known sign                                         
+```                                                                         
+   {posnum R} == interface type for elements in R that are positive; R      
+                 must have a zmodType structure.                            
+                 Allows to solve automatically goals of the form x &gt; 0 if   
+                 x is canonically a {posnum R}. {posnum R} is canonically   
+                 stable by common operations. All positive natural numbers  
+                 ((n.+1)%:R) are also canonically in {posnum R}             
+   {nonneg R} == interface types for elements in R that are non-negative;   
+                 R must have a zmodType structure. Automatically solves     
+                 goals of the form x &gt;= 0. {nonneg R} is stable by          
+                 common operations. All natural numbers n%:R are also       
+                 canonically in {nonneg R}.                                 
+{compare x0 &amp; nz &amp; cond} == more generic type of values comparing to        
+                 x0 : T according to nz and cond (see below). T must have   
+                 a porderType structure. This type is shown to be a         
+                 porderType. It is also an orderTpe, as soon as T is a      
+                 numDomainType.                                             
+{num R &amp; nz &amp; cond} == {compare 0%R : R &amp; nz &amp; cond}. T must have a         
+                 zmodType structure.                                        
+       {= x0} == {compare x0 &amp; ?=0 &amp; =0}                                    
+   {= x0 : T} == same with an explicit type T                               
+       {&gt; x0} == {compare x0 &amp; !=0 &amp; &gt;=0}                                   
+   {&gt; x0 : T} == same with an explicit type T                               
+       {&lt; x0} == {compare x0 &amp; !=0 &amp; &lt;=0}                                   
+   {&lt; x0 : T} == same with an explicit type T                               
+      {&gt;= x0} == {compare x0 &amp; ?=0 &amp; &gt;=0}                                   
+  {&gt;= x0 : T} == same with an explicit type T                               
+      {&lt;= x0} == {compare x0 &amp; ?=0 &amp; &lt;=0}                                   
+  {&lt;= x0 : T} == same with an explicit type T                               
+     {&gt;=&lt; x0} == {compare x0 &amp; ?=0 &amp; &gt;=&lt;0}                                  
+ {&gt;=&lt; x0 : T} == same with an explicit type T                               
+      {&gt;&lt; x0} == {compare x0 &amp; !=0 &amp; &gt;=&lt;0}                                  
+  {&gt;&lt; x0 : T} == same with an explicit type T                               
+      {!= x0} == {compare x0 &amp; !=0 &amp; &gt;?&lt;0}                                  
+  {!= x0 : T} == same with an explicit type T                               
+      {?= x0} == {compare x0 &amp; ?=0 &amp; &gt;?&lt;0}                                  
+  {?= x0 : T} == same with an explicit type T                               
+```                                                                         
+                                                                            
+## Casts from/to values with known sign                                     
+```                                                                         
+       x%:pos == explicitly casts x to {posnum R}, triggers the inference   
+                 of a {posnum R} structure for x.                           
+       x%:nng == explicitly casts x to {nonneg R}, triggers the inference   
+                 of a {nonneg R} structure for x.                           
+       x%:sgn == explicitly casts x to the most precise known               
+                 {compare x0 &amp; nz &amp; cond} according to existing canonical   
+                 instances.                                                 
+       x%:num == explicit cast from {compare x0 &amp; nz &amp; cond} to R. In       
+                 particular this works from {posnum R} and {nonneg R} to R. 
+    x%:posnum == explicit cast from {posnum R} to R.                        
+    x%:nngnum == explicit cast from {nonneg R} to R.                        
+```                                                                         
+                                                                            
+## Nullity conditions nz                                                    
+All nz above can be the following (in scope snum_nullity_scope delimited    
+by %snum_nullity)                                                           
+```                                                                         
+          !=0 == to encode x != 0                                           
+          ?=0 == unknown nullity                                            
+```                                                                         
+                                                                            
+## Reality conditions cond                                                  
+All cond above can be the following (in scope snum_sign_scope delimited by  
+by %snum_sign)                                                              
+```                                                                         
+           =0 == to encode x == 0                                           
+          &gt;=0 == to encode x &gt;= 0                                           
+          &lt;=0 == to encode x &lt;= 0                                           
+         &gt;=&lt;0 == to encode x &gt;=&lt; 0                                          
+         &gt;?&lt;0 == unknown reality                                            
+```                                                                         
+                                                                            
+## Sign proofs                                                              
+```                                                                         
+   [sgn of x] == proof that x is of sign inferred by x%:sgn                 
+   [gt0 of x] == proof that x &gt; 0                                           
+   [lt0 of x] == proof that x &lt; 0                                           
+   [ge0 of x] == proof that x &gt;= 0                                          
+   [le0 of x] == proof that x &lt;= 0                                          
+  [cmp0 of x] == proof that 0 &gt;=&lt; x                                         
+  [neq0 of x] == proof that x != 0                                          
+```                                                                         
+                                                                            
+## Constructors                                                             
+```                                                                         
+  PosNum xgt0 == builds a {posnum R} from a proof xgt0 : x &gt; 0 where x : R  
+  NngNum xge0 == builds a {posnum R} from a proof xgt0 : x &gt;= 0 where x : R 
+  Signed.mk p == builds a {compare x0 &amp; nz &amp; cond} from a proof p that      
+                 some x satisfies sign conditions encoded by nz and cond    
+```                                                                         
+                                                                            
+## Misc.                                                                    
+```                                                                         
+         !! x == triggers pretyping to fill the holes of the term x. The    
+                 main use case is to trigger typeclass inference in the     
+                 body of a ssreflect have := !! body.                       
+                 Credits: Enrico Tassi.                                     
+```                                                                         
+                                                                            
+A number of canonical instances are provided for common operations, if      
+your favorite operator is missing, look below for examples on how to add    
+the appropriate Canonical.                                                  
+                                                                            
+Canonical instances are also provided according to types, as a              
+fallback when no known operator appears in the expression. Look to          
+nat_snum below for an example on how to add your favorite type.             
 </div>
 <br/>
 <span class="vernacular">Reserved</span> <span class="vernacular">Notation</span> <span class="id">&quot;{ 'compare' x0 &amp; nz &amp; cond }&quot;</span><br/>

@@ -93,74 +93,74 @@
 <span class="vernacular">Require</span> <span class="vernacular">Import</span> <span class="id"><a href="mathcomp.analysis.esum.html">esum</a></span> <span class="id"><a href="mathcomp.analysis.measure.html">measure</a></span> <span class="id"><a href="mathcomp.analysis.lebesgue_measure.html">lebesgue_measure</a></span> <span class="id"><a href="mathcomp.analysis.numfun.html">numfun</a></span> <span class="id"><a href="mathcomp.analysis.realfun.html">realfun</a></span> <span class="id"><a href="mathcomp.analysis.function_spaces.html">function_spaces</a></span>.<br/>
 <br/>
 <div class="ssrdoc md">
-# Lebesgue Integral                                                        
-                                                                           
-This file contains a formalization of the Lebesgue integral. It starts     
-with simple functions and their integral, provides basic operations        
-(addition, etc.), and proves the properties of their integral (linearity,  
-non-decreasingness). It then defines the integral of measurable functions, 
-proves the approximation theorem, the properties of their integral         
-(linearity, non-decreasingness), the monotone convergence theorem, and     
-Fatou's lemma. Finally, it proves the linearity properties of the          
-integral, the dominated convergence theorem and Fubini's theorem, etc.     
-This file is further completed by related, standard lemmas such as the     
-Hardy–Littlewood maximal inequality and Lebesgue's differentiation         
-theorem.                                                                   
-                                                                           
-Main notation:                                                             
-| Coq notation          |  | Meaning                         |             
-|----------------------:|--|:--------------------------------              
-| \int[mu]_(x in D) f x |==| $\int_D f(x)\mathbf{d}\mu(x)$                 
-| \int[mu]_x f x        |==| $\int f(x)\mathbf{d}\mu(x)$                   
-                                                                           
-Main reference:                                                            
-- Daniel Li, Intégration et applications, 2016                             
-                                                                           
-About the local naming convention: Lemmas about the Lebesgue integral      
-often appears in two flavors, depending on whether they are about non-     
-negative functions or about integrable functions. Lemmas about non-        
-negative functions are prefixed with ge0_, lemmas about integrable         
-functions are not.                                                         
-                                                                           
-Detailed contents:                                                         
-````                                                                       
-        {mfun T &gt;-&gt; R} == type of real-valued measurable functions         
-        {sfun T &gt;-&gt; R} == type of simple functions                         
-      {nnsfun T &gt;-&gt; R} == type of non-negative simple functions            
-          cst_nnsfun r == constant simple function                         
-               nnsfun0 := cst_nnsfun 0                                     
-        sintegral mu f == integral of the function f with the measure mu   
- \int[mu]_(x in D) f x == integral of the measurable function f over the   
-                          domain D with measure mu                         
-        \int[mu]_x f x := \int[mu]_(x in setT) f x                         
-        dyadic_itv n k == the interval                                     
-                          `[(k%:R * 2 ^- n), (k.+1%:R * 2 ^- n)[           
-            approx D f == nondecreasing sequence of functions that         
-                          approximates f over D using dyadic intervals     
-      Rintegral mu D f := fine (\int[mu]_(x in D) f x).                    
-    mu.-integrable D f == f is measurable over D and the integral of f     
-                          w.r.t. D is &lt; +oo                                
-              m1 \x m2 == product measure over T1 * T2, m1 is a measure    
-                          measure over T1, and m2 is a sigma finite        
-                          measure over T2                                  
-             m1 \x^ m2 == product measure over T1 * T2, m2 is a measure    
-                          measure over T1, and m1 is a sigma finite        
-                          measure over T2                                  
-locally_integrable D f == the real number-valued function f is locally     
-                          integrable on D                                  
-              iavg f A := "average" of the real-valued function f over     
-                          the set A                                        
-            HL_maximal == the Hardy–Littlewood maximal operator            
-                          input: real number-valued function               
-                          output: extended real number-valued function     
-            davg f x r == "deviated average" of the real-valued function   
-                          f over ball x r                                  
-      lim_sup_davg f x := lime_sup (davg f x) 0                            
-       lebesgue_pt f x == Lebesgue point at x of the real-valued           
-                          function f                                       
-  nicely_shrinking x E == the sequence of sets E is nicely shrinking to x  
-````                                                                       
-                                                                           
+# Lebesgue Integral                                                         
+                                                                            
+This file contains a formalization of the Lebesgue integral. It starts      
+with simple functions and their integral, provides basic operations         
+(addition, etc.), and proves the properties of their integral (linearity,   
+non-decreasingness). It then defines the integral of measurable functions,  
+proves the approximation theorem, the properties of their integral          
+(linearity, non-decreasingness), the monotone convergence theorem, and      
+Fatou's lemma. Finally, it proves the linearity properties of the           
+integral, the dominated convergence theorem and Fubini's theorem, etc.      
+This file is further completed by related, standard lemmas such as the      
+Hardy–Littlewood maximal inequality and Lebesgue's differentiation          
+theorem.                                                                    
+                                                                            
+Main notation:                                                              
+| Coq notation          |  | Meaning                         |              
+|----------------------:|--|:--------------------------------               
+| \int[mu]_(x in D) f x |==| $\int_D f(x)\mathbf{d}\mu(x)$                  
+| \int[mu]_x f x        |==| $\int f(x)\mathbf{d}\mu(x)$                    
+                                                                            
+Main reference:                                                             
+- Daniel Li, Intégration et applications, 2016                              
+                                                                            
+About the local naming convention: Lemmas about the Lebesgue integral       
+often appears in two flavors, depending on whether they are about non-      
+negative functions or about integrable functions. Lemmas about non-         
+negative functions are prefixed with ge0_, lemmas about integrable          
+functions are not.                                                          
+                                                                            
+Detailed contents:                                                          
+````                                                                        
+        {mfun T &gt;-&gt; R} == type of real-valued measurable functions          
+        {sfun T &gt;-&gt; R} == type of simple functions                          
+      {nnsfun T &gt;-&gt; R} == type of non-negative simple functions             
+          cst_nnsfun r == constant simple function                          
+               nnsfun0 := cst_nnsfun 0                                      
+        sintegral mu f == integral of the function f with the measure mu    
+ \int[mu]_(x in D) f x == integral of the measurable function f over the    
+                          domain D with measure mu                          
+        \int[mu]_x f x := \int[mu]_(x in setT) f x                          
+        dyadic_itv n k == the interval                                      
+                          `[(k%:R * 2 ^- n), (k.+1%:R * 2 ^- n)[            
+            approx D f == nondecreasing sequence of functions that          
+                          approximates f over D using dyadic intervals      
+      Rintegral mu D f := fine (\int[mu]_(x in D) f x).                     
+    mu.-integrable D f == f is measurable over D and the integral of f      
+                          w.r.t. D is &lt; +oo                                 
+              m1 \x m2 == product measure over T1 * T2, m1 is a measure     
+                          measure over T1, and m2 is a sigma finite         
+                          measure over T2                                   
+             m1 \x^ m2 == product measure over T1 * T2, m2 is a measure     
+                          measure over T1, and m1 is a sigma finite         
+                          measure over T2                                   
+locally_integrable D f == the real number-valued function f is locally      
+                          integrable on D                                   
+              iavg f A := "average" of the real-valued function f over      
+                          the set A                                         
+            HL_maximal == the Hardy–Littlewood maximal operator             
+                          input: real number-valued function                
+                          output: extended real number-valued function      
+            davg f x r == "deviated average" of the real-valued function    
+                          f over ball x r                                   
+      lim_sup_davg f x := lime_sup (davg f x) 0                             
+       lebesgue_pt f x == Lebesgue point at x of the real-valued            
+                          function f                                        
+  nicely_shrinking x E == the sequence of sets E is nicely shrinking to x   
+````                                                                        
+                                                                            
 </div>
 <br/>
 <span class="gallina-kwd">Set</span> <span class="vernacular">Implicit</span> <span class="vernacular">Arguments</span>.<br/>

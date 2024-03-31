@@ -93,60 +93,60 @@
 <span class="vernacular">Require</span> <span class="vernacular">Import</span> <span class="id"><a href="mathcomp.analysis.signed.html">signed</a></span>.<br/>
 <br/>
 <div class="ssrdoc md">
-# Numbers within an interval                                               
-                                                                           
-This file develops tools to make the manipulation of numbers within        
-a known interval easier, thanks to canonical structures. This adds types   
-like {itv R &amp; `[a, b]}, a notation e%:itv that infers an enclosing         
-interval for expression e according to existing canonical instances and    
-%:inum to cast back from type {itv R &amp; i} to R.                            
-For instance, x : {i01 R}, we have (1 - x%:inum)%:itv : {i01 R}            
-automatically inferred.                                                    
-                                                                           
-## types for values within known interval                                  
-```                                                                        
-      {i01 R} == interface type for elements in R that live in `[0, 1];    
-                 R must have a numDomainType structure.                    
-                 Allows to solve automatically goals of the form x &gt;= 0    
-                 and x &lt;= 1 if x is canonically a {i01 R}. {i01 R} is      
-                 canonically stable by common operations.                  
-  {itv R &amp; i} == more generic type of values in interval i : interval int  
-                 R must have a numDomainType structure. This type is shown 
-                 to be a porderType.                                       
-```                                                                        
-                                                                           
-## casts from/to values within known interval                              
-```                                                                        
-       x%:itv == explicitly casts x to the most precise known {itv R &amp; i}  
-                 according to existing canonical instances.                
-       x%:i01 == explicitly casts x to {i01 R} according to existing       
-                 canonical instances.                                      
-      x%:inum == explicit cast from {itv R &amp; i} to R.                      
-```                                                                        
-                                                                           
-## sign proofs                                                             
-```                                                                        
-   [itv of x] == proof that x is in interval inferred by x%:itv            
-    [lb of x] == proof that lb &lt; x or lb &lt;= x with lb the lower bound      
-                 inferred by x%:itv                                        
-    [ub of x] == proof that x &lt; ub or x &lt;= ub with ub the upper bound      
-                 inferred by x%:itv                                        
-   [lbe of x] == proof that lb &lt;= x                                        
-   [ube of x] == proof that x &lt;= ub                                        
-```                                                                        
-                                                                           
-## constructors                                                            
-```                                                                        
-   ItvNum xin == builds a {itv R &amp; i} from a proof xin : x \in i           
-                 where x : R                                               
-```                                                                        
-                                                                           
-A number of canonical instances are provided for common operations, if     
-your favorite operator is missing, look below for examples on how to add   
-the appropriate Canonical.                                                 
-Canonical instances are also provided according to types, as a             
-fallback when no known operator appears in the expression. Look to         
-itv_top_typ below for an example on how to add your favorite type.         
+# Numbers within an interval                                                
+                                                                            
+This file develops tools to make the manipulation of numbers within         
+a known interval easier, thanks to canonical structures. This adds types    
+like {itv R &amp; `[a, b]}, a notation e%:itv that infers an enclosing          
+interval for expression e according to existing canonical instances and     
+%:inum to cast back from type {itv R &amp; i} to R.                             
+For instance, x : {i01 R}, we have (1 - x%:inum)%:itv : {i01 R}             
+automatically inferred.                                                     
+                                                                            
+## types for values within known interval                                   
+```                                                                         
+      {i01 R} == interface type for elements in R that live in `[0, 1];     
+                 R must have a numDomainType structure.                     
+                 Allows to solve automatically goals of the form x &gt;= 0     
+                 and x &lt;= 1 if x is canonically a {i01 R}. {i01 R} is       
+                 canonically stable by common operations.                   
+  {itv R &amp; i} == more generic type of values in interval i : interval int   
+                 R must have a numDomainType structure. This type is shown  
+                 to be a porderType.                                        
+```                                                                         
+                                                                            
+## casts from/to values within known interval                               
+```                                                                         
+       x%:itv == explicitly casts x to the most precise known {itv R &amp; i}   
+                 according to existing canonical instances.                 
+       x%:i01 == explicitly casts x to {i01 R} according to existing        
+                 canonical instances.                                       
+      x%:inum == explicit cast from {itv R &amp; i} to R.                       
+```                                                                         
+                                                                            
+## sign proofs                                                              
+```                                                                         
+   [itv of x] == proof that x is in interval inferred by x%:itv             
+    [lb of x] == proof that lb &lt; x or lb &lt;= x with lb the lower bound       
+                 inferred by x%:itv                                         
+    [ub of x] == proof that x &lt; ub or x &lt;= ub with ub the upper bound       
+                 inferred by x%:itv                                         
+   [lbe of x] == proof that lb &lt;= x                                         
+   [ube of x] == proof that x &lt;= ub                                         
+```                                                                         
+                                                                            
+## constructors                                                             
+```                                                                         
+   ItvNum xin == builds a {itv R &amp; i} from a proof xin : x \in i            
+                 where x : R                                                
+```                                                                         
+                                                                            
+A number of canonical instances are provided for common operations, if      
+your favorite operator is missing, look below for examples on how to add    
+the appropriate Canonical.                                                  
+Canonical instances are also provided according to types, as a              
+fallback when no known operator appears in the expression. Look to          
+itv_top_typ below for an example on how to add your favorite type.          
 </div>
 <br/>
 <span class="vernacular">Reserved</span> <span class="vernacular">Notation</span> <span class="id">&quot;{ 'itv' R &amp; i }&quot;</span><br/>

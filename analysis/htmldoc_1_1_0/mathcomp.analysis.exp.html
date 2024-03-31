@@ -94,29 +94,29 @@
 <span class="vernacular">Require</span> <span class="vernacular">Import</span> <span class="id"><a href="mathcomp.analysis.itv.html">itv</a></span> <span class="id"><a href="mathcomp.analysis.convex.html">convex</a></span>.<br/>
 <br/>
 <div class="ssrdoc md">
-# Theory of exponential/logarithm functions                                
-                                                                           
-This file defines exponential and logarithm functions and develops their   
-theory.                                                                    
-                                                                           
-## Differentiability of series (Section PseriesDiff)                       
-                                                                           
-This formalization is inspired by HOL-Light (transc.ml). This part is      
-temporary: it should be subsumed by a proper theory of power series.       
-```                                                                        
-        pseries f x == [series f n * x ^ n]_n                              
-  pseries_diffs f i == (i + 1) * f (i + 1)                                 
-                                                                           
-            expeR x == extended real number-valued exponential function    
-               ln x == the natural logarithm                               
-             s `^ r == power function, in ring_scope (assumes s &gt;= 0)      
-             e `^ r == power function, in ereal_scope (assumes e &gt;= 0)     
-         riemannR a == sequence n |-&gt; 1 / (n.+1) `^ a where a has a type   
-                       of type realType                                    
-      e `^?(r +? s) == validity condition for the distributivity of        
-                       the power of the addition, in ereal_scope           
-```                                                                        
-                                                                           
+# Theory of exponential/logarithm functions                                 
+                                                                            
+This file defines exponential and logarithm functions and develops their    
+theory.                                                                     
+                                                                            
+## Differentiability of series (Section PseriesDiff)                        
+                                                                            
+This formalization is inspired by HOL-Light (transc.ml). This part is       
+temporary: it should be subsumed by a proper theory of power series.        
+```                                                                         
+        pseries f x == [series f n * x ^ n]_n                               
+  pseries_diffs f i == (i + 1) * f (i + 1)                                  
+                                                                            
+            expeR x == extended real number-valued exponential function     
+               ln x == the natural logarithm                                
+             s `^ r == power function, in ring_scope (assumes s &gt;= 0)       
+             e `^ r == power function, in ereal_scope (assumes e &gt;= 0)      
+         riemannR a == sequence n |-&gt; 1 / (n.+1) `^ a where a has a type    
+                       of type realType                                     
+      e `^?(r +? s) == validity condition for the distributivity of         
+                       the power of the addition, in ereal_scope            
+```                                                                         
+                                                                            
 </div>
 <br/>
 <span class="gallina-kwd">Set</span> <span class="vernacular">Implicit</span> <span class="vernacular">Arguments</span>.<br/>
