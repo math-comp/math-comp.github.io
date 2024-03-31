@@ -92,64 +92,64 @@
 <span class="vernacular">Require</span> <span class="vernacular">Import</span> <span class="id"><a href="mathcomp.analysis.reals.html">reals</a></span> <span class="id"><a href="mathcomp.analysis.signed.html">signed</a></span> <span class="id"><a href="mathcomp.analysis.topology.html">topology</a></span>.<br/>
 <br/>
 <div class="ssrdoc md">
-# The topology of functions spaces                                         
-                                                                           
-Function spaces have no canonical topology. We develop the theory of       
-several general-purpose function space topologies here. Contextually,      
-there is often a natural choice, though. So we provide modules to assign   
-topologies to arrow types locally.                                         
-                                                                           
-Topologies we consider are:                                                
-- Topology of pointwise convergence                                        
-- Topology of uniform convergence                                          
-- Topology of uniform convergence on subspaces                             
-- The compact-open topology                                                
-                                                                           
-Available modules to assign a topology to `-&gt;`:                            
-- ArrowAsProduct assigns the product topology                              
-- ArrowAsUniformType assigns the uniform topology                          
-- ArrowAsCompactOpen assign the compact-open topology                      
-                                                                           
-The major results are:                                                     
-- Compactness in the product topology via Tychonoff's                      
-- Compactness in the compact convergence topology via Ascoli's             
-- Conditions when the supremum and weak topology commute in products       
-- The compact-open topology is the topopology of compact convergence       
-- Cartesian closedness for the category of locally compact topologies      
-                                                                           
-## Function space notations                                                
-```                                                                        
-      {uniform` A -&gt; V} == the space U -&gt; V, equipped with the topology    
-                           of uniform convergence from a set A to V, where 
-                           V is a uniformType                              
-       {uniform U -&gt; V} := {uniform` [set: U] -&gt; V}                        
-   {uniform A, F --&gt; f} == F converges to f in {uniform A -&gt; V}            
-     {uniform, F --&gt; f} := {uniform setT, F --&gt; f}                         
-      prod_topology I T == the topology of pointwise convergence on the    
-                           dependent space `forall (i:I), T i`             
-          {ptws U -&gt; V} == prod_topology for the non-dependent product     
-separate_points_from_closed f == for a closed set U and point x outside    
-                           some member of the family f, it sends f_i(x)    
-                           outside (closure (f_i @` U))                    
-                           Used together with join_product.                
-         join_product f == the function (x =&gt; f ^~ x)                      
-                           When the family f separates points from closed  
-        {ptws, F --&gt; f} == F converges to f in {ptws U -&gt; V}               
-   {family fam, U -&gt; V} == the supremum of {uniform A -&gt; f} for each A in  
-                           `fam`                                           
-                           In particular, {family compact, U -&gt; V} is the  
-                           topology of compact convergence.                
-  {family fam, F --&gt; f} == F converges to f in {family fam, U -&gt; V}        
- {compact_open, U -&gt; V} == compact-open topology                           
-{compact_open, F --&gt; f} == F converges to f in {compact_open, U -&gt; V}      
-```                                                                        
-                                                                           
-## Ascoli's theorem notations                                              
-```                                                                        
-     equicontinuous W x == the set (W : X -&gt; Y) is equicontinuous at x     
- pointwise_precompact W == for each (x : X), the set of images             
-                           [f x | f in W] is precompact                    
-```                                                                        
+# The topology of functions spaces                                          
+                                                                            
+Function spaces have no canonical topology. We develop the theory of        
+several general-purpose function space topologies here. Contextually,       
+there is often a natural choice, though. So we provide modules to assign    
+topologies to arrow types locally.                                          
+                                                                            
+Topologies we consider are:                                                 
+- Topology of pointwise convergence                                         
+- Topology of uniform convergence                                           
+- Topology of uniform convergence on subspaces                              
+- The compact-open topology                                                 
+                                                                            
+Available modules to assign a topology to `-&gt;`:                             
+- ArrowAsProduct assigns the product topology                               
+- ArrowAsUniformType assigns the uniform topology                           
+- ArrowAsCompactOpen assign the compact-open topology                       
+                                                                            
+The major results are:                                                      
+- Compactness in the product topology via Tychonoff's                       
+- Compactness in the compact convergence topology via Ascoli's              
+- Conditions when the supremum and weak topology commute in products        
+- The compact-open topology is the topopology of compact convergence        
+- Cartesian closedness for the category of locally compact topologies       
+                                                                            
+## Function space notations                                                 
+```                                                                         
+      {uniform` A -&gt; V} == the space U -&gt; V, equipped with the topology     
+                           of uniform convergence from a set A to V, where  
+                           V is a uniformType                               
+       {uniform U -&gt; V} := {uniform` [set: U] -&gt; V}                         
+   {uniform A, F --&gt; f} == F converges to f in {uniform A -&gt; V}             
+     {uniform, F --&gt; f} := {uniform setT, F --&gt; f}                          
+      prod_topology I T == the topology of pointwise convergence on the     
+                           dependent space `forall (i:I), T i`              
+          {ptws U -&gt; V} == prod_topology for the non-dependent product      
+separate_points_from_closed f == for a closed set U and point x outside     
+                           some member of the family f, it sends f_i(x)     
+                           outside (closure (f_i @` U))                     
+                           Used together with join_product.                 
+         join_product f == the function (x =&gt; f ^~ x)                       
+                           When the family f separates points from closed   
+        {ptws, F --&gt; f} == F converges to f in {ptws U -&gt; V}                
+   {family fam, U -&gt; V} == the supremum of {uniform A -&gt; f} for each A in   
+                           `fam`                                            
+                           In particular, {family compact, U -&gt; V} is the   
+                           topology of compact convergence.                 
+  {family fam, F --&gt; f} == F converges to f in {family fam, U -&gt; V}         
+ {compact_open, U -&gt; V} == compact-open topology                            
+{compact_open, F --&gt; f} == F converges to f in {compact_open, U -&gt; V}       
+```                                                                         
+                                                                            
+## Ascoli's theorem notations                                               
+```                                                                         
+     equicontinuous W x == the set (W : X -&gt; Y) is equicontinuous at x      
+ pointwise_precompact W == for each (x : X), the set of images              
+                           [f x | f in W] is precompact                     
+```                                                                         
 </div>
 <br/>
 <span class="vernacular">Reserved</span> <span class="vernacular">Notation</span> <span class="id">&quot;{ 'uniform`' A -&gt; V }&quot;</span><br/>

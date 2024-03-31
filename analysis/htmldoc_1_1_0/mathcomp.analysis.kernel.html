@@ -93,40 +93,40 @@
 <span class="vernacular">Require</span> <span class="vernacular">Import</span> <span class="id"><a href="mathcomp.analysis.numfun.html">numfun</a></span> <span class="id"><a href="mathcomp.analysis.lebesgue_measure.html">lebesgue_measure</a></span> <span class="id"><a href="mathcomp.analysis.lebesgue_integral.html">lebesgue_integral</a></span>.<br/>
 <br/>
 <div class="ssrdoc md">
-# Kernels                                                                  
-                                                                           
-This file provides a formation of kernels, s-finite kernels, finite        
-kernels, subprobability kernels, and probability kernels. The main         
-formalized result is the fact that s-finite kernels are stable by          
-composition.                                                               
-Reference:                                                                 
-- R. Affeldt, C. Cohen, A. Saito. Semantics of probabilistic programs      
-  using s-finite kernels in Coq. CPP 2023                                  
-                                                                           
-```                                                                        
-      R.-ker X ~&gt; Y == kernel from X to Y where X and Y are of type        
-                       measurableType                                      
-                       The HB class is Kernel.                             
-  measure_fam_uub k == the kernel k is uniformly upper-bounded             
-    R.-sfker X ~&gt; Y == s-finite kernel                                     
-                       The HB class is SFiniteKernel.                      
-     R.-fker X ~&gt; Y == finite kernel                                       
-                       The HB class is FiniteKernel.                       
-    R.-spker X ~&gt; Y == subprobability kernel                               
-                       The HB class is SubProbabilityKernel.               
-     R.-pker X ~&gt; Y == probability kernel                                  
-                       The HB class is ProbabilityKernel.                  
-            kseries == countable sum of kernels                            
-                       It is declared as an instance of the structure      
-                       Kernel. It is also an instance of the structure     
-                       SFiniteKernel if the sum is over s-finite kernels.  
-              kzero == kernel defined using the mzero measure              
-          kdirac mf == kernel defined by a measurable function             
-     kprobability m == kernel defined by a probability measure             
-         kadd k1 k2 == lifting of the addition of measures to kernels      
-             l \; k == composition of kernels                              
-```                                                                        
-                                                                           
+# Kernels                                                                   
+                                                                            
+This file provides a formation of kernels, s-finite kernels, finite         
+kernels, subprobability kernels, and probability kernels. The main          
+formalized result is the fact that s-finite kernels are stable by           
+composition.                                                                
+Reference:                                                                  
+- R. Affeldt, C. Cohen, A. Saito. Semantics of probabilistic programs       
+  using s-finite kernels in Coq. CPP 2023                                   
+                                                                            
+```                                                                         
+      R.-ker X ~&gt; Y == kernel from X to Y where X and Y are of type         
+                       measurableType                                       
+                       The HB class is Kernel.                              
+  measure_fam_uub k == the kernel k is uniformly upper-bounded              
+    R.-sfker X ~&gt; Y == s-finite kernel                                      
+                       The HB class is SFiniteKernel.                       
+     R.-fker X ~&gt; Y == finite kernel                                        
+                       The HB class is FiniteKernel.                        
+    R.-spker X ~&gt; Y == subprobability kernel                                
+                       The HB class is SubProbabilityKernel.                
+     R.-pker X ~&gt; Y == probability kernel                                   
+                       The HB class is ProbabilityKernel.                   
+            kseries == countable sum of kernels                             
+                       It is declared as an instance of the structure       
+                       Kernel. It is also an instance of the structure      
+                       SFiniteKernel if the sum is over s-finite kernels.   
+              kzero == kernel defined using the mzero measure               
+          kdirac mf == kernel defined by a measurable function              
+     kprobability m == kernel defined by a probability measure              
+         kadd k1 k2 == lifting of the addition of measures to kernels       
+             l \; k == composition of kernels                               
+```                                                                         
+                                                                            
 </div>
 <br/>
 <span class="gallina-kwd">Set</span> <span class="vernacular">Implicit</span> <span class="vernacular">Arguments</span>.<br/>

@@ -95,29 +95,29 @@
 <span class="vernacular">Require</span> <span class="vernacular">Import</span> <span class="id"><a href="mathcomp.analysis.exp.html">exp</a></span> <span class="id"><a href="mathcomp.analysis.numfun.html">numfun</a></span> <span class="id"><a href="mathcomp.analysis.lebesgue_measure.html">lebesgue_measure</a></span> <span class="id"><a href="mathcomp.analysis.lebesgue_integral.html">lebesgue_integral</a></span>.<br/>
 <br/>
 <div class="ssrdoc md">
-# Probability                                                              
-                                                                           
-This file provides basic notions of probability theory. See measure.v for  
-the type probability T R (a measure that sums to 1).                       
-                                                                           
-```                                                                        
-         {RV P &gt;-&gt; R} == real random variable: a measurable function from  
-                         the measurableType of the probability P to R      
-       distribution X == measure image of P by X : {RV P -&gt; R}, declared   
-                         as an instance of probability measure             
-              'E_P[X] == expectation of the real measurable function X     
-       covariance X Y == covariance between real random variable X and Y   
-              'V_P[X] == variance of the real random variable X            
-        mmt_gen_fun X == moment generating function of the random variable 
-                         X 
-      {dmfun T &gt;-&gt; R} == type of discrete real-valued measurable functions 
-        {dRV P &gt;-&gt; R} == real-valued discrete random variable              
-            dRV_dom X == domain of the discrete random variable X          
-           dRV_enum X == bijection between the domain and the range of X   
-              pmf X r := fine (P (X @^-1` [set r]))                        
-        enum_prob X k == probability of the kth value in the range of X    
-```                                                                        
-                                                                           
+# Probability                                                               
+                                                                            
+This file provides basic notions of probability theory. See measure.v for   
+the type probability T R (a measure that sums to 1).                        
+                                                                            
+```                                                                         
+         {RV P &gt;-&gt; R} == real random variable: a measurable function from   
+                         the measurableType of the probability P to R       
+       distribution X == measure image of P by X : {RV P -&gt; R}, declared    
+                         as an instance of probability measure              
+              'E_P[X] == expectation of the real measurable function X      
+       covariance X Y == covariance between real random variable X and Y    
+              'V_P[X] == variance of the real random variable X             
+        mmt_gen_fun X == moment generating function of the random variable  
+                         X  
+      {dmfun T &gt;-&gt; R} == type of discrete real-valued measurable functions  
+        {dRV P &gt;-&gt; R} == real-valued discrete random variable               
+            dRV_dom X == domain of the discrete random variable X           
+           dRV_enum X == bijection between the domain and the range of X    
+              pmf X r := fine (P (X @^-1` [set r]))                         
+        enum_prob X k == probability of the kth value in the range of X     
+```                                                                         
+                                                                            
 </div>
 <br/>
 <span class="vernacular">Reserved</span> <span class="vernacular">Notation</span> <span class="id">&quot;'{' 'RV' P &gt;-&gt; R '}'&quot;</span><br/>

@@ -89,51 +89,51 @@
 <span class="vernacular">From</span> <span class="id">mathcomp</span> <span class="vernacular">Require</span> <span class="vernacular">Import</span> <span class="id"><a href="https://math-comp.github.io/htmldoc/mathcomp.ssreflect.all_ssreflect.html">all_ssreflect</a></span>.<br/>
 <br/>
 <div class="ssrdoc md">
-# Classical Logic                                                          
-                                                                           
-This file provides the axioms of classical logic and tools to perform      
-classical reasoning in the Mathematical Compnent framework. The three      
-axioms are taken from the standard library of Coq, more details can be     
-found in Section 5 of                                                      
-- R. Affeldt, C. Cohen, D. Rouhling. Formalization Techniques for          
-  Asymptotic Reasoning in Classical Analysis. JFR 2018                     
-                                                                           
-## Axioms                                                                  
-```                                                                        
-functional_extensionality_dep == functional extensionality (on dependently 
-                    typed functions), i.e., functions that are pointwise   
-                    equal are equal                                        
-propositional_extensionality == propositional extensionality, i.e., iff    
-                    and equality are the same on Prop                      
-constructive_indefinite_description == existential in Prop (ex) implies    
-                    existential in Type (sig)                              
-             cid := constructive_indefinite_description (shortcut)         
-```                                                                        
-                                                                           
-A number of properties are derived below from these axioms and are         
-often more pratical to use than directly using the axioms. For instance    
-propext, funext, the excluded middle (EM),...                              
-                                                                           
-## Boolean View of Prop                                                    
-```                                                                        
-        `[&lt; P &gt;] == boolean view of P : Prop, see all lemmas about asbool  
-```                                                                        
-                                                                           
-## Mathematical Components Structures                                      
-```                                                                        
- {classic T} == Endow T : Type with a canonical eqType/choiceType.         
-                This is intended for local use.                            
-                E.g., T : Type |- A : {fset {classic T}}                   
-                Alternatively one may use elim/Pchoice: T =&gt; T in H *.     
-                to substitute T with T : choiceType once and for all.      
-{eclassic T} == Endow T : eqType with a canonical choiceType.              
-                On the model of {classic _}.                               
-                See also the lemmas Peq and eqPchoice.                     
-```                                                                        
-                                                                           
-Functions into a porderType (resp. latticeType) are equipped with          
-a porderType (resp. latticeType), (f &lt;= g)%O when f x &lt;= g x for all x,    
-see lemma lefP.                                                            
+# Classical Logic                                                           
+                                                                            
+This file provides the axioms of classical logic and tools to perform       
+classical reasoning in the Mathematical Compnent framework. The three       
+axioms are taken from the standard library of Coq, more details can be      
+found in Section 5 of                                                       
+- R. Affeldt, C. Cohen, D. Rouhling. Formalization Techniques for           
+  Asymptotic Reasoning in Classical Analysis. JFR 2018                      
+                                                                            
+## Axioms                                                                   
+```                                                                         
+functional_extensionality_dep == functional extensionality (on dependently  
+                    typed functions), i.e., functions that are pointwise    
+                    equal are equal                                         
+propositional_extensionality == propositional extensionality, i.e., iff     
+                    and equality are the same on Prop                       
+constructive_indefinite_description == existential in Prop (ex) implies     
+                    existential in Type (sig)                               
+             cid := constructive_indefinite_description (shortcut)          
+```                                                                         
+                                                                            
+A number of properties are derived below from these axioms and are          
+often more pratical to use than directly using the axioms. For instance     
+propext, funext, the excluded middle (EM),...                               
+                                                                            
+## Boolean View of Prop                                                     
+```                                                                         
+        `[&lt; P &gt;] == boolean view of P : Prop, see all lemmas about asbool   
+```                                                                         
+                                                                            
+## Mathematical Components Structures                                       
+```                                                                         
+ {classic T} == Endow T : Type with a canonical eqType/choiceType.          
+                This is intended for local use.                             
+                E.g., T : Type |- A : {fset {classic T}}                    
+                Alternatively one may use elim/Pchoice: T =&gt; T in H *.      
+                to substitute T with T : choiceType once and for all.       
+{eclassic T} == Endow T : eqType with a canonical choiceType.               
+                On the model of {classic _}.                                
+                See also the lemmas Peq and eqPchoice.                      
+```                                                                         
+                                                                            
+Functions into a porderType (resp. latticeType) are equipped with           
+a porderType (resp. latticeType), (f &lt;= g)%O when f x &lt;= g x for all x,     
+see lemma lefP.                                                             
 </div>
 <br/>
 <span class="gallina-kwd">Set</span>   <span class="vernacular">Implicit</span> <span class="vernacular">Arguments</span>.<br/>

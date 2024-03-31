@@ -93,117 +93,117 @@
 <span class="vernacular">Require</span> <span class="vernacular">Import</span> <span class="id"><a href="mathcomp.analysis.ereal.html">ereal</a></span> <span class="id"><a href="mathcomp.analysis.reals.html">reals</a></span> <span class="id"><a href="mathcomp.analysis.signed.html">signed</a></span> <span class="id"><a href="mathcomp.analysis.topology.html">topology</a></span> <span class="id"><a href="mathcomp.analysis.prodnormedzmodule.html">prodnormedzmodule</a></span> <span class="id"><a href="mathcomp.analysis.function_spaces.html">function_spaces</a></span>.<br/>
 <br/>
 <div class="ssrdoc md">
-# Norm-related Notions                                                     
-                                                                           
-This file extends the topological hierarchy with norm-related notions.     
-Note that balls in topology.v are not necessarily open, here they are.     
-We used these definitions to prove the intermediate value theorem and      
-the Heine-Borel theorem, which states that the compact sets of             
-$\mathbb{R}^n$ are the closed and bounded sets, Urysohn's lemma, Vitali's  
-covering lemmas (finite case), etc.                                        
-                                                                           
-* Limit superior and inferior:                                             
-  limf_esup f F, limf_einf f F == limit sup/inferior of f at "filter" F    
-                                  f has type X -&gt; \bar R.                  
-                                  F has type set (set X).                  
-                                                                           
-## Normed topological abelian groups                                       
-```                                                                        
- pseudoMetricNormedZmodType R  == interface type for a normed topological  
-                                  Abelian group equipped with a norm       
-                                  The HB class is PseudoMetricNormedZmod.  
-```                                                                        
-                                                                           
-        lower_semicontinuous f == the extented real-valued function f is   
-                                  lower-semicontinuous. The type of f is   
-                                  X -&gt; \bar R with X : topologicalType and 
-                                  R : realType                             
-                                                                           
-## Normed modules                                                          
-```                                                                        
-               normedModType K == interface type for a normed module       
-                                  structure over the numDomainType K       
-                                  The HB class is NormedModule.            
-                          `|x| == the norm of x (notation from ssrnum)     
-                     ball_norm == balls defined by the norm.               
-                         edist == the extended distance function for a     
-                                  pseudometric X, from X * X -&gt; \bar R     
-                   edist_inf A == the infimum of distances to the set A    
-                   Urysohn A B == a continuous function T -&gt; [0,1] which   
-                                  separates A and B when                   
-                                  `uniform_separator A B`                  
-      completely_regular_space == a space where points and closed sets can 
-                                  be separated by a function into R        
-         uniform_separator A B == there is a suitable uniform space and    
-                                  entourage separating A and B             
-                     nbhs_norm == neighborhoods defined by the norm        
-                   closed_ball == closure of a ball                        
-  f @`[ a , b ], f @`] a , b [ == notations for images of intervals,       
-                                  intended for continuous, monotonous      
-                                  functions, defined in ring_scope and     
-                                  classical_set_scope respectively as:     
-                 f @`[ a , b ] := `[minr (f a) (f b), maxr (f a) (f b)]%O  
-                 f @`] a , b [ := `]minr (f a) (f b), maxr (f a) (f b)[%O  
-                 f @`[ a , b ] := `[minr (f a) (f b),                      
-                                    maxr (f a) (f b)]%classic              
-                 f @`] a , b [ := `]minr (f a) (f b),                      
-                                    maxr (f a) (f b)[%classic              
-```                                                                        
-                                                                           
-## Domination notations                                                    
-```                                                                        
-             dominated_by h k f F == `|f| &lt;= k * `|h|, near F              
-                 bounded_near f F == f is bounded near F                   
-           [bounded f x | x in A] == f is bounded on A, ie F := globally A 
-  [locally [bounded f x | x in A] == f is locally bounded on A             
-                      bounded_set == set of bounded sets                   
-                                  := [set A | [bounded x | x in A]]        
-                      bounded_fun == set of functions bounded on their     
-                                     whole domain                          
-                                  := [set f | [bounded f x | x in setT]]   
-                 lipschitz_on f F == f is lipschitz near F                 
-         [lipschitz f x | x in A] == f is lipschitz on A                   
-[locally [lipschitz f x | x in A] == f is locally lipschitz on A           
-              k.-lipschitz_on f F == f is k.-lipschitz near F              
-                 k.-lipschitz_A f == f is k.-lipschitz on A                
-       [locally k.-lipschitz_A f] == f is locally k.-lipschitz on A        
-                  contraction q f == f is q.-lipschitz and q &lt; 1           
-                 is_contraction f == exists q, f is q.-lipschitz and q &lt; 1 
-                                                                           
-                    is_interval E == the set E is an interval              
-               bigcup_ointsub U q == union of open real interval included  
-                                     in U and that contain the rational    
-                                     number q                              
-                          Rhull A == the real interval hull of a set A     
-                        shift x y == y + x                                 
-                         center c := shift (- c)                           
-```                                                                        
-                                                                           
-## Complete normed modules                                                 
-```                                                                        
-       completeNormedModType K == interface type for a complete normed     
-                                  module structure over a realFieldType    
-                                  K                                        
-                                  The HB class is CompleteNormedModule.    
-```                                                                        
-                                                                           
-## Filters                                                                 
-```                                                                        
-                    x^'-, x^'+ == filters on real numbers for predicates   
-                                  s.t. nbhs holds on the left/right of x   
-```                                                                        
-                                                                           
-```                                                                        
-       cpoint A == the center of the set A if it is an open ball           
-       radius A == the radius of the set A if it is an open ball           
-                   Radius A has type {nonneg R} with R a numDomainType.    
-      is_ball A == boolean predicate that holds when A is an open ball     
-         k *` A == open ball with center cpoint A and radius k * radius A  
-                   if A is an open ball and set0 o.w.                      
-  vitali_collection_partition B V r n == subset of indices of V such the   
-                   the ball B i has a radius between r/2^n+1 and r/2^n     
-```                                                                        
-                                                                           
+# Norm-related Notions                                                      
+                                                                            
+This file extends the topological hierarchy with norm-related notions.      
+Note that balls in topology.v are not necessarily open, here they are.      
+We used these definitions to prove the intermediate value theorem and       
+the Heine-Borel theorem, which states that the compact sets of              
+$\mathbb{R}^n$ are the closed and bounded sets, Urysohn's lemma, Vitali's   
+covering lemmas (finite case), etc.                                         
+                                                                            
+* Limit superior and inferior:                                              
+  limf_esup f F, limf_einf f F == limit sup/inferior of f at "filter" F     
+                                  f has type X -&gt; \bar R.                   
+                                  F has type set (set X).                   
+                                                                            
+## Normed topological abelian groups                                        
+```                                                                         
+ pseudoMetricNormedZmodType R  == interface type for a normed topological   
+                                  Abelian group equipped with a norm        
+                                  The HB class is PseudoMetricNormedZmod.   
+```                                                                         
+                                                                            
+        lower_semicontinuous f == the extented real-valued function f is    
+                                  lower-semicontinuous. The type of f is    
+                                  X -&gt; \bar R with X : topologicalType and  
+                                  R : realType                              
+                                                                            
+## Normed modules                                                           
+```                                                                         
+               normedModType K == interface type for a normed module        
+                                  structure over the numDomainType K        
+                                  The HB class is NormedModule.             
+                          `|x| == the norm of x (notation from ssrnum)      
+                     ball_norm == balls defined by the norm.                
+                         edist == the extended distance function for a      
+                                  pseudometric X, from X * X -&gt; \bar R      
+                   edist_inf A == the infimum of distances to the set A     
+                   Urysohn A B == a continuous function T -&gt; [0,1] which    
+                                  separates A and B when                    
+                                  `uniform_separator A B`                   
+      completely_regular_space == a space where points and closed sets can  
+                                  be separated by a function into R         
+         uniform_separator A B == there is a suitable uniform space and     
+                                  entourage separating A and B              
+                     nbhs_norm == neighborhoods defined by the norm         
+                   closed_ball == closure of a ball                         
+  f @`[ a , b ], f @`] a , b [ == notations for images of intervals,        
+                                  intended for continuous, monotonous       
+                                  functions, defined in ring_scope and      
+                                  classical_set_scope respectively as:      
+                 f @`[ a , b ] := `[minr (f a) (f b), maxr (f a) (f b)]%O   
+                 f @`] a , b [ := `]minr (f a) (f b), maxr (f a) (f b)[%O   
+                 f @`[ a , b ] := `[minr (f a) (f b),                       
+                                    maxr (f a) (f b)]%classic               
+                 f @`] a , b [ := `]minr (f a) (f b),                       
+                                    maxr (f a) (f b)[%classic               
+```                                                                         
+                                                                            
+## Domination notations                                                     
+```                                                                         
+             dominated_by h k f F == `|f| &lt;= k * `|h|, near F               
+                 bounded_near f F == f is bounded near F                    
+           [bounded f x | x in A] == f is bounded on A, ie F := globally A  
+  [locally [bounded f x | x in A] == f is locally bounded on A              
+                      bounded_set == set of bounded sets                    
+                                  := [set A | [bounded x | x in A]]         
+                      bounded_fun == set of functions bounded on their      
+                                     whole domain                           
+                                  := [set f | [bounded f x | x in setT]]    
+                 lipschitz_on f F == f is lipschitz near F                  
+         [lipschitz f x | x in A] == f is lipschitz on A                    
+[locally [lipschitz f x | x in A] == f is locally lipschitz on A            
+              k.-lipschitz_on f F == f is k.-lipschitz near F               
+                 k.-lipschitz_A f == f is k.-lipschitz on A                 
+       [locally k.-lipschitz_A f] == f is locally k.-lipschitz on A         
+                  contraction q f == f is q.-lipschitz and q &lt; 1            
+                 is_contraction f == exists q, f is q.-lipschitz and q &lt; 1  
+                                                                            
+                    is_interval E == the set E is an interval               
+               bigcup_ointsub U q == union of open real interval included   
+                                     in U and that contain the rational     
+                                     number q                               
+                          Rhull A == the real interval hull of a set A      
+                        shift x y == y + x                                  
+                         center c := shift (- c)                            
+```                                                                         
+                                                                            
+## Complete normed modules                                                  
+```                                                                         
+       completeNormedModType K == interface type for a complete normed      
+                                  module structure over a realFieldType     
+                                  K                                         
+                                  The HB class is CompleteNormedModule.     
+```                                                                         
+                                                                            
+## Filters                                                                  
+```                                                                         
+                    x^'-, x^'+ == filters on real numbers for predicates    
+                                  s.t. nbhs holds on the left/right of x    
+```                                                                         
+                                                                            
+```                                                                         
+       cpoint A == the center of the set A if it is an open ball            
+       radius A == the radius of the set A if it is an open ball            
+                   Radius A has type {nonneg R} with R a numDomainType.     
+      is_ball A == boolean predicate that holds when A is an open ball      
+         k *` A == open ball with center cpoint A and radius k * radius A   
+                   if A is an open ball and set0 o.w.                       
+  vitali_collection_partition B V r n == subset of indices of V such the    
+                   the ball B i has a radius between r/2^n+1 and r/2^n      
+```                                                                         
+                                                                            
 </div>
 <br/>
 <span class="vernacular">Reserved</span> <span class="vernacular">Notation</span> <span class="id">&quot;f @`[ a , b ]&quot;</span> (<span class="gallina-kwd">at</span> <span class="id">level</span> <span class="id">20,</span> <span class="id">b</span> <span class="gallina-kwd">at</span> <span class="id">level</span> <span class="id">9,</span><br/>

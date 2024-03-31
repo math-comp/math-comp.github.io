@@ -92,396 +92,396 @@
 <span class="vernacular">Require</span> <span class="vernacular">Import</span> <span class="id"><a href="mathcomp.analysis.reals.html">reals</a></span> <span class="id"><a href="mathcomp.analysis.signed.html">signed</a></span>.<br/>
 <br/>
 <div class="ssrdoc md">
-# Filters and basic topological notions                                    
-                                                                           
-This file develops tools for the manipulation of filters and basic         
-topological notions.                                                       
-                                                                           
-The development of topological notions builds on "filtered types". They    
-are types equipped with an interface that associates to each element a     
-set of sets, intended to represent a filter. The notions of limit and      
-convergence are defined for filtered types and in the documentation below  
-we call "canonical filter" of an element the set of sets associated to it  
-by the interface of filtered types.                                        
-                                                                           
-Table of contents of the documentation:                                    
-1. Filters                                                                 
-   - Structure of filter                                                   
-   - Theory of filters                                                     
-   - Near notations and tactics                                            
-     + Notations                                                           
-     + Tactics                                                             
-2. Basic topological notions                                               
-   - Mathematical structures                                               
-     + Topology                                                            
-     + Uniform spaces                                                      
-     + Pseudometric spaces                                                 
-     + Complete uniform spaces                                             
-     + Complete pseudometric spaces                                        
-     + Subspaces of topological spaces                                     
-                                                                           
+# Filters and basic topological notions                                     
+                                                                            
+This file develops tools for the manipulation of filters and basic          
+topological notions.                                                        
+                                                                            
+The development of topological notions builds on "filtered types". They     
+are types equipped with an interface that associates to each element a      
+set of sets, intended to represent a filter. The notions of limit and       
+convergence are defined for filtered types and in the documentation below   
+we call "canonical filter" of an element the set of sets associated to it   
+by the interface of filtered types.                                         
+                                                                            
+Table of contents of the documentation:                                     
+1. Filters                                                                  
+   - Structure of filter                                                    
+   - Theory of filters                                                      
+   - Near notations and tactics                                             
+     + Notations                                                            
+     + Tactics                                                              
+2. Basic topological notions                                                
+   - Mathematical structures                                                
+     + Topology                                                             
+     + Uniform spaces                                                       
+     + Pseudometric spaces                                                  
+     + Complete uniform spaces                                              
+     + Complete pseudometric spaces                                         
+     + Subspaces of topological spaces                                      
+                                                                            
 </div>
 <br/>
 <div class="ssrdoc md">
-# 1. Filters                                                               
-                                                                           
-## Structure of filter                                                     
-```                                                                        
-                  filteredType U == interface type for types whose         
-                                    elements represent sets of sets on U   
-                                    These sets are intended to be filters  
-                                    on U but this is not enforced yet.     
-                                    The HB class is called Filtered.       
-                                    It extends Pointed.                    
-                          nbhs p == set of sets associated to p (in a      
-                                    filtered type)                         
-                         hasNbhs == factory for filteredType               
-```                                                                        
-                                                                           
-We endow several standard types with the structure of filter, e.g.:        
-- products `(X1 * X2)%type`                                                
-- matrices `'M[X]_(m, n)`                                                  
-- natural numbers `nat`                                                    
-                                                                           
-## Theory of filters                                                       
-```                                                                        
-                 filter_from D B == set of the supersets of the elements   
-                                    of the family of sets B whose indices  
-                                    are in the domain D                    
-                                    This is a filter if (B_i)_(i in D)     
-                                    forms a filter base.                   
-                 filter_prod F G == product of the filters F and G         
-                       F `=&gt;` G &lt;-&gt; G is included in F                     
-                                    F and G are sets of sets.              
-                        F --&gt; G &lt;-&gt; the canonical filter associated to G   
-                                    is included in the canonical filter    
-                                    associated to F                        
-                           lim F == limit of the canonical filter          
-                                    associated with F if there is such a   
-                                    limit, i.e., an element l such that    
-                                    the canonical filter associated to l   
-                                    is a subset of F                       
-                    [lim F in T] == limit of the canonical filter          
-                                    associated to F in T where T has type  
-                                    filteredType U                         
-                   [cvg F in T] &lt;-&gt; the canonical filter associated to F   
-                                    converges in T                         
-                          cvg F &lt;-&gt; same as [cvg F in T] where T is        
-                                    inferred from the type of the          
-                                    canonical filter associated to F       
-                        Filter F == type class proving that the set of     
-                                    sets F is a filter                     
-                  ProperFilter F == type class proving that the set of     
-                                    sets F is a proper filter              
-                   UltraFilter F == type class proving that the set of     
-                                    sets F is an ultrafilter               
-                     filter_on T == interface type for sets of sets on T   
-                                    that are filters                       
-                 FilterType F FF == packs the set of sets F with the proof 
-                                    FF of Filter F to build a filter_on T  
-                                    structure                              
-                    pfilter_on T == interface type for sets of sets on T   
-                                    that are proper filters                
-                PFilterPack F FF == packs the set of sets F with the proof 
-                                    FF of ProperFilter F to build a        
-                                    pfilter_on T structure                 
-                        fmap f F == image of the filter F by the function  
-                                    f                                      
-                    E @[x --&gt; F] == image of the canonical filter          
-                                    associated to F by the function        
-                                    (fun x =&gt; E)                           
-                           f @ F == image of the canonical filter          
-                                    associated to F by the function f      
-                       fmapi f F == image of the filter F by the relation  
-                                    f                                      
-                   E `@[x --&gt; F] == image of the canonical filter          
-                                    associated to F by the relation        
-                                    (fun x =&gt; E)                           
-                          f `@ F == image of the canonical filter          
-                                    associated to F by the relation f      
-                      globally A == filter of the sets containing A        
-               @frechet_filter T := [set S : set T | finite_set (~` S)]    
-                                    a.k.a. cofinite filter                 
-                      at_point a == filter of the sets containing a        
-                      within D F == restriction of the filter F to the     
-                                    domain D                               
-              principal_filter x == filter containing every superset of x  
-        pointed_principal_filter == alias for pointed types with           
-                                    principal filters                      
-               subset_filter F D == similar to within D F, but with        
-                                    dependent types                        
-          powerset_filter_from F == the filter of downward closed subsets  
-                                    of F.                                  
-                                    Enables use of near notation to pick   
-                                    suitably small members of F            
-                     in_filter F == interface type for the sets that       
-                                    belong to the set of sets F            
-                     InFilter FP == packs a set P with a proof of F P to   
-                                    build a in_filter F structure          
-                             \oo == "eventually" filter on nat: set of     
-                                    predicates on natural numbers that are 
-                                    eventually true                        
-                        clopen U == U is both open and closed              
-```                                                                        
-                                                                           
-## Near notations and tactics                                              
-The purpose of the near notations and tactics is to make the manipulation  
-of filters easier. Instead of proving $F\; G$, one can prove $G\; x$ for   
-$x$ "near F", i.e., for x such that H x for H arbitrarily precise as long  
-as $F\; H$. The near tactics allow for a delayed introduction of $H$:      
-$H$ is introduced as an existential variable and progressively             
-instantiated during the proof process.                                     
-                                                                           
-### Notations                                                              
-```                                                                        
-                     {near F, P} == the property P holds near the          
-                                    canonical filter associated to F       
-                                    P must have the form forall x, Q x.    
-                                    Equivalent to F Q.                     
-         \forall x \near F, P x &lt;-&gt; F (fun x =&gt; P x).                      
-                    \near x, P x := \forall y \near x, P y.                
-                 {near F &amp; G, P} == same as {near H, P}, where H is the    
-                                    product of the filters F and G         
-  \forall x \near F &amp; y \near G, P x y := {near F &amp; G, forall x y, P x y}  
-    \forall x &amp; y \near F, P x y == same as before, with G = F             
-              \near x &amp; y, P x y := \forall z \near x &amp; t \near y, P x y   
-                    x \is_near F == x belongs to a set P : in_filter F     
-```                                                                        
-                                                                           
-### Tactics                                                                
-- near=&gt; x    introduces x:                                                
-  On the goal \forall x \near F, G x, introduces the variable x and an     
-  "existential", and an unaccessible hypothesis ?H x and asks the user to  
-  prove (G x) in this context.                                             
-  Under the hood, it delays the proof of F ?H and waits for near: x.       
-  Also exists under the form near=&gt; x y.                                   
-- near: x     discharges x:                                                
-  On the goal H_i x, and where x \is_near F, it asks the user to prove     
-  that (\forall x \near F, H_i x), provided that H_i x does not depend on  
-  variables introduced after x.                                            
-  Under the hood, it refines by intersection the existential variable ?H   
-  attached to x, computes the intersection with F, and asks the user to    
-  prove F H_i, right now.                                                  
-- end_near should be used to close remaining existentials trivially.       
-- near F =&gt; x     poses a variable near F, where F is a proper filter      
-  It adds to the context a variable x that \is_near F, i.e., one may       
-  assume H x for any H in F. This new variable x can be dealt with using   
-  near: x, as for variables introduced by near=&gt;.                          
-                                                                           
+# 1. Filters                                                                
+                                                                            
+## Structure of filter                                                      
+```                                                                         
+                  filteredType U == interface type for types whose          
+                                    elements represent sets of sets on U    
+                                    These sets are intended to be filters   
+                                    on U but this is not enforced yet.      
+                                    The HB class is called Filtered.        
+                                    It extends Pointed.                     
+                          nbhs p == set of sets associated to p (in a       
+                                    filtered type)                          
+                         hasNbhs == factory for filteredType                
+```                                                                         
+                                                                            
+We endow several standard types with the structure of filter, e.g.:         
+- products `(X1 * X2)%type`                                                 
+- matrices `'M[X]_(m, n)`                                                   
+- natural numbers `nat`                                                     
+                                                                            
+## Theory of filters                                                        
+```                                                                         
+                 filter_from D B == set of the supersets of the elements    
+                                    of the family of sets B whose indices   
+                                    are in the domain D                     
+                                    This is a filter if (B_i)_(i in D)      
+                                    forms a filter base.                    
+                 filter_prod F G == product of the filters F and G          
+                       F `=&gt;` G &lt;-&gt; G is included in F                      
+                                    F and G are sets of sets.               
+                        F --&gt; G &lt;-&gt; the canonical filter associated to G    
+                                    is included in the canonical filter     
+                                    associated to F                         
+                           lim F == limit of the canonical filter           
+                                    associated with F if there is such a    
+                                    limit, i.e., an element l such that     
+                                    the canonical filter associated to l    
+                                    is a subset of F                        
+                    [lim F in T] == limit of the canonical filter           
+                                    associated to F in T where T has type   
+                                    filteredType U                          
+                   [cvg F in T] &lt;-&gt; the canonical filter associated to F    
+                                    converges in T                          
+                          cvg F &lt;-&gt; same as [cvg F in T] where T is         
+                                    inferred from the type of the           
+                                    canonical filter associated to F        
+                        Filter F == type class proving that the set of      
+                                    sets F is a filter                      
+                  ProperFilter F == type class proving that the set of      
+                                    sets F is a proper filter               
+                   UltraFilter F == type class proving that the set of      
+                                    sets F is an ultrafilter                
+                     filter_on T == interface type for sets of sets on T    
+                                    that are filters                        
+                 FilterType F FF == packs the set of sets F with the proof  
+                                    FF of Filter F to build a filter_on T   
+                                    structure                               
+                    pfilter_on T == interface type for sets of sets on T    
+                                    that are proper filters                 
+                PFilterPack F FF == packs the set of sets F with the proof  
+                                    FF of ProperFilter F to build a         
+                                    pfilter_on T structure                  
+                        fmap f F == image of the filter F by the function   
+                                    f                                       
+                    E @[x --&gt; F] == image of the canonical filter           
+                                    associated to F by the function         
+                                    (fun x =&gt; E)                            
+                           f @ F == image of the canonical filter           
+                                    associated to F by the function f       
+                       fmapi f F == image of the filter F by the relation   
+                                    f                                       
+                   E `@[x --&gt; F] == image of the canonical filter           
+                                    associated to F by the relation         
+                                    (fun x =&gt; E)                            
+                          f `@ F == image of the canonical filter           
+                                    associated to F by the relation f       
+                      globally A == filter of the sets containing A         
+               @frechet_filter T := [set S : set T | finite_set (~` S)]     
+                                    a.k.a. cofinite filter                  
+                      at_point a == filter of the sets containing a         
+                      within D F == restriction of the filter F to the      
+                                    domain D                                
+              principal_filter x == filter containing every superset of x   
+        pointed_principal_filter == alias for pointed types with            
+                                    principal filters                       
+               subset_filter F D == similar to within D F, but with         
+                                    dependent types                         
+          powerset_filter_from F == the filter of downward closed subsets   
+                                    of F.                                   
+                                    Enables use of near notation to pick    
+                                    suitably small members of F             
+                     in_filter F == interface type for the sets that        
+                                    belong to the set of sets F             
+                     InFilter FP == packs a set P with a proof of F P to    
+                                    build a in_filter F structure           
+                             \oo == "eventually" filter on nat: set of      
+                                    predicates on natural numbers that are  
+                                    eventually true                         
+                        clopen U == U is both open and closed               
+```                                                                         
+                                                                            
+## Near notations and tactics                                               
+The purpose of the near notations and tactics is to make the manipulation   
+of filters easier. Instead of proving $F\; G$, one can prove $G\; x$ for    
+$x$ "near F", i.e., for x such that H x for H arbitrarily precise as long   
+as $F\; H$. The near tactics allow for a delayed introduction of $H$:       
+$H$ is introduced as an existential variable and progressively              
+instantiated during the proof process.                                      
+                                                                            
+### Notations                                                               
+```                                                                         
+                     {near F, P} == the property P holds near the           
+                                    canonical filter associated to F        
+                                    P must have the form forall x, Q x.     
+                                    Equivalent to F Q.                      
+         \forall x \near F, P x &lt;-&gt; F (fun x =&gt; P x).                       
+                    \near x, P x := \forall y \near x, P y.                 
+                 {near F &amp; G, P} == same as {near H, P}, where H is the     
+                                    product of the filters F and G          
+  \forall x \near F &amp; y \near G, P x y := {near F &amp; G, forall x y, P x y}   
+    \forall x &amp; y \near F, P x y == same as before, with G = F              
+              \near x &amp; y, P x y := \forall z \near x &amp; t \near y, P x y    
+                    x \is_near F == x belongs to a set P : in_filter F      
+```                                                                         
+                                                                            
+### Tactics                                                                 
+- near=&gt; x    introduces x:                                                 
+  On the goal \forall x \near F, G x, introduces the variable x and an      
+  "existential", and an unaccessible hypothesis ?H x and asks the user to   
+  prove (G x) in this context.                                              
+  Under the hood, it delays the proof of F ?H and waits for near: x.        
+  Also exists under the form near=&gt; x y.                                    
+- near: x     discharges x:                                                 
+  On the goal H_i x, and where x \is_near F, it asks the user to prove      
+  that (\forall x \near F, H_i x), provided that H_i x does not depend on   
+  variables introduced after x.                                             
+  Under the hood, it refines by intersection the existential variable ?H    
+  attached to x, computes the intersection with F, and asks the user to     
+  prove F H_i, right now.                                                   
+- end_near should be used to close remaining existentials trivially.        
+- near F =&gt; x     poses a variable near F, where F is a proper filter       
+  It adds to the context a variable x that \is_near F, i.e., one may        
+  assume H x for any H in F. This new variable x can be dealt with using    
+  near: x, as for variables introduced by near=&gt;.                           
+                                                                            
 </div>
 <br/>
 <div class="ssrdoc md">
-# 2. Basic topological notions                                             
-                                                                           
-## Mathematical structures                                                 
-### Topology                                                               
-```                                                                        
-                 topologicalType == interface type for topological space   
-                                    structure                              
-                                    the HB class is Topological.           
-                            open == set of open sets                       
-                     open_nbhs p == set of open neighbourhoods of p        
-                         basis B == a family of open sets that converges   
-                                    to each point                          
-              second_countable T == T has a countable basis                
-                   continuous f &lt;-&gt; f is continuous w.r.t the topology     
-                     [locally P] := forall a, A a -&gt; G (within A (nbhs x)) 
-                                    if P is convertible to G (globally A)  
-          Nbhs_isNbhsTopological == factory for a topology defined by a    
-                                    filter                                 
-                                    It builds the mixin for a topological  
-                                    space from the properties of nbhs and  
-                                    hence assumes that the carrier is a    
-                                    filterType.                            
-       Pointed_isOpenTopological == factory for a topology defined by open 
-                                    sets                                   
-                                    It builds the mixin for a topological  
-                                    space from the properties of open      
-                                    sets, assuming the carrier is a        
-                                    pointed type. nbhs_of_open must be     
-                                    used to declare a filterType.          
-       Pointed_isBaseTopological == factory for a topology defined by a    
-                                    base of open sets                      
-                                    It builds the mixin for a topological  
-                                    space from the properties of a base of 
-                                    open sets; the type of indices must be 
-                                    a pointedType, as well as the carrier. 
-                filterI_iter F n == nth stage of recursively building the  
-                                    filter of finite intersections of F    
-                   finI_from D f == set of \bigcap_(i in E) f i where E is 
-                                    a finite subset of D                   
-    Pointed_isSubBaseTopological == factory for a topology defined by a    
-                                    subbase of open sets                   
-                                    It builds the mixin for a topological  
-                                    space from a subbase of open sets b    
-                                    indexed on domain D; the type of       
-                                    indices must be a pointedType.         
-                                                                           
-We endow several standard types with the structure of topology, e.g.:      
-- products `(T * U)%type`                                                  
-- matrices `'M[T]_(m, n)`                                                  
-- natural numbers `nat`                                                    
-                                                                           
-                 weak_topology f == weak topology by a function f : S -&gt; T 
-                                    on S                                   
-                                    S must be a pointedType and T a        
-                                    topologicalType.                       
-                 sup_topology Tc == supremum topology of the family of     
-                                    topologicalType structures Tc on T     
-                                    T must be a pointedType.               
-             quotient_topology Q == the quotient topology corresponding to 
-                                    quotient Q : quotType T where T has    
-                                    type topologicalType                   
-                             x^' == set of neighbourhoods of x where x is  
-                                    excluded (a "deleted neighborhood")    
-                       closure A == closure of the set A.                  
-                   limit_point E == the set of limit points of E           
-                          closed == set of closed sets.                    
-                       cluster F == set of cluster points of F             
-                         compact == set of compact sets w.r.t. the filter- 
-                                    based definition of compactness        
-              hausdorff_space T &lt;-&gt; T is a Hausdorff space (T2)            
-                  compact_near F == the filter F contains a closed compact 
-                                    set                                    
-                    precompact A == the set A is contained in a closed and 
-                                    compact set                            
-               locally_compact A == every point in A has a compact         
-                                    (and closed) neighborhood              
-               discrete_space T &lt;-&gt; every nbhs is a principal filter       
-          discrete_topology dscT == the discrete topology on T, provided   
-                                    dscT : discrete_space T                
-       finite_subset_cover D F A == the family of sets F is a cover of A   
-                                    for a finite number of indices in D    
-                   cover_compact == set of compact sets w.r.t. the open    
-                                    cover-based definition of compactness  
-                   near_covering == a reformulation of covering compact    
-                                    better suited for use with `near`      
-            near_covering_within == equivalent definition of near_covering 
-             kolmogorov_space T &lt;-&gt; T is a Kolmogorov space (T0)           
-             accessible_space T &lt;-&gt; T is an accessible space (T1)          
-                      close x y &lt;-&gt; x and y are arbitrarily close w.r.t.   
-                                    to balls                               
-                    connected A &lt;-&gt; the only non empty subset of A which   
-                                    is both open and closed in A is A      
-                   separated A B == the two sets A and B are separated     
-           connected_component x == the connected component of point x     
-                   perfect_set A == A is closed, and every point in A is   
-                                    a limit point of A                     
-          totally_disconnected A == the only connected subsets of A are    
-                                    empty or singletons                    
-              zero_dimensional T == points are separable by a clopen set   
-                      set_nbhs A == filter from open sets containing A     
-```                                                                        
-                                                                           
-### Uniform spaces                                                         
-```                                                                        
-                     nbhs_ ent == neighborhoods defined using entourages   
-                   uniformType == interface type for uniform spaces: a     
-                                  type equipped with entourages            
-                                  The HB class is Uniform.                 
-                     entourage == set of entourages in a uniform space     
-                Nbhs_isUniform == factory to build a topological space     
-                                  from a mixin for a uniform space         
-                   split_ent E == when E is an entourage, split_ent E is   
-                                  an entourage E' such that E' \o E' is    
-                                  included in E when seen as a relation    
-        countable_uniformity T == T's entourage has a countable base       
-                                  This is equivalent to `T` being          
-                                  metrizable.                              
-            unif_continuous f &lt;-&gt; f is uniformly continuous                
-               entourage_ ball == entourages defined using balls           
-```                                                                        
-                                                                           
-`weak_topology`, `sup_ent`, `discrete_ent` are equipped with the `Uniform` 
-structure.                                                                 
-We endow several standard types with the structure of uniform space, e.g.: 
-- products `(U * V)%type`                                                  
-- matrices `'M[T]_(m, n)`                                                  
-                                                                           
-### PseudoMetric spaces                                                    
-```                                                                        
-               entourage_ ball == entourages defined using balls           
-              pseudoMetricType == interface type for pseudo metric space   
-                                  structure: a type equipped with balls    
-                                  The HB class is PseudoMetric.            
-                      ball x e == ball of center x and radius e            
-           Nbhs_isPseudoMetric == factory to build a topological space     
-                                  from a mixin for a pseudoMetric space    
-               nbhs_ball_ ball == nbhs defined using the given balls       
-                     nbhs_ball == nbhs defined using balls in a            
-                                  pseudometric space                       
-                 discrete_ball == singleton balls for the discrete         
-                                  topology                                 
-     pointed_discrete_topology == equip pointed types with a discrete      
-                                  topology                                 
-```                                                                        
-                                                                           
-We endow several standard types with the structure of pseudometric space,  
-e.g.:                                                                      
-- products `(U * V)%type`                                                  
-- matrices `'M[T]_(m, n)`                                                  
-- `weak_topology` (the metric space for weak topologies)                   
-- `sup_pseudoMetricType`                                                   
-                                                                           
-### Complete uniform spaces                                                
-```                                                                        
-                     cauchy F &lt;-&gt; the set of sets F is a cauchy filter     
-                                  (entourage definition)                   
-                  completeType == interface type for a complete uniform    
-                                  space structure                          
-                                  The HB class is Complete.                
-```                                                                        
-                                                                           
-We endow several standard types with the structure of complete uniform     
-space, e.g.:                                                               
-- matrices `'M[T]_(m, n)`                                                  
-- functions `T -&gt; U`                                                       
-                                                                           
-### Complete pseudometric spaces                                           
-```                                                                        
-                  cauchy_ex F &lt;-&gt; the set of sets F is a cauchy filter     
-                                  (epsilon-delta definition)               
-                cauchy_ball F &lt;-&gt; the set of sets F is a cauchy filter     
-                                  (using the near notations)               
-      completePseudoMetricType == interface type for a complete            
-                                  pseudometric space structure             
-                                  The HB class is CompletePseudoMetric.    
-                       ball_ N == balls defined by the norm/absolute       
-                                  value N                                  
-```                                                                        
-                                                                           
-We endow several standard types with the structure of complete             
-pseudometric space, e.g.:                                                  
-- matrices `'M[T]_(m, n)`                                                  
-- functions `T -&gt; U`                                                       
-                                                                           
-We endow `numFieldType` with the types of topological notions              
-(accessible with `Import numFieldTopology.Exports.`)                       
-                                                                           
-```                                                                        
-                dense S == the set (S : set T) is dense in T, with T of    
-                           type topologicalType                            
-```                                                                        
-                                                                           
-### Subspaces of topological spaces                                        
-```                                                                        
-             subspace A == for (A : set T), this is a copy of T with a     
-                           topology that ignores points outside A          
-        incl_subspace x == with x of type subspace A with (A : set T),     
-                           inclusion of subspace A into T                  
-         join_product f == the function (x =&gt; f ^~ x)                      
-                           When the family f separates points from closed  
-                           sets, join_product is an embedding.             
-           singletons T := [set [set x] | x in [set: T]]                   
-                gauge E == for an entourage E, gauge E is a filter which   
-                           includes `iter n split_ent E`                   
-                           Critically, `gauge E` forms a uniform space     
-                           with a countable uniformity.                    
-                           gauge.type is endowed with a pseudoMetricType   
-         normal_space X == X is normal (sometimes called T4)               
-        regular_space X == X is regular (sometimes called T3)              
-```                                                                        
-                                                                           
+# 2. Basic topological notions                                              
+                                                                            
+## Mathematical structures                                                  
+### Topology                                                                
+```                                                                         
+                 topologicalType == interface type for topological space    
+                                    structure                               
+                                    the HB class is Topological.            
+                            open == set of open sets                        
+                     open_nbhs p == set of open neighbourhoods of p         
+                         basis B == a family of open sets that converges    
+                                    to each point                           
+              second_countable T == T has a countable basis                 
+                   continuous f &lt;-&gt; f is continuous w.r.t the topology      
+                     [locally P] := forall a, A a -&gt; G (within A (nbhs x))  
+                                    if P is convertible to G (globally A)   
+          Nbhs_isNbhsTopological == factory for a topology defined by a     
+                                    filter                                  
+                                    It builds the mixin for a topological   
+                                    space from the properties of nbhs and   
+                                    hence assumes that the carrier is a     
+                                    filterType.                             
+       Pointed_isOpenTopological == factory for a topology defined by open  
+                                    sets                                    
+                                    It builds the mixin for a topological   
+                                    space from the properties of open       
+                                    sets, assuming the carrier is a         
+                                    pointed type. nbhs_of_open must be      
+                                    used to declare a filterType.           
+       Pointed_isBaseTopological == factory for a topology defined by a     
+                                    base of open sets                       
+                                    It builds the mixin for a topological   
+                                    space from the properties of a base of  
+                                    open sets; the type of indices must be  
+                                    a pointedType, as well as the carrier.  
+                filterI_iter F n == nth stage of recursively building the   
+                                    filter of finite intersections of F     
+                   finI_from D f == set of \bigcap_(i in E) f i where E is  
+                                    a finite subset of D                    
+    Pointed_isSubBaseTopological == factory for a topology defined by a     
+                                    subbase of open sets                    
+                                    It builds the mixin for a topological   
+                                    space from a subbase of open sets b     
+                                    indexed on domain D; the type of        
+                                    indices must be a pointedType.          
+                                                                            
+We endow several standard types with the structure of topology, e.g.:       
+- products `(T * U)%type`                                                   
+- matrices `'M[T]_(m, n)`                                                   
+- natural numbers `nat`                                                     
+                                                                            
+                 weak_topology f == weak topology by a function f : S -&gt; T  
+                                    on S                                    
+                                    S must be a pointedType and T a         
+                                    topologicalType.                        
+                 sup_topology Tc == supremum topology of the family of      
+                                    topologicalType structures Tc on T      
+                                    T must be a pointedType.                
+             quotient_topology Q == the quotient topology corresponding to  
+                                    quotient Q : quotType T where T has     
+                                    type topologicalType                    
+                             x^' == set of neighbourhoods of x where x is   
+                                    excluded (a "deleted neighborhood")     
+                       closure A == closure of the set A.                   
+                   limit_point E == the set of limit points of E            
+                          closed == set of closed sets.                     
+                       cluster F == set of cluster points of F              
+                         compact == set of compact sets w.r.t. the filter-  
+                                    based definition of compactness         
+              hausdorff_space T &lt;-&gt; T is a Hausdorff space (T2)             
+                  compact_near F == the filter F contains a closed compact  
+                                    set                                     
+                    precompact A == the set A is contained in a closed and  
+                                    compact set                             
+               locally_compact A == every point in A has a compact          
+                                    (and closed) neighborhood               
+               discrete_space T &lt;-&gt; every nbhs is a principal filter        
+          discrete_topology dscT == the discrete topology on T, provided    
+                                    dscT : discrete_space T                 
+       finite_subset_cover D F A == the family of sets F is a cover of A    
+                                    for a finite number of indices in D     
+                   cover_compact == set of compact sets w.r.t. the open     
+                                    cover-based definition of compactness   
+                   near_covering == a reformulation of covering compact     
+                                    better suited for use with `near`       
+            near_covering_within == equivalent definition of near_covering  
+             kolmogorov_space T &lt;-&gt; T is a Kolmogorov space (T0)            
+             accessible_space T &lt;-&gt; T is an accessible space (T1)           
+                      close x y &lt;-&gt; x and y are arbitrarily close w.r.t.    
+                                    to balls                                
+                    connected A &lt;-&gt; the only non empty subset of A which    
+                                    is both open and closed in A is A       
+                   separated A B == the two sets A and B are separated      
+           connected_component x == the connected component of point x      
+                   perfect_set A == A is closed, and every point in A is    
+                                    a limit point of A                      
+          totally_disconnected A == the only connected subsets of A are     
+                                    empty or singletons                     
+              zero_dimensional T == points are separable by a clopen set    
+                      set_nbhs A == filter from open sets containing A      
+```                                                                         
+                                                                            
+### Uniform spaces                                                          
+```                                                                         
+                     nbhs_ ent == neighborhoods defined using entourages    
+                   uniformType == interface type for uniform spaces: a      
+                                  type equipped with entourages             
+                                  The HB class is Uniform.                  
+                     entourage == set of entourages in a uniform space      
+                Nbhs_isUniform == factory to build a topological space      
+                                  from a mixin for a uniform space          
+                   split_ent E == when E is an entourage, split_ent E is    
+                                  an entourage E' such that E' \o E' is     
+                                  included in E when seen as a relation     
+        countable_uniformity T == T's entourage has a countable base        
+                                  This is equivalent to `T` being           
+                                  metrizable.                               
+            unif_continuous f &lt;-&gt; f is uniformly continuous                 
+               entourage_ ball == entourages defined using balls            
+```                                                                         
+                                                                            
+`weak_topology`, `sup_ent`, `discrete_ent` are equipped with the `Uniform`  
+structure.                                                                  
+We endow several standard types with the structure of uniform space, e.g.:  
+- products `(U * V)%type`                                                   
+- matrices `'M[T]_(m, n)`                                                   
+                                                                            
+### PseudoMetric spaces                                                     
+```                                                                         
+               entourage_ ball == entourages defined using balls            
+              pseudoMetricType == interface type for pseudo metric space    
+                                  structure: a type equipped with balls     
+                                  The HB class is PseudoMetric.             
+                      ball x e == ball of center x and radius e             
+           Nbhs_isPseudoMetric == factory to build a topological space      
+                                  from a mixin for a pseudoMetric space     
+               nbhs_ball_ ball == nbhs defined using the given balls        
+                     nbhs_ball == nbhs defined using balls in a             
+                                  pseudometric space                        
+                 discrete_ball == singleton balls for the discrete          
+                                  topology                                  
+     pointed_discrete_topology == equip pointed types with a discrete       
+                                  topology                                  
+```                                                                         
+                                                                            
+We endow several standard types with the structure of pseudometric space,   
+e.g.:                                                                       
+- products `(U * V)%type`                                                   
+- matrices `'M[T]_(m, n)`                                                   
+- `weak_topology` (the metric space for weak topologies)                    
+- `sup_pseudoMetricType`                                                    
+                                                                            
+### Complete uniform spaces                                                 
+```                                                                         
+                     cauchy F &lt;-&gt; the set of sets F is a cauchy filter      
+                                  (entourage definition)                    
+                  completeType == interface type for a complete uniform     
+                                  space structure                           
+                                  The HB class is Complete.                 
+```                                                                         
+                                                                            
+We endow several standard types with the structure of complete uniform      
+space, e.g.:                                                                
+- matrices `'M[T]_(m, n)`                                                   
+- functions `T -&gt; U`                                                        
+                                                                            
+### Complete pseudometric spaces                                            
+```                                                                         
+                  cauchy_ex F &lt;-&gt; the set of sets F is a cauchy filter      
+                                  (epsilon-delta definition)                
+                cauchy_ball F &lt;-&gt; the set of sets F is a cauchy filter      
+                                  (using the near notations)                
+      completePseudoMetricType == interface type for a complete             
+                                  pseudometric space structure              
+                                  The HB class is CompletePseudoMetric.     
+                       ball_ N == balls defined by the norm/absolute        
+                                  value N                                   
+```                                                                         
+                                                                            
+We endow several standard types with the structure of complete              
+pseudometric space, e.g.:                                                   
+- matrices `'M[T]_(m, n)`                                                   
+- functions `T -&gt; U`                                                        
+                                                                            
+We endow `numFieldType` with the types of topological notions               
+(accessible with `Import numFieldTopology.Exports.`)                        
+                                                                            
+```                                                                         
+                dense S == the set (S : set T) is dense in T, with T of     
+                           type topologicalType                             
+```                                                                         
+                                                                            
+### Subspaces of topological spaces                                         
+```                                                                         
+             subspace A == for (A : set T), this is a copy of T with a      
+                           topology that ignores points outside A           
+        incl_subspace x == with x of type subspace A with (A : set T),      
+                           inclusion of subspace A into T                   
+         join_product f == the function (x =&gt; f ^~ x)                       
+                           When the family f separates points from closed   
+                           sets, join_product is an embedding.              
+           singletons T := [set [set x] | x in [set: T]]                    
+                gauge E == for an entourage E, gauge E is a filter which    
+                           includes `iter n split_ent E`                    
+                           Critically, `gauge E` forms a uniform space      
+                           with a countable uniformity.                     
+                           gauge.type is endowed with a pseudoMetricType    
+         normal_space X == X is normal (sometimes called T4)                
+        regular_space X == X is regular (sometimes called T3)               
+```                                                                         
+                                                                            
 </div>
 <br/>
 <span class="vernacular">Reserved</span> <span class="vernacular">Notation</span> <span class="id">&quot;{ 'near' x , P }&quot; (at level 0, format &quot;{ 'near'  x ,  P }&quot;</span>).<br/>

@@ -94,31 +94,31 @@
 <span class="vernacular">Require</span> <span class="vernacular">Import</span> <span class="id"><a href="mathcomp.analysis.real_interval.html">real_interval</a></span> <span class="id"><a href="mathcomp.analysis.measure.html">measure</a></span> <span class="id"><a href="mathcomp.analysis.realfun.html">realfun</a></span>.<br/>
 <br/>
 <div class="ssrdoc md">
-# Lebesgue Stieltjes Measure                                               
-                                                                           
-This file contains a formalization of the Lebesgue-Stieltjes measure using 
-the Measure Extension theorem from measure.v.                              
-                                                                           
-Reference:                                                                 
-- Achim Klenke, Probability Theory 2nd edition, 2014                       
-                                                                           
-```                                                                        
-   right_continuous f == the function f is right-continuous                
-         cumulative R == type of non-decreasing, right-continuous          
-                         functions (with R : numFieldType)                 
-                         The HB class is Cumulative.                       
-                         instance: idfun                                   
-         ocitv_type R == alias for R : realType                            
-                ocitv == set of open-closed intervals ]x, y] where         
-                         x and y are real numbers                          
-             R.-ocitv == display for ocitv_type R                          
- R.-ocitv.-measurable == semiring of sets of open-closed intervals         
-          wlength f A := f b - f a with the hull of the set of real        
-                         numbers A being delimited by a and b              
-lebesgue_stieltjes_measure f == Lebesgue-Stieltjes measure for f           
-                         f is a cumulative function.                       
-```                                                                        
-                                                                           
+# Lebesgue Stieltjes Measure                                                
+                                                                            
+This file contains a formalization of the Lebesgue-Stieltjes measure using  
+the Measure Extension theorem from measure.v.                               
+                                                                            
+Reference:                                                                  
+- Achim Klenke, Probability Theory 2nd edition, 2014                        
+                                                                            
+```                                                                         
+   right_continuous f == the function f is right-continuous                 
+         cumulative R == type of non-decreasing, right-continuous           
+                         functions (with R : numFieldType)                  
+                         The HB class is Cumulative.                        
+                         instance: idfun                                    
+         ocitv_type R == alias for R : realType                             
+                ocitv == set of open-closed intervals ]x, y] where          
+                         x and y are real numbers                           
+             R.-ocitv == display for ocitv_type R                           
+ R.-ocitv.-measurable == semiring of sets of open-closed intervals          
+          wlength f A := f b - f a with the hull of the set of real         
+                         numbers A being delimited by a and b               
+lebesgue_stieltjes_measure f == Lebesgue-Stieltjes measure for f            
+                         f is a cumulative function.                        
+```                                                                         
+                                                                            
 </div>
 <br/>
 <span class="gallina-kwd">Set</span> <span class="vernacular">Implicit</span> <span class="vernacular">Arguments</span>.<br/>
