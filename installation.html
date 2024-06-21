@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-10-18 Wed 09:29 -->
+<!-- 2024-06-21 Fri 11:48 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Mathematical Components: Installation</title>
@@ -249,18 +249,36 @@ for the JavaScript code in this tag.
 <body>
 <div id="content">
 <h1 class="title">Mathematical Components: Installation</h1>
+<p>
+The Mathematical Components libraries are provided as separate packages:
+</p>
 
-<div id="outline-container-org190d6dd" class="outline-2">
-<h2 id="org190d6dd">Install the Base Mathematical Components Libraries</h2>
-<div class="outline-text-2" id="text-org190d6dd">
-</div>
-<div id="outline-container-org5abaf6f" class="outline-3">
-<h3 id="org5abaf6f">Installation using the <a href="https://opam.ocaml.org/">opam</a> package manager</h3>
-<div class="outline-text-3" id="text-org5abaf6f">
 <ul class="org-ul">
-<li>The installation of Mathematical Components can be done using <a href="https://opam.ocaml.org/">opam</a>,
-a package manager for <a href="https://ocaml.org/">OCaml</a>, the programming language with which <a href="https://coq.inria.fr/">Coq</a>
-is implemented.</li>
+<li>The base libraries are the libraries that support the formalization
+of the Four Color Theorem and of the Odd Order Theorem.</li>
+
+<li>Other libraries contain extensions and applications.</li>
+</ul>
+
+<p>
+The installation of Mathematical Components is best done using <a href="https://opam.ocaml.org/">opam</a>, a
+package manager for <a href="https://ocaml.org/">OCaml</a>, the programming language with which <a href="https://coq.inria.fr/">Coq</a> is
+implemented.
+</p>
+
+<p>
+The relevant packages can be found in the <a href="https://coq.inria.fr/opam/www/">Coq package index</a>;
+their name is usually prefixed with <code>coq-mathcomp-</code>.
+</p>
+
+<div id="outline-container-orge4c4ab3" class="outline-2">
+<h2 id="orge4c4ab3">Install the Base Mathematical Components Libraries</h2>
+<div class="outline-text-2" id="text-orge4c4ab3">
+</div>
+<div id="outline-container-org6f274d7" class="outline-3">
+<h3 id="org6f274d7">Installation using the <a href="https://opam.ocaml.org/">opam</a> package manager</h3>
+<div class="outline-text-3" id="text-org6f274d7">
+<ul class="org-ul">
 <li>Using opam, the installation of the base Mathematical Components
 library is as simple as this:</li>
 </ul>
@@ -272,8 +290,7 @@ opam install coq-mathcomp-ssreflect
 
 <ul class="org-ul">
 <li>Other base mathematical components libraries can then be installed
-similarly using <code>opam install</code>. The available packages can be found
-in the <a href="https://coq.inria.fr/opam/www/">Coq package index</a>:
+similarly using <code>opam install</code>:
 <ul class="org-ul">
 <li><code>coq-mathcomp-algebra</code>,</li>
 <li><code>coq-mathcomp-field</code>,</li>
@@ -281,21 +298,13 @@ in the <a href="https://coq.inria.fr/opam/www/">Coq package index</a>:
 <li><code>coq-mathcomp-fingroup</code>,</li>
 <li><code>coq-mathcomp-character</code>.</li>
 </ul></li>
-
-<li>You can find more detailed installation instructions in <a href="https://github.com/math-comp/math-comp/blob/master/INSTALL.md">INSTALL.md</a>
-(from the official distribution), this includes:
-<ul class="org-ul">
-<li>various ways of installing using <code>opam</code></li>
-<li>installation from the source files (using <code>make</code>)</li>
-<li>installation using nix</li>
-</ul></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgc8709cb" class="outline-3">
-<h3 id="orgc8709cb">Installation using the <a href="https://github.com/coq/platform">Coq platform</a></h3>
-<div class="outline-text-3" id="text-orgc8709cb">
+<div id="outline-container-orgef9e5be" class="outline-3">
+<h3 id="orgef9e5be">Installation using the <a href="https://github.com/coq/platform">Coq platform</a></h3>
+<div class="outline-text-3" id="text-orgef9e5be">
 <ul class="org-ul">
 <li>The <a href="https://github.com/coq/platform">Coq platform</a> is a distribution of <a href="https://coq.inria.fr/">Coq</a> together with a selection of libraries
 including most Mathematical Components libraries. It supports Linux, macOS, and Windows.</li>
@@ -303,37 +312,72 @@ including most Mathematical Components libraries. It supports Linux, macOS, and 
 </div>
 </div>
 
-<div id="outline-container-org04efe44" class="outline-3">
-<h3 id="org04efe44">Installation Instructions in Other Languages</h3>
-<div class="outline-text-3" id="text-org04efe44">
+<div id="outline-container-orgc3e03f8" class="outline-3">
+<h3 id="orgc3e03f8">Other installation instructions and details</h3>
+<div class="outline-text-3" id="text-orgc3e03f8">
 <ul class="org-ul">
+<li>You can find more detailed installation instructions in <a href="https://github.com/math-comp/math-comp/blob/master/INSTALL.md">INSTALL.md</a>
+(from the official distribution), this includes:
+<ul class="org-ul">
+<li>various ways of installing using <code>opam</code></li>
+<li>installation from the source files (using <code>make</code>)</li>
+<li>installation using nix</li>
+</ul></li>
+
 <li>Installation instructions in <a href="https://staff.aist.go.jp/reynald.affeldt/ssrcoq/install.html">Japanese, 日本語</a>
 <ul class="org-ul">
 <li>see「パッケージからの設定」for installation using <code>opam</code></li>
 </ul></li>
-</ul>
-</div>
-</div>
 
-<div id="outline-container-org3346b3f" class="outline-3">
-<h3 id="org3346b3f">Advanced: Installation Instructions for Windows 10 &amp; 11 using cygwin-opam or WSL</h3>
-<div class="outline-text-3" id="text-org3346b3f">
+<li>Advanced: Installation Instructions for Windows 11 using cygwin-opam or WSL
 <ul class="org-ul">
 <li>It is possible to install the Mathematical Components libraries on
-Windows 10 &amp; 11 using <a href="https://www.cygwin.com/">cygwin</a> together with the binary distribution of Coq
+Windows 11 using <a href="https://www.cygwin.com/">cygwin</a> together with the binary distribution of Coq
 or together with <a href="https://fdopen.github.io/opam-repository-mingw/installation/">opam for Windows</a>, or with Windows Subsystem for
-Linux, as explained for example <a href="https://github.com/affeldt-aist/mathcomp-install/blob/master/install-windows-en.org">here</a></li>
+Linux, as explained for example <a href="https://github.com/affeldt-aist/mathcomp-install/blob/master/install-windows-en.org">here</a>.</li>
+</ul></li>
 </ul>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org6b11597" class="outline-2">
-<h2 id="org6b11597">Other Mathematical Components Libraries</h2>
-<div class="outline-text-2" id="text-org6b11597">
+<div id="outline-container-org1e4f2e2" class="outline-2">
+<h2 id="org1e4f2e2">Install Other Mathematical Components Libraries</h2>
+<div class="outline-text-2" id="text-org1e4f2e2">
 <p>
-There are already several libraries that build on top of the base
-Mathematical Components libraries:
+There are several libraries that build on top of the base
+Mathematical Components libraries, e.g.:
+</p>
+
+<p>
+Extensions:
+</p>
+
+<ol class="org-ol">
+<li><a href="https://github.com/math-comp/finmap">Finite sets, finite maps, multisets and generic sets</a>
+<ul class="org-ul">
+<li>Available as the opam package <code>coq-mathcomp-finmap</code></li>
+</ul></li>
+<li><a href="https://github.com/math-comp/multinomials">Multinomials for the Mathematical Components library</a>
+<ul class="org-ul">
+<li>Available as the opam package <code>coq-mathcomp-multinomials</code></li>
+</ul></li>
+<li><a href="https://github.com/math-comp/real-closed">Theorems for Real Closed Fields</a>
+<ul class="org-ul">
+<li>Available as the opam package <code>coq-mathcomp-real-closed</code></li>
+</ul></li>
+<li>A layer for classical reasoning (developed along <a href="https://github.com/math-comp/analysis">MathComp Analysis</a>)
+<ul class="org-ul">
+<li>Available as the opam package <code>coq-mathcomp-classic</code></li>
+</ul></li>
+<li><a href="https://github.com/math-comp/analysis">MathComp Analysis</a>
+<ul class="org-ul">
+<li>Available as the opam package <code>coq-mathcomp-analysis</code></li>
+</ul></li>
+</ol>
+
+<p>
+Applications:
 </p>
 
 <ol class="org-ol">
@@ -345,33 +389,23 @@ Mathematical Components libraries:
 <ul class="org-ul">
 <li>Available as the opam package <code>coq-mathcomp-odd-order</code></li>
 </ul></li>
-<li><a href="https://github.com/math-comp/analysis">MathComp Analysis</a>
-<ul class="org-ul">
-<li>Available as the opam package <code>coq-mathcomp-analysis</code></li>
-</ul></li>
 <li><a href="https://github.com/math-comp/Abel">Abel-Ruffini theorem</a>
 <ul class="org-ul">
 <li>Available as the opam package <code>coq-mathcomp-abel</code></li>
-</ul></li>
-<li><a href="https://github.com/math-comp/real-closed">Theorems for Real Closed Fields</a>
-<ul class="org-ul">
-<li>Available as the opam package <code>coq-mathcomp-real-closed</code></li>
-</ul></li>
-<li><a href="https://github.com/math-comp/finmap">Finite sets, finite maps, multisets and generic sets</a>
-<ul class="org-ul">
-<li>Available as the opam package <code>coq-mathcomp-finmap</code></li>
-</ul></li>
-<li><a href="https://github.com/math-comp/multinomials">Multinomials for the Mathematical Components library</a>
-<ul class="org-ul">
-<li>Available as the opam package <code>coq-mathcomp-multinomials</code></li>
 </ul></li>
 <li><a href="https://github.com/coq-community/apery">A formal proof of the irrationality of zeta(3), the Apéry constant</a>
 <ul class="org-ul">
 <li>Available as the opam package <code>coq-mathcomp-apery</code></li>
 </ul></li>
-<li>See the Mathematical Components' <a href="https://github.com/math-comp">github</a> for more libraries.
-<a href="https://github.com/coq-community">coq-community</a> also features a number of libraries using Mathematical Components.</li>
 </ol>
+
+<p>
+More libraries:
+</p>
+<ul class="org-ul">
+<li>See the Mathematical Components' <a href="https://github.com/math-comp">github</a>.</li>
+<li><a href="https://github.com/coq-community">coq-community</a> also features a number of libraries using Mathematical Components.</li>
+</ul>
 </div>
 </div>
 </div>
