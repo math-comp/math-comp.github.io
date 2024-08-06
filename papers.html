@@ -3,14 +3,14 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-03-31 Sun 18:57 -->
+<!-- 2024-08-06 Tue 22:21 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Mathematical Components: Research Papers</title>
-<meta name="generator" content="Org mode" />
 <meta name="author" content="Reynald Affeldt" />
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
   .title  { text-align: center;
              margin-bottom: .2em; }
   .subtitle { text-align: center;
@@ -31,8 +31,9 @@
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
   pre {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
     padding: 8pt;
     font-family: monospace;
     overflow: auto;
@@ -40,22 +41,22 @@
   }
   pre.src {
     position: relative;
-    overflow: visible;
-    padding-top: 1.2em;
+    overflow: auto;
   }
   pre.src:before {
     display: none;
     position: absolute;
-    background-color: white;
-    top: -10px;
-    right: 10px;
+    top: -8px;
+    right: 12px;
     padding: 3px;
-    border: 1px solid black;
+    color: #555;
+    background-color: #f2f2f299;
   }
-  pre.src:hover:before { display: inline;}
+  pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
   pre.src-C:before { content: 'C'; }
   /* pre.src-C++ doesn't work in CSS */
   pre.src-clojure:before { content: 'Clojure'; }
@@ -190,8 +191,7 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { width: 90%; }
-  /*]]>*/-->
+  .org-svg { }
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <style type="text/css"> body {font-family: Arial, Helvetica; margin-left: 5em; font-size: large;} </style>
@@ -199,64 +199,18 @@
 <style type="text/css"> h2 {margin-left: 0em; padding: 0px; color: #580909} </style>
 <style type="text/css"> h3 {margin-left: 1em; padding: 0px; color: #C05001;} </style>
 <style type="text/css"> body { max-width: 1100px; width: 100% - 30px; margin-left: 30px}</style>
-<script type="text/javascript">
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
-
-Copyright (C) 2012-2020 Free Software Foundation, Inc.
-
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
-<!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
-</script>
 </head>
 <body>
-<div id="content">
+<div id="content" class="content">
 <h1 class="title">Mathematical Components: Research Papers</h1>
-<div id="table-of-contents">
+<div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
-<div id="text-table-of-contents">
+<div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org51872a2">Mathematics</a></li>
-<li><a href="#org09587a2">Programming and Algorithms</a></li>
-<li><a href="#orga31d729">Other Applications</a></li>
-<li><a href="#org0df8c43">Tooling about SSReflect and Mathematical Components</a></li>
+<li><a href="#org4e480bc">Mathematics</a></li>
+<li><a href="#org3990605">Programming and Algorithms</a></li>
+<li><a href="#orgf4d27f2">Other Applications</a></li>
+<li><a href="#org3457cc6">Tooling about SSReflect and Mathematical Components</a></li>
 </ul>
 </div>
 </div>
@@ -283,9 +237,9 @@ Your paper/thesis is not in the list? You have a suggestion about the organizati
 Please, send <a href="mailto:mathcomp-dev@inria.fr?subject=MathComp%20related%20paper">us</a> a message or <a href="https://github.com/math-comp/math-comp.github.io">issue/PR on github</a>.
 </p>
 
-<div id="outline-container-org51872a2" class="outline-2">
-<h2 id="org51872a2">Mathematics</h2>
-<div class="outline-text-2" id="text-org51872a2">
+<div id="outline-container-org4e480bc" class="outline-2">
+<h2 id="org4e480bc">Mathematics</h2>
+<div class="outline-text-2" id="text-org4e480bc">
 <ul class="org-ul">
 <li>Reynald Affeldt, Cyril Cohen.
 <span class="underline">Measure construction by extension in dependent type theory with application to integration</span>.
@@ -382,9 +336,9 @@ ITP 2008. <a href="https://hal.inria.fr/inria-00331193/document">pdf</a></li>
 </ul>
 </div>
 
-<div id="outline-container-org1925a32" class="outline-3">
-<h3 id="org1925a32">Graph Theory</h3>
-<div class="outline-text-3" id="text-org1925a32">
+<div id="outline-container-orgc82eb0f" class="outline-3">
+<h3 id="orgc82eb0f">Graph Theory</h3>
+<div class="outline-text-3" id="text-orgc82eb0f">
 <ul class="org-ul">
 <li>Christian Doczkal.
 <span class="underline">A Variant of Wagner’s Theorem Based on Combinatorial Hypermaps</span>.
@@ -406,9 +360,9 @@ CPP 2020. <a href="https://hal.archives-ouvertes.fr/hal-02333553/document">pdf</
 </div>
 </div>
 
-<div id="outline-container-orgde58982" class="outline-3">
-<h3 id="orgde58982">Robotics</h3>
-<div class="outline-text-3" id="text-orgde58982">
+<div id="outline-container-org30ad534" class="outline-3">
+<h3 id="org30ad534">Robotics</h3>
+<div class="outline-text-3" id="text-org30ad534">
 <ul class="org-ul">
 <li>Cyril Cohen, Damien Rouhling.
 <span class="underline">A Formal Proof in Coq of LaSalle's Invariance Principle</span>. ITP 2017. <a href="https://hal.inria.fr/hal-01612293/document">pdf</a></li>
@@ -419,9 +373,9 @@ CPP 2020. <a href="https://hal.archives-ouvertes.fr/hal-02333553/document">pdf</
 </div>
 </div>
 
-<div id="outline-container-org09587a2" class="outline-2">
-<h2 id="org09587a2">Programming and Algorithms</h2>
-<div class="outline-text-2" id="text-org09587a2">
+<div id="outline-container-org3990605" class="outline-2">
+<h2 id="org3990605">Programming and Algorithms</h2>
+<div class="outline-text-2" id="text-org3990605">
 <ul class="org-ul">
 <li>Ayumu Saito, Reynald Affeldt.
 <span class="underline">Experimenting with an Intrinsically-Typed Probabilistic Programming Language in Coq</span>.
@@ -479,9 +433,9 @@ Master’s thesis, Mathematics, Radboud University, 2016. <a href="https://www.r
 </ul>
 </div>
 
-<div id="outline-container-org07e79e4" class="outline-3">
-<h3 id="org07e79e4">Concurrency</h3>
-<div class="outline-text-3" id="text-org07e79e4">
+<div id="outline-container-orga92f046" class="outline-3">
+<h3 id="orga92f046">Concurrency</h3>
+<div class="outline-text-3" id="text-orga92f046">
 <ul class="org-ul">
 <li>Mohit Tekriwal, Avi Tachna-Fram, Jean-Baptiste Jeannin, Manos Kapritsos, Dimitra Panagou.
 <span class="underline">Formally verified asymptotic consensus in robust networks</span>. 30th International Conference on Tools and Algorithms for the Construction and Analysis of Systems (TACAS 2024). <a href="https://arxiv.org/pdf/2202.13833.pdf">pdf</a></li>
@@ -518,9 +472,9 @@ ESOP 2014. <a href="https://doi.org/10.1007/978-3-642-54833-8_16">doi</a></li>
 </div>
 </div>
 
-<div id="outline-container-orgc7e851f" class="outline-3">
-<h3 id="orgc7e851f">Information Flow</h3>
-<div class="outline-text-3" id="text-orgc7e851f">
+<div id="outline-container-org1a571e0" class="outline-3">
+<h3 id="org1a571e0">Information Flow</h3>
+<div class="outline-text-3" id="text-org1a571e0">
 <ul class="org-ul">
 <li>Aleksandar Nanevski, Anindya Banerjee, Deepak Garg.
 <span class="underline">Dependent Type Theory for Verification of Information Flow and Access Control Policies</span>.
@@ -535,10 +489,13 @@ PPDP 2013. <a href="https://doi.org/10.1145/2505879.2505895">doi</a></li>
 </div>
 </div>
 
-<div id="outline-container-org6023df7" class="outline-3">
-<h3 id="org6023df7">Probabilistic Reasoning</h3>
-<div class="outline-text-3" id="text-org6023df7">
+<div id="outline-container-org76f4c7d" class="outline-3">
+<h3 id="org76f4c7d">Probabilistic Reasoning</h3>
+<div class="outline-text-3" id="text-org76f4c7d">
 <ul class="org-ul">
+<li>Ieva Daukantas, Alessandro Bruni, Carsten Schürmann.
+<span class="underline">Trimming Data Sets: a Verified Algorithm for Robust Mean Estimation</span>.
+PPDP 2021. <a href="https://doi.org/10.1145/3479394.3479412">doi</a></li>
 <li>Kiran Gopinathan, Ilya Sergey.
 <span class="underline">Certifying Certainty and Uncertainty in Approximate Membership Query Structures</span>.
 32nd International Conference on Computer-Aided Verification (CAV 2020). <a href="https://arxiv.org/pdf/2004.13312.pdf">pdf</a></li>
@@ -553,9 +510,9 @@ Computer Software 37(3):79-95, 2020. <a href="https://staff.aist.go.jp/reynald.a
 </div>
 </div>
 
-<div id="outline-container-orga31d729" class="outline-2">
-<h2 id="orga31d729">Other Applications</h2>
-<div class="outline-text-2" id="text-orga31d729">
+<div id="outline-container-orgf4d27f2" class="outline-2">
+<h2 id="orgf4d27f2">Other Applications</h2>
+<div class="outline-text-2" id="text-orgf4d27f2">
 <ul class="org-ul">
 <li>Pierre-Léo Bégay, Pierre Crégut, Jean-François Monin.
 <span class="underline">Developing and certifying Datalog optimizations in Coq/MathComp</span>. CPP 2021. <a href="https://hal.archives-ouvertes.fr/hal-03065304v1/document">pdf</a></li>
@@ -569,9 +526,9 @@ Linux Audio Conference 2015. <a href="https://github.com/ejgallego/mini-faust-co
 </ul>
 </div>
 
-<div id="outline-container-org481b9e2" class="outline-3">
-<h3 id="org481b9e2">Logic, Types, and Verification</h3>
-<div class="outline-text-3" id="text-org481b9e2">
+<div id="outline-container-org04bd153" class="outline-3">
+<h3 id="org04bd153">Logic, Types, and Verification</h3>
+<div class="outline-text-3" id="text-org04bd153">
 <ul class="org-ul">
 <li>Christian Doczkal, Gert Smolka.
 <span class="underline">Regular Language Representations in the Constructive Type Theory of Coq</span>.
@@ -604,9 +561,9 @@ International Conference on Typed Lambda Calculi and Applications (TLCA 2011). <
 </div>
 </div>
 
-<div id="outline-container-orgf08d073" class="outline-3">
-<h3 id="orgf08d073">Information Theory</h3>
-<div class="outline-text-3" id="text-orgf08d073">
+<div id="outline-container-org4caac30" class="outline-3">
+<h3 id="org4caac30">Information Theory</h3>
+<div class="outline-text-3" id="text-org4caac30">
 <ul class="org-ul">
 <li>Joshua M. Cohen, Qinshi Wang, Andrew W. Appel.
 <span class="underline">Verified Erasure Correction in Coq with MathComp and VST</span>.
@@ -635,9 +592,9 @@ International Symposium on Information Theory and its Application 2014 (ISITA 20
 </div>
 </div>
 
-<div id="outline-container-org0df8c43" class="outline-2">
-<h2 id="org0df8c43">Tooling about SSReflect and Mathematical Components</h2>
-<div class="outline-text-2" id="text-org0df8c43">
+<div id="outline-container-org3457cc6" class="outline-2">
+<h2 id="org3457cc6">Tooling about SSReflect and Mathematical Components</h2>
+<div class="outline-text-2" id="text-org3457cc6">
 <ul class="org-ul">
 <li>Ana de Almeida Borges, Mireia González Bedmar, Juan Conejero Rodríguez, Eduardo Hermo Reyes, Joaquim Casals Buñuel, Joost J. Joosten.
 <span class="underline">UTC time, formally verified</span>.
@@ -684,9 +641,9 @@ IPSJ Transactions on Programming 10(1), 2017. <a href="http://logic.cs.tsukuba.a
 </ul>
 </div>
 
-<div id="outline-container-orgfd35ed1" class="outline-3">
-<h3 id="orgfd35ed1">Machine Learning</h3>
-<div class="outline-text-3" id="text-orgfd35ed1">
+<div id="outline-container-org6f07821" class="outline-3">
+<h3 id="org6f07821">Machine Learning</h3>
+<div class="outline-text-3" id="text-org6f07821">
 <ul class="org-ul">
 <li>Pengyu Nie, Karl Palmskog, Junyi Jessy Li, Milos Gligoric.
 <span class="underline">Deep Generation of Coq Lemma Names Using Elaborated Terms</span>. IJCAR 2020. <a href="https://arxiv.org/pdf/2004.07761.pdf">pdf</a></li>
