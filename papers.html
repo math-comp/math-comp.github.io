@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-08-06 Tue 22:21 -->
+<!-- 2024-09-30 Mon 22:46 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Mathematical Components: Research Papers</title>
@@ -207,10 +207,10 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org4e480bc">Mathematics</a></li>
-<li><a href="#org3990605">Programming and Algorithms</a></li>
-<li><a href="#orgf4d27f2">Other Applications</a></li>
-<li><a href="#org3457cc6">Tooling about SSReflect and Mathematical Components</a></li>
+<li><a href="#org57327b5">Mathematics</a></li>
+<li><a href="#org1557b43">Programming and Algorithms</a></li>
+<li><a href="#org4fa1e7f">Other Applications</a></li>
+<li><a href="#org8858a65">Tooling</a></li>
 </ul>
 </div>
 </div>
@@ -220,16 +220,19 @@ Components libraries and published (among others) in the following
 venues:
 </p>
 <ul class="org-ul">
-<li>ITP = Interactive Theorem Proving</li>
+<li>ITP = Interactive Theorem Proving (was TPHOLs until 2009)</li>
 <li>CPP = Certified Programs and Proofs</li>
 <li>CICM = Conference on Intelligent Computer Mathematics</li>
 <li>IJCAR = International Joint Conference on Automated Reasoning</li>
+<li>ICFP = International Conference on Functional Programming</li>
+<li>FSCD = International Conference on Formal Structures for Computation and Deduction</li>
+<li>TACAS = International Conference on Tools and Algorithms for the Construction and Analysis of Systems</li>
+<li>ESOP = European Symposium on Programming</li>
+<li>POPL = Principles of Programming Languages</li>
+<li>PPDP = Principles and Practice of Declarative Programming</li>
 <li>JAR = Journal of Automated Reasoning</li>
 <li>JFP = Journal of Functional Programming</li>
 <li>LMCS = Logical Methods in Computer Science</li>
-<li>ICFP = International Conference on Functional Programming</li>
-<li>POPL = Principles of Programming Languages</li>
-<li>PPDP = Principles and Practice of Declarative Programming</li>
 </ul>
 
 <p>
@@ -237,10 +240,22 @@ Your paper/thesis is not in the list? You have a suggestion about the organizati
 Please, send <a href="mailto:mathcomp-dev@inria.fr?subject=MathComp%20related%20paper">us</a> a message or <a href="https://github.com/math-comp/math-comp.github.io">issue/PR on github</a>.
 </p>
 
-<div id="outline-container-org4e480bc" class="outline-2">
-<h2 id="org4e480bc">Mathematics</h2>
-<div class="outline-text-2" id="text-org4e480bc">
+<div id="outline-container-org57327b5" class="outline-2">
+<h2 id="org57327b5">Mathematics</h2>
+<div class="outline-text-2" id="text-org57327b5">
 <ul class="org-ul">
+<li>Reynald Affeldt, Zachary Stone.
+<span class="underline">A Comprehensive Overview of the Lebesgue Differentiation Theorem in Coq</span>.
+ITP 2024. <a href="https://drops.dagstuhl.de/storage/00lipics/lipics-vol309-itp2024/LIPIcs.ITP.2024.5/LIPIcs.ITP.2024.5.pdf">pdf</a></li>
+<li>Assia Mahboubi, Matthieu Piquerez.
+<span class="underline">A First Order Theory of Diagram Chasing</span>.
+32nd EACSL Annual Conference on Computer Science Logic (CSL 2024). <a href="https://drops.dagstuhl.de/storage/00lipics/lipics-vol288-csl2024/LIPIcs.CSL.2024.38/LIPIcs.CSL.2024.38.pdf">pdf</a></li>
+<li>Benoît Guillemet, Assia Mahboubi, Matthieu Piquerez.
+<span class="underline">Machine-Checked Categorical Diagrammatic Reasoning</span>.
+FSCD 2024. <a href="https://drops.dagstuhl.de/storage/00lipics/lipics-vol299-fscd2024/LIPIcs.FSCD.2024.7/LIPIcs.FSCD.2024.7.pdf">pdf</a></li>
+<li>Yoshihiro Ishiguro, Reynald Affeldt.
+<span class="underline">The Radon-Nikodým Theorem and the Lebesgue-Stieltjes Measure in Coq</span>.
+Computer Software 41(2), 2024. <a href="https://www.jstage.jst.go.jp/article/jssst/41/2/41_2_41/_pdf/-char/en">pdf</a></li>
 <li>Reynald Affeldt, Cyril Cohen.
 <span class="underline">Measure construction by extension in dependent type theory with application to integration</span>.
 JAR 2023. <a href="https://arxiv.org/pdf/2209.02345.pdf">pdf</a></li>
@@ -311,7 +326,7 @@ Solovyev, Enrico Tassi, Laurent Théry.
 <span class="underline">A Refinement-Based Approach to Computational Algebra in Coq</span>. ITP 2012. <a href="https://hal.inria.fr/hal-00734505/document">pdf</a></li>
 <li>Jónathan Heras, Maxime Dénès, Gadea Mata, Anders Mörtberg, María Poza, Vincent Siles.
 <span class="underline">Towards a Certified Computation of Homology Groups for Digital Images</span>.
-4th International Workshop on Computational Topology in Image Context, 2012. <a href="https://hal.inria.fr/hal-00711385/document">pdf</a></li>
+4th International Workshop on Computational Topology in Image Context (CTIC 2012). <a href="https://hal.inria.fr/hal-00711385/document">pdf</a></li>
 <li>Assia Mahboubi, Cyril Cohen.
 <span class="underline">Formal proofs in real algebraic geometry: from ordered fields to quantifier elimination</span>.
 LMCS 8(1), 2012. <a href="https://hal.inria.fr/inria-00593738v4/document">pdf</a></li>
@@ -321,24 +336,28 @@ LMCS 8(1), 2012. <a href="https://hal.inria.fr/inria-00593738v4/document">pdf</a
 <span class="underline">Formalized algebraic numbers: construction and first-order theory</span>.
 PhD thesis, Ecole Polytechnique, 2012. <a href="https://pastel.archives-ouvertes.fr/pastel-00780446/file/main.pdf">pdf</a></li>
 <li>Jónathan Heras, María Poza, Maxime Dénès, Laurence Rideau.
-<span class="underline">Incidence Simplicial Matrices Formalized in Coq/SSReflect</span>. Calculemus/MKM 2011: 30-44. <a href="https://hal.inria.fr/inria-00603208/file/ismfis.pdf">pdf</a></li>
+<span class="underline">Incidence Simplicial Matrices Formalized in Coq/SSReflect</span>.
+18th Symposium on Symposium on the Integration of Symbolic Computation and Mechanized Reasoning (Calculemus 2011). <a href="https://hal.inria.fr/inria-00603208/file/ismfis.pdf">pdf</a></li>
 <li>Georges Gonthier.
-<span class="underline">Point-Free, Set-Free Concrete Linear Algebra</span>. ITP 2011. <a href="https://hal.inria.fr/hal-00805966/document">pdf</a></li>
+ <span class="underline">Point-Free, Set-Free Concrete Linear Algebra</span>.
+ITP 2011. <a href="https://hal.inria.fr/hal-00805966/document">pdf</a></li>
 <li>Sidi Ould Biha.
 <span class="underline">Finite groups representation theory with Coq</span>.
-8th International Conference on Mathematical Knowledge Management 2009. <a href="https://hal.inria.fr/inria-00377431/document">pdf</a></li>
+8th International Conference on Mathematical Knowledge Management (MKM 2009). <a href="https://hal.inria.fr/inria-00377431/document">pdf</a></li>
 <li>Yves Bertot, Georges Gonthier, Sidi Ould Biha, Ioana Pasca.
 <span class="underline">Canonical Big Operators</span>.
 ITP 2008. <a href="https://hal.inria.fr/inria-00331193/document">pdf</a></li>
 <li>Georges Gonthier, Assia Mahboubi, Laurence Rideau, Enrico Tassi, Laurent Théry.
-<span class="underline">A Modular Formalisation of Finite Group Theory</span>. TPHOLs 2007. <a href="https://hal.inria.fr/inria-00139131v2/document">pdf</a></li>
-<li>Laurent Théry, Laurence Rideau. <span class="underline">Formalising Sylow’s theorems in Coq</span>. RT-0327 INRIA 2006. <a href="https://hal.inria.fr/inria-00113750v2/document">pdf</a></li>
+<span class="underline">A Modular Formalisation of Finite Group Theory</span>.
+TPHOLs 2007. <a href="https://hal.inria.fr/inria-00139131v2/document">pdf</a></li>
+<li>Laurent Théry, Laurence Rideau. <span class="underline">Formalising Sylow’s theorems in Coq</span>.
+RT-0327 INRIA 2006. <a href="https://hal.inria.fr/inria-00113750v2/document">pdf</a></li>
 </ul>
 </div>
 
-<div id="outline-container-orgc82eb0f" class="outline-3">
-<h3 id="orgc82eb0f">Graph Theory</h3>
-<div class="outline-text-3" id="text-orgc82eb0f">
+<div id="outline-container-orgaeabe3b" class="outline-3">
+<h3 id="orgaeabe3b">Graph Theory</h3>
+<div class="outline-text-3" id="text-orgaeabe3b">
 <ul class="org-ul">
 <li>Christian Doczkal.
 <span class="underline">A Variant of Wagner’s Theorem Based on Combinatorial Hypermaps</span>.
@@ -360,9 +379,9 @@ CPP 2020. <a href="https://hal.archives-ouvertes.fr/hal-02333553/document">pdf</
 </div>
 </div>
 
-<div id="outline-container-org30ad534" class="outline-3">
-<h3 id="org30ad534">Robotics</h3>
-<div class="outline-text-3" id="text-org30ad534">
+<div id="outline-container-org2e06663" class="outline-3">
+<h3 id="org2e06663">Robotics</h3>
+<div class="outline-text-3" id="text-org2e06663">
 <ul class="org-ul">
 <li>Cyril Cohen, Damien Rouhling.
 <span class="underline">A Formal Proof in Coq of LaSalle's Invariance Principle</span>. ITP 2017. <a href="https://hal.inria.fr/hal-01612293/document">pdf</a></li>
@@ -373,28 +392,24 @@ CPP 2020. <a href="https://hal.archives-ouvertes.fr/hal-02333553/document">pdf</
 </div>
 </div>
 
-<div id="outline-container-org3990605" class="outline-2">
-<h2 id="org3990605">Programming and Algorithms</h2>
-<div class="outline-text-2" id="text-org3990605">
+
+<div id="outline-container-org1557b43" class="outline-2">
+<h2 id="org1557b43">Programming and Algorithms</h2>
+<div class="outline-text-2" id="text-org1557b43">
 <ul class="org-ul">
-<li>Ayumu Saito, Reynald Affeldt.
-<span class="underline">Experimenting with an Intrinsically-Typed Probabilistic Programming Language in Coq</span>.
-Asian Symposium on Programming Languages and Systems (APLAS 2023). <a href="https://link.springer.com/chapter/10.1007/978-981-99-8311-7_9">doi</a></li>
+<li>Ana de Almeida Borges, Mireia González Bedmar, Juan Conejero Rodríguez, Eduardo Hermo Reyes, Joaquim Casals Buñuel, Joost J. Joosten.
+<span class="underline">UTC time, formally verified</span>.
+CPP 2024. <a href="https://arxiv.org/pdf/2209.14227.pdf">pdf</a></li>
+<li>Philipp G. Haselwarter, Exequiel Rivas, Antoine Van Muylder, Théo Winterhalter,
+Carmine Abate, Nikolaj Sidorenco, Cătălin Hriţcu, Kenji Maillard, Bas Spitters.
+<span class="underline">SSProve: A Foundational Framework for Modular Cryptographic Proofs in Coq</span>.
+ACM Transactions on Programming Languages and Systems 45(3), 2023. <a href="https://dl.acm.org/doi/pdf/10.1145/3594735">pdf</a></li>
 <li>Ming-Hsien Tsai, Yu-Fu Fu, Jiaxiang Liu, Xiaomu Shi, Bow-Yaw Wang, Bo-Yin Yang.
 <span class="underline">CoqCryptoLine: A Verified Model Checker with Certified Results</span>.
 Conference on Computer-Aided Verification (CAV 2023). <a href="https://link.springer.com/chapter/10.1007/978-3-031-37703-7_11">doi</a></li>
-<li>Li Zhou, Gilles Barthe, Pierre-Yves Strub, Junyi Liu, Mingsheng Ying.
-<span class="underline">CoqQ: Foundational Verification of Quantum Programs</span>.
-POPL 2023. <a href="https://arxiv.org/pdf/2207.11350.pdf">pdf</a></li>
-<li>Reynald Affeldt, Cyril Cohen, Ayumu Saito.
-<span class="underline">Semantics of Probabilistic Programs using s-Finite Kernels in Coq</span>.
-CPP 2023. <a href="https://hal.inria.fr/hal-03917948/document">pdf</a></li>
 <li>Ayumu Saito, Reynald Affeldt.
 <span class="underline">Towards a Practical Library for Monadic Equational Reasoning in Coq</span>.
 Mathematics of Program Construction (MPC 2022). <a href="https://staff.aist.go.jp/reynald.affeldt/documents/monae-mpc2022.pdf">pdf</a></li>
-<li>Reynald Affeldt, Jacques Garrigue, David Nowak, Takafumi Saikawa.
-<span class="underline">A trustful monad for axiomatic reasoning with probability and nondeterminism</span>.
-JFP 31(E17), 2021. <a href="https://arxiv.org/pdf/2003.09993.pdf">pdf</a></li>
 <li>Reynald Affeldt, David Nowak.
 <span class="underline">Extending equational monadic reasoning with monad transformers</span>.
 TYPES 2020. <a href="https://arxiv.org/pdf/2011.03463.pdf">pdf</a></li>
@@ -410,8 +425,6 @@ ITP 2019. <a href="https://arxiv.org/pdf/1904.02809.pdf">pdf</a></li>
 <li>Reynald Affeldt, Jacques Garrigue, Xuanrui Qi, Kazunari Tanaka.
 <span class="underline">Experience Report: Type-Driven Development of Certified Tree Algorithms in Coq</span>.
 Coq Workshop 2019. <a href="https://staff.aist.go.jp/reynald.affeldt/coq2019/coqws2019-affeldt-garrigue-qi-tanaka.pdf">pdf</a></li>
-<li>Joseph Tassarotti, Robert Harper.
-<span class="underline">Verified Tail Bounds for Randomized Programs</span>. ITP 2018. <a href="https://www.cs.cmu.edu/~rwh/papers/tail-bounds/paper.pdf">pdf</a></li>
 <li>Cyril Cohen, Damien Rouhling.
 <span class="underline">A refinement-based approach to large scale reflection for algebra</span>.
 28ème Journées Francophones des Langages Applicatifs (JFLA 2017). <a href="https://hal.inria.fr/hal-01414881/document">pdf</a></li>
@@ -433,16 +446,19 @@ Master’s thesis, Mathematics, Radboud University, 2016. <a href="https://www.r
 </ul>
 </div>
 
-<div id="outline-container-orga92f046" class="outline-3">
-<h3 id="orga92f046">Concurrency</h3>
-<div class="outline-text-3" id="text-orga92f046">
+<div id="outline-container-org25303e6" class="outline-3">
+<h3 id="org25303e6">Concurrency</h3>
+<div class="outline-text-3" id="text-org25303e6">
 <ul class="org-ul">
 <li>Mohit Tekriwal, Avi Tachna-Fram, Jean-Baptiste Jeannin, Manos Kapritsos, Dimitra Panagou.
-<span class="underline">Formally verified asymptotic consensus in robust networks</span>. 30th International Conference on Tools and Algorithms for the Construction and Analysis of Systems (TACAS 2024). <a href="https://arxiv.org/pdf/2202.13833.pdf">pdf</a></li>
+<span class="underline">Formally verified asymptotic consensus in robust networks</span>.
+TACAS 2024. <a href="https://arxiv.org/pdf/2202.13833.pdf">pdf</a></li>
 <li>Søren Eller Thomsen, Bas Spitters.
-<span class="underline">Formalizing Nakamoto-Style Proof of Stake</span>. CSF 2021. <a href="https://arxiv.org/pdf/2007.12105">pdf</a></li>
+<span class="underline">Formalizing Nakamoto-Style Proof of Stake</span>.
+34th IEEE Computer Security Foundations Symposium (CSF 2021). <a href="https://arxiv.org/pdf/2007.12105">pdf</a></li>
 <li>Musab A. Alturki, Jing Chen, Victor Luchangco, Brandon Moore, Karl Palmskog, Lucas Peña, Grigore Roşu.
-<span class="underline">Towards a Verified Model of the Algorand Consensus Protocol in Coq</span>. FMBC 2019. <a href="https://arxiv.org/pdf/1907.05523">pdf</a></li>
+<span class="underline">Towards a Verified Model of the Algorand Consensus Protocol in Coq</span>.
+1st Workshop on Formal Methods for Blockchains (FMBC 2019). <a href="https://arxiv.org/pdf/1907.05523">pdf</a></li>
 <li>Joseph Tassarotti, Robert Harper.
 <span class="underline">A Separation Logic for Concurrent Randomized Programs</span>.
 POPL 2019. <a href="http://www.cs.bc.edu/~tassarot/papers/iris-prob-paper/paper.pdf">pdf</a></li>
@@ -450,19 +466,25 @@ POPL 2019. <a href="http://www.cs.bc.edu/~tassarot/papers/iris-prob-paper/paper.
 <span class="underline">Programming and Proving with Distributed Protocols</span>. POPL 2018. <a href="https://dl.acm.org/citation.cfm?doid=3177123.3158116">pdf</a></li>
 <li>George Pîrlea, Ilya Sergey. <span class="underline">Mechanising Blockchain Consensus</span>. CPP 2018. <a href="https://dl.acm.org/citation.cfm?id=3167086">pdf</a></li>
 <li>Germán Andrés Delbianco, Ilya Sergey, Aleksandar Nanevski, Anindya Banerjee.
-<span class="underline">Concurrent Data Structures Linked in Time</span>. ECOOP 2017. <a href="https://drops.dagstuhl.de/opus/volltexte/2017/7255/pdf/LIPIcs-ECOOP-2017-8.pdf">pdf</a></li>
+<span class="underline">Concurrent Data Structures Linked in Time</span>.
+European Conference on Object-Oriented Programming (ECOOP 2017). <a href="https://drops.dagstuhl.de/opus/volltexte/2017/7255/pdf/LIPIcs-ECOOP-2017-8.pdf">pdf</a></li>
 <li>Mitsuharu Yamamoto, Shogo Sekine, Saki Matsumoto.
 <span class="underline">Formalization of Karp-Miller Tree Construction on Petri Nets</span>. CPP 2017. <a href="https://doi.org/10.1145/3018610.3018626">doi</a></li>
 <li>Germán Andrés Delbianco.
 <span class="underline">Hoare-style Reasoning with Higher-order Control: Continuations and Concurrency</span>.
 PhD thesis, Computer Science, Universidad Politécnica de Madrid, 2017. <a href="http://oa.upm.es/47796/1/GERMAN_ANDRES_DELBIANCO.pdf">pdf</a></li>
+<li>Ralf Jung, Robbert Krebbers, Lars Birkedal, Derek Dreyer.
+<span class="underline">Higher-Order Ghost State</span>.
+ICFP 2016. <a href="https://dl.acm.org/doi/pdf/10.1145/2951913.2951943">pdf</a></li>
 <li>Ilya Sergey, Aleksandar Nanevski, Anindya Banerjee, Germán Andrés Delbianco.
- <span class="underline">Hoare-style Specifications as Correctness Conditions for Non-linearizable Concurrent Objects</span>.
-OOPSLA 2016. <a href="https://arxiv.org/pdf/1509.06220.pdf">pdf</a></li>
+<span class="underline">Hoare-style Specifications as Correctness Conditions for Non-linearizable Concurrent Objects</span>.
+Object-oriented Programming, Systems, Languages, and Applications (OOPSLA 2016). <a href="https://arxiv.org/pdf/1509.06220.pdf">pdf</a></li>
 <li>Ilya Sergey, Aleksandar Nanevski, Anindya Banerjee.
-<span class="underline">Mechanized Verification of Fine-grained Concurrent Programs</span>. PLDI 2015. <a href="https://doi.org/10.1145/2737924.2737964">doi</a></li>
+ <span class="underline">Mechanized Verification of Fine-grained Concurrent Programs</span>.
+Programming Language Design and Implementation (PLDI 2015). <a href="https://doi.org/10.1145/2737924.2737964">doi</a></li>
 <li>Ilya Sergey, Aleksandar Nanevski, Anindya Banerjee.
-<span class="underline">Specifying and Verifying Concurrent Algorithms with Histories and Subjectivity</span>. ESOP 2015. <a href="https://arxiv.org/pdf/1410.0306.pdf">pdf</a></li>
+ <span class="underline">Specifying and Verifying Concurrent Algorithms with Histories and Subjectivity</span>.
+ESOP 2015. <a href="https://arxiv.org/pdf/1410.0306.pdf">pdf</a></li>
 <li>Aleksandar Nanevski, Ruy Ley-Wild, Ilya Sergey, Germán Andrés Delbianco.
  <span class="underline">Communicating State Transition Systems for Fine-Grained Concurrent Resources</span>.
 ESOP 2014. <a href="https://doi.org/10.1007/978-3-642-54833-8_16">doi</a></li>
@@ -472,9 +494,9 @@ ESOP 2014. <a href="https://doi.org/10.1007/978-3-642-54833-8_16">doi</a></li>
 </div>
 </div>
 
-<div id="outline-container-org1a571e0" class="outline-3">
-<h3 id="org1a571e0">Information Flow</h3>
-<div class="outline-text-3" id="text-org1a571e0">
+<div id="outline-container-org1d1cf49" class="outline-3">
+<h3 id="org1d1cf49">Information Flow</h3>
+<div class="outline-text-3" id="text-org1d1cf49">
 <ul class="org-ul">
 <li>Aleksandar Nanevski, Anindya Banerjee, Deepak Garg.
 <span class="underline">Dependent Type Theory for Verification of Information Flow and Access Control Policies</span>.
@@ -489,13 +511,25 @@ PPDP 2013. <a href="https://doi.org/10.1145/2505879.2505895">doi</a></li>
 </div>
 </div>
 
-<div id="outline-container-org76f4c7d" class="outline-3">
-<h3 id="org76f4c7d">Probabilistic Reasoning</h3>
-<div class="outline-text-3" id="text-org76f4c7d">
+<div id="outline-container-org52be8f3" class="outline-3">
+<h3 id="org52be8f3">Probabilistic Reasoning</h3>
+<div class="outline-text-3" id="text-org52be8f3">
 <ul class="org-ul">
+<li>Reynald Affeldt, Clark Barrett, Alessandro Bruni, Ieva Daukantas, Harun Khan, Takafumi Saikawa, Carsten Schürmann.
+<span class="underline">Robust Mean Estimation by All Means (short paper)</span>.
+ITP 2024. <a href="https://drops.dagstuhl.de/storage/00lipics/lipics-vol309-itp2024/LIPIcs.ITP.2024.39/LIPIcs.ITP.2024.39.pdf">pdf</a></li>
+<li>Ayumu Saito, Reynald Affeldt.
+<span class="underline">Experimenting with an Intrinsically-Typed Probabilistic Programming Language in Coq</span>.
+Asian Symposium on Programming Languages and Systems (APLAS 2023). <a href="https://link.springer.com/chapter/10.1007/978-981-99-8311-7_9">doi</a></li>
+<li>Reynald Affeldt, Cyril Cohen, Ayumu Saito.
+<span class="underline">Semantics of Probabilistic Programs using s-Finite Kernels in Coq</span>.
+CPP 2023. <a href="https://hal.inria.fr/hal-03917948/document">pdf</a></li>
 <li>Ieva Daukantas, Alessandro Bruni, Carsten Schürmann.
 <span class="underline">Trimming Data Sets: a Verified Algorithm for Robust Mean Estimation</span>.
 PPDP 2021. <a href="https://doi.org/10.1145/3479394.3479412">doi</a></li>
+<li>Reynald Affeldt, Jacques Garrigue, David Nowak, Takafumi Saikawa.
+<span class="underline">A trustful monad for axiomatic reasoning with probability and nondeterminism</span>.
+JFP 31(E17), 2021. <a href="https://arxiv.org/pdf/2003.09993.pdf">pdf</a></li>
 <li>Kiran Gopinathan, Ilya Sergey.
 <span class="underline">Certifying Certainty and Uncertainty in Approximate Membership Query Structures</span>.
 32nd International Conference on Computer-Aided Verification (CAV 2020). <a href="https://arxiv.org/pdf/2004.13312.pdf">pdf</a></li>
@@ -505,14 +539,30 @@ CICM 2020. <a href="https://arxiv.org/pdf/2004.12713.pdf">pdf</a></li>
 <li>Reynald Affeldt, Jacques Garrigue, Takafumi Saikawa.
 <span class="underline">Reasoning with conditional probabilities and joint distributions</span>.
 Computer Software 37(3):79-95, 2020. <a href="https://staff.aist.go.jp/reynald.affeldt/documents/cproba_preprint.pdf">pdf</a></li>
+<li>Joseph Tassarotti, Robert Harper.
+<span class="underline">Verified Tail Bounds for Randomized Programs</span>. ITP 2018. <a href="https://www.cs.cmu.edu/~rwh/papers/tail-bounds/paper.pdf">pdf</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org6d9bb85" class="outline-3">
+<h3 id="org6d9bb85">Quantum Computing</h3>
+<div class="outline-text-3" id="text-org6d9bb85">
+<ul class="org-ul">
+<li>Jacques Garrigue and Takafumi Saikawa.
+<span class="underline">Typed compositional quantum computation with lenses</span>.
+ITP 2024. <a href="https://drops.dagstuhl.de/storage/00lipics/lipics-vol309-itp2024/LIPIcs.ITP.2024.15/LIPIcs.ITP.2024.15.pdf">pdf</a></li>
+<li>Li Zhou, Gilles Barthe, Pierre-Yves Strub, Junyi Liu, Mingsheng Ying.
+<span class="underline">CoqQ: Foundational Verification of Quantum Programs</span>.
+POPL 2023. <a href="https://arxiv.org/pdf/2207.11350.pdf">pdf</a></li>
 </ul>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgf4d27f2" class="outline-2">
-<h2 id="orgf4d27f2">Other Applications</h2>
-<div class="outline-text-2" id="text-orgf4d27f2">
+<div id="outline-container-org4fa1e7f" class="outline-2">
+<h2 id="org4fa1e7f">Other Applications</h2>
+<div class="outline-text-2" id="text-org4fa1e7f">
 <ul class="org-ul">
 <li>Pierre-Léo Bégay, Pierre Crégut, Jean-François Monin.
 <span class="underline">Developing and certifying Datalog optimizations in Coq/MathComp</span>. CPP 2021. <a href="https://hal.archives-ouvertes.fr/hal-03065304v1/document">pdf</a></li>
@@ -526,9 +576,9 @@ Linux Audio Conference 2015. <a href="https://github.com/ejgallego/mini-faust-co
 </ul>
 </div>
 
-<div id="outline-container-org04bd153" class="outline-3">
-<h3 id="org04bd153">Logic, Types, and Verification</h3>
-<div class="outline-text-3" id="text-org04bd153">
+<div id="outline-container-org65f3a26" class="outline-3">
+<h3 id="org65f3a26">Logic, Types, and Verification</h3>
+<div class="outline-text-3" id="text-org65f3a26">
 <ul class="org-ul">
 <li>Christian Doczkal, Gert Smolka.
 <span class="underline">Regular Language Representations in the Constructive Type Theory of Coq</span>.
@@ -537,7 +587,8 @@ JAR 61, 2018. <a href="https://hal.archives-ouvertes.fr/hal-01832031/document">p
 <span class="underline">Completeness and Decidability of Converse PDL in the Constructive Type Theory of Coq</span>.
 CPP 2018. <a href="https://hal.archives-ouvertes.fr/hal-01646782/document">pdf</a></li>
 <li>Angela Bonifati, Stefania Dumbrava, Emilio Jesús Gallego Arias.
-<span class="underline">Certified Graph View Maintenance with Regular Datalog</span>. ICLP 2018. <a href="https://hal.archives-ouvertes.fr/hal-01932818/document">pdf</a></li>
+<span class="underline">Certified Graph View Maintenance with Regular Datalog</span>.
+34th International Conference on Logic Programming (ICLP 2018). <a href="https://hal.archives-ouvertes.fr/hal-01932818/document">pdf</a></li>
 <li>Véronique Benzaken, Evelyne Contejean, Stefania Dumbrava.
 <span class="underline">Certifying Standard and Stratified Datalog Inference Engines in SSReflect</span>. ITP 2017. <a href="https://hal.archives-ouvertes.fr/hal-01745566/file/ITP2017.pdf">pdf</a></li>
 <li>Felipe Cerqueira, Felix Stutz, Björn Brandenburg.
@@ -561,9 +612,9 @@ International Conference on Typed Lambda Calculi and Applications (TLCA 2011). <
 </div>
 </div>
 
-<div id="outline-container-org4caac30" class="outline-3">
-<h3 id="org4caac30">Information Theory</h3>
-<div class="outline-text-3" id="text-org4caac30">
+<div id="outline-container-org542f449" class="outline-3">
+<h3 id="org542f449">Information Theory</h3>
+<div class="outline-text-3" id="text-org542f449">
 <ul class="org-ul">
 <li>Joshua M. Cohen, Qinshi Wang, Andrew W. Appel.
 <span class="underline">Verified Erasure Correction in Coq with MathComp and VST</span>.
@@ -592,13 +643,13 @@ International Symposium on Information Theory and its Application 2014 (ISITA 20
 </div>
 </div>
 
-<div id="outline-container-org3457cc6" class="outline-2">
-<h2 id="org3457cc6">Tooling about SSReflect and Mathematical Components</h2>
-<div class="outline-text-2" id="text-org3457cc6">
+<div id="outline-container-org8858a65" class="outline-2">
+<h2 id="org8858a65">Tooling</h2>
+<div class="outline-text-2" id="text-org8858a65">
 <ul class="org-ul">
-<li>Ana de Almeida Borges, Mireia González Bedmar, Juan Conejero Rodríguez, Eduardo Hermo Reyes, Joaquim Casals Buñuel, Joost J. Joosten.
-<span class="underline">UTC time, formally verified</span>.
-CPP 2024. <a href="https://arxiv.org/pdf/2209.14227.pdf">pdf</a></li>
+<li>Cyril Cohen, Enzo Crance, Assia Mahboubi.
+<span class="underline">Trocq: Proof Transfer for Free, With or Without Univalence</span>.
+ESOP 2024. <a href="https://arxiv.org/pdf/2310.14022">pdf</a></li>
 <li>Valentin Blot, Denis Cousineau, Enzo Crance, Louise Dubois de Prisque, Chantal Keller, Assia Mahboubi, Pierre Vial.
 <span class="underline">Compositional Pre-processing for Automated Reasoning in Dependent Type Theory</span>.
 CPP 2023. <a href="https://arxiv.org/pdf/2204.02643.pdf">pdf</a></li>
@@ -614,12 +665,12 @@ CPP 2023. <a href="https://hal.inria.fr/hal-03800154/document">pdf</a></li>
 <span class="underline">A hierarchy of ordered types in Mathematical Components</span>. Coq Workshop 2020. <a href="https://coq-workshop.gitlab.io/2020/abstracts/Coq2020_03-02-ordered.pdf">pdf</a></li>
 <li>Cyril Cohen, Kazuhiko Sakaguchi, Enrico Tassi.
 <span class="underline">Hierarchy Builder: algebraic hierarchies made easy in Coq with Elpi</span>.
-5th International Conference on Formal Structures for Computation and Deduction (FSCD 2020). <a href="https://hal.inria.fr/hal-02478907v4/document">pdf</a></li>
+FSCD 2020. <a href="https://hal.inria.fr/hal-02478907v4/document">pdf</a></li>
 <li>Karl Palmskog, Ahmet Celik, Milos Gligoric.
 <span class="underline">Practical Machine-Checked Formalization of Change Impact Analysis</span>.
-26th International Conference on Tools and Algorithms for the Construction and Analysis of Systems (TACAS 2020). <a href="https://users.ece.utexas.edu/~gligoric/papers/PalmskogETAL20Chip.pdf">pdf</a></li>
+TACAS 2020. <a href="https://users.ece.utexas.edu/~gligoric/papers/PalmskogETAL20Chip.pdf">pdf</a></li>
 <li>Kazuhiko Sakaguchi. <span class="underline">Validating Mathematical Structures</span>. IJCAR 2020. <a href="https://arxiv.org/pdf/2002.00620.pdf">pdf</a></li>
-<li>Kazuhiko Sakaguchi. <span class="underline">Program extraction for mutable arrays</span>. Science of Computer Programming 191. <a href="https://doi.org/10.1016/j.scico.2019.102372">doi</a></li>
+<li>Kazuhiko Sakaguchi. <span class="underline">Program extraction for mutable arrays</span>. Science of Computer Programming 191, 2020. <a href="https://doi.org/10.1016/j.scico.2019.102372">doi</a></li>
 <li>Erik Martin-Dorel, Enrico Tassi. <span class="underline">SSReflect in Coq 8.10</span>. Coq Workshop 2019. <a href="https://staff.aist.go.jp/reynald.affeldt/coq2019/coqws2019-martindorel-tassi.pdf">pdf</a></li>
 <li>Kazuhiko Sakaguchi. <span class="underline">Program Extraction for Mutable Arrays</span>.
 15th International Symposium on Functional and Logic Programming (FLOPS 2018). <a href="https://doi.org/10.1007/978-3-319-90686-7_4">doi</a></li>
@@ -641,10 +692,13 @@ IPSJ Transactions on Programming 10(1), 2017. <a href="http://logic.cs.tsukuba.a
 </ul>
 </div>
 
-<div id="outline-container-org6f07821" class="outline-3">
-<h3 id="org6f07821">Machine Learning</h3>
-<div class="outline-text-3" id="text-org6f07821">
+<div id="outline-container-orgd082fa4" class="outline-3">
+<h3 id="orgd082fa4">Machine Learning</h3>
+<div class="outline-text-3" id="text-orgd082fa4">
 <ul class="org-ul">
+<li>Reynald Affeldt, Alessandro Bruni, Ekaterina Komendantskaya, Natalia Ślusarz, Kathrin Stark.
+<span class="underline">Taming Differentiable Logics with Coq Formalisation</span>.
+ITP 2024. <a href="https://drops.dagstuhl.de/storage/00lipics/lipics-vol309-itp2024/LIPIcs.ITP.2024.4/LIPIcs.ITP.2024.4.pdf">pdf</a></li>
 <li>Pengyu Nie, Karl Palmskog, Junyi Jessy Li, Milos Gligoric.
 <span class="underline">Deep Generation of Coq Lemma Names Using Elaborated Terms</span>. IJCAR 2020. <a href="https://arxiv.org/pdf/2004.07761.pdf">pdf</a></li>
 <li>Jónathan Heras, Ekaterina Komendantskaya.
