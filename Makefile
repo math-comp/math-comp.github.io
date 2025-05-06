@@ -1,9 +1,10 @@
-# this
+ORG_FILES=$(wildcard *.org)
+HTML_FILES=$(ORG_FILES:.org=.html)
 
-R=1.6
+# default target does nothing
+all:
 
-import-doc:
-	-git subtree add -P htmldoc release/$(R)
-	T=`git subtree split -P htmldoc release/$(R)`;\
-	git subtree merge -P htmldoc --squash $$T \
-		-m 'importing htmldoc from $(R)'
+org-html: $(HTML_FILES)
+
+%.html: %.org
+	emacs --batch $< -e org-html-export-to-html
