@@ -1,0 +1,435 @@
+digraph depend {
+	node [colorscheme=paired12,
+		shape=ellipse,
+		style=filled
+	];
+	subgraph cluster_analysis {
+		graph [label=Analysis];
+		"theories/all_analysis"	[fillcolor=5,
+			label=all_analysis];
+		"theories/ereal"	[fillcolor=5,
+			label=ereal];
+		"theories/landau"	[fillcolor=5,
+			label=landau];
+		"theories/function_spaces"	[fillcolor=5,
+			label=function_spaces];
+		"theories/cantor"	[fillcolor=5,
+			label=cantor];
+		"theories/realfun"	[fillcolor=5,
+			label=realfun];
+		"theories/sequences"	[fillcolor=5,
+			label=sequences];
+		"theories/exp"	[fillcolor=5,
+			label=exp];
+		"theories/trigo"	[fillcolor=5,
+			label=trigo];
+		"theories/esum"	[fillcolor=5,
+			label=esum];
+		"theories/lebesgue_measure"	[fillcolor=5,
+			label=lebesgue_measure];
+		"theories/forms"	[fillcolor=5,
+			label=forms];
+		"theories/derive"	[fillcolor=5,
+			label=derive];
+		"theories/measure"	[fillcolor=5,
+			label=measure];
+		"theories/numfun"	[fillcolor=5,
+			label=numfun];
+		"theories/ftc"	[fillcolor=5,
+			label=ftc];
+		"theories/hoelder"	[fillcolor=5,
+			label=hoelder];
+		"theories/probability"	[fillcolor=5,
+			label=probability];
+		"theories/lebesgue_stieltjes_measure"	[fillcolor=5,
+			label=lebesgue_stieltjes_measure];
+		"theories/convex"	[fillcolor=5,
+			label=convex];
+		"theories/charge"	[fillcolor=5,
+			label=charge];
+		"theories/kernel"	[fillcolor=5,
+			label=kernel];
+		"theories/pi_irrational"	[fillcolor=5,
+			label=pi_irrational];
+		"theories/gauss_integral"	[fillcolor=5,
+			label=gauss_integral];
+		"theories/homotopy_theory/homotopy"	[fillcolor=5,
+			label=homotopy];
+		"theories/homotopy_theory/wedge_sigT"	[fillcolor=5,
+			label=wedge_sigT];
+		"theories/homotopy_theory/continuous_path"	[fillcolor=5,
+			label=continuous_path];
+		"theories/ess_sup_inf"	[fillcolor=5,
+			label=ess_sup_inf];
+		"theories/tvs"	[fillcolor=5,
+			label=tvs];
+		"theories/measurable_realfun"	[fillcolor=5,
+			label=measurable_realfun];
+		"theories/showcase/summability"	[fillcolor=5,
+			label=summability];
+		"analysis_stdlib/Rstruct_topology"	[fillcolor=5,
+			label=Rstruct_topology];
+		"analysis_stdlib/showcase/uniform_bigO"	[fillcolor=5,
+			label=uniform_bigO];
+	}
+	subgraph cluster_classical {
+		graph [label=Classical];
+		"classical/all_classical"	[URL="mathcomp.classical.all_classical.html",
+			fillcolor=1,
+			label=all_classical];
+		"classical/boolp"	[URL="mathcomp.classical.boolp.html",
+			fillcolor=1,
+			label=boolp];
+		"classical/contra"	[URL="mathcomp.classical.contra.html",
+			fillcolor=1,
+			label=contra];
+		"classical/classical_sets"	[URL="mathcomp.classical.classical_sets.html",
+			fillcolor=1,
+			label=classical_sets];
+		"classical/mathcomp_extra"	[URL="mathcomp.classical.mathcomp_extra.html",
+			fillcolor=1,
+			label=mathcomp_extra];
+		"classical/functions"	[URL="mathcomp.classical.functions.html",
+			fillcolor=1,
+			label=functions];
+		"classical/cardinality"	[URL="mathcomp.classical.cardinality.html",
+			fillcolor=1,
+			label=cardinality];
+		"classical/fsbigop"	[URL="mathcomp.classical.fsbigop.html",
+			fillcolor=1,
+			label=fsbigop];
+		"classical/set_interval"	[URL="mathcomp.classical.set_interval.html",
+			fillcolor=1,
+			label=set_interval];
+		"classical/classical_orders"	[URL="mathcomp.classical.classical_orders.html",
+			fillcolor=1,
+			label=classical_orders];
+		"classical/filter"	[URL="mathcomp.classical.filter.html",
+			fillcolor=1,
+			label=filter];
+		"classical/internal_Eqdep_dec"	[URL="mathcomp.classical.internal_Eqdep_dec.html",
+			fillcolor=1,
+			label=internal_Eqdep_dec];
+		"classical/wochoice"	[URL="mathcomp.classical.wochoice.html",
+			fillcolor=1,
+			label=wochoice];
+		"classical/unstable"	[URL="mathcomp.classical.unstable.html",
+			fillcolor=1,
+			label=unstable];
+	}
+	subgraph cluster_reals {
+		graph [label=Reals];
+		"reals/constructive_ereal"	[fillcolor=2,
+			fontcolor=white,
+			label=constructive_ereal];
+		"reals/interval_inference"	[fillcolor=2,
+			fontcolor=white,
+			label=interval_inference];
+		"reals/reals"	[fillcolor=2,
+			fontcolor=white,
+			label=reals];
+		"reals/real_interval"	[fillcolor=2,
+			fontcolor=white,
+			label=real_interval];
+		"reals/signed"	[fillcolor=2,
+			fontcolor=white,
+			label=signed];
+		"reals/prodnormedzmodule"	[fillcolor=2,
+			fontcolor=white,
+			label=prodnormedzmodule];
+		"reals/all_reals"	[fillcolor=2,
+			fontcolor=white,
+			label=all_reals];
+		"experimental_reals/xfinmap"	[fillcolor=2,
+			fontcolor=white,
+			label=xfinmap];
+		"experimental_reals/discrete"	[fillcolor=2,
+			fontcolor=white,
+			label=discrete];
+		"experimental_reals/realseq"	[fillcolor=2,
+			fontcolor=white,
+			label=realseq];
+		"experimental_reals/realsum"	[fillcolor=2,
+			fontcolor=white,
+			label=realsum];
+		"experimental_reals/distr"	[fillcolor=2,
+			fontcolor=white,
+			label=distr];
+		"reals_stdlib/Rstruct"	[fillcolor=2,
+			fontcolor=white,
+			label=Rstruct];
+		"reals_stdlib/nsatz_realtype"	[fillcolor=2,
+			fontcolor=white,
+			label=nsatz_realtype];
+	}
+	subgraph cluster_experimental_reals {
+		graph [label=ExperimentalReals];
+	}
+	subgraph cluster_topology {
+		graph [label=Topology];
+		"theories/topology_theory/topology"	[fillcolor=4,
+			fontcolor=white,
+			label=topology];
+		"theories/topology_theory/bool_topology"	[fillcolor=4,
+			fontcolor=white,
+			label=bool_topology];
+		"theories/topology_theory/num_topology"	[fillcolor=4,
+			fontcolor=white,
+			label=num_topology];
+		"theories/topology_theory/quotient_topology"	[fillcolor=4,
+			fontcolor=white,
+			label=quotient_topology];
+		"theories/topology_theory/compact"	[fillcolor=4,
+			fontcolor=white,
+			label=compact];
+		"theories/topology_theory/connected"	[fillcolor=4,
+			fontcolor=white,
+			label=connected];
+		"theories/topology_theory/matrix_topology"	[fillcolor=4,
+			fontcolor=white,
+			label=matrix_topology];
+		"theories/topology_theory/nat_topology"	[fillcolor=4,
+			fontcolor=white,
+			label=nat_topology];
+		"theories/topology_theory/order_topology"	[fillcolor=4,
+			fontcolor=white,
+			label=order_topology];
+		"theories/topology_theory/product_topology"	[fillcolor=4,
+			fontcolor=white,
+			label=product_topology];
+		"theories/topology_theory/pseudometric_structure"	[fillcolor=4,
+			fontcolor=white,
+			label=pseudometric_structure];
+		"theories/topology_theory/subspace_topology"	[fillcolor=4,
+			fontcolor=white,
+			label=subspace_topology];
+		"theories/topology_theory/subtype_topology"	[fillcolor=4,
+			fontcolor=white,
+			label=subtype_topology];
+		"theories/topology_theory/supremum_topology"	[fillcolor=4,
+			fontcolor=white,
+			label=supremum_topology];
+		"theories/topology_theory/topology_structure"	[fillcolor=4,
+			fontcolor=white,
+			label=topology_structure];
+		"theories/topology_theory/uniform_structure"	[fillcolor=4,
+			fontcolor=white,
+			label=uniform_structure];
+		"theories/topology_theory/weak_topology"	[fillcolor=4,
+			fontcolor=white,
+			label=weak_topology];
+		"theories/topology_theory/one_point_compactification"	[fillcolor=4,
+			fontcolor=white,
+			label=one_point_compactification];
+		"theories/topology_theory/sigT_topology"	[fillcolor=4,
+			fontcolor=white,
+			label=sigT_topology];
+		"theories/topology_theory/discrete_topology"	[fillcolor=4,
+			fontcolor=white,
+			label=discrete_topology];
+		"theories/topology_theory/separation_axioms"	[fillcolor=4,
+			fontcolor=white,
+			label=separation_axioms];
+	}
+	subgraph cluster_normedtype {
+		graph [label=NormedType];
+		"theories/normedtype_theory/normedtype"	[fillcolor=9,
+			label=normedtype];
+		"theories/normedtype_theory/num_normedtype"	[fillcolor=9,
+			label=num_normedtype];
+		"theories/normedtype_theory/matrix_normedtype"	[fillcolor=9,
+			label=matrix_normedtype];
+		"theories/normedtype_theory/pseudometric_normed_Zmodule"	[fillcolor=9,
+			label=pseudometric_normed_Zmodule];
+		"theories/normedtype_theory/normed_module"	[fillcolor=9,
+			label=normed_module];
+		"theories/normedtype_theory/ereal_normedtype"	[fillcolor=9,
+			label=ereal_normedtype];
+		"theories/normedtype_theory/complete_normed_module"	[fillcolor=9,
+			label=complete_normed_module];
+		"theories/normedtype_theory/urysohn"	[fillcolor=9,
+			label=urysohn];
+		"theories/normedtype_theory/vitali_lemma"	[fillcolor=9,
+			label=vitali_lemma];
+	}
+	subgraph cluster_lebesgue_integral {
+		graph [label=Lebesgue_integral];
+		"theories/lebesgue_integral_theory/lebesgue_integral"	[fillcolor=10,
+			fontcolor=white,
+			label=lebesgue_integral];
+		"theories/lebesgue_integral_theory/simple_functions"	[fillcolor=10,
+			fontcolor=white,
+			label=simple_functions];
+		"theories/lebesgue_integral_theory/lebesgue_integral_definition"	[fillcolor=10,
+			fontcolor=white,
+			label=lebesgue_integral_definition];
+		"theories/lebesgue_integral_theory/measurable_fun_approximation"	[fillcolor=10,
+			fontcolor=white,
+			label=measurable_fun_approximation];
+		"theories/lebesgue_integral_theory/lebesgue_integral_monotone_convergence"	[fillcolor=10,
+			fontcolor=white,
+			label=lebesgue_integral_monotone_convergence];
+		"theories/lebesgue_integral_theory/lebesgue_integral_nonneg"	[fillcolor=10,
+			fontcolor=white,
+			label=lebesgue_integral_nonneg];
+		"theories/lebesgue_integral_theory/lebesgue_integrable"	[fillcolor=10,
+			fontcolor=white,
+			label=lebesgue_integrable];
+		"theories/lebesgue_integral_theory/lebesgue_integral_dominated_convergence"	[fillcolor=10,
+			fontcolor=white,
+			label=lebesgue_integral_dominated_convergence];
+		"theories/lebesgue_integral_theory/lebesgue_integral_under"	[fillcolor=10,
+			fontcolor=white,
+			label=lebesgue_integral_under];
+		"theories/lebesgue_integral_theory/lebesgue_Rintegral"	[fillcolor=10,
+			fontcolor=white,
+			label=lebesgue_Rintegral];
+		"theories/lebesgue_integral_theory/lebesgue_integral_fubini"	[fillcolor=10,
+			fontcolor=white,
+			label=lebesgue_integral_fubini];
+		"theories/lebesgue_integral_theory/lebesgue_integral_differentiation"	[fillcolor=10,
+			fontcolor=white,
+			label=lebesgue_integral_differentiation];
+	}
+	"classical/all_classical" -> "reals/prodnormedzmodule";
+	"classical/all_classical" -> "theories/topology_theory/topology_structure";
+	"classical/boolp" -> "classical/contra";
+	"classical/contra" -> "classical/wochoice";
+	"classical/classical_sets" -> "classical/functions";
+	"classical/mathcomp_extra" -> "classical/boolp";
+	"classical/mathcomp_extra" -> "classical/unstable";
+	"classical/mathcomp_extra" -> "reals/interval_inference";
+	"classical/mathcomp_extra" -> "theories/forms";
+	"classical/functions" -> "classical/cardinality";
+	"classical/functions" -> "classical/set_interval";
+	"classical/cardinality" -> "classical/fsbigop";
+	"classical/fsbigop" -> "classical/filter";
+	"classical/set_interval" -> "classical/classical_orders";
+	"classical/set_interval" -> "classical/filter";
+	"classical/set_interval" -> "reals/reals";
+	"classical/classical_orders" -> "classical/all_classical";
+	"classical/filter" -> "classical/all_classical";
+	"classical/internal_Eqdep_dec" -> "classical/boolp";
+	"classical/wochoice" -> "classical/classical_sets";
+	"classical/unstable" -> "classical/functions";
+	"classical/unstable" -> "reals/signed";
+	"reals/constructive_ereal" -> "reals/real_interval";
+	"reals/constructive_ereal" -> "experimental_reals/realseq";
+	"reals/constructive_ereal" -> "reals_stdlib/nsatz_realtype";
+	"reals/interval_inference" -> "reals/constructive_ereal";
+	"reals/interval_inference" -> "reals/prodnormedzmodule";
+	"reals/interval_inference" -> "theories/topology_theory/pseudometric_structure";
+	"reals/reals" -> "reals/real_interval";
+	"reals/reals" -> "experimental_reals/discrete";
+	"reals/reals" -> "reals_stdlib/Rstruct";
+	"reals/reals" -> "reals_stdlib/nsatz_realtype";
+	"reals/reals" -> "theories/topology_theory/pseudometric_structure";
+	"reals/real_interval" -> "reals/all_reals";
+	"reals/prodnormedzmodule" -> "reals/all_reals";
+	"reals/all_reals" -> "theories/topology_theory/discrete_topology";
+	"experimental_reals/xfinmap" -> "experimental_reals/discrete";
+	"experimental_reals/discrete" -> "experimental_reals/realseq";
+	"experimental_reals/realseq" -> "experimental_reals/realsum";
+	"experimental_reals/realsum" -> "experimental_reals/distr";
+	"reals_stdlib/Rstruct" -> "analysis_stdlib/Rstruct_topology";
+	"theories/ereal" -> "theories/tvs";
+	"theories/landau" -> "theories/sequences";
+	"theories/landau" -> "theories/derive";
+	"theories/topology_theory/topology" -> "theories/ereal";
+	"theories/topology_theory/topology" -> "theories/function_spaces";
+	"theories/function_spaces" -> "theories/cantor";
+	"theories/function_spaces" -> "theories/homotopy_theory/wedge_sigT";
+	"theories/function_spaces" -> "theories/tvs";
+	"theories/cantor" -> "theories/all_analysis";
+	"theories/normedtype_theory/normedtype" -> "theories/landau";
+	"theories/normedtype_theory/normedtype" -> "theories/showcase/summability";
+	"theories/realfun" -> "theories/lebesgue_stieltjes_measure";
+	"theories/realfun" -> "theories/convex";
+	"theories/sequences" -> "theories/realfun";
+	"theories/sequences" -> "theories/numfun";
+	"theories/sequences" -> "analysis_stdlib/Rstruct_topology";
+	"theories/exp" -> "theories/measurable_realfun";
+	"theories/trigo" -> "theories/pi_irrational";
+	"theories/trigo" -> "theories/gauss_integral";
+	"theories/esum" -> "theories/measure";
+	"theories/lebesgue_measure" -> "theories/ess_sup_inf";
+	"theories/lebesgue_measure" -> "theories/lebesgue_integral_theory/simple_functions";
+	"theories/forms" -> "theories/derive";
+	"theories/derive" -> "theories/realfun";
+	"theories/measure" -> "theories/lebesgue_stieltjes_measure";
+	"theories/numfun" -> "theories/esum";
+	"theories/lebesgue_integral_theory/lebesgue_integral" -> "theories/hoelder";
+	"theories/lebesgue_integral_theory/lebesgue_integral" -> "theories/charge";
+	"theories/lebesgue_integral_theory/lebesgue_integral" -> "theories/kernel";
+	"theories/ftc" -> "theories/trigo";
+	"theories/hoelder" -> "theories/probability";
+	"theories/probability" -> "theories/all_analysis";
+	"theories/lebesgue_stieltjes_measure" -> "theories/measurable_realfun";
+	"theories/convex" -> "theories/exp";
+	"theories/charge" -> "theories/ftc";
+	"theories/kernel" -> "theories/probability";
+	"theories/pi_irrational" -> "theories/all_analysis";
+	"theories/gauss_integral" -> "theories/probability";
+	"theories/topology_theory/bool_topology" -> "theories/topology_theory/topology";
+	"theories/topology_theory/num_topology" -> "theories/topology_theory/separation_axioms";
+	"theories/topology_theory/quotient_topology" -> "theories/topology_theory/topology";
+	"theories/topology_theory/compact" -> "theories/topology_theory/product_topology";
+	"theories/topology_theory/connected" -> "theories/topology_theory/subspace_topology";
+	"theories/topology_theory/matrix_topology" -> "theories/topology_theory/topology";
+	"theories/topology_theory/nat_topology" -> "theories/topology_theory/topology";
+	"theories/topology_theory/order_topology" -> "theories/topology_theory/num_topology";
+	"theories/topology_theory/order_topology" -> "theories/topology_theory/weak_topology";
+	"theories/topology_theory/order_topology" -> "theories/topology_theory/discrete_topology";
+	"theories/topology_theory/product_topology" -> "theories/topology_theory/order_topology";
+	"theories/topology_theory/pseudometric_structure" -> "theories/topology_theory/compact";
+	"theories/topology_theory/pseudometric_structure" -> "theories/topology_theory/matrix_topology";
+	"theories/topology_theory/subspace_topology" -> "theories/topology_theory/subtype_topology";
+	"theories/topology_theory/subspace_topology" -> "theories/topology_theory/sigT_topology";
+	"theories/topology_theory/subtype_topology" -> "theories/topology_theory/topology";
+	"theories/topology_theory/supremum_topology" -> "theories/topology_theory/separation_axioms";
+	"theories/topology_theory/topology_structure" -> "theories/topology_theory/quotient_topology";
+	"theories/topology_theory/topology_structure" -> "theories/topology_theory/connected";
+	"theories/topology_theory/topology_structure" -> "theories/topology_theory/uniform_structure";
+	"theories/topology_theory/uniform_structure" -> "theories/topology_theory/pseudometric_structure";
+	"theories/topology_theory/uniform_structure" -> "theories/topology_theory/supremum_topology";
+	"theories/topology_theory/weak_topology" -> "theories/topology_theory/subspace_topology";
+	"theories/topology_theory/weak_topology" -> "theories/topology_theory/one_point_compactification";
+	"theories/topology_theory/one_point_compactification" -> "theories/topology_theory/separation_axioms";
+	"theories/topology_theory/sigT_topology" -> "theories/topology_theory/separation_axioms";
+	"theories/topology_theory/discrete_topology" -> "theories/topology_theory/bool_topology";
+	"theories/topology_theory/discrete_topology" -> "theories/topology_theory/nat_topology";
+	"theories/topology_theory/discrete_topology" -> "theories/topology_theory/separation_axioms";
+	"theories/topology_theory/separation_axioms" -> "theories/topology_theory/topology";
+	"theories/homotopy_theory/wedge_sigT" -> "theories/homotopy_theory/continuous_path";
+	"theories/homotopy_theory/continuous_path" -> "theories/homotopy_theory/homotopy";
+	"theories/ess_sup_inf" -> "theories/hoelder";
+	"theories/tvs" -> "theories/normedtype_theory/num_normedtype";
+	"theories/normedtype_theory/num_normedtype" -> "theories/normedtype_theory/pseudometric_normed_Zmodule";
+	"theories/normedtype_theory/num_normedtype" -> "theories/normedtype_theory/ereal_normedtype";
+	"theories/normedtype_theory/matrix_normedtype" -> "theories/normedtype_theory/normedtype";
+	"theories/normedtype_theory/pseudometric_normed_Zmodule" -> "theories/normedtype_theory/normed_module";
+	"theories/normedtype_theory/normed_module" -> "theories/normedtype_theory/matrix_normedtype";
+	"theories/normedtype_theory/normed_module" -> "theories/normedtype_theory/complete_normed_module";
+	"theories/normedtype_theory/normed_module" -> "theories/normedtype_theory/urysohn";
+	"theories/normedtype_theory/normed_module" -> "theories/normedtype_theory/vitali_lemma";
+	"theories/normedtype_theory/ereal_normedtype" -> "theories/normedtype_theory/normed_module";
+	"theories/normedtype_theory/complete_normed_module" -> "theories/normedtype_theory/normedtype";
+	"theories/normedtype_theory/urysohn" -> "theories/normedtype_theory/normedtype";
+	"theories/normedtype_theory/vitali_lemma" -> "theories/normedtype_theory/normedtype";
+	"theories/measurable_realfun" -> "theories/lebesgue_measure";
+	"theories/lebesgue_integral_theory/simple_functions" -> "theories/lebesgue_integral_theory/lebesgue_integral_definition";
+	"theories/lebesgue_integral_theory/simple_functions" -> "theories/lebesgue_integral_theory/measurable_fun_approximation";
+	"theories/lebesgue_integral_theory/lebesgue_integral_definition" -> "theories/lebesgue_integral_theory/lebesgue_integral_monotone_convergence";
+	"theories/lebesgue_integral_theory/measurable_fun_approximation" -> "theories/lebesgue_integral_theory/lebesgue_integral_monotone_convergence";
+	"theories/lebesgue_integral_theory/lebesgue_integral_monotone_convergence" -> "theories/lebesgue_integral_theory/lebesgue_integral_nonneg";
+	"theories/lebesgue_integral_theory/lebesgue_integral_nonneg" -> "theories/lebesgue_integral_theory/lebesgue_integrable";
+	"theories/lebesgue_integral_theory/lebesgue_integrable" -> "theories/lebesgue_integral_theory/lebesgue_integral_dominated_convergence";
+	"theories/lebesgue_integral_theory/lebesgue_integrable" -> "theories/lebesgue_integral_theory/lebesgue_integral_fubini";
+	"theories/lebesgue_integral_theory/lebesgue_integral_dominated_convergence" -> "theories/lebesgue_integral_theory/lebesgue_Rintegral";
+	"theories/lebesgue_integral_theory/lebesgue_integral_under" -> "theories/lebesgue_integral_theory/lebesgue_integral";
+	"theories/lebesgue_integral_theory/lebesgue_Rintegral" -> "theories/lebesgue_integral_theory/lebesgue_integral_under";
+	"theories/lebesgue_integral_theory/lebesgue_Rintegral" -> "theories/lebesgue_integral_theory/lebesgue_integral_differentiation";
+	"theories/lebesgue_integral_theory/lebesgue_integral_fubini" -> "theories/lebesgue_integral_theory/lebesgue_integral";
+	"theories/lebesgue_integral_theory/lebesgue_integral_differentiation" -> "theories/lebesgue_integral_theory/lebesgue_integral";
+	"analysis_stdlib/Rstruct_topology" -> "analysis_stdlib/showcase/uniform_bigO";
+}
