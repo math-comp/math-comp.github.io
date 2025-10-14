@@ -3,14 +3,14 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-14 Mon 23:21 -->
+<!-- 2025-10-14 Tue 09:01 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Mathematical Components</title>
-<meta name="author" content="Alessandro Bruni" />
-<meta name="generator" content="Org Mode" />
+<meta name="generator" content="Org mode" />
+<meta name="author" content="WDTIS2222H" />
 <style type="text/css">
-  #content { max-width: 60em; margin: auto; }
+ <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
              margin-bottom: .2em; }
   .subtitle { text-align: center;
@@ -31,9 +31,8 @@
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
   pre {
-    border: 1px solid #e6e6e6;
-    border-radius: 3px;
-    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
     padding: 8pt;
     font-family: monospace;
     overflow: auto;
@@ -41,22 +40,22 @@
   }
   pre.src {
     position: relative;
-    overflow: auto;
+    overflow: visible;
+    padding-top: 1.2em;
   }
   pre.src:before {
     display: none;
     position: absolute;
-    top: -8px;
-    right: 12px;
+    background-color: white;
+    top: -10px;
+    right: 10px;
     padding: 3px;
-    color: #555;
-    background-color: #f2f2f299;
+    border: 1px solid black;
   }
-  pre.src:hover:before { display: inline; margin-top: 14px;}
+  pre.src:hover:before { display: inline;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
-  pre.src-authinfo::before { content: 'Authinfo'; }
   pre.src-C:before { content: 'C'; }
   /* pre.src-C++ doesn't work in CSS */
   pre.src-clojure:before { content: 'Clojure'; }
@@ -191,7 +190,8 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <style type="text/css"> body {font-family: Arial, Helvetica; margin-left: 5em; font-size: large;} </style>
@@ -199,18 +199,65 @@
 <style type="text/css"> h2 {margin-left: 0em; padding: 0px; color: #580909} </style>
 <style type="text/css"> h3 {margin-left: 1em; padding: 0px; color: #C05001;} </style>
 <style type="text/css"> body { max-width: 1100px; width: 100% - 30px; margin-left: 30px; }</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
 </head>
 <body>
-<div id="content" class="content">
+<div id="content">
 <h1 class="title">Mathematical Components</h1>
 <p>
  <div style="text-align:right"><img src="github-mark.png" height="25" style="border:0px">
 <a href="https://github.com/math-comp/">View the Project on GitHub</a>
  <img src="github-mark.png" height="25" style="border:0px"></div>
 </p>
-<div id="outline-container-orge8f8a80" class="outline-2">
-<h2 id="orge8f8a80">About</h2>
-<div class="outline-text-2" id="text-orge8f8a80">
+
+<div id="outline-container-orge1821fb" class="outline-2">
+<h2 id="orge1821fb">About</h2>
+<div class="outline-text-2" id="text-orge1821fb">
 <p>
 Welcome to Mathematical Components' web-page! 
 </p>
@@ -235,9 +282,10 @@ software license agreement.
 </p>
 </div>
 </div>
-<div id="outline-container-orgb6cb0e4" class="outline-2">
-<h2 id="orgb6cb0e4">Get the library</h2>
-<div class="outline-text-2" id="text-orgb6cb0e4">
+
+<div id="outline-container-orgc438e74" class="outline-2">
+<h2 id="orgc438e74">Get the library</h2>
+<div class="outline-text-2" id="text-orgc438e74">
 <ul class="org-ul">
 <li>The last stable releases of the Mathematical Components library
 can be <a href="https://github.com/math-comp/math-comp/releases">downloaded from github</a>.</li>
@@ -247,9 +295,11 @@ can be <a href="https://github.com/math-comp/math-comp/releases">downloaded from
 </ul>
 </div>
 </div>
-<div id="outline-container-org21f9e79" class="outline-2">
-<h2 id="org21f9e79">Documentation</h2>
-<div class="outline-text-2" id="text-org21f9e79">
+
+
+<div id="outline-container-orgf5218a3" class="outline-2">
+<h2 id="orgf5218a3">Documentation</h2>
+<div class="outline-text-2" id="text-orgf5218a3">
 
 <div style="float: right; width: 240px; margin: 5px 10px">
 <a href="https://math-comp.github.io/mcb/"><img alt="Mathematical Components book" src="https://math-comp.github.io/mcb/cover-front-web.png" style="width: 240px" border="1px solid black"></a>
@@ -264,12 +314,13 @@ presentation of the source files can be browsed online:
 <ul class="org-ul">
 <li>latest versions:
 <ul class="org-ul">
+<li>Version 2.5.0 (2025-10-13): <a href="htmldoc_2_5_0/libgraph.html">library graph</a>, <a href="htmldoc_2_5_0/index.html">coqdoc presentation</a></li>
 <li>Version 2.4.0 (2025-04-14): <a href="htmldoc_2_4_0/libgraph.html">library graph</a>, <a href="htmldoc_2_4_0/index.html">coqdoc presentation</a></li>
 <li>Version 2.3.0 (2024-11-28): <a href="htmldoc_2_3_0/libgraph.html">library graph</a>, <a href="htmldoc_2_3_0/index.html">coqdoc presentation</a></li>
-<li>Version 2.2.0 (2024-01-17): <a href="htmldoc_2_2_0/libgraph.html">library graph</a>, <a href="htmldoc_2_2_0/index.html">coqdoc presentation</a></li>
 </ul></li>
 <li>older versions:
 <ul class="org-ul">
+<li>Version 2.2.0 (2024-01-17): <a href="htmldoc_2_2_0/libgraph.html">library graph</a>, <a href="htmldoc_2_2_0/index.html">coqdoc presentation</a></li>
 <li>Version 2.1.0 (2023-10-24): <a href="htmldoc_2_1_0/libgraph.html">library graph</a>, <a href="htmldoc_2_1_0/index.html">coqdoc presentation</a></li>
 <li>Version 2.0.0 (2023-05-10): <a href="htmldoc_2_0_0/libgraph.html">library graph</a>, <a href="htmldoc_2_0_0/index.html">coqdoc presentation</a></li>
 <li>Version 1.19.0 (2024-01-15): <a href="htmldoc_1_19_0/libgraph.html">library graph</a>, <a href="htmldoc_1_19_0/index.html">coqdoc presentation</a></li>
@@ -294,9 +345,10 @@ algorithms and proofs and describes the design ideas of the
 library.</li>
 </ul>
 </div>
-<div id="outline-container-orgab13d80" class="outline-3">
-<h3 id="orgab13d80">More material</h3>
-<div class="outline-text-3" id="text-orgab13d80">
+
+<div id="outline-container-orgd276fca" class="outline-3">
+<h3 id="orgd276fca">More material</h3>
+<div class="outline-text-3" id="text-orgd276fca">
 <ul class="org-ul">
 <li><a href="documentation.html">Books, lectures, videos, etc.</a></li>
 <li><a href="papers.html">Research papers</a> related to Mathematical Components. Your paper or
@@ -305,9 +357,11 @@ thesis is not in the list? Send <a href="mailto:mathcomp-dev@inria.fr?subject=Ma
 </div>
 </div>
 </div>
-<div id="outline-container-org0eb6da9" class="outline-2">
-<h2 id="org0eb6da9">Help and contact</h2>
-<div class="outline-text-2" id="text-org0eb6da9">
+
+
+<div id="outline-container-orgfc4e105" class="outline-2">
+<h2 id="orgfc4e105">Help and contact</h2>
+<div class="outline-text-2" id="text-orgfc4e105">
 <ul class="org-ul">
 <li>Chat with us on <a href="https://coq.zulipchat.com/">Coq's Zulip</a>!</li>
 <li>Discuss with us on Coq's <a href="https://coq.discourse.group/">Discourse</a> forum!</li>
@@ -318,9 +372,10 @@ thesis is not in the list? Send <a href="mailto:mathcomp-dev@inria.fr?subject=Ma
 </ul>
 </div>
 </div>
-<div id="outline-container-org729eaca" class="outline-2">
-<h2 id="org729eaca">Authors and contributors</h2>
-<div class="outline-text-2" id="text-org729eaca">
+
+<div id="outline-container-org0ef4032" class="outline-2">
+<h2 id="org0ef4032">Authors and contributors</h2>
+<div class="outline-text-2" id="text-org0ef4032">
 <p>
 The Mathematical Components library and the Ssreflect proof language
 were initially developed by the Mathematical Components team at the

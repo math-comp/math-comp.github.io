@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<title>mathcomp.boot.ssreflect</title>
+</head>
+
+<body>
+
+<div id="page">
+
+<div id="header">
+</div>
+
+<div id="main">
+
+<h1 class="libtitle">Library mathcomp.boot.ssreflect</h1>
+
+<div class="code">
+<span class="comment">(*&nbsp;(c)&nbsp;Copyright&nbsp;2006-2016&nbsp;Microsoft&nbsp;Corporation&nbsp;and&nbsp;Inria.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/>
+&nbsp;Distributed&nbsp;under&nbsp;the&nbsp;terms&nbsp;of&nbsp;CeCILL-B.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*)</span><br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">Corelib</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Export</span> <a class="idref" href="http://coq.inria.fr/doc/V9.0.0/stdlib//Corelib.ssr.ssreflect.html#"><span class="id" title="library">ssreflect</span></a>.<br/>
+
+<br/>
+#[<span class="id" title="var">deprecated</span>(<span class="id" title="var">since</span>="mathcomp 2.3.0", <span class="id" title="var">note</span>="Use `Arguments def : simpl never` instead (should work fine since Coq 8.18).")]<br/>
+<span class="id" title="keyword">Notation</span> <a id="nosimpl" class="idref" href="#nosimpl"><span class="id" title="abbreviation">nosimpl</span></a> <span class="id" title="var">t</span> := (<a class="idref" href="http://coq.inria.fr/doc/V9.0.0/stdlib//Corelib.ssr.ssreflect.html#nosimpl"><span class="id" title="abbreviation">nosimpl</span></a> <span class="id" title="var">t</span>).<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+
+  Additions to be ported to Corelib ssreflect:
+      hide t == t, but hide t displays as &lt;hidden&gt;
+     hideT t == t, but both hideT t and its inferred type display as &lt;hidden&gt;
+  New ltac views:
+      =&gt; /# [#hide# ]#     := insert hide in the type of the top assumption (and
+                        its body if it is a 'let'), so it displays as &lt;hidden&gt;.
+      =&gt; /# [#let# ]#      := if the type (or body) of the top assumption is a
+                        'let', make that 'let' the top assumption, e.g.,
+                      turn (let n := 1 in m &lt; half n) -&gt; G
+                      into let n := 1 in m &lt; half n -&gt; G
+      =&gt; /# [#fix# ]#      := names a 'fix' expression f in the goal G(f), by
+                        replacing the goal with let fx := hide f in G(fx),
+                        where fx is a fresh variable, and hide f displays
+                        as &lt;hidden&gt;.
+      =&gt; /# [#cofix# ]#    := similarly, names a 'cofix' expression in the goal.
+
+<a id="lab69"></a><h1 class="section"> </h1>
+
+</div>
+<div class="code">
+<span class="id" title="keyword">Definition</span> <a id="hide" class="idref" href="#hide"><span class="id" title="definition">hide</span></a> {<a id="T:1" class="idref" href="#T:1"><span class="id" title="binder">T</span></a>} <a id="t:2" class="idref" href="#t:2"><span class="id" title="binder">t</span></a> : <a class="idref" href="mathcomp.boot.ssreflect.html#T:1"><span class="id" title="variable">T</span></a> := <a class="idref" href="mathcomp.boot.ssreflect.html#t:2"><span class="id" title="variable">t</span></a>.<br/>
+<span class="id" title="keyword">Notation</span> <a id="hideT" class="idref" href="#hideT"><span class="id" title="abbreviation">hideT</span></a> := (@<a class="idref" href="mathcomp.boot.ssreflect.html#hide"><span class="id" title="definition">hide</span></a> (<a class="idref" href="mathcomp.boot.ssreflect.html#hide"><span class="id" title="definition">hide</span></a> <span class="id" title="var">_</span>)) (<span class="id" title="var">only</span> <span class="id" title="var">parsing</span>).<br/>
+<span class="id" title="keyword">Notation</span> <a id="::ssr_scope:'&lt;hidden'_'&gt;'" class="idref" href="#::ssr_scope:'&lt;hidden'_'&gt;'"><span class="id" title="notation">&quot;</span></a>&lt;hidden &gt;" := (<a class="idref" href="mathcomp.boot.ssreflect.html#hide"><span class="id" title="definition">hide</span></a> <span class="id" title="var">_</span>)<br/>
+&nbsp;&nbsp;(<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 0, <span class="id" title="var">format</span> "&lt;hidden &gt;", <span class="id" title="var">only</span> <span class="id" title="var">printing</span>) : <span class="id" title="var">ssr_scope</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Notation</span> <a id="02129fe15e5008215b7b078028606095" class="idref" href="#02129fe15e5008215b7b078028606095"><span class="id" title="notation">&quot;</span></a>'[' 'hide' ']'" := (<span class="id" title="keyword">ltac</span>:(<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">move</span>; <span class="id" title="keyword">lazymatch</span> <span class="id" title="keyword">goal</span> <span class="id" title="keyword">with</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;| |- <span class="id" title="keyword">∀</span> <a id="x:3" class="idref" href="#x:3"><span class="id" title="binder"><span id="x:4" class="id">x</span></span></a> : ?<span class="id" title="var">A</span>, ?<span class="id" title="var">G</span> ⇒      <span class="id" title="tactic">change</span> (<span class="id" title="keyword">∀</span> <a id="x:8" class="idref" href="#x:8"><span class="id" title="binder">x</span></a> : <a class="idref" href="mathcomp.boot.ssreflect.html#hide"><span class="id" title="definition">hide</span></a> <span class="id" title="var">A</span>, <span class="id" title="var">G</span>)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;| |- <span class="id" title="keyword">let</span> <a id="x:5" class="idref" href="#x:5"><span class="id" title="binder"><span id="x:6" class="id">x</span></span></a> : ?<span class="id" title="var">A</span> := ?<span class="id" title="var">a</span> <span class="id" title="tactic">in</span> ?<span class="id" title="var">G</span> ⇒ <span class="id" title="tactic">change</span> (<span class="id" title="keyword">let</span> <a id="x:7" class="idref" href="#x:7"><span class="id" title="binder">x</span></a> : <a class="idref" href="mathcomp.boot.ssreflect.html#hide"><span class="id" title="definition">hide</span></a> <span class="id" title="var">A</span> := @<a class="idref" href="mathcomp.boot.ssreflect.html#hide"><span class="id" title="definition">hide</span></a> <span class="id" title="var">A</span> <span class="id" title="var">a</span> <span class="id" title="tactic">in</span> <span class="id" title="var">G</span>)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;| <span class="id" title="var">_</span> ⇒ <span class="id" title="tactic">fail</span> "[hide] : no top assumption"<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">end</span>)) (<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 0, <span class="id" title="var">only</span> <span class="id" title="var">parsing</span>) : <span class="id" title="var">ssripat_scope</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Notation</span> <a id="fb7f09d608ad68f82ab9c9bf39c38f57" class="idref" href="#fb7f09d608ad68f82ab9c9bf39c38f57"><span class="id" title="notation">&quot;</span></a>'[' 'let' ']'" := (<span class="id" title="keyword">ltac</span>:(<br/>
+&nbsp;&nbsp;<span class="id" title="tactic">move</span>; <span class="id" title="keyword">lazymatch</span> <span class="id" title="keyword">goal</span> <span class="id" title="keyword">with</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;| |- <span class="id" title="keyword">∀</span> (<a id="H:10" class="idref" href="#H:10"><span class="id" title="binder"><span id="H:12" class="id">H</span></span></a> : <span class="id" title="keyword">let</span> <a id="x:9" class="idref" href="#x:9"><span class="id" title="binder"><span id="x:11" class="id">x</span></span></a> : ?<span class="id" title="var">A</span> := ?<span class="id" title="var">a</span> <span class="id" title="tactic">in</span> ?<span class="id" title="var">T</span>), ?<span class="id" title="var">G</span> ⇒<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">change</span> (<span class="id" title="keyword">let</span> <a id="x:25" class="idref" href="#x:25"><span class="id" title="binder">x</span></a> : <span class="id" title="var">A</span> := <span class="id" title="var">a</span> <span class="id" title="tactic">in</span> <span class="id" title="keyword">∀</span> <a id="H:26" class="idref" href="#H:26"><span class="id" title="binder">H</span></a> : <span class="id" title="var">T</span>, <span class="id" title="var">G</span>)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;| |- <span class="id" title="keyword">let</span> <a id="H:14" class="idref" href="#H:14"><span class="id" title="binder"><span id="H:16" class="id">H</span></span></a> : (<span class="id" title="keyword">let</span> <a id="x:13" class="idref" href="#x:13"><span class="id" title="binder"><span id="x:15" class="id">x</span></span></a> : ?<span class="id" title="var">A</span> := ?<span class="id" title="var">a</span> <span class="id" title="tactic">in</span> ?<span class="id" title="var">T</span>) := ?<span class="id" title="var">t</span> <span class="id" title="tactic">in</span> ?<span class="id" title="var">G</span> ⇒<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">change</span> (<span class="id" title="keyword">let</span> <a id="x:23" class="idref" href="#x:23"><span class="id" title="binder">x</span></a> : <span class="id" title="var">A</span> := <span class="id" title="var">a</span> <span class="id" title="tactic">in</span> <span class="id" title="keyword">let</span> <a id="H:24" class="idref" href="#H:24"><span class="id" title="binder">H</span></a> : <span class="id" title="var">T</span> := <span class="id" title="var">t</span> <span class="id" title="tactic">in</span> <span class="id" title="var">G</span>)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;| |- <span class="id" title="keyword">let</span> <a id="H:18" class="idref" href="#H:18"><span class="id" title="binder"><span id="H:20" class="id">H</span></span></a> : ?<span class="id" title="var">T</span> := (<span class="id" title="keyword">let</span> <a id="x:17" class="idref" href="#x:17"><span class="id" title="binder"><span id="x:19" class="id">x</span></span></a> : ?<span class="id" title="var">A</span> := ?<span class="id" title="var">a</span> <span class="id" title="tactic">in</span> ?<span class="id" title="var">t</span>) <span class="id" title="tactic">in</span> ?<span class="id" title="var">G</span> ⇒<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="tactic">change</span> (<span class="id" title="keyword">let</span> <a id="x:21" class="idref" href="#x:21"><span class="id" title="binder">x</span></a> : <span class="id" title="var">A</span> := <span class="id" title="var">a</span> <span class="id" title="tactic">in</span> <span class="id" title="keyword">let</span> <a id="H:22" class="idref" href="#H:22"><span class="id" title="binder">H</span></a> : <span class="id" title="var">T</span> := <span class="id" title="var">t</span> <span class="id" title="tactic">in</span> <span class="id" title="var">G</span>)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;| <span class="id" title="var">_</span> ⇒ <span class="id" title="tactic">fail</span> "[let]: top assumption type or body is not a 'let'"<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">end</span>)) (<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 0, <span class="id" title="var">only</span> <span class="id" title="var">parsing</span>) : <span class="id" title="var">ssripat_scope</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Notation</span> <a id="fb3447774a2ddbccb49b1b3e6f6a0936" class="idref" href="#fb3447774a2ddbccb49b1b3e6f6a0936"><span class="id" title="notation">&quot;</span></a>'[' 'fix' ']'" := (<span class="id" title="keyword">ltac</span>:(<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">match</span> <span class="id" title="keyword">goal</span> <span class="id" title="keyword">with</span><br/>
+&nbsp;&nbsp;| |- <span class="id" title="keyword">context</span> [?<span class="id" title="var">t</span>] ⇒<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">is_fix</span> <span class="id" title="var">t</span>; <span class="id" title="keyword">let</span> <span class="id" title="var">f</span> := <span class="id" title="tactic">fresh</span> "fix" <span class="id" title="tactic">in</span> <span class="id" title="tactic">set</span> <span class="id" title="var">f</span> := <span class="id" title="var">t</span>; <span class="id" title="tactic">move</span>: @<span class="id" title="var">f</span> ⇒ /[<span class="id" title="var">hide</span>]<br/>
+&nbsp;&nbsp;| <span class="id" title="var">_</span> ⇒ <span class="id" title="tactic">fail</span> 1 "[fix]: no visible 'fix' in goal"<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">end</span>)) (<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 0, <span class="id" title="var">only</span> <span class="id" title="var">parsing</span>) : <span class="id" title="var">ssripat_scope</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Notation</span> <a id="227d194a7ba60adac4af04c8d760a322" class="idref" href="#227d194a7ba60adac4af04c8d760a322"><span class="id" title="notation">&quot;</span></a>'[' 'cofix' ']'" := (<span class="id" title="keyword">ltac</span>:(<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">match</span> <span class="id" title="keyword">goal</span> <span class="id" title="keyword">with</span><br/>
+&nbsp;&nbsp;| |- <span class="id" title="keyword">context</span> [?<span class="id" title="var">t</span>] ⇒<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id" title="var">is_cofix</span> <span class="id" title="var">t</span>; <span class="id" title="keyword">let</span> <span class="id" title="var">z</span> := <span class="id" title="tactic">fresh</span> "cofix" <span class="id" title="tactic">in</span> <span class="id" title="tactic">set</span> <span class="id" title="var">z</span> := <span class="id" title="var">t</span>; <span class="id" title="tactic">move</span>: @<span class="id" title="var">z</span> ⇒ /[<span class="id" title="var">hide</span>]<br/>
+&nbsp;&nbsp;| <span class="id" title="var">_</span> ⇒ <span class="id" title="tactic">fail</span> 1 "[cofix]: no visible 'cofix' in goal"<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">end</span>)) (<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 0, <span class="id" title="var">only</span> <span class="id" title="var">parsing</span>) : <span class="id" title="var">ssripat_scope</span>.<br/>
+
+<br/>
+</div>
+</div>
+
+<div id="footer">
+<hr/><a href="index.html">Index</a><hr/>This page has been generated by <a href="http://coq.inria.fr/">coqdoc</a>
+</div>
+
+</div>
+
+</body>
+</html>
