@@ -3,14 +3,14 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-10-18 Wed 09:01 -->
+<!-- 2025-11-10 Mon 10:45 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Mathematical Components: Documentation</title>
-<meta name="generator" content="Org mode" />
 <meta name="author" content="Reynald Affeldt" />
+<meta name="generator" content="Org Mode" />
 <style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
+  #content { max-width: 60em; margin: auto; }
   .title  { text-align: center;
              margin-bottom: .2em; }
   .subtitle { text-align: center;
@@ -31,8 +31,9 @@
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
   pre {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
     padding: 8pt;
     font-family: monospace;
     overflow: auto;
@@ -40,22 +41,22 @@
   }
   pre.src {
     position: relative;
-    overflow: visible;
-    padding-top: 1.2em;
+    overflow: auto;
   }
   pre.src:before {
     display: none;
     position: absolute;
-    background-color: white;
-    top: -10px;
-    right: 10px;
+    top: -8px;
+    right: 12px;
     padding: 3px;
-    border: 1px solid black;
+    color: #555;
+    background-color: #f2f2f299;
   }
-  pre.src:hover:before { display: inline;}
+  pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
   pre.src-C:before { content: 'C'; }
   /* pre.src-C++ doesn't work in CSS */
   pre.src-clojure:before { content: 'Clojure'; }
@@ -190,8 +191,7 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { width: 90%; }
-  /*]]>*/-->
+  .org-svg { }
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <style type="text/css"> body {font-family: Arial, Helvetica; margin-left: 5em; font-size: large;} </style>
@@ -199,60 +199,13 @@
 <style type="text/css"> h2 {margin-left: 0em; padding: 0px; color: #580909} </style>
 <style type="text/css"> h3 {margin-left: 1em; padding: 0px; color: #C05001;} </style>
 <style type="text/css"> body { max-width: 1100px; width: 100% - 30px; margin-left: 30px; }</style>
-<script type="text/javascript">
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
-
-Copyright (C) 2012-2020 Free Software Foundation, Inc.
-
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
-<!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
-</script>
 </head>
 <body>
-<div id="content">
+<div id="content" class="content">
 <h1 class="title">Mathematical Components: Documentation</h1>
-
-<div id="outline-container-orgbcf2284" class="outline-2">
-<h2 id="orgbcf2284">Books</h2>
-<div class="outline-text-2" id="text-orgbcf2284">
+<div id="outline-container-org5d08a0f" class="outline-2">
+<h2 id="org5d08a0f">&#128218; Books</h2>
+<div class="outline-text-2" id="text-org5d08a0f">
 <ul class="org-ul">
 <li><a href="https://math-comp.github.io/mcb/">Mathematical Components</a> by Assia Mahboubi and Enrico Tassi</li>
 <li><a href="https://www.morikita.co.jp/books/book/3287">Formal Proof using Coq/SSReflect/MathComp: Start Formalization of Mathematics with Free Software</a> by Manabu Hagiwara and Reynald Affeldt (in Japanese, 日本語)</li>
@@ -260,34 +213,50 @@ for the JavaScript code in this tag.
 </ul>
 </div>
 </div>
-
-<div id="outline-container-orge23998f" class="outline-2">
-<h2 id="orge23998f">Introductions</h2>
-<div class="outline-text-2" id="text-orge23998f">
+<div id="outline-container-org64cd052" class="outline-2">
+<h2 id="org64cd052"> &#128210; SSReflect reference manual</h2>
+<div class="outline-text-2" id="text-org64cd052">
 <ul class="org-ul">
-<li><a href="https://github.com/math-comp/math-comp/wiki/tutorial-itp2016">ITP 2016 tutorial: Mathematical Components, an Introduction</a> by Yves Bertot, Cyril Cohen, Assia Mahboubi, Enrico Tassi and Laurent Théry.</li>
-<li><a href="http://videos.rennes.inria.fr/Conference-ITP/indexAssiaMahboubiEnricoTassi.html">ITP 2013 tutorial: The Mathematical Components library</a> by Assia Mahboubi and Enrico Tassi</li>
-<li><a href="https://www.jstage.jst.go.jp/article/jssst/34/2/34_2_64/_pdf">Introduction to Mathematical Components</a> by Reynald Affeldt (in Japanese, 日本語)</li>
-<li><a href="http://jfr.unibo.it/article/view/1979">An introduction to small scale reflection in Coq</a> by Georges Gonthier and Assia Mahboubi</li>
+<li><a href="https://hal.inria.fr/inria-00258384/en">A Small Scale Reflection Extension for the Coq system</a> by Georges Gonthier, Assia Mahboubi, and Enrico Tassi
+<ul class="org-ul">
+<li>the same <a href="https://coq.inria.fr/distrib/current/refman/proof-engine/ssreflect-proof-language.html">htmlized as a part</a> of Coq reference manual</li>
+</ul></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org11df631" class="outline-2">
-<h2 id="org11df631">Lectures</h2>
-<div class="outline-text-2" id="text-org11df631">
+<div id="outline-container-orge51eac1" class="outline-2">
+<h2 id="orge51eac1"> &#x1F3EB; Lectures</h2>
+<div class="outline-text-2" id="text-orge51eac1">
+</div>
+<div id="outline-container-org2df32d7" class="outline-3">
+<h3 id="org2df32d7">Introductions</h3>
+<div class="outline-text-3" id="text-org2df32d7">
+<ul class="org-ul">
+<li>&#127909; <a href="https://www.youtube.com/watch?app=desktop&amp;v=taqk6tty8wk">Coq/Rocq tutorial: Ssreflect tactics and the MathComp library</a> by Marie Kerjean and Cyril Cohen, 2024-03-26</li>
+<li><a href="https://github.com/math-comp/math-comp/wiki/tutorial-itp2016">ITP 2016 tutorial: Mathematical Components, an Introduction</a> by Yves Bertot, Cyril Cohen, Assia Mahboubi, Enrico Tassi, and Laurent Théry.</li>
+<li><a href="https://www.jstage.jst.go.jp/article/jssst/34/2/34_2_64/_pdf">Introduction to Mathematical Components</a> by Reynald Affeldt (in Japanese, 日本語), 2016</li>
+<li><a href="http://videos.rennes.inria.fr/Conference-ITP/indexAssiaMahboubiEnricoTassi.html">ITP 2013 tutorial: The Mathematical Components library</a> by Assia Mahboubi and Enrico Tassi</li>
+<li><a href="http://jfr.unibo.it/article/view/1979">An introduction to small scale reflection in Coq</a> by Georges Gonthier and Assia Mahboubi, 2010</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7a30adf" class="outline-3">
+<h3 id="org7a30adf">Class</h3>
+<div class="outline-text-3" id="text-org7a30adf">
 <ul class="org-ul">
 <li><a href="https://mathcomp-schools.gitlabpages.inria.fr/2022-12-school/school">MathComp School 2022</a> by Yves Bertot, Cyril Cohen, Laurence Rideau, Kazuhiko Sakaguchi, Enrico Tassi, Laurent Théry</li>
 <li><a href="https://team.inria.fr/marelle/en/coq-winter-school-2018-2019-ssreflect-mathcomp/">Coq Winter School 2018-2019 (SSReflect &amp; MathComp)</a> by Yves Bertot, Cyril Cohen, Laurence Rideau, Enrico Tassi, Laurent Théry</li>
 <li><a href="https://team.inria.fr/marelle/en/coq-winter-school-2017-2018-ssreflect-mathcomp/">Coq Winter School 2017-2018 (SSReflect &amp; MathComp)</a> by Yves Bertot, Cyril Cohen, Laurence Rideau, Enrico Tassi, Laurent Théry</li>
 <li><a href="https://team.inria.fr/marelle/en/advanced-coq-winter-school-2016/">Advanced Coq Winter School 2016 for master students</a> by Cyril Cohen, Laurence Rideau, Enrico Tassi, Laurent Théry</li>
-<li><a href="https://staff.aist.go.jp/reynald.affeldt/ssrcoq/">Coq/SSReflect/MathComp Tutorial</a> by Reynald Affeldt (in Japanese, 日本語)</li>
+<li><a href="https://staff.aist.go.jp/reynald.affeldt/ssrcoq/">Coq/SSReflect/MathComp Tutorial</a> by Reynald Affeldt (in Japanese, 日本語), 2014-2015</li>
 <li><a href="http://www-sop.inria.fr/manifestations/MapSpringSchool/">International Spring School on Formalization of Mathematics (MAP 2012)</a> by Yves Bertot, Assia Mahboubi, Laurence Rideau, Pierre-Yves Strub, Enrico Tassi, Laurent Théry</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org3b59844" class="outline-2">
-<h2 id="org3b59844">Cheatsheets</h2>
-<div class="outline-text-2" id="text-org3b59844">
+</div>
+<div id="outline-container-org44c46a8" class="outline-2">
+<h2 id="org44c46a8">&#128221; Cheatsheets</h2>
+<div class="outline-text-2" id="text-org44c46a8">
 <ul class="org-ul">
 <li><a href="http://www-sop.inria.fr/marelle/math-comp-tut-16/MathCompWS/basic-cheatsheet.pdf">Basic cheat sheet</a></li>
 <li><a href="http://www-sop.inria.fr/marelle/math-comp-tut-16/MathCompWS/cheatsheet.pdf">Advanced cheat sheet</a></li>
@@ -299,22 +268,9 @@ for the JavaScript code in this tag.
 </ul>
 </div>
 </div>
-
-<div id="outline-container-org16e3e60" class="outline-2">
-<h2 id="org16e3e60">SSReflect Reference manual</h2>
-<div class="outline-text-2" id="text-org16e3e60">
-<ul class="org-ul">
-<li><a href="https://hal.inria.fr/inria-00258384/en">A Small Scale Reflection Extension for the Coq system</a> by Georges Gonthier, Assia Mahboubi, and Enrico Tassi
-<ul class="org-ul">
-<li>the same <a href="https://coq.inria.fr/distrib/current/refman/proof-engine/ssreflect-proof-language.html">htmlized as a part</a> of Coq reference manual</li>
-</ul></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-org89fa9e1" class="outline-2">
-<h2 id="org89fa9e1">Conference videos</h2>
-<div class="outline-text-2" id="text-org89fa9e1">
+<div id="outline-container-org731e000" class="outline-2">
+<h2 id="org731e000">&#127909; Conference videos</h2>
+<div class="outline-text-2" id="text-org731e000">
 <p>
 Georges Gonthier about the Mathematical Components project:
 </p>
@@ -325,7 +281,7 @@ Georges Gonthier about the Mathematical Components project:
 <li><a href="https://www.newton.ac.uk/seminar/17967/">Scaffolds and frames: the MathComp algebra formal library</a>, Isaac Newton Institute, 2017-07-13</li>
 <li><a href="https://www.microsoft.com/en-us/research/video/proof-engineering-from-the-four-colour-to-the-odd-order-theorem/">Proof Engineering, from the Four Colour to the Odd Order Theorem</a>, Microsoft, 2016-07-16</li>
 <li><a href="https://www.youtube.com/watch?v=frz6MFt36Gc">Digitizing the Group Theory of the Odd Order Theorem</a>, Institut Henri Poincaré, 2014-04-22</li>
-<li><a href="https://www.youtube.com/watch?v=yBXGdJw1xBI">the four colour theorem</a>, RU Computer Science, 2013-01-28</li>
+<li><a href="https://www.youtube.com/watch?v=yBXGdJw1xBI">The four colour theorem</a>, RU Computer Science, 2013-01-28</li>
 <li><a href="https://www.youtube.com/watch?v=TczaUx0B92M">Mechanizing the Odd Order Theorem: Local Analysis</a>, Institute for Advanced Study, 2011-01-20</li>
 </ul>
 </div>
