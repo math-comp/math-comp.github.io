@@ -19,26 +19,22 @@
 Welcome to Mathematical Components' web-page! 
 
 Mathematical Components are libraries of formalized mathematics
- developed using the [[http://coq.inria.fr][Coq]] proof assistant. This project finds its roots
- in the formal proof of the Four Color Theorem. It has been used for
- large scale formalization projects, including a formal proof of the
- Odd Order 
-(Feit-Thompson) Theorem.
+developed using the [[https://rocq-prover.org/][Rocq]] prover. This project finds its roots
+in the [[https://www2.tcs.ifi.lmu.de/~abel/lehre/WS07-08/CAFR/4colproof.pdf][formal proof of the Four Color Theorem]]. It has been used for
+large scale formalization projects, including a formal proof of the
+[[https://inria.hal.science/hal-00816699/document][Odd Order (Feit-Thompson) Theorem]].
 
-The libraries are written using the Ssreflect proof language, now part of
-the standard distribution of the Coq proof assistant.
+The libraries are written using the [[https://rocq-prover.org/doc/V9.1.0/refman/proof-engine/ssreflect-proof-language.html][SSReflect proof language]], now part of
+the standard distribution of the Rocq prover.
 
 This is an open source project, licensed under the CeCILL-B free
 software license agreement.
 
 * Get the library
 
-- The last stable releases of the Mathematical Components library
+- [[file:installation.html][Installation instructions]]
+- The source code of the Mathematical Components library
   can be [[https://github.com/math-comp/math-comp/releases][downloaded from github]].
-- [[file:installation.html][Installation instructions]].
-- Older versions of the Mathematical Components library are also available
-  ([[https://github.com/math-comp/math-comp/releases/tag/archive][historical archives]] (2008-2014), [[https://github.com/math-comp/mathcomp-history-before-github][pre-github archive]])
-
 
 * Documentation
 
@@ -50,55 +46,42 @@ software license agreement.
 
 #+END_EXPORT
 
-- The source file of each library features a documentation header
-  which describes the concepts and notations introduced in that library.
+- A [[https://math-comp.github.io/mcb/][book]] that introduces the techniques for writing
+  algorithms and proofs and describes the design ideas of the
+  Mathematical Components library.
 
-- The library graph can be explored interactively and the coqdoc
-  presentation of the source files can be browsed online:
+- The library can be explored interactively and an HTML rendering of
+  the source code can be browsed online:
   + latest versions:
     * Version 2.5.0 (2025-10-13): [[file:htmldoc_2_5_0/libgraph.html][library graph]], [[file:htmldoc_2_5_0/index.html][coqdoc presentation]]
     * Version 2.4.0 (2025-04-14): [[file:htmldoc_2_4_0/libgraph.html][library graph]], [[file:htmldoc_2_4_0/index.html][coqdoc presentation]]
     * Version 2.3.0 (2024-11-28): [[file:htmldoc_2_3_0/libgraph.html][library graph]], [[file:htmldoc_2_3_0/index.html][coqdoc presentation]]
-  + older versions:
     * Version 2.2.0 (2024-01-17): [[file:htmldoc_2_2_0/libgraph.html][library graph]], [[file:htmldoc_2_2_0/index.html][coqdoc presentation]]
-    * Version 2.1.0 (2023-10-24): [[file:htmldoc_2_1_0/libgraph.html][library graph]], [[file:htmldoc_2_1_0/index.html][coqdoc presentation]]
-    * Version 2.0.0 (2023-05-10): [[file:htmldoc_2_0_0/libgraph.html][library graph]], [[file:htmldoc_2_0_0/index.html][coqdoc presentation]]
-    * Version 1.19.0 (2024-01-15): [[file:htmldoc_1_19_0/libgraph.html][library graph]], [[file:htmldoc_1_19_0/index.html][coqdoc presentation]]
-    * Version 1.18.0 (2023-11-01): [[file:htmldoc_1_18_0/libgraph.html][library graph]], [[file:htmldoc_1_18_0/index.html][coqdoc presentation]]
-    * Version 1.17.0 (2023-05-09): [[file:htmldoc_1_17_0/libgraph.html][library graph]], [[file:htmldoc_1_17_0/index.html][coqdoc presentation]]
-    * Version 1.16.0 (2023-02-01): [[file:htmldoc_1_16_0/libgraph.html][library graph]], [[file:htmldoc_1_16_0/index.html][coqdoc presentation]]
-    * Version 2.0+alpha1 (2022-12-05): [[file:htmldoc_2_0_alpha1/libgraph.html][library graph]], [[file:htmldoc_2_0_alpha1/index.html][coqdoc presentation]]
-    * Version 1.15.0 (2022-06-30): [[file:htmldoc_1_15_0/libgraph.html][library graph]], [[file:htmldoc_1_15_0/index.html][coqdoc presentation]]
-    * Version 1.14.0 (2022-01-19): [[file:htmldoc_1_14_0/libgraph.html][library graph]], [[file:htmldoc_1_14_0/index.html][coqdoc presentation]]
-    * Version 1.13.0 (2021-10-28): [[file:htmldoc_1_13_0/libgraph.html][library graph]], [[file:htmldoc_1_13_0/index.html][coqdoc presentation]]
-    * Version 1.12.0 (2020-11-26): [[file:htmldoc_1_12_0/libgraph.html][library graph]], [[file:htmldoc_1_12_0/index.html][coqdoc presentation]]
-    * Version 1.11.0 (2020-06-09): [[file:htmldoc_1_11_0/libgraph.html][library graph]], [[file:htmldoc_1_11_0/index.html][coqdoc presentation]]
-    * Version 1.10.0 (2019-11-29): [[file:htmldoc_1_10_0/libgraph.html][library graph]], [[file:htmldoc_1_10_0/index.html][coqdoc presentation]]
+  + See [[file:history.html][this page]] for older versions.
 
-- The Ssreflect language comes with a dedicated reference manual,
-  as a [[https://coq.inria.fr/distrib/current/refman/proof-engine/ssreflect-proof-language.html][chapter]] of Coq's reference manual.
+- The SSReflect proof language comes with a dedicated reference
+  manual, as a [[https://rocq-prover.org/doc/V9.1.0/refman/proof-engine/ssreflect-proof-language.html][chapter]] of Rocq's reference manual.
 
-- A [[https://math-comp.github.io/mcb/][book]] that introduces the techniques for writing
-  algorithms and proofs and describes the design ideas of the
-  library.
+- Each file of the source code of the Mathematical Components library
+  features a documentation header which describes the concepts and
+  notations introduced in that file.
 
 ** More material
 
-- [[file:documentation.html][Books, lectures, videos, etc.]]
-- [[file:papers.html][Research papers]] related to Mathematical Components. Your paper or
-  thesis is not in the list? Send [[mailto:mathcomp-dev@inria.fr?subject=MathComp related paper][us]] a message to correct this.
-
+- A selection of [[file:documentation.html][Books, lectures, videos, etc.]]
+- [[file:papers.html][Research papers]] using the Mathematical Components library.
+  Send [[mailto:mathcomp-dev@inria.fr?subject=MathComp related paper][us]] a message or [[https://github.com/math-comp/math-comp.github.io][issue/PR on github]] to add any paper or thesis not in this list!
  
 * Help and contact
 
-- Chat with us on [[https://coq.zulipchat.com/][Coq's Zulip]]!
+- Chat with us on [[https://rocq-prover.zulipchat.com][Rocq's Zulip]]! (in particular via the ~math-comp~ channels)
 - Discuss with us on Coq's [[https://coq.discourse.group/][Discourse]] forum!
-- [[mailto:sympa@inria.fr?subject=SUBSCRIBE%20ssreflect][Subscribe]] to the Ssreflect mailing list.
+- [[mailto:sympa@inria.fr?subject=SUBSCRIBE%20ssreflect][Subscribe]] to the SSReflect mailing list (low volume).
   + Browse the [[https://sympa.inria.fr/sympa/arc/ssreflect][archives]] or consult the general [[https://sympa.inria.fr/sympa/info/ssreflect][information page]] of the mailing list.
 
 * Authors and contributors
 
-The Mathematical Components library and the Ssreflect proof language
+The Mathematical Components library and the SSReflect proof language
 were initially developed by the Mathematical Components team at the
 [[https://www.microsoft.com/en-us/research/collaboration/inria-joint-centre/][Inria-Microsoft Research Joint Center]]. Today, the list of members of
 the Mathematical Components organization is visible [[https://github.com/orgs/math-comp/people][here]].
