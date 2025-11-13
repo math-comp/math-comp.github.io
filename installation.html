@@ -3,14 +3,14 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-06-21 Fri 16:11 -->
+<!-- 2025-11-13 Thu 11:07 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Mathematical Components: Installation</title>
-<meta name="generator" content="Org mode" />
 <meta name="author" content="Reynald Affeldt" />
+<meta name="generator" content="Org Mode" />
 <style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
+  #content { max-width: 60em; margin: auto; }
   .title  { text-align: center;
              margin-bottom: .2em; }
   .subtitle { text-align: center;
@@ -31,8 +31,9 @@
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
   pre {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
     padding: 8pt;
     font-family: monospace;
     overflow: auto;
@@ -40,22 +41,22 @@
   }
   pre.src {
     position: relative;
-    overflow: visible;
-    padding-top: 1.2em;
+    overflow: auto;
   }
   pre.src:before {
     display: none;
     position: absolute;
-    background-color: white;
-    top: -10px;
-    right: 10px;
+    top: -8px;
+    right: 12px;
     padding: 3px;
-    border: 1px solid black;
+    color: #555;
+    background-color: #f2f2f299;
   }
-  pre.src:hover:before { display: inline;}
+  pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
   pre.src-C:before { content: 'C'; }
   /* pre.src-C++ doesn't work in CSS */
   pre.src-clojure:before { content: 'Clojure'; }
@@ -190,8 +191,7 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { width: 90%; }
-  /*]]>*/-->
+  .org-svg { }
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <style type="text/css"> body {font-family: Arial, Helvetica; margin-left: 5em; font-size: large;} </style>
@@ -199,55 +199,9 @@
 <style type="text/css"> h2 {margin-left: 0em; padding: 0px; color: #580909} </style>
 <style type="text/css"> h3 {margin-left: 1em; padding: 0px; color: #C05001;} </style>
 <style type="text/css"> body { max-width: 1100px; width: 100% - 30px; margin-left: 30px; }</style>
-<script type="text/javascript">
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
-
-Copyright (C) 2012-2020 Free Software Foundation, Inc.
-
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
-<!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
-</script>
 </head>
 <body>
-<div id="content">
+<div id="content" class="content">
 <h1 class="title">Mathematical Components: Installation</h1>
 <p>
 The Mathematical Components libraries are provided as separate packages:
@@ -262,31 +216,31 @@ of the Four Color Theorem and of the Odd Order Theorem.</li>
 
 <p>
 The installation of Mathematical Components is best done using <a href="https://opam.ocaml.org/">opam</a>, a
-package manager for <a href="https://ocaml.org/">OCaml</a>, the programming language with which <a href="https://coq.inria.fr/">Coq</a> is
-implemented.
+package manager for <a href="https://ocaml.org/">OCaml</a>, the programming language with which the
+<a href="https://rocq-prover.org/">Rocq</a> prover is implemented.
 </p>
 
 <p>
-The relevant packages can be found in the <a href="https://coq.inria.fr/opam/www/">Coq package index</a>;
-their name is usually prefixed with <code>coq-mathcomp-</code>.
+The relevant packages can be found in the <a href="https://rocq-prover.org/packages">Rocq package index</a>;
+their name is usually prefixed with <code>rocq-mathcomp-</code> or <code>coq-mathcomp-</code>.
 </p>
-
-<div id="outline-container-org170a151" class="outline-2">
-<h2 id="org170a151">Install the Base Mathematical Components Libraries</h2>
-<div class="outline-text-2" id="text-org170a151">
+<div id="outline-container-org3ac722b" class="outline-2">
+<h2 id="org3ac722b">Install the Base Mathematical Components Libraries</h2>
+<div class="outline-text-2" id="text-org3ac722b">
 </div>
-<div id="outline-container-org27c9923" class="outline-3">
-<h3 id="org27c9923">Installation using the <a href="https://opam.ocaml.org/">opam</a> package manager</h3>
-<div class="outline-text-3" id="text-org27c9923">
+<div id="outline-container-org550b021" class="outline-3">
+<h3 id="org550b021">Installation using the <a href="https://opam.ocaml.org/">opam</a> package manager</h3>
+<div class="outline-text-3" id="text-org550b021">
 <ul class="org-ul">
 <li>Using opam, the installation of the base Mathematical Components
 library is as simple as this:</li>
 </ul>
 
-<pre class="example">
-opam repo add coq-released https://coq.inria.fr/opam/released
+<div class="org-src-container">
+<pre class="src src-nil">opam repo add coq-released https://coq.inria.fr/opam/released
 opam install coq-mathcomp-ssreflect
 </pre>
+</div>
 
 <ul class="org-ul">
 <li>Other base mathematical components libraries can then be installed
@@ -301,20 +255,18 @@ similarly using <code>opam install</code>:
 </ul>
 </div>
 </div>
-
-<div id="outline-container-org4fadafc" class="outline-3">
-<h3 id="org4fadafc">Installation using the <a href="https://github.com/coq/platform">Coq platform</a></h3>
-<div class="outline-text-3" id="text-org4fadafc">
+<div id="outline-container-orge2a9eef" class="outline-3">
+<h3 id="orge2a9eef">Installation using the <a href="https://github.com/rocq-prover/platform">Coq platform</a></h3>
+<div class="outline-text-3" id="text-orge2a9eef">
 <ul class="org-ul">
-<li>The <a href="https://github.com/coq/platform">Coq platform</a> is a distribution of <a href="https://coq.inria.fr/">Coq</a> together with a selection of libraries
+<li>The <a href="https://github.com/coq/platform">Coq platform</a> is a distribution of <a href="https://rocq-prover.org/">Rocq</a> together with a selection of libraries
 including most Mathematical Components libraries. It supports Linux, macOS, and Windows.</li>
 </ul>
 </div>
 </div>
-
-<div id="outline-container-org7e04d4a" class="outline-3">
-<h3 id="org7e04d4a">Other installation instructions and details</h3>
-<div class="outline-text-3" id="text-org7e04d4a">
+<div id="outline-container-org352ce28" class="outline-3">
+<h3 id="org352ce28">Other installation instructions and details</h3>
+<div class="outline-text-3" id="text-org352ce28">
 <ul class="org-ul">
 <li>You can find more detailed installation instructions in <a href="https://github.com/math-comp/math-comp/blob/master/INSTALL.md">INSTALL.md</a>
 (from the official distribution), this includes:
@@ -340,10 +292,9 @@ Linux, as explained for example <a href="https://github.com/affeldt-aist/mathcom
 </div>
 </div>
 </div>
-
-<div id="outline-container-orgde346cd" class="outline-2">
-<h2 id="orgde346cd">Install Other Mathematical Components Libraries</h2>
-<div class="outline-text-2" id="text-orgde346cd">
+<div id="outline-container-org1854027" class="outline-2">
+<h2 id="org1854027">Install Other Mathematical Components Libraries</h2>
+<div class="outline-text-2" id="text-org1854027">
 <p>
 There are several libraries that build on top of the base
 Mathematical Components libraries, e.g.:
@@ -404,7 +355,7 @@ More libraries:
 </p>
 <ul class="org-ul">
 <li>See the Mathematical Components' <a href="https://github.com/math-comp">github</a>.</li>
-<li><a href="https://github.com/coq-community">coq-community</a> also features a number of libraries using Mathematical Components.</li>
+<li><a href="https://rocq-community.org/">rocq-community</a> also features a number of libraries using Mathematical Components.</li>
 </ul>
 </div>
 </div>
