@@ -3,13 +3,14 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2026-02-18 mer. 10:53 -->
+<!-- 2026-06-17 mer. 10:24 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Mathematical Components: Research Papers</title>
-<meta name="generator" content="Org Mode" />
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Marie" />
 <style type="text/css">
-  #content { max-width: 60em; margin: auto; }
+ <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
              margin-bottom: .2em; }
   .subtitle { text-align: center;
@@ -30,9 +31,8 @@
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
   pre {
-    border: 1px solid #e6e6e6;
-    border-radius: 3px;
-    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
     padding: 8pt;
     font-family: monospace;
     overflow: auto;
@@ -40,22 +40,22 @@
   }
   pre.src {
     position: relative;
-    overflow: auto;
+    overflow: visible;
+    padding-top: 1.2em;
   }
   pre.src:before {
     display: none;
     position: absolute;
-    top: -8px;
-    right: 12px;
+    background-color: white;
+    top: -10px;
+    right: 10px;
     padding: 3px;
-    color: #555;
-    background-color: #f2f2f299;
+    border: 1px solid black;
   }
-  pre.src:hover:before { display: inline; margin-top: 14px;}
+  pre.src:hover:before { display: inline;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
-  pre.src-authinfo::before { content: 'Authinfo'; }
   pre.src-C:before { content: 'C'; }
   /* pre.src-C++ doesn't work in CSS */
   pre.src-clojure:before { content: 'Clojure'; }
@@ -190,7 +190,8 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <style type="text/css"> body {font-family: Arial, Helvetica; margin-left: 5em; font-size: large;} </style>
@@ -198,18 +199,64 @@
 <style type="text/css"> h2 {margin-left: 0em; padding: 0px; color: #580909} </style>
 <style type="text/css"> h3 {margin-left: 1em; padding: 0px; color: #C05001;} </style>
 <style type="text/css"> body { max-width: 1100px; width: 100% - 30px; margin-left: 30px}</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
 </head>
 <body>
-<div id="content" class="content">
+<div id="content">
 <h1 class="title">Mathematical Components: Research Papers</h1>
-<div id="table-of-contents" role="doc-toc">
+<div id="table-of-contents">
 <h2>Table of Contents</h2>
-<div id="text-table-of-contents" role="doc-toc">
+<div id="text-table-of-contents">
 <ul>
-<li><a href="#orgaac6235">Mathematics</a></li>
-<li><a href="#orgcd9cd72">Programming and Algorithms</a></li>
-<li><a href="#org5c24fed">Other Applications</a></li>
-<li><a href="#org1cce221">Tooling</a></li>
+<li><a href="#orgaecd742">Mathematics</a></li>
+<li><a href="#org99e511e">Programming and Algorithms</a></li>
+<li><a href="#org4a5ae10">Other Applications</a></li>
+<li><a href="#orgdf2c439">Tooling</a></li>
 </ul>
 </div>
 </div>
@@ -238,9 +285,10 @@ venues:
 Your paper/thesis is not in the list? You have a suggestion about the organization of this page?
 Please, send <a href="mailto:mathcomp-dev@inria.fr?subject=MathComp%20related%20paper">us</a> a message or <a href="https://github.com/math-comp/math-comp.github.io">issue/PR on github</a>.
 </p>
-<div id="outline-container-orgaac6235" class="outline-2">
-<h2 id="orgaac6235">Mathematics</h2>
-<div class="outline-text-2" id="text-orgaac6235">
+
+<div id="outline-container-orgaecd742" class="outline-2">
+<h2 id="orgaecd742">Mathematics</h2>
+<div class="outline-text-2" id="text-orgaecd742">
 <ul class="org-ul">
 <li>Reinis Cirpons, Florent Hivert, Assia Mahboubi, Guillaume Melquiond, James Mitchell, Finn Smith, <span class="underline">Certifying the decidability of the word problem in monoids at large</span>. CPP 2026. <a href="https://hal.science/hal-05448783">pdf</a></li>
 <li>Quentin Vermande, <span class="underline">Cylindrical Algebraic Decomposition in Coq/Rocq</span>. CPP 2026. <a href="https://dl.acm.org/doi/epdf/10.1145/3779031.3779100">pdf</a></li>
@@ -311,8 +359,8 @@ PhD thesis, Université Paris-Saclay, 2017. <a href="https://pastel.archives-ouv
 LMCS 12(2), 2016. <a href="https://hal.inria.fr/hal-01081908/document">pdf</a></li>
 <li>Cyril Cohen, Boris Djalal.
 <span class="underline">Formalization of a newton series representation of polynomials</span>. CPP 2016. <a href="https://hal.inria.fr/hal-01240469/document">pdf</a></li>
-<li>Ken&rsquo;ichi Kuga, Manabu Hagiwara, Mitsuharu Yamamoto.
-<span class="underline">Formalization of Bing&rsquo;s Shrinking Method in Geometric Topology</span>. CICM 2016. <a href="https://doi.org/10.1007/978-3-319-42547-4_2">doi</a></li>
+<li>Ken'ichi Kuga, Manabu Hagiwara, Mitsuharu Yamamoto.
+<span class="underline">Formalization of Bing's Shrinking Method in Geometric Topology</span>. CICM 2016. <a href="https://doi.org/10.1007/978-3-319-42547-4_2">doi</a></li>
 <li>Gallego Arias, Emilio Jesús, Pierre Jouvelot.
 <span class="underline">Adventures in the (not so) Complex Space</span>. Coq Workshop 2015. <a href="https://github.com/ejgallego/mini-dft-coq">paper, code, slides</a></li>
 <li>Frédéric Chyzak, Assia Mahboubi, Thomas Sibut-Pinote, Enrico Tassi.
@@ -328,7 +376,7 @@ PhD, University of Gothenburg, 2014. <a href="http://staff.math.su.se/anders.mor
 <span class="underline">Computing persistent homology within Coq/SSReflect</span>. ACM Transactions on Computational Logic 14(4), 2013. <a href="https://arxiv.org/pdf/1209.1905.pdf">pdf</a></li>
 <li>Georges Gonthier, Andrea Asperti, Jeremy Avigad, Yves Bertot, Cyril
 Cohen, François Garillot, Stéphane Le Roux, Assia Mahboubi, Russell
-O&rsquo;Connor, Sidi Ould Biha, Ioana Pasca, Laurence Rideau, Alexey
+O'Connor, Sidi Ould Biha, Ioana Pasca, Laurence Rideau, Alexey
 Solovyev, Enrico Tassi, Laurent Théry.
 <span class="underline">A Machine-Checked Proof of the Odd Order Theorem</span>. ITP 2013. <a href="https://hal.inria.fr/hal-00816699/document">pdf</a></li>
 <li>Cyril Cohen. <span class="underline">Pragmatic Quotient Types in Coq</span>. ITP 2013. <a href="https://hal.inria.fr/hal-01966714/document">pdf</a></li>
@@ -365,9 +413,10 @@ TPHOLs 2007. <a href="https://hal.inria.fr/inria-00139131v2/document">pdf</a></l
 RT-0327 INRIA 2006. <a href="https://hal.inria.fr/inria-00113750v2/document">pdf</a></li>
 </ul>
 </div>
-<div id="outline-container-org0d229bc" class="outline-3">
-<h3 id="org0d229bc">Graph Theory</h3>
-<div class="outline-text-3" id="text-org0d229bc">
+
+<div id="outline-container-org25e857a" class="outline-3">
+<h3 id="org25e857a">Graph Theory</h3>
+<div class="outline-text-3" id="text-org25e857a">
 <ul class="org-ul">
 <li>Christian Doczkal.
 <span class="underline">A Variant of Wagner’s Theorem Based on Combinatorial Hypermaps</span>.
@@ -388,9 +437,10 @@ CPP 2020. <a href="https://hal.archives-ouvertes.fr/hal-02333553/document">pdf</
 </ul>
 </div>
 </div>
-<div id="outline-container-org4d3e358" class="outline-3">
-<h3 id="org4d3e358">Robotics</h3>
-<div class="outline-text-3" id="text-org4d3e358">
+
+<div id="outline-container-orgeaf8047" class="outline-3">
+<h3 id="orgeaf8047">Robotics</h3>
+<div class="outline-text-3" id="text-orgeaf8047">
 <ul class="org-ul">
 <li>Yves Bertot, Thomas Portet. <span class="underline">Formally Verifying a Vertical Cell Decomposition Algorithm</span>.
 ITP 2025. <a href="https://drops.dagstuhl.de/storage/00lipics/lipics-vol352-itp2025/LIPIcs.ITP.2025.24/LIPIcs.ITP.2025.24.pdf">pdf</a></li>
@@ -398,17 +448,20 @@ ITP 2025. <a href="https://drops.dagstuhl.de/storage/00lipics/lipics-vol352-itp2
 Logics and Type Systems in Theory and Practice, LNCS 14560, 2024.
 <a href="https://doi.org/10.1007/978-3-031-61716-4">doi</a>, <a href="https://inria.hal.science/hal-04312815">pdf</a></li>
 <li>Cyril Cohen, Damien Rouhling.
-<span class="underline">A Formal Proof in Coq of LaSalle&rsquo;s Invariance Principle</span>. ITP 2017. <a href="https://hal.inria.fr/hal-01612293/document">pdf</a></li>
+<span class="underline">A Formal Proof in Coq of LaSalle's Invariance Principle</span>. ITP 2017. <a href="https://hal.inria.fr/hal-01612293/document">pdf</a></li>
 <li>Reynald Affeldt, Cyril Cohen.
 <span class="underline">Formal Foundations of 3D Geometry to Model Robot Manipulators</span>. CPP 2017. <a href="https://hal.inria.fr/hal-01414753/document">pdf</a></li>
 </ul>
 </div>
 </div>
 </div>
-<div id="outline-container-orgcd9cd72" class="outline-2">
-<h2 id="orgcd9cd72">Programming and Algorithms</h2>
-<div class="outline-text-2" id="text-orgcd9cd72">
+
+<div id="outline-container-org99e511e" class="outline-2">
+<h2 id="org99e511e">Programming and Algorithms</h2>
+<div class="outline-text-2" id="text-org99e511e">
 <ul class="org-ul">
+<li>Assia Mahboubi, Guillaume Melquiond, Pierre-Yves Strub, Tomás Vallejos Paradas.
+<span class="underline">Functional correctness of an optimized modular inversion algorithm</span>. ITP 2026. <a href="https://hal.science/hal-05554365v1/document">pdf</a></li>
 <li>Reynald Affeldt, Jacques Garrigue, Takafumi Saikawa.
 <span class="underline">A practical formalization of monadic equational reasoning in dependent-type theory</span>.
 JFP 35(e1). <a href="https://www.cambridge.org/core/services/aop-cambridge-core/content/view/B59B87DE000F48B9807F24AEDB11452E/S0956796824000157a.pdf/a-practical-formalization-of-monadic-equational-reasoning-in-dependent-type-theory.pdf">pdf</a></li>
@@ -454,7 +507,7 @@ Master’s thesis, Mathematics, Radboud University, 2016. <a href="https://www.r
 <li>Cyril Cohen, Maxime Dénès, Anders Mörtberg.
 <span class="underline">Refinements for free!</span>. CPP 2013. <a href="https://hal.inria.fr/hal-01113453/document">pdf</a></li>
 <li>Andrew Kennedy, Nick Benton, Jonas B. Jensen, Pierre-Evariste Dagand.
-<span class="underline">Coq: the world&rsquo;s best macro assembler?</span> PPDP 2013. <a href="http://nickbenton.name/coqasm.pdf">pdf</a></li>
+<span class="underline">Coq: the world's best macro assembler?</span> PPDP 2013. <a href="http://nickbenton.name/coqasm.pdf">pdf</a></li>
 <li>Germán Andrés Delbianco, Aleksandar Nanevski.
 <span class="underline">Hoare-Style Reasoning with (Algebraic) Continuations</span>. ICFP 2013. <a href="https://doi.org/10.1145/2544174.2500593">doi</a></li>
 <li>Beta Ziliani, Derek Dreyer, Neelakantan R. Krishnaswami, Aleksandar Nanevski, Viktor Vafeiadis.
@@ -463,9 +516,10 @@ Master’s thesis, Mathematics, Radboud University, 2016. <a href="https://www.r
 <span class="underline">Structuring the Verification of Heap-Manipulating Programs</span>. POPL 2010. <a href="https://doi.org/10.1145/1706299.1706331">doi</a></li>
 </ul>
 </div>
-<div id="outline-container-org87e7c5f" class="outline-3">
-<h3 id="org87e7c5f">Concurrency</h3>
-<div class="outline-text-3" id="text-org87e7c5f">
+
+<div id="outline-container-org7a9a993" class="outline-3">
+<h3 id="org7a9a993">Concurrency</h3>
+<div class="outline-text-3" id="text-org7a9a993">
 <ul class="org-ul">
 <li>Mohit Tekriwal, Avi Tachna-Fram, Jean-Baptiste Jeannin, Manos Kapritsos, Dimitra Panagou.
 <span class="underline">Formally verified asymptotic consensus in robust networks</span>.
@@ -510,9 +564,10 @@ ESOP 2014. <a href="https://doi.org/10.1007/978-3-642-54833-8_16">doi</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org0a27c3a" class="outline-3">
-<h3 id="org0a27c3a">Information Flow</h3>
-<div class="outline-text-3" id="text-org0a27c3a">
+
+<div id="outline-container-org545a2c5" class="outline-3">
+<h3 id="org545a2c5">Information Flow</h3>
+<div class="outline-text-3" id="text-org545a2c5">
 <ul class="org-ul">
 <li>Aleksandar Nanevski, Anindya Banerjee, Deepak Garg.
 <span class="underline">Dependent Type Theory for Verification of Information Flow and Access Control Policies</span>.
@@ -526,9 +581,10 @@ PPDP 2013. <a href="https://doi.org/10.1145/2505879.2505895">doi</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgfe26f1e" class="outline-3">
-<h3 id="orgfe26f1e">Probabilistic Reasoning</h3>
-<div class="outline-text-3" id="text-orgfe26f1e">
+
+<div id="outline-container-orgc666ff9" class="outline-3">
+<h3 id="orgc666ff9">Probabilistic Reasoning</h3>
+<div class="outline-text-3" id="text-orgc666ff9">
 <ul class="org-ul">
 <li>Reynald Affeldt, Yoshihiro Ishiguro, Zachary Stone.
 <span class="underline">A Formal Foundation for Equational Reasoning on Probabilistic Programs</span>.
@@ -568,10 +624,14 @@ Computer Software 37(3):79-95, 2020. <a href="https://staff.aist.go.jp/reynald.a
 </ul>
 </div>
 </div>
-<div id="outline-container-orgcef54e1" class="outline-3">
-<h3 id="orgcef54e1">Quantum Computing</h3>
-<div class="outline-text-3" id="text-orgcef54e1">
+
+<div id="outline-container-orgca720da" class="outline-3">
+<h3 id="orgca720da">Quantum Computing</h3>
+<div class="outline-text-3" id="text-orgca720da">
 <ul class="org-ul">
+<li>Jacques Garrigue, Takafumi Saikawa.
+<span class="underline">Typed Compositional Quantum Computation with Lenses</span>.
+JAR 70(10). <a href="https://link.springer.com/article/10.1007/s10817-026-09750-3">pdf</a></li>
 <li>Yingte Xu, Gilles Barthe, Li Zhou.
 <span class="underline">Automating Equational Proofs in Dirac Notation</span>.
 POPL 2025. <a href="https://arxiv.org/pdf/2411.11617">pdf</a></li>
@@ -585,9 +645,10 @@ POPL 2023. <a href="https://arxiv.org/pdf/2207.11350.pdf">pdf</a></li>
 </div>
 </div>
 </div>
-<div id="outline-container-org5c24fed" class="outline-2">
-<h2 id="org5c24fed">Other Applications</h2>
-<div class="outline-text-2" id="text-org5c24fed">
+
+<div id="outline-container-org4a5ae10" class="outline-2">
+<h2 id="org4a5ae10">Other Applications</h2>
+<div class="outline-text-2" id="text-org4a5ae10">
 <ul class="org-ul">
 <li>Pierre-Léo Bégay, Pierre Crégut, Jean-François Monin.
 <span class="underline">Developing and certifying Datalog optimizations in Coq/MathComp</span>. CPP 2021. <a href="https://hal.archives-ouvertes.fr/hal-03065304v1/document">pdf</a></li>
@@ -600,9 +661,10 @@ Linux Audio Conference 2015. <a href="https://github.com/ejgallego/mini-faust-co
  <a href="https://ieeexplore.ieee.org/document/5460865">IEEE Xplore</a></li>
 </ul>
 </div>
-<div id="outline-container-orgbdf09af" class="outline-3">
-<h3 id="orgbdf09af">Logic, Types, and Verification</h3>
-<div class="outline-text-3" id="text-orgbdf09af">
+
+<div id="outline-container-orgdc604e8" class="outline-3">
+<h3 id="orgdc604e8">Logic, Types, and Verification</h3>
+<div class="outline-text-3" id="text-orgdc604e8">
 <ul class="org-ul">
 <li>Jan Bessai, Jakob Rehof, Boris Düdder.
 <span class="underline">Fast Veriﬁed BCD Subtyping</span>.
@@ -638,9 +700,10 @@ International Conference on Typed Lambda Calculi and Applications (TLCA 2011). <
 </ul>
 </div>
 </div>
-<div id="outline-container-org9f7125f" class="outline-3">
-<h3 id="org9f7125f">Information Theory</h3>
-<div class="outline-text-3" id="text-org9f7125f">
+
+<div id="outline-container-org732f5d4" class="outline-3">
+<h3 id="org732f5d4">Information Theory</h3>
+<div class="outline-text-3" id="text-org732f5d4">
 <ul class="org-ul">
 <li>Joshua M. Cohen, Qinshi Wang, Andrew W. Appel.
 <span class="underline">Verified Erasure Correction in Coq with MathComp and VST</span>.
@@ -661,16 +724,17 @@ International Symposium on Information Theory and its Application 2016 (ISITA 20
  <span class="underline">Formalization of the variable-length source coding theorem: Direct part</span>.
 International Symposium on Information Theory and its Application 2014 (ISITA 2014). <a href="https://ieeexplore.ieee.org/document/6979832">IEEE Xplore</a></li>
 <li>Reynald Affeldt, Manabu Hagiwara, Jonas Sénizergues.
-<span class="underline">Formalization of Shannon&rsquo;s theorems</span>. JAR 53(1), 2014. <a href="https://staff.aist.go.jp/reynald.affeldt/documents/shannon_theorems.pdf">pdf</a></li>
+<span class="underline">Formalization of Shannon's theorems</span>. JAR 53(1), 2014. <a href="https://staff.aist.go.jp/reynald.affeldt/documents/shannon_theorems.pdf">pdf</a></li>
 <li>Reynald Affeldt, Manabu Hagiwara.
-<span class="underline">Formalization of Shannon&rsquo;s Theorems in SSReflect-Coq</span>. ITP 2012. <a href="https://staff.aist.go.jp/reynald.affeldt/documents/affeldt-itp2012-preprint.pdf">pdf</a></li>
+<span class="underline">Formalization of Shannon's Theorems in SSReflect-Coq</span>. ITP 2012. <a href="https://staff.aist.go.jp/reynald.affeldt/documents/affeldt-itp2012-preprint.pdf">pdf</a></li>
 </ul>
 </div>
 </div>
 </div>
-<div id="outline-container-org1cce221" class="outline-2">
-<h2 id="org1cce221">Tooling</h2>
-<div class="outline-text-2" id="text-org1cce221">
+
+<div id="outline-container-orgdf2c439" class="outline-2">
+<h2 id="orgdf2c439">Tooling</h2>
+<div class="outline-text-2" id="text-orgdf2c439">
 <ul class="org-ul">
 <li>Cyril Cohen, Enzo Crance, Assia Mahboubi.
 <span class="underline">Trocq: Proof Transfer for Free, With or Without Univalence</span>.
@@ -719,9 +783,10 @@ IPSJ Transactions on Programming 10(1), 2017. <a href="http://logic.cs.tsukuba.a
 <span class="underline">Packaging Mathematical Structures</span>. TPHOLs 2009. <a href="https://hal.inria.fr/inria-00368403v1/document">pdf</a></li>
 </ul>
 </div>
-<div id="outline-container-org51a26de" class="outline-3">
-<h3 id="org51a26de">Machine Learning</h3>
-<div class="outline-text-3" id="text-org51a26de">
+
+<div id="outline-container-orgfd5c36c" class="outline-3">
+<h3 id="orgfd5c36c">Machine Learning</h3>
+<div class="outline-text-3" id="text-orgfd5c36c">
 <ul class="org-ul">
 <li>Reynald Affeldt, Alessandro Bruni, Ekaterina Komendantskaya, Natalia Ślusarz, Kathrin Stark.
 <span class="underline">Taming Differentiable Logics with Coq Formalisation</span>.
