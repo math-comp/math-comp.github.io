@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<title>Combi.SSRcomplements.permcomp: Complement on permutations</title>
+</head>
+
+<body>
+
+<div id="page">
+
+<div id="header">
+</div>
+
+<div id="main">
+
+<h1 class="libtitle">Library Combi.SSRcomplements.permcomp: Complement on permutations</h1>
+
+<div class="code">
+</div>
+
+<div class="doc">
+
+</div>
+<div class="code">
+</div>
+
+<div class="doc">
+<a id="lab212"></a><h1 class="section">A few lemmas on permutation</h1>
+
+
+</div>
+<div class="code">
+<span class="id" title="keyword">From</span> <span class="id" title="var">Corelib</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <a class="idref" href="http://rocq-prover.org/doc/V9.1.1/stdlib//Corelib.Setoids.Setoid.html#"><span class="id" title="library">Setoid</span></a>.<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">mathcomp</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="library">ssreflect</span> <span class="id" title="library">ssrfun</span> <span class="id" title="library">ssrbool</span> <span class="id" title="library">eqtype</span> <span class="id" title="library">ssrnat</span> <span class="id" title="library">seq</span> <span class="id" title="library">choice</span> <span class="id" title="library">fintype</span> <span class="id" title="library">div</span>.<br/>
+<span class="id" title="keyword">From</span> <span class="id" title="var">mathcomp</span> <span class="id" title="keyword">Require</span> <span class="id" title="keyword">Import</span> <span class="id" title="library">finset</span> <span class="id" title="library">fingroup</span> <span class="id" title="library">perm</span> <span class="id" title="library">morphism</span> <span class="id" title="library">action</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Set Implicit Arguments</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Import</span> <span class="id" title="module">GroupScope</span>.<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+<a id="lab213"></a><h2 class="section">Orbit and cycles</h2>
+
+</div>
+<div class="code">
+<span class="id" title="keyword">Section</span> <a id="PermComp" class="idref" href="#PermComp"><span class="id" title="section">PermComp</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Variable</span> <a id="PermComp.T" class="idref" href="#PermComp.T"><span class="id" title="variable">T</span></a> : <span class="id" title="abbreviation">finType</span>.<br/>
+<span class="id" title="keyword">Implicit</span> <span class="id" title="keyword">Type</span> (<span class="id" title="var">s</span> : <span class="id" title="notation">{</span><span class="id" title="notation">perm</span> <a class="idref" href="Combi.SSRcomplements.permcomp.html#PermComp.T"><span class="id" title="variable">T</span></a><span class="id" title="notation">}</span>) (<span class="id" title="var">X</span> : <span class="id" title="notation">{</span><span class="id" title="notation">set</span> <a class="idref" href="Combi.SSRcomplements.permcomp.html#PermComp.T"><span class="id" title="variable">T</span></a><span class="id" title="notation">}</span>) (<span class="id" title="var">P</span> : <span class="id" title="notation">{</span><span class="id" title="notation">set</span> <span class="id" title="notation">{</span><span class="id" title="notation">set</span> <a class="idref" href="Combi.SSRcomplements.permcomp.html#PermComp.T"><span class="id" title="variable">T</span></a><span class="id" title="notation">}}</span>).<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <a id="permKP" class="idref" href="#permKP"><span class="id" title="lemma">permKP</span></a> <a id="s:3" class="idref" href="#s:3"><span class="id" title="binder">s</span></a> : <a class="idref" href="http://rocq-prover.org/doc/V9.1.1/stdlib//Corelib.Init.Datatypes.html#reflect"><span class="id" title="inductive">reflect</span></a> (<a class="idref" href="http://rocq-prover.org/doc/V9.1.1/stdlib//Corelib.ssr.ssrfun.html#involutive"><span class="id" title="definition">involutive</span></a> <a class="idref" href="Combi.SSRcomplements.permcomp.html#s:3"><span class="id" title="variable">s</span></a>) (<a class="idref" href="Combi.SSRcomplements.permcomp.html#s:3"><span class="id" title="variable">s</span></a><span class="id" title="notation">^-1</span> <span class="id" title="notation">==</span> <a class="idref" href="Combi.SSRcomplements.permcomp.html#s:3"><span class="id" title="variable">s</span></a>).<br/>
+
+<br/>
+<span class="id" title="keyword">End</span> <a class="idref" href="Combi.SSRcomplements.permcomp.html#PermComp"><span class="id" title="section">PermComp</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Section</span> <a id="SetAct" class="idref" href="#SetAct"><span class="id" title="section">SetAct</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Variables</span> (<a id="SetAct.aT" class="idref" href="#SetAct.aT"><span class="id" title="variable">aT</span></a> : <span class="id" title="abbreviation">finGroupType</span>) (<a id="SetAct.D" class="idref" href="#SetAct.D"><span class="id" title="variable">D</span></a> : <span class="id" title="notation">{</span><span class="id" title="notation">set</span> <a class="idref" href="Combi.SSRcomplements.permcomp.html#aT:5"><span class="id" title="variable">aT</span></a><span class="id" title="notation">}</span>) (<a id="SetAct.rT" class="idref" href="#SetAct.rT"><span class="id" title="variable">rT</span></a> : <span class="id" title="abbreviation">finType</span>) (<a id="SetAct.to" class="idref" href="#SetAct.to"><span class="id" title="variable">to</span></a> : <span class="id" title="record">action</span> <a class="idref" href="Combi.SSRcomplements.permcomp.html#D:7"><span class="id" title="variable">D</span></a> <a class="idref" href="Combi.SSRcomplements.permcomp.html#rT:9"><span class="id" title="variable">rT</span></a>).<br/>
+
+<br/>
+</div>
+
+<div class="doc">
+TODO: complete setactU, setactI, setactD ... and submit to mathcomp 
+</div>
+<div class="code">
+<span class="id" title="keyword">Lemma</span> <a id="setact0" class="idref" href="#setact0"><span class="id" title="lemma">setact0</span></a> <a id="a:12" class="idref" href="#a:12"><span class="id" title="binder">a</span></a> : <a class="idref" href="Combi.SSRcomplements.permcomp.html#SetAct.to"><span class="id" title="variable">to</span></a><span class="id" title="notation">^*</span> <span class="id" title="notation">set0</span> <span class="id" title="notation">a</span> <a class="idref" href="http://rocq-prover.org/doc/V9.1.1/stdlib//Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">=</span></a> <span class="id" title="definition">set0</span>.<br/>
+<span class="id" title="keyword">Lemma</span> <a id="setact1" class="idref" href="#setact1"><span class="id" title="lemma">setact1</span></a> <a id="x:13" class="idref" href="#x:13"><span class="id" title="binder">x</span></a> <a id="a:14" class="idref" href="#a:14"><span class="id" title="binder">a</span></a> : <a class="idref" href="Combi.SSRcomplements.permcomp.html#SetAct.to"><span class="id" title="variable">to</span></a><span class="id" title="notation">^*</span> <span class="id" title="notation">[</span><span class="id" title="notation">set</span> <span class="id" title="notation">x</span><span class="id" title="notation">]</span> <span class="id" title="notation">a</span> <a class="idref" href="http://rocq-prover.org/doc/V9.1.1/stdlib//Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">=</span></a> <span class="id" title="notation">[</span><span class="id" title="notation">set</span> <a class="idref" href="Combi.SSRcomplements.permcomp.html#SetAct.to"><span class="id" title="variable">to</span></a> <a class="idref" href="Combi.SSRcomplements.permcomp.html#x:13"><span class="id" title="variable">x</span></a> <a class="idref" href="Combi.SSRcomplements.permcomp.html#a:14"><span class="id" title="variable">a</span></a><span class="id" title="notation">]</span>.<br/>
+<span class="id" title="keyword">Lemma</span> <a id="setactI" class="idref" href="#setactI"><span class="id" title="lemma">setactI</span></a> <a id="S:15" class="idref" href="#S:15"><span class="id" title="binder">S</span></a> <a id="T:16" class="idref" href="#T:16"><span class="id" title="binder">T</span></a> <a id="a:17" class="idref" href="#a:17"><span class="id" title="binder">a</span></a> : <a class="idref" href="Combi.SSRcomplements.permcomp.html#SetAct.to"><span class="id" title="variable">to</span></a><span class="id" title="notation">^*</span> <span class="id" title="notation">(</span><span class="id" title="notation">S</span> <span class="id" title="notation">:&amp;:</span> <span class="id" title="notation">T</span><span class="id" title="notation">)</span> <span class="id" title="notation">a</span> <a class="idref" href="http://rocq-prover.org/doc/V9.1.1/stdlib//Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">=</span></a> <a class="idref" href="Combi.SSRcomplements.permcomp.html#SetAct.to"><span class="id" title="variable">to</span></a><span class="id" title="notation">^*</span> <span class="id" title="notation">S</span> <span class="id" title="notation">a</span> <span class="id" title="notation">:&amp;:</span> <a class="idref" href="Combi.SSRcomplements.permcomp.html#SetAct.to"><span class="id" title="variable">to</span></a><span class="id" title="notation">^*</span> <span class="id" title="notation">T</span> <span class="id" title="notation">a</span>.<br/>
+ <span class="id" title="keyword">Lemma</span> <a id="setactU" class="idref" href="#setactU"><span class="id" title="lemma">setactU</span></a> <a id="S:18" class="idref" href="#S:18"><span class="id" title="binder">S</span></a> <a id="T:19" class="idref" href="#T:19"><span class="id" title="binder">T</span></a> <a id="a:20" class="idref" href="#a:20"><span class="id" title="binder">a</span></a> : <a class="idref" href="Combi.SSRcomplements.permcomp.html#SetAct.to"><span class="id" title="variable">to</span></a><span class="id" title="notation">^*</span> <span class="id" title="notation">(</span><span class="id" title="notation">S</span> <span class="id" title="notation">:|:</span> <span class="id" title="notation">T</span><span class="id" title="notation">)</span> <span class="id" title="notation">a</span> <a class="idref" href="http://rocq-prover.org/doc/V9.1.1/stdlib//Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">=</span></a> <a class="idref" href="Combi.SSRcomplements.permcomp.html#SetAct.to"><span class="id" title="variable">to</span></a><span class="id" title="notation">^*</span> <span class="id" title="notation">S</span> <span class="id" title="notation">a</span> <span class="id" title="notation">:|:</span> <a class="idref" href="Combi.SSRcomplements.permcomp.html#SetAct.to"><span class="id" title="variable">to</span></a><span class="id" title="notation">^*</span> <span class="id" title="notation">T</span> <span class="id" title="notation">a</span>.<br/>
+ <span class="id" title="keyword">Lemma</span> <a id="setactU1" class="idref" href="#setactU1"><span class="id" title="lemma">setactU1</span></a> <a id="x:21" class="idref" href="#x:21"><span class="id" title="binder">x</span></a> <a id="T:22" class="idref" href="#T:22"><span class="id" title="binder">T</span></a> <a id="a:23" class="idref" href="#a:23"><span class="id" title="binder">a</span></a> : <a class="idref" href="Combi.SSRcomplements.permcomp.html#SetAct.to"><span class="id" title="variable">to</span></a><span class="id" title="notation">^*</span> <span class="id" title="notation">(</span><span class="id" title="notation">x</span> <span class="id" title="notation">|:</span> <span class="id" title="notation">T</span><span class="id" title="notation">)</span> <span class="id" title="notation">a</span> <a class="idref" href="http://rocq-prover.org/doc/V9.1.1/stdlib//Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">=</span></a> <a class="idref" href="Combi.SSRcomplements.permcomp.html#SetAct.to"><span class="id" title="variable">to</span></a> <a class="idref" href="Combi.SSRcomplements.permcomp.html#x:21"><span class="id" title="variable">x</span></a> <a class="idref" href="Combi.SSRcomplements.permcomp.html#a:23"><span class="id" title="variable">a</span></a> <span class="id" title="notation">|:</span> <a class="idref" href="Combi.SSRcomplements.permcomp.html#SetAct.to"><span class="id" title="variable">to</span></a><span class="id" title="notation">^*</span> <span class="id" title="notation">T</span> <span class="id" title="notation">a</span>.<br/>
+ 
+<br/>
+<span class="id" title="keyword">Lemma</span> <a id="setactC" class="idref" href="#setactC"><span class="id" title="lemma">setactC</span></a> <a id="S:24" class="idref" href="#S:24"><span class="id" title="binder">S</span></a> <a id="a:25" class="idref" href="#a:25"><span class="id" title="binder">a</span></a> : <a class="idref" href="Combi.SSRcomplements.permcomp.html#SetAct.to"><span class="id" title="variable">to</span></a><span class="id" title="notation">^*</span> <span class="id" title="notation">(~:</span> <span class="id" title="notation">S</span><span class="id" title="notation">)</span> <span class="id" title="notation">a</span> <a class="idref" href="http://rocq-prover.org/doc/V9.1.1/stdlib//Corelib.Init.Logic.html#6cd0f7b28b6092304087c7049437bb1a"><span class="id" title="notation">=</span></a> <span class="id" title="notation">~:</span> <a class="idref" href="Combi.SSRcomplements.permcomp.html#SetAct.to"><span class="id" title="variable">to</span></a><span class="id" title="notation">^*</span> <span class="id" title="notation">S</span> <span class="id" title="notation">a</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">End</span> <a class="idref" href="Combi.SSRcomplements.permcomp.html#SetAct"><span class="id" title="section">SetAct</span></a>.<br/>
+</div>
+</div>
+
+<div id="footer">
+<hr/><a href="index.html">Index</a><hr/>This page has been generated by <a href="http://rocq-prover.org/">coqdoc</a>
+</div>
+
+</div>
+
+</body>
+</html>
