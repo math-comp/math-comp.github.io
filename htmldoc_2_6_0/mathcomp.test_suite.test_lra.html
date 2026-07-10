@@ -1,0 +1,587 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Module mathcomp.test_suite.test_lra</title>
+<meta name="description" content="Documentation of Coq module Mathematical Components 7cde45af" />
+<link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/markdown-it-texmath/texmath.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+<link href="rocqnavi.css" rel="stylesheet" type="text/css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="rocqnavi.js"> </script>
+</head>
+
+<body onload="init()">
+
+  <main>
+    <div class="sidebar">
+      <h2>Files</h2>
+      <li><details id="mathcomp"><summary>mathcomp</summary>
+          <ul>
+          <li><details id="mathcomp.algebra"><summary>algebra</summary>
+          <ul>
+          <li><details id="mathcomp.algebra.algebraic_hierarchy"><summary>algebraic_hierarchy</summary>
+          <ul>
+          <li><a href="mathcomp.algebra.algebraic_hierarchy.decfield.html">decfield</a></li>
+<li><a href="mathcomp.algebra.algebraic_hierarchy.divalg.html">divalg</a></li>
+<li><a href="mathcomp.algebra.algebraic_hierarchy.rings_modules_and_algebras.html">rings_modules_and_algebras</a></li>
+<li><a href="mathcomp.algebra.algebraic_hierarchy.ssralg.html">ssralg</a></li>
+          </ul>
+          </details>
+          </li>
+<li><details id="mathcomp.algebra.numeric_hierarchy"><summary>numeric_hierarchy</summary>
+          <ul>
+          <li><a href="mathcomp.algebra.numeric_hierarchy.numdomain.html">numdomain</a></li>
+<li><a href="mathcomp.algebra.numeric_hierarchy.numfield.html">numfield</a></li>
+<li><a href="mathcomp.algebra.numeric_hierarchy.orderedzmod.html">orderedzmod</a></li>
+<li><a href="mathcomp.algebra.numeric_hierarchy.ssrnum.html">ssrnum</a></li>
+          </ul>
+          </details>
+          </li>
+<li><a href="mathcomp.algebra.algebra.html">algebra</a></li>
+<li><a href="mathcomp.algebra.all_algebra.html">all_algebra</a></li>
+<li><a href="mathcomp.algebra.archimedean.html">archimedean</a></li>
+<li><a href="mathcomp.algebra.arithmetic_tactic.html">arithmetic_tactic</a></li>
+<li><a href="mathcomp.algebra.binnums.html">binnums</a></li>
+<li><a href="mathcomp.algebra.countalg.html">countalg</a></li>
+<li><a href="mathcomp.algebra.field_tactic.html">field_tactic</a></li>
+<li><a href="mathcomp.algebra.finalg.html">finalg</a></li>
+<li><a href="mathcomp.algebra.fraction.html">fraction</a></li>
+<li><a href="mathcomp.algebra.intdiv.html">intdiv</a></li>
+<li><a href="mathcomp.algebra.interval.html">interval</a></li>
+<li><a href="mathcomp.algebra.interval_inference.html">interval_inference</a></li>
+<li><a href="mathcomp.algebra.lra.html">lra</a></li>
+<li><a href="mathcomp.algebra.matrix.html">matrix</a></li>
+<li><a href="mathcomp.algebra.mxalgebra.html">mxalgebra</a></li>
+<li><a href="mathcomp.algebra.mxpoly.html">mxpoly</a></li>
+<li><a href="mathcomp.algebra.mxred.html">mxred</a></li>
+<li><a href="mathcomp.algebra.poly.html">poly</a></li>
+<li><a href="mathcomp.algebra.polyXY.html">polyXY</a></li>
+<li><a href="mathcomp.algebra.polydiv.html">polydiv</a></li>
+<li><a href="mathcomp.algebra.qpoly.html">qpoly</a></li>
+<li><a href="mathcomp.algebra.rat.html">rat</a></li>
+<li><a href="mathcomp.algebra.ring.html">ring</a></li>
+<li><a href="mathcomp.algebra.ring_quotient.html">ring_quotient</a></li>
+<li><a href="mathcomp.algebra.ring_tactic.html">ring_tactic</a></li>
+<li><a href="mathcomp.algebra.sesquilinear.html">sesquilinear</a></li>
+<li><a href="mathcomp.algebra.spectral.html">spectral</a></li>
+<li><a href="mathcomp.algebra.ssrint.html">ssrint</a></li>
+<li><a href="mathcomp.algebra.tensor.html">tensor</a></li>
+<li><a href="mathcomp.algebra.vector.html">vector</a></li>
+<li><a href="mathcomp.algebra.zmodp.html">zmodp</a></li>
+          </ul>
+          </details>
+          </li>
+<li><details id="mathcomp.all"><summary>all</summary>
+          <ul>
+          <li><a href="mathcomp.all.all.html">all</a></li>
+          </ul>
+          </details>
+          </li>
+<li><details id="mathcomp.boot"><summary>boot</summary>
+          <ul>
+          <li><a href="mathcomp.boot.all_boot.html">all_boot</a></li>
+<li><a href="mathcomp.boot.bigop.html">bigop</a></li>
+<li><a href="mathcomp.boot.binomial.html">binomial</a></li>
+<li><a href="mathcomp.boot.boot.html">boot</a></li>
+<li><a href="mathcomp.boot.choice.html">choice</a></li>
+<li><a href="mathcomp.boot.div.html">div</a></li>
+<li><a href="mathcomp.boot.eqtype.html">eqtype</a></li>
+<li><a href="mathcomp.boot.finfun.html">finfun</a></li>
+<li><a href="mathcomp.boot.fingraph.html">fingraph</a></li>
+<li><a href="mathcomp.boot.finset.html">finset</a></li>
+<li><a href="mathcomp.boot.fintype.html">fintype</a></li>
+<li><a href="mathcomp.boot.generic_quotient.html">generic_quotient</a></li>
+<li><a href="mathcomp.boot.monoid.html">monoid</a></li>
+<li><a href="mathcomp.boot.nmodule.html">nmodule</a></li>
+<li><a href="mathcomp.boot.path.html">path</a></li>
+<li><a href="mathcomp.boot.prime.html">prime</a></li>
+<li><a href="mathcomp.boot.seq.html">seq</a></li>
+<li><a href="mathcomp.boot.ssrAC.html">ssrAC</a></li>
+<li><a href="mathcomp.boot.ssrbool.html">ssrbool</a></li>
+<li><a href="mathcomp.boot.ssreflect.html">ssreflect</a></li>
+<li><a href="mathcomp.boot.ssrfun.html">ssrfun</a></li>
+<li><a href="mathcomp.boot.ssrmatching.html">ssrmatching</a></li>
+<li><a href="mathcomp.boot.ssrnat.html">ssrnat</a></li>
+<li><a href="mathcomp.boot.ssrnotations.html">ssrnotations</a></li>
+<li><a href="mathcomp.boot.tuple.html">tuple</a></li>
+          </ul>
+          </details>
+          </li>
+<li><details id="mathcomp.field"><summary>field</summary>
+          <ul>
+          <li><a href="mathcomp.field.algC.html">algC</a></li>
+<li><a href="mathcomp.field.algebraics_fundamentals.html">algebraics_fundamentals</a></li>
+<li><a href="mathcomp.field.algnum.html">algnum</a></li>
+<li><a href="mathcomp.field.all_field.html">all_field</a></li>
+<li><a href="mathcomp.field.closed_field.html">closed_field</a></li>
+<li><a href="mathcomp.field.cyclotomic.html">cyclotomic</a></li>
+<li><a href="mathcomp.field.falgebra.html">falgebra</a></li>
+<li><a href="mathcomp.field.field.html">field</a></li>
+<li><a href="mathcomp.field.fieldext.html">fieldext</a></li>
+<li><a href="mathcomp.field.finfield.html">finfield</a></li>
+<li><a href="mathcomp.field.galois.html">galois</a></li>
+<li><a href="mathcomp.field.qfpoly.html">qfpoly</a></li>
+<li><a href="mathcomp.field.separable.html">separable</a></li>
+          </ul>
+          </details>
+          </li>
+<li><details id="mathcomp.finite_group"><summary>finite_group</summary>
+          <ul>
+          <li><a href="mathcomp.finite_group.action.html">action</a></li>
+<li><a href="mathcomp.finite_group.all_fingroup.html">all_fingroup</a></li>
+<li><a href="mathcomp.finite_group.automorphism.html">automorphism</a></li>
+<li><a href="mathcomp.finite_group.fingroup.html">fingroup</a></li>
+<li><a href="mathcomp.finite_group.finite_group.html">finite_group</a></li>
+<li><a href="mathcomp.finite_group.gproduct.html">gproduct</a></li>
+<li><a href="mathcomp.finite_group.morphism.html">morphism</a></li>
+<li><a href="mathcomp.finite_group.perm.html">perm</a></li>
+<li><a href="mathcomp.finite_group.presentation.html">presentation</a></li>
+<li><a href="mathcomp.finite_group.quotient.html">quotient</a></li>
+          </ul>
+          </details>
+          </li>
+<li><details id="mathcomp.group_representation"><summary>group_representation</summary>
+          <ul>
+          <li><a href="mathcomp.group_representation.all_character.html">all_character</a></li>
+<li><a href="mathcomp.group_representation.character.html">character</a></li>
+<li><a href="mathcomp.group_representation.classfun.html">classfun</a></li>
+<li><a href="mathcomp.group_representation.group_representation.html">group_representation</a></li>
+<li><a href="mathcomp.group_representation.inertia.html">inertia</a></li>
+<li><a href="mathcomp.group_representation.integral_char.html">integral_char</a></li>
+<li><a href="mathcomp.group_representation.mxabelem.html">mxabelem</a></li>
+<li><a href="mathcomp.group_representation.mxrepresentation.html">mxrepresentation</a></li>
+<li><a href="mathcomp.group_representation.vcharacter.html">vcharacter</a></li>
+          </ul>
+          </details>
+          </li>
+<li><details id="mathcomp.order"><summary>order</summary>
+          <ul>
+          <li><a href="mathcomp.order.all_order.html">all_order</a></li>
+<li><a href="mathcomp.order.order.html">order</a></li>
+<li><a href="mathcomp.order.preorder.html">preorder</a></li>
+          </ul>
+          </details>
+          </li>
+<li><details id="mathcomp.solvable"><summary>solvable</summary>
+          <ul>
+          <li><a href="mathcomp.solvable.abelian.html">abelian</a></li>
+<li><a href="mathcomp.solvable.all_solvable.html">all_solvable</a></li>
+<li><a href="mathcomp.solvable.alt.html">alt</a></li>
+<li><a href="mathcomp.solvable.burnside_app.html">burnside_app</a></li>
+<li><a href="mathcomp.solvable.center.html">center</a></li>
+<li><a href="mathcomp.solvable.commutator.html">commutator</a></li>
+<li><a href="mathcomp.solvable.cyclic.html">cyclic</a></li>
+<li><a href="mathcomp.solvable.extraspecial.html">extraspecial</a></li>
+<li><a href="mathcomp.solvable.extremal.html">extremal</a></li>
+<li><a href="mathcomp.solvable.finmodule.html">finmodule</a></li>
+<li><a href="mathcomp.solvable.frobenius.html">frobenius</a></li>
+<li><a href="mathcomp.solvable.gfunctor.html">gfunctor</a></li>
+<li><a href="mathcomp.solvable.gseries.html">gseries</a></li>
+<li><a href="mathcomp.solvable.hall.html">hall</a></li>
+<li><a href="mathcomp.solvable.jordanholder.html">jordanholder</a></li>
+<li><a href="mathcomp.solvable.maximal.html">maximal</a></li>
+<li><a href="mathcomp.solvable.nilpotent.html">nilpotent</a></li>
+<li><a href="mathcomp.solvable.pgroup.html">pgroup</a></li>
+<li><a href="mathcomp.solvable.primitive_action.html">primitive_action</a></li>
+<li><a href="mathcomp.solvable.solvable.html">solvable</a></li>
+<li><a href="mathcomp.solvable.sylow.html">sylow</a></li>
+          </ul>
+          </details>
+          </li>
+<li><details id="mathcomp.ssreflect"><summary>ssreflect</summary>
+          <ul>
+          <li><a href="mathcomp.ssreflect.all_ssreflect.html">all_ssreflect</a></li>
+          </ul>
+          </details>
+          </li>
+          </ul>
+          </details>
+          </li>
+    </div>
+
+  <div class="coq">
+
+    <div class="content">
+      <p>
+        <a href="./index.html">Top</a>
+        
+      </p>
+      <h1 class="title">Module mathcomp.test_suite.test_lra</h1>
+<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> all_boot</span><span class="id"> ssralg</span><span class="id"> ssrnum</span><span class="id"> ssrint</span><span class="id"> rat</span>.<br/>
+<span class="vernacular">From</span><span class="id"> mathcomp</span><span class="vernacular"> Require</span><span class="vernacular"> Import</span><span class="id"> arithmetic_tactic</span>.<br/>
+<br/>
+<span class="vernacular">Local</span><span class="vernacular"> Open</span><span class="vernacular"> Scope</span><span class="id"> ring_scope</span>.<br/>
+<br/>
+<span class="vernacular">Lemma</span><span class="id"> test</span> (<span class="id">F</span><span class="id"> </span><span class="id"><a href="mathcomp.order.order.html">:</a></span><span class="id"><a href="mathcomp.order.order.html"> rea</a></span><span class="id">lFieldType</span>) (<span class="id">x</span><span class="id"> y</span><span class="id"> :</span><span class="id"> F</span>)<span class="id"> :</span><br/>
+&nbsp;&nbsp;<span class="id">x</span><span class="id"> +</span><span class="id"> 2</span><span class="id"> *</span><span class="id"> y</span><span class="id"> &lt;=</span><span class="id"> 3</span><span class="id"> -&gt;</span><span class="id"> 2</span><span class="id"> *</span><span class="id"> x</span><span class="id"> +</span><span class="id"> y</span><span class="id"> &lt;=</span><span class="id"> 3</span><span class="id"> -&gt;</span><span class="id"> x</span><span class="id"> +</span><span class="id"> y</span><span class="id"> &lt;=</span><span class="id"> 2</span>.<br/>
+<details>
+<summary class="toggleproof">Proof.</summary>
+<div class="proofscript">
+<span class="id"> lra</span>. Qed.</div></details>
+<br/>
+<br/>
+<span class="vernacular">Lemma</span><span class="id"> test_rat</span> (<span class="id">x</span><span class="id"> y</span><span class="id"> :</span><span class="id"> rat</span>)<span class="id"> :</span><span class="id"> x</span><span class="id"> +</span><span class="id"> 2</span><span class="id"> *</span><span class="id"> y</span><span class="id"> &lt;=</span><span class="id"> 3</span><span class="id"> -&gt;</span><span class="id"> 2</span><span class="id"> *</span><span class="id"> x</span><span class="id"> +</span><span class="id"> y</span><span class="id"> &lt;=</span><span class="id"> 3</span><span class="id"> -&gt;</span><span class="id"> x</span><span class="id"> +</span><span class="id"> y</span><span class="id"> &lt;=</span><span class="id"> 2</span>.<br/>
+<details>
+<summary class="toggleproof">Proof.</summary>
+<div class="proofscript">
+<span class="id"> lra</span>. Qed.</div></details>
+<br/>
+<span class="vernacular">Lemma</span><span class="id"> test_realDomain</span> (<span class="id">R</span><span class="id"> :</span><span class="id"> realDomainType</span>) (<span class="id">x</span><span class="id"> y</span><span class="id"> :</span><span class="id"> R</span>)<span class="id"> :</span><br/>
+&nbsp;&nbsp;<span class="id">x</span><span class="id"> +</span><span class="id"> 2</span><span class="id"> *</span><span class="id"> y</span><span class="id"> &lt;=</span><span class="id"> 3</span><span class="id"> -&gt;</span><span class="id"> 2</span><span class="id"> *</span><span class="id"> x</span><span class="id"> +</span><span class="id"> y</span><span class="id"> &lt;=</span><span class="id"> 3</span><span class="id"> -&gt;</span><span class="id"> x</span><span class="id"> +</span><span class="id"> y</span><span class="id"> &lt;=</span><span class="id"> 2</span>.<br/>
+<details>
+<summary class="toggleproof">Proof.</summary>
+<div class="proofscript">
+<span class="id"> lra</span>. Qed.</div></details>
+<br/>
+<span class="vernacular">Lemma</span><span class="id"> test_realDomain'</span> (<span class="id">R</span><span class="id"> :</span><span class="id"> realDomainType</span>) (<span class="id">x</span><span class="id"> :</span><span class="id"> int</span>) (<span class="id">y</span><span class="id"> :</span><span class="id"> R</span>)<span class="id"> :</span><br/>
+&nbsp;&nbsp;<span class="id">x%:~R</span><span class="id"> +</span><span class="id"> 2</span><span class="id"> *</span><span class="id"> y</span><span class="id"> &lt;=</span><span class="id"> 3</span><span class="id"> -&gt;</span> (<span class="id">2</span><span class="id"> *</span><span class="id"> x</span>)<span class="id">%:~R</span><span class="id"> +</span><span class="id"> y</span><span class="id"> &lt;=</span><span class="id"> 3</span><span class="id"> -&gt;</span><span class="id"> x%:~R</span><span class="id"> +</span><span class="id"> y</span><span class="id"> &lt;=</span><span class="id"> 2</span>.<br/>
+<details>
+<summary class="toggleproof">Proof.</summary>
+<div class="proofscript">
+<span class="id"> lra</span>. Qed.</div></details>
+<br/>
+<span class="vernacular">Section</span><span class="id"> Tests</span>.<br/>
+<span class="vernacular">Variable</span><span class="id"> F</span><span class="id"> :</span><span class="id"> realFieldType</span>.<br/>
+<span class="vernacular">Implicit</span><span class="id"> Types</span><span class="id"> x</span><span class="id"> y</span><span class="id"> :</span><span class="id"> F</span>.<br/>
+<br/>
+<span class="vernacular">Lemma</span><span class="id"> test_cast</span><span class="id"> :</span><span class="id"> 0</span><span class="id"> &lt;=</span><span class="id"> 2</span><span class="id"> :&gt;</span><span class="id"> F</span>.<br/>
+<details>
+<summary class="toggleproof">Proof.</summary>
+<div class="proofscript">
+<span class="id"> lra</span>. Qed.</div></details>
+<br/>
+<span class="vernacular">Example</span><span class="id"> test_div</span><span class="id"> x</span><span class="id"> y</span><span class="id"> :</span><span class="id"> x</span><span class="id"> /</span><span class="id"> 2</span><span class="id"> +</span><span class="id"> y</span><span class="id"> &lt;=</span><span class="id"> 3</span><span class="id"> -&gt;</span><span class="id"> x</span><span class="id"> +</span><span class="id"> y</span><span class="id"> /</span><span class="id"> 2</span><span class="id"> &lt;=</span><span class="id"> 3</span><span class="id"> -&gt;</span><span class="id"> x</span><span class="id"> +</span><span class="id"> y</span><span class="id"> &lt;=</span><span class="id"> 4</span>.<br/>
+<details>
+<summary class="toggleproof">Proof.</summary>
+<div class="proofscript">
+<span class="id"> lra</span>. Qed.</div></details>
+<br/>
+<span class="vernacular">Example</span><span class="id"> test_div_mul</span><span class="id"> x</span><span class="id"> :</span><span class="id"> 1</span><span class="id"> /</span> (<span class="id">2</span><span class="id"> *</span><span class="id"> x</span>)<span class="id"> &lt;=</span><span class="id"> 1</span><span class="id"> /</span><span class="id"> 2</span><span class="id"> /</span><span class="id"> x</span><span class="id"> +</span><span class="id"> 1</span>.<br/>
+<details>
+<summary class="toggleproof">Proof.</summary>
+<div class="proofscript">
+<span class="id"> lra</span>. Qed.</div></details>
+<br/>
+<span class="vernacular">Example</span><span class="id"> test_div_inv</span><span class="id"> x</span><span class="id"> :</span><span class="id"> 1</span><span class="id"> /</span><span class="id"> x^-1</span><span class="id"> &lt;=</span><span class="id"> x</span><span class="id"> +</span><span class="id"> 1</span>.<br/>
+<details>
+<summary class="toggleproof">Proof.</summary>
+<div class="proofscript">
+<span class="id"> lra</span>. Qed.</div></details>
+<br/>
+<span class="vernacular">Example</span><span class="id"> test_div_opp</span><span class="id"> x</span><span class="id"> :</span> (<span class="id">-</span><span class="id"> x</span>)<span class="id">^-1</span><span class="id"> &lt;=</span><span class="id"> -</span><span class="id"> x^-1</span><span class="id"> +</span><span class="id"> 1</span>.<br/>
+<details>
+<summary class="toggleproof">Proof.</summary>
+<div class="proofscript">
+<span class="id"> lra</span>. Qed.</div></details>
+<br/>
+<span class="vernacular">Example</span><span class="id"> test_div_exp</span><span class="id"> x</span><span class="id"> :</span> (<span class="id">x</span><span class="id"> ^+</span><span class="id"> 2</span>)<span class="id"> ^-1</span><span class="id"> &lt;=</span><span class="id"> x</span><span class="id"> ^-1</span><span class="id"> ^+</span><span class="id"> 2</span><span class="id"> +</span><span class="id"> 1</span>.<br/>
+<details>
+<summary class="toggleproof">Proof.</summary>
+<div class="proofscript">
+<span class="id"> lra</span>. Qed.</div></details>
+<br/>
+<span class="vernacular">Lemma</span><span class="id"> test_lt</span><span class="id"> x</span><span class="id"> y</span><span class="id"> :</span><span class="id"> x</span><span class="id"> +</span><span class="id"> 2</span><span class="id"> *</span><span class="id"> y</span><span class="id"> &lt;</span><span class="id"> 3</span><span class="id"> -&gt;</span><span class="id"> 2</span><span class="id"> *</span><span class="id"> x</span><span class="id"> +</span><span class="id"> y</span><span class="id"> &lt;=</span><span class="id"> 3</span><span class="id"> -&gt;</span><span class="id"> x</span><span class="id"> +</span><span class="id"> y</span><span class="id"> &lt;</span><span class="id"> 2</span>.<br/>
+<details>
+<summary class="toggleproof">Proof.</summary>
+<div class="proofscript">
+<span class="id"> lra</span>. Qed.</div></details>
+<br/>
+<span class="vernacular">Lemma</span><span class="id"> test_eq</span><span class="id"> x</span><span class="id"> y</span><span class="id"> :</span><span class="id"> x</span><span class="id"> +</span><span class="id"> 2</span><span class="id"> *</span><span class="id"> y</span><span class="id"> =</span><span class="id"> 3</span><span class="id"> -&gt;</span><span class="id"> 2</span><span class="id"> *</span><span class="id"> x</span><span class="id"> +</span><span class="id"> y</span><span class="id"> &lt;=</span><span class="id"> 3</span><span class="id"> -&gt;</span><span class="id"> x</span><span class="id"> +</span><span class="id"> y</span><span class="id"> &lt;=</span><span class="id"> 2</span>.<br/>
+<details>
+<summary class="toggleproof">Proof.</summary>
+<div class="proofscript">
+<span class="id"> lra</span>. Qed.</div></details>
+<br/>
+<span class="vernacular">Lemma</span><span class="id"> test_eqop</span><span class="id"> x</span><span class="id"> y</span><span class="id"> :</span><span class="id"> x</span><span class="id"> +</span><span class="id"> 2</span><span class="id"> *</span><span class="id"> y</span><span class="id"> ==</span><span class="id"> 3</span><span class="id"> -&gt;</span><span class="id"> 2</span><span class="id"> *</span><span class="id"> x</span><span class="id"> +</span><span class="id"> y</span><span class="id"> &lt;=</span><span class="id"> 3</span><span class="id"> -&gt;</span><span class="id"> x</span><span class="id"> +</span><span class="id"> y</span><span class="id"> &lt;=</span><span class="id"> 2</span>.<br/>
+<details>
+<summary class="toggleproof">Proof.</summary>
+<div class="proofscript">
+<span class="id"> lra</span>. Qed.</div></details>
+<br/>
+<span class="vernacular">Lemma</span><span class="id"> test_prop_in_middle</span> (<span class="id">C</span><span class="id"> :</span><span class="gallina-kwd"> Prop</span>)<span class="id"> x</span><span class="id"> :</span><span class="id"> x</span><span class="id"> &lt;=</span><span class="id"> 2</span><span class="id"> -&gt;</span><span class="id"> C</span><span class="id"> -&gt;</span><span class="id"> x</span><span class="id"> &lt;=</span><span class="id"> 3</span>.<br/>
+<details>
+<summary class="toggleproof">Proof.</summary>
+<div class="proofscript">
+<span class="id"> lra</span>. Qed.</div></details>
+<br/>
+<span class="vernacular">Lemma</span><span class="id"> test_opp</span><span class="id"> x</span><span class="id"> :</span><span class="id"> x</span><span class="id"> &lt;=</span><span class="id"> 2</span><span class="id"> -&gt;</span><span class="id"> -x</span><span class="id"> &gt;=</span><span class="id"> -2</span>.<br/>
+<details>
+<summary class="toggleproof">Proof.</summary>
+<div class="proofscript">
+<span class="id"> lra</span>. Qed.</div></details>
+<br/>
+<span class="vernacular">Lemma</span><span class="id"> test_iff</span><span class="id"> x</span><span class="id"> :</span><span class="id"> x</span><span class="id"> &lt;=</span><span class="id"> 2</span><span class="id"> &lt;-&gt;</span><span class="id"> -x</span><span class="id"> &gt;=</span><span class="id"> -2</span>.<br/>
+<details>
+<summary class="toggleproof">Proof.</summary>
+<div class="proofscript">
+<span class="id"> lra</span>. Qed.</div></details>
+<br/>
+<span class="vernacular">Lemma</span><span class="id"> test_eq_bool</span><span class="id"> x</span><span class="id"> :</span> (<span class="id">x</span><span class="id"> &lt;=</span><span class="id"> 2</span>)<span class="id"> =</span> (<span class="id">-x</span><span class="id"> &gt;=</span><span class="id"> -2</span>).<br/>
+<details>
+<summary class="toggleproof">Proof.</summary>
+<div class="proofscript">
+<span class="id"> lra</span>. Qed.</div></details>
+<br/>
+<span class="vernacular">Lemma</span><span class="id"> test_not</span><span class="id"> x</span><span class="id"> :</span><span class="id"> x</span><span class="id"> &lt;=</span><span class="id"> 2</span><span class="id"> -&gt;</span><span class="id"> ~</span> (<span class="id">x</span><span class="id"> &gt;</span><span class="id"> 2</span>).<br/>
+<details>
+<summary class="toggleproof">Proof.</summary>
+<div class="proofscript">
+<span class="id"> lra</span>. Qed.</div></details>
+<br/>
+<span class="vernacular">Lemma</span><span class="id"> test_negb</span><span class="id"> x</span><span class="id"> :</span><span class="id"> x</span><span class="id"> &lt;=</span><span class="id"> 2</span><span class="id"> -&gt;</span><span class="id"> ~~</span> (<span class="id">x</span><span class="id"> &gt;</span><span class="id"> 2</span>).<br/>
+<details>
+<summary class="toggleproof">Proof.</summary>
+<div class="proofscript">
+<span class="id"> lra</span>. Qed.</div></details>
+<br/>
+<span class="vernacular">Lemma</span><span class="id"> test_and</span><span class="id"> x</span><span class="id"> :</span><span class="id"> x</span><span class="id"> &lt;=</span><span class="id"> 2</span><span class="id"> -&gt;</span> (<span class="id">x</span><span class="id"> &lt;=</span><span class="id"> 3</span><span class="id"> /\</span><span class="id"> x</span><span class="id"> &lt;=</span><span class="id"> 4</span>).<br/>
+<details>
+<summary class="toggleproof">Proof.</summary>
+<div class="proofscript">
+<span class="id"> lra</span>. Qed.</div></details>
+<br/>
+<span class="vernacular">Lemma</span><span class="id"> test_andb</span><span class="id"> x</span><span class="id"> :</span><span class="id"> x</span><span class="id"> &lt;=</span><span class="id"> 2</span><span class="id"> -&gt;</span> (<span class="id">x</span><span class="id"> &lt;=</span><span class="id"> 3</span>)<span class="id"> &amp;&amp;</span> (<span class="id">x</span><span class="id"> &lt;=</span><span class="id"> 4</span>).<br/>
+<details>
+<summary class="toggleproof">Proof.</summary>
+<div class="proofscript">
+<span class="id"> lra</span>. Qed.</div></details>
+<br/>
+<span class="vernacular">Lemma</span><span class="id"> test_or</span><span class="id"> x</span><span class="id"> :</span><span class="id"> x</span><span class="id"> &lt;=</span><span class="id"> 2</span><span class="id"> -&gt;</span> (<span class="id">x</span><span class="id"> &lt;=</span><span class="id"> 3</span><span class="id"> \/</span><span class="id"> x</span><span class="id"> &lt;=</span><span class="id"> 1</span>).<br/>
+<details>
+<summary class="toggleproof">Proof.</summary>
+<div class="proofscript">
+<span class="id"> lra</span>. Qed.</div></details>
+<br/>
+<span class="vernacular">Lemma</span><span class="id"> test_orb</span><span class="id"> x</span><span class="id"> :</span><span class="id"> x</span><span class="id"> &lt;=</span><span class="id"> 2</span><span class="id"> -&gt;</span> (<span class="id">x</span><span class="id"> &lt;=</span><span class="id"> 3</span>)<span class="id"> ||</span> (<span class="id">x</span><span class="id"> &lt;=</span><span class="id"> 1</span>).<br/>
+<details>
+<summary class="toggleproof">Proof.</summary>
+<div class="proofscript">
+<span class="id"> lra</span>. Qed.</div></details>
+<br/>
+<span class="vernacular">Lemma</span><span class="id"> test_exfalso</span><span class="id"> x</span> (<span class="id">xle2</span><span class="id"> :</span><span class="id"> x</span><span class="id"> &lt;=</span><span class="id"> 2</span>) (<span class="id">xge3</span><span class="id"> :</span><span class="id"> x</span><span class="id"> &gt;=</span><span class="id"> 3</span>)<span class="id"> :</span><span class="id"> bool</span>.<br/>
+<details>
+<summary class="toggleproof">Proof.</summary>
+<div class="proofscript">
+<span class="id"> lra</span>. Qed.</div></details>
+<br/>
+<span class="vernacular">Lemma</span><span class="id"> test_rat_constant</span><span class="id"> x</span><span class="id"> :</span><span class="id"> 0</span><span class="id"> &lt;=</span><span class="id"> x</span><span class="id"> -&gt;</span><span class="id"> 1</span><span class="id"> /</span><span class="id"> 3</span><span class="id"> *</span><span class="id"> x</span><span class="id"> &lt;=</span><span class="id"> 2^-1</span><span class="id"> *</span><span class="id"> x</span>.<br/>
+<details>
+<summary class="toggleproof">Proof.</summary>
+<div class="proofscript">
+<span class="id"> lra</span>. Qed.</div></details>
+<br/>
+<span class="vernacular">Lemma</span><span class="id"> test_rfstr</span> (<span class="id">x</span><span class="id"> :</span><span class="id"> rat</span>)<span class="id"> :</span> (<span class="id">x</span><span class="id"> &lt;=</span><span class="id"> 2</span>)<span class="id"> ||</span><span class="id"> true</span><span class="id"> =</span><span class="id"> true</span>.<br/>
+<details>
+<summary class="toggleproof">Proof.</summary>
+<div class="proofscript">
+<span class="id"> lra</span>. Qed.</div></details>
+<br/>
+<span class="vernacular">End</span><span class="id"> Tests</span>.<br/>
+<br/>
+<span class="vernacular">Section</span><span class="id"> TestsCoq</span>.<br/>
+<span class="vernacular">Variable</span><span class="id"> F</span><span class="id"> :</span><span class="id"> realFieldType</span>.<br/>
+<span class="vernacular">Implicit</span><span class="id"> Types</span><span class="id"> x</span><span class="id"> y</span><span class="id"> :</span><span class="id"> F</span>.<br/>
+<br/>
+<span class="vernacular">Lemma</span><span class="id"> plus_minus</span><span class="id"> x</span><span class="id"> y</span><span class="id"> :</span><span class="id"> 0</span><span class="id"> =</span><span class="id"> x</span><span class="id"> +</span><span class="id"> y</span><span class="id"> -&gt;</span><span class="id"> 0</span><span class="id"> =</span><span class="id"> x</span><span class="id"> -</span><span class="id"> y</span><span class="id"> -&gt;</span><span class="id"> 0</span><span class="id"> =</span><span class="id"> x</span><span class="id"> /\</span><span class="id"> 0</span><span class="id"> =</span><span class="id"> y</span>.<br/>
+<details>
+<summary class="toggleproof">Proof.</summary>
+<div class="proofscript">
+<span class="id"> lra</span>. Qed.</div></details>
+<br/>
+<span class="vernacular">Lemma</span><span class="id"> plus_minus'</span><span class="id"> x</span><span class="id"> y</span><span class="id"> :</span><span class="id"> 0</span><span class="id"> =</span><span class="id"> x</span><span class="id"> +</span><span class="id"> y</span><span class="id"> -&gt;</span><span class="id"> 0</span><span class="id"> =</span><span class="id"> x</span><span class="id"> -</span><span class="id"> y</span><span class="id"> -&gt;</span><span class="id"> 0</span><span class="id"> =</span><span class="id"> x</span><span class="id"> /\</span><span class="id"> 0</span><span class="id"> =</span><span class="id"> y</span>.<br/>
+<details>
+<summary class="toggleproof">Proof.</summary>
+<div class="proofscript">
+<span class="id"> move=&gt;</span><span class="id"> *;</span><span class="id"> lra</span>. Qed.</div></details>
+<br/>
+<span class="vernacular">Lemma</span><span class="id"> cst_test</span><span class="id"> :</span><span class="id"> 5^+5</span><span class="id"> =</span><span class="id"> 5</span><span class="id"> *</span><span class="id"> 5</span><span class="id"> *</span><span class="id"> 5</span><span class="id"> *</span><span class="id"> 5</span><span class="id"> *</span><span class="id"> 5</span><span class="id"> :&gt;</span><span class="id"> F</span>.<br/>
+<details>
+<summary class="toggleproof">Proof.</summary>
+<div class="proofscript">
+<span class="id"> lra</span>. Qed.</div></details>
+<br/>
+<span class="vernacular">Goal</span><span class="gallina-kwd"> forall</span><span class="id"> x</span><span class="id"> y,</span><span class="id"> x</span><span class="id"> &lt;&gt;</span><span class="id"> x</span><span class="id"> -&gt;</span><span class="id"> x</span><span class="id"> &gt;</span><span class="id"> y</span>.<br/>
+<details>
+<summary class="toggleproof">Proof.</summary>
+<div class="proofscript">
+<span class="id"> move=&gt;</span><span class="id"> *;</span><span class="id"> lra</span>. Qed.</div></details>
+<br/>
+<span class="vernacular">Lemma</span><span class="id"> binomial</span><span class="id"> x</span><span class="id"> y</span><span class="id"> :</span> (<span class="id">x</span><span class="id"> +</span><span class="id"> y</span>)<span class="id">^+2</span><span class="id"> =</span><span class="id"> x^+2</span><span class="id"> +</span><span class="id"> 2</span><span class="id"> *</span><span class="id"> x</span><span class="id"> *</span><span class="id"> y</span><span class="id"> +</span><span class="id"> y^+2</span>.<br/>
+<details>
+<summary class="toggleproof">Proof.</summary>
+<div class="proofscript">
+<span class="id"> move=&gt;</span><span class="id"> *;</span><span class="id"> lra</span>. Qed.</div></details>
+<br/>
+<span class="vernacular">Lemma</span><span class="id"> hol_light19</span><span class="id"> x</span><span class="id"> y</span><span class="id"> :</span><span class="id"> 2</span><span class="id"> *</span><span class="id"> y</span><span class="id"> +</span><span class="id"> x</span><span class="id"> =</span> (<span class="id">x</span><span class="id"> +</span><span class="id"> y</span>)<span class="id"> +</span><span class="id"> y</span>.<br/>
+<details>
+<summary class="toggleproof">Proof.</summary>
+<div class="proofscript">
+<span class="id"> lra</span>. Qed.</div></details>
+<br/>
+<span class="vernacular">Lemma</span><span class="id"> vcgen_25</span> (<span class="id">n</span><span class="id"> m</span><span class="id"> jt</span><span class="id"> j</span><span class="id"> it</span><span class="id"> i</span><span class="id"> :</span><span class="id"> F</span>)<span class="id"> :</span><br/>
+&nbsp;&nbsp;<span class="id">1</span><span class="id"> *</span><span class="id"> it</span><span class="id"> -</span><span class="id"> 2</span><span class="id"> *</span><span class="id"> i</span><span class="id"> -</span><span class="id"> 1</span><span class="id"> =</span><span class="id"> 0</span><span class="id"> -&gt;</span><br/>
+&nbsp;&nbsp;<span class="id">1</span><span class="id"> *</span><span class="id"> jt</span><span class="id"> -</span><span class="id"> 2</span><span class="id"> *</span><span class="id"> j</span><span class="id"> -</span><span class="id"> 1</span><span class="id"> =</span><span class="id"> 0</span><span class="id"> -&gt;</span><br/>
+&nbsp;&nbsp;<span class="id">1</span><span class="id"> *</span><span class="id"> n</span><span class="id"> -</span><span class="id"> 10</span><span class="id"> =</span><span class="id"> 0</span><span class="id"> -&gt;</span><br/>
+&nbsp;&nbsp;<span class="id">0</span><span class="id"> &lt;=</span><span class="id"> -</span>(<span class="id">4028%:R</span>) <span class="id"> *</span><span class="id"> i</span><span class="id"> +</span><span class="id"> 6222%:R</span><span class="id"> *</span><span class="id"> j</span><span class="id"> +</span><span class="id"> 705</span><span class="id"> *</span><span class="id"> m</span><span class="id"> +</span><span class="id"> -</span>(<span class="id">16674%:R</span>)<span class="id"> -&gt;</span><br/>
+&nbsp;&nbsp;<span class="id">0</span><span class="id"> &lt;=</span><span class="id"> -</span><span class="id"> 418</span><span class="id"> *</span><span class="id"> i</span><span class="id"> +</span><span class="id"> 651</span><span class="id"> *</span><span class="id"> j</span><span class="id"> +</span><span class="id"> 94</span><span class="id"> *</span><span class="id"> m</span><span class="id"> +</span><span class="id"> -</span>(<span class="id">1866%:R</span>)<span class="id"> -&gt;</span><br/>
+&nbsp;&nbsp;<span class="id">0</span><span class="id"> &lt;=</span><span class="id"> -</span><span class="id"> 209</span><span class="id"> *</span><span class="id"> i</span><span class="id"> +</span><span class="id"> 302</span><span class="id"> *</span><span class="id"> j</span><span class="id"> +</span><span class="id"> 47</span><span class="id"> *</span><span class="id"> m</span><span class="id"> -</span><span class="id"> 839</span><span class="id"> -&gt;</span><br/>
+&nbsp;&nbsp;<span class="id">0</span><span class="id"> &lt;=</span><span class="id"> -</span><span class="id"> 1</span><span class="id"> *</span><span class="id"> i</span><span class="id"> +</span><span class="id"> 1</span><span class="id"> *</span><span class="id"> j</span><span class="id"> -</span><span class="id"> 1</span><span class="id"> -&gt;</span><br/>
+&nbsp;&nbsp;<span class="id">0</span><span class="id"> &lt;=</span><span class="id"> -</span><span class="id"> 1</span><span class="id"> *</span><span class="id"> j</span><span class="id"> +</span><span class="id"> 1</span><span class="id"> *</span><span class="id"> m</span><span class="id"> +</span><span class="id"> 0</span><span class="id"> -&gt;</span><br/>
+&nbsp;&nbsp;<span class="id">0</span><span class="id"> &lt;=</span><span class="id"> 1</span><span class="id"> *</span><span class="id"> j</span><span class="id"> +</span><span class="id"> 5</span><span class="id"> *</span><span class="id"> m</span><span class="id"> -</span><span class="id"> 27</span><span class="id"> -&gt;</span><br/>
+&nbsp;&nbsp;<span class="id">0</span><span class="id"> &lt;=</span><span class="id"> 2</span><span class="id"> *</span><span class="id"> j</span><span class="id"> -</span><span class="id"> 1</span><span class="id"> *</span><span class="id"> m</span><span class="id"> +</span><span class="id"> 2</span><span class="id"> -&gt;</span><br/>
+&nbsp;&nbsp;<span class="id">0</span><span class="id"> &lt;=</span><span class="id"> 7</span><span class="id"> *</span><span class="id"> j</span><span class="id"> +</span><span class="id"> 10</span><span class="id"> *</span><span class="id"> m</span><span class="id"> -</span><span class="id"> 74</span><span class="id"> -&gt;</span><br/>
+&nbsp;&nbsp;<span class="id">0</span><span class="id"> &lt;=</span><span class="id"> 18</span><span class="id"> *</span><span class="id"> j</span><span class="id"> -</span><span class="id"> 139</span><span class="id"> *</span><span class="id"> m</span><span class="id"> +</span><span class="id"> 1188%:R</span><span class="id"> -&gt;</span><br/>
+&nbsp;&nbsp;<span class="id">0</span><span class="id"> &lt;=</span><span class="id"> 1</span><span class="id"> *</span><span class="id"> i</span><span class="id"> +</span><span class="id"> 0</span><span class="id"> -&gt;</span><br/>
+&nbsp;&nbsp;<span class="id">0</span><span class="id"> &lt;=</span><span class="id"> 121</span><span class="id"> *</span><span class="id"> i</span><span class="id"> +</span><span class="id"> 810</span><span class="id"> *</span><span class="id"> j</span><span class="id"> +</span><span class="id"> -</span>(<span class="id">7465%:R</span>)<span class="id"> *</span><span class="id"> m</span><span class="id"> +</span><span class="id"> 64350%:R</span><span class="id"> -&gt;</span><br/>
+&nbsp;&nbsp;<span class="id">1</span><span class="id"> =</span><span class="id"> -</span><span class="id"> 2</span><span class="id"> *</span><span class="id"> i</span><span class="id"> +</span><span class="id"> it</span>.<br/>
+<details>
+<summary class="toggleproof">Proof.</summary>
+<div class="proofscript">
+<span class="id"> move=&gt;</span><span class="id"> *;</span><span class="id"> lra</span>. Qed.</div></details>
+<br/>
+<span class="vernacular">Lemma</span><span class="id"> l1</span><span class="id"> x</span><span class="id"> y</span><span class="id"> z</span><span class="id"> :</span><span class="id"> `|x</span><span class="id"> -</span><span class="id"> z|</span><span class="id"> &lt;=</span><span class="id"> `|x</span><span class="id"> -</span><span class="id"> y|</span><span class="id"> +</span><span class="id"> `|y</span><span class="id"> -</span><span class="id"> z|</span>.<br/>
+<details>
+<summary class="toggleproof">Proof.</summary>
+<div class="proofscript">
+<span class="vernacular">Fail</span><span class="id"> intros;</span><span class="id"> split_Rabs;</span><span class="id"> lra</span>.  <span class="comment">(*&nbsp;TODO&nbsp;should&nbsp;work&nbsp;*)</span><br/>
+Abort.</div></details>
+<br/>
+<span class="vernacular">Lemma</span><span class="id"> l2</span><span class="id"> x</span><span class="id"> y</span><span class="id"> :</span><br/>
+&nbsp;&nbsp;<span class="id">x</span><span class="id"> &lt;</span><span class="id"> `|y|</span><span class="id"> -&gt;</span><span class="id"> y</span><span class="id"> &lt;</span><span class="id"> 1</span><span class="id"> -&gt;</span><span class="id"> x</span><span class="id"> &gt;=</span><span class="id"> 0</span><span class="id"> -&gt;</span><span class="id"> -</span><span class="id"> y</span><span class="id"> &lt;=</span><span class="id"> 1</span><span class="id"> -&gt;</span><span class="id"> `|x|</span><span class="id"> &lt;=</span><span class="id"> 1</span>.<br/>
+<details>
+<summary class="toggleproof">Proof.</summary>
+<div class="proofscript">
+<span class="vernacular">Fail</span><span class="id"> intros;</span><span class="id"> split_Rabs;</span><span class="id"> lra</span>.  <span class="comment">(*&nbsp;TODO&nbsp;should&nbsp;work&nbsp;*)</span><br/>
+Abort.</div></details>
+<br/>
+<span class="vernacular">Lemma</span><span class="id"> opp_eq_0_iff</span><span class="id"> x</span><span class="id"> :</span><span class="id"> -x</span><span class="id"> =</span><span class="id"> 0</span><span class="id"> &lt;-&gt;</span><span class="id"> x</span><span class="id"> =</span><span class="id"> 0</span>.<br/>
+<details>
+<summary class="toggleproof">Proof.</summary>
+<div class="proofscript">
+<span class="id"> lra</span>. Qed.</div></details>
+<br/>
+<br/>
+<span class="vernacular">Goal</span><span class="gallina-kwd"> forall</span><span class="id"> x</span><span class="id"> y,</span><span class="id"> x</span><span class="id"> =</span><span class="id"> 0</span><span class="id"> -&gt;</span><span class="id"> x</span><span class="id"> *</span><span class="id"> y</span><span class="id"> =</span><span class="id"> 0</span>.<br/>
+<details>
+<summary class="toggleproof">Proof.</summary>
+<div class="proofscript">
+<span class="id"> move=&gt;</span><span class="id"> *;</span><span class="id"> nra</span>. Qed.</div></details>
+<br/>
+<span class="vernacular">Goal</span><span class="gallina-kwd"> forall</span><span class="id"> x</span><span class="id"> y,</span><span class="id"> 2</span><span class="id"> *</span><span class="id"> x</span><span class="id"> =</span><span class="id"> 0</span><span class="id"> -&gt;</span><span class="id"> x</span><span class="id"> *</span><span class="id"> y</span><span class="id"> =</span><span class="id"> 0</span>.<br/>
+<details>
+<summary class="toggleproof">Proof.</summary>
+<div class="proofscript">
+<span class="id"> move=&gt;</span><span class="id"> *;</span><span class="id"> nra</span>. Qed.</div></details>
+<br/>
+<span class="vernacular">Goal</span><span class="gallina-kwd"> forall</span><span class="id"> x</span><span class="id"> y,</span><span class="id"> -</span><span class="id"> x</span><span class="id"> *</span><span class="id"> x</span><span class="id"> &gt;=</span><span class="id"> 0</span><span class="id"> -&gt;</span><span class="id"> x</span><span class="id"> *</span><span class="id"> y</span><span class="id"> =</span><span class="id"> 0</span>.<br/>
+<details>
+<summary class="toggleproof">Proof.</summary>
+<div class="proofscript">
+<span class="id"> move=&gt;</span><span class="id"> *;</span><span class="id"> nra</span>. Qed.</div></details>
+<br/>
+<span class="vernacular">Goal</span><span class="gallina-kwd"> forall</span><span class="id"> x,</span><span class="id"> x</span><span class="id"> *</span><span class="id"> x</span><span class="id"> &gt;=</span><span class="id"> 0</span>.<br/>
+<details>
+<summary class="toggleproof">Proof.</summary>
+<div class="proofscript">
+<span class="id"> move=&gt;</span><span class="id"> *;</span><span class="id"> nra</span>. Qed.</div></details>
+<br/>
+<span class="vernacular">Goal</span><span class="gallina-kwd"> forall</span><span class="id"> x,</span><span class="id"> -x^+2</span><span class="id"> &gt;=</span><span class="id"> 0</span><span class="id"> -&gt;</span><span class="id"> x</span><span class="id"> -</span><span class="id"> 1</span><span class="id"> &gt;=</span><span class="id"> 0</span><span class="id"> -&gt;</span><span class="id"> False</span>.<br/>
+<details>
+<summary class="toggleproof">Proof.</summary>
+<div class="proofscript">
+<span class="id">move=&gt;</span><span class="id"> *</span>.<br/>
+<span class="comment">(*&nbsp;Requires&nbsp;CSDP&nbsp;*)</span><br/>
+<span class="comment">(*&nbsp;psatz&nbsp;3.&nbsp;*)</span><br/>
+<span class="comment">(*&nbsp;Qed.&nbsp;*)</span><br/>
+Abort.</div></details>
+<br/>
+<span class="vernacular">Goal</span><span class="gallina-kwd"> forall</span><span class="id"> x,</span><span class="id"> -x^+2</span><span class="id"> &gt;=</span><span class="id"> 0</span><span class="id"> -&gt;</span><span class="id"> x</span><span class="id"> -</span><span class="id"> 1</span><span class="id"> &gt;=</span><span class="id"> 0</span><span class="id"> -&gt;</span><span class="id"> False</span>.<br/>
+<details>
+<summary class="toggleproof">Proof.</summary>
+<div class="proofscript">
+<span class="id"> move=&gt;</span><span class="id"> *;</span><span class="id"> nra</span>. Qed.</div></details>
+<br/>
+<span class="vernacular">Lemma</span><span class="id"> motzkin'</span><span class="id"> x</span><span class="id"> y</span><span class="id"> :</span><br/>
+&nbsp;&nbsp;(<span class="id">x^+2</span><span class="id"> +</span><span class="id"> y^+2</span><span class="id"> +</span><span class="id"> 1</span>)<span class="id"> *</span> (<span class="id">x^+2</span><span class="id"> *</span><span class="id"> y^+4</span><span class="id"> +</span><span class="id"> x^+4*y^+2</span><span class="id"> +</span><span class="id"> 1</span><span class="id"> -</span><span class="id"> 3</span><span class="id"> *</span><span class="id"> x^+2</span><span class="id"> *</span><span class="id"> y^+2</span>)<span class="id"> &gt;=</span><span class="id"> 0</span>.<br/>
+<details>
+<summary class="toggleproof">Proof.</summary>
+<div class="proofscript">
+<span class="id">move=&gt;</span><span class="id"> *</span>.<br/>
+<span class="comment">(*&nbsp;Requires&nbsp;CSDP&nbsp;*)</span><br/>
+<span class="comment">(*&nbsp;psatz&nbsp;3.&nbsp;*)</span><br/>
+<span class="comment">(*&nbsp;Qed.&nbsp;*)</span><br/>
+Abort.</div></details>
+<br/>
+<span class="vernacular">Goal</span><span class="gallina-kwd"> forall</span><span class="id"> x,</span><span class="id"> -x^+2</span><span class="id"> &gt;=</span><span class="id"> 0</span><span class="id"> -&gt;</span><span class="id"> x</span><span class="id"> -</span><span class="id"> 1</span><span class="id"> &gt;=</span><span class="id"> 0</span><span class="id"> -&gt;</span><span class="id"> False</span>.<br/>
+<details>
+<summary class="toggleproof">Proof.</summary>
+<div class="proofscript">
+<span class="id"> move=&gt;</span><span class="id"> *;</span><span class="id"> nra</span>. Qed.</div></details>
+<br/>
+<span class="vernacular">Goal</span><span class="id"> 1</span><span class="id"> /</span> (<span class="id">1</span><span class="id"> -</span><span class="id"> 1</span>)<span class="id"> =</span><span class="id"> 0</span><span class="id"> :&gt;</span><span class="id"> F</span>.<br/>
+<details>
+<summary class="toggleproof">Proof.</summary>
+<div class="proofscript">
+<span class="vernacular">Fail</span><span class="id"> lra</span>. <span class="comment">(*&nbsp;division&nbsp;by&nbsp;zero&nbsp;*)</span><br/>
+Abort.</div></details>
+<br/>
+<span class="vernacular">Goal</span><span class="id"> 0</span><span class="id"> /</span> (<span class="id">1</span><span class="id"> -</span><span class="id"> 1</span>)<span class="id"> =</span><span class="id"> 0</span><span class="id"> :&gt;</span><span class="id"> F</span>.<br/>
+<details>
+<summary class="toggleproof">Proof.</summary>
+<div class="proofscript">
+<span class="id"> lra</span>. Qed.</div></details>
+  <br/>
+<br/>
+<span class="vernacular">Goal</span><span class="id"> 10</span><span class="id"> ^+</span><span class="id"> 2</span><span class="id"> =</span><span class="id"> 100</span><span class="id"> :&gt;</span><span class="id"> F</span>.<br/>
+<details>
+<summary class="toggleproof">Proof.</summary>
+<div class="proofscript">
+<span class="id"> lra</span>. Qed.</div></details>
+  <br/>
+<br/>
+<span class="vernacular">Goal</span><span class="id"> ratr</span> (<span class="id">1</span><span class="id"> /</span><span class="id"> 2</span>)<span class="id"> =</span><span class="id"> 1</span><span class="id"> /</span><span class="id"> 2</span><span class="id"> :&gt;</span><span class="id"> F</span>.<br/>
+<details>
+<summary class="toggleproof">Proof.</summary>
+<div class="proofscript">
+<span class="id"> lra</span>. Qed.</div></details>
+<br/>
+<span class="vernacular">Goal</span><span class="id"> 1</span><span class="id"> ^+</span> (<span class="id">2</span><span class="id"> +</span><span class="id"> 2</span>)<span class="id"> =</span><span class="id"> 1</span><span class="id"> :&gt;</span><span class="id"> F</span>.<br/>
+<details>
+<summary class="toggleproof">Proof.</summary>
+<div class="proofscript">
+<span class="id"> lra</span>. Qed.</div></details>
+<br/>
+<span class="vernacular">Goal</span><span class="id"> 1</span><span class="id"> ^+</span> (<span class="id">2</span><span class="id"> +</span><span class="id"> 2</span>)<span class="id"> =</span><span class="id"> 1</span><span class="id"> :&gt;</span><span class="id"> F</span>.<br/>
+<details>
+<summary class="toggleproof">Proof.</summary>
+<div class="proofscript">
+<span class="id"> lra</span>. Qed.</div></details>
+<br/>
+<span class="vernacular">End</span><span class="id"> TestsCoq</span>.<br/>
+<br/>
+<span class="vernacular">Example</span><span class="id"> test_abstract_rmorphism</span> (<span class="id">R</span><span class="id"> :</span><span class="id"> realDomainType</span>) (<span class="id">f</span><span class="id"> :</span><span class="id"> {rmorphism</span><span class="id"> R</span><span class="id"> -&gt;</span><span class="id"> R}</span>)<br/>
+&nbsp;&nbsp;(<span class="id">x</span><span class="id"> y</span><span class="id"> :</span><span class="id"> R</span>)<span class="id"> :</span><span class="id"> f</span><span class="id"> y</span><span class="id"> &gt;=</span><span class="id"> 0</span><span class="id"> -&gt;</span><span class="id"> f</span><span class="id"> x</span><span class="id"> +</span><span class="id"> 2</span><span class="id"> *</span><span class="id"> f</span> (<span class="id">y</span><span class="id"> +</span><span class="id"> 1</span>)<span class="id"> &lt;=</span><span class="id"> f</span> (<span class="id">3</span><span class="id"> *</span><span class="id"> y</span><span class="id"> +</span><span class="id"> x</span>)<span class="id"> +</span><span class="id"> 2</span>.<br/>
+<details>
+<summary class="toggleproof">Proof.</summary>
+<div class="proofscript">
+<span class="id"> lra</span>. Qed.</div></details>
+<br/>
+<span class="vernacular">Example</span><span class="id"> test_concrete_rmorphism</span> (<span class="id">R</span><span class="id"> :</span><span class="id"> realFieldType</span>) (<span class="id">x</span><span class="id"> y</span><span class="id"> :</span><span class="id"> rat</span>)<span class="id"> :</span><br/>
+&nbsp;&nbsp;<span class="id">ratr</span><span class="id"> y</span><span class="id"> &gt;=</span><span class="id"> 0</span><span class="id"> :&gt;</span><span class="id"> R</span><span class="id"> -&gt;</span><span class="id"> ratr</span><span class="id"> x</span><span class="id"> +</span><span class="id"> 2</span><span class="id"> *</span><span class="id"> ratr</span> (<span class="id">y</span><span class="id"> +</span><span class="id"> 1</span>)<span class="id"> &lt;=</span><span class="id"> ratr</span> (<span class="id">3</span><span class="id"> *</span><span class="id"> y</span><span class="id"> +</span><span class="id"> x</span>)<span class="id"> +</span><span class="id"> 2</span><span class="id"> :&gt;</span><span class="id"> R</span>.<br/>
+<details>
+<summary class="toggleproof">Proof.</summary>
+<div class="proofscript">
+<span class="id"> lra</span>. Qed.</div></details>
+
+      <div class="footer"><hr/>Generated by <a href="https://github.com/affeldt-aist/rocqnavi/">rocqnavi</a></div>
+    </div>
+  </div>
+    </main>
+</body>
+</html>
