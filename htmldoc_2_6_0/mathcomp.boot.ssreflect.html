@@ -1,0 +1,268 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Module mathcomp.boot.ssreflect</title>
+<meta name="description" content="Documentation of Coq module Mathematical Components 7cde45af" />
+<link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/markdown-it-texmath/texmath.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+<link href="rocqnavi.css" rel="stylesheet" type="text/css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="rocqnavi.js"> </script>
+</head>
+
+<body onload="init()">
+
+  <main>
+    <div class="sidebar">
+      <h2>Files</h2>
+      <li><details id="mathcomp"><summary>mathcomp</summary>
+          <ul>
+          <li><details id="mathcomp.algebra"><summary>algebra</summary>
+          <ul>
+          <li><details id="mathcomp.algebra.algebraic_hierarchy"><summary>algebraic_hierarchy</summary>
+          <ul>
+          <li><a href="mathcomp.algebra.algebraic_hierarchy.decfield.html">decfield</a></li>
+<li><a href="mathcomp.algebra.algebraic_hierarchy.divalg.html">divalg</a></li>
+<li><a href="mathcomp.algebra.algebraic_hierarchy.rings_modules_and_algebras.html">rings_modules_and_algebras</a></li>
+<li><a href="mathcomp.algebra.algebraic_hierarchy.ssralg.html">ssralg</a></li>
+          </ul>
+          </details>
+          </li>
+<li><details id="mathcomp.algebra.numeric_hierarchy"><summary>numeric_hierarchy</summary>
+          <ul>
+          <li><a href="mathcomp.algebra.numeric_hierarchy.numdomain.html">numdomain</a></li>
+<li><a href="mathcomp.algebra.numeric_hierarchy.numfield.html">numfield</a></li>
+<li><a href="mathcomp.algebra.numeric_hierarchy.orderedzmod.html">orderedzmod</a></li>
+<li><a href="mathcomp.algebra.numeric_hierarchy.ssrnum.html">ssrnum</a></li>
+          </ul>
+          </details>
+          </li>
+<li><a href="mathcomp.algebra.algebra.html">algebra</a></li>
+<li><a href="mathcomp.algebra.all_algebra.html">all_algebra</a></li>
+<li><a href="mathcomp.algebra.archimedean.html">archimedean</a></li>
+<li><a href="mathcomp.algebra.arithmetic_tactic.html">arithmetic_tactic</a></li>
+<li><a href="mathcomp.algebra.binnums.html">binnums</a></li>
+<li><a href="mathcomp.algebra.countalg.html">countalg</a></li>
+<li><a href="mathcomp.algebra.field_tactic.html">field_tactic</a></li>
+<li><a href="mathcomp.algebra.finalg.html">finalg</a></li>
+<li><a href="mathcomp.algebra.fraction.html">fraction</a></li>
+<li><a href="mathcomp.algebra.intdiv.html">intdiv</a></li>
+<li><a href="mathcomp.algebra.interval.html">interval</a></li>
+<li><a href="mathcomp.algebra.interval_inference.html">interval_inference</a></li>
+<li><a href="mathcomp.algebra.lra.html">lra</a></li>
+<li><a href="mathcomp.algebra.matrix.html">matrix</a></li>
+<li><a href="mathcomp.algebra.mxalgebra.html">mxalgebra</a></li>
+<li><a href="mathcomp.algebra.mxpoly.html">mxpoly</a></li>
+<li><a href="mathcomp.algebra.mxred.html">mxred</a></li>
+<li><a href="mathcomp.algebra.poly.html">poly</a></li>
+<li><a href="mathcomp.algebra.polyXY.html">polyXY</a></li>
+<li><a href="mathcomp.algebra.polydiv.html">polydiv</a></li>
+<li><a href="mathcomp.algebra.qpoly.html">qpoly</a></li>
+<li><a href="mathcomp.algebra.rat.html">rat</a></li>
+<li><a href="mathcomp.algebra.ring.html">ring</a></li>
+<li><a href="mathcomp.algebra.ring_quotient.html">ring_quotient</a></li>
+<li><a href="mathcomp.algebra.ring_tactic.html">ring_tactic</a></li>
+<li><a href="mathcomp.algebra.sesquilinear.html">sesquilinear</a></li>
+<li><a href="mathcomp.algebra.spectral.html">spectral</a></li>
+<li><a href="mathcomp.algebra.ssrint.html">ssrint</a></li>
+<li><a href="mathcomp.algebra.tensor.html">tensor</a></li>
+<li><a href="mathcomp.algebra.vector.html">vector</a></li>
+<li><a href="mathcomp.algebra.zmodp.html">zmodp</a></li>
+          </ul>
+          </details>
+          </li>
+<li><details id="mathcomp.all"><summary>all</summary>
+          <ul>
+          <li><a href="mathcomp.all.all.html">all</a></li>
+          </ul>
+          </details>
+          </li>
+<li><details id="mathcomp.boot"><summary>boot</summary>
+          <ul>
+          <li><a href="mathcomp.boot.all_boot.html">all_boot</a></li>
+<li><a href="mathcomp.boot.bigop.html">bigop</a></li>
+<li><a href="mathcomp.boot.binomial.html">binomial</a></li>
+<li><a href="mathcomp.boot.boot.html">boot</a></li>
+<li><a href="mathcomp.boot.choice.html">choice</a></li>
+<li><a href="mathcomp.boot.div.html">div</a></li>
+<li><a href="mathcomp.boot.eqtype.html">eqtype</a></li>
+<li><a href="mathcomp.boot.finfun.html">finfun</a></li>
+<li><a href="mathcomp.boot.fingraph.html">fingraph</a></li>
+<li><a href="mathcomp.boot.finset.html">finset</a></li>
+<li><a href="mathcomp.boot.fintype.html">fintype</a></li>
+<li><a href="mathcomp.boot.generic_quotient.html">generic_quotient</a></li>
+<li><a href="mathcomp.boot.monoid.html">monoid</a></li>
+<li><a href="mathcomp.boot.nmodule.html">nmodule</a></li>
+<li><a href="mathcomp.boot.path.html">path</a></li>
+<li><a href="mathcomp.boot.prime.html">prime</a></li>
+<li><a href="mathcomp.boot.seq.html">seq</a></li>
+<li><a href="mathcomp.boot.ssrAC.html">ssrAC</a></li>
+<li><a href="mathcomp.boot.ssrbool.html">ssrbool</a></li>
+<li><a href="mathcomp.boot.ssreflect.html">ssreflect</a></li>
+<li><a href="mathcomp.boot.ssrfun.html">ssrfun</a></li>
+<li><a href="mathcomp.boot.ssrmatching.html">ssrmatching</a></li>
+<li><a href="mathcomp.boot.ssrnat.html">ssrnat</a></li>
+<li><a href="mathcomp.boot.ssrnotations.html">ssrnotations</a></li>
+<li><a href="mathcomp.boot.tuple.html">tuple</a></li>
+          </ul>
+          </details>
+          </li>
+<li><details id="mathcomp.field"><summary>field</summary>
+          <ul>
+          <li><a href="mathcomp.field.algC.html">algC</a></li>
+<li><a href="mathcomp.field.algebraics_fundamentals.html">algebraics_fundamentals</a></li>
+<li><a href="mathcomp.field.algnum.html">algnum</a></li>
+<li><a href="mathcomp.field.all_field.html">all_field</a></li>
+<li><a href="mathcomp.field.closed_field.html">closed_field</a></li>
+<li><a href="mathcomp.field.cyclotomic.html">cyclotomic</a></li>
+<li><a href="mathcomp.field.falgebra.html">falgebra</a></li>
+<li><a href="mathcomp.field.field.html">field</a></li>
+<li><a href="mathcomp.field.fieldext.html">fieldext</a></li>
+<li><a href="mathcomp.field.finfield.html">finfield</a></li>
+<li><a href="mathcomp.field.galois.html">galois</a></li>
+<li><a href="mathcomp.field.qfpoly.html">qfpoly</a></li>
+<li><a href="mathcomp.field.separable.html">separable</a></li>
+          </ul>
+          </details>
+          </li>
+<li><details id="mathcomp.finite_group"><summary>finite_group</summary>
+          <ul>
+          <li><a href="mathcomp.finite_group.action.html">action</a></li>
+<li><a href="mathcomp.finite_group.all_fingroup.html">all_fingroup</a></li>
+<li><a href="mathcomp.finite_group.automorphism.html">automorphism</a></li>
+<li><a href="mathcomp.finite_group.fingroup.html">fingroup</a></li>
+<li><a href="mathcomp.finite_group.finite_group.html">finite_group</a></li>
+<li><a href="mathcomp.finite_group.gproduct.html">gproduct</a></li>
+<li><a href="mathcomp.finite_group.morphism.html">morphism</a></li>
+<li><a href="mathcomp.finite_group.perm.html">perm</a></li>
+<li><a href="mathcomp.finite_group.presentation.html">presentation</a></li>
+<li><a href="mathcomp.finite_group.quotient.html">quotient</a></li>
+          </ul>
+          </details>
+          </li>
+<li><details id="mathcomp.group_representation"><summary>group_representation</summary>
+          <ul>
+          <li><a href="mathcomp.group_representation.all_character.html">all_character</a></li>
+<li><a href="mathcomp.group_representation.character.html">character</a></li>
+<li><a href="mathcomp.group_representation.classfun.html">classfun</a></li>
+<li><a href="mathcomp.group_representation.group_representation.html">group_representation</a></li>
+<li><a href="mathcomp.group_representation.inertia.html">inertia</a></li>
+<li><a href="mathcomp.group_representation.integral_char.html">integral_char</a></li>
+<li><a href="mathcomp.group_representation.mxabelem.html">mxabelem</a></li>
+<li><a href="mathcomp.group_representation.mxrepresentation.html">mxrepresentation</a></li>
+<li><a href="mathcomp.group_representation.vcharacter.html">vcharacter</a></li>
+          </ul>
+          </details>
+          </li>
+<li><details id="mathcomp.order"><summary>order</summary>
+          <ul>
+          <li><a href="mathcomp.order.all_order.html">all_order</a></li>
+<li><a href="mathcomp.order.order.html">order</a></li>
+<li><a href="mathcomp.order.preorder.html">preorder</a></li>
+          </ul>
+          </details>
+          </li>
+<li><details id="mathcomp.solvable"><summary>solvable</summary>
+          <ul>
+          <li><a href="mathcomp.solvable.abelian.html">abelian</a></li>
+<li><a href="mathcomp.solvable.all_solvable.html">all_solvable</a></li>
+<li><a href="mathcomp.solvable.alt.html">alt</a></li>
+<li><a href="mathcomp.solvable.burnside_app.html">burnside_app</a></li>
+<li><a href="mathcomp.solvable.center.html">center</a></li>
+<li><a href="mathcomp.solvable.commutator.html">commutator</a></li>
+<li><a href="mathcomp.solvable.cyclic.html">cyclic</a></li>
+<li><a href="mathcomp.solvable.extraspecial.html">extraspecial</a></li>
+<li><a href="mathcomp.solvable.extremal.html">extremal</a></li>
+<li><a href="mathcomp.solvable.finmodule.html">finmodule</a></li>
+<li><a href="mathcomp.solvable.frobenius.html">frobenius</a></li>
+<li><a href="mathcomp.solvable.gfunctor.html">gfunctor</a></li>
+<li><a href="mathcomp.solvable.gseries.html">gseries</a></li>
+<li><a href="mathcomp.solvable.hall.html">hall</a></li>
+<li><a href="mathcomp.solvable.jordanholder.html">jordanholder</a></li>
+<li><a href="mathcomp.solvable.maximal.html">maximal</a></li>
+<li><a href="mathcomp.solvable.nilpotent.html">nilpotent</a></li>
+<li><a href="mathcomp.solvable.pgroup.html">pgroup</a></li>
+<li><a href="mathcomp.solvable.primitive_action.html">primitive_action</a></li>
+<li><a href="mathcomp.solvable.solvable.html">solvable</a></li>
+<li><a href="mathcomp.solvable.sylow.html">sylow</a></li>
+          </ul>
+          </details>
+          </li>
+<li><details id="mathcomp.ssreflect"><summary>ssreflect</summary>
+          <ul>
+          <li><a href="mathcomp.ssreflect.all_ssreflect.html">all_ssreflect</a></li>
+          </ul>
+          </details>
+          </li>
+          </ul>
+          </details>
+          </li>
+    </div>
+
+  <div class="coq">
+
+    <div class="content">
+      <p>
+        <a href="./index.html">Top</a>
+        
+      </p>
+      <h1 class="title">Module mathcomp.boot.ssreflect</h1>
+<span class="vernacular">From</span><span class="id"> Corelib</span><span class="vernacular"> Require</span><span class="vernacular"> Export</span><span class="id"> </span><span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssreflect.html">ssreflect</a></span>.<br/>
+<span class="id">Global</span><span class="gallina-kwd"> Set</span><span class="id"> Asymmetric</span><span class="id"> Patterns</span>.<br/>
+<span class="id">#[warning=</span><span class="id">&quot;-unknown-option,-deprecated-since-9.3&quot;</span><span class="id">]</span><br/>
+<span class="id">Global</span><span class="gallina-kwd"> Set</span><span class="id"> Asymmetric</span><span class="id"> Patterns</span><span class="id"> No</span><span class="vernacular"> Implicits</span>.<br/>
+<span class="id">Global</span><span class="gallina-kwd"> Set</span><span class="id"> Bullet</span><span class="id"> Behavior</span> <span class="id">&quot;None&quot;</span>.<br/>
+<br/>
+<span class="id">#[deprecated</span>(<span class="id">since=</span><span class="id">&quot;mathcomp 2.3.0&quot;</span><span class="id">,</span><span class="id"> note=</span><span class="id">&quot;Use `Arguments def : simpl never` instead (should work fine since Coq 8.18).&quot;</span>)<span class="id">]</span><br/>
+<span class="vernacular">Notation</span><span class="id"> </span><span id="nosimpl" class="id"><a name="nosimpl" class="">nosimpl</a></span><span class="id"> t</span><span class="id"> :=</span> (<span class="id"><a href="https://rocq-prover.org/corelib/Corelib.ssr.ssreflect.html#nosimpl">nosimpl</a></span><span class="id"> t</span>).<br/>
+<br/>
+<span class="vernacular">Definition</span><span class="id"> </span><span id="hide" class="id"><a name="hide" class="">hide</a></span><span class="id"> {</span><span id="T:1" class="id"><a name="T:1" class="">T</a></span><span class="id">}</span><span class="id"> </span><span id="t:2" class="id"><a name="t:2" class="">t</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.boot.ssreflect.html#T:1">T</a></span><span class="id"> :=</span><span class="id"> </span><span class="id"><a href="mathcomp.boot.ssreflect.html#t:2">t</a></span>.<br/>
+<span class="vernacular">Notation</span><span class="id"> </span><span id="hideT" class="id"><a name="hideT" class="">hideT</a></span><span class="id"> :=</span> (<span class="id">@</span><span class="id"><a href="mathcomp.boot.ssreflect.html#hide">hide</a></span> (<span class="id"><a href="mathcomp.boot.ssreflect.html#hide">hide</a></span><span class="id"> _</span>)) (<span class="id">only</span><span class="id"> parsing</span>).<br/>
+<span class="vernacular">Notation</span> <span id="::ssr_scope:'&lt;hidden'_'&gt;'" class="id"><a name="::ssr_scope:'&lt;hidden'_'&gt;'" class="">&quot;&lt;hidden &gt;&quot;</a></span><span class="id"> :=</span> (<span class="id"><a href="mathcomp.boot.ssreflect.html#hide">hide</a></span><span class="id"> _</span>)<br/>
+&nbsp;&nbsp;(<span class="gallina-kwd">at</span><span class="id"> level</span><span class="id"> 0,</span><span class="id"> format</span> <span class="id">&quot;&lt;hidden &gt;&quot;</span><span class="id">,</span><span class="id"> only</span><span class="id"> printing</span>)<span class="id"> :</span><span class="id"> ssr_scope</span>.<br/>
+<br/>
+<span class="vernacular">Notation</span> <span id="02129fe15e5008215b7b078028606095" class="id"><a name="02129fe15e5008215b7b078028606095" class="">&quot;'[' 'hide' ']'&quot;</a></span><span class="id"> :=</span> (<span class="id">ltac:</span>(<br/>
+&nbsp;&nbsp;<span class="id">move;</span><span class="id"> lazymatch</span><span class="id"> goal</span><span class="gallina-kwd"> with</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id">|</span><span class="id"> |-</span><span class="gallina-kwd"> forall</span><span class="id"> </span><span id="x:4" class="id"><span id="x:3" class="id"><a name="x:4" class="">x</a></span></span><span class="id"> :</span><span class="id"> ?A,</span><span class="id"> ?G</span><span class="id"> =&gt;</span>     <span class="id"> change</span> (<span class="gallina-kwd">forall</span><span class="id"> </span><span id="x:8" class="id"><a name="x:8" class="">x</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.boot.ssreflect.html#hide">hide</a></span><span class="id"> A,</span><span class="id"> G</span>)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id">|</span><span class="id"> |-</span><span class="gallina-kwd"> let</span><span class="id"> </span><span id="x:6" class="id"><span id="x:5" class="id"><a name="x:6" class="">x</a></span></span><span class="id"> :</span><span class="id"> ?A</span><span class="id"> :=</span><span class="id"> ?a</span><span class="gallina-kwd"> in</span><span class="id"> ?G</span><span class="id"> =&gt;</span><span class="id"> change</span> (<span class="gallina-kwd">let</span><span class="id"> </span><span id="x:7" class="id"><a name="x:7" class="">x</a></span><span class="id"> :</span><span class="id"> </span><span class="id"><a href="mathcomp.boot.ssreflect.html#hide">hide</a></span><span class="id"> A</span><span class="id"> :=</span><span class="id"> @</span><span class="id"><a href="mathcomp.boot.ssreflect.html#hide">hide</a></span><span class="id"> A</span><span class="id"> a</span><span class="gallina-kwd"> in</span><span class="id"> G</span>)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id">|</span><span class="id"> _</span><span class="id"> =&gt;</span><span class="id"> fail</span> <span class="id">&quot;[hide] : no top assumption&quot;</span><br/>
+&nbsp;&nbsp;<span class="gallina-kwd">end</span>)) (<span class="gallina-kwd">at</span><span class="id"> level</span><span class="id"> 0,</span><span class="id"> only</span><span class="id"> parsing</span>)<span class="id"> :</span><span class="id"> ssripat_scope</span>.<br/>
+<br/>
+<span class="vernacular">Notation</span> <span id="fb7f09d608ad68f82ab9c9bf39c38f57" class="id"><a name="fb7f09d608ad68f82ab9c9bf39c38f57" class="">&quot;'[' 'let' ']'&quot;</a></span><span class="id"> :=</span> (<span class="id">ltac:</span>(<br/>
+&nbsp;&nbsp;<span class="id">move;</span><span class="id"> lazymatch</span><span class="id"> goal</span><span class="gallina-kwd"> with</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id">|</span><span class="id"> |-</span><span class="gallina-kwd"> forall</span> (<span id="H:12" class="id"><span id="H:10" class="id"><a name="H:12" class="">H</a></span></span><span class="id"> :</span><span class="gallina-kwd"> let</span><span class="id"> </span><span id="x:11" class="id"><span id="x:9" class="id"><a name="x:11" class="">x</a></span></span><span class="id"> :</span><span class="id"> ?A</span><span class="id"> :=</span><span class="id"> ?a</span><span class="gallina-kwd"> in</span><span class="id"> ?T</span>)<span class="id">,</span><span class="id"> ?G</span><span class="id"> =&gt;</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id">change</span> (<span class="gallina-kwd">let</span><span class="id"> </span><span id="x:25" class="id"><a name="x:25" class="">x</a></span><span class="id"> :</span><span class="id"> A</span><span class="id"> :=</span><span class="id"> a</span><span class="gallina-kwd"> in</span><span class="gallina-kwd"> forall</span><span class="id"> </span><span id="H:26" class="id"><a name="H:26" class="">H</a></span><span class="id"> :</span><span class="id"> T,</span><span class="id"> G</span>)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id">|</span><span class="id"> |-</span><span class="gallina-kwd"> let</span><span class="id"> </span><span id="H:16" class="id"><span id="H:14" class="id"><a name="H:16" class="">H</a></span></span><span class="id"> :</span> (<span class="gallina-kwd">let</span><span class="id"> </span><span id="x:15" class="id"><span id="x:13" class="id"><a name="x:15" class="">x</a></span></span><span class="id"> :</span><span class="id"> ?A</span><span class="id"> :=</span><span class="id"> ?a</span><span class="gallina-kwd"> in</span><span class="id"> ?T</span>)<span class="id"> :=</span><span class="id"> ?t</span><span class="gallina-kwd"> in</span><span class="id"> ?G</span><span class="id"> =&gt;</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id">change</span> (<span class="gallina-kwd">let</span><span class="id"> </span><span id="x:23" class="id"><a name="x:23" class="">x</a></span><span class="id"> :</span><span class="id"> A</span><span class="id"> :=</span><span class="id"> a</span><span class="gallina-kwd"> in</span><span class="gallina-kwd"> let</span><span class="id"> </span><span id="H:24" class="id"><a name="H:24" class="">H</a></span><span class="id"> :</span><span class="id"> T</span><span class="id"> :=</span><span class="id"> t</span><span class="gallina-kwd"> in</span><span class="id"> G</span>)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id">|</span><span class="id"> |-</span><span class="gallina-kwd"> let</span><span class="id"> </span><span id="H:20" class="id"><span id="H:18" class="id"><a name="H:20" class="">H</a></span></span><span class="id"> :</span><span class="id"> ?T</span><span class="id"> :=</span> (<span class="gallina-kwd">let</span><span class="id"> </span><span id="x:19" class="id"><span id="x:17" class="id"><a name="x:19" class="">x</a></span></span><span class="id"> :</span><span class="id"> ?A</span><span class="id"> :=</span><span class="id"> ?a</span><span class="gallina-kwd"> in</span><span class="id"> ?t</span>)<span class="gallina-kwd"> in</span><span class="id"> ?G</span><span class="id"> =&gt;</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="id">change</span> (<span class="gallina-kwd">let</span><span class="id"> </span><span id="x:21" class="id"><a name="x:21" class="">x</a></span><span class="id"> :</span><span class="id"> A</span><span class="id"> :=</span><span class="id"> a</span><span class="gallina-kwd"> in</span><span class="gallina-kwd"> let</span><span class="id"> </span><span id="H:22" class="id"><a name="H:22" class="">H</a></span><span class="id"> :</span><span class="id"> T</span><span class="id"> :=</span><span class="id"> t</span><span class="gallina-kwd"> in</span><span class="id"> G</span>)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id">|</span><span class="id"> _</span><span class="id"> =&gt;</span><span class="id"> fail</span> <span class="id">&quot;[let]: top assumption type or body is not a 'let'&quot;</span><br/>
+&nbsp;&nbsp;<span class="gallina-kwd">end</span>)) (<span class="gallina-kwd">at</span><span class="id"> level</span><span class="id"> 0,</span><span class="id"> only</span><span class="id"> parsing</span>)<span class="id"> :</span><span class="id"> ssripat_scope</span>.<br/>
+<br/>
+<span class="vernacular">Notation</span> <span id="fb3447774a2ddbccb49b1b3e6f6a0936" class="id"><a name="fb3447774a2ddbccb49b1b3e6f6a0936" class="">&quot;'[' 'fix' ']'&quot;</a></span><span class="id"> :=</span> (<span class="id">ltac:</span>(<br/>
+&nbsp;&nbsp;<span class="gallina-kwd">match</span><span class="id"> goal</span><span class="gallina-kwd"> with</span><br/>
+&nbsp;&nbsp;<span class="id">|</span><span class="id"> |-</span><span class="id"> context</span><span class="id"> [?t]</span><span class="id"> =&gt;</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id">is_fix</span><span class="id"> t;</span><span class="gallina-kwd"> let</span><span class="id"> f</span><span class="id"> :=</span><span class="id"> fresh</span> <span class="id">&quot;fix&quot;</span><span class="gallina-kwd"> in</span><span class="id"> set</span><span class="id"> f</span><span class="id"> :=</span><span class="id"> t;</span><span class="id"> move:</span><span class="id"> @f</span><span class="id"> =&gt;</span><span class="id"> /[hide]</span><br/>
+&nbsp;&nbsp;<span class="id">|</span><span class="id"> _</span><span class="id"> =&gt;</span><span class="id"> fail</span><span class="id"> 1</span> <span class="id">&quot;[fix]: no visible 'fix' in goal&quot;</span><br/>
+&nbsp;&nbsp;<span class="gallina-kwd">end</span>)) (<span class="gallina-kwd">at</span><span class="id"> level</span><span class="id"> 0,</span><span class="id"> only</span><span class="id"> parsing</span>)<span class="id"> :</span><span class="id"> ssripat_scope</span>.<br/>
+<br/>
+<span class="vernacular">Notation</span> <span id="227d194a7ba60adac4af04c8d760a322" class="id"><a name="227d194a7ba60adac4af04c8d760a322" class="">&quot;'[' 'cofix' ']'&quot;</a></span><span class="id"> :=</span> (<span class="id">ltac:</span>(<br/>
+&nbsp;&nbsp;<span class="gallina-kwd">match</span><span class="id"> goal</span><span class="gallina-kwd"> with</span><br/>
+&nbsp;&nbsp;<span class="id">|</span><span class="id"> |-</span><span class="id"> context</span><span class="id"> [?t]</span><span class="id"> =&gt;</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="id">is_cofix</span><span class="id"> t;</span><span class="gallina-kwd"> let</span><span class="id"> z</span><span class="id"> :=</span><span class="id"> fresh</span> <span class="id">&quot;cofix&quot;</span><span class="gallina-kwd"> in</span><span class="id"> set</span><span class="id"> z</span><span class="id"> :=</span><span class="id"> t;</span><span class="id"> move:</span><span class="id"> @z</span><span class="id"> =&gt;</span><span class="id"> /[hide]</span><br/>
+&nbsp;&nbsp;<span class="id">|</span><span class="id"> _</span><span class="id"> =&gt;</span><span class="id"> fail</span><span class="id"> 1</span> <span class="id">&quot;[cofix]: no visible 'cofix' in goal&quot;</span><br/>
+&nbsp;&nbsp;<span class="gallina-kwd">end</span>)) (<span class="gallina-kwd">at</span><span class="id"> level</span><span class="id"> 0,</span><span class="id"> only</span><span class="id"> parsing</span>)<span class="id"> :</span><span class="id"> ssripat_scope</span>.<br/>
+<br/>
+
+      <div class="footer"><hr/>Generated by <a href="https://github.com/affeldt-aist/rocqnavi/">rocqnavi</a></div>
+    </div>
+  </div>
+    </main>
+</body>
+</html>
